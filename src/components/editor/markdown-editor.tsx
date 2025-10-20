@@ -2,6 +2,9 @@
 
 import { useState } from 'react'
 import { MarkdownPreview } from './markdown-preview'
+import { Button } from '@/components/ui/button'
+import { Card, CardContent } from '@/components/ui/card'
+import { cn } from '@/lib/utils'
 
 interface MarkdownEditorProps {
   value: string
@@ -13,55 +16,105 @@ export function MarkdownEditor({ value, onChange, placeholder }: MarkdownEditorP
   const [showPreview, setShowPreview] = useState(false)
 
   return (
-    <div className="border rounded-lg overflow-hidden">
+    <Card className="overflow-hidden">
       {/* Tabs */}
       <div className="flex border-b bg-muted/50">
         <button
           type="button"
           onClick={() => setShowPreview(false)}
-          className={`px-4 py-2 text-sm font-medium transition-colors ${
+          className={cn(
+            'px-4 py-2.5 text-sm font-medium transition-all duration-200 relative',
             !showPreview
-              ? 'bg-background text-foreground border-b-2 border-primary'
-              : 'text-muted-foreground hover:text-foreground'
-          }`}
+              ? 'bg-background text-foreground after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-primary'
+              : 'text-muted-foreground hover:text-foreground hover:bg-muted/30'
+          )}
         >
           Write
         </button>
         <button
           type="button"
           onClick={() => setShowPreview(true)}
-          className={`px-4 py-2 text-sm font-medium transition-colors ${
+          className={cn(
+            'px-4 py-2.5 text-sm font-medium transition-all duration-200 relative',
             showPreview
-              ? 'bg-background text-foreground border-b-2 border-primary'
-              : 'text-muted-foreground hover:text-foreground'
-          }`}
+              ? 'bg-background text-foreground after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-primary'
+              : 'text-muted-foreground hover:text-foreground hover:bg-muted/30'
+          )}
         >
           Preview
         </button>
+
+        {/* Quick actions */}
+        <div className="ml-auto flex items-center gap-1 px-2">
+          <Button
+            type="button"
+            variant="ghost"
+            size="sm"
+            className="h-7 px-2 text-xs"
+            onClick={() => {
+              const selection = value
+              onChange(value + '\n**bold text**')
+            }}
+            title="Bold"
+          >
+            <span className="font-bold">B</span>
+          </Button>
+          <Button
+            type="button"
+            variant="ghost"
+            size="sm"
+            className="h-7 px-2 text-xs"
+            onClick={() => {
+              onChange(value + '\n*italic text*')
+            }}
+            title="Italic"
+          >
+            <span className="italic">I</span>
+          </Button>
+          <Button
+            type="button"
+            variant="ghost"
+            size="sm"
+            className="h-7 px-2 text-xs"
+            onClick={() => {
+              onChange(value + '\n`code`')
+            }}
+            title="Code"
+          >
+            <span className="font-mono">{`</>`}</span>
+          </Button>
+        </div>
       </div>
 
       {/* Content */}
-      <div className="p-4">
+      <CardContent className="p-0">
         {!showPreview ? (
-          <textarea
-            value={value}
-            onChange={(e) => onChange(e.target.value)}
-            placeholder={placeholder || 'Write your prompt here... (Markdown supported)'}
-            className="w-full min-h-[300px] p-4 bg-background border-0 focus:outline-none focus:ring-0 resize-none font-mono text-sm"
-          />
+          <div className="relative">
+            <textarea
+              value={value}
+              onChange={(e) => onChange(e.target.value)}
+              placeholder={placeholder || 'Write your prompt here... (Markdown supported)'}
+              className="w-full min-h-[300px] p-4 bg-background border-0 focus:outline-none focus:ring-0 resize-none font-mono text-sm leading-relaxed transition-colors duration-200"
+            />
+          </div>
         ) : (
-          <div className="min-h-[300px] p-4">
-            <MarkdownPreview content={value} />
+          <div className="min-h-[300px] p-4 prose prose-sm dark:prose-invert max-w-none">
+            {value ? (
+              <MarkdownPreview content={value} />
+            ) : (
+              <p className="text-muted-foreground italic">Nothing to preview yet. Start writing to see the preview.</p>
+            )}
           </div>
         )}
-      </div>
+      </CardContent>
 
       {/* Helper text */}
       {!showPreview && (
-        <div className="px-4 py-2 bg-muted/30 text-xs text-muted-foreground border-t">
-          Markdown supported: **bold**, *italic*, `code`, [links](url), etc.
+        <div className="px-4 py-2.5 bg-muted/30 text-xs text-muted-foreground border-t flex items-center justify-between">
+          <span>Markdown supported: **bold**, *italic*, `code`, [links](url), etc.</span>
+          <span className="text-muted-foreground/60">{value.length} characters</span>
         </div>
       )}
-    </div>
+    </Card>
   )
 }

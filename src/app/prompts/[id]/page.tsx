@@ -4,6 +4,9 @@ import Link from 'next/link'
 import { MarkdownPreview } from '@/components/editor/markdown-preview'
 import { LikeButton } from '@/components/prompts/like-button'
 import { SaveToCollectionButton } from '@/components/prompts/save-to-collection-button'
+import { ShareButton } from '@/components/prompts/share-button'
+import { DuplicateButton } from '@/components/prompts/duplicate-button'
+import { ViewCounter } from '@/components/prompts/view-counter'
 import { CommentList } from '@/components/comments/comment-list'
 import { formatDistanceToNow } from 'date-fns'
 import type { Metadata } from 'next'
@@ -154,7 +157,7 @@ export default async function PromptDetailPage({ params }: PageProps) {
           )}
           <h1 className="text-4xl font-bold mb-4">{prompt.title}</h1>
 
-          <div className="flex items-center gap-4 text-sm text-muted-foreground">
+          <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-medium">
                 {(prompt.profiles?.name || 'A').charAt(0).toUpperCase()}
@@ -165,6 +168,8 @@ export default async function PromptDetailPage({ params }: PageProps) {
             <span>
               {formatDistanceToNow(new Date(prompt.created_at), { addSuffix: true })}
             </span>
+            <span>•</span>
+            <ViewCounter promptId={prompt.id} initialViews={prompt.views_count || 0} />
             {!prompt.is_public && (
               <>
                 <span>•</span>
@@ -194,7 +199,7 @@ export default async function PromptDetailPage({ params }: PageProps) {
         </div>
 
         {/* Actions */}
-        <div className="flex items-center gap-4">
+        <div className="flex flex-wrap items-center gap-3">
           <LikeButton
             promptId={prompt.id}
             initialLikes={prompt.likes_count}
@@ -204,10 +209,10 @@ export default async function PromptDetailPage({ params }: PageProps) {
 
           <Link
             href={`/prompts/${prompt.id}/remix`}
-            className="flex items-center gap-2 px-4 py-2 border rounded-md hover:bg-accent transition-colors"
+            className="flex items-center gap-2 px-4 py-2 border rounded-md hover:bg-accent transition-colors text-sm"
           >
             <svg
-              className="w-5 h-5"
+              className="w-4 h-4"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -223,6 +228,14 @@ export default async function PromptDetailPage({ params }: PageProps) {
           </Link>
 
           <SaveToCollectionButton promptId={prompt.id} userId={user?.id} />
+
+          <DuplicateButton promptId={prompt.id} userId={user?.id} />
+
+          <ShareButton
+            promptId={prompt.id}
+            title={prompt.title}
+            description={prompt.body.substring(0, 160)}
+          />
         </div>
 
         {/* Comments Section */}

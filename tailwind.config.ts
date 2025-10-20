@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import { spacing, shadows, zIndex, animation } from "./src/lib/design-tokens";
 
 const config: Config = {
   darkMode: ["class"],
@@ -50,11 +51,40 @@ const config: Config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        // Semantic colors from design tokens
+        success: {
+          DEFAULT: "hsl(142, 76%, 36%)",
+          foreground: "hsl(210, 40%, 98%)",
+        },
+        warning: {
+          DEFAULT: "hsl(38, 92%, 50%)",
+          foreground: "hsl(222.2, 84%, 4.9%)",
+        },
+        info: {
+          DEFAULT: "hsl(199, 89%, 48%)",
+          foreground: "hsl(210, 40%, 98%)",
+        },
       },
+      spacing,
+      boxShadow: shadows,
+      zIndex: {
+        hide: '-1',
+        base: '0',
+        dropdown: '1000',
+        sticky: '1100',
+        fixed: '1200',
+        modalBackdrop: '1300',
+        modal: '1400',
+        popover: '1500',
+        tooltip: '1600',
+      },
+      transitionDuration: animation.duration,
+      transitionTimingFunction: animation.easing,
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+        xl: "calc(var(--radius) + 4px)",
       },
     },
   },

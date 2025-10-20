@@ -1,5 +1,8 @@
 import Link from 'next/link'
 import { formatDistanceToNow } from 'date-fns'
+import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card'
+import { Badge } from '@/components/ui/badge'
+import { HeartIcon } from 'lucide-react'
 
 interface PromptCardProps {
   id: string
@@ -27,62 +30,66 @@ export function PromptCard({
   const preview = body.length > 200 ? body.substring(0, 200) + '...' : body
 
   return (
-    <Link
-      href={`/prompts/${id}`}
-      className="block bg-card border rounded-lg p-6 hover:shadow-lg transition-shadow"
-    >
-      <div className="space-y-4">
-        {/* Header */}
-        <div className="flex items-start justify-between">
-          <div className="flex-1">
-            <h2 className="text-xl font-semibold mb-2 hover:text-primary transition-colors">
-              {title}
-            </h2>
-            <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              <span>by {author.name || 'Anonymous'}</span>
-              <span>•</span>
-              <span>{formatDistanceToNow(new Date(created_at), { addSuffix: true })}</span>
+    <Link href={`/prompts/${id}`} className="block group">
+      <Card className="h-full transition-all duration-200 hover:shadow-lg hover:border-primary/50 hover:-translate-y-0.5">
+        <CardHeader className="space-y-3">
+          <div className="flex items-start justify-between gap-4">
+            <div className="flex-1 min-w-0">
+              <h2 className="text-xl font-semibold mb-2 line-clamp-2 group-hover:text-primary transition-colors duration-200">
+                {title}
+              </h2>
+              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                <div className="flex items-center gap-2">
+                  <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center text-xs font-medium">
+                    {(author.name || 'A').charAt(0).toUpperCase()}
+                  </div>
+                  <span className="truncate">{author.name || 'Anonymous'}</span>
+                </div>
+                <span className="text-muted-foreground/60">•</span>
+                <time className="text-muted-foreground whitespace-nowrap">
+                  {formatDistanceToNow(new Date(created_at), { addSuffix: true })}
+                </time>
+              </div>
             </div>
           </div>
-        </div>
+        </CardHeader>
 
-        {/* Body Preview */}
-        <p className="text-muted-foreground line-clamp-3">{preview}</p>
+        <CardContent className="space-y-4">
+          {/* Body Preview */}
+          <p className="text-sm text-muted-foreground line-clamp-3 leading-relaxed">
+            {preview}
+          </p>
 
-        {/* Tags */}
-        {tags.length > 0 && (
-          <div className="flex flex-wrap gap-2">
-            {tags.map((tag) => (
-              <span
-                key={tag}
-                className="px-2 py-1 bg-secondary text-secondary-foreground text-xs rounded-md"
-              >
-                #{tag}
-              </span>
-            ))}
+          {/* Tags */}
+          {tags.length > 0 && (
+            <div className="flex flex-wrap gap-2">
+              {tags.slice(0, 4).map((tag) => (
+                <Badge
+                  key={tag}
+                  variant="secondary"
+                  className="text-xs hover:bg-secondary/80 transition-colors duration-200"
+                >
+                  #{tag}
+                </Badge>
+              ))}
+              {tags.length > 4 && (
+                <Badge variant="outline" className="text-xs">
+                  +{tags.length - 4} more
+                </Badge>
+              )}
+            </div>
+          )}
+        </CardContent>
+
+        <CardFooter className="pt-4">
+          <div className="flex items-center gap-4 text-sm text-muted-foreground">
+            <div className="flex items-center gap-1.5 hover:text-red-500 transition-colors duration-200">
+              <HeartIcon className="w-4 h-4" />
+              <span className="font-medium">{likes_count}</span>
+            </div>
           </div>
-        )}
-
-        {/* Footer */}
-        <div className="flex items-center gap-4 text-sm text-muted-foreground">
-          <div className="flex items-center gap-1">
-            <svg
-              className="w-4 h-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-              />
-            </svg>
-            <span>{likes_count}</span>
-          </div>
-        </div>
-      </div>
+        </CardFooter>
+      </Card>
     </Link>
   )
 }
