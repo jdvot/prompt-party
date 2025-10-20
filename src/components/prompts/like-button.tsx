@@ -23,14 +23,14 @@ export function LikeButton({ promptId, initialLikes, initialIsLiked = false, use
 
     // Check if user has liked this prompt
     const checkLike = async () => {
-      const { data } = await supabase
+      const { data, error } = await supabase
         .from('likes')
         .select('*')
         .eq('prompt_id', promptId)
         .eq('user_id', userId)
-        .single()
+        .maybeSingle()
 
-      setIsLiked(!!data)
+      setIsLiked(!!data && !error)
     }
 
     checkLike()
