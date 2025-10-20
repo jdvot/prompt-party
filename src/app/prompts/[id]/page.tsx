@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { MarkdownPreview } from '@/components/editor/markdown-preview'
 import { LikeButton } from '@/components/prompts/like-button'
+import { SaveToCollectionButton } from '@/components/prompts/save-to-collection-button'
 import { CommentList } from '@/components/comments/comment-list'
 import { formatDistanceToNow } from 'date-fns'
 import type { Metadata } from 'next'
@@ -209,6 +210,8 @@ export default async function PromptDetailPage({ params }: PageProps) {
             </svg>
             <span>Remix {remixCount ? `(${remixCount})` : ''}</span>
           </Link>
+
+          <SaveToCollectionButton promptId={prompt.id} userId={user?.id} />
         </div>
 
         {/* Comments Section */}
