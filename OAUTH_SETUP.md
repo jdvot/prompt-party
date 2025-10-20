@@ -1,8 +1,8 @@
-# OAuth Setup Guide - Google & GitHub
+# OAuth Setup Guide - Google
 
-Les boutons "Continue with Google" et "Continue with GitHub" sont déjà implémentés dans l'app. Il faut juste activer les providers dans Supabase.
+Le bouton "Continue with Google" est déjà implémenté dans l'app. Il faut juste activer le provider dans Supabase.
 
-## 1. Configuration Google OAuth
+## Configuration Google OAuth
 
 ### Étape 1 : Créer une OAuth App dans Google Cloud Console
 1. Va sur https://console.cloud.google.com/
@@ -35,58 +35,30 @@ Les boutons "Continue with Google" et "Continue with GitHub" sont déjà implém
 5. Colle-les dans Supabase
 6. Clique sur **Save**
 
-## 2. Configuration GitHub OAuth
+## Test Local
 
-### Étape 1 : Créer une OAuth App dans GitHub
-1. Va sur https://github.com/settings/developers
-2. Clique sur **New OAuth App**
-3. Remplis le formulaire :
-   - Application name: **Prompt Party**
-   - Homepage URL: `https://prompt-party-app.netlify.app`
-   - Authorization callback URL: `https://hfswbeyptqqhvhnxzcbh.supabase.co/auth/v1/callback`
-4. Clique sur **Register application**
-5. Copie le **Client ID**
-6. Clique sur **Generate a new client secret** et copie le secret
-
-### Étape 2 : Configuration dans Supabase
-1. Va sur https://supabase.com/dashboard/project/hfswbeyptqqhvhnxzcbh/auth/providers
-2. Trouve **GitHub** dans la liste des providers
-3. Active le toggle **Enable GitHub**
-4. Colle le **Client ID** et **Client Secret** de GitHub
-5. Clique sur **Save**
-
-## 3. Test Local
-
-Pour tester en local, ajoute aussi les URLs localhost dans les OAuth apps :
-
-### Google:
+Pour tester en local, ajoute aussi les URLs localhost dans Google OAuth App :
 - Authorized JavaScript origins: `http://localhost:3000`
 - Authorized redirect URIs: `http://localhost:54321/auth/v1/callback`
 
-### GitHub:
-- Crée une deuxième OAuth App pour le développement local
-- Homepage URL: `http://localhost:3000`
-- Authorization callback URL: `http://localhost:54321/auth/v1/callback`
-
-## 4. Vérification
+## Vérification
 
 Une fois configuré, teste sur :
 - Production: https://prompt-party-app.netlify.app/auth/login
 - Local: http://localhost:3000/auth/login
 
-Les boutons "Continue with Google" et "Continue with GitHub" devraient fonctionner !
+Le bouton "Continue with Google" devrait fonctionner !
 
 ## Notes importantes
 
-- **Gratuit** : Aucun coût pour Google ou GitHub OAuth
+- **Gratuit** : Aucun coût pour Google OAuth
 - **Supabase gratuit** : Inclus dans le tier gratuit (50k MAU)
 - **Sécurité** : Les secrets OAuth doivent rester confidentiels
 - **Production** : Les URLs de callback doivent correspondre exactement
 
 ## Création automatique du profil
 
-Le trigger Supabase existant créera automatiquement un profil lors de l'inscription OAuth :
-- Google: Utilise le nom Google + email
-- GitHub: Utilise le username GitHub + email
+Le trigger Supabase existant créera automatiquement un profil lors de l'inscription OAuth.
+Google utilise le nom Google + email.
 
-Tout est déjà configuré dans le code ! Il faut juste activer les providers dans Supabase Dashboard.
+Tout est déjà configuré dans le code ! Il faut juste activer le provider dans Supabase Dashboard.
