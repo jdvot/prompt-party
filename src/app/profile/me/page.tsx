@@ -24,15 +24,16 @@ export default async function ProfilePage() {
   // Fetch user's prompts
   const { data: prompts } = await supabase
     .from('prompts')
-    .select(`
-      *,
-      profiles:author (
-        name,
-        avatar_url
-      )
-    `)
+    .select('*')
     .eq('author', user.id)
     .order('created_at', { ascending: false })
+
+  // Attach profile to each prompt
+  if (prompts) {
+    prompts.forEach((p: any) => {
+      p.profiles = profile
+    })
+  }
 
   const publicPromptsCount = prompts?.filter((p) => p.is_public).length || 0
   const privatePromptsCount = prompts?.filter((p) => !p.is_public).length || 0

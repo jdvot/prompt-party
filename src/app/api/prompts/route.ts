@@ -11,9 +11,9 @@ export async function GET(request: Request) {
   const supabase = await createClient()
 
   try {
-    // Use view that joins prompts with profiles
+    // Fetch prompts
     let query = supabase
-      .from('prompts_with_profiles')
+      .from('prompts')
       .select('*')
       .eq('is_public', true)
       .range(offset, offset + limit - 1)
@@ -43,6 +43,23 @@ export async function GET(request: Request) {
     if (error) {
       console.error('Error fetching prompts:', error)
       return NextResponse.json({ error: error.message }, { status: 500 })
+    }
+
+    // Fetch profiles for all prompts
+    if (prompts && prompts.length > 0) {
+      const authorIds = [...new Set(prompts.map((p: any) => p.author))]
+      const { data: profiles } = await supabase
+        .from('profiles')
+        .select('user_id, name, avatar_url, username')
+        .in('user_id', authorIds)
+
+      // Attach profiles to prompts
+      if (profiles) {
+        const profileMap = new Map(profiles.map(p => [p.user_id, p]))
+        prompts.forEach((p: any) => {
+          p.profiles = profileMap.get(p.author) || null
+        })
+      }
     }
 
     return NextResponse.json({ prompts, page, limit })
