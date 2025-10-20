@@ -108,30 +108,6 @@
 
 Ces features peuvent être ajoutées plus tard si désiré:
 
-### Phase 6: Feed Principal (PRIORITÉ 1)
-**Temps estimé**: 2-3 heures
-- [ ] Composant `PromptCard`
-- [ ] Filtres de feed (Top/New/Trending)
-- [ ] Pagination ou infinite scroll
-- [ ] API Route GET `/api/prompts`
-- [ ] Mise à jour de la page d'accueil
-
-### Phase 7: Création de Prompts (PRIORITÉ 1)
-**Temps estimé**: 3-4 heures
-- [ ] Éditeur Markdown avec preview
-- [ ] Formulaire de création
-- [ ] Système de tags
-- [ ] Toggle public/privé
-- [ ] API Route POST `/api/prompts`
-
-### Phase 8: Page Détail (PRIORITÉ 1)
-**Temps estimé**: 2-3 heures
-- [ ] Page `/prompts/[id]`
-- [ ] Affichage Markdown
-- [ ] Métadonnées (auteur, date, tags)
-- [ ] Placeholder pour likes/comments
-- [ ] SEO (generateMetadata)
-
 ### Phase 9: Système de Likes (PRIORITÉ 2)
 **Temps estimé**: 2-3 heures
 - [ ] Composant `LikeButton`
@@ -164,12 +140,11 @@ Ces features peuvent être ajoutées plus tard si désiré:
 - [ ] Toggle public/privé
 - [ ] Gestion des items
 
-### Phase 13: Profils Utilisateurs (PRIORITÉ 3)
-**Temps estimé**: 3-4 heures
-- [ ] Page profil public
-- [ ] Page settings
-- [ ] Upload avatar
-- [ ] Onglets (Prompts/Collections/Likes)
+### Phase 13: Profils Publics (PRIORITÉ 3)
+**Temps estimé**: 2 heures
+- [ ] Page profil public `/profile/[username]`
+- [ ] Vue publique des prompts
+- [ ] Upload avatar (Supabase Storage)
 
 ### Phase 14-20: Features Avancées (PRIORITÉ 4)
 - [ ] Trending/Top feeds avec algorithme
@@ -183,13 +158,16 @@ Ces features peuvent être ajoutées plus tard si désiré:
 
 ## 🎯 MVP Minimal Viable
 
-**Pour lancer rapidement** (Phases 1-8):
-1. ✅ Infrastructure & Auth (FAIT)
-2. 🚧 Feed basique (Phase 6)
-3. 🚧 Création de prompts (Phase 7)
-4. 🚧 Page détail (Phase 8 sans likes/comments)
+**Phases 1-8: ✅ TOUTES COMPLÈTES!**
+1. ✅ Infrastructure & Auth
+2. ✅ Feed complet (New/Top/Trending)
+3. ✅ Création de prompts avec Markdown
+4. ✅ Page détail avec SEO
+5. ✅ Profil utilisateur
+6. ✅ Settings
+7. ✅ Navigation complète
 
-**Temps total estimé**: ~8 heures de dev
+**Le MVP est 100% fonctionnel!**
 
 ---
 
@@ -218,32 +196,33 @@ Ces features peuvent être ajoutées plus tard si désiré:
 ```
 src/
 ├── app/                      # Next.js App Router
-│   ├── layout.tsx            # Layout racine ✅
-│   ├── page.tsx              # Page d'accueil (à compléter)
-│   ├── auth/                 # Pages auth ✅
-│   │   ├── login/
-│   │   ├── signup/
-│   │   ├── callback/
-│   │   └── logout/
-│   └── api/                  # API Routes (à créer)
-├── components/               # Composants React
-│   ├── auth/                 # Composants auth ✅
-│   │   └── auth-form.tsx
-│   └── layout/               # Composants layout ✅
-│       ├── header.tsx
-│       ├── user-menu.tsx
-│       └── footer.tsx
-├── lib/                      # Utilitaires
-│   ├── utils.ts              # Helpers ✅
-│   └── supabase/             # Clients Supabase ✅
-│       ├── client.ts
-│       ├── server.ts
-│       └── hooks.ts
-├── types/                    # Types TypeScript
-│   └── database.types.ts     # Types DB ✅
-├── styles/                   # Styles
-│   └── globals.css           # CSS global ✅
-└── middleware.ts             # Middleware Next.js ✅
+│   ├── layout.tsx            # ✅ Layout racine
+│   ├── page.tsx              # ✅ Feed principal
+│   ├── loading.tsx           # ✅ Loading state
+│   ├── not-found.tsx         # ✅ Page 404
+│   ├── error.tsx             # ✅ Error boundary
+│   ├── top/page.tsx          # ✅ Top prompts
+│   ├── trending/page.tsx     # ✅ Trending prompts
+│   ├── auth/                 # ✅ Pages auth complètes
+│   ├── prompts/              # ✅ Pages prompts
+│   │   ├── new/page.tsx      # ✅ Création
+│   │   └── [id]/page.tsx     # ✅ Détail
+│   ├── profile/              # ✅ Pages profil
+│   │   ├── me/page.tsx       # ✅ Mon profil
+│   │   └── settings/page.tsx # ✅ Settings
+│   └── api/prompts/route.ts  # ✅ API GET/POST
+├── components/               # ✅ Tous composants créés
+│   ├── auth/                 # ✅ Auth UI
+│   ├── feed/                 # ✅ Feed complet
+│   ├── editor/               # ✅ Markdown editor
+│   ├── layout/               # ✅ Navigation
+│   └── profile/              # ✅ Settings form
+├── lib/                      # ✅ Utilitaires
+│   ├── utils.ts              # ✅ Helpers
+│   └── supabase/             # ✅ Clients complets
+├── types/                    # ✅ Types DB
+├── styles/                   # ✅ CSS global
+└── middleware.ts             # ✅ Auth middleware
 ```
 
 ---
