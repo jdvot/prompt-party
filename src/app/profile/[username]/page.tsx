@@ -1,6 +1,9 @@
 import { createClient } from '@/lib/supabase/server'
 import { notFound } from 'next/navigation'
 import { PromptCard } from '@/components/feed/prompt-card'
+import { ProfileStats } from '@/components/profile/profile-stats'
+import { ProfileBadges } from '@/components/profile/profile-badges'
+import { Suspense } from 'react'
 import type { Metadata } from 'next'
 
 interface PageProps {
@@ -70,52 +73,58 @@ export default async function PublicProfilePage({ params }: PageProps) {
     .eq('is_public', true)
     .order('created_at', { ascending: false })
 
-  // Get stats
-  const promptCount = prompts?.length || 0
-  const { count: likesReceived } = await supabase
-    .from('likes')
-    .select('*', { count: 'exact', head: true })
-    .in(
-      'prompt_id',
-      prompts?.map((p) => p.id) || []
-    )
+  // Get account age in days
+  const accountCreated = new Date(profile.created_at)
+  const accountAge = Math.floor(
+    (Date.now() - accountCreated.getTime()) / (1000 * 60 * 60 * 24)
+  )
+
+  // Get total likes and views for badges
+  const totalLikes = prompts?.reduce((sum, p) => sum + (p.likes_count || 0), 0) || 0
+  const totalViews = prompts?.reduce((sum, p) => sum + (p.views_count || 0), 0) || 0
 
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="max-w-6xl mx-auto">
         {/* Profile Header */}
-        <div className="mb-12 text-center">
-          <div className="w-24 h-24 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-4xl mx-auto mb-4">
-            {profile.avatar_url ? (
-              <img
-                src={profile.avatar_url}
-                alt={profile.name || 'User avatar'}
-                className="w-full h-full rounded-full object-cover"
-              />
-            ) : (
-              (profile.name || 'A').charAt(0).toUpperCase()
-            )}
+        <div className="mb-8">
+          <div className="flex flex-col md:flex-row items-center md:items-start gap-6 mb-8">
+            <div className="w-24 h-24 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-4xl ring-4 ring-primary/10">
+              {profile.avatar_url ? (
+                <img
+                  src={profile.avatar_url}
+                  alt={profile.name || 'User avatar'}
+                  className="w-full h-full rounded-full object-cover"
+                />
+              ) : (
+                (profile.name || 'A').charAt(0).toUpperCase()
+              )}
+            </div>
+            <div className="flex-1 text-center md:text-left">
+              <h1 className="text-3xl font-bold mb-1">{profile.name || 'Anonymous'}</h1>
+              {profile.username && (
+                <p className="text-muted-foreground mb-2">@{profile.username}</p>
+              )}
+              <p className="text-sm text-muted-foreground">
+                Member since {accountCreated.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
+              </p>
+            </div>
           </div>
-          <h1 className="text-3xl font-bold mb-2">{profile.name || 'Anonymous'}</h1>
-          {profile.username && (
-            <p className="text-muted-foreground mb-4">@{profile.username}</p>
-          )}
 
-          {/* Stats */}
-          <div className="flex items-center justify-center gap-8 mt-6">
-            <div className="text-center">
-              <div className="text-2xl font-bold">{promptCount}</div>
-              <div className="text-sm text-muted-foreground">Prompts</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold">{likesReceived || 0}</div>
-              <div className="text-sm text-muted-foreground">Likes</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold">{collections?.length || 0}</div>
-              <div className="text-sm text-muted-foreground">Collections</div>
-            </div>
+          {/* Stats Cards */}
+          <div className="mb-8">
+            <Suspense fallback={<div className="h-32 bg-muted animate-pulse rounded-lg" />}>
+              <ProfileStats userId={profile.user_id} />
+            </Suspense>
           </div>
+
+          {/* Badges */}
+          <ProfileBadges
+            totalPrompts={prompts?.length || 0}
+            totalLikes={totalLikes}
+            totalViews={totalViews}
+            accountAge={accountAge}
+          />
         </div>
 
         {/* Tabs */}
