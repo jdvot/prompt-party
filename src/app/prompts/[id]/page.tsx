@@ -8,6 +8,7 @@ import { ShareButton } from '@/components/prompts/share-button'
 import { DuplicateButton } from '@/components/prompts/duplicate-button'
 import { ViewCounter } from '@/components/prompts/view-counter'
 import { EmbedButton } from '@/components/prompts/embed-button'
+import { PromptPlayground } from '@/components/ai-tester/prompt-playground'
 import { CommentList } from '@/components/comments/comment-list'
 import { formatDistanceToNow } from 'date-fns'
 import type { Metadata } from 'next'
@@ -240,6 +241,9 @@ export default async function PromptDetailPage({ params }: PageProps) {
 
           <EmbedButton promptId={prompt.id} />
         </div>
+
+        {/* AI Prompt Tester */}
+        <PromptPlayground promptContent={prompt.body} userId={user?.id} />
 
         {/* Comments Section */}
         <div className="mt-12 border-t pt-8">
