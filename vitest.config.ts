@@ -17,6 +17,8 @@ export default defineConfig({
         singleFork: true,
       },
     },
+    include: ['src/**/*.test.ts', 'src/**/*.test.tsx'],
+    exclude: ['e2e/**', 'node_modules/**'],
   },
   resolve: {
     alias: {

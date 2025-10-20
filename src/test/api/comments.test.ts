@@ -34,14 +34,30 @@ describe('API /api/prompts/[id]/comments', () => {
           user_id: 'user-1',
           prompt_id: 'prompt-1',
           created_at: new Date().toISOString(),
-          profiles: { name: 'Test User' },
         },
       ]
 
-      mockSupabase.from.mockReturnValue({
-        select: vi.fn().mockReturnThis(),
-        eq: vi.fn().mockReturnThis(),
-        order: vi.fn().mockResolvedValue({ data: mockComments, error: null }),
+      const mockProfile = {
+        name: 'Test User',
+        avatar_url: null,
+      }
+
+      mockSupabase.from.mockImplementation((table: string) => {
+        if (table === 'comments') {
+          return {
+            select: vi.fn().mockReturnThis(),
+            eq: vi.fn().mockReturnThis(),
+            order: vi.fn().mockResolvedValue({ data: mockComments, error: null }),
+          }
+        }
+        if (table === 'profiles') {
+          return {
+            select: vi.fn().mockReturnThis(),
+            eq: vi.fn().mockReturnThis(),
+            single: vi.fn().mockResolvedValue({ data: mockProfile, error: null }),
+          }
+        }
+        return mockSupabase
       })
 
       const request = new Request('http://localhost:3000/api/prompts/prompt-1/comments')
@@ -50,6 +66,7 @@ describe('API /api/prompts/[id]/comments', () => {
 
       expect(response.status).toBe(200)
       expect(data.comments).toHaveLength(1)
+      expect(data.comments[0].profiles).toEqual(mockProfile)
     })
   })
 
