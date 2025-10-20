@@ -46,17 +46,7 @@ export default async function AddToCollectionPage({ params, searchParams }: Page
   // Search prompts
   let query = supabase
     .from('prompts')
-    .select(`
-      id,
-      title,
-      body,
-      tags,
-      likes_count,
-      created_at,
-      profiles:author (
-        name
-      )
-    `)
+    .select('id, title, body, tags, likes_count, created_at, author')
     .eq('is_public', true)
     .order('created_at', { ascending: false })
     .limit(20)
@@ -66,6 +56,22 @@ export default async function AddToCollectionPage({ params, searchParams }: Page
   }
 
   const { data: prompts } = await query
+
+  // Fetch profiles for prompts
+  if (prompts && prompts.length > 0) {
+    const authorIds = [...new Set(prompts.map((p: any) => p.author))]
+    const { data: profiles } = await supabase
+      .from('profiles')
+      .select('user_id, name')
+      .in('user_id', authorIds)
+
+    if (profiles) {
+      const profileMap = new Map(profiles.map(p => [p.user_id, p]))
+      prompts.forEach((p: any) => {
+        p.profiles = profileMap.get(p.author)
+      })
+    }
+  }
 
   async function addToCollection(formData: FormData) {
     'use server'

@@ -12,16 +12,26 @@ export default async function TopPage() {
   // Fetch top prompts (sorted by likes)
   const { data: prompts } = await supabase
     .from('prompts')
-    .select(`
-      *,
-      profiles:author (
-        name,
-        avatar_url
-      )
-    `)
+    .select('*')
     .eq('is_public', true)
     .order('likes_count', { ascending: false })
     .limit(20)
+
+  // Fetch profiles
+  if (prompts && prompts.length > 0) {
+    const authorIds = [...new Set(prompts.map(p => p.author))]
+    const { data: profiles } = await supabase
+      .from('profiles')
+      .select('user_id, name, avatar_url')
+      .in('user_id', authorIds)
+
+    if (profiles) {
+      const profileMap = new Map(profiles.map(p => [p.user_id, p]))
+      prompts.forEach((p: any) => {
+        p.profiles = profileMap.get(p.author)
+      })
+    }
+  }
 
   return (
     <div className="container mx-auto px-4 py-8">

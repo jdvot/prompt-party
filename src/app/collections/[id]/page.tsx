@@ -62,26 +62,43 @@ export default async function CollectionPage({ params }: PageProps) {
 
   const isOwner = user?.id === collection.user_id
 
-  // Fetch collection items with prompts
+  // Fetch collection items
   const { data: items } = await supabase
     .from('collection_items')
-    .select(`
-      id,
-      prompts:prompt_id (
-        id,
-        title,
-        body,
-        tags,
-        likes_count,
-        created_at,
-        profiles:author (
-          name,
-          avatar_url
-        )
-      )
-    `)
+    .select('id, prompt_id, added_at')
     .eq('collection_id', id)
     .order('added_at', { ascending: false })
+
+  // Fetch prompts for items
+  if (items && items.length > 0) {
+    const promptIds = items.map(item => item.prompt_id)
+    const { data: prompts } = await supabase
+      .from('prompts')
+      .select('*')
+      .in('id', promptIds)
+
+    if (prompts) {
+      // Fetch profiles for prompts
+      const authorIds = [...new Set(prompts.map(p => p.author))]
+      const { data: profiles } = await supabase
+        .from('profiles')
+        .select('user_id, name, avatar_url')
+        .in('user_id', authorIds)
+
+      if (profiles) {
+        const profileMap = new Map(profiles.map(p => [p.user_id, p]))
+        prompts.forEach((p: any) => {
+          p.profiles = profileMap.get(p.author)
+        })
+      }
+
+      // Attach prompts to items
+      const promptMap = new Map(prompts.map(p => [p.id, p]))
+      items.forEach((item: any) => {
+        item.prompts = promptMap.get(item.prompt_id)
+      })
+    }
+  }
 
   async function removeItem(itemId: string) {
     'use server'

@@ -47,16 +47,17 @@ export default async function PublicProfilePage({ params }: PageProps) {
   // Fetch user's public prompts
   const { data: prompts } = await supabase
     .from('prompts')
-    .select(`
-      *,
-      profiles:author (
-        name,
-        avatar_url
-      )
-    `)
+    .select('*')
     .eq('author', profile.id)
     .eq('is_public', true)
     .order('created_at', { ascending: false })
+
+  // Attach profile to prompts
+  if (prompts) {
+    prompts.forEach((p: any) => {
+      p.profiles = { name: profile.name, avatar_url: profile.avatar_url }
+    })
+  }
 
   // Fetch user's public collections
   const { data: collections } = await supabase
