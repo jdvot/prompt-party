@@ -40,6 +40,12 @@ export function Header() {
             >
               Top
             </Link>
+            <Link
+              href="/challenges"
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200"
+            >
+              Challenges
+            </Link>
           </nav>
         </div>
 
