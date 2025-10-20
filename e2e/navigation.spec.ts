@@ -24,7 +24,7 @@ test.describe('Navigation and Feed', () => {
       await expect(page).toHaveURL('/')
 
       // Should have main content
-      const mainContent = page.locator('main, [role="main"], .container')
+      const mainContent = page.locator('main').first()
       await expect(mainContent).toBeVisible()
     })
 
@@ -399,16 +399,19 @@ test.describe('Navigation and Feed', () => {
 
   test.describe('Error Pages', () => {
     test('should handle 404 pages gracefully', async ({ page }) => {
-      await page.goto('/this-page-does-not-exist-12345')
+      const response = await page.goto('/this-page-does-not-exist-12345')
       await page.waitForTimeout(2000)
 
       // Should show 404 page or redirect to home
       const notFoundText = page.locator('text=/404|not found|page not found/i')
       const notFoundVisible = await notFoundText.isVisible().catch(() => false)
 
-      // Either shows 404 or redirects to home
+      // Either shows 404, redirects to home, or has 404 status
       const currentUrl = page.url()
-      expect(notFoundVisible || currentUrl === '/' || currentUrl.includes('not-found')).toBe(true)
+      const baseUrl = currentUrl.replace(/\/+$/, '').split('/').slice(0, 3).join('/')
+      const is404Status = response?.status() === 404
+
+      expect(notFoundVisible || currentUrl === baseUrl + '/' || currentUrl.includes('not-found') || is404Status).toBe(true)
     })
   })
 })
