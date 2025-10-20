@@ -6,6 +6,7 @@ import { UserMenu } from './user-menu'
 import { Button } from '@/components/ui/button'
 import { ThemeToggle } from '@/components/theme/theme-toggle'
 import { useShortcuts } from '@/components/keyboard-shortcuts/shortcuts-provider'
+import { NotificationBell } from '@/components/notifications/notification-bell'
 import { CommandIcon } from 'lucide-react'
 
 export function Header() {
@@ -64,6 +65,7 @@ export function Header() {
             <>
               {user ? (
                 <>
+                  <NotificationBell />
                   <Button asChild className="hidden sm:inline-flex">
                     <Link href="/prompts/new">
                       Create Prompt
