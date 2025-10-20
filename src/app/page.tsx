@@ -33,15 +33,15 @@ export default async function Home() {
   return (
     <div className="container mx-auto px-4 py-8 md:py-12">
       {/* Hero Section */}
-      <div className="mb-10 md:mb-12 text-center space-y-4 max-w-4xl mx-auto">
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-          <span className="text-2xl">🪩</span>
-          <span>Welcome to Prompt Party</span>
+      <div className="mb-10 md:mb-12 text-center space-y-6 max-w-4xl mx-auto animate-in fade-in slide-in-from-bottom-4">
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass glow-on-hover text-sm font-medium mb-4">
+          <span className="text-2xl">✨</span>
+          <span className="gradient-text font-semibold">Welcome to Prompt Party</span>
         </div>
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight gradient-text">
           Discover AI Prompts
         </h1>
-        <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+        <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed text-balance">
           Explore, share, and remix the best prompts from the community. Join thousands of creators crafting the future of AI.
         </p>
       </div>

@@ -158,4 +158,56 @@
       transform: translateX(0);
     }
   }
+
+  /* 2025 UI/UX Best Practices */
+  .glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .dark .glass {
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .glow-on-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .glow-on-hover:hover {
+    box-shadow: 0 0 25px rgba(139, 92, 246, 0.4), 0 0 50px rgba(236, 72, 153, 0.2);
+    transform: translateY(-2px);
+  }
+
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient 8s ease infinite;
+  }
+
+  @keyframes gradient {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  .bento-card {
+    @apply rounded-2xl border bg-card p-6 shadow-sm transition-all duration-300;
+    @apply hover:shadow-lg hover:border-primary/20 hover:-translate-y-1;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    @apply bg-gradient-to-r from-purple-500 via-pink-500 to-amber-500 bg-clip-text text-transparent;
+  }
+
+  /* Smooth button hover */
+  .btn-smooth-hover {
+    @apply transition-all duration-300 ease-out;
+    @apply hover:shadow-lg hover:scale-105 active:scale-95;
+  }
 }

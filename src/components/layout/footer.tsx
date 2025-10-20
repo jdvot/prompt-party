@@ -1,22 +1,23 @@
 import Link from 'next/link'
+import { Logo, LogoText } from '@/components/brand/logo'
 
 export function Footer() {
   return (
-    <footer className="border-t bg-muted/30 mt-auto">
+    <footer className="border-t bg-muted/30 mt-auto backdrop-blur-sm">
       <div className="container mx-auto px-4 py-10 md:py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-10">
           <div className="md:col-span-1">
-            <Link href="/" className="flex items-center gap-2 font-bold text-lg mb-4 hover:opacity-80 transition-opacity duration-200">
-              <span className="text-2xl">🪩</span>
-              <span>Prompt Party</span>
+            <Link href="/" className="flex items-center gap-3 font-bold text-lg mb-4 group">
+              <Logo className="w-8 h-8 transition-transform duration-300 group-hover:scale-110" />
+              <LogoText />
             </Link>
-            <p className="text-sm text-muted-foreground leading-relaxed">
+            <p className="text-sm text-muted-foreground leading-relaxed text-balance">
               The social network for discovering and sharing the best AI prompts
             </p>
           </div>
 
           <div>
-            <h3 className="font-semibold mb-4 text-foreground">Community</h3>
+            <h3 className="font-semibold mb-4 text-foreground gradient-text">Community</h3>
             <div className="space-y-3">
               <Link href="/" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
                 Feed
@@ -31,7 +32,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="font-semibold mb-4 text-foreground">Resources</h3>
+            <h3 className="font-semibold mb-4 text-foreground gradient-text">Resources</h3>
             <div className="space-y-3">
               <Link href="/pricing" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
                 Pricing
@@ -52,7 +53,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="font-semibold mb-4 text-foreground">Legal</h3>
+            <h3 className="font-semibold mb-4 text-foreground gradient-text">Legal</h3>
             <div className="space-y-3">
               <Link href="/privacy" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
                 Privacy Policy

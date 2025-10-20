@@ -33,10 +33,10 @@ export async function TrendingTags() {
   }
 
   return (
-    <div className="bg-card border rounded-lg p-6">
+    <div className="glass rounded-2xl p-6 shadow-sm">
       <div className="flex items-center gap-2 mb-4">
         <TrendingUpIcon className="w-5 h-5 text-primary" />
-        <h2 className="text-lg font-semibold">Trending Tags</h2>
+        <h2 className="text-lg font-semibold gradient-text">Trending Tags</h2>
       </div>
 
       <div className="space-y-2">
@@ -44,7 +44,7 @@ export async function TrendingTags() {
           <Link
             key={tag}
             href={`/search?tag=${encodeURIComponent(tag)}`}
-            className="flex items-center justify-between p-2 rounded-md hover:bg-muted transition-colors group"
+            className="flex items-center justify-between p-2 rounded-md hover:bg-muted/50 transition-all duration-200 group"
           >
             <div className="flex items-center gap-2">
               <span className="text-xs font-mono text-muted-foreground w-6">

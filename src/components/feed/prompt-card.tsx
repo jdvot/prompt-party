@@ -31,7 +31,7 @@ export function PromptCard({
 
   return (
     <Link href={`/prompts/${id}`} className="block group">
-      <Card className="h-full transition-all duration-200 hover:shadow-lg hover:border-primary/50 hover:-translate-y-0.5">
+      <Card className="h-full bento-card overflow-hidden relative">
         <CardHeader className="space-y-3">
           <div className="flex items-start justify-between gap-4">
             <div className="flex-1 min-w-0">

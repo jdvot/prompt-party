@@ -9,6 +9,7 @@ import { useShortcuts } from '@/components/keyboard-shortcuts/shortcuts-provider
 import { NotificationBell } from '@/components/notifications/notification-bell'
 import { SearchAutocomplete } from '@/components/search/search-autocomplete'
 import { CommandIcon } from 'lucide-react'
+import { Logo, LogoText } from '@/components/brand/logo'
 
 export function Header() {
   const { user, loading } = useUser()
@@ -18,9 +19,11 @@ export function Header() {
     <header className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-sticky">
       <div className="container mx-auto px-4 py-4 flex flex-col md:flex-row items-center justify-between gap-4">
         <div className="flex items-center gap-8 w-full md:w-auto justify-between md:justify-start">
-          <Link href="/" className="flex items-center gap-2 font-bold text-xl hover:opacity-80 transition-opacity duration-200">
-            <span className="text-3xl">🪩</span>
-            <span className="hidden sm:inline">Prompt Party</span>
+          <Link href="/" className="flex items-center gap-3 group">
+            <Logo className="w-10 h-10 transition-transform duration-300 group-hover:scale-110" />
+            <span className="hidden sm:inline">
+              <LogoText className="text-xl" />
+            </span>
           </Link>
 
           <nav className="hidden lg:flex items-center gap-6">
