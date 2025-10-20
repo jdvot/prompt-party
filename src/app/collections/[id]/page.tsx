@@ -42,12 +42,7 @@ export default async function CollectionPage({ params }: PageProps) {
   // Fetch collection
   const { data: collection, error } = await supabase
     .from('collections')
-    .select(`
-      *,
-      profiles:user_id (
-        name
-      )
-    `)
+    .select('*')
     .eq('id', id)
     .single()
 
@@ -55,12 +50,25 @@ export default async function CollectionPage({ params }: PageProps) {
     notFound()
   }
 
+  // Fetch profile separately
+  const { data: ownerProfile } = await supabase
+    .from('profiles')
+    .select('name')
+    .eq('user_id', collection.user_id)
+    .single()
+
+  // Attach profile to collection
+  const collectionWithProfile = {
+    ...collection,
+    profiles: ownerProfile
+  }
+
   // Check access
-  if (!collection.is_public && collection.user_id !== user?.id) {
+  if (!collectionWithProfile.is_public && collectionWithProfile.user_id !== user?.id) {
     notFound()
   }
 
-  const isOwner = user?.id === collection.user_id
+  const isOwner = user?.id === collectionWithProfile.user_id
 
   // Fetch collection items
   const { data: items } = await supabase
@@ -108,7 +116,7 @@ export default async function CollectionPage({ params }: PageProps) {
       data: { user },
     } = await supabase.auth.getUser()
 
-    if (!user || user.id !== collection.user_id) {
+    if (!user || user.id !== collectionWithProfile.user_id) {
       return
     }
 
@@ -123,10 +131,10 @@ export default async function CollectionPage({ params }: PageProps) {
         <div className="mb-8">
           <div className="flex items-start justify-between mb-4">
             <div>
-              <h1 className="text-3xl font-bold mb-2">{collection.name}</h1>
+              <h1 className="text-3xl font-bold mb-2">{collectionWithProfile.name}</h1>
               <p className="text-muted-foreground">
-                by {collection.profiles?.name || 'Anonymous'}
-                {!collection.is_public && (
+                by {collectionWithProfile.profiles?.name || 'Anonymous'}
+                {!collectionWithProfile.is_public && (
                   <span className="ml-2 text-amber-600">• Private</span>
                 )}
               </p>
@@ -137,8 +145,8 @@ export default async function CollectionPage({ params }: PageProps) {
               </div>
             )}
           </div>
-          {collection.description && (
-            <p className="text-muted-foreground mt-4">{collection.description}</p>
+          {collectionWithProfile.description && (
+            <p className="text-muted-foreground mt-4">{collectionWithProfile.description}</p>
           )}
         </div>
 
