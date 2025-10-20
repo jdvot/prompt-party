@@ -11,15 +11,10 @@ export async function GET(request: Request) {
   const supabase = await createClient()
 
   try {
+    // Use view that joins prompts with profiles
     let query = supabase
-      .from('prompts')
-      .select(`
-        *,
-        profiles:author (
-          name,
-          avatar_url
-        )
-      `)
+      .from('prompts_with_profiles')
+      .select('*')
       .eq('is_public', true)
       .range(offset, offset + limit - 1)
 
