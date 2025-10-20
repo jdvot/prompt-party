@@ -89,17 +89,28 @@ export default async function PromptDetailPage({ params }: PageProps) {
   }
 
   // Fetch comments
-  const { data: comments } = await supabase
+  const { data: commentsData } = await supabase
     .from('comments')
-    .select(`
-      *,
-      profiles:user_id (
-        name,
-        avatar_url
-      )
-    `)
+    .select('*')
     .eq('prompt_id', id)
     .order('created_at', { ascending: false })
+
+  // Fetch profiles for comments separately
+  const comments = commentsData || []
+  const profilePromises = comments.map(async (comment) => {
+    const { data: profile } = await supabase
+      .from('profiles')
+      .select('name, avatar_url')
+      .eq('user_id', comment.user_id)
+      .single()
+
+    return {
+      ...comment,
+      profiles: profile
+    }
+  })
+
+  const commentsWithProfiles = await Promise.all(profilePromises)
 
   // Check if this prompt is a remix
   const { data: forkInfo } = await supabase
@@ -217,11 +228,11 @@ export default async function PromptDetailPage({ params }: PageProps) {
         {/* Comments Section */}
         <div className="mt-12 border-t pt-8">
           <h2 className="text-2xl font-bold mb-6">
-            Comments {comments && comments.length > 0 && `(${comments.length})`}
+            Comments {commentsWithProfiles && commentsWithProfiles.length > 0 && `(${commentsWithProfiles.length})`}
           </h2>
           <CommentList
             promptId={prompt.id}
-            initialComments={comments || []}
+            initialComments={commentsWithProfiles || []}
             userId={user?.id}
           />
         </div>

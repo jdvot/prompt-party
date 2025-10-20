@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { createClient } from '@/lib/supabase/client'
 import { useRouter } from 'next/navigation'
 
@@ -23,13 +23,7 @@ export function SaveToCollectionButton({ promptId, userId }: SaveToCollectionBut
   const router = useRouter()
   const supabase = createClient()
 
-  useEffect(() => {
-    if (isOpen && userId) {
-      loadCollections()
-    }
-  }, [isOpen, userId])
-
-  const loadCollections = async () => {
+  const loadCollections = useCallback(async () => {
     if (!userId) return
 
     setLoading(true)
@@ -48,7 +42,13 @@ export function SaveToCollectionButton({ promptId, userId }: SaveToCollectionBut
     } finally {
       setLoading(false)
     }
-  }
+  }, [userId, supabase])
+
+  useEffect(() => {
+    if (isOpen && userId) {
+      loadCollections()
+    }
+  }, [isOpen, userId, loadCollections])
 
   const handleClick = () => {
     if (!userId) {

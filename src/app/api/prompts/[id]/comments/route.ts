@@ -9,21 +9,32 @@ export async function GET(
   const supabase = await createClient()
 
   try {
-    const { data: comments, error } = await supabase
+    const { data: commentsData, error } = await supabase
       .from('comments')
-      .select(`
-        *,
-        profiles:user_id (
-          name,
-          avatar_url
-        )
-      `)
+      .select('*')
       .eq('prompt_id', id)
       .order('created_at', { ascending: false })
 
     if (error) throw error
 
-    return NextResponse.json({ comments })
+    // Fetch profiles separately
+    const comments = commentsData || []
+    const commentsWithProfiles = await Promise.all(
+      comments.map(async (comment) => {
+        const { data: profile } = await supabase
+          .from('profiles')
+          .select('name, avatar_url')
+          .eq('user_id', comment.user_id)
+          .single()
+
+        return {
+          ...comment,
+          profiles: profile
+        }
+      })
+    )
+
+    return NextResponse.json({ comments: commentsWithProfiles })
   } catch (error: any) {
     console.error('Error fetching comments:', error)
     return NextResponse.json(

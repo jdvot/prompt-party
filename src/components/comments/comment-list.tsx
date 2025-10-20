@@ -41,21 +41,25 @@ export function CommentList({ promptId, initialComments, userId }: CommentListPr
           filter: `prompt_id=eq.${promptId}`,
         },
         async (payload) => {
-          // Fetch the new comment with author info
+          // Fetch the new comment
           const { data: newComment } = await supabase
             .from('comments')
-            .select(`
-              *,
-              profiles:user_id (
-                name,
-                avatar_url
-              )
-            `)
+            .select('*')
             .eq('id', payload.new.id)
             .single()
 
           if (newComment) {
-            setComments((prev) => [newComment, ...prev])
+            // Fetch profile separately
+            const { data: profile } = await supabase
+              .from('profiles')
+              .select('name, avatar_url')
+              .eq('user_id', newComment.user_id)
+              .single()
+
+            setComments((prev) => [{
+              ...newComment,
+              profiles: profile
+            }, ...prev])
           }
         }
       )
