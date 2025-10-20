@@ -7,6 +7,7 @@ import { SaveToCollectionButton } from '@/components/prompts/save-to-collection-
 import { ShareButton } from '@/components/prompts/share-button'
 import { DuplicateButton } from '@/components/prompts/duplicate-button'
 import { ViewCounter } from '@/components/prompts/view-counter'
+import { EmbedButton } from '@/components/prompts/embed-button'
 import { CommentList } from '@/components/comments/comment-list'
 import { formatDistanceToNow } from 'date-fns'
 import type { Metadata } from 'next'
@@ -236,6 +237,8 @@ export default async function PromptDetailPage({ params }: PageProps) {
             title={prompt.title}
             description={prompt.body.substring(0, 160)}
           />
+
+          <EmbedButton promptId={prompt.id} />
         </div>
 
         {/* Comments Section */}
