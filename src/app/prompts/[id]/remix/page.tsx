@@ -27,18 +27,22 @@ export default async function RemixPromptPage({ params }: PageProps) {
   // Fetch original prompt
   const { data: originalPrompt, error } = await supabase
     .from('prompts')
-    .select(`
-      *,
-      profiles:author (
-        name
-      )
-    `)
+    .select('*')
     .eq('id', id)
     .single()
 
   if (error || !originalPrompt) {
     notFound()
   }
+
+  // Fetch author profile
+  const { data: authorProfile } = await supabase
+    .from('profiles')
+    .select('name')
+    .eq('user_id', originalPrompt.author)
+    .single()
+
+  originalPrompt.profiles = authorProfile
 
   // Check if original prompt is public or user is author
   if (!originalPrompt.is_public && originalPrompt.author !== user.id) {
