@@ -8,6 +8,10 @@ import { ShareButton } from '@/components/prompts/share-button'
 import { DuplicateButton } from '@/components/prompts/duplicate-button'
 import { ViewCounter } from '@/components/prompts/view-counter'
 import { EmbedButton } from '@/components/prompts/embed-button'
+import { ExportPrompt } from '@/components/prompts/export-prompt'
+import { VersionHistory } from '@/components/prompts/version-history'
+import { RemixTree } from '@/components/prompts/remix-tree'
+import { PromptOptimizer } from '@/components/ai-optimizer/prompt-optimizer'
 import { PromptPlayground } from '@/components/ai-tester/prompt-playground'
 import { CommentList } from '@/components/comments/comment-list'
 import { formatDistanceToNow } from 'date-fns'
@@ -39,6 +43,24 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     openGraph: {
       title: prompt.title,
       description: prompt.body.substring(0, 160),
+      type: 'article',
+      url: `https://prompt-party.netlify.app/prompts/${id}`,
+      siteName: 'Prompt Party',
+      images: [
+        {
+          url: 'https://prompt-party.netlify.app/og-image.png',
+          width: 1200,
+          height: 630,
+          alt: prompt.title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: prompt.title,
+      description: prompt.body.substring(0, 160),
+      images: ['https://prompt-party.netlify.app/og-image.png'],
+      creator: '@promptparty',
     },
   }
 }
@@ -240,6 +262,14 @@ export default async function PromptDetailPage({ params }: PageProps) {
           />
 
           <EmbedButton promptId={prompt.id} />
+
+          <ExportPrompt prompt={prompt} />
+
+          <VersionHistory promptId={prompt.id} />
+
+          <RemixTree promptId={prompt.id} promptTitle={prompt.title} />
+
+          <PromptOptimizer promptContent={prompt.body} />
         </div>
 
         {/* AI Prompt Tester */}

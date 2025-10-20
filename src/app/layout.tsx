@@ -9,8 +9,48 @@ import { ShortcutsProvider } from "@/components/keyboard-shortcuts/shortcuts-pro
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Prompt Party - The Social Network for AI Prompts",
-  description: "Create, share, and discover the most inspiring AI prompts",
+  metadataBase: new URL('https://prompt-party.netlify.app'),
+  title: {
+    default: "Prompt Party - The Social Network for AI Prompts",
+    template: "%s | Prompt Party"
+  },
+  description: "Create, share, and discover the most inspiring AI prompts. Join the community of prompt engineers, creators, and AI enthusiasts.",
+  keywords: ['AI prompts', 'ChatGPT', 'Claude', 'Gemini', 'prompt engineering', 'prompt library', 'AI tools', 'GPT-4', 'prompt sharing'],
+  authors: [{ name: 'Prompt Party' }],
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://prompt-party.netlify.app',
+    siteName: 'Prompt Party',
+    title: 'Prompt Party - The Social Network for AI Prompts',
+    description: 'Create, share, and discover the most inspiring AI prompts. Join the community of prompt engineers, creators, and AI enthusiasts.',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Prompt Party - Social Network for AI Prompts',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Prompt Party - The Social Network for AI Prompts',
+    description: 'Create, share, and discover the most inspiring AI prompts.',
+    images: ['/og-image.png'],
+    creator: '@promptparty',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 };
 
 export default function RootLayout({

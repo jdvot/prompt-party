@@ -51,11 +51,8 @@ export function MarkdownEditor({ value, onChange, placeholder }: MarkdownEditorP
             variant="ghost"
             size="sm"
             className="h-7 px-2 text-xs"
-            onClick={() => {
-              const selection = value
-              onChange(value + '\n**bold text**')
-            }}
-            title="Bold"
+            onClick={() => onChange(value + '\n**bold text**')}
+            title="Bold (Ctrl+B)"
           >
             <span className="font-bold">B</span>
           </Button>
@@ -64,10 +61,8 @@ export function MarkdownEditor({ value, onChange, placeholder }: MarkdownEditorP
             variant="ghost"
             size="sm"
             className="h-7 px-2 text-xs"
-            onClick={() => {
-              onChange(value + '\n*italic text*')
-            }}
-            title="Italic"
+            onClick={() => onChange(value + '\n*italic text*')}
+            title="Italic (Ctrl+I)"
           >
             <span className="italic">I</span>
           </Button>
@@ -76,12 +71,70 @@ export function MarkdownEditor({ value, onChange, placeholder }: MarkdownEditorP
             variant="ghost"
             size="sm"
             className="h-7 px-2 text-xs"
-            onClick={() => {
-              onChange(value + '\n`code`')
-            }}
-            title="Code"
+            onClick={() => onChange(value + '\n`code`')}
+            title="Inline Code"
           >
             <span className="font-mono">{`</>`}</span>
+          </Button>
+          <Button
+            type="button"
+            variant="ghost"
+            size="sm"
+            className="h-7 px-2 text-xs"
+            onClick={() => onChange(value + '\n```\ncode block\n```')}
+            title="Code Block"
+          >
+            <span className="font-mono">{ }</span>
+          </Button>
+          <Button
+            type="button"
+            variant="ghost"
+            size="sm"
+            className="h-7 px-2 text-xs"
+            onClick={() => onChange(value + '\n# Heading')}
+            title="Heading"
+          >
+            H
+          </Button>
+          <Button
+            type="button"
+            variant="ghost"
+            size="sm"
+            className="h-7 px-2 text-xs"
+            onClick={() => onChange(value + '\n- List item')}
+            title="Bullet List"
+          >
+            •
+          </Button>
+          <Button
+            type="button"
+            variant="ghost"
+            size="sm"
+            className="h-7 px-2 text-xs"
+            onClick={() => onChange(value + '\n1. Numbered item')}
+            title="Numbered List"
+          >
+            1.
+          </Button>
+          <Button
+            type="button"
+            variant="ghost"
+            size="sm"
+            className="h-7 px-2 text-xs"
+            onClick={() => onChange(value + '\n> Quote')}
+            title="Quote"
+          >
+            "
+          </Button>
+          <Button
+            type="button"
+            variant="ghost"
+            size="sm"
+            className="h-7 px-2 text-xs"
+            onClick={() => onChange(value + '\n[link text](url)')}
+            title="Link"
+          >
+            🔗
           </Button>
         </div>
       </div>
