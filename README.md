@@ -9,15 +9,39 @@
 
 ## 🚀 Features
 
-✅ **Supabase Authentication** — email / Google / GitHub  
-✅ **Realtime votes & comments**  
-✅ **Public or private prompt collections**  
-✅ **Remix system** — fork and enhance prompts  
-✅ **Markdown editor & preview**  
-✅ **RLS (Row Level Security)** for safety  
-✅ **Next.js App Router + Edge Functions**  
-✅ **Netlify Free Tier** — deploy instantly via CLI  
+### Core Features
+✅ **Supabase Authentication** — email / Google / GitHub
+✅ **Realtime votes & comments**
+✅ **Public or private prompt collections**
+✅ **Remix system** — fork and enhance prompts
+✅ **Markdown editor & preview**
+✅ **RLS (Row Level Security)** for safety
+✅ **Next.js App Router + Edge Functions**
+✅ **Netlify Free Tier** — deploy instantly via CLI
 ✅ **Optimized for SEO & social sharing**
+
+### New Features ✨
+
+#### 🎯 Viral Growth
+- **Social Sharing** — Twitter, LinkedIn, native share API, copy link
+- **View Counter** — Real-time view tracking with session-based deduplication
+- **Duplicate Prompts** — One-click template creation
+- **Trending Tags** — Discover top tags from last 7 days
+
+#### ⌨️ Power User Features
+- **Keyboard Shortcuts** — Global (`H`, `T`, `C`, `Cmd+N`, `?`) and page-specific (`L`, `S`, `D`, `R`, `Shift+S`)
+- **Embeddable Widgets** — Share prompts anywhere with iframe embeds
+- **Enhanced Profiles** — Stats dashboard (prompts, likes, views, remixes) + achievement badges
+
+#### 🤖 AI & Monetization
+- **AI Prompt Tester** — Test prompts with GPT-4, Claude 3, Gemini Pro
+- **Credit System** — Free: 10 tests/month, Pro: unlimited
+- **Pricing Tiers** — Free, Pro ($9.99/mo), Team ($29/mo), Business ($99/mo)
+
+#### 🏆 Gamification
+- **Prompt Challenges** — Weekly challenges with categories, difficulty levels, and rewards
+- **Achievement Badges** — Creator, Popular, Influencer, Veteran, Prolific, Premium
+- **Community Voting** — Vote on challenge submissions
 
 ---
 
@@ -228,13 +252,41 @@ Upgrade only if your traffic explodes 🚀
 
 ---
 
-## 🧭 MVP Roadmap
+## 🧭 Roadmap
 
+### Phase 1: Core MVP ✅
 - [x] Supabase Auth & Profiles
 - [x] CRUD Prompts
 - [x] Likes & Comments (Realtime)
-- [ ] Remix & Collections
-- [ ] Trending / Top Feeds
+- [x] Remix & Collections
+- [x] Trending / Top Feeds
+
+### Phase 2: Viral Growth ✅
+- [x] Social sharing
+- [x] View counter
+- [x] Duplicate prompts
+- [x] Trending tags
+- [x] Embeddable widgets
+
+### Phase 3: Power Features ✅
+- [x] Keyboard shortcuts
+- [x] Enhanced profiles with stats
+- [x] Achievement badges
+- [x] AI Prompt Tester
+- [x] Credit system
+
+### Phase 4: Monetization ✅
+- [x] Pricing page
+- [x] Freemium tiers (Free, Pro, Team, Business)
+- [x] Prompt challenges
+- [x] Community voting
+
+### Phase 5: Next Up 🚧
+- [ ] Email notifications
+- [ ] Search autocomplete
+- [ ] Analytics dashboard (Pro feature)
+- [ ] Team workspaces
+- [ ] API access (Business tier)
 - [ ] Public Beta Launch
 
 ---
