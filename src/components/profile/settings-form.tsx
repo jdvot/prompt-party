@@ -16,6 +16,7 @@ interface SettingsFormProps {
 export function SettingsForm({ user, profile }: SettingsFormProps) {
   const router = useRouter()
   const [name, setName] = useState(profile?.name || '')
+  const [username, setUsername] = useState((profile as any)?.username || '')
   const [loading, setLoading] = useState(false)
   const [message, setMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null)
   const supabase = createClient()
@@ -28,7 +29,10 @@ export function SettingsForm({ user, profile }: SettingsFormProps) {
     try {
       const { error } = await supabase
         .from('profiles')
-        .update({ name })
+        .update({
+          name,
+          username: username || null
+        })
         .eq('user_id', user.id)
 
       if (error) throw error
@@ -89,6 +93,23 @@ export function SettingsForm({ user, profile }: SettingsFormProps) {
               placeholder="Your name"
               className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
             />
+          </div>
+
+          <div>
+            <label htmlFor="username" className="block text-sm font-medium mb-2">
+              Username
+            </label>
+            <input
+              id="username"
+              type="text"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              placeholder="username"
+              className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+            />
+            <p className="text-xs text-muted-foreground mt-1">
+              Your public profile will be at /profile/username
+            </p>
           </div>
 
           <button

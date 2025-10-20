@@ -1,6 +1,9 @@
 import { createClient } from '@/lib/supabase/server'
 import { notFound } from 'next/navigation'
+import Link from 'next/link'
 import { MarkdownPreview } from '@/components/editor/markdown-preview'
+import { LikeButton } from '@/components/prompts/like-button'
+import { CommentList } from '@/components/comments/comment-list'
 import { formatDistanceToNow } from 'date-fns'
 import type { Metadata } from 'next'
 
@@ -64,11 +67,72 @@ export default async function PromptDetailPage({ params }: PageProps) {
     notFound()
   }
 
+  // Check if user has liked this prompt
+  let isLiked = false
+  if (user) {
+    const { data: like } = await supabase
+      .from('likes')
+      .select('*')
+      .eq('user_id', user.id)
+      .eq('prompt_id', id)
+      .single()
+
+    isLiked = !!like
+  }
+
+  // Fetch comments
+  const { data: comments } = await supabase
+    .from('comments')
+    .select(`
+      *,
+      profiles:user_id (
+        name,
+        avatar_url
+      )
+    `)
+    .eq('prompt_id', id)
+    .order('created_at', { ascending: false })
+
+  // Check if this prompt is a remix
+  const { data: forkInfo } = await supabase
+    .from('forks')
+    .select(`
+      *,
+      original:original_prompt_id (
+        id,
+        title,
+        profiles:author (
+          name
+        )
+      )
+    `)
+    .eq('forked_prompt_id', id)
+    .single()
+
+  // Get remix count
+  const { count: remixCount } = await supabase
+    .from('forks')
+    .select('*', { count: 'exact', head: true })
+    .eq('original_prompt_id', id)
+
+
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="mb-8">
+          {forkInfo?.original && (
+            <div className="mb-4 text-sm text-muted-foreground">
+              Remixed from{' '}
+              <Link
+                href={`/prompts/${forkInfo.original.id}`}
+                className="text-primary hover:underline font-medium"
+              >
+                {forkInfo.original.title}
+              </Link>{' '}
+              by {forkInfo.original.profiles?.name || 'Anonymous'}
+            </div>
+          )}
           <h1 className="text-4xl font-bold mb-4">{prompt.title}</h1>
 
           <div className="flex items-center gap-4 text-sm text-muted-foreground">
@@ -112,24 +176,17 @@ export default async function PromptDetailPage({ params }: PageProps) {
 
         {/* Actions */}
         <div className="flex items-center gap-4">
-          <button className="flex items-center gap-2 px-4 py-2 border rounded-md hover:bg-accent transition-colors">
-            <svg
-              className="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-              />
-            </svg>
-            <span>{prompt.likes_count}</span>
-          </button>
+          <LikeButton
+            promptId={prompt.id}
+            initialLikes={prompt.likes_count}
+            initialIsLiked={isLiked}
+            userId={user?.id}
+          />
 
-          <button className="flex items-center gap-2 px-4 py-2 border rounded-md hover:bg-accent transition-colors">
+          <Link
+            href={`/prompts/${prompt.id}/remix`}
+            className="flex items-center gap-2 px-4 py-2 border rounded-md hover:bg-accent transition-colors"
+          >
             <svg
               className="w-5 h-5"
               fill="none"
@@ -143,8 +200,8 @@ export default async function PromptDetailPage({ params }: PageProps) {
                 d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
               />
             </svg>
-            <span>Remix</span>
-          </button>
+            <span>Remix {remixCount ? `(${remixCount})` : ''}</span>
+          </Link>
 
           <button className="flex items-center gap-2 px-4 py-2 border rounded-md hover:bg-accent transition-colors">
             <svg
@@ -164,12 +221,16 @@ export default async function PromptDetailPage({ params }: PageProps) {
           </button>
         </div>
 
-        {/* Comments Section Placeholder */}
+        {/* Comments Section */}
         <div className="mt-12 border-t pt-8">
-          <h2 className="text-2xl font-bold mb-6">Comments</h2>
-          <div className="text-center py-8 text-muted-foreground">
-            <p>Comments coming soon...</p>
-          </div>
+          <h2 className="text-2xl font-bold mb-6">
+            Comments {comments && comments.length > 0 && `(${comments.length})`}
+          </h2>
+          <CommentList
+            promptId={prompt.id}
+            initialComments={comments || []}
+            userId={user?.id}
+          />
         </div>
       </div>
     </div>

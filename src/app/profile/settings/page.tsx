@@ -1,6 +1,7 @@
 import { createClient } from '@/lib/supabase/server'
 import { redirect } from 'next/navigation'
 import { SettingsForm } from '@/components/profile/settings-form'
+import { AvatarUpload } from '@/components/profile/avatar-upload'
 
 export const metadata = {
   title: 'Settings | Prompt Party',
@@ -33,7 +34,14 @@ export default async function SettingsPage() {
           <p className="text-muted-foreground">Manage your account settings</p>
         </div>
 
-        <SettingsForm user={user} profile={profile} />
+        <div className="space-y-8">
+          <div className="bg-card border rounded-lg p-6">
+            <h2 className="text-xl font-semibold mb-4">Profile Picture</h2>
+            <AvatarUpload userId={user.id} currentAvatarUrl={profile?.avatar_url} />
+          </div>
+
+          <SettingsForm user={user} profile={profile} />
+        </div>
       </div>
     </div>
   )
