@@ -114,7 +114,7 @@ export function BookmarkButton({ promptId, variant = 'ghost', size = 'sm' }: Boo
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant={variant} size={size} disabled={loading}>
+        <Button variant={variant as any} size={size === 'default' ? 'md' : size} disabled={loading}>
           <BookmarkIcon
             className={`h-4 w-4 ${isBookmarked ? 'fill-current' : ''}`}
           />

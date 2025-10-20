@@ -47,7 +47,7 @@ export async function GET(request: NextRequest) {
   }
 
   const auth = await verifyApiKey(apiKey)
-  if (!auth.valid) {
+  if (!auth.valid || !auth.apiKeyData) {
     return NextResponse.json({ error: auth.error }, { status: 401 })
   }
 
@@ -122,7 +122,7 @@ export async function POST(request: NextRequest) {
   }
 
   const auth = await verifyApiKey(apiKey)
-  if (!auth.valid) {
+  if (!auth.valid || !auth.apiKeyData) {
     return NextResponse.json({ error: auth.error }, { status: 401 })
   }
 

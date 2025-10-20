@@ -103,7 +103,7 @@ export function ShareButton({ promptId, title, description }: ShareButtonProps) 
               <span className="text-sm">Share on LinkedIn</span>
             </button>
 
-            {navigator.share && (
+            {typeof navigator !== 'undefined' && navigator.share && (
               <button
                 onClick={shareNative}
                 className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-muted transition-colors text-left"
