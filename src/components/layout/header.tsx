@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button'
 import { ThemeToggle } from '@/components/theme/theme-toggle'
 import { useShortcuts } from '@/components/keyboard-shortcuts/shortcuts-provider'
 import { NotificationBell } from '@/components/notifications/notification-bell'
+import { SearchAutocomplete } from '@/components/search/search-autocomplete'
 import { CommandIcon } from 'lucide-react'
 
 export function Header() {
@@ -15,14 +16,14 @@ export function Header() {
 
   return (
     <header className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-sticky">
-      <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-        <div className="flex items-center gap-8">
+      <div className="container mx-auto px-4 py-4 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="flex items-center gap-8 w-full md:w-auto justify-between md:justify-start">
           <Link href="/" className="flex items-center gap-2 font-bold text-xl hover:opacity-80 transition-opacity duration-200">
             <span className="text-3xl">🪩</span>
             <span className="hidden sm:inline">Prompt Party</span>
           </Link>
 
-          <nav className="hidden md:flex items-center gap-6">
+          <nav className="hidden lg:flex items-center gap-6">
             <Link
               href="/"
               className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200"
@@ -48,6 +49,11 @@ export function Header() {
               Challenges
             </Link>
           </nav>
+        </div>
+
+        {/* Search bar - centered on desktop, full width on mobile */}
+        <div className="w-full md:flex-1 md:max-w-md md:mx-8">
+          <SearchAutocomplete />
         </div>
 
         <div className="flex items-center gap-2 md:gap-3">
