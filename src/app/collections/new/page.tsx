@@ -1,6 +1,7 @@
 import { createClient } from '@/lib/supabase/server'
 import { redirect } from 'next/navigation'
 import type { Metadata } from 'next'
+import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'New Collection | Prompt Party',
@@ -110,13 +111,12 @@ export default async function NewCollectionPage() {
             >
               Create Collection
             </button>
-            <button
-              type="button"
-              onClick={() => window.history.back()}
-              className="px-6 py-2 border rounded-md hover:bg-accent transition-colors"
+            <Link
+              href="/collections"
+              className="px-6 py-2 border rounded-md hover:bg-accent transition-colors inline-flex items-center"
             >
               Cancel
-            </button>
+            </Link>
           </div>
         </form>
       </div>

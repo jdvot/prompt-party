@@ -2,6 +2,7 @@ import { createClient } from '@/lib/supabase/server'
 import { notFound, redirect } from 'next/navigation'
 import { RemixEditor } from '@/components/editor/remix-editor'
 import type { Metadata } from 'next'
+import Link from 'next/link'
 
 interface PageProps {
   params: Promise<{ id: string }>
@@ -169,13 +170,12 @@ export default async function RemixPromptPage({ params }: PageProps) {
             >
               Publish Remix
             </button>
-            <button
-              type="button"
-              onClick={() => window.history.back()}
-              className="px-6 py-2 border rounded-md hover:bg-accent transition-colors"
+            <Link
+              href={`/prompts/${id}`}
+              className="px-6 py-2 border rounded-md hover:bg-accent transition-colors inline-flex items-center"
             >
               Cancel
-            </button>
+            </Link>
           </div>
         </form>
       </div>
