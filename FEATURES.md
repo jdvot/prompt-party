@@ -593,7 +593,7 @@ These features enable:
 
 ## 📦 Commits Log
 
-1. ✅ **Quick Wins** - Social sharing, view counter, duplicate, trending tags
+1. ✅ **Viral Growth** - Social sharing, view counter, duplicate, trending tags
 2. ✅ **Keyboard Shortcuts** - Global and page-specific shortcuts with help modal
 3. ✅ **Enhanced Profiles** - Stats dashboard and achievement badges
 4. ✅ **Embeddable Widgets** - Iframe embeds with theme support
@@ -603,3 +603,7 @@ These features enable:
 8. ✅ **Notification System** - Real-time notifications with preferences
 9. ✅ **Search Autocomplete** - Smart search with keyboard navigation
 10. ✅ **Analytics Dashboard** - Pro feature with insights and CSV export
+11. ✅ **Team Workspaces** - Collaboration with role-based access
+12. ✅ **Following System** - Social connections and personalized feed
+13. ✅ **API Access** - REST API for Business tier with key management
+14. ✅ **Leaderboards** - Gamified rankings for creators and prompts
