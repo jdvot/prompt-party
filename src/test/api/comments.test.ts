@@ -117,7 +117,7 @@ describe('API /api/prompts/[id]/comments', () => {
       const mockUser = { id: 'user-1', email: 'test@example.com' }
       mockSupabase.auth.getUser.mockResolvedValue({ data: { user: mockUser }, error: null })
 
-      mockSupabase.from.mockImplementation((table) => {
+      mockSupabase.from.mockImplementation((table: string) => {
         if (table === 'comments') {
           return {
             select: vi.fn().mockReturnThis(),

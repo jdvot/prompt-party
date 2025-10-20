@@ -121,7 +121,8 @@ export class PromptDetailPage {
 
   async getComments(): Promise<string[]> {
     const comments = await this.commentsList.locator('.border-b, [data-testid="comment-item"]').all()
-    return Promise.all(comments.map((c) => c.textContent() || ''))
+    const texts = await Promise.all(comments.map((c) => c.textContent()))
+    return texts.filter((t): t is string => t !== null)
   }
 
   async clickRemix() {
