@@ -92,7 +92,7 @@ export default async function FollowingPage() {
                   ))
                 ) : (
                   <p className="text-sm text-muted-foreground text-center py-4">
-                    You're not following anyone yet
+                    You&apos;re not following anyone yet
                   </p>
                 )}
               </CardContent>

@@ -95,7 +95,7 @@ export function ApiKeyManager({ initialKeys }: ApiKeyManagerProps) {
           <CardHeader>
             <CardTitle>API Key Created!</CardTitle>
             <CardDescription>
-              Copy this key now. You won't be able to see it again.
+              Copy this key now. You won&apos;t be able to see it again.
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-3">
@@ -122,7 +122,7 @@ export function ApiKeyManager({ initialKeys }: ApiKeyManagerProps) {
               </Button>
             </div>
             <Button onClick={() => setNewKeyValue(null)} variant="ghost" size="sm">
-              I've saved my key
+              I&apos;ve saved my key
             </Button>
           </CardContent>
         </Card>

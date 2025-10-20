@@ -101,7 +101,7 @@ export default function PricingPage() {
             Choose Your Plan
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Start free, upgrade when you're ready. All plans include access to our community.
+            Start free, upgrade when you&apos;re ready. All plans include access to our community.
           </p>
         </div>
 
