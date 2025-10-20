@@ -42,13 +42,13 @@ export default async function PromptDetailPage({ params }: PageProps) {
   const supabase = await createClient()
 
   // Fetch prompt
-  const { data: prompt, error } = await supabase
+  const { data: promptData, error } = await supabase
     .from('prompts')
     .select('*')
     .eq('id', id)
     .single()
 
-  if (error || !prompt) {
+  if (error || !promptData) {
     notFound()
   }
 
@@ -56,11 +56,14 @@ export default async function PromptDetailPage({ params }: PageProps) {
   const { data: authorProfile } = await supabase
     .from('profiles')
     .select('name, avatar_url, username')
-    .eq('user_id', prompt.author)
+    .eq('user_id', promptData.author)
     .single()
 
-  // Attach profile to prompt
-  prompt.profiles = authorProfile
+  // Create prompt object with profile
+  const prompt = {
+    ...promptData,
+    profiles: authorProfile
+  }
 
   // Check if prompt is public or user is the author
   const {
