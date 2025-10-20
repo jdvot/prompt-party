@@ -4,6 +4,7 @@ import "../styles/globals.css";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { ThemeProvider } from "@/components/theme/theme-provider";
+import { ShortcutsProvider } from "@/components/keyboard-shortcuts/shortcuts-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,11 +22,13 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
         <ThemeProvider defaultTheme="system" storageKey="prompt-party-theme">
-          <div className="flex flex-col min-h-screen">
-            <Header />
-            <main className="flex-1">{children}</main>
-            <Footer />
-          </div>
+          <ShortcutsProvider>
+            <div className="flex flex-col min-h-screen">
+              <Header />
+              <main className="flex-1">{children}</main>
+              <Footer />
+            </div>
+          </ShortcutsProvider>
         </ThemeProvider>
       </body>
     </html>

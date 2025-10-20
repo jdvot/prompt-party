@@ -5,9 +5,12 @@ import { useUser } from '@/lib/supabase/hooks'
 import { UserMenu } from './user-menu'
 import { Button } from '@/components/ui/button'
 import { ThemeToggle } from '@/components/theme/theme-toggle'
+import { useShortcuts } from '@/components/keyboard-shortcuts/shortcuts-provider'
+import { CommandIcon } from 'lucide-react'
 
 export function Header() {
   const { user, loading } = useUser()
+  const { showHelp } = useShortcuts()
 
   return (
     <header className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-sticky">
@@ -41,6 +44,15 @@ export function Header() {
         </div>
 
         <div className="flex items-center gap-2 md:gap-3">
+          <Button
+            variant="ghost"
+            size="sm"
+            className="hidden lg:inline-flex w-9 px-0"
+            onClick={showHelp}
+            aria-label="Keyboard shortcuts"
+          >
+            <CommandIcon className="h-4 w-4" />
+          </Button>
           <ThemeToggle />
           {!loading && (
             <>
