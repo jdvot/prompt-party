@@ -38,7 +38,7 @@ export default async function Home() {
           <span className="text-2xl">✨</span>
           <span className="gradient-text font-semibold">Welcome to Prompt Party</span>
         </div>
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight gradient-text">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight gradient-text text-center">
           Discover AI Prompts
         </h1>
         <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed text-balance">
@@ -47,18 +47,10 @@ export default async function Home() {
       </div>
 
       {/* Main Content Grid */}
-      <div className="grid lg:grid-cols-[1fr_320px] gap-8">
-        {/* Feed Content */}
-        <div className="min-w-0">
+      <div className="flex justify-center">
+        <div className="w-full max-w-4xl">
           <FeedContent initialPrompts={prompts || []} />
         </div>
-
-        {/* Sidebar */}
-        <aside className="space-y-6 hidden lg:block">
-          <Suspense fallback={<div className="bg-card border rounded-lg p-6 h-96 animate-pulse" />}>
-            <TrendingTags />
-          </Suspense>
-        </aside>
       </div>
     </div>
   )

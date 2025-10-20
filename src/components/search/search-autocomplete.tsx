@@ -55,7 +55,7 @@ export function SearchAutocomplete() {
         .from('prompts')
         .select('id, title, body')
         .or(`title.ilike.%${query}%,body.ilike.%${query}%`)
-        .eq('visibility', 'public')
+        .eq('is_public', true)
         .limit(5)
 
       if (prompts) {
@@ -75,7 +75,7 @@ export function SearchAutocomplete() {
         .from('prompts')
         .select('tags')
         .not('tags', 'is', null)
-        .eq('visibility', 'public')
+        .eq('is_public', true)
 
       if (taggedPrompts) {
         const allTags = new Set<string>()
@@ -124,15 +124,32 @@ export function SearchAutocomplete() {
   const handleSelect = (result: SearchResult) => {
     if (result.type === 'prompt') {
       saveRecentSearch(result.title)
+      setIsOpen(false)
       router.push(`/prompts/${result.id}`)
     } else if (result.type === 'tag') {
       saveRecentSearch(result.title)
+      setIsOpen(false)
       router.push(`/?tag=${encodeURIComponent(result.title)}`)
     } else if (result.type === 'recent') {
       setQuery(result.title)
       inputRef.current?.focus()
+      // Trigger search with the recent query
+      setTimeout(() => {
+        if (result.title.trim()) {
+          // If it looks like a tag search, go to tag page
+          router.push(`/?q=${encodeURIComponent(result.title)}`)
+        }
+      }, 100)
     }
-    setIsOpen(false)
+  }
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    if (query.trim()) {
+      saveRecentSearch(query.trim())
+      setIsOpen(false)
+      router.push(`/?q=${encodeURIComponent(query.trim())}`)
+    }
   }
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
@@ -156,7 +173,7 @@ export function SearchAutocomplete() {
   }
 
   return (
-    <div className="relative w-full max-w-md">
+    <form onSubmit={handleSubmit} className="relative w-full max-w-md">
       <div className="relative">
         <SearchIcon className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
         <input
@@ -169,9 +186,11 @@ export function SearchAutocomplete() {
           onBlur={() => setTimeout(() => setIsOpen(false), 200)}
           onKeyDown={handleKeyDown}
           className="w-full pl-10 pr-10 py-2 rounded-md border border-input bg-background text-sm focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+          autoComplete="off"
         />
         {query && (
           <button
+            type="button"
             onClick={() => setQuery('')}
             className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
           >
@@ -180,12 +199,13 @@ export function SearchAutocomplete() {
         )}
       </div>
 
-      {isOpen && results.length > 0 && (
+      {isOpen && (results.length > 0 || query.trim()) && (
         <div className="absolute top-full mt-2 w-full bg-background border border-input rounded-md shadow-lg z-50 max-h-96 overflow-y-auto">
           {query.trim().length === 0 && recentSearches.length > 0 && (
             <div className="flex items-center justify-between px-3 py-2 border-b">
               <span className="text-xs text-muted-foreground font-medium">Recent Searches</span>
               <button
+                type="button"
                 onClick={clearRecentSearches}
                 className="text-xs text-muted-foreground hover:text-foreground"
               >
@@ -198,6 +218,7 @@ export function SearchAutocomplete() {
             const Icon = result.icon
             return (
               <button
+                type="button"
                 key={`${result.type}-${result.id}`}
                 onClick={() => handleSelect(result)}
                 className={`w-full flex items-start gap-3 px-3 py-2 text-left transition-colors ${
@@ -226,10 +247,18 @@ export function SearchAutocomplete() {
           {query && results.length === 0 && (
             <div className="px-3 py-4 text-center text-sm text-muted-foreground">
               No results found for &quot;{query}&quot;
+              <div className="mt-2">
+                <button
+                  type="submit"
+                  className="text-xs text-primary hover:underline"
+                >
+                  Search for &quot;{query}&quot; →
+                </button>
+              </div>
             </div>
           )}
         </div>
       )}
-    </div>
+    </form>
   )
 }

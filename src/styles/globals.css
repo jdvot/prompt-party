@@ -10,50 +10,50 @@
     --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96.1%;
+    --primary: 262 83% 58%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 14% 96%;
     --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 210 40% 96.1%;
+    --muted: 220 14% 96%;
     --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-    --radius: 0.5rem;
+    --accent: 340 82% 52%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 262 83% 58%;
+    --radius: 0.75rem;
 
-    /* Custom colors for semantic states */
+    /* Custom colors - Punchy & Friendly theme */
     --success: 142 76% 36%;
-    --success-foreground: 210 40% 98%;
+    --success-foreground: 0 0% 100%;
     --warning: 38 92% 50%;
-    --warning-foreground: 222.2 84% 4.9%;
+    --warning-foreground: 0 0% 100%;
     --info: 199 89% 48%;
-    --info-foreground: 210 40% 98%;
+    --info-foreground: 0 0% 100%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
+    --card: 224 71% 6%;
+    --card-foreground: 213 31% 91%;
+    --popover: 224 71% 4%;
+    --popover-foreground: 213 31% 91%;
+    --primary: 263 70% 65%;
+    --primary-foreground: 213 31% 91%;
+    --secondary: 215 28% 17%;
+    --secondary-foreground: 213 31% 91%;
+    --muted: 223 47% 11%;
+    --muted-foreground: 215 16% 57%;
+    --accent: 216 34% 17%;
+    --accent-foreground: 213 31% 91%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 213 31% 91%;
+    --border: 216 34% 17%;
+    --input: 216 34% 17%;
+    --ring: 263 70% 65%;
 
     /* Dark mode semantic colors */
     --success: 142 71% 45%;
@@ -77,6 +77,37 @@
   body {
     @apply bg-background text-foreground antialiased;
     font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Cursor improvements */
+  a, button, [role="button"], [type="button"], [type="submit"], [type="reset"] {
+    cursor: pointer;
+  }
+
+  [disabled], [aria-disabled="true"] {
+    cursor: not-allowed;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="search"],
+  textarea,
+  [contenteditable] {
+    cursor: text;
+  }
+
+  input[type="checkbox"],
+  input[type="radio"] {
+    cursor: pointer;
+  }
+
+  .cursor-grab {
+    cursor: grab;
+  }
+
+  .cursor-grab:active {
+    cursor: grabbing;
   }
 
   /* Smooth transitions for theme switching */
@@ -174,10 +205,11 @@
 
   .glow-on-hover {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
   }
 
   .glow-on-hover:hover {
-    box-shadow: 0 0 25px rgba(139, 92, 246, 0.4), 0 0 50px rgba(236, 72, 153, 0.2);
+    box-shadow: 0 0 30px rgba(167, 139, 250, 0.5), 0 0 60px rgba(244, 114, 182, 0.3);
     transform: translateY(-2px);
   }
 
@@ -193,21 +225,70 @@
 
   .bento-card {
     @apply rounded-2xl border bg-card p-6 shadow-sm transition-all duration-300;
-    @apply hover:shadow-lg hover:border-primary/20 hover:-translate-y-1;
+    @apply hover:shadow-xl hover:shadow-primary/10 hover:border-primary/30 hover:-translate-y-1;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .bento-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.3), rgba(236, 72, 153, 0.3));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .bento-card:hover::before {
+    opacity: 1;
   }
 
   .text-balance {
     text-wrap: balance;
   }
 
-  /* Gradient text */
+  /* Gradient text - Modern vibrant gradients */
   .gradient-text {
-    @apply bg-gradient-to-r from-purple-500 via-pink-500 to-amber-500 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-violet-500 via-fuchsia-500 to-pink-500 bg-clip-text text-transparent;
+    animation: gradient-shift 8s ease infinite;
+    background-size: 200% auto;
   }
 
-  /* Smooth button hover */
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% center; }
+    50% { background-position: 100% center; }
+  }
+
+  /* Modern button styles */
+  .btn-primary {
+    @apply bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white;
+    @apply shadow-lg shadow-violet-500/50 hover:shadow-xl hover:shadow-violet-600/50;
+    @apply transition-all duration-300 hover:scale-105 active:scale-95;
+    @apply rounded-xl font-semibold px-6 py-3;
+  }
+
+  .btn-secondary {
+    @apply bg-gradient-to-r from-pink-500 to-rose-500 text-white;
+    @apply shadow-lg shadow-pink-500/50 hover:shadow-xl hover:shadow-pink-600/50;
+    @apply transition-all duration-300 hover:scale-105 active:scale-95;
+    @apply rounded-xl font-semibold px-6 py-3;
+  }
+
   .btn-smooth-hover {
     @apply transition-all duration-300 ease-out;
     @apply hover:shadow-lg hover:scale-105 active:scale-95;
+  }
+
+  /* Punchy card styles */
+  .card-punchy {
+    @apply bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-gray-800;
+    @apply border-2 border-transparent hover:border-violet-500/30;
+    @apply shadow-md hover:shadow-2xl hover:shadow-violet-500/20;
+    @apply transition-all duration-300 rounded-2xl;
   }
 }

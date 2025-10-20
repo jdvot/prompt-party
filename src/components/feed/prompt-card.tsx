@@ -1,4 +1,7 @@
+'use client'
+
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import { formatDistanceToNow } from 'date-fns'
 import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -26,11 +29,20 @@ export function PromptCard({
   likes_count,
   created_at,
 }: PromptCardProps) {
-  // Truncate body for preview
+  const router = useRouter()
   const preview = body.length > 200 ? body.substring(0, 200) + '...' : body
 
+  const handleCardClick = () => {
+    router.push(`/prompts/${id}`)
+  }
+
+  const handleAuthorClick = (e: React.MouseEvent) => {
+    e.stopPropagation()
+    router.push(`/profile/${author.name || 'anonymous'}`)
+  }
+
   return (
-    <Link href={`/prompts/${id}`} className="block group">
+    <div onClick={handleCardClick} className="cursor-pointer group">
       <Card className="h-full bento-card overflow-hidden relative">
         <CardHeader className="space-y-3">
           <div className="flex items-start justify-between gap-4">
@@ -39,12 +51,15 @@ export function PromptCard({
                 {title}
               </h2>
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                <div className="flex items-center gap-2">
+                <button
+                  onClick={handleAuthorClick}
+                  className="flex items-center gap-2 hover:text-primary transition-colors"
+                >
                   <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center text-xs font-medium">
                     {(author.name || 'A').charAt(0).toUpperCase()}
                   </div>
                   <span className="truncate">{author.name || 'Anonymous'}</span>
-                </div>
+                </button>
                 <span className="text-muted-foreground/60">•</span>
                 <time className="text-muted-foreground whitespace-nowrap">
                   {formatDistanceToNow(new Date(created_at), { addSuffix: true })}
@@ -90,6 +105,6 @@ export function PromptCard({
           </div>
         </CardFooter>
       </Card>
-    </Link>
+    </div>
   )
 }

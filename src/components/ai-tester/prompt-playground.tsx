@@ -12,7 +12,7 @@ interface PromptPlaygroundProps {
 
 export function PromptPlayground({ promptContent, userId }: PromptPlaygroundProps) {
   const [isOpen, setIsOpen] = React.useState(false)
-  const [model, setModel] = React.useState<'gpt-4' | 'claude-3' | 'gemini-pro'>('gpt-4')
+  const [model, setModel] = React.useState<'gpt-4' | 'claude-3' | 'gemini-1.5-pro'>('gpt-4')
   const [input, setInput] = React.useState('')
   const [output, setOutput] = React.useState('')
   const [loading, setLoading] = React.useState(false)
@@ -20,9 +20,9 @@ export function PromptPlayground({ promptContent, userId }: PromptPlaygroundProp
   const [error, setError] = React.useState<string | null>(null)
 
   const models = [
-    { id: 'gpt-4' as const, name: 'GPT-4', badge: 'OpenAI' },
-    { id: 'claude-3' as const, name: 'Claude 3', badge: 'Anthropic' },
-    { id: 'gemini-pro' as const, name: 'Gemini Pro', badge: 'Google' },
+    { id: 'gpt-4' as const, name: 'GPT-4', badge: 'OpenAI', color: 'from-emerald-500 to-teal-600' },
+    { id: 'claude-3' as const, name: 'Claude 3', badge: 'Anthropic', color: 'from-orange-500 to-amber-600' },
+    { id: 'gemini-1.5-pro' as const, name: 'Gemini 1.5 Pro', badge: 'Google', color: 'from-blue-500 to-purple-600' },
   ]
 
   const testPrompt = async () => {
@@ -65,12 +65,12 @@ export function PromptPlayground({ promptContent, userId }: PromptPlaygroundProp
     return (
       <Button
         onClick={() => setIsOpen(true)}
-        className="w-full md:w-auto"
+        className="w-full md:w-auto flex items-center mt-2"
         variant="outline"
       >
         <SparklesIcon className="w-4 h-4 mr-2" />
         Test with AI
-        <Badge variant="secondary" className="ml-2 text-xs">
+        <Badge variant="secondary" className="ml-2 text-xs inline-flex items-center">
           Premium
         </Badge>
       </Button>
@@ -98,19 +98,21 @@ export function PromptPlayground({ promptContent, userId }: PromptPlaygroundProp
       {/* Model Selection */}
       <div className="mb-4">
         <label className="text-sm font-medium mb-2 block">AI Model</label>
-        <div className="flex gap-2">
+        <div className="grid grid-cols-3 gap-2">
           {models.map((m) => (
             <button
               key={m.id}
               onClick={() => setModel(m.id)}
-              className={`flex-1 px-4 py-2 rounded-md border transition-colors ${
+              className={`px-3 py-3 rounded-lg border transition-all ${
                 model === m.id
-                  ? 'bg-primary text-primary-foreground border-primary'
-                  : 'bg-background border-input hover:bg-muted'
+                  ? `bg-gradient-to-br ${m.color} text-white border-transparent shadow-lg scale-105`
+                  : 'bg-background border-input hover:bg-muted hover:border-primary/30'
               }`}
             >
               <div className="font-medium text-sm">{m.name}</div>
-              <div className="text-xs opacity-70">{m.badge}</div>
+              <div className={`text-xs mt-1 ${model === m.id ? 'opacity-90' : 'opacity-60'}`}>
+                {m.badge}
+              </div>
             </button>
           ))}
         </div>

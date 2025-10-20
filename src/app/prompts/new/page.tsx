@@ -75,7 +75,7 @@ export default function NewPromptPage() {
               onChange={(e) => setTitle(e.target.value)}
               required
               placeholder="Give your prompt a catchy title..."
-              className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+              className="w-full px-4 py-2 border bg-background rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
             />
           </div>
 
@@ -102,7 +102,7 @@ export default function NewPromptPage() {
               value={tags}
               onChange={(e) => setTags(e.target.value)}
               placeholder="chatgpt, coding, creative (comma-separated)"
-              className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+              className="w-full px-4 py-2 border bg-background rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
             />
             <p className="text-xs text-muted-foreground mt-1">
               Separate tags with commas
