@@ -41,6 +41,15 @@ netlify init            # Link to Netlify site
 netlify status          # Check site connection
 netlify env:list        # List environment variables
 netlify env:set KEY VAL # Set environment variable
+
+# Supabase migrations
+# Apply migrations to your Supabase database
+supabase db push        # Apply all migrations in supabase/migrations/
+
+# Generate TypeScript types from Supabase schema
+supabase gen types typescript --project-id YOUR_PROJECT_ID > src/types/supabase.ts
+
+# Note: Make sure to run migrations and regenerate types after adding new tables/columns
 ```
 
 ## Environment Setup
