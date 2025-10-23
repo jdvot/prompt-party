@@ -1,0 +1,49 @@
+# Limitless - Personalized Health Optimization
+> Advanced blood testing and health tracking platform for optimal wellbeing
+
+Limitless provides comprehensive health optimization through regular blood testing, biomarker analysis, and personalized health insights. We help individuals take control of their health with data-driven approaches.
+
+## Core Services
+- [Health Plans](https://limitless.today/the-plans): Personalized health optimization programs with regular testing
+- [Comprehensive Testing](https://limitless.today/list-of-tests): 50+ biomarkers including hormones, vitamins, minerals, and metabolic markers
+- [What's Included](https://limitless.today/whats-included): Complete service overview with testing frequency and benefits
+- [Why Limitless](https://limitless.today/why): Our mission to make advanced health testing accessible
+
+## Key Features
+- At-home blood collection or clinic visits
+- Physician-reviewed results
+- Personalized health recommendations
+- Progress tracking over time
+- Regular testing schedules (quarterly/bi-annual)
+
+## Testing Categories
+- Hormonal health optimization
+- Metabolic function analysis
+- Cardiovascular health markers
+- Nutritional status assessment
+- Inflammation and immune markers
+- Thyroid function testing
+
+## Company Information
+- Website: https://limitless.today
+- Founded: Health technology company focused on preventive care
+- Mission: Democratizing access to advanced health diagnostics
+
+## Available Languages
+- English: https://limitless.today/en/
+- French: https://limitless.today/fr/
+- Dutch: https://limitless.today/nl/
+
+## Legal
+- [Privacy Policy](https://limitless.today/privacy-policy): Data protection and privacy practices
+- [Terms of Service](https://limitless.today/general-terms-and-conditions): Service terms and conditions
+- [Website Terms](https://limitless.today/website-terms-of-use): Website usage terms
+- [Cookie Policy](https://limitless.today/cookies-policy): Cookie usage information
+
+## Contact
+For more information about our health optimization services, visit https://limitless.today
+
+## Keywords
+health optimization, blood testing, biomarkers, preventive healthcare, personalized medicine, hormone testing, metabolic health, at-home blood tests, health tracking, wellness monitoring
+
+Last updated: October 2025
