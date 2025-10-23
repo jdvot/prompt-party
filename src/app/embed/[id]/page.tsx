@@ -2,6 +2,7 @@ import { createClient } from '@/lib/supabase/server'
 import { notFound } from 'next/navigation'
 import { MarkdownPreview } from '@/components/editor/markdown-preview'
 import { HeartIcon, EyeIcon } from 'lucide-react'
+import Image from 'next/image'
 
 interface PageProps {
   params: Promise<{ id: string }>
@@ -147,9 +148,11 @@ export default async function EmbedPage({ params, searchParams }: PageProps) {
           <div className="header">
             <div className="avatar">
               {author?.avatar_url ? (
-                <img
+                <Image
                   src={author.avatar_url}
                   alt={author.name || 'User'}
+                  width={40}
+                  height={40}
                   style={{
                     width: '100%',
                     height: '100%',

@@ -14,7 +14,12 @@ import { RemixTree } from '@/components/prompts/remix-tree'
 import { PromptOptimizer } from '@/components/ai-optimizer/prompt-optimizer'
 import { PromptPlayground } from '@/components/ai-tester/prompt-playground'
 import { CommentList } from '@/components/comments/comment-list'
+import { HowToUseSection } from '@/components/prompts/how-to-use-section'
+import { Button } from '@/components/ui/button'
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger, DropdownMenuSeparator } from '@/components/ui/dropdown-menu'
+import { MoreHorizontalIcon } from 'lucide-react'
 import { formatDistanceToNow } from 'date-fns'
+import { getTranslations } from 'next-intl/server'
 import type { Metadata } from 'next'
 
 interface PageProps {
@@ -68,6 +73,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 export default async function PromptDetailPage({ params }: PageProps) {
   const { id } = await params
   const supabase = await createClient()
+  const t = await getTranslations('prompts')
+  const tCommon = await getTranslations('common')
+  const tComments = await getTranslations('comments')
 
   // Fetch prompt
   const { data: promptData, error } = await supabase
@@ -169,14 +177,14 @@ export default async function PromptDetailPage({ params }: PageProps) {
         <div className="mb-8">
           {forkInfo?.original && (
             <div className="mb-4 text-sm text-muted-foreground">
-              Remixed from{' '}
+              {t('remixed_from')}{' '}
               <Link
                 href={`/prompts/${forkInfo.original.id}`}
                 className="text-primary hover:underline font-medium"
               >
                 {forkInfo.original.title}
               </Link>{' '}
-              by {forkInfo.original.profiles?.name || 'Anonymous'}
+              {t('original_by')} {forkInfo.original.profiles?.name || tCommon('anonymous')}
             </div>
           )}
           <h1 className="text-4xl font-bold mb-4">{prompt.title}</h1>
@@ -186,7 +194,7 @@ export default async function PromptDetailPage({ params }: PageProps) {
               <div className="w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-medium">
                 {(prompt.profiles?.name || 'A').charAt(0).toUpperCase()}
               </div>
-              <span>{prompt.profiles?.name || 'Anonymous'}</span>
+              <span>{prompt.profiles?.name || tCommon('anonymous')}</span>
             </div>
             <span>•</span>
             <span>
@@ -197,7 +205,7 @@ export default async function PromptDetailPage({ params }: PageProps) {
             {!prompt.is_public && (
               <>
                 <span>•</span>
-                <span className="text-amber-600">Private</span>
+                <span className="text-amber-600">{tCommon('private')}</span>
               </>
             )}
           </div>
@@ -222,54 +230,66 @@ export default async function PromptDetailPage({ params }: PageProps) {
           <MarkdownPreview content={prompt.body} />
         </div>
 
-        {/* Actions */}
-        <div className="flex flex-wrap items-center gap-3">
-          <LikeButton
-            promptId={prompt.id}
-            initialLikes={prompt.likes_count}
-            initialIsLiked={isLiked}
-            userId={user?.id}
-          />
+        {/* How to Use Section */}
+        <HowToUseSection promptContent={prompt.body} />
 
-          <Link
-            href={`/prompts/${prompt.id}/remix`}
-            className="flex items-center gap-2 px-4 py-2 border rounded-md hover:bg-accent transition-colors text-sm"
-          >
-            <svg
-              className="w-4 h-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
-              />
-            </svg>
-            <span>Remix {remixCount ? `(${remixCount})` : ''}</span>
-          </Link>
+        {/* Actions - Reorganized with better hierarchy */}
+        <div className="space-y-4 mb-6">
+          {/* Primary actions row */}
+          <div className="flex flex-wrap items-center gap-3">
+            <LikeButton
+              promptId={prompt.id}
+              initialLikes={prompt.likes_count}
+              initialIsLiked={isLiked}
+              userId={user?.id}
+            />
 
-          <SaveToCollectionButton promptId={prompt.id} userId={user?.id} />
+            <Button asChild variant="primary" size="lg">
+              <Link href={`/prompts/${prompt.id}/remix`}>
+                <svg
+                  className="w-4 h-4 mr-2"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+                  />
+                </svg>
+                {tCommon('remix')} {remixCount ? `(${remixCount})` : ''}
+              </Link>
+            </Button>
 
-          <DuplicateButton promptId={prompt.id} userId={user?.id} />
+            <SaveToCollectionButton promptId={prompt.id} userId={user?.id} />
 
-          <ShareButton
-            promptId={prompt.id}
-            title={prompt.title}
-            description={prompt.body.substring(0, 160)}
-          />
+            <ShareButton
+              promptId={prompt.id}
+              title={prompt.title}
+              description={prompt.body.substring(0, 160)}
+            />
+          </div>
 
-          <EmbedButton promptId={prompt.id} />
-
-          <ExportPrompt prompt={prompt} />
-
-          <VersionHistory promptId={prompt.id} />
-
-          <RemixTree promptId={prompt.id} promptTitle={prompt.title} />
-
-          <PromptOptimizer promptContent={prompt.body} />
+          {/* Secondary actions - collapsible row */}
+          <details className="group">
+            <summary className="cursor-pointer text-sm text-muted-foreground hover:text-foreground transition-colors list-none flex items-center gap-2">
+              <MoreHorizontalIcon className="w-4 h-4" />
+              <span>{t('more_actions')}</span>
+              <svg className="w-4 h-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <div className="mt-3 flex flex-wrap items-center gap-2 pl-6">
+              <DuplicateButton promptId={prompt.id} userId={user?.id} />
+              <EmbedButton promptId={prompt.id} />
+              <ExportPrompt prompt={prompt} />
+              <VersionHistory promptId={prompt.id} />
+              <RemixTree promptId={prompt.id} promptTitle={prompt.title} />
+              <PromptOptimizer promptContent={prompt.body} />
+            </div>
+          </details>
         </div>
 
         {/* AI Prompt Tester */}
@@ -278,7 +298,7 @@ export default async function PromptDetailPage({ params }: PageProps) {
         {/* Comments Section */}
         <div className="mt-12 border-t pt-8">
           <h2 className="text-2xl font-bold mb-6">
-            Comments {commentsWithProfiles && commentsWithProfiles.length > 0 && `(${commentsWithProfiles.length})`}
+            {tComments('title')} {commentsWithProfiles && commentsWithProfiles.length > 0 && `(${commentsWithProfiles.length})`}
           </h2>
           <CommentList
             promptId={prompt.id}

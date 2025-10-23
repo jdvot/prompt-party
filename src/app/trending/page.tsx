@@ -1,5 +1,6 @@
 import { createClient } from '@/lib/supabase/server'
 import { FeedContent } from '@/components/feed/feed-content'
+import { TrendingHeader } from '@/components/pages/trending-header'
 
 export const metadata = {
   title: 'Trending Prompts | Prompt Party',
@@ -15,7 +16,10 @@ export default async function TrendingPage() {
 
   const { data: prompts } = await supabase
     .from('prompts')
-    .select('*')
+    .select(`
+      *,
+      comments:comments(count)
+    `)
     .eq('is_public', true)
     .gte('created_at', sevenDaysAgo.toISOString())
     .order('likes_count', { ascending: false })
@@ -33,6 +37,8 @@ export default async function TrendingPage() {
       const profileMap = new Map(profiles.map(p => [p.user_id, p]))
       prompts.forEach((p: any) => {
         p.profiles = profileMap.get(p.author)
+        // Extract count from nested comments array
+        p.comments_count = p.comments?.[0]?.count || 0
       })
     }
   }
@@ -40,13 +46,7 @@ export default async function TrendingPage() {
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="max-w-4xl mx-auto">
-        <div className="mb-8">
-          <h1 className="text-4xl font-bold mb-2">🔥 Trending This Week</h1>
-          <p className="text-muted-foreground">
-            The hottest prompts from the last 7 days
-          </p>
-        </div>
-
+        <TrendingHeader />
         <FeedContent initialPrompts={prompts || []} />
       </div>
     </div>

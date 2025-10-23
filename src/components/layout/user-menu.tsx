@@ -5,6 +5,7 @@ import type { User } from '@supabase/supabase-js'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
+import { useTranslations } from 'next-intl'
 
 interface UserMenuProps {
   user: User
@@ -15,6 +16,8 @@ export function UserMenu({ user }: UserMenuProps) {
   const menuRef = useRef<HTMLDivElement>(null)
   const router = useRouter()
   const supabase = createClient()
+  const t = useTranslations('nav')
+  const tCommon = useTranslations('common')
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -56,7 +59,7 @@ export function UserMenu({ user }: UserMenuProps) {
             className="block px-4 py-2 text-sm hover:bg-accent transition-colors"
             onClick={() => setIsOpen(false)}
           >
-            Your Profile
+            {t('profile')}
           </Link>
 
           <Link
@@ -64,7 +67,7 @@ export function UserMenu({ user }: UserMenuProps) {
             className="block px-4 py-2 text-sm hover:bg-accent transition-colors"
             onClick={() => setIsOpen(false)}
           >
-            Collections
+            {t('collections')}
           </Link>
 
           <Link
@@ -72,7 +75,7 @@ export function UserMenu({ user }: UserMenuProps) {
             className="block px-4 py-2 text-sm hover:bg-accent transition-colors"
             onClick={() => setIsOpen(false)}
           >
-            Settings
+            {t('settings')}
           </Link>
 
           <div className="border-t mt-1 pt-1">
@@ -80,7 +83,7 @@ export function UserMenu({ user }: UserMenuProps) {
               onClick={handleSignOut}
               className="block w-full text-left px-4 py-2 text-sm hover:bg-accent transition-colors"
             >
-              Sign out
+              {t('logout')}
             </button>
           </div>
         </div>

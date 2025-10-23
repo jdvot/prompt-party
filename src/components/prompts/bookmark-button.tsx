@@ -28,6 +28,7 @@ export function BookmarkButton({ promptId, variant = 'ghost', size = 'sm' }: Boo
   useEffect(() => {
     checkBookmarkStatus()
     loadFolders()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [promptId])
 
   const checkBookmarkStatus = async () => {

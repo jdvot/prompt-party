@@ -30,8 +30,8 @@ export function ShortcutsProvider({ children }: { children: React.ReactNode }) {
       const isMac = navigator.platform.toUpperCase().indexOf('MAC') >= 0
       const modifier = isMac ? e.metaKey : e.ctrlKey
 
-      // ? - Show shortcuts help
-      if (e.key === '?' && !e.shiftKey && !modifier) {
+      // ? - Show shortcuts help (Shift + / on most keyboards)
+      if ((e.key === '?' || (e.key === '/' && e.shiftKey)) && !modifier) {
         e.preventDefault()
         setShowModal(true)
         return

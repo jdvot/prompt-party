@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { FeedFilters } from './feed-filters'
 import { PromptList } from './prompt-list'
+import { PromptCardSkeleton } from './prompt-card-skeleton'
 
 interface Prompt {
   id: string
@@ -11,6 +12,7 @@ interface Prompt {
   tags: string[]
   author: string
   likes_count: number
+  comments_count?: number
   created_at: string
   profiles: {
     name: string | null
@@ -49,8 +51,10 @@ export function FeedContent({ initialPrompts }: FeedContentProps) {
       <FeedFilters activeFilter={activeFilter} onFilterChange={handleFilterChange} />
 
       {loading ? (
-        <div className="flex justify-center py-12">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+        <div className="space-y-4">
+          {Array.from({ length: 5 }).map((_, i) => (
+            <PromptCardSkeleton key={`filter-skeleton-${i}`} />
+          ))}
         </div>
       ) : (
         <PromptList initialPrompts={prompts} sort={activeFilter} />

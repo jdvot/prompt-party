@@ -11,11 +11,13 @@ import {
 import { NotificationList } from './notification-list'
 import { createClient } from '@/lib/supabase/client'
 import { Badge } from '@/components/ui/badge'
+import { useTranslations } from 'next-intl'
 
 export function NotificationBell() {
   const [unreadCount, setUnreadCount] = useState(0)
   const [isOpen, setIsOpen] = useState(false)
   const supabase = createClient()
+  const t = useTranslations('notifications')
 
   useEffect(() => {
     // Fetch unread count
@@ -64,7 +66,7 @@ export function NotificationBell() {
           variant="ghost"
           size="sm"
           className="relative w-9 px-0"
-          aria-label="Notifications"
+          aria-label={t('title')}
         >
           <BellIcon className="h-4 w-4" />
           {unreadCount > 0 && (

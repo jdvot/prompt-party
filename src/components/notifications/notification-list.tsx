@@ -14,6 +14,7 @@ import {
   BellIcon,
   CheckCheckIcon,
 } from 'lucide-react'
+import { useTranslations } from 'next-intl'
 
 type Notification = {
   id: string
@@ -42,6 +43,8 @@ export function NotificationList({ onClose }: NotificationListProps) {
   const [notifications, setNotifications] = useState<Notification[]>([])
   const [loading, setLoading] = useState(true)
   const supabase = createClient()
+  const t = useTranslations('notifications')
+  const tCommon = useTranslations('common')
 
   useEffect(() => {
     fetchNotifications()
@@ -65,6 +68,7 @@ export function NotificationList({ onClose }: NotificationListProps) {
     return () => {
       supabase.removeChannel(channel)
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const fetchNotifications = async () => {
@@ -108,7 +112,7 @@ export function NotificationList({ onClose }: NotificationListProps) {
   if (loading) {
     return (
       <div className="p-6 text-center text-sm text-muted-foreground">
-        Loading notifications...
+        {tCommon('loading')}
       </div>
     )
   }
@@ -117,7 +121,7 @@ export function NotificationList({ onClose }: NotificationListProps) {
     return (
       <div className="p-6 text-center">
         <BellIcon className="mx-auto h-12 w-12 text-muted-foreground opacity-20" />
-        <p className="mt-2 text-sm text-muted-foreground">No notifications yet</p>
+        <p className="mt-2 text-sm text-muted-foreground">{t('empty_state')}</p>
       </div>
     )
   }
@@ -127,7 +131,7 @@ export function NotificationList({ onClose }: NotificationListProps) {
   return (
     <div className="max-h-96 overflow-y-auto">
       <div className="sticky top-0 z-10 flex items-center justify-between border-b bg-background px-4 py-3">
-        <h3 className="font-semibold">Notifications</h3>
+        <h3 className="font-semibold">{t('title')}</h3>
         {unreadCount > 0 && (
           <Button
             variant="ghost"
@@ -136,7 +140,7 @@ export function NotificationList({ onClose }: NotificationListProps) {
             className="h-auto py-1 px-2 text-xs"
           >
             <CheckCheckIcon className="mr-1 h-3 w-3" />
-            Mark all read
+            {t('mark_all_read')}
           </Button>
         )}
       </div>

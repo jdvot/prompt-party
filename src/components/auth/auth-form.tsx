@@ -9,6 +9,7 @@ import { Label } from '@/components/ui/label'
 import { Alert, AlertDescription } from '@/components/ui/alert'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import Link from 'next/link'
+import { useTranslations } from 'next-intl'
 
 interface AuthFormProps {
   mode: 'login' | 'signup'
@@ -23,6 +24,8 @@ export function AuthForm({ mode }: AuthFormProps) {
   const [success, setSuccess] = useState<string | null>(null)
   const router = useRouter()
   const supabase = createClient()
+  const t = useTranslations('auth')
+  const tCommon = useTranslations('common')
 
   const handleEmailAuth = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -42,7 +45,7 @@ export function AuthForm({ mode }: AuthFormProps) {
           },
         })
         if (error) throw error
-        setSuccess('Check your email for the confirmation link!')
+        setSuccess(t('magic_link_sent'))
       } else {
         const { error } = await supabase.auth.signInWithPassword({
           email,
@@ -81,12 +84,10 @@ export function AuthForm({ mode }: AuthFormProps) {
       <Card>
         <CardHeader className="space-y-1">
           <CardTitle className="text-3xl font-bold text-center">
-            {mode === 'login' ? 'Welcome back' : 'Create your account'}
+            {mode === 'login' ? t('login_title') : t('signup_title')}
           </CardTitle>
           <CardDescription className="text-center">
-            {mode === 'login'
-              ? 'Sign in to continue to Prompt Party'
-              : 'Join the community of AI prompt creators'}
+            {mode === 'login' ? t('login_subtitle') : t('signup_subtitle')}
           </CardDescription>
         </CardHeader>
 
@@ -127,7 +128,7 @@ export function AuthForm({ mode }: AuthFormProps) {
                 d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
               />
             </svg>
-            Continue with Google
+            {t('or_continue_with')} {t('google')}
           </Button>
 
           <div className="relative">
@@ -136,7 +137,7 @@ export function AuthForm({ mode }: AuthFormProps) {
             </div>
             <div className="relative flex justify-center text-xs uppercase">
               <span className="bg-card px-2 text-muted-foreground">
-                Or continue with email
+                {t('or_continue_with')} {t('email')}
               </span>
             </div>
           </div>
@@ -144,34 +145,34 @@ export function AuthForm({ mode }: AuthFormProps) {
           <form onSubmit={handleEmailAuth} className="space-y-4">
             {mode === 'signup' && (
               <div className="space-y-2">
-                <Label htmlFor="name">Name</Label>
+                <Label htmlFor="name">{t('display_name')}</Label>
                 <Input
                   id="name"
                   type="text"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   required
-                  placeholder="Your name"
+                  placeholder={t('display_name')}
                   disabled={loading}
                 />
               </div>
             )}
 
             <div className="space-y-2">
-              <Label htmlFor="email">Email</Label>
+              <Label htmlFor="email">{t('email')}</Label>
               <Input
                 id="email"
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                placeholder="you@example.com"
+                placeholder={t('email_placeholder')}
                 disabled={loading}
               />
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="password">Password</Label>
+              <Label htmlFor="password">{t('password')}</Label>
               <Input
                 id="password"
                 type="password"
@@ -179,7 +180,7 @@ export function AuthForm({ mode }: AuthFormProps) {
                 onChange={(e) => setPassword(e.target.value)}
                 required
                 minLength={6}
-                placeholder="••••••••"
+                placeholder={t('password_placeholder')}
                 disabled={loading}
               />
               {mode === 'signup' && (
@@ -194,23 +195,23 @@ export function AuthForm({ mode }: AuthFormProps) {
               disabled={loading}
               className="w-full transition-all duration-200"
             >
-              {loading ? 'Loading...' : mode === 'login' ? 'Sign in' : 'Sign up'}
+              {loading ? tCommon('loading') : mode === 'login' ? tCommon('login') : tCommon('signup')}
             </Button>
           </form>
 
           <p className="text-center text-sm text-muted-foreground">
             {mode === 'login' ? (
               <>
-                Don&apos;t have an account?{' '}
+                {t('no_account')}{' '}
                 <Link href="/auth/signup" className="text-primary hover:underline font-medium transition-colors duration-200">
-                  Sign up
+                  {t('signup_link')}
                 </Link>
               </>
             ) : (
               <>
-                Already have an account?{' '}
+                {t('have_account')}{' '}
                 <Link href="/auth/login" className="text-primary hover:underline font-medium transition-colors duration-200">
-                  Sign in
+                  {t('login_link')}
                 </Link>
               </>
             )}

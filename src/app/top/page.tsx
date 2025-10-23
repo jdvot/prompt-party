@@ -1,5 +1,6 @@
 import { createClient } from '@/lib/supabase/server'
 import { FeedContent } from '@/components/feed/feed-content'
+import { TopHeader } from '@/components/pages/top-header'
 
 export const metadata = {
   title: 'Top Prompts | Prompt Party',
@@ -9,10 +10,13 @@ export const metadata = {
 export default async function TopPage() {
   const supabase = await createClient()
 
-  // Fetch top prompts (sorted by likes)
+  // Fetch top prompts (sorted by likes) with comment counts
   const { data: prompts } = await supabase
     .from('prompts')
-    .select('*')
+    .select(`
+      *,
+      comments:comments(count)
+    `)
     .eq('is_public', true)
     .order('likes_count', { ascending: false })
     .limit(20)
@@ -29,6 +33,8 @@ export default async function TopPage() {
       const profileMap = new Map(profiles.map(p => [p.user_id, p]))
       prompts.forEach((p: any) => {
         p.profiles = profileMap.get(p.author)
+        // Extract count from nested comments array
+        p.comments_count = p.comments?.[0]?.count || 0
       })
     }
   }
@@ -36,13 +42,7 @@ export default async function TopPage() {
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="max-w-4xl mx-auto">
-        <div className="mb-8">
-          <h1 className="text-4xl font-bold mb-2">Top Prompts</h1>
-          <p className="text-muted-foreground">
-            The most loved prompts of all time
-          </p>
-        </div>
-
+        <TopHeader />
         <FeedContent initialPrompts={prompts || []} />
       </div>
     </div>

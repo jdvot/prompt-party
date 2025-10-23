@@ -47,6 +47,21 @@ export async function middleware(request: NextRequest) {
     return NextResponse.redirect(redirectUrl)
   }
 
+  // Onboarding check - redirect new users to onboarding
+  if (user && request.nextUrl.pathname !== '/onboarding' && !request.nextUrl.pathname.startsWith('/auth')) {
+    const { data: profile } = await supabase
+      .from('profiles')
+      .select('onboarding_completed')
+      .eq('user_id', user.id)
+      .single()
+
+    if (profile && !profile.onboarding_completed) {
+      const redirectUrl = request.nextUrl.clone()
+      redirectUrl.pathname = '/onboarding'
+      return NextResponse.redirect(redirectUrl)
+    }
+  }
+
   return supabaseResponse
 }
 

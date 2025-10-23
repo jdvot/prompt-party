@@ -22,6 +22,7 @@ export function FollowButton({
 
   useEffect(() => {
     checkFollowStatus()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [targetUserId])
 
   const checkFollowStatus = async () => {

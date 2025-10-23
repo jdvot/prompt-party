@@ -1,15 +1,19 @@
 import { createClient } from '@/lib/supabase/server'
 import { FeedContent } from '@/components/feed/feed-content'
 import { TrendingTags } from '@/components/feed/trending-tags'
+import { HeroSection } from '@/components/home/hero-section'
 import { Suspense } from 'react'
 
 export default async function Home() {
   const supabase = await createClient()
 
-  // Fetch initial prompts
+  // Fetch initial prompts with comment counts
   const { data: prompts } = await supabase
     .from('prompts')
-    .select('*')
+    .select(`
+      *,
+      comments:comments(count)
+    `)
     .eq('is_public', true)
     .order('created_at', { ascending: false })
     .limit(20)
@@ -26,25 +30,15 @@ export default async function Home() {
       const profileMap = new Map(profiles.map(p => [p.user_id, p]))
       prompts.forEach((p: any) => {
         p.profiles = profileMap.get(p.author)
+        // Extract count from nested comments array
+        p.comments_count = p.comments?.[0]?.count || 0
       })
     }
   }
 
   return (
     <div className="container mx-auto px-4 py-8 md:py-12">
-      {/* Hero Section */}
-      <div className="mb-10 md:mb-12 text-center space-y-6 max-w-4xl mx-auto animate-in fade-in slide-in-from-bottom-4">
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass glow-on-hover text-sm font-medium mb-4">
-          <span className="text-2xl">✨</span>
-          <span className="gradient-text font-semibold">Welcome to Prompt Party</span>
-        </div>
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight gradient-text text-center">
-          Discover AI Prompts
-        </h1>
-        <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed text-balance">
-          Explore, share, and remix the best prompts from the community. Join thousands of creators crafting the future of AI.
-        </p>
-      </div>
+      <HeroSection />
 
       {/* Main Content Grid */}
       <div className="flex justify-center">

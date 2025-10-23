@@ -44,6 +44,7 @@ export function RemixTree({ promptId, promptTitle }: RemixTreeProps) {
     if (isOpen && !tree) {
       fetchRemixTree()
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isOpen])
 
   const fetchRemixTree = async () => {

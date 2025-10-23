@@ -5,6 +5,7 @@ import { createClient } from '@/lib/supabase/client'
 import { Badge } from '@/components/ui/badge'
 import { Users, Circle } from 'lucide-react'
 import type { RealtimeChannel } from '@supabase/supabase-js'
+import Image from 'next/image'
 
 interface CollaboratorPresence {
   user_id: string
@@ -74,6 +75,7 @@ export function RealtimeEditor({
     return () => {
       presenceChannel.unsubscribe()
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [promptId, userId, userName])
 
   // Broadcast cursor position
@@ -110,9 +112,11 @@ export function RealtimeEditor({
                   title={collab.username}
                 >
                   {collab.avatar_url ? (
-                    <img
+                    <Image
                       src={collab.avatar_url}
                       alt={collab.username}
+                      width={24}
+                      height={24}
                       className="w-6 h-6 rounded-full border-2 border-background"
                     />
                   ) : (

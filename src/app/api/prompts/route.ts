@@ -11,10 +11,13 @@ export async function GET(request: Request) {
   const supabase = await createClient()
 
   try {
-    // Fetch prompts
+    // Fetch prompts with comment counts
     let query = supabase
       .from('prompts')
-      .select('*')
+      .select(`
+        *,
+        comments:comments(count)
+      `)
       .eq('is_public', true)
       .range(offset, offset + limit - 1)
 
@@ -53,11 +56,13 @@ export async function GET(request: Request) {
         .select('user_id, name, avatar_url, username')
         .in('user_id', authorIds)
 
-      // Attach profiles to prompts
+      // Attach profiles to prompts and extract comment counts
       if (profiles) {
         const profileMap = new Map(profiles.map(p => [p.user_id, p]))
         prompts.forEach((p: any) => {
           p.profiles = profileMap.get(p.author) || null
+          // Extract count from nested comments array
+          p.comments_count = p.comments?.[0]?.count || 0
         })
       }
     }

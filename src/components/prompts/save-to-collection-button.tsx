@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from 'react'
 import { createClient } from '@/lib/supabase/client'
 import { useRouter } from 'next/navigation'
+import { useTranslations } from 'next-intl'
 
 interface SaveToCollectionButtonProps {
   promptId: string
@@ -22,6 +23,8 @@ export function SaveToCollectionButton({ promptId, userId }: SaveToCollectionBut
   const [saving, setSaving] = useState(false)
   const router = useRouter()
   const supabase = createClient()
+  const t = useTranslations('collections')
+  const tCommon = useTranslations('common')
 
   const loadCollections = useCallback(async () => {
     if (!userId) return
@@ -70,17 +73,17 @@ export function SaveToCollectionButton({ promptId, userId }: SaveToCollectionBut
 
       if (error) {
         if (error.code === '23505') {
-          alert('This prompt is already in this collection')
+          alert(t('already_in_collection'))
         } else {
           throw error
         }
       } else {
-        alert('Prompt added to collection!')
+        alert(t('added_to_collection'))
         setIsOpen(false)
       }
     } catch (error) {
       console.error('Error adding to collection:', error)
-      alert('Failed to add prompt to collection')
+      alert(t('failed_to_add'))
     } finally {
       setSaving(false)
     }
@@ -110,7 +113,7 @@ export function SaveToCollectionButton({ promptId, userId }: SaveToCollectionBut
             d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"
           />
         </svg>
-        <span>Save</span>
+        <span>{tCommon('save')}</span>
       </button>
 
       {/* Modal */}
@@ -123,20 +126,20 @@ export function SaveToCollectionButton({ promptId, userId }: SaveToCollectionBut
             className="bg-background border rounded-lg max-w-md w-full p-6"
             onClick={(e) => e.stopPropagation()}
           >
-            <h2 className="text-2xl font-bold mb-4">Save to Collection</h2>
+            <h2 className="text-2xl font-bold mb-4">{t('add_to_collection')}</h2>
 
             {loading ? (
-              <div className="text-center py-8">Loading collections...</div>
+              <div className="text-center py-8">{t('loading_collections')}</div>
             ) : collections.length === 0 ? (
               <div className="text-center py-8">
                 <p className="text-muted-foreground mb-4">
-                  You don&apos;t have any collections yet.
+                  {t('empty_all')}
                 </p>
                 <button
                   onClick={createNewCollection}
                   className="px-4 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90"
                 >
-                  Create a Collection
+                  {t('create_collection')}
                 </button>
               </div>
             ) : (
@@ -163,7 +166,7 @@ export function SaveToCollectionButton({ promptId, userId }: SaveToCollectionBut
                   onClick={createNewCollection}
                   className="w-full px-4 py-2 border border-dashed rounded-md hover:bg-accent transition-colors"
                 >
-                  + Create New Collection
+                  + {t('create_new_collection')}
                 </button>
               </>
             )}
@@ -173,7 +176,7 @@ export function SaveToCollectionButton({ promptId, userId }: SaveToCollectionBut
                 onClick={() => setIsOpen(false)}
                 className="px-4 py-2 border rounded-md hover:bg-accent"
               >
-                Cancel
+                {tCommon('cancel')}
               </button>
             </div>
           </div>

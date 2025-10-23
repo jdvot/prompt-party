@@ -1,6 +1,7 @@
 'use client'
 
 import { cn } from '@/lib/utils'
+import { useTranslations } from 'next-intl'
 
 interface FeedFiltersProps {
   activeFilter: 'new' | 'top' | 'trending'
@@ -8,10 +9,12 @@ interface FeedFiltersProps {
 }
 
 export function FeedFilters({ activeFilter, onFilterChange }: FeedFiltersProps) {
+  const t = useTranslations('common')
+
   const filters = [
-    { id: 'new' as const, label: 'New', icon: '✨' },
-    { id: 'top' as const, label: 'Top', icon: '🔥' },
-    { id: 'trending' as const, label: 'Trending', icon: '📈' },
+    { id: 'new' as const, label: t('new'), icon: '✨' },
+    { id: 'top' as const, label: t('top'), icon: '🔥' },
+    { id: 'trending' as const, label: t('trending'), icon: '📈' },
   ]
 
   return (

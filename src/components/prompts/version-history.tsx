@@ -42,6 +42,7 @@ export function VersionHistory({ promptId }: VersionHistoryProps) {
     if (isOpen && versions.length === 0) {
       fetchVersions()
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isOpen])
 
   const fetchVersions = async () => {

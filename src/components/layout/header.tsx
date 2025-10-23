@@ -10,10 +10,13 @@ import { NotificationBell } from '@/components/notifications/notification-bell'
 import { SearchAutocomplete } from '@/components/search/search-autocomplete'
 import { CommandIcon } from 'lucide-react'
 import { Logo, LogoText } from '@/components/brand/logo'
+import { LanguageSwitcher } from './language-switcher'
+import { useTranslations } from 'next-intl'
 
 export function Header() {
   const { user, loading } = useUser()
   const { showHelp } = useShortcuts()
+  const t = useTranslations('nav')
 
   return (
     <header className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-sticky">
@@ -31,25 +34,31 @@ export function Header() {
               href="/"
               className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200"
             >
-              Feed
+              {t('home')}
             </Link>
             <Link
               href="/trending"
               className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200"
             >
-              Trending
+              {t('trending')}
             </Link>
             <Link
               href="/top"
               className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200"
             >
-              Top
+              {t('top')}
             </Link>
             <Link
-              href="/challenges"
+              href="/prompts/wizard"
               className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200"
             >
-              Challenges
+              ✨ Wizard
+            </Link>
+            <Link
+              href="/mcp-vs-rag"
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200"
+            >
+              📚 Guides
             </Link>
           </nav>
         </div>
@@ -69,6 +78,7 @@ export function Header() {
           >
             <CommandIcon className="h-4 w-4" />
           </Button>
+          <LanguageSwitcher />
           <ThemeToggle />
           {!loading && (
             <>
@@ -77,12 +87,12 @@ export function Header() {
                   <NotificationBell />
                   <Button asChild className="hidden sm:inline-flex">
                     <Link href="/prompts/new">
-                      Create Prompt
+                      {t('create')}
                     </Link>
                   </Button>
                   <Button asChild size="sm" className="sm:hidden">
                     <Link href="/prompts/new">
-                      Create
+                      {t('create')}
                     </Link>
                   </Button>
                   <UserMenu user={user} />
@@ -91,12 +101,12 @@ export function Header() {
                 <>
                   <Button variant="ghost" asChild className="hidden sm:inline-flex">
                     <Link href="/auth/login">
-                      Sign in
+                      {t('login')}
                     </Link>
                   </Button>
                   <Button asChild size="sm">
                     <Link href="/auth/signup">
-                      Sign up
+                      {t('signup')}
                     </Link>
                   </Button>
                 </>

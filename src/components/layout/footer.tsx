@@ -1,7 +1,12 @@
+'use client'
+
 import Link from 'next/link'
 import { Logo, LogoText } from '@/components/brand/logo'
+import { useTranslations } from 'next-intl'
 
 export function Footer() {
+  const t = useTranslations('footer')
+  const tNav = useTranslations('nav')
   return (
     <footer className="border-t bg-muted/30 mt-auto backdrop-blur-sm">
       <div className="container mx-auto px-4 py-10 md:py-12">
@@ -12,7 +17,7 @@ export function Footer() {
               <LogoText />
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed text-balance">
-              The social network for discovering and sharing the best AI prompts
+              {t('subtitle')}
             </p>
           </div>
 
@@ -20,13 +25,13 @@ export function Footer() {
             <h3 className="font-semibold mb-4 text-foreground gradient-text">Community</h3>
             <div className="space-y-3">
               <Link href="/" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
-                Feed
+                {tNav('home')}
               </Link>
               <Link href="/trending" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
-                Trending
+                {tNav('trending')}
               </Link>
               <Link href="/top" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
-                Top Prompts
+                {tNav('top')}
               </Link>
             </div>
           </div>
@@ -34,6 +39,12 @@ export function Footer() {
           <div>
             <h3 className="font-semibold mb-4 text-foreground gradient-text">Resources</h3>
             <div className="space-y-3">
+              <Link href="/prompts/wizard" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
+                ✨ Prompt Wizard
+              </Link>
+              <Link href="/mcp-vs-rag" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
+                📚 MCP vs RAG
+              </Link>
               <Link href="/pricing" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
                 Pricing
               </Link>
@@ -41,13 +52,13 @@ export function Footer() {
                 Challenges
               </Link>
               <Link href="/about" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
-                About
+                {t('about')}
               </Link>
               <Link href="/docs" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
-                Documentation
+                {t('docs')}
               </Link>
               <Link href="/faq" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
-                FAQ
+                {t('faq')}
               </Link>
             </div>
           </div>
@@ -56,10 +67,10 @@ export function Footer() {
             <h3 className="font-semibold mb-4 text-foreground gradient-text">Legal</h3>
             <div className="space-y-3">
               <Link href="/privacy" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
-                Privacy Policy
+                {t('privacy')}
               </Link>
               <Link href="/terms" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
-                Terms of Service
+                {t('terms')}
               </Link>
             </div>
           </div>

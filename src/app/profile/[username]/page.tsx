@@ -5,6 +5,8 @@ import { ProfileStats } from '@/components/profile/profile-stats'
 import { ProfileBadges } from '@/components/profile/profile-badges'
 import { Suspense } from 'react'
 import type { Metadata } from 'next'
+import Image from 'next/image'
+import { getTranslations } from 'next-intl/server'
 
 interface PageProps {
   params: Promise<{ username: string }>
@@ -35,6 +37,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 export default async function PublicProfilePage({ params }: PageProps) {
   const { username } = await params
   const supabase = await createClient()
+  const t = await getTranslations('profile')
+  const tCommon = await getTranslations('common')
 
   // Fetch profile
   const { data: profile, error } = await supabase
@@ -91,9 +95,11 @@ export default async function PublicProfilePage({ params }: PageProps) {
           <div className="flex flex-col md:flex-row items-center md:items-start gap-6 mb-8">
             <div className="w-24 h-24 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-4xl ring-4 ring-primary/10">
               {profile.avatar_url ? (
-                <img
+                <Image
                   src={profile.avatar_url}
                   alt={profile.name || 'User avatar'}
+                  width={96}
+                  height={96}
                   className="w-full h-full rounded-full object-cover"
                 />
               ) : (
@@ -101,12 +107,12 @@ export default async function PublicProfilePage({ params }: PageProps) {
               )}
             </div>
             <div className="flex-1 text-center md:text-left">
-              <h1 className="text-3xl font-bold mb-1">{profile.name || 'Anonymous'}</h1>
+              <h1 className="text-3xl font-bold mb-1">{profile.name || tCommon('anonymous')}</h1>
               {profile.username && (
                 <p className="text-muted-foreground mb-2">@{profile.username}</p>
               )}
               <p className="text-sm text-muted-foreground">
-                Member since {accountCreated.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
+                {t('joined', { date: accountCreated.toLocaleDateString('en-US', { month: 'long', year: 'numeric' }) })}
               </p>
             </div>
           </div>
@@ -131,7 +137,7 @@ export default async function PublicProfilePage({ params }: PageProps) {
         <div className="border-b mb-8">
           <div className="flex gap-8">
             <button className="px-4 py-3 font-medium border-b-2 border-primary">
-              Prompts
+              {t('prompts_tab')}
             </button>
           </div>
         </div>
@@ -140,7 +146,7 @@ export default async function PublicProfilePage({ params }: PageProps) {
         <div className="space-y-6">
           {!prompts || prompts.length === 0 ? (
             <div className="text-center py-16 text-muted-foreground">
-              <p>No public prompts yet.</p>
+              <p>{t('no_public_prompts')}</p>
             </div>
           ) : (
             prompts.map((prompt: any) => <PromptCard key={prompt.id} {...prompt} />)

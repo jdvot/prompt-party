@@ -3,10 +3,19 @@ import { Inter } from "next/font/google";
 import "../styles/globals.css";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import { BottomNav } from "@/components/layout/bottom-nav";
+import { FloatingCreateButton } from "@/components/layout/floating-create-button";
 import { ThemeProvider } from "@/components/theme/theme-provider";
 import { ShortcutsProvider } from "@/components/keyboard-shortcuts/shortcuts-provider";
+import { IntlProvider } from "@/components/providers/intl-provider";
+import { cookies } from 'next/headers';
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({
+  subsets: ["latin"],
+  display: 'swap',
+  preload: true,
+  variable: '--font-inter',
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://prompt-party.netlify.app'),
@@ -17,6 +26,13 @@ export const metadata: Metadata = {
   description: "Create, share, and discover the most inspiring AI prompts. Join the community of prompt engineers, creators, and AI enthusiasts.",
   keywords: ['AI prompts', 'ChatGPT', 'Claude', 'Gemini', 'prompt engineering', 'prompt library', 'AI tools', 'GPT-4', 'prompt sharing'],
   authors: [{ name: 'Prompt Party' }],
+  creator: 'Prompt Party',
+  publisher: 'Prompt Party',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   openGraph: {
     type: 'website',
     locale: 'en_US',
@@ -51,16 +67,31 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
+  verification: {
+    google: 'your-google-verification-code',
+  },
+  alternates: {
+    canonical: 'https://prompt-party.netlify.app',
+  },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const cookieStore = await cookies();
+  const locale = cookieStore.get('NEXT_LOCALE')?.value || 'en';
+
+  // Dynamically import messages
+  const messages = (await import(`../../messages/${locale}.json`)).default;
+
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
       <head>
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -77,15 +108,19 @@ export default function RootLayout({
         />
       </head>
       <body className={inter.className}>
-        <ThemeProvider defaultTheme="system" storageKey="prompt-party-theme">
-          <ShortcutsProvider>
-            <div className="flex flex-col min-h-screen">
-              <Header />
-              <main className="flex-1">{children}</main>
-              <Footer />
-            </div>
-          </ShortcutsProvider>
-        </ThemeProvider>
+        <IntlProvider messages={messages} locale={locale}>
+          <ThemeProvider defaultTheme="system" storageKey="prompt-party-theme">
+            <ShortcutsProvider>
+              <div className="flex flex-col min-h-screen pb-16 lg:pb-0">
+                <Header />
+                <main className="flex-1">{children}</main>
+                <Footer />
+                <BottomNav />
+                <FloatingCreateButton />
+              </div>
+            </ShortcutsProvider>
+          </ThemeProvider>
+        </IntlProvider>
       </body>
     </html>
   );

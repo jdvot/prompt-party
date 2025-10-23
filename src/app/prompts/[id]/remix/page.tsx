@@ -3,6 +3,7 @@ import { notFound, redirect } from 'next/navigation'
 import { RemixEditor } from '@/components/editor/remix-editor'
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { getTranslations } from 'next-intl/server'
 
 interface PageProps {
   params: Promise<{ id: string }>
@@ -15,6 +16,8 @@ export const metadata: Metadata = {
 export default async function RemixPromptPage({ params }: PageProps) {
   const { id } = await params
   const supabase = await createClient()
+  const t = await getTranslations('prompts')
+  const tCommon = await getTranslations('common')
 
   // Check auth
   const {
@@ -106,45 +109,45 @@ export default async function RemixPromptPage({ params }: PageProps) {
     <div className="container mx-auto px-4 py-8">
       <div className="max-w-4xl mx-auto">
         <div className="mb-6">
-          <h1 className="text-3xl font-bold mb-2">Remix Prompt</h1>
+          <h1 className="text-3xl font-bold mb-2">{t('remix_title')}</h1>
           <p className="text-muted-foreground">
-            Remixing &ldquo;{originalPrompt.title}&rdquo; by{' '}
-            {originalPrompt.profiles?.name || 'Anonymous'}
+            {t('remix_description')} &ldquo;{originalPrompt.title}&rdquo; {t('original_by')}{' '}
+            {originalPrompt.profiles?.name || tCommon('anonymous')}
           </p>
         </div>
 
         <form action={handleSubmit} className="space-y-6">
           <div>
             <label htmlFor="title" className="block text-sm font-medium mb-2">
-              Title
+              {t('title_label')} <span className="text-destructive">*</span>
             </label>
             <input
               type="text"
               id="title"
               name="title"
-              defaultValue={`${originalPrompt.title} (Remix)`}
+              defaultValue={`${originalPrompt.title} (${tCommon('remix')})`}
               required
-              className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+              className="w-full px-4 py-2 border bg-background rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
             />
           </div>
 
           <div>
             <label htmlFor="tags" className="block text-sm font-medium mb-2">
-              Tags (comma-separated)
+              {t('tags_label')}
             </label>
             <input
               type="text"
               id="tags"
               name="tags"
               defaultValue={originalPrompt.tags.join(', ')}
-              placeholder="ai, chatgpt, productivity"
-              className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+              placeholder={t('tags_placeholder')}
+              className="w-full px-4 py-2 border bg-background rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
             />
           </div>
 
           <div>
             <label htmlFor="body" className="block text-sm font-medium mb-2">
-              Prompt
+              {t('body_label')} <span className="text-destructive">*</span>
             </label>
             <RemixEditor defaultValue={originalPrompt.body} />
           </div>
@@ -159,7 +162,7 @@ export default async function RemixPromptPage({ params }: PageProps) {
               className="w-4 h-4"
             />
             <label htmlFor="is_public" className="text-sm">
-              Make this prompt public
+              {t('make_public')}
             </label>
           </div>
 
@@ -168,13 +171,13 @@ export default async function RemixPromptPage({ params }: PageProps) {
               type="submit"
               className="px-6 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors"
             >
-              Publish Remix
+              {t('publish_remix')}
             </button>
             <Link
               href={`/prompts/${id}`}
               className="px-6 py-2 border rounded-md hover:bg-accent transition-colors inline-flex items-center"
             >
-              Cancel
+              {tCommon('cancel')}
             </Link>
           </div>
         </form>

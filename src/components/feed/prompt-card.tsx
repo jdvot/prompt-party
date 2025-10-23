@@ -1,11 +1,13 @@
 'use client'
 
+import { memo } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { formatDistanceToNow } from 'date-fns'
 import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-import { HeartIcon } from 'lucide-react'
+import { HeartIcon, MessageCircleIcon } from 'lucide-react'
+import { useTranslations } from 'next-intl'
 
 interface PromptCardProps {
   id: string
@@ -17,19 +19,22 @@ interface PromptCardProps {
     avatar_url: string | null
   }
   likes_count: number
+  comments_count?: number
   created_at: string
 }
 
-export function PromptCard({
+export const PromptCard = memo(function PromptCard({
   id,
   title,
   body,
   tags,
   author,
   likes_count,
+  comments_count = 0,
   created_at,
 }: PromptCardProps) {
   const router = useRouter()
+  const t = useTranslations('common')
   const preview = body.length > 200 ? body.substring(0, 200) + '...' : body
 
   const handleCardClick = () => {
@@ -58,7 +63,7 @@ export function PromptCard({
                   <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center text-xs font-medium">
                     {(author.name || 'A').charAt(0).toUpperCase()}
                   </div>
-                  <span className="truncate">{author.name || 'Anonymous'}</span>
+                  <span className="truncate">{author.name || t('anonymous')}</span>
                 </button>
                 <span className="text-muted-foreground/60">•</span>
                 <time className="text-muted-foreground whitespace-nowrap">
@@ -102,9 +107,13 @@ export function PromptCard({
               <HeartIcon className="w-4 h-4" />
               <span className="font-medium">{likes_count}</span>
             </div>
+            <div className="flex items-center gap-1.5 hover:text-primary transition-colors duration-200">
+              <MessageCircleIcon className="w-4 h-4" />
+              <span className="font-medium">{comments_count}</span>
+            </div>
           </div>
         </CardFooter>
       </Card>
     </div>
   )
-}
+})
