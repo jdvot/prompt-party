@@ -186,8 +186,8 @@ export const shadows = {
 export const zIndex = {
   hide: -1,
   base: 0,
-  dropdown: 1000,
   sticky: 1100,
+  dropdown: 1150,
   fixed: 1200,
   modalBackdrop: 1300,
   modal: 1400,
