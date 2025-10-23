@@ -52,13 +52,13 @@ export function Header() {
               href="/prompts/wizard"
               className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200"
             >
-              ✨ Wizard
+              {t('wizard')}
             </Link>
             <Link
               href="/mcp-vs-rag"
               className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200"
             >
-              📚 Guides
+              {t('guides')}
             </Link>
           </nav>
         </div>

@@ -4,26 +4,33 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { BookOpen, Code, Database, Zap, ArrowRight, CheckCircle2, XCircle } from 'lucide-react'
+import { getTranslations } from 'next-intl/server'
 
-export const metadata: Metadata = {
-  title: 'MCP vs RAG : Comprendre les Différences | Prompt Party',
-  description: 'Guide complet pour comprendre les différences entre MCP (Model Context Protocol) et RAG (Retrieval-Augmented Generation)',
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations('mcp')
+
+  return {
+    title: t('page_title'),
+    description: t('page_description'),
+  }
 }
 
-export default function MCPvsRAGPage() {
+export default async function MCPvsRAGPage() {
+  const t = await getTranslations('mcp')
+
   return (
     <div className="container mx-auto px-4 py-12 max-w-6xl">
       {/* Hero */}
       <div className="text-center mb-12">
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass glow-on-hover text-sm font-medium mb-4">
           <BookOpen className="w-4 h-4 text-primary" />
-          <span className="gradient-text font-semibold">Guide Technique</span>
+          <span className="gradient-text font-semibold">{t('hero_badge')}</span>
         </div>
         <h1 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">
-          MCP vs RAG
+          {t('hero_title')}
         </h1>
         <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-          Comprendre les différences entre deux paradigmes fondamentaux de l'IA moderne
+          {t('hero_description')}
         </p>
       </div>
 
@@ -37,49 +44,49 @@ export default function MCPvsRAGPage() {
               <div className="p-2 rounded-lg bg-blue-500/10">
                 <Database className="w-6 h-6 text-blue-500" />
               </div>
-              <CardTitle className="text-2xl">RAG</CardTitle>
+              <CardTitle className="text-2xl">{t('rag_title')}</CardTitle>
             </div>
             <CardDescription className="text-base">
-              Retrieval-Augmented Generation
+              {t('rag_subtitle')}
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
             <p className="text-sm leading-relaxed">
-              <strong>C'est comme donner un livre ouvert à l'IA</strong> avec les pages pertinentes déjà trouvées.
+              <strong>{t('rag_description')}</strong>
             </p>
 
             <div>
-              <p className="text-sm font-semibold mb-2">🎯 Pour quoi ?</p>
+              <p className="text-sm font-semibold mb-2">{t('rag_for_what')}</p>
               <ul className="text-sm space-y-1 text-muted-foreground">
-                <li>• Chercher dans des documents</li>
-                <li>• Base de connaissances</li>
-                <li>• Support client avec doc</li>
-                <li>• Réponses avec sources</li>
+                <li>{t('rag_use_1')}</li>
+                <li>{t('rag_use_2')}</li>
+                <li>{t('rag_use_3')}</li>
+                <li>{t('rag_use_4')}</li>
               </ul>
             </div>
 
             <div>
               <p className="text-sm font-semibold mb-2 flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-green-500" />
-                Forces
+                {t('strengths')}
               </p>
               <div className="flex flex-wrap gap-1.5">
-                <Badge variant="secondary" className="text-xs">Données à jour</Badge>
-                <Badge variant="secondary" className="text-xs">Sources traçables</Badge>
-                <Badge variant="secondary" className="text-xs">Moins cher</Badge>
-                <Badge variant="secondary" className="text-xs">Scalable</Badge>
+                <Badge variant="secondary" className="text-xs">{t('rag_strength_1')}</Badge>
+                <Badge variant="secondary" className="text-xs">{t('rag_strength_2')}</Badge>
+                <Badge variant="secondary" className="text-xs">{t('rag_strength_3')}</Badge>
+                <Badge variant="secondary" className="text-xs">{t('rag_strength_4')}</Badge>
               </div>
             </div>
 
             <div>
               <p className="text-sm font-semibold mb-2 flex items-center gap-2">
                 <XCircle className="w-4 h-4 text-red-500" />
-                Limites
+                {t('limitations')}
               </p>
               <div className="flex flex-wrap gap-1.5">
-                <Badge variant="outline" className="text-xs">Lecture seule</Badge>
-                <Badge variant="outline" className="text-xs">Pas d'actions</Badge>
-                <Badge variant="outline" className="text-xs">Latence recherche</Badge>
+                <Badge variant="outline" className="text-xs">{t('rag_limit_1')}</Badge>
+                <Badge variant="outline" className="text-xs">{t('rag_limit_2')}</Badge>
+                <Badge variant="outline" className="text-xs">{t('rag_limit_3')}</Badge>
               </div>
             </div>
           </CardContent>
@@ -93,49 +100,49 @@ export default function MCPvsRAGPage() {
               <div className="p-2 rounded-lg bg-purple-500/10">
                 <Zap className="w-6 h-6 text-purple-500" />
               </div>
-              <CardTitle className="text-2xl">MCP</CardTitle>
+              <CardTitle className="text-2xl">{t('mcp_title')}</CardTitle>
             </div>
             <CardDescription className="text-base">
-              Model Context Protocol
+              {t('mcp_subtitle')}
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
             <p className="text-sm leading-relaxed">
-              <strong>C'est comme donner une boîte à outils à l'IA</strong> qu'elle peut utiliser pour agir.
+              <strong>{t('mcp_description')}</strong>
             </p>
 
             <div>
-              <p className="text-sm font-semibold mb-2">🎯 Pour quoi ?</p>
+              <p className="text-sm font-semibold mb-2">{t('mcp_for_what')}</p>
               <ul className="text-sm space-y-1 text-muted-foreground">
-                <li>• Exécuter des actions</li>
-                <li>• Appeler des APIs</li>
-                <li>• Modifier des données</li>
-                <li>• Automatiser des workflows</li>
+                <li>{t('mcp_use_1')}</li>
+                <li>{t('mcp_use_2')}</li>
+                <li>{t('mcp_use_3')}</li>
+                <li>{t('mcp_use_4')}</li>
               </ul>
             </div>
 
             <div>
               <p className="text-sm font-semibold mb-2 flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-green-500" />
-                Forces
+                {t('strengths')}
               </p>
               <div className="flex flex-wrap gap-1.5">
-                <Badge variant="secondary" className="text-xs">Actions réelles</Badge>
-                <Badge variant="secondary" className="text-xs">APIs externes</Badge>
-                <Badge variant="secondary" className="text-xs">Temps réel</Badge>
-                <Badge variant="secondary" className="text-xs">Extensible</Badge>
+                <Badge variant="secondary" className="text-xs">{t('mcp_strength_1')}</Badge>
+                <Badge variant="secondary" className="text-xs">{t('mcp_strength_2')}</Badge>
+                <Badge variant="secondary" className="text-xs">{t('mcp_strength_3')}</Badge>
+                <Badge variant="secondary" className="text-xs">{t('mcp_strength_4')}</Badge>
               </div>
             </div>
 
             <div>
               <p className="text-sm font-semibold mb-2 flex items-center gap-2">
                 <XCircle className="w-4 h-4 text-red-500" />
-                Limites
+                {t('limitations')}
               </p>
               <div className="flex flex-wrap gap-1.5">
-                <Badge variant="outline" className="text-xs">Sécurité critique</Badge>
-                <Badge variant="outline" className="text-xs">Plus complexe</Badge>
-                <Badge variant="outline" className="text-xs">Coûts APIs</Badge>
+                <Badge variant="outline" className="text-xs">{t('mcp_limit_1')}</Badge>
+                <Badge variant="outline" className="text-xs">{t('mcp_limit_2')}</Badge>
+                <Badge variant="outline" className="text-xs">{t('mcp_limit_3')}</Badge>
               </div>
             </div>
           </CardContent>
@@ -146,30 +153,30 @@ export default function MCPvsRAGPage() {
       <Card className="mb-12 bg-gradient-to-br from-primary/5 to-transparent">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            💡 Analogie simple
+            {t('analogy_title')}
           </CardTitle>
         </CardHeader>
         <CardContent className="grid md:grid-cols-2 gap-6">
           <div>
             <p className="font-semibold mb-2 text-blue-600 dark:text-blue-400">
-              📚 RAG = Bibliothèque
+              {t('analogy_rag_title')}
             </p>
             <ul className="text-sm space-y-1 text-muted-foreground">
-              <li>• L'IA peut <strong>lire</strong> tous les livres</li>
-              <li>• Elle trouve les passages pertinents</li>
-              <li>• Elle cite ses sources</li>
-              <li>• Mais elle ne peut rien <strong>modifier</strong></li>
+              <li>{t('analogy_rag_1')}</li>
+              <li>{t('analogy_rag_2')}</li>
+              <li>{t('analogy_rag_3')}</li>
+              <li>{t('analogy_rag_4')}</li>
             </ul>
           </div>
           <div>
             <p className="font-semibold mb-2 text-purple-600 dark:text-purple-400">
-              🔧 MCP = Atelier
+              {t('analogy_mcp_title')}
             </p>
             <ul className="text-sm space-y-1 text-muted-foreground">
-              <li>• L'IA a des <strong>outils</strong></li>
-              <li>• Elle peut <strong>construire</strong> des choses</li>
-              <li>• Elle peut <strong>agir</strong> sur le monde</li>
-              <li>• Mais elle n'a pas de mémoire longue</li>
+              <li>{t('analogy_mcp_1')}</li>
+              <li>{t('analogy_mcp_2')}</li>
+              <li>{t('analogy_mcp_3')}</li>
+              <li>{t('analogy_mcp_4')}</li>
             </ul>
           </div>
         </CardContent>
@@ -178,39 +185,39 @@ export default function MCPvsRAGPage() {
       {/* Comparison Table */}
       <Card className="mb-12">
         <CardHeader>
-          <CardTitle>Comparaison détaillée</CardTitle>
-          <CardDescription>Les critères techniques</CardDescription>
+          <CardTitle>{t('comparison_title')}</CardTitle>
+          <CardDescription>{t('comparison_subtitle')}</CardDescription>
         </CardHeader>
         <CardContent>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
                 <tr className="border-b">
-                  <th className="text-left py-3 px-4">Critère</th>
+                  <th className="text-left py-3 px-4">{t('comparison_criteria')}</th>
                   <th className="text-left py-3 px-4">
                     <span className="flex items-center gap-2">
                       <Database className="w-4 h-4 text-blue-500" />
-                      RAG
+                      {t('rag_title')}
                     </span>
                   </th>
                   <th className="text-left py-3 px-4">
                     <span className="flex items-center gap-2">
                       <Zap className="w-4 h-4 text-purple-500" />
-                      MCP
+                      {t('mcp_title')}
                     </span>
                   </th>
                 </tr>
               </thead>
               <tbody>
                 {[
-                  { label: 'Nature', rag: 'Données statiques', mcp: 'Outils dynamiques' },
-                  { label: 'Action', rag: 'Lecture seule', mcp: 'Lecture + Écriture' },
-                  { label: 'Latence', rag: 'Moyenne', mcp: 'Variable' },
-                  { label: 'Complexité', rag: 'Moyenne', mcp: 'Élevée' },
-                  { label: 'Scalabilité', rag: 'Excellente', mcp: 'Bonne' },
-                  { label: 'Sécurité', rag: 'Faible risque', mcp: 'Haut risque' },
-                  { label: 'Temps réel', rag: 'Non', mcp: 'Oui' },
-                  { label: 'Sources', rag: 'Traçables', mcp: 'N/A' },
+                  { label: t('comparison_nature'), rag: t('comparison_nature_rag'), mcp: t('comparison_nature_mcp') },
+                  { label: t('comparison_action'), rag: t('comparison_action_rag'), mcp: t('comparison_action_mcp') },
+                  { label: t('comparison_latency'), rag: t('comparison_latency_rag'), mcp: t('comparison_latency_mcp') },
+                  { label: t('comparison_complexity'), rag: t('comparison_complexity_rag'), mcp: t('comparison_complexity_mcp') },
+                  { label: t('comparison_scalability'), rag: t('comparison_scalability_rag'), mcp: t('comparison_scalability_mcp') },
+                  { label: t('comparison_security'), rag: t('comparison_security_rag'), mcp: t('comparison_security_mcp') },
+                  { label: t('comparison_realtime'), rag: t('comparison_realtime_rag'), mcp: t('comparison_realtime_mcp') },
+                  { label: t('comparison_sources'), rag: t('comparison_sources_rag'), mcp: t('comparison_sources_mcp') },
                 ].map((row, idx) => (
                   <tr key={idx} className="border-b">
                     <td className="py-3 px-4 font-medium">{row.label}</td>
@@ -228,40 +235,40 @@ export default function MCPvsRAGPage() {
       <div className="grid md:grid-cols-2 gap-6 mb-12">
         <Card>
           <CardHeader>
-            <CardTitle className="text-lg">Exemples RAG</CardTitle>
+            <CardTitle className="text-lg">{t('examples_rag_title')}</CardTitle>
           </CardHeader>
           <CardContent className="space-y-3 text-sm">
             <div>
-              <p className="font-semibold mb-1">🎧 Chatbot support</p>
-              <p className="text-muted-foreground">Répondre aux questions avec la documentation produit</p>
+              <p className="font-semibold mb-1">{t('examples_rag_1_title')}</p>
+              <p className="text-muted-foreground">{t('examples_rag_1_desc')}</p>
             </div>
             <div>
-              <p className="font-semibold mb-1">⚖️ Assistant juridique</p>
-              <p className="text-muted-foreground">Recherche dans 10,000+ documents légaux</p>
+              <p className="font-semibold mb-1">{t('examples_rag_2_title')}</p>
+              <p className="text-muted-foreground">{t('examples_rag_2_desc')}</p>
             </div>
             <div>
-              <p className="font-semibold mb-1">📚 Base de connaissances</p>
-              <p className="text-muted-foreground">Employés cherchent dans Confluence/Notion</p>
+              <p className="font-semibold mb-1">{t('examples_rag_3_title')}</p>
+              <p className="text-muted-foreground">{t('examples_rag_3_desc')}</p>
             </div>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader>
-            <CardTitle className="text-lg">Exemples MCP</CardTitle>
+            <CardTitle className="text-lg">{t('examples_mcp_title')}</CardTitle>
           </CardHeader>
           <CardContent className="space-y-3 text-sm">
             <div>
-              <p className="font-semibold mb-1">💻 Assistant dev</p>
-              <p className="text-muted-foreground">Créer des PRs, lire des issues, déployer</p>
+              <p className="font-semibold mb-1">{t('examples_mcp_1_title')}</p>
+              <p className="text-muted-foreground">{t('examples_mcp_1_desc')}</p>
             </div>
             <div>
-              <p className="font-semibold mb-1">🛒 E-commerce</p>
-              <p className="text-muted-foreground">Chercher produits, créer commandes, suivre livraisons</p>
+              <p className="font-semibold mb-1">{t('examples_mcp_2_title')}</p>
+              <p className="text-muted-foreground">{t('examples_mcp_2_desc')}</p>
             </div>
             <div>
-              <p className="font-semibold mb-1">✅ Gestionnaire de tâches</p>
-              <p className="text-muted-foreground">Créer tâches, envoyer notifs, générer rapports</p>
+              <p className="font-semibold mb-1">{t('examples_mcp_3_title')}</p>
+              <p className="text-muted-foreground">{t('examples_mcp_3_desc')}</p>
             </div>
           </CardContent>
         </Card>
@@ -271,46 +278,45 @@ export default function MCPvsRAGPage() {
       <Card className="mb-12 bg-gradient-to-br from-green-500/5 to-transparent border-green-500/20">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            🚀 La vraie puissance : RAG + MCP
+            {t('hybrid_title')}
           </CardTitle>
           <CardDescription>
-            Combinez les deux pour des cas d'usage avancés
+            {t('hybrid_subtitle')}
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="bg-background rounded-lg p-4 border">
-            <p className="font-semibold mb-2">Exemple : Assistant RH</p>
+            <p className="font-semibold mb-2">{t('hybrid_hr_title')}</p>
             <div className="space-y-2 text-sm text-muted-foreground">
               <p>
-                <strong className="text-blue-600 dark:text-blue-400">RAG :</strong> Cherche dans les politiques RH
+                <strong className="text-blue-600 dark:text-blue-400">{t('hybrid_hr_rag')}</strong>
               </p>
               <p>
-                <strong className="text-purple-600 dark:text-purple-400">MCP :</strong> Crée une demande de congé
+                <strong className="text-purple-600 dark:text-purple-400">{t('hybrid_hr_mcp')}</strong>
               </p>
               <p className="pt-2 border-t">
-                <strong>Question :</strong> "Combien de jours de congé me reste-t-il ?"
+                <strong>{t('hybrid_hr_question')}</strong>
               </p>
               <p>
-                <strong>Réponse :</strong> "Selon notre politique (RAG), vous avez droit à 25 jours.
-                Il vous reste 12 jours cette année (MCP → API RH)."
+                <strong>{t('hybrid_hr_answer')}</strong>
               </p>
             </div>
           </div>
 
           <div className="bg-background rounded-lg p-4 border">
-            <p className="font-semibold mb-2">Exemple : Analyste financier IA</p>
+            <p className="font-semibold mb-2">{t('hybrid_finance_title')}</p>
             <div className="space-y-2 text-sm text-muted-foreground">
               <p>
-                <strong className="text-blue-600 dark:text-blue-400">RAG :</strong> Rapports financiers historiques
+                <strong className="text-blue-600 dark:text-blue-400">{t('hybrid_finance_rag')}</strong>
               </p>
               <p>
-                <strong className="text-purple-600 dark:text-purple-400">MCP :</strong> Prix actions temps réel
+                <strong className="text-purple-600 dark:text-purple-400">{t('hybrid_finance_mcp')}</strong>
               </p>
               <p className="pt-2 border-t">
-                <strong>Question :</strong> "Analyse AAPL et compare aux derniers trimestres"
+                <strong>{t('hybrid_finance_question')}</strong>
               </p>
               <p>
-                <strong>Réponse :</strong> Synthèse avec contexte historique (RAG) + données live (MCP)
+                <strong>{t('hybrid_finance_answer')}</strong>
               </p>
             </div>
           </div>
@@ -320,32 +326,32 @@ export default function MCPvsRAGPage() {
       {/* Decision Tree */}
       <Card className="mb-12">
         <CardHeader>
-          <CardTitle>Comment choisir ?</CardTitle>
-          <CardDescription>Arbre de décision simple</CardDescription>
+          <CardTitle>{t('decision_title')}</CardTitle>
+          <CardDescription>{t('decision_subtitle')}</CardDescription>
         </CardHeader>
         <CardContent>
           <div className="space-y-4">
             <div className="bg-muted/50 rounded-lg p-4">
               <p className="font-semibold mb-3">
-                ❓ Avez-vous besoin d'ACTIONS (modifier/créer/supprimer) ?
+                {t('decision_question')}
               </p>
               <div className="ml-4 space-y-3">
                 <div>
-                  <p className="font-medium text-green-600 dark:text-green-400">✅ OUI → MCP</p>
+                  <p className="font-medium text-green-600 dark:text-green-400">{t('decision_yes_mcp')}</p>
                   <p className="ml-4 text-sm text-muted-foreground">
-                    Aussi besoin de chercher dans des docs ?
+                    {t('decision_yes_docs')}
                   </p>
                   <div className="ml-8 space-y-1 text-sm">
-                    <p className="text-green-600 dark:text-green-400">✅ OUI → MCP + RAG</p>
-                    <p className="text-muted-foreground">❌ NON → MCP seul</p>
+                    <p className="text-green-600 dark:text-green-400">{t('decision_yes_both')}</p>
+                    <p className="text-muted-foreground">{t('decision_no_mcp')}</p>
                   </div>
                 </div>
 
                 <div>
-                  <p className="font-medium text-blue-600 dark:text-blue-400">❌ NON → Besoin de chercher dans docs ?</p>
+                  <p className="font-medium text-blue-600 dark:text-blue-400">{t('decision_no_actions')}</p>
                   <div className="ml-8 space-y-1 text-sm">
-                    <p className="text-blue-600 dark:text-blue-400">✅ OUI → RAG</p>
-                    <p className="text-muted-foreground">❌ NON → LLM simple</p>
+                    <p className="text-blue-600 dark:text-blue-400">{t('decision_yes_rag')}</p>
+                    <p className="text-muted-foreground">{t('decision_no_llm')}</p>
                   </div>
                 </div>
               </div>
@@ -359,12 +365,12 @@ export default function MCPvsRAGPage() {
         <Link href="/prompts/wizard">
           <Button size="lg" className="gap-2">
             <Code className="w-5 h-5" />
-            Créer un prompt optimisé
+            {t('cta_button')}
             <ArrowRight className="w-4 h-4" />
           </Button>
         </Link>
         <p className="text-sm text-muted-foreground mt-4">
-          Utilisez notre wizard pour créer des prompts RAG ou MCP
+          {t('cta_description')}
         </p>
       </div>
     </div>
