@@ -187,12 +187,12 @@ export const zIndex = {
   hide: -1,
   base: 0,
   sticky: 1100,
-  dropdown: 1150,
   fixed: 1200,
   modalBackdrop: 1300,
   modal: 1400,
   popover: 1500,
   tooltip: 1600,
+  dropdown: 9999,
 } as const
 
 // ============================================================================
