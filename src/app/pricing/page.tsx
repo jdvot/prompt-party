@@ -2,11 +2,14 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { CheckIcon, SparklesIcon, ZapIcon, RocketIcon, BuildingIcon } from 'lucide-react'
 import Link from 'next/link'
-import type { Metadata } from 'next'
+import { getTranslations } from 'next-intl/server'
 
-export const metadata: Metadata = {
-  title: 'Pricing | Prompt Party',
-  description: 'Choose the perfect plan for your prompt engineering needs',
+export async function generateMetadata() {
+  const t = await getTranslations('metadata')
+  return {
+    title: t('pricing_title'),
+    description: t('pricing_description'),
+  }
 }
 
 export default function PricingPage() {
