@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-**Prompt Party** is a social network for AI prompts. Users can create, share, discover, vote on, comment on, and remix AI prompts. Built with Next.js 15, Supabase, and deployed on Netlify's free tier.
+**Prompt Party** is a social network for AI prompts. Users can create, share, discover, vote on, comment on, and remix AI prompts. Built with Next.js 15, Supabase, and can be deployed on Vercel or Netlify.
 
 ## Tech Stack
 
@@ -12,7 +12,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - **Language**: TypeScript
 - **UI**: Tailwind CSS + Shadcn UI
 - **Database/Auth/Storage**: Supabase (PostgreSQL + Auth + Realtime + Storage)
-- **Deployment**: Netlify (free tier)
+- **Deployment**: Vercel (recommended) or Netlify
+- **Email**: Resend API
 - **Package Manager**: PNPM (preferred) or npm
 
 ## Development Commands
@@ -21,24 +22,22 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 # Install dependencies
 pnpm install
 
-# Run locally with Netlify Dev (recommended - includes Functions, SSR, env vars)
-netlify dev
-# App runs at http://localhost:8888
-
-# Alternative: Run Next.js directly (without Netlify Functions)
+# Run locally
 pnpm dev
 # App runs at http://localhost:3000
 
 # Build for production
 pnpm build
 
-# Netlify deployment
+# Vercel deployment (RECOMMENDED)
+vercel              # Deploy to preview
+vercel --prod       # Deploy to production
+vercel env ls       # List environment variables
+vercel env add NAME # Add environment variable
+
+# Alternative: Netlify deployment
 netlify deploy          # Deploy to staging
 netlify deploy --prod   # Deploy to production
-
-# Netlify initialization/setup
-netlify init            # Link to Netlify site
-netlify status          # Check site connection
 netlify env:list        # List environment variables
 netlify env:set KEY VAL # Set environment variable
 
@@ -54,18 +53,34 @@ supabase gen types typescript --project-id YOUR_PROJECT_ID > src/types/supabase.
 
 ## Environment Setup
 
-Create `.env.local` at project root:
+Create `.env.local` at project root (see `.env.example` for all variables):
 
 ```env
+# Supabase
 NEXT_PUBLIC_SUPABASE_URL=https://xxxxx.supabase.co
 NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOi...
+SUPABASE_SERVICE_ROLE_KEY=eyJhbGciOi...
+
+# Site
+NEXT_PUBLIC_SITE_URL=https://your-domain.com
+
+# Email (Resend)
+RESEND_API_KEY=re_xxxxxxxxxxxx
+EMAIL_FROM=Prompt Party <noreply@yourdomain.com>
+
+# Cron Job Security
+CRON_SECRET=your_random_secret_token
 ```
 
-For server-side secrets, use `.env` (not committed to git).
+**Vercel environment variables** can be set via:
+- Vercel Dashboard (Settings > Environment Variables)
+- `vercel env add` command
 
-Netlify environment variables can be set via:
+**Netlify environment variables** can be set via:
 - Netlify Dashboard
 - `netlify env:set` command
+
+See `VERCEL_DEPLOYMENT.md` for complete deployment guide.
 
 ## Architecture
 
@@ -79,7 +94,7 @@ src/
  │    ├── prompts/            # Prompt detail & editor routes
  │    ├── collections/        # Collection management routes
  │    ├── profile/            # User profile routes
- │    └── api/                # API Route Handlers (become Netlify Functions)
+ │    └── api/                # API Route Handlers (serverless functions)
  ├── components/              # React components (use Shadcn UI patterns)
  ├── lib/                     # Supabase client setup & utilities
  ├── styles/                  # Global Tailwind styles
@@ -91,7 +106,7 @@ src/
 1. **App Router**: Use Next.js 15 App Router conventions
    - Server Components by default
    - Client Components marked with `'use client'`
-   - API routes in `app/api/` become Netlify Functions
+   - API routes in `app/api/` become serverless functions (Vercel Functions or Netlify Functions)
 
 2. **Supabase Integration**:
    - Client initialization in `lib/` (separate client/server instances)
@@ -152,14 +167,29 @@ Core tables (all with RLS enabled):
 - **Types**: Generate TypeScript types from Supabase schema when possible
 - **Markdown**: Prompts support Markdown formatting - sanitize user input
 
-### Netlify-Specific Considerations
+### Deployment Considerations
 
-- Use `netlify dev` for local development to simulate production environment
-- API routes in `app/api/` become Functions automatically
+**Vercel (Recommended):**
+- API routes in `app/api/` become Vercel Functions automatically
 - Edge Functions available for ultra-fast globally distributed logic
+- Cron jobs configured in `vercel.json` (requires Pro plan)
+- See `VERCEL_DEPLOYMENT.md` for complete guide
+
+**Netlify (Alternative):**
+- Use `netlify dev` for local development to simulate production environment
+- API routes in `app/api/` become Netlify Functions automatically
+- Edge Functions available
 - Configure redirects/rewrites in `netlify.toml`
 
 ## Deployment Notes
+
+**Vercel Free Tier Limits:**
+- 100 GB/month bandwidth
+- 100k Function invocations/month
+- 6000 build minutes/month
+- Function duration: 10s max
+- Cron jobs: ❌ (requires Pro plan)
+- SSL + custom domain included
 
 **Netlify Free Tier Limits:**
 - 100 GB/month bandwidth
@@ -173,17 +203,4 @@ Core tables (all with RLS enabled):
 - 50k Auth users/month
 - Unlimited Realtime
 
-Example `netlify.toml`:
-```toml
-[build]
-  command = "pnpm build"
-  publish = ".next"
-  functions = ".netlify/functions"
-
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
-
-[dev]
-  command = "pnpm dev"
-  port = 3000
-```
+**Note:** For complete Vercel deployment guide with environment variables, Supabase setup, and email configuration, see `VERCEL_DEPLOYMENT.md`.
