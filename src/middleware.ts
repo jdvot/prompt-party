@@ -1,7 +1,25 @@
 import { createServerClient } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
+import createMiddleware from 'next-intl/middleware'
+import { locales } from './i18n/request'
+
+// Create the next-intl middleware
+const intlMiddleware = createMiddleware({
+  locales,
+  defaultLocale: 'en',
+  localePrefix: 'never', // Don't add /en or /fr to URLs
+})
 
 export async function middleware(request: NextRequest) {
+  // First, handle internationalization
+  const intlResponse = intlMiddleware(request)
+
+  // If intl middleware returned a response (redirect), return it
+  if (intlResponse.status !== 200) {
+    return intlResponse
+  }
+
+  // Continue with Supabase auth middleware
   let supabaseResponse = NextResponse.next({
     request,
   })
@@ -73,7 +91,8 @@ export const config = {
      * - _next/image (image optimization files)
      * - favicon.ico (favicon file)
      * - public folder
+     * - api routes (handled separately)
      */
-    '/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)',
+    '/((?!_next/static|_next/image|favicon.ico|api|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)',
   ],
 }
