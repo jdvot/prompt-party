@@ -1,11 +1,13 @@
 import { PromptWizard } from '@/components/prompts/prompt-wizard'
-import type { Metadata } from 'next'
 import { Sparkles } from 'lucide-react'
 import { getTranslations } from 'next-intl/server'
 
-export const metadata: Metadata = {
-  title: 'Prompt Wizard - Create Optimized AI Prompts | Prompt Party',
-  description: 'Step-by-step guide to create effective and optimized AI prompts based on the chosen model',
+export async function generateMetadata() {
+  const t = await getTranslations('wizard')
+  return {
+    title: `${t('title')} | Prompt Party`,
+    description: t('description'),
+  }
 }
 
 export default async function PromptWizardPage() {

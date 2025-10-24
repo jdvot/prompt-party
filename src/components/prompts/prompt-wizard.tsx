@@ -6,88 +6,28 @@ import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { ChevronRight, ChevronLeft, Sparkles, Info, CheckCircle2, Zap, Brain, MessageSquare, User, Code } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import { useTranslations } from 'next-intl'
 
 interface LLMOption {
   id: string
   name: string
   icon: string
-  description: string
-  strengths: string[]
-  promptStyle: string
+  descKey: string
+  strengthKeys: string[]
+  styleKey: string
 }
 
 interface PromptType {
   id: 'system' | 'user' | 'assistant'
-  name: string
+  nameKey: string
   icon: any
-  description: string
-  example: string
-  whenToUse: string
+  descKey: string
+  exampleKey: string
+  whenKey: string
 }
 
-const LLM_OPTIONS: LLMOption[] = [
-  {
-    id: 'chatgpt',
-    name: 'ChatGPT (GPT-4/GPT-3.5)',
-    icon: '🤖',
-    description: 'OpenAI\'s conversational AI, excellent for general tasks',
-    strengths: ['Versatile', 'Code generation', 'Analysis', 'Creative writing'],
-    promptStyle: 'Clear instructions with context. Responds well to role-play and structured formats.'
-  },
-  {
-    id: 'claude',
-    name: 'Claude (Anthropic)',
-    icon: '🎭',
-    description: 'Anthropic\'s helpful, harmless, and honest assistant',
-    strengths: ['Long context', 'Detailed analysis', 'Code review', 'Document processing'],
-    promptStyle: 'Detailed explanations work best. Excels with step-by-step reasoning and nuanced tasks.'
-  },
-  {
-    id: 'gemini',
-    name: 'Gemini (Google)',
-    icon: '💎',
-    description: 'Google\'s multimodal AI model',
-    strengths: ['Multimodal', 'Search integration', 'Fast responses', 'Code understanding'],
-    promptStyle: 'Natural language with clear goals. Works well with contextual information.'
-  },
-  {
-    id: 'llama',
-    name: 'Llama 2/3 (Meta)',
-    icon: '🦙',
-    description: 'Meta\'s open-source language model',
-    strengths: ['Open source', 'Customizable', 'Privacy-focused', 'Local deployment'],
-    promptStyle: 'Direct and specific. Benefits from explicit formatting instructions.'
-  },
-]
-
-const PROMPT_TYPES: PromptType[] = [
-  {
-    id: 'system',
-    name: 'System Prompt',
-    icon: Brain,
-    description: 'Définit le comportement et le rôle global de l\'IA',
-    example: 'Tu es un expert en marketing digital avec 10 ans d\'expérience. Tu donnes des conseils pratiques et actionnables.',
-    whenToUse: 'Pour établir le contexte, le ton, les contraintes et le rôle de l\'IA. C\'est la "personnalité" de base.'
-  },
-  {
-    id: 'user',
-    name: 'User Prompt',
-    icon: User,
-    description: 'La question ou instruction de l\'utilisateur',
-    example: 'Crée-moi une stratégie de contenu pour Instagram pour une marque de café artisanal',
-    whenToUse: 'Pour poser votre question spécifique ou demander une tâche précise. C\'est votre input.'
-  },
-  {
-    id: 'assistant',
-    name: 'Assistant Prompt',
-    icon: MessageSquare,
-    description: 'Exemples de réponses attendues (few-shot learning)',
-    example: 'Assistant: "Voici une stratégie en 3 axes: 1) Storytelling visuel... 2) Engagement communautaire..."',
-    whenToUse: 'Pour donner des exemples du format ou style de réponse souhaité. Améliore la cohérence.'
-  },
-]
-
 export function PromptWizard() {
+  const t = useTranslations('wizard')
   const [step, setStep] = useState(1)
   const [selectedLLM, setSelectedLLM] = useState<string | null>(null)
   const [promptData, setPromptData] = useState({
@@ -102,6 +42,68 @@ export function PromptWizard() {
   })
 
   const totalSteps = 5
+
+  const LLM_OPTIONS: LLMOption[] = [
+    {
+      id: 'chatgpt',
+      name: 'ChatGPT (GPT-4/GPT-3.5)',
+      icon: '🤖',
+      descKey: 'chatgpt_desc',
+      strengthKeys: ['chatgpt_strength_1', 'chatgpt_strength_2', 'chatgpt_strength_3', 'chatgpt_strength_4'],
+      styleKey: 'chatgpt_style'
+    },
+    {
+      id: 'claude',
+      name: 'Claude (Anthropic)',
+      icon: '🎭',
+      descKey: 'claude_desc',
+      strengthKeys: ['claude_strength_1', 'claude_strength_2', 'claude_strength_3', 'claude_strength_4'],
+      styleKey: 'claude_style'
+    },
+    {
+      id: 'gemini',
+      name: 'Gemini (Google)',
+      icon: '💎',
+      descKey: 'gemini_desc',
+      strengthKeys: ['gemini_strength_1', 'gemini_strength_2', 'gemini_strength_3', 'gemini_strength_4'],
+      styleKey: 'gemini_style'
+    },
+    {
+      id: 'llama',
+      name: 'Llama 2/3 (Meta)',
+      icon: '🦙',
+      descKey: 'llama_desc',
+      strengthKeys: ['llama_strength_1', 'llama_strength_2', 'llama_strength_3', 'llama_strength_4'],
+      styleKey: 'llama_style'
+    },
+  ]
+
+  const PROMPT_TYPES: PromptType[] = [
+    {
+      id: 'system',
+      nameKey: 'prompt_type_system',
+      icon: Brain,
+      descKey: 'system_desc',
+      exampleKey: 'system_example',
+      whenKey: 'system_when'
+    },
+    {
+      id: 'user',
+      nameKey: 'prompt_type_user',
+      icon: User,
+      descKey: 'user_desc',
+      exampleKey: 'user_example',
+      whenKey: 'user_when'
+    },
+    {
+      id: 'assistant',
+      nameKey: 'prompt_type_assistant',
+      icon: MessageSquare,
+      descKey: 'assistant_desc',
+      exampleKey: 'assistant_example',
+      whenKey: 'assistant_when'
+    },
+  ]
 
   const handleNext = () => {
     if (step < totalSteps) setStep(step + 1)
@@ -119,10 +121,10 @@ export function PromptWizard() {
       <div className="mb-8">
         <div className="flex items-center justify-between mb-2">
           <h2 className="text-sm font-medium text-muted-foreground">
-            Étape {step} sur {totalSteps}
+            {t('progress_step')} {step} {t('progress_of')} {totalSteps}
           </h2>
           <span className="text-sm font-medium text-primary">
-            {Math.round((step / totalSteps) * 100)}% complété
+            {Math.round((step / totalSteps) * 100)}% {t('progress_completed')}
           </span>
         </div>
         <div className="h-2 bg-muted rounded-full overflow-hidden">
@@ -138,10 +140,10 @@ export function PromptWizard() {
         <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4">
           <div className="text-center space-y-2">
             <h1 className="text-3xl font-bold gradient-text">
-              Quel modèle d'IA allez-vous utiliser ?
+              {t('step1_heading')}
             </h1>
             <p className="text-muted-foreground text-lg">
-              Chaque IA a ses forces. Choisissez celle qui correspond à votre besoin.
+              {t('step1_subtitle')}
             </p>
           </div>
 
@@ -164,7 +166,7 @@ export function PromptWizard() {
                       <div>
                         <CardTitle className="text-lg">{llm.name}</CardTitle>
                         <CardDescription className="mt-1">
-                          {llm.description}
+                          {t(llm.descKey)}
                         </CardDescription>
                       </div>
                     </div>
@@ -175,11 +177,11 @@ export function PromptWizard() {
                 </CardHeader>
                 <CardContent className="space-y-3">
                   <div>
-                    <p className="text-sm font-medium mb-2">Points forts :</p>
+                    <p className="text-sm font-medium mb-2">{t('strengths_label')}</p>
                     <div className="flex flex-wrap gap-1.5">
-                      {llm.strengths.map((strength, idx) => (
+                      {llm.strengthKeys.map((strengthKey, idx) => (
                         <Badge key={idx} variant="secondary" className="text-xs">
-                          {strength}
+                          {t(strengthKey)}
                         </Badge>
                       ))}
                     </div>
@@ -187,7 +189,7 @@ export function PromptWizard() {
                   <div className="pt-2 border-t">
                     <p className="text-sm text-muted-foreground">
                       <Sparkles className="w-3.5 h-3.5 inline mr-1" />
-                      {llm.promptStyle}
+                      {t(llm.styleKey)}
                     </p>
                   </div>
                 </CardContent>
@@ -202,10 +204,10 @@ export function PromptWizard() {
         <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4">
           <div className="text-center space-y-2">
             <h1 className="text-3xl font-bold gradient-text">
-              Comprendre les types de prompts
+              {t('step2_heading')}
             </h1>
             <p className="text-muted-foreground text-lg">
-              Les 3 éléments clés pour créer un prompt performant
+              {t('step2_subtitle')}
             </p>
           </div>
 
@@ -222,13 +224,13 @@ export function PromptWizard() {
                       </div>
                       <div className="flex-1">
                         <div className="flex items-center gap-2 mb-2">
-                          <CardTitle className="text-xl">{type.name}</CardTitle>
+                          <CardTitle className="text-xl">{t(type.nameKey)}</CardTitle>
                           <Badge variant="outline" className="text-xs">
                             {idx + 1}/3
                           </Badge>
                         </div>
                         <CardDescription className="text-base">
-                          {type.description}
+                          {t(type.descKey)}
                         </CardDescription>
                       </div>
                     </div>
@@ -237,19 +239,19 @@ export function PromptWizard() {
                     <div>
                       <p className="text-sm font-medium mb-2 flex items-center gap-2">
                         <Info className="w-4 h-4" />
-                        Quand l'utiliser ?
+                        {t('when_to_use')}
                       </p>
                       <p className="text-sm text-muted-foreground bg-muted/50 p-3 rounded-md">
-                        {type.whenToUse}
+                        {t(type.whenKey)}
                       </p>
                     </div>
                     <div>
                       <p className="text-sm font-medium mb-2 flex items-center gap-2">
                         <Code className="w-4 h-4" />
-                        Exemple :
+                        {t('example_label')}
                       </p>
                       <pre className="text-sm bg-background border rounded-md p-3 overflow-x-auto">
-                        <code className="text-foreground">{type.example}</code>
+                        <code className="text-foreground">{t(type.exampleKey)}</code>
                       </pre>
                     </div>
                   </CardContent>
@@ -262,16 +264,12 @@ export function PromptWizard() {
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Zap className="w-5 h-5 text-primary" />
-                Astuce Pro
+                {t('pro_tip_title')}
               </CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-sm leading-relaxed">
-                Pour les meilleurs résultats, combinez les 3 types :
-                <strong className="text-primary"> System</strong> définit le rôle,
-                <strong className="text-primary"> User</strong> pose la question,
-                <strong className="text-primary"> Assistant</strong> montre un exemple de réponse.
-                Cette approche garantit des réponses cohérentes et précises.
+                {t('pro_tip_text')}
               </p>
             </CardContent>
           </Card>
@@ -283,10 +281,10 @@ export function PromptWizard() {
         <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4">
           <div className="text-center space-y-2">
             <h1 className="text-3xl font-bold gradient-text">
-              Définissez le contexte système
+              {t('step3_heading')}
             </h1>
             <p className="text-muted-foreground text-lg">
-              Établissez le rôle et le comportement de l'IA
+              {t('step3_subtitle')}
             </p>
           </div>
 
@@ -295,10 +293,10 @@ export function PromptWizard() {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-lg">
                   <span className="text-2xl">{selectedLLMData.icon}</span>
-                  Optimisé pour {selectedLLMData.name}
+                  {t('optimized_for')} {selectedLLMData.name}
                 </CardTitle>
                 <CardDescription>
-                  {selectedLLMData.promptStyle}
+                  {t(selectedLLMData.styleKey)}
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -307,26 +305,26 @@ export function PromptWizard() {
           <div className="space-y-4">
             <div>
               <label className="block text-sm font-medium mb-2">
-                Titre du prompt
+                {t('prompt_title_label')}
               </label>
               <input
                 type="text"
                 value={promptData.title}
                 onChange={(e) => setPromptData({ ...promptData, title: e.target.value })}
-                placeholder="Ex: Expert en marketing digital"
+                placeholder={t('prompt_title_placeholder')}
                 className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
               />
             </div>
 
             <div>
               <label className="block text-sm font-medium mb-2">
-                Objectif principal
+                {t('main_goal_label')}
               </label>
               <input
                 type="text"
                 value={promptData.goal}
                 onChange={(e) => setPromptData({ ...promptData, goal: e.target.value })}
-                placeholder="Ex: Créer des stratégies marketing actionnables"
+                placeholder={t('main_goal_placeholder')}
                 className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
               />
             </div>
@@ -334,28 +332,28 @@ export function PromptWizard() {
             <div>
               <label className="block text-sm font-medium mb-2 flex items-center gap-2">
                 <Brain className="w-4 h-4" />
-                System Prompt (Rôle et personnalité)
+                {t('system_prompt_label')}
               </label>
               <textarea
                 value={promptData.systemPrompt}
                 onChange={(e) => setPromptData({ ...promptData, systemPrompt: e.target.value })}
-                placeholder="Ex: Tu es un expert en marketing digital avec 10 ans d'expérience. Tu donnes des conseils pratiques, basés sur les données, et adaptés aux PME. Ton ton est professionnel mais accessible."
+                placeholder={t('system_prompt_placeholder')}
                 rows={6}
                 className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary resize-none"
               />
               <p className="text-xs text-muted-foreground mt-1">
-                💡 Incluez : expertise, ton, style de réponse, contraintes
+                {t('system_prompt_hint')}
               </p>
             </div>
 
             <div>
               <label className="block text-sm font-medium mb-2">
-                Contexte additionnel (optionnel)
+                {t('additional_context_label')}
               </label>
               <textarea
                 value={promptData.context}
                 onChange={(e) => setPromptData({ ...promptData, context: e.target.value })}
-                placeholder="Ex: L'utilisateur cible des entrepreneurs en e-commerce avec un budget limité"
+                placeholder={t('additional_context_placeholder')}
                 rows={3}
                 className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary resize-none"
               />
@@ -369,10 +367,10 @@ export function PromptWizard() {
         <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4">
           <div className="text-center space-y-2">
             <h1 className="text-3xl font-bold gradient-text">
-              Créez votre prompt utilisateur
+              {t('step4_heading')}
             </h1>
             <p className="text-muted-foreground text-lg">
-              La question ou tâche spécifique que vous voulez accomplir
+              {t('step4_subtitle')}
             </p>
           </div>
 
@@ -380,29 +378,29 @@ export function PromptWizard() {
             <div>
               <label className="block text-sm font-medium mb-2 flex items-center gap-2">
                 <User className="w-4 h-4" />
-                User Prompt (Votre demande)
+                {t('user_prompt_label')}
               </label>
               <textarea
                 value={promptData.userPrompt}
                 onChange={(e) => setPromptData({ ...promptData, userPrompt: e.target.value })}
-                placeholder="Ex: Crée une stratégie de contenu Instagram pour une marque de café artisanal. Inclus 3 piliers de contenu et 10 idées de posts."
+                placeholder={t('user_prompt_placeholder')}
                 rows={6}
                 className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary resize-none"
               />
               <p className="text-xs text-muted-foreground mt-1">
-                💡 Soyez spécifique : quoi, pourquoi, format attendu
+                {t('user_prompt_hint')}
               </p>
             </div>
 
             <div>
               <label className="block text-sm font-medium mb-2">
-                Format de sortie attendu
+                {t('output_format_label')}
               </label>
               <input
                 type="text"
                 value={promptData.outputFormat}
                 onChange={(e) => setPromptData({ ...promptData, outputFormat: e.target.value })}
-                placeholder="Ex: Liste à puces, tableau, JSON, paragraphe..."
+                placeholder={t('output_format_placeholder')}
                 className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
               />
             </div>
@@ -410,17 +408,17 @@ export function PromptWizard() {
             <div>
               <label className="block text-sm font-medium mb-2 flex items-center gap-2">
                 <MessageSquare className="w-4 h-4" />
-                Exemple de réponse attendue (Assistant Prompt - optionnel)
+                {t('assistant_example_label')}
               </label>
               <textarea
                 value={promptData.assistantExample}
                 onChange={(e) => setPromptData({ ...promptData, assistantExample: e.target.value })}
-                placeholder="Ex: Stratégie Instagram pour Café Artisan&#10;&#10;🎯 Pilier 1: Behind the scenes&#10;- Montrer la torréfaction&#10;- Portraits des producteurs&#10;..."
+                placeholder={t('assistant_example_placeholder')}
                 rows={6}
                 className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary resize-none font-mono text-sm"
               />
               <p className="text-xs text-muted-foreground mt-1">
-                💡 Donnez un exemple concret du format/style de réponse souhaité
+                {t('assistant_example_hint')}
               </p>
             </div>
           </div>
@@ -429,25 +427,25 @@ export function PromptWizard() {
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-lg">
                 <Sparkles className="w-5 h-5 text-blue-500" />
-                Bonnes pratiques
+                {t('best_practices_title')}
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-2 text-sm">
               <div className="flex gap-2">
                 <CheckCircle2 className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                <span>Utilisez des verbes d'action clairs (Crée, Analyse, Liste, Génère...)</span>
+                <span>{t('best_practice_1')}</span>
               </div>
               <div className="flex gap-2">
                 <CheckCircle2 className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                <span>Spécifiez la longueur attendue (nombre de mots, points, sections...)</span>
+                <span>{t('best_practice_2')}</span>
               </div>
               <div className="flex gap-2">
                 <CheckCircle2 className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                <span>Donnez un exemple concret si le format est complexe</span>
+                <span>{t('best_practice_3')}</span>
               </div>
               <div className="flex gap-2">
                 <CheckCircle2 className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                <span>Mentionnez les contraintes (ton, audience, limitations...)</span>
+                <span>{t('best_practice_4')}</span>
               </div>
             </CardContent>
           </Card>
@@ -459,10 +457,10 @@ export function PromptWizard() {
         <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4">
           <div className="text-center space-y-2">
             <h1 className="text-3xl font-bold gradient-text">
-              Votre prompt optimisé
+              {t('step5_heading')}
             </h1>
             <p className="text-muted-foreground text-lg">
-              Prêt à être utilisé avec {selectedLLMData?.name}
+              {t('step5_subtitle')} {selectedLLMData?.name}
             </p>
           </div>
 
@@ -470,11 +468,11 @@ export function PromptWizard() {
             <CardHeader className="bg-gradient-to-r from-primary/10 to-transparent">
               <CardTitle className="flex items-center gap-2">
                 <Code className="w-5 h-5" />
-                {promptData.title || 'Prompt sans titre'}
+                {promptData.title || t('untitled_prompt')}
               </CardTitle>
               {promptData.goal && (
                 <CardDescription className="mt-2">
-                  🎯 Objectif : {promptData.goal}
+                  {t('goal_prefix')} {promptData.goal}
                 </CardDescription>
               )}
             </CardHeader>
@@ -485,9 +483,9 @@ export function PromptWizard() {
                   <div className="flex items-center gap-2 mb-2">
                     <Badge variant="secondary" className="gap-1">
                       <Brain className="w-3 h-3" />
-                      System
+                      {t('badge_system')}
                     </Badge>
-                    <span className="text-xs text-muted-foreground">Rôle et comportement</span>
+                    <span className="text-xs text-muted-foreground">{t('role_behavior')}</span>
                   </div>
                   <div className="bg-muted/50 rounded-md p-4 border-l-4 border-primary">
                     <pre className="text-sm whitespace-pre-wrap font-sans">
@@ -503,7 +501,7 @@ export function PromptWizard() {
                   <div className="flex items-center gap-2 mb-2">
                     <Badge variant="outline" className="gap-1">
                       <Info className="w-3 h-3" />
-                      Contexte
+                      {t('badge_context')}
                     </Badge>
                   </div>
                   <div className="bg-background rounded-md p-4 border">
@@ -520,9 +518,9 @@ export function PromptWizard() {
                   <div className="flex items-center gap-2 mb-2">
                     <Badge className="gap-1">
                       <User className="w-3 h-3" />
-                      User
+                      {t('badge_user')}
                     </Badge>
-                    <span className="text-xs text-muted-foreground">Votre demande</span>
+                    <span className="text-xs text-muted-foreground">{t('your_request')}</span>
                   </div>
                   <div className="bg-muted/50 rounded-md p-4 border-l-4 border-blue-500">
                     <pre className="text-sm whitespace-pre-wrap font-sans">
@@ -535,7 +533,7 @@ export function PromptWizard() {
               {/* Output Format */}
               {promptData.outputFormat && (
                 <div className="flex items-center gap-2 text-sm">
-                  <span className="text-muted-foreground">Format attendu :</span>
+                  <span className="text-muted-foreground">{t('expected_format_label')}</span>
                   <Badge variant="outline">{promptData.outputFormat}</Badge>
                 </div>
               )}
@@ -546,9 +544,9 @@ export function PromptWizard() {
                   <div className="flex items-center gap-2 mb-2">
                     <Badge variant="secondary" className="gap-1">
                       <MessageSquare className="w-3 h-3" />
-                      Assistant Example
+                      {t('badge_assistant')}
                     </Badge>
-                    <span className="text-xs text-muted-foreground">Format de réponse</span>
+                    <span className="text-xs text-muted-foreground">{t('response_format')}</span>
                   </div>
                   <div className="bg-muted/50 rounded-md p-4 border-l-4 border-green-500">
                     <pre className="text-sm whitespace-pre-wrap font-mono">
@@ -565,12 +563,11 @@ export function PromptWizard() {
               size="lg"
               className="w-full gap-2"
               onClick={() => {
-                // TODO: Save to database
-                alert('Fonctionnalité de sauvegarde à venir!')
+                alert(t('save_coming_soon'))
               }}
             >
               <CheckCircle2 className="w-5 h-5" />
-              Sauvegarder ce prompt
+              {t('save_prompt_btn')}
             </Button>
             <Button
               size="lg"
@@ -579,11 +576,11 @@ export function PromptWizard() {
               onClick={() => {
                 const fullPrompt = `SYSTEM:\n${promptData.systemPrompt}\n\n${promptData.context ? `CONTEXT:\n${promptData.context}\n\n` : ''}USER:\n${promptData.userPrompt}${promptData.assistantExample ? `\n\nASSISTANT EXAMPLE:\n${promptData.assistantExample}` : ''}`
                 navigator.clipboard.writeText(fullPrompt)
-                alert('Prompt copié dans le presse-papier!')
+                alert(t('copied_clipboard'))
               }}
             >
               <Code className="w-5 h-5" />
-              Copier le prompt
+              {t('copy_prompt_btn')}
             </Button>
           </div>
         </div>
@@ -598,7 +595,7 @@ export function PromptWizard() {
           className="gap-2"
         >
           <ChevronLeft className="w-4 h-4" />
-          Précédent
+          {t('btn_previous')}
         </Button>
 
         {step < totalSteps ? (
@@ -607,19 +604,18 @@ export function PromptWizard() {
             disabled={step === 1 && !selectedLLM}
             className="gap-2"
           >
-            Suivant
+            {t('btn_next')}
             <ChevronRight className="w-4 h-4" />
           </Button>
         ) : (
           <Button
             onClick={() => {
-              // Redirect to create page with pre-filled data
               window.location.href = '/prompts/new'
             }}
             className="gap-2"
           >
             <Sparkles className="w-4 h-4" />
-            Créer le prompt
+            {t('btn_create')}
           </Button>
         )}
       </div>
