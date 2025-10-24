@@ -42,6 +42,268 @@ supabase db push
 supabase gen types typescript --project-id xxxxx > src/types/supabase.ts
 ```
 
+### 1.4 Configurer les Redirect URLs (IMPORTANT)
+
+Supabase a besoin de connaître les URLs autorisées pour les redirections après authentification.
+
+#### Dans Supabase Dashboard
+
+1. Aller dans **Authentication > URL Configuration**
+2. Configurer les **Redirect URLs** autorisées :
+
+**Pour le développement local :**
+```
+http://localhost:3000/auth/callback
+```
+
+**Pour Vercel (production) :**
+```
+https://votre-app.vercel.app/auth/callback
+https://votre-domaine-personnalise.com/auth/callback
+```
+
+**Pour Vercel (preview deployments) :**
+```
+https://*.vercel.app/auth/callback
+```
+
+#### Configuration complète recommandée
+
+Dans **Authentication > URL Configuration**, ajouter :
+
+**Site URL :**
+```
+https://votre-app.vercel.app
+```
+
+**Redirect URLs (une par ligne) :**
+```
+http://localhost:3000/auth/callback
+http://localhost:8888/auth/callback
+https://votre-app.vercel.app/auth/callback
+https://*.vercel.app/auth/callback
+```
+
+⚠️ **Important** :
+- Les wildcard (`*`) sont supportés pour les preview deployments Vercel
+- Ajouter aussi votre domaine personnalisé si vous en avez un
+- Sans ces URLs, l'authentification OAuth et les magic links ne fonctionneront pas
+
+#### Tester la configuration
+
+Après déploiement sur Vercel :
+
+1. Aller sur `https://votre-app.vercel.app/auth/login`
+2. Essayer de se connecter avec Google/GitHub (si configuré)
+3. Vérifier la redirection vers `/auth/callback`
+4. Si erreur "redirect_uri_mismatch", vérifier les URLs dans Supabase
+
+### 1.5 Configurer les providers OAuth (optionnel)
+
+#### Google OAuth
+
+1. Dans Supabase : **Authentication > Providers > Google**
+2. Activer Google provider
+3. Créer un projet dans [Google Cloud Console](https://console.cloud.google.com)
+4. Créer des credentials OAuth 2.0
+5. Ajouter les **Authorized redirect URIs** :
+   ```
+   https://xxxxx.supabase.co/auth/v1/callback
+   ```
+6. Copier **Client ID** et **Client Secret** dans Supabase
+
+**Redirect URIs autorisées dans Google Console :**
+```
+https://xxxxx.supabase.co/auth/v1/callback
+```
+
+#### GitHub OAuth
+
+1. Dans Supabase : **Authentication > Providers > GitHub**
+2. Activer GitHub provider
+3. Aller dans [GitHub Settings > Developer settings > OAuth Apps](https://github.com/settings/developers)
+4. Créer une nouvelle OAuth App
+5. Configurer :
+   - **Homepage URL** : `https://votre-app.vercel.app`
+   - **Authorization callback URL** : `https://xxxxx.supabase.co/auth/v1/callback`
+6. Copier **Client ID** et **Client Secret** dans Supabase
+
+#### Email Provider (Magic Links)
+
+Par défaut, Supabase utilise les magic links pour l'authentification email.
+
+**Configuration dans Supabase :**
+1. **Authentication > Email Templates**
+2. Personnaliser les templates si besoin :
+   - Confirm signup
+   - Magic Link
+   - Change Email Address
+   - Reset Password
+
+**Variables disponibles dans les templates :**
+- `{{ .ConfirmationURL }}` - URL de confirmation (pointe vers `/auth/callback`)
+- `{{ .Token }}` - Token de vérification
+- `{{ .TokenHash }}` - Hash du token
+- `{{ .SiteURL }}` - Votre site URL
+
+**Exemple de template personnalisé :**
+```html
+<h2>Confirmez votre inscription</h2>
+<p>Cliquez sur le lien ci-dessous pour confirmer votre email :</p>
+<p><a href="{{ .ConfirmationURL }}">Confirmer mon email</a></p>
+```
+
+### 1.6 Configurer Email Rate Limiting
+
+Pour éviter l'abus des magic links :
+
+1. Dans Supabase : **Authentication > Rate Limits**
+2. Configurer les limites :
+   - **Sign up** : 3-5 par heure par IP
+   - **Sign in** : 10-20 par heure par IP
+   - **Password reset** : 3-5 par heure par IP
+
+### 1.7 Flow d'authentification complet
+
+Comprendre comment l'authentification fonctionne avec Supabase et Vercel.
+
+#### 🔐 Magic Link Flow (Email)
+
+```
+1. Utilisateur entre son email sur /auth/login
+   ↓
+2. Supabase envoie un email avec un lien magique
+   Exemple: https://xxxxx.supabase.co/auth/v1/verify?token=...&type=magiclink&redirect_to=https://votre-app.vercel.app/auth/callback
+   ↓
+3. Utilisateur clique sur le lien dans l'email
+   ↓
+4. Supabase vérifie le token
+   ↓
+5. Supabase redirige vers: https://votre-app.vercel.app/auth/callback?code=xxx
+   ↓
+6. L'API route /auth/callback échange le code contre une session
+   ↓
+7. Redirection vers la page demandée (ou / par défaut)
+   ✅ Utilisateur connecté
+```
+
+#### 🔐 OAuth Flow (Google/GitHub)
+
+```
+1. Utilisateur clique sur "Continue with Google"
+   ↓
+2. Redirection vers Google OAuth
+   ↓
+3. Utilisateur accepte les permissions
+   ↓
+4. Google redirige vers Supabase: https://xxxxx.supabase.co/auth/v1/callback
+   ↓
+5. Supabase crée/récupère le compte utilisateur
+   ↓
+6. Supabase redirige vers: https://votre-app.vercel.app/auth/callback?code=xxx
+   ↓
+7. L'API route /auth/callback échange le code contre une session
+   ↓
+8. Redirection vers la page demandée
+   ✅ Utilisateur connecté
+```
+
+#### 🔐 Password Reset Flow
+
+```
+1. Utilisateur clique sur "Forgot password"
+   ↓
+2. Supabase envoie un email avec un lien de reset
+   Exemple: https://xxxxx.supabase.co/auth/v1/verify?token=...&type=recovery&redirect_to=https://votre-app.vercel.app/auth/callback
+   ↓
+3. Utilisateur clique sur le lien dans l'email
+   ↓
+4. Supabase vérifie le token
+   ↓
+5. Supabase redirige vers: https://votre-app.vercel.app/auth/callback?code=xxx&type=recovery
+   ↓
+6. L'API route /auth/callback détecte le type=recovery
+   ↓
+7. Redirection vers /auth/reset-password (avec session temporaire)
+   ↓
+8. Utilisateur entre son nouveau mot de passe
+   ✅ Mot de passe modifié
+```
+
+#### 📁 Fichiers impliqués
+
+| Fichier | Rôle |
+|---------|------|
+| `src/app/auth/callback/route.ts` | Échange le code contre une session Supabase |
+| `src/app/auth/auth-code-error/page.tsx` | Page d'erreur si le callback échoue |
+| `src/middleware.ts` | Vérifie l'authentification sur toutes les pages |
+| `src/lib/supabase/server.ts` | Client Supabase côté serveur |
+
+#### ⚠️ Erreurs courantes et solutions
+
+**Erreur: "redirect_uri_mismatch"**
+- ❌ Cause : L'URL de callback n'est pas configurée dans Supabase
+- ✅ Solution : Ajouter `https://votre-app.vercel.app/auth/callback` dans Supabase > Authentication > URL Configuration
+
+**Erreur: "Invalid authentication code"**
+- ❌ Cause : Le lien a expiré (>1h) ou déjà été utilisé
+- ✅ Solution : Demander un nouveau lien
+
+**Erreur: "PKCE verifier is missing"**
+- ❌ Cause : Problème avec le flow PKCE de Supabase
+- ✅ Solution : Vérifier que `exchangeCodeForSession` est utilisé (pas `getSession`)
+
+**Redirection infinie**
+- ❌ Cause : Le middleware redirige vers /auth/callback qui redirige vers middleware...
+- ✅ Solution : Exclure `/auth/*` du matcher du middleware (déjà fait dans le projet)
+
+#### 🔧 Debug de l'authentification
+
+**Vérifier la session active :**
+```typescript
+// Dans n'importe quel Server Component
+const supabase = await createClient()
+const { data: { user } } = await supabase.auth.getUser()
+console.log('Current user:', user)
+```
+
+**Vérifier les cookies :**
+```typescript
+// Dans middleware ou API route
+import { cookies } from 'next/headers'
+
+const cookieStore = cookies()
+const accessToken = cookieStore.get('sb-access-token')
+const refreshToken = cookieStore.get('sb-refresh-token')
+console.log('Has tokens:', !!accessToken, !!refreshToken)
+```
+
+**Logs Supabase :**
+1. Supabase Dashboard > Logs
+2. Filtrer par "auth"
+3. Voir les tentatives de connexion, erreurs, etc.
+
+#### 🎯 Checklist de configuration
+
+Avant de déployer en production :
+
+- [ ] Redirect URLs configurées dans Supabase (localhost + production + preview)
+- [ ] Site URL configuré dans Supabase
+- [ ] OAuth providers configurés (si utilisés)
+- [ ] Email templates personnalisés (optionnel)
+- [ ] Rate limiting activé
+- [ ] Variables d'environnement définies sur Vercel :
+  - [ ] `NEXT_PUBLIC_SUPABASE_URL`
+  - [ ] `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+  - [ ] `SUPABASE_SERVICE_ROLE_KEY`
+  - [ ] `NEXT_PUBLIC_SITE_URL`
+- [ ] Tester le flow complet :
+  - [ ] Magic link
+  - [ ] OAuth (si configuré)
+  - [ ] Password reset
+  - [ ] Logout
+  - [ ] Routes protégées
+
 ## 2. Configuration Resend (Email)
 
 1. Aller sur [resend.com](https://resend.com)
