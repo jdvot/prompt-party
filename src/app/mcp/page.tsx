@@ -3,36 +3,43 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Code, Database, Sparkles, Globe, Lock, Zap } from 'lucide-react'
 import Link from 'next/link'
+import { useTranslations } from 'next-intl'
+import { getTranslations } from 'next-intl/server'
 import type { Metadata } from 'next'
 
-export const metadata: Metadata = {
-  title: 'MCP Integration | Prompt Party',
-  description: 'Model Context Protocol (MCP) API for AI-powered prompt discovery and management',
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations('mcp_integration')
+  return {
+    title: t('page_title'),
+    description: t('page_description'),
+  }
 }
 
 export default function MCPPage() {
+  const t = useTranslations('mcp_integration')
+
   const examples = [
     {
-      title: 'List All Prompts',
-      description: 'Get a list of public prompts',
+      title: t('example_list'),
+      description: t('example_list_desc'),
       endpoint: '/api/mcp/prompts?action=list&limit=10',
       method: 'GET',
     },
     {
-      title: 'Search Prompts',
-      description: 'Search prompts by keyword',
+      title: t('example_search'),
+      description: t('example_search_desc'),
       endpoint: '/api/mcp/prompts?action=search&query=coding&limit=5',
       method: 'GET',
     },
     {
-      title: 'Get Specific Prompt',
-      description: 'Retrieve a single prompt by ID',
+      title: t('example_get'),
+      description: t('example_get_desc'),
       endpoint: '/api/mcp/prompts?action=get&id=YOUR_PROMPT_ID',
       method: 'GET',
     },
     {
-      title: 'Filter by Category',
-      description: 'Get prompts from a specific category',
+      title: t('example_filter'),
+      description: t('example_filter_desc'),
       endpoint: '/api/mcp/prompts?action=list&category=coding',
       method: 'GET',
     },
@@ -41,26 +48,26 @@ export default function MCPPage() {
   const features = [
     {
       icon: Database,
-      title: 'Structured Data',
-      description: 'JSON responses optimized for AI consumption',
+      title: t('feature_structured'),
+      description: t('feature_structured_desc'),
       color: 'from-blue-500 to-cyan-500',
     },
     {
       icon: Zap,
-      title: 'Fast Access',
-      description: 'Low-latency API for real-time integrations',
+      title: t('feature_fast'),
+      description: t('feature_fast_desc'),
       color: 'from-yellow-500 to-orange-500',
     },
     {
       icon: Lock,
-      title: 'Secure',
-      description: 'Row-level security with Supabase',
+      title: t('feature_secure'),
+      description: t('feature_secure_desc'),
       color: 'from-green-500 to-emerald-500',
     },
     {
       icon: Globe,
-      title: 'Public Access',
-      description: 'Access public prompts without authentication',
+      title: t('feature_public'),
+      description: t('feature_public_desc'),
       color: 'from-purple-500 to-pink-500',
     },
   ]
@@ -73,14 +80,14 @@ export default function MCPPage() {
           <div className="flex items-center justify-center gap-3 mb-4">
             <Sparkles className="w-10 h-10 text-primary" />
             <h1 className="text-4xl md:text-5xl font-bold gradient-text">
-              MCP Integration
+              {t('title')}
             </h1>
           </div>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Model Context Protocol API for AI-powered prompt discovery and management
+            {t('subtitle')}
           </p>
           <Badge variant="secondary" className="mt-4">
-            MCP v1.0
+            {t('badge')}
           </Badge>
         </div>
 
@@ -88,13 +95,10 @@ export default function MCPPage() {
         <Card className="p-8 mb-8 bento-card">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
             <Code className="w-6 h-6 text-primary" />
-            What is MCP?
+            {t('what_is_mcp')}
           </h2>
           <p className="text-muted-foreground mb-4">
-            The <strong>Model Context Protocol (MCP)</strong> is an open standard that enables AI models and
-            assistants to securely access external data sources and tools. Prompt Party&apos;s MCP endpoint provides
-            structured access to our prompt library, allowing AI assistants to discover, search, and retrieve
-            prompts programmatically.
+            {t('what_is_mcp_text')}
           </p>
           <div className="grid md:grid-cols-2 gap-4 mt-6">
             {features.map((feature) => {
@@ -117,7 +121,7 @@ export default function MCPPage() {
 
         {/* API Endpoints */}
         <Card className="p-8 mb-8 bento-card">
-          <h2 className="text-2xl font-bold mb-6">API Endpoints</h2>
+          <h2 className="text-2xl font-bold mb-6">{t('api_endpoints')}</h2>
 
           <div className="space-y-6">
             {examples.map((example) => (
@@ -139,9 +143,9 @@ export default function MCPPage() {
 
         {/* Response Format */}
         <Card className="p-8 mb-8 bento-card">
-          <h2 className="text-2xl font-bold mb-4">Response Format</h2>
+          <h2 className="text-2xl font-bold mb-4">{t('response_format')}</h2>
           <p className="text-muted-foreground mb-4">
-            All responses follow a consistent JSON structure:
+            {t('response_format_text')}
           </p>
           <pre className="bg-muted/50 p-4 rounded-lg overflow-x-auto text-sm">
 {`{
@@ -170,12 +174,12 @@ export default function MCPPage() {
 
         {/* Getting Started */}
         <Card className="p-8 bento-card">
-          <h2 className="text-2xl font-bold mb-4">Getting Started</h2>
+          <h2 className="text-2xl font-bold mb-4">{t('getting_started')}</h2>
           <div className="space-y-4">
             <div>
-              <h3 className="font-semibold mb-2">1. Try the API</h3>
+              <h3 className="font-semibold mb-2">{t('step1_title')}</h3>
               <p className="text-sm text-muted-foreground mb-2">
-                Test the endpoint in your browser or with curl:
+                {t('step1_text')}
               </p>
               <code className="block bg-muted/50 px-4 py-2 rounded-lg text-sm">
                 curl https://prompt-party.netlify.app/api/mcp/prompts?action=list&limit=5
@@ -183,9 +187,9 @@ export default function MCPPage() {
             </div>
 
             <div>
-              <h3 className="font-semibold mb-2">2. Integrate with Claude Desktop</h3>
+              <h3 className="font-semibold mb-2">{t('step2_title')}</h3>
               <p className="text-sm text-muted-foreground mb-2">
-                Add to your Claude Desktop MCP config:
+                {t('step2_text')}
               </p>
               <pre className="bg-muted/50 p-4 rounded-lg text-sm overflow-x-auto">
 {`{
@@ -203,9 +207,9 @@ export default function MCPPage() {
             </div>
 
             <div>
-              <h3 className="font-semibold mb-2">3. Use in Your App</h3>
+              <h3 className="font-semibold mb-2">{t('step3_title')}</h3>
               <p className="text-sm text-muted-foreground">
-                Integrate the MCP endpoint into your AI applications, chatbots, or automation tools.
+                {t('step3_text')}
               </p>
             </div>
           </div>
@@ -213,7 +217,7 @@ export default function MCPPage() {
           <div className="mt-6 pt-6 border-t">
             <Link href="/prompts">
               <Button className="btn-primary">
-                Browse Prompts
+                {t('browse_prompts')}
               </Button>
             </Link>
           </div>

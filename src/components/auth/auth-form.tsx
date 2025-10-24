@@ -185,7 +185,7 @@ export function AuthForm({ mode }: AuthFormProps) {
               />
               {mode === 'signup' && (
                 <p className="text-xs text-muted-foreground">
-                  Must be at least 6 characters
+                  {t('password_min_length')}
                 </p>
               )}
             </div>

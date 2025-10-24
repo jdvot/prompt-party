@@ -1,109 +1,105 @@
+import { useTranslations } from 'next-intl'
+import { getTranslations } from 'next-intl/server'
 import type { Metadata } from 'next'
 
-export const metadata: Metadata = {
-  title: 'Terms of Service | Prompt Party',
-  description: 'Prompt Party Terms of Service',
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations('terms')
+  return {
+    title: t('page_title'),
+    description: t('page_description'),
+  }
 }
 
 export default function TermsPage() {
+  const t = useTranslations('terms')
+
   return (
     <div className="container mx-auto px-4 py-12">
       <div className="max-w-3xl mx-auto">
-        <h1 className="text-4xl font-bold mb-6">Terms of Service</h1>
+        <h1 className="text-4xl font-bold mb-6">{t('title')}</h1>
 
         <div className="space-y-6 text-muted-foreground">
-          <p className="text-sm">Last updated: {new Date().toLocaleDateString()}</p>
+          <p className="text-sm">{t('last_updated')} {new Date().toLocaleDateString()}</p>
 
           <section>
-            <h2 className="text-2xl font-semibold text-foreground mb-3">Acceptance of Terms</h2>
+            <h2 className="text-2xl font-semibold text-foreground mb-3">{t('acceptance_title')}</h2>
             <p>
-              By accessing and using Prompt Party, you accept and agree to be bound by the
-              terms and provision of this agreement.
+              {t('acceptance_text')}
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold text-foreground mb-3">User Accounts</h2>
+            <h2 className="text-2xl font-semibold text-foreground mb-3">{t('accounts_title')}</h2>
             <p>
-              You are responsible for maintaining the confidentiality of your account and
-              password. You agree to accept responsibility for all activities that occur
-              under your account.
+              {t('accounts_text')}
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold text-foreground mb-3">Content</h2>
+            <h2 className="text-2xl font-semibold text-foreground mb-3">{t('content_title')}</h2>
             <p>
-              You retain ownership of content you create on Prompt Party. By posting content,
-              you grant us a non-exclusive license to use, display, and distribute your
-              content on the platform.
+              {t('content_text')}
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold text-foreground mb-3">Acceptable Use</h2>
-            <p>You agree not to:</p>
+            <h2 className="text-2xl font-semibold text-foreground mb-3">{t('acceptable_title')}</h2>
+            <p>{t('acceptable_text')}</p>
             <ul className="list-disc list-inside mt-2 space-y-1">
-              <li>Post illegal, harmful, or offensive content</li>
-              <li>Harass or abuse other users</li>
-              <li>Spam or engage in fraudulent activity</li>
-              <li>Violate intellectual property rights</li>
-              <li>Attempt to compromise platform security</li>
+              <li>{t('acceptable_1')}</li>
+              <li>{t('acceptable_2')}</li>
+              <li>{t('acceptable_3')}</li>
+              <li>{t('acceptable_4')}</li>
+              <li>{t('acceptable_5')}</li>
             </ul>
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold text-foreground mb-3">Content Moderation</h2>
+            <h2 className="text-2xl font-semibold text-foreground mb-3">{t('moderation_title')}</h2>
             <p>
-              We reserve the right to remove content and suspend accounts that violate
-              these terms or our community guidelines.
+              {t('moderation_text')}
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold text-foreground mb-3">Intellectual Property</h2>
+            <h2 className="text-2xl font-semibold text-foreground mb-3">{t('intellectual_title')}</h2>
             <p>
-              When you remix a prompt, you must credit the original creator. We respect
-              intellectual property rights and expect users to do the same.
+              {t('intellectual_text')}
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold text-foreground mb-3">Disclaimer</h2>
+            <h2 className="text-2xl font-semibold text-foreground mb-3">{t('disclaimer_title')}</h2>
             <p>
-              Prompt Party is provided &quot;as is&quot; without warranty of any kind. We do not
-              guarantee the accuracy, reliability, or availability of the service.
+              {t('disclaimer_text')}
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold text-foreground mb-3">Limitation of Liability</h2>
+            <h2 className="text-2xl font-semibold text-foreground mb-3">{t('liability_title')}</h2>
             <p>
-              We shall not be liable for any indirect, incidental, special, consequential,
-              or punitive damages resulting from your use of the service.
+              {t('liability_text')}
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold text-foreground mb-3">Termination</h2>
+            <h2 className="text-2xl font-semibold text-foreground mb-3">{t('termination_title')}</h2>
             <p>
-              We may terminate or suspend your account at any time for violation of these
-              terms. You may delete your account at any time through your profile settings.
+              {t('termination_text')}
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold text-foreground mb-3">Changes to Terms</h2>
+            <h2 className="text-2xl font-semibold text-foreground mb-3">{t('changes_title')}</h2>
             <p>
-              We reserve the right to modify these terms at any time. We will notify users
-              of significant changes via email or platform notification.
+              {t('changes_text')}
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold text-foreground mb-3">Contact</h2>
+            <h2 className="text-2xl font-semibold text-foreground mb-3">{t('contact_title')}</h2>
             <p>
-              For questions about these terms, please contact us through our GitHub repository.
+              {t('contact_text')}
             </p>
           </section>
         </div>

@@ -2,54 +2,56 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
+import { useTranslations } from 'next-intl'
 import { WelcomeScreen } from '@/components/onboarding/welcome-screen'
 import { InterestSelection } from '@/components/onboarding/interest-selection'
 import { FollowCreators } from '@/components/onboarding/follow-creators'
 import { FeatureTour } from '@/components/onboarding/feature-tour'
 import { createClient } from '@/lib/supabase/client'
 
-// Mock data for suggested creators (in production, fetch from API)
-const SUGGESTED_CREATORS = [
-  {
-    id: '1',
-    name: 'Sarah Chen',
-    username: 'sarahchen',
-    promptCount: 142,
-    followerCount: 15200,
-    bio: 'Content strategist & AI prompt engineer. Helping creators scale with ChatGPT',
-  },
-  {
-    id: '2',
-    name: 'Alex Rivera',
-    username: 'alexrivera',
-    promptCount: 89,
-    followerCount: 8950,
-    bio: 'Developer & educator. Sharing coding prompts for productivity',
-  },
-  {
-    id: '3',
-    name: 'Emma Thompson',
-    username: 'emmathompson',
-    promptCount: 203,
-    followerCount: 23100,
-    bio: 'Marketing consultant. Creating prompts for better campaigns',
-  },
-  {
-    id: '4',
-    name: 'Marcus Johnson',
-    username: 'marcusj',
-    promptCount: 156,
-    followerCount: 12400,
-    bio: 'Data scientist. Prompts for analysis and insights',
-  },
-]
-
 export default function OnboardingPage() {
   const router = useRouter()
+  const t = useTranslations('onboarding')
   const [step, setStep] = useState(1)
   const [selectedInterests, setSelectedInterests] = useState<string[]>([])
   const [followedCreators, setFollowedCreators] = useState<string[]>([])
   const supabase = createClient()
+
+  // Suggested creators with localized content
+  const SUGGESTED_CREATORS = [
+    {
+      id: '1',
+      name: t('creator_1_name'),
+      username: t('creator_1_name').toLowerCase().replace(/\s+/g, ''),
+      promptCount: 142,
+      followerCount: 15200,
+      bio: t('creator_1_bio'),
+    },
+    {
+      id: '2',
+      name: t('creator_2_name'),
+      username: t('creator_2_name').toLowerCase().replace(/\s+/g, ''),
+      promptCount: 89,
+      followerCount: 8950,
+      bio: t('creator_2_bio'),
+    },
+    {
+      id: '3',
+      name: t('creator_3_name'),
+      username: t('creator_3_name').toLowerCase().replace(/\s+/g, ''),
+      promptCount: 203,
+      followerCount: 23100,
+      bio: t('creator_3_bio'),
+    },
+    {
+      id: '4',
+      name: t('creator_4_name'),
+      username: t('creator_4_name').toLowerCase().replace(/\s+/g, ''),
+      promptCount: 156,
+      followerCount: 12400,
+      bio: t('creator_4_bio'),
+    },
+  ]
 
   const handleWelcomeNext = () => {
     setStep(2)

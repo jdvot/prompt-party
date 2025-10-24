@@ -1,4 +1,14 @@
 import { AuthForm } from '@/components/auth/auth-form'
+import { getTranslations } from 'next-intl/server'
+import type { Metadata } from 'next'
+
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations('auth')
+  return {
+    title: t('login_page_title'),
+    description: t('login_page_description'),
+  }
+}
 
 export default function LoginPage() {
   return (

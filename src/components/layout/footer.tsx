@@ -22,7 +22,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="font-semibold mb-4 text-foreground gradient-text">Community</h3>
+            <h3 className="font-semibold mb-4 text-foreground gradient-text">{t('community')}</h3>
             <div className="space-y-3">
               <Link href="/" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
                 {tNav('home')}
@@ -37,7 +37,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="font-semibold mb-4 text-foreground gradient-text">Resources</h3>
+            <h3 className="font-semibold mb-4 text-foreground gradient-text">{t('resources')}</h3>
             <div className="space-y-3">
               <Link href="/prompts/wizard" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
                 ✨ Prompt Wizard
@@ -46,10 +46,10 @@ export function Footer() {
                 📚 MCP vs RAG
               </Link>
               <Link href="/pricing" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
-                Pricing
+                {t('pricing')}
               </Link>
               <Link href="/challenges" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
-                Challenges
+                {t('challenges')}
               </Link>
               <Link href="/about" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
                 {t('about')}
@@ -64,7 +64,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="font-semibold mb-4 text-foreground gradient-text">Legal</h3>
+            <h3 className="font-semibold mb-4 text-foreground gradient-text">{t('legal')}</h3>
             <div className="space-y-3">
               <Link href="/privacy" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
                 {t('privacy')}
@@ -78,12 +78,10 @@ export function Footer() {
 
         <div className="border-t mt-10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Prompt Party. Released under the MIT License.
+            {t('copyright', { year: new Date().getFullYear() })}
           </p>
           <div className="flex items-center gap-4 text-sm text-muted-foreground">
-            <span className="flex items-center gap-1">
-              Made with <span className="text-red-500">♥</span> by the community
-            </span>
+            <span className="flex items-center gap-1" dangerouslySetInnerHTML={{ __html: t('made_with_love') }} />
           </div>
         </div>
       </div>

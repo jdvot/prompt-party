@@ -4,14 +4,19 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Badge } from '@/components/ui/badge'
 import { TrophyIcon, TrendingUpIcon, HeartIcon, EyeIcon, GitForkIcon } from 'lucide-react'
 import Link from 'next/link'
+import { getTranslations } from 'next-intl/server'
 import type { Metadata } from 'next'
 
-export const metadata: Metadata = {
-  title: 'Leaderboard | Prompt Party',
-  description: 'Top prompt creators and most popular prompts',
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations('leaderboard')
+  return {
+    title: t('page_title'),
+    description: t('page_description'),
+  }
 }
 
 export default async function LeaderboardPage() {
+  const t = await getTranslations('leaderboard')
   const supabase = await createClient()
 
   // Top creators by total likes
@@ -89,13 +94,13 @@ export default async function LeaderboardPage() {
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
             <TrophyIcon className="w-4 h-4" />
-            <span>Leaderboard</span>
+            <span>{t('badge')}</span>
           </div>
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Top Creators & Prompts
+            {t('title')}
           </h1>
           <p className="text-xl text-muted-foreground">
-            Celebrating the best prompt engineers in the community
+            {t('subtitle')}
           </p>
         </div>
 
@@ -105,10 +110,10 @@ export default async function LeaderboardPage() {
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <TrophyIcon className="h-5 w-5 text-primary" />
-                Top Creators
+                {t('top_creators')}
               </CardTitle>
               <CardDescription>
-                Most followed prompt creators
+                {t('top_creators_subtitle')}
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -133,7 +138,7 @@ export default async function LeaderboardPage() {
                       <div className="flex-1 min-w-0">
                         <p className="font-medium truncate">{creator.name}</p>
                         <p className="text-sm text-muted-foreground">
-                          {creator.followers_count || 0} followers • {promptCount} prompts
+                          {t('followers', { count: creator.followers_count || 0 })} • {t('prompts_count', { count: promptCount })}
                         </p>
                       </div>
                       {creator.plan !== 'free' && (
@@ -153,10 +158,10 @@ export default async function LeaderboardPage() {
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <HeartIcon className="h-5 w-5 text-primary" />
-                Most Liked Prompts
+                {t('most_liked')}
               </CardTitle>
               <CardDescription>
-                All-time most popular prompts
+                {t('most_liked_subtitle')}
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -173,7 +178,7 @@ export default async function LeaderboardPage() {
                     <div className="flex-1 min-w-0">
                       <p className="font-medium line-clamp-1">{prompt.title}</p>
                       <p className="text-xs text-muted-foreground">
-                        by {prompt.profiles?.name}
+                        {t('by')} {prompt.profiles?.name}
                       </p>
                       <div className="flex items-center gap-3 mt-1 text-xs text-muted-foreground">
                         <span className="flex items-center gap-1">
@@ -199,10 +204,10 @@ export default async function LeaderboardPage() {
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <TrendingUpIcon className="h-5 w-5 text-primary" />
-                Trending This Week
+                {t('trending_week')}
               </CardTitle>
               <CardDescription>
-                Hottest prompts from the last 7 days
+                {t('trending_week_subtitle')}
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -220,7 +225,7 @@ export default async function LeaderboardPage() {
                       <div className="flex-1 min-w-0">
                         <p className="font-medium line-clamp-1">{prompt.title}</p>
                         <p className="text-xs text-muted-foreground">
-                          by {prompt.profiles?.name}
+                          {t('by')} {prompt.profiles?.name}
                         </p>
                         <div className="flex items-center gap-3 mt-1 text-xs text-muted-foreground">
                           <span>❤️ {prompt.likes_count || 0}</span>
@@ -231,7 +236,7 @@ export default async function LeaderboardPage() {
                   ))
                 ) : (
                   <p className="text-sm text-muted-foreground text-center py-8">
-                    No trending prompts this week
+                    {t('no_trending')}
                   </p>
                 )}
               </div>
@@ -243,10 +248,10 @@ export default async function LeaderboardPage() {
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <GitForkIcon className="h-5 w-5 text-primary" />
-                Most Remixed
+                {t('most_remixed')}
               </CardTitle>
               <CardDescription>
-                Prompts that inspired the most remixes
+                {t('most_remixed_subtitle')}
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -264,12 +269,12 @@ export default async function LeaderboardPage() {
                       <div className="flex-1 min-w-0">
                         <p className="font-medium line-clamp-1">{prompt.title}</p>
                         <p className="text-xs text-muted-foreground">
-                          by {prompt.profiles?.name}
+                          {t('by')} {prompt.profiles?.name}
                         </p>
                         <div className="flex items-center gap-3 mt-1 text-xs text-muted-foreground">
                           <span className="flex items-center gap-1">
                             <GitForkIcon className="h-3 w-3" />
-                            {prompt.remixes_count || 0} remixes
+                            {t('remixes', { count: prompt.remixes_count || 0 })}
                           </span>
                         </div>
                       </div>
@@ -277,7 +282,7 @@ export default async function LeaderboardPage() {
                   ))
                 ) : (
                   <p className="text-sm text-muted-foreground text-center py-8">
-                    No remixed prompts yet
+                    {t('no_remixed')}
                   </p>
                 )}
               </div>

@@ -2,15 +2,20 @@ import { createClient } from '@/lib/supabase/server'
 import Link from 'next/link'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { TrophyIcon, ClockIcon, UserIcon, SparklesIcon } from 'lucide-react'
+import { TrophyIcon, ClockIcon, SparklesIcon } from 'lucide-react'
+import { getTranslations } from 'next-intl/server'
 import type { Metadata } from 'next'
 
-export const metadata: Metadata = {
-  title: 'Prompt Challenges | Prompt Party',
-  description: 'Join weekly prompt challenges and compete with the community',
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations('challenges')
+  return {
+    title: t('page_title'),
+    description: t('page_description'),
+  }
 }
 
 export default async function ChallengesPage() {
+  const t = await getTranslations('challenges')
   const supabase = await createClient()
 
   // Get active challenges
@@ -33,13 +38,13 @@ export default async function ChallengesPage() {
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
             <TrophyIcon className="w-4 h-4" />
-            <span>Weekly Challenges</span>
+            <span>{t('badge')}</span>
           </div>
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Prompt Challenges
+            {t('title')}
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Compete with the community, win credits, and showcase your prompt engineering skills
+            {t('subtitle')}
           </p>
         </div>
 
@@ -48,36 +53,36 @@ export default async function ChallengesPage() {
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <SparklesIcon className="w-5 h-5 text-primary" />
-              How It Works
+              {t('how_it_works')}
             </CardTitle>
           </CardHeader>
           <CardContent>
             <div className="grid md:grid-cols-3 gap-6">
               <div className="text-center">
                 <div className="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-xl mx-auto mb-3">
-                  1
+                  {t('step1_number')}
                 </div>
-                <h3 className="font-semibold mb-1">Create a Prompt</h3>
+                <h3 className="font-semibold mb-1">{t('step1_title')}</h3>
                 <p className="text-sm text-muted-foreground">
-                  Submit your best prompt for the challenge theme
+                  {t('step1_description')}
                 </p>
               </div>
               <div className="text-center">
                 <div className="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-xl mx-auto mb-3">
-                  2
+                  {t('step2_number')}
                 </div>
-                <h3 className="font-semibold mb-1">Get Votes</h3>
+                <h3 className="font-semibold mb-1">{t('step2_title')}</h3>
                 <p className="text-sm text-muted-foreground">
-                  Community votes on the best submissions
+                  {t('step2_description')}
                 </p>
               </div>
               <div className="text-center">
                 <div className="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-xl mx-auto mb-3">
-                  3
+                  {t('step3_number')}
                 </div>
-                <h3 className="font-semibold mb-1">Win Rewards</h3>
+                <h3 className="font-semibold mb-1">{t('step3_title')}</h3>
                 <p className="text-sm text-muted-foreground">
-                  Top prompts win credits and featured placement
+                  {t('step3_description')}
                 </p>
               </div>
             </div>
@@ -86,12 +91,12 @@ export default async function ChallengesPage() {
 
         {/* Active Challenges */}
         <div>
-          <h2 className="text-2xl font-bold mb-6">Active Challenges</h2>
+          <h2 className="text-2xl font-bold mb-6">{t('active_challenges')}</h2>
           {!challenges || challenges.length === 0 ? (
             <div className="text-center py-16 text-muted-foreground">
               <TrophyIcon className="w-16 h-16 mx-auto mb-4 opacity-20" />
-              <p>No active challenges at the moment.</p>
-              <p className="text-sm mt-2">Check back soon for new challenges!</p>
+              <p>{t('no_challenges')}</p>
+              <p className="text-sm mt-2">{t('check_back')}</p>
             </div>
           ) : (
             <div className="grid md:grid-cols-2 gap-6">
@@ -115,6 +120,8 @@ export default async function ChallengesPage() {
                   general: '🌟',
                 }
 
+                const difficultyKey = `difficulty_${challenge.difficulty}` as 'difficulty_easy' | 'difficulty_medium' | 'difficulty_hard'
+
                 return (
                   <Link
                     key={challenge.id}
@@ -128,7 +135,7 @@ export default async function ChallengesPage() {
                             <Badge
                               className={`mb-2 ${difficultyColors[challenge.difficulty as keyof typeof difficultyColors]}`}
                             >
-                              {challenge.difficulty.toUpperCase()}
+                              {t(difficultyKey)}
                             </Badge>
                           </div>
                           <span className="text-2xl">
@@ -145,11 +152,11 @@ export default async function ChallengesPage() {
                         <div className="flex items-center justify-between text-sm">
                           <div className="flex items-center gap-1 text-muted-foreground">
                             <ClockIcon className="w-4 h-4" />
-                            <span>{daysLeft} days left</span>
+                            <span>{t('days_left', { count: daysLeft })}</span>
                           </div>
                           <div className="flex items-center gap-1 text-primary font-medium">
                             <TrophyIcon className="w-4 h-4" />
-                            <span>+{challenge.reward_credits} credits</span>
+                            <span>{t('reward_credits', { count: challenge.reward_credits })}</span>
                           </div>
                         </div>
                       </CardContent>
@@ -163,12 +170,12 @@ export default async function ChallengesPage() {
 
         {/* Past Winners (Coming Soon) */}
         <div className="mt-16">
-          <h2 className="text-2xl font-bold mb-6">Past Winners</h2>
+          <h2 className="text-2xl font-bold mb-6">{t('past_winners')}</h2>
           <Card>
             <CardContent className="text-center py-12">
               <TrophyIcon className="w-12 h-12 mx-auto mb-4 text-muted-foreground opacity-50" />
               <p className="text-muted-foreground">
-                Past challenge winners will be showcased here
+                {t('past_winners_text')}
               </p>
             </CardContent>
           </Card>
@@ -179,15 +186,15 @@ export default async function ChallengesPage() {
           <div className="mt-12 text-center">
             <Card className="bg-primary/5 border-primary/20">
               <CardContent className="py-8">
-                <h3 className="text-2xl font-bold mb-2">Ready to Compete?</h3>
+                <h3 className="text-2xl font-bold mb-2">{t('cta_title')}</h3>
                 <p className="text-muted-foreground mb-4">
-                  Sign up to join challenges and win rewards
+                  {t('cta_subtitle')}
                 </p>
                 <Link
                   href="/auth/signup"
                   className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-md font-medium hover:bg-primary/90 transition-colors"
                 >
-                  Get Started
+                  {t('cta_button')}
                 </Link>
               </CardContent>
             </Card>
