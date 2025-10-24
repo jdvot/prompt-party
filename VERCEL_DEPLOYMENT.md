@@ -99,7 +99,151 @@ openssl rand -hex 32
 2. Vercel va build et déployer automatiquement
 3. Votre app sera disponible sur `https://votre-projet.vercel.app`
 
-## 4. Configuration du Cron Job (Weekly Digest)
+### 3.4 Configuration avancée (vercel.json)
+
+Le fichier `vercel.json` contient des configurations importantes pour :
+
+#### Headers de sécurité
+
+```json
+{
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
+      ]
+    }
+  ]
+}
+```
+
+**Ces headers protègent contre** :
+- ✅ **XSS** (Cross-Site Scripting)
+- ✅ **Clickjacking** (X-Frame-Options)
+- ✅ **MIME sniffing**
+- ✅ **Referrer leaks**
+
+#### Redirections automatiques
+
+Le projet configure des redirections SEO-friendly :
+
+```json
+{
+  "redirects": [
+    {
+      "source": "/home",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/login",
+      "destination": "/auth/login",
+      "permanent": true
+    }
+  ]
+}
+```
+
+**Exemples de redirections** :
+- `/home` → `/` (301 permanent)
+- `/login` → `/auth/login` (301 permanent)
+- `/signup` → `/auth/signup` (301 permanent)
+- `/register` → `/auth/signup` (301 permanent)
+
+#### Cache des API Routes
+
+Les API routes ne sont jamais mises en cache :
+
+```json
+{
+  "source": "/api/:path*",
+  "headers": [
+    {
+      "key": "Cache-Control",
+      "value": "no-store, max-age=0"
+    }
+  ]
+}
+```
+
+## 4. Middleware et Routes protégées
+
+### 4.1 Middleware Next.js
+
+Le projet utilise un middleware (`src/middleware.ts`) qui gère :
+
+#### 1️⃣ **Internationalisation (i18n)**
+- Support EN/FR automatique
+- Détection de la langue du navigateur
+- Pas de préfixe dans l'URL (`localePrefix: 'never'`)
+- Utilise `next-intl` pour les traductions
+
+#### 2️⃣ **Authentication Supabase**
+- Rafraîchissement automatique du token
+- Gestion des cookies de session
+- Redirection si non authentifié
+
+#### 3️⃣ **Routes protégées**
+```typescript
+const protectedPaths = [
+  '/prompts/new',
+  '/collections',
+  '/profile/settings'
+]
+```
+
+**Si utilisateur non connecté** → Redirection vers `/auth/login?redirectTo=...`
+
+#### 4️⃣ **Onboarding**
+- Nouveaux utilisateurs redirigés vers `/onboarding`
+- Vérifie `onboarding_completed` dans la DB
+- Skip si déjà complété
+
+### 4.2 Matcher configuration
+
+Le middleware s'applique sur toutes les routes SAUF :
+
+```typescript
+export const config = {
+  matcher: [
+    '/((?!_next/static|_next/image|favicon.ico|api|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)',
+  ],
+}
+```
+
+**Exclusions** :
+- ❌ Fichiers statiques (`_next/static`)
+- ❌ Images optimisées (`_next/image`)
+- ❌ Favicon
+- ❌ API routes (gérées séparément)
+- ❌ Images (svg, png, jpg, etc.)
+
+### 4.3 Changement de langue
+
+L'utilisateur peut changer la langue via :
+1. **Sélecteur dans le header** (composant LanguageSwitcher)
+2. **Cookie** : `NEXT_LOCALE=fr` ou `NEXT_LOCALE=en`
+3. **Accept-Language header** (détection auto du navigateur)
+
+**Priorité** : Cookie > Accept-Language > Défaut (en)
+
+## 5. Configuration du Cron Job (Weekly Digest)
 
 Les cron jobs Vercel sont configurés dans `vercel.json` :
 
@@ -178,7 +322,255 @@ Dans Resend :
 1. Aller dans "Logs"
 2. Voir tous les emails envoyés
 
-## 8. Différences avec Netlify
+## 8. Optimisations et Bonnes Pratiques
+
+### 8.1 SEO et Performance
+
+#### Metadata dynamique
+
+Chaque page génère ses propres metadata pour le SEO :
+
+```typescript
+// src/app/prompts/[id]/page.tsx
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const prompt = await getPrompt(params.id)
+  return {
+    title: `${prompt.title} | Prompt Party`,
+    description: prompt.body.substring(0, 160),
+    openGraph: {
+      title: prompt.title,
+      description: prompt.body,
+      type: 'article',
+    }
+  }
+}
+```
+
+✅ **Résultat** : Chaque prompt a son propre titre/description pour Google et les réseaux sociaux
+
+#### Images optimisées
+
+Utiliser le composant `<Image>` de Next.js :
+
+```tsx
+import Image from 'next/image'
+
+<Image
+  src="/avatar.jpg"
+  width={200}
+  height={200}
+  alt="Avatar"
+  priority // Pour les images above the fold
+/>
+```
+
+✅ **Bénéfices** :
+- Lazy loading automatique
+- Formats modernes (WebP)
+- Responsive images
+- Optimisation de la taille
+
+### 8.2 Sécurité supplémentaire
+
+#### Validation des données
+
+**Côté serveur** : Toujours valider les inputs
+
+```typescript
+// src/app/api/prompts/route.ts
+export async function POST(request: Request) {
+  const body = await request.json()
+
+  // Validation
+  if (!body.title || body.title.length > 200) {
+    return NextResponse.json({ error: 'Invalid title' }, { status: 400 })
+  }
+
+  // Sanitization (éviter XSS)
+  const sanitizedTitle = body.title.trim()
+
+  // ...
+}
+```
+
+#### Rate Limiting (recommandé pour production)
+
+Installer `@upstash/ratelimit` pour limiter les requêtes API :
+
+```bash
+pnpm add @upstash/ratelimit @upstash/redis
+```
+
+```typescript
+import { Ratelimit } from "@upstash/ratelimit"
+import { Redis } from "@upstash/redis"
+
+const ratelimit = new Ratelimit({
+  redis: Redis.fromEnv(),
+  limiter: Ratelimit.slidingWindow(10, "10 s"),
+})
+
+export async function POST(request: Request) {
+  const ip = request.headers.get("x-forwarded-for")
+  const { success } = await ratelimit.limit(ip)
+
+  if (!success) {
+    return NextResponse.json({ error: 'Too many requests' }, { status: 429 })
+  }
+
+  // Process request...
+}
+```
+
+### 8.3 Analytics et Monitoring
+
+#### Vercel Analytics (recommandé)
+
+1. Activer dans Vercel Dashboard > Analytics
+2. Plan gratuit : 2500 events/mois
+3. Tracking automatique :
+   - Page views
+   - Core Web Vitals
+   - Real User Monitoring
+
+#### Supabase Realtime
+
+Surveiller les connexions en temps réel :
+
+```typescript
+const channel = supabase
+  .channel('online-users')
+  .on('presence', { event: 'sync' }, () => {
+    const state = channel.presenceState()
+    console.log('Online users:', Object.keys(state).length)
+  })
+  .subscribe()
+```
+
+### 8.4 Cache et Performance
+
+#### Static Generation (SSG)
+
+Pour les pages qui changent rarement :
+
+```typescript
+// src/app/about/page.tsx
+export const revalidate = 3600 // Revalider toutes les heures
+
+export default function AboutPage() {
+  return <div>About...</div>
+}
+```
+
+#### Incremental Static Regeneration (ISR)
+
+Pour les listes de prompts :
+
+```typescript
+// src/app/prompts/page.tsx
+export const revalidate = 60 // Revalider chaque minute
+
+export default async function PromptsPage() {
+  const prompts = await getPrompts()
+  return <PromptList prompts={prompts} />
+}
+```
+
+#### Cache des requêtes Supabase
+
+```typescript
+const { data } = await supabase
+  .from('prompts')
+  .select('*')
+  .order('created_at', { ascending: false })
+  .limit(20)
+
+// Next.js 15 cache automatiquement les fetch() et requêtes
+// Pour désactiver : { cache: 'no-store' }
+```
+
+### 8.5 Redirections avancées
+
+#### Ajouter des redirections personnalisées
+
+Dans `vercel.json`, ajouter :
+
+```json
+{
+  "redirects": [
+    {
+      "source": "/blog/:slug",
+      "destination": "/prompts/:slug",
+      "permanent": true
+    },
+    {
+      "source": "/old-url",
+      "destination": "/new-url",
+      "permanent": true,
+      "statusCode": 301
+    }
+  ]
+}
+```
+
+#### Redirections dynamiques dans middleware
+
+```typescript
+// src/middleware.ts
+export async function middleware(request: NextRequest) {
+  // Exemple : Rediriger les anciennes URLs
+  if (request.nextUrl.pathname.startsWith('/old-path')) {
+    return NextResponse.redirect(
+      new URL('/new-path', request.url)
+    )
+  }
+
+  // ...
+}
+```
+
+### 8.6 Internationalisation (i18n)
+
+#### Ajouter une nouvelle langue
+
+1. Créer `messages/es.json` (espagnol)
+2. Copier la structure de `messages/en.json`
+3. Traduire tous les textes
+4. Ajouter dans `src/i18n/request.ts` :
+
+```typescript
+export const locales = ['en', 'fr', 'es'] as const
+```
+
+5. Mettre à jour le middleware :
+
+```typescript
+const intlMiddleware = createMiddleware({
+  locales: ['en', 'fr', 'es'],
+  defaultLocale: 'en',
+})
+```
+
+### 8.7 Monitoring des erreurs (optionnel)
+
+#### Sentry pour tracking des erreurs
+
+```bash
+pnpm add @sentry/nextjs
+```
+
+```typescript
+// sentry.client.config.ts
+import * as Sentry from "@sentry/nextjs"
+
+Sentry.init({
+  dsn: process.env.NEXT_PUBLIC_SENTRY_DSN,
+  tracesSampleRate: 0.1,
+  environment: process.env.VERCEL_ENV,
+})
+```
+
+## 9. Différences avec Netlify
 
 | Aspect | Netlify | Vercel |
 |--------|---------|--------|
