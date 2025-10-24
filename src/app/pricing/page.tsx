@@ -12,84 +12,86 @@ export async function generateMetadata() {
   }
 }
 
-export default function PricingPage() {
+export default async function PricingPage() {
+  const t = await getTranslations('pricing_full')
+
   const plans = [
     {
-      name: 'Free',
-      price: '$0',
-      period: 'forever',
-      description: 'Perfect for getting started',
+      name: t('free_name'),
+      price: t('free_price'),
+      period: t('free_period'),
+      description: t('free_desc'),
       icon: SparklesIcon,
       features: [
-        '20 prompts',
-        '10 AI tests per month',
-        'Public collections',
-        'Community features',
-        'Like & comment',
-        'Basic analytics',
+        t('free_f1'),
+        t('free_f2'),
+        t('free_f3'),
+        t('free_f4'),
+        t('free_f5'),
+        t('free_f6'),
       ],
-      cta: 'Get Started',
+      cta: t('get_started'),
       href: '/auth/signup',
       popular: false,
     },
     {
-      name: 'Pro',
-      price: '$9.99',
-      period: 'per month',
-      description: 'For serious prompt engineers',
+      name: t('pro_name'),
+      price: t('pro_price'),
+      period: t('pro_period'),
+      description: t('pro_desc'),
       icon: ZapIcon,
       features: [
-        'Unlimited prompts',
-        'Unlimited AI tests',
-        'Advanced analytics',
-        'Priority support',
-        'No ads',
-        'AI Prompt Generator',
-        'Export data (CSV)',
-        'Private collections',
-        'Custom branding',
+        t('pro_f1'),
+        t('pro_f2'),
+        t('pro_f3'),
+        t('pro_f4'),
+        t('pro_f5'),
+        t('pro_f6'),
+        t('pro_f7'),
+        t('pro_f8'),
+        t('pro_f9'),
       ],
-      cta: 'Start Pro Trial',
+      cta: t('start_pro'),
       href: '/auth/signup?plan=pro',
       popular: true,
     },
     {
-      name: 'Team',
-      price: '$29',
-      period: 'per month',
-      description: 'Collaborate with your team',
+      name: t('team_name'),
+      price: t('team_price'),
+      period: t('team_period'),
+      description: t('team_desc'),
       icon: RocketIcon,
       features: [
-        'Everything in Pro',
-        'Up to 10 team members',
-        'Team workspaces',
-        'Shared collections',
-        '500 AI tests/month shared',
-        'Team analytics',
-        'Role management',
-        'Activity feed',
+        t('team_f1'),
+        t('team_f2'),
+        t('team_f3'),
+        t('team_f4'),
+        t('team_f5'),
+        t('team_f6'),
+        t('team_f7'),
+        t('team_f8'),
       ],
-      cta: 'Start Team Trial',
+      cta: t('start_team'),
       href: '/auth/signup?plan=team',
       popular: false,
     },
     {
-      name: 'Business',
-      price: '$99',
-      period: 'per month',
-      description: 'For organizations at scale',
+      name: t('business_name'),
+      price: t('business_price'),
+      period: t('business_period'),
+      description: t('business_desc'),
       icon: BuildingIcon,
       features: [
-        'Everything in Team',
-        'API access (10k requests)',
-        'White label options',
-        'Custom integrations',
-        'SSO/SAML',
-        'Dedicated support',
-        'SLA 99.9%',
-        'Custom contracts',
+        t('business_f1'),
+        t('business_f2'),
+        t('business_f3'),
+        t('business_f4'),
+        t('business_f5'),
+        t('business_f6'),
+        t('business_f7'),
+        t('business_f8'),
       ],
-      cta: 'Contact Sales',
+      cta: t('contact_sales'),
       href: '/contact',
       popular: false,
     },
@@ -101,10 +103,10 @@ export default function PricingPage() {
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Choose Your Plan
+            {t('title')}
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Start free, upgrade when you&apos;re ready. All plans include access to our community.
+            {t('subtitle')}
           </p>
         </div>
 
@@ -124,7 +126,7 @@ export default function PricingPage() {
                 {plan.popular && (
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2">
                     <Badge className="bg-primary text-primary-foreground px-4 py-1">
-                      Most Popular
+                      {t('most_popular')}
                     </Badge>
                   </div>
                 )}
@@ -136,7 +138,7 @@ export default function PricingPage() {
                   </div>
                   <div className="mb-2">
                     <span className="text-4xl font-bold">{plan.price}</span>
-                    {plan.price !== '$0' && (
+                    {plan.price !== t('free_price') && (
                       <span className="text-muted-foreground ml-2">
                         / {plan.period}
                       </span>
@@ -176,41 +178,41 @@ export default function PricingPage() {
         {/* FAQ */}
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-8">
-            Frequently Asked Questions
+            {t('faq_title')}
           </h2>
           <div className="space-y-6">
             <div>
-              <h3 className="font-semibold mb-2">What are AI tests?</h3>
+              <h3 className="font-semibold mb-2">{t('faq_1_q')}</h3>
               <p className="text-muted-foreground">
-                AI tests let you run your prompts against GPT-4, Claude, or Gemini to see results before sharing. Free users get 10 per month, Pro users get unlimited.
+                {t('faq_1_a')}
               </p>
             </div>
 
             <div>
-              <h3 className="font-semibold mb-2">Can I upgrade or downgrade anytime?</h3>
+              <h3 className="font-semibold mb-2">{t('faq_2_q')}</h3>
               <p className="text-muted-foreground">
-                Yes! Upgrade instantly, downgrade at the end of your billing cycle. No long-term commitments.
+                {t('faq_2_a')}
               </p>
             </div>
 
             <div>
-              <h3 className="font-semibold mb-2">Do you offer refunds?</h3>
+              <h3 className="font-semibold mb-2">{t('faq_3_q')}</h3>
               <p className="text-muted-foreground">
-                We offer a 14-day money-back guarantee on all paid plans. No questions asked.
+                {t('faq_3_a')}
               </p>
             </div>
 
             <div>
-              <h3 className="font-semibold mb-2">How does team billing work?</h3>
+              <h3 className="font-semibold mb-2">{t('faq_4_q')}</h3>
               <p className="text-muted-foreground">
-                Team plans are billed monthly at $29 for up to 10 members. Need more seats? Contact us for custom pricing.
+                {t('faq_4_a')}
               </p>
             </div>
 
             <div>
-              <h3 className="font-semibold mb-2">Is there an annual discount?</h3>
+              <h3 className="font-semibold mb-2">{t('faq_5_q')}</h3>
               <p className="text-muted-foreground">
-                Yes! Pay annually and get 2 months free (16% discount). Switch to annual billing in your account settings.
+                {t('faq_5_a')}
               </p>
             </div>
           </div>
@@ -220,15 +222,15 @@ export default function PricingPage() {
         <div className="mt-16 text-center">
           <Card className="bg-primary/5 border-primary/20 max-w-2xl mx-auto">
             <CardContent className="py-8">
-              <h3 className="text-2xl font-bold mb-2">Ready to get started?</h3>
+              <h3 className="text-2xl font-bold mb-2">{t('cta_title')}</h3>
               <p className="text-muted-foreground mb-4">
-                Join thousands of prompt engineers building the future of AI
+                {t('cta_subtitle')}
               </p>
               <Link
                 href="/auth/signup"
                 className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-md font-medium hover:bg-primary/90 transition-colors"
               >
-                Start Free Today
+                {t('start_free')}
               </Link>
             </CardContent>
           </Card>

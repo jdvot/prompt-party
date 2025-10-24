@@ -8,11 +8,12 @@ export async function generateMetadata() {
   }
 }
 
-export default function FollowingPage() {
+export default async function FollowingPage() {
+  const t = await getTranslations('pages')
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-6">Following</h1>
-      <p className="text-muted-foreground">People you follow will appear here.</p>
+      <h1 className="text-3xl font-bold mb-6">{t('following_heading')}</h1>
+      <p className="text-muted-foreground">{t('following_empty')}</p>
     </div>
   )
 }

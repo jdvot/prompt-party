@@ -8,11 +8,12 @@ export async function generateMetadata() {
   }
 }
 
-export default function TeamsPage() {
+export default async function TeamsPage() {
+  const t = await getTranslations('pages')
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-6">Teams</h1>
-      <p className="text-muted-foreground">Your team workspaces will appear here.</p>
+      <h1 className="text-3xl font-bold mb-6">{t('teams_heading')}</h1>
+      <p className="text-muted-foreground">{t('teams_empty')}</p>
     </div>
   )
 }

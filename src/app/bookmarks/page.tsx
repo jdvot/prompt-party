@@ -8,11 +8,12 @@ export async function generateMetadata() {
   }
 }
 
-export default function BookmarksPage() {
+export default async function BookmarksPage() {
+  const t = await getTranslations('pages')
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-6">Bookmarks</h1>
-      <p className="text-muted-foreground">Your bookmarked prompts will appear here.</p>
+      <h1 className="text-3xl font-bold mb-6">{t('bookmarks_heading')}</h1>
+      <p className="text-muted-foreground">{t('bookmarks_empty')}</p>
     </div>
   )
 }
