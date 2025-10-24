@@ -1,16 +1,18 @@
 import { createClient } from '@/lib/supabase/server'
 import { FeedContent } from '@/components/feed/feed-content'
 import { TrendingHeader } from '@/components/pages/trending-header'
+import { getTranslations } from 'next-intl/server'
 
-export const metadata = {
-  title: 'Trending Prompts | Prompt Party',
-  description: 'Discover the hottest AI prompts this week',
+export async function generateMetadata() {
+  const t = await getTranslations('metadata')
+  return {
+    title: t('trending_title'),
+    description: t('trending_description'),
+  }
 }
 
 export default async function TrendingPage() {
   const supabase = await createClient()
-
-  // Fetch trending prompts (most likes in last 7 days)
   const sevenDaysAgo = new Date()
   sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7)
 
@@ -25,7 +27,6 @@ export default async function TrendingPage() {
     .order('likes_count', { ascending: false })
     .limit(20)
 
-  // Fetch profiles
   if (prompts && prompts.length > 0) {
     const authorIds = [...new Set(prompts.map(p => p.author))]
     const { data: profiles } = await supabase
@@ -37,7 +38,6 @@ export default async function TrendingPage() {
       const profileMap = new Map(profiles.map(p => [p.user_id, p]))
       prompts.forEach((p: any) => {
         p.profiles = profileMap.get(p.author)
-        // Extract count from nested comments array
         p.comments_count = p.comments?.[0]?.count || 0
       })
     }
