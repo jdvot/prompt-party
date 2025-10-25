@@ -61,7 +61,6 @@
     "zod": "^4.1.12"
   },
   "devDependencies": {
-    "@netlify/functions": "^5.0.1",
     "@playwright/test": "^1.56.1",
     "@tailwindcss/typography": "^0.5.19",
     "@testing-library/jest-dom": "^6.9.1",

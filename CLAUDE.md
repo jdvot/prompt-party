@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-**Prompt Party** is a social network for AI prompts. Users can create, share, discover, vote on, comment on, and remix AI prompts. Built with Next.js 15, Supabase, and can be deployed on Vercel or Netlify.
+**Prompt Party** is a social network for AI prompts. Users can create, share, discover, vote on, comment on, and remix AI prompts. Built with Next.js 15, Supabase, and deployed on Vercel.
 
 ## Tech Stack
 
@@ -12,8 +12,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - **Language**: TypeScript
 - **UI**: Tailwind CSS + Shadcn UI
 - **Database/Auth/Storage**: Supabase (PostgreSQL + Auth + Realtime + Storage)
-- **Deployment**: Vercel (recommended) or Netlify
-- **Email**: Resend API
+- **Deployment**: Vercel
 - **Package Manager**: PNPM (preferred) or npm
 
 ## Development Commands
@@ -29,17 +28,11 @@ pnpm dev
 # Build for production
 pnpm build
 
-# Vercel deployment (RECOMMENDED)
+# Vercel deployment
 vercel              # Deploy to preview
 vercel --prod       # Deploy to production
 vercel env ls       # List environment variables
 vercel env add NAME # Add environment variable
-
-# Alternative: Netlify deployment
-netlify deploy          # Deploy to staging
-netlify deploy --prod   # Deploy to production
-netlify env:list        # List environment variables
-netlify env:set KEY VAL # Set environment variable
 
 # Supabase migrations
 # Apply migrations to your Supabase database
@@ -53,34 +46,17 @@ supabase gen types typescript --project-id YOUR_PROJECT_ID > src/types/supabase.
 
 ## Environment Setup
 
-Create `.env.local` at project root (see `.env.example` for all variables):
+Create `.env.local` at project root:
 
 ```env
 # Supabase
 NEXT_PUBLIC_SUPABASE_URL=https://xxxxx.supabase.co
 NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOi...
-SUPABASE_SERVICE_ROLE_KEY=eyJhbGciOi...
-
-# Site
-NEXT_PUBLIC_SITE_URL=https://your-domain.com
-
-# Email (Resend)
-RESEND_API_KEY=re_xxxxxxxxxxxx
-EMAIL_FROM=Prompt Party <noreply@yourdomain.com>
-
-# Cron Job Security
-CRON_SECRET=your_random_secret_token
 ```
 
 **Vercel environment variables** can be set via:
 - Vercel Dashboard (Settings > Environment Variables)
 - `vercel env add` command
-
-**Netlify environment variables** can be set via:
-- Netlify Dashboard
-- `netlify env:set` command
-
-See `VERCEL_DEPLOYMENT.md` for complete deployment guide.
 
 ## Architecture
 
@@ -167,34 +143,20 @@ Core tables (all with RLS enabled):
 - **Types**: Generate TypeScript types from Supabase schema when possible
 - **Markdown**: Prompts support Markdown formatting - sanitize user input
 
-### Deployment Considerations
+### Vercel Deployment
 
-**Vercel (Recommended):**
-- API routes in `app/api/` become Vercel Functions automatically
+- API routes in `app/api/` become Vercel Serverless Functions automatically
 - Edge Functions available for ultra-fast globally distributed logic
-- Cron jobs configured in `vercel.json` (requires Pro plan)
-- See `VERCEL_DEPLOYMENT.md` for complete guide
-
-**Netlify (Alternative):**
-- Use `netlify dev` for local development to simulate production environment
-- API routes in `app/api/` become Netlify Functions automatically
-- Edge Functions available
-- Configure redirects/rewrites in `netlify.toml`
+- Cron jobs configured in `vercel.json`
+- Headers, redirects, and rewrites configured in `vercel.json`
 
 ## Deployment Notes
 
-**Vercel Free Tier Limits:**
+**Vercel Hobby Tier:**
 - 100 GB/month bandwidth
 - 100k Function invocations/month
 - 6000 build minutes/month
 - Function duration: 10s max
-- Cron jobs: ❌ (requires Pro plan)
-- SSL + custom domain included
-
-**Netlify Free Tier Limits:**
-- 100 GB/month bandwidth
-- 125k Function invocations
-- 300 build minutes
 - SSL + custom domain included
 
 **Supabase Free Tier:**
@@ -202,5 +164,3 @@ Core tables (all with RLS enabled):
 - 1 GB storage
 - 50k Auth users/month
 - Unlimited Realtime
-
-**Note:** For complete Vercel deployment guide with environment variables, Supabase setup, and email configuration, see `VERCEL_DEPLOYMENT.md`.
