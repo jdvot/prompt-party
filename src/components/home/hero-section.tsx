@@ -1,8 +1,9 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import { Button } from '@/components/ui/button'
+import { Button, buttonVariants } from '@/components/ui/button'
 import Link from 'next/link'
+import { cn } from '@/lib/utils'
 
 export function HeroSection() {
   const t = useTranslations('home')
@@ -44,40 +45,32 @@ export function HeroSection() {
 
       {/* CTA Buttons */}
       <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-        <Button
-          asChild
-          variant="gradient"
-          size="lg"
-          className="min-w-[200px]"
+        <Link
+          href="/prompts/new"
+          className={cn(buttonVariants({ variant: "gradient", size: "lg" }), "min-w-[200px]")}
         >
-          <Link href="/prompts/new">
-            Get Started
-            <svg
-              className="w-5 h-5 ml-1"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M13 7l5 5m0 0l-5 5m5-5H6"
-              />
-            </svg>
-          </Link>
-        </Button>
+          Get Started
+          <svg
+            className="w-5 h-5 ml-1"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M13 7l5 5m0 0l-5 5m5-5H6"
+            />
+          </svg>
+        </Link>
 
-        <Button
-          asChild
-          variant="outline"
-          size="lg"
-          className="min-w-[200px]"
+        <Link
+          href="/tutorials"
+          className={cn(buttonVariants({ variant: "outline", size: "lg" }), "min-w-[200px]")}
         >
-          <Link href="/tutorials">
-            Explore Tutorials
-          </Link>
-        </Button>
+          Explore Tutorials
+        </Link>
       </div>
 
       {/* Stats or social proof */}
