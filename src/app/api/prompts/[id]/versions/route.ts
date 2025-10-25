@@ -20,7 +20,7 @@ export async function GET(request: NextRequest, { params }: RouteContext) {
       .from('prompt_versions')
       .select(`
         *,
-        author:profiles!user_id(id, name, avatar_url)
+        author:profiles!changed_by(id, name, avatar_url)
       `)
       .eq('prompt_id', id)
       .order('version_number', { ascending: false })
@@ -76,6 +76,13 @@ export async function POST(request: NextRequest, { params }: RouteContext) {
 
     const newVersionNumber = (latestVersion?.version_number || 0) + 1
 
+    // Get user profile
+    const { data: profile } = await supabase
+      .from('profiles')
+      .select('name')
+      .eq('id', user.id)
+      .single()
+
     // Create new version
     const { data: version, error: versionError } = await supabase
       .from('prompt_versions')
@@ -84,12 +91,13 @@ export async function POST(request: NextRequest, { params }: RouteContext) {
         version_number: newVersionNumber,
         title,
         body: promptBody,
-        change_note: change_note || `Version ${newVersionNumber}`,
-        user_id: user.id
+        change_summary: change_note || `Version ${newVersionNumber}`,
+        changed_by: user.id,
+        changed_by_name: profile?.name || 'Unknown'
       })
       .select(`
         *,
-        author:profiles!user_id(id, name, avatar_url)
+        author:profiles!changed_by(id, name, avatar_url)
       `)
       .single()
 

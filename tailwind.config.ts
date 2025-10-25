@@ -9,84 +9,104 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    container: {
-      center: true,
-      padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
-    },
-    extend: {
-      colors: {
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
-        primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
-        },
-        secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
-        },
-        destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
-        },
-        muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
-        },
-        accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
-        },
-        popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
-        },
-        card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
-        },
-        // Semantic colors from design tokens
-        success: {
-          DEFAULT: "hsl(142, 76%, 36%)",
-          foreground: "hsl(210, 40%, 98%)",
-        },
-        warning: {
-          DEFAULT: "hsl(38, 92%, 50%)",
-          foreground: "hsl(222.2, 84%, 4.9%)",
-        },
-        info: {
-          DEFAULT: "hsl(199, 89%, 48%)",
-          foreground: "hsl(210, 40%, 98%)",
-        },
-      },
-      spacing,
-      boxShadow: shadows,
-      zIndex: {
-        hide: '-1',
-        base: '0',
-        sticky: '1100',
-        fixed: '1200',
-        modalBackdrop: '1300',
-        modal: '1400',
-        popover: '1500',
-        tooltip: '1600',
-        dropdown: '9999',
-      },
-      transitionDuration: animation.duration,
-      transitionTimingFunction: animation.easing,
-      borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
-        xl: "calc(var(--radius) + 4px)",
-      },
-    },
+  	container: {
+  		center: true,
+  		padding: '2rem',
+  		screens: {
+  			'2xl': '1400px'
+  		}
+  	},
+  	extend: {
+  		colors: {
+  			border: 'hsl(var(--border))',
+  			input: 'hsl(var(--input))',
+  			ring: 'hsl(var(--ring))',
+  			background: 'hsl(var(--background))',
+  			foreground: 'hsl(var(--foreground))',
+  			primary: {
+  				DEFAULT: 'hsl(var(--primary))',
+  				foreground: 'hsl(var(--primary-foreground))'
+  			},
+  			secondary: {
+  				DEFAULT: 'hsl(var(--secondary))',
+  				foreground: 'hsl(var(--secondary-foreground))'
+  			},
+  			destructive: {
+  				DEFAULT: 'hsl(var(--destructive))',
+  				foreground: 'hsl(var(--destructive-foreground))'
+  			},
+  			muted: {
+  				DEFAULT: 'hsl(var(--muted))',
+  				foreground: 'hsl(var(--muted-foreground))'
+  			},
+  			accent: {
+  				DEFAULT: 'hsl(var(--accent))',
+  				foreground: 'hsl(var(--accent-foreground))'
+  			},
+  			popover: {
+  				DEFAULT: 'hsl(var(--popover))',
+  				foreground: 'hsl(var(--popover-foreground))'
+  			},
+  			card: {
+  				DEFAULT: 'hsl(var(--card))',
+  				foreground: 'hsl(var(--card-foreground))'
+  			},
+  			success: {
+  				DEFAULT: 'hsl(142, 76%, 36%)',
+  				foreground: 'hsl(210, 40%, 98%)'
+  			},
+  			warning: {
+  				DEFAULT: 'hsl(38, 92%, 50%)',
+  				foreground: 'hsl(222.2, 84%, 4.9%)'
+  			},
+  			info: {
+  				DEFAULT: 'hsl(199, 89%, 48%)',
+  				foreground: 'hsl(210, 40%, 98%)'
+  			}
+  		},
+  		boxShadow: 'shadows' as any,
+  		zIndex: {
+  			hide: '-1',
+  			base: '0',
+  			sticky: '1100',
+  			fixed: '1200',
+  			modalBackdrop: '1300',
+  			modal: '1400',
+  			popover: '1500',
+  			tooltip: '1600',
+  			dropdown: '9999'
+  		},
+  		transitionDuration: 'animation.duration' as any,
+  		transitionTimingFunction: 'animation.easing' as any,
+  		borderRadius: {
+  			lg: 'var(--radius)',
+  			md: 'calc(var(--radius) - 2px)',
+  			sm: 'calc(var(--radius) - 4px)',
+  			xl: 'calc(var(--radius) + 4px)'
+  		},
+  		keyframes: {
+  			'accordion-down': {
+  				from: {
+  					height: '0'
+  				},
+  				to: {
+  					height: 'var(--radix-accordion-content-height)'
+  				}
+  			},
+  			'accordion-up': {
+  				from: {
+  					height: 'var(--radix-accordion-content-height)'
+  				},
+  				to: {
+  					height: '0'
+  				}
+  			}
+  		},
+  		animation: {
+  			'accordion-down': 'accordion-down 0.2s ease-out',
+  			'accordion-up': 'accordion-up 0.2s ease-out'
+  		}
+  	}
   },
   plugins: [
     require("tailwindcss-animate"),

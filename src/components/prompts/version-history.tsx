@@ -12,7 +12,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog'
-import { History, GitBranch, Clock } from 'lucide-react'
+import { History, GitBranch, Clock, RotateCcw } from 'lucide-react'
 import { formatDistanceToNow } from 'date-fns'
 
 interface Version {
@@ -30,11 +30,13 @@ interface Version {
 
 interface VersionHistoryProps {
   promptId: string
+  onRestore?: (version: Version) => void
 }
 
-export function VersionHistory({ promptId }: VersionHistoryProps) {
+export function VersionHistory({ promptId, onRestore }: VersionHistoryProps) {
   const [versions, setVersions] = useState<Version[]>([])
   const [loading, setLoading] = useState(false)
+  const [restoring, setRestoring] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
   const [selectedVersion, setSelectedVersion] = useState<Version | null>(null)
 
@@ -55,6 +57,33 @@ export function VersionHistory({ promptId }: VersionHistoryProps) {
       console.error('Error fetching versions:', error)
     } finally {
       setLoading(false)
+    }
+  }
+
+  const handleRestore = async (version: Version) => {
+    if (!confirm(`Restore to version ${version.version_number}?`)) return
+
+    setRestoring(true)
+    try {
+      const response = await fetch(
+        `/api/prompts/${promptId}/versions/${version.id}/restore`,
+        { method: 'POST' }
+      )
+
+      if (!response.ok) throw new Error('Failed to restore version')
+
+      // Callback to parent component
+      if (onRestore) {
+        onRestore(version)
+      }
+
+      // Refresh the page or refetch data
+      window.location.reload()
+    } catch (error) {
+      console.error('Error restoring version:', error)
+      alert('Failed to restore version')
+    } finally {
+      setRestoring(false)
     }
   }
 
@@ -137,12 +166,26 @@ export function VersionHistory({ promptId }: VersionHistoryProps) {
                 </div>
 
                 {selectedVersion?.id === version.id && (
-                  <div className="mt-4 pt-4 border-t">
+                  <div className="mt-4 pt-4 border-t space-y-4">
                     <div className="bg-muted/30 p-4 rounded-md max-h-64 overflow-y-auto">
                       <pre className="text-sm whitespace-pre-wrap">
                         {version.body}
                       </pre>
                     </div>
+                    {index !== 0 && (
+                      <Button
+                        onClick={(e) => {
+                          e.stopPropagation()
+                          handleRestore(version)
+                        }}
+                        disabled={restoring}
+                        size="sm"
+                        className="gap-2"
+                      >
+                        <RotateCcw className="w-4 h-4" />
+                        {restoring ? 'Restoring...' : 'Restore This Version'}
+                      </Button>
+                    )}
                   </div>
                 )}
               </Card>

@@ -13,17 +13,18 @@ import { Users, FolderIcon, Activity, Settings } from 'lucide-react'
 import Link from 'next/link'
 
 interface TeamPageProps {
-  params: {
+  params: Promise<{
     slug: string
-  }
+  }>
 }
 
 export async function generateMetadata({ params }: TeamPageProps): Promise<Metadata> {
+  const { slug } = await params
   const supabase = await createClient()
   const { data: team } = await supabase
     .from('teams')
     .select('name, description')
-    .eq('slug', params.slug)
+    .eq('slug', slug)
     .single()
 
   if (!team) {
@@ -39,6 +40,7 @@ export async function generateMetadata({ params }: TeamPageProps): Promise<Metad
 }
 
 export default async function TeamPage({ params }: TeamPageProps) {
+  const { slug } = await params
   const t = await getTranslations('teams')
   const supabase = await createClient()
 
@@ -54,7 +56,7 @@ export default async function TeamPage({ params }: TeamPageProps) {
   const { data: team, error } = await supabase
     .from('teams')
     .select('*')
-    .eq('slug', params.slug)
+    .eq('slug', slug)
     .single()
 
   if (error || !team) {

@@ -11,7 +11,7 @@ type IntlProviderProps = {
 
 export function IntlProvider({ messages, locale, children }: IntlProviderProps) {
   return (
-    <NextIntlClientProvider messages={messages} locale={locale}>
+    <NextIntlClientProvider messages={messages} locale={locale} timeZone="UTC">
       {children}
     </NextIntlClientProvider>
   );

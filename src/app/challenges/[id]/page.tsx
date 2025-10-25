@@ -10,17 +10,18 @@ import { TrophyIcon, ClockIcon, SparklesIcon, UsersIcon } from 'lucide-react'
 import Link from 'next/link'
 
 interface ChallengeDetailPageProps {
-  params: {
+  params: Promise<{
     id: string
-  }
+  }>
 }
 
 export async function generateMetadata({ params }: ChallengeDetailPageProps): Promise<Metadata> {
+  const { id } = await params
   const supabase = await createClient()
   const { data: challenge } = await supabase
     .from('challenges')
     .select('title, description')
-    .eq('id', params.id)
+    .eq('id', id)
     .single()
 
   if (!challenge) {
@@ -36,6 +37,7 @@ export async function generateMetadata({ params }: ChallengeDetailPageProps): Pr
 }
 
 export default async function ChallengeDetailPage({ params }: ChallengeDetailPageProps) {
+  const { id } = await params
   const t = await getTranslations('challenges')
   const supabase = await createClient()
 
@@ -48,7 +50,7 @@ export default async function ChallengeDetailPage({ params }: ChallengeDetailPag
   const { data: challenge, error } = await supabase
     .from('challenges')
     .select('*')
-    .eq('id', params.id)
+    .eq('id', id)
     .single()
 
   if (error || !challenge) {
@@ -80,7 +82,7 @@ export default async function ChallengeDetailPage({ params }: ChallengeDetailPag
         )
       )
     `)
-    .eq('challenge_id', params.id)
+    .eq('challenge_id', id)
     .order('votes_count', { ascending: false })
 
   // Check if user has already submitted
@@ -88,7 +90,7 @@ export default async function ChallengeDetailPage({ params }: ChallengeDetailPag
     ? await supabase
         .from('challenge_submissions')
         .select('id, prompt_id')
-        .eq('challenge_id', params.id)
+        .eq('challenge_id', id)
         .eq('user_id', user.id)
         .single()
     : { data: null }

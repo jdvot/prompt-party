@@ -8,6 +8,8 @@ import { FloatingCreateButton } from "@/components/layout/floating-create-button
 import { ThemeProvider } from "@/components/theme/theme-provider";
 import { ShortcutsProvider } from "@/components/keyboard-shortcuts/shortcuts-provider";
 import { IntlProvider } from "@/components/providers/intl-provider";
+import { Toaster } from "@/components/ui/toaster";
+import { CommandPalette } from "@/components/command-palette/command-palette";
 import { cookies } from 'next/headers';
 
 const inter = Inter({
@@ -118,6 +120,8 @@ export default async function RootLayout({
                 <BottomNav />
                 <FloatingCreateButton />
               </div>
+              <Toaster />
+              <CommandPalette />
             </ShortcutsProvider>
           </ThemeProvider>
         </IntlProvider>

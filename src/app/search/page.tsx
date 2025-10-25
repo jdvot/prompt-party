@@ -15,24 +15,25 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 interface SearchPageProps {
-  searchParams: {
+  searchParams: Promise<{
     q?: string
     tag?: string
     model?: string
     sort?: string
     page?: string
-  }
+  }>
 }
 
 export default async function SearchPage({ searchParams }: SearchPageProps) {
+  const params = await searchParams
   const t = await getTranslations('search')
   const supabase = await createClient()
 
-  const query = searchParams.q || ''
-  const tag = searchParams.tag
-  const model = searchParams.model
-  const sortBy = searchParams.sort || 'relevance'
-  const page = parseInt(searchParams.page || '1')
+  const query = params.q || ''
+  const tag = params.tag
+  const model = params.model
+  const sortBy = params.sort || 'relevance'
+  const page = parseInt(params.page || '1')
   const perPage = 20
   const offset = (page - 1) * perPage
 
