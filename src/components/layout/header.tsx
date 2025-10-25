@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { useUser } from '@/lib/supabase/hooks'
 import { UserMenu } from './user-menu'
-import { Button } from '@/components/ui/button'
+import { Button, buttonVariants } from '@/components/ui/button'
 import { ThemeToggle } from '@/components/theme/theme-toggle'
 import { useShortcuts } from '@/components/keyboard-shortcuts/shortcuts-provider'
 import { NotificationBell } from '@/components/notifications/notification-bell'
@@ -12,6 +12,7 @@ import { CommandIcon } from 'lucide-react'
 import { Logo, LogoText } from '@/components/brand/logo'
 import { LanguageSwitcher } from './language-switcher'
 import { useTranslations } from 'next-intl'
+import { cn } from '@/lib/utils'
 
 export function Header() {
   const { user, loading } = useUser()
@@ -91,30 +92,22 @@ export function Header() {
               {user ? (
                 <>
                   <NotificationBell />
-                  <Button asChild className="hidden sm:inline-flex">
-                    <Link href="/prompts/new">
-                      {t('create')}
-                    </Link>
-                  </Button>
-                  <Button asChild size="sm" className="sm:hidden">
-                    <Link href="/prompts/new">
-                      {t('create')}
-                    </Link>
-                  </Button>
+                  <Link href="/prompts/new" className={cn(buttonVariants(), "hidden sm:inline-flex")}>
+                    {t('create')}
+                  </Link>
+                  <Link href="/prompts/new" className={cn(buttonVariants({ size: "sm" }), "sm:hidden")}>
+                    {t('create')}
+                  </Link>
                   <UserMenu user={user} />
                 </>
               ) : (
                 <>
-                  <Button variant="ghost" asChild className="hidden sm:inline-flex">
-                    <Link href="/auth/login">
-                      {t('login')}
-                    </Link>
-                  </Button>
-                  <Button asChild size="sm">
-                    <Link href="/auth/signup">
-                      {t('signup')}
-                    </Link>
-                  </Button>
+                  <Link href="/auth/login" className={cn(buttonVariants({ variant: "ghost" }), "hidden sm:inline-flex")}>
+                    {t('login')}
+                  </Link>
+                  <Link href="/auth/signup" className={cn(buttonVariants({ size: "sm" }))}>
+                    {t('signup')}
+                  </Link>
                 </>
               )}
             </>

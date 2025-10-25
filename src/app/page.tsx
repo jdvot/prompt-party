@@ -6,10 +6,11 @@ import { Section } from '@/components/layout/section'
 import { Grid } from '@/components/layout/grid'
 import { Card } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-import { Button } from '@/components/ui/button'
+import { Button, buttonVariants } from '@/components/ui/button'
 import { SparklesIcon, TrendingUpIcon, UsersIcon, ZapIcon } from 'lucide-react'
 import Link from 'next/link'
 import { getTranslations } from 'next-intl/server'
+import { cn } from '@/lib/utils'
 
 export default async function Home() {
   const t = await getTranslations('home')
@@ -125,11 +126,9 @@ export default async function Home() {
                 <p className="text-muted-foreground mb-6">
                   Step-by-step guide to create optimized prompts for any AI model. Perfect for beginners.
                 </p>
-                <Button variant="ghost" size="sm" asChild className="group-hover:translate-x-1 transition-transform">
-                  <Link href="/prompts/wizard">
-                    Try Wizard →
-                  </Link>
-                </Button>
+                <Link href="/prompts/wizard" className={cn(buttonVariants({ variant: "ghost", size: "sm" }), "group-hover:translate-x-1 transition-transform")}>
+                  Try Wizard →
+                </Link>
               </div>
             </Card>
 
@@ -142,11 +141,9 @@ export default async function Home() {
                 <p className="text-muted-foreground mb-6">
                   Join thousands of prompt engineers. Share, remix, and learn from the best prompts.
                 </p>
-                <Button variant="ghost" size="sm" asChild className="group-hover:translate-x-1 transition-transform">
-                  <Link href="/trending">
-                    Explore →
-                  </Link>
-                </Button>
+                <Link href="/trending" className={cn(buttonVariants({ variant: "ghost", size: "sm" }), "group-hover:translate-x-1 transition-transform")}>
+                  Explore →
+                </Link>
               </div>
             </Card>
 
@@ -159,11 +156,9 @@ export default async function Home() {
                 <p className="text-muted-foreground mb-6">
                   Ready-to-use prompt templates for common tasks. Save time and get better results.
                 </p>
-                <Button variant="ghost" size="sm" asChild className="group-hover:translate-x-1 transition-transform">
-                  <Link href="/templates">
-                    Browse →
-                  </Link>
-                </Button>
+                <Link href="/templates" className={cn(buttonVariants({ variant: "ghost", size: "sm" }), "group-hover:translate-x-1 transition-transform")}>
+                  Browse →
+                </Link>
               </div>
             </Card>
           </Grid>
@@ -178,9 +173,9 @@ export default async function Home() {
               <h2 className="text-2xl md:text-3xl font-bold mb-2">Latest Prompts</h2>
               <p className="text-muted-foreground">Discover the newest AI prompts from the community</p>
             </div>
-            <Button variant="outline" asChild>
-              <Link href="/trending">View All</Link>
-            </Button>
+            <Link href="/trending" className={cn(buttonVariants({ variant: "outline" }))}>
+              View All
+            </Link>
           </div>
 
           <div className="max-w-4xl mx-auto">
@@ -201,16 +196,12 @@ export default async function Home() {
                 Join our community of prompt engineers and start creating, sharing, and discovering the best AI prompts.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Button size="lg" variant="gradient" asChild>
-                  <Link href="/auth/signup">
-                    Get Started Free
-                  </Link>
-                </Button>
-                <Button size="lg" variant="outline" asChild>
-                  <Link href="/tutorials">
-                    Learn More
-                  </Link>
-                </Button>
+                <Link href="/auth/signup" className={cn(buttonVariants({ size: "lg", variant: "gradient" }))}>
+                  Get Started Free
+                </Link>
+                <Link href="/tutorials" className={cn(buttonVariants({ size: "lg", variant: "outline" }))}>
+                  Learn More
+                </Link>
               </div>
             </div>
           </Card>

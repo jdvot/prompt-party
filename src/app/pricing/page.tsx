@@ -1,12 +1,13 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-import { Button } from '@/components/ui/button'
+import { Button, buttonVariants } from '@/components/ui/button'
 import { CheckIcon, SparklesIcon, ZapIcon, RocketIcon, BuildingIcon } from 'lucide-react'
 import Link from 'next/link'
 import { getTranslations } from 'next-intl/server'
 import { Container } from '@/components/layout/container'
 import { Section } from '@/components/layout/section'
 import { Grid } from '@/components/layout/grid'
+import { cn } from '@/lib/utils'
 
 export async function generateMetadata() {
   const t = await getTranslations('metadata')
@@ -163,16 +164,12 @@ export default async function PricingPage() {
                   </CardHeader>
 
                   <CardContent className="flex-1 flex flex-col">
-                    <Button
-                      asChild
-                      variant={plan.popular ? 'gradient' : 'outline'}
-                      size="lg"
-                      className="w-full mb-6"
+                    <Link
+                      href={plan.href}
+                      className={cn(buttonVariants({ variant: plan.popular ? 'gradient' : 'outline', size: "lg" }), "w-full mb-6")}
                     >
-                      <Link href={plan.href}>
-                        {plan.cta}
-                      </Link>
-                    </Button>
+                      {plan.cta}
+                    </Link>
 
                     <ul className="space-y-3 flex-1">
                       {plan.features.map((feature) => (
@@ -259,11 +256,9 @@ export default async function PricingPage() {
               <p className="text-lg text-muted-foreground mb-6">
                 {t('cta_subtitle')}
               </p>
-              <Button asChild size="lg" variant="gradient">
-                <Link href="/auth/signup">
-                  {t('start_free')}
-                </Link>
-              </Button>
+              <Link href="/auth/signup" className={cn(buttonVariants({ size: "lg", variant: "gradient" }))}>
+                {t('start_free')}
+              </Link>
             </CardContent>
           </Card>
         </Container>

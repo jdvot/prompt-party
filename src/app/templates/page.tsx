@@ -1,7 +1,7 @@
 import { createClient } from '@/lib/supabase/server'
 import { TemplateCard } from '@/components/templates/template-card'
 import { Badge } from '@/components/ui/badge'
-import { Button } from '@/components/ui/button'
+import { Button, buttonVariants } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { getTranslations } from 'next-intl/server'
 import type { Metadata } from 'next'
@@ -10,6 +10,7 @@ import Link from 'next/link'
 import { Container } from '@/components/layout/container'
 import { Section } from '@/components/layout/section'
 import { Grid } from '@/components/layout/grid'
+import { cn } from '@/lib/utils'
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('templates')
@@ -189,9 +190,9 @@ export default async function TemplatesPage({ searchParams }: TemplatesPageProps
                     <p className="text-muted-foreground mb-4">
                       {t('unlock_premium_description')}
                     </p>
-                    <Button asChild variant="gradient" size="lg">
-                      <Link href="/pricing">{t('upgrade_to_pro')}</Link>
-                    </Button>
+                    <Link href="/pricing" className={cn(buttonVariants({ variant: "gradient", size: "lg" }))}>
+                      {t('upgrade_to_pro')}
+                    </Link>
                   </div>
                 </div>
               </CardContent>
@@ -232,9 +233,9 @@ export default async function TemplatesPage({ searchParams }: TemplatesPageProps
               <p className="text-lg text-muted-foreground mb-6">
                 {t('cta_description')}
               </p>
-              <Button asChild size="lg" variant="gradient">
-                <Link href="/prompts/new">{t('cta_button')}</Link>
-              </Button>
+              <Link href="/prompts/new" className={cn(buttonVariants({ size: "lg", variant: "gradient" }))}>
+                {t('cta_button')}
+              </Link>
             </CardContent>
           </Card>
         </Container>
