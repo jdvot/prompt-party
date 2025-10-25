@@ -9,15 +9,14 @@ export function FloatingCreateButton() {
   const t = useTranslations('prompts')
 
   return (
-    <Button
-      asChild
-      size="lg"
-      className="fixed bottom-20 right-4 z-40 lg:hidden rounded-full w-14 h-14 shadow-lg hover:shadow-xl transition-shadow p-0"
-      aria-label={t('create_title')}
-    >
-      <Link href="/prompts/new">
+    <Link href="/prompts/new">
+      <Button
+        size="lg"
+        className="fixed bottom-20 right-4 z-40 lg:hidden rounded-full w-14 h-14 shadow-lg hover:shadow-xl transition-shadow p-0"
+        aria-label={t('create_title')}
+      >
         <PlusIcon className="w-6 h-6" />
-      </Link>
-    </Button>
+      </Button>
+    </Link>
   )
 }
