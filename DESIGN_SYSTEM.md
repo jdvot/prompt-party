@@ -1,5 +1,10 @@
 # Prompt Party Design System
 
+**Premium Modern UI - 2025 Edition**
+
+Inspired by: OpenAI, Vercel, Linear, Stripe
+Built with: Next.js 15 + Tailwind CSS + Shadcn UI
+
 Welcome to the Prompt Party Design System documentation. This guide provides comprehensive information about our design tokens, components, and best practices.
 
 ## Table of Contents

@@ -2,7 +2,7 @@ import * as React from 'react'
 import { cn } from '@/lib/utils'
 
 export interface BadgeProps extends React.HTMLAttributes<HTMLSpanElement> {
-  variant?: 'default' | 'secondary' | 'destructive' | 'success' | 'warning' | 'info' | 'outline'
+  variant?: 'default' | 'secondary' | 'destructive' | 'success' | 'warning' | 'info' | 'outline' | 'soft'
   shape?: 'default' | 'pill'
 }
 
@@ -27,6 +27,7 @@ const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>(
             'bg-warning text-warning-foreground': variant === 'warning',
             'bg-info text-info-foreground': variant === 'info',
             'border border-input bg-background': variant === 'outline',
+            'bg-primary/10 text-primary': variant === 'soft',
           },
           className
         )}
