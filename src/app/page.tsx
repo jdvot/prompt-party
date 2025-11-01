@@ -85,8 +85,7 @@ export default async function Home() {
       <Section spacing="xl">
         <Container size="lg">
           <div className="text-center mb-12 animate-fade-in-up">
-            <Badge variant="soft" className="mb-4 text-sm font-semibold">
-              <RocketIcon className="w-3.5 h-3.5 mr-1.5" />
+            <Badge variant="soft" className="mb-4 text-sm font-semibold" startIcon={<RocketIcon className="w-3.5 h-3.5" />}>
               Powerful Features
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">

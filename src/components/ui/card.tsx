@@ -37,9 +37,9 @@ const cardVariants = cva(
 
         // Glass - Glassmorphism effect
         glass: [
-          'bg-white/70 dark:bg-gray-900/60',
+          'bg-white/90 dark:bg-gray-950/90',
           'backdrop-filter backdrop-blur-xl backdrop-saturate-150',
-          'border-white/20 dark:border-white/10',
+          'border-gray-200/50 dark:border-gray-700/50',
           'shadow-lg',
         ].join(' '),
 
