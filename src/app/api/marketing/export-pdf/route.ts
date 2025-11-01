@@ -222,7 +222,7 @@ export async function POST(request: NextRequest) {
     doc.setFontSize(8)
     doc.setTextColor(100, 100, 100)
     doc.text('Prompt Party • Marketing Suite', 20, footerY)
-    doc.text(`Page ${doc.internal.getNumberOfPages()}`, pageWidth - 30, footerY)
+    doc.text('Page 1', pageWidth - 30, footerY)
 
     // Generate PDF buffer
     const pdfBuffer = doc.output('arraybuffer')
