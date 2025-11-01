@@ -2,10 +2,11 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-import { Button } from '@/components/ui/button'
+import { Button, buttonVariants } from '@/components/ui/button'
 import * as Icons from 'lucide-react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
+import { cn } from '@/lib/utils'
 
 interface TutorialCardProps {
   tutorial: {
@@ -76,12 +77,10 @@ export function TutorialCard({ tutorial }: TutorialCardProps) {
             </div>
 
             {/* Action Button */}
-            <Button asChild className="w-full group/btn" variant="outline">
-              <Link href={tutorial.link}>
-                Start Tutorial
-                <Icons.ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
-              </Link>
-            </Button>
+            <Link href={tutorial.link} className={cn(buttonVariants({ variant: "outline" }), "w-full group/btn")}>
+              Start Tutorial
+              <Icons.ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
+            </Link>
           </div>
         </CardContent>
       </Card>

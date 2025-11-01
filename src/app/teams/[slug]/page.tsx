@@ -1,7 +1,7 @@
 import { createClient } from '@/lib/supabase/server'
 import { notFound, redirect } from 'next/navigation'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
+import { buttonVariants } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
@@ -11,6 +11,7 @@ import { getTranslations } from 'next-intl/server'
 import type { Metadata } from 'next'
 import { Users, FolderIcon, Activity, Settings } from 'lucide-react'
 import Link from 'next/link'
+import { cn } from '@/lib/utils'
 
 interface TeamPageProps {
   params: Promise<{
@@ -77,9 +78,9 @@ export default async function TeamPage({ params }: TeamPageProps) {
         <div className="max-w-2xl mx-auto text-center">
           <h1 className="text-3xl font-bold mb-4">{t('access_denied')}</h1>
           <p className="text-muted-foreground mb-6">{t('not_member')}</p>
-          <Button asChild>
-            <Link href="/teams">{t('back_to_teams')}</Link>
-          </Button>
+          <Link href="/teams" className={cn(buttonVariants())}>
+            {t('back_to_teams')}
+          </Link>
         </div>
       </div>
     )
@@ -145,12 +146,10 @@ export default async function TeamPage({ params }: TeamPageProps) {
               )}
             </div>
             {isOwner && (
-              <Button asChild variant="outline">
-                <Link href={`/teams/${team.slug}/settings`}>
-                  <Settings className="w-4 h-4 mr-2" />
-                  {t('settings')}
-                </Link>
-              </Button>
+              <Link href={`/teams/${team.slug}/settings`} className={cn(buttonVariants({ variant: "outline" }))}>
+                <Settings className="w-4 h-4 mr-2" />
+                {t('settings')}
+              </Link>
             )}
           </div>
         </div>

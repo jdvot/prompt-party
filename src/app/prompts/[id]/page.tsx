@@ -15,12 +15,13 @@ import { PromptOptimizer } from '@/components/ai-optimizer/prompt-optimizer'
 import { PromptPlayground } from '@/components/ai-tester/prompt-playground'
 import { CommentList } from '@/components/comments/comment-list'
 import { HowToUseSection } from '@/components/prompts/how-to-use-section'
-import { Button } from '@/components/ui/button'
+import { Button, buttonVariants } from '@/components/ui/button'
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger, DropdownMenuSeparator } from '@/components/ui/dropdown-menu'
 import { MoreHorizontalIcon } from 'lucide-react'
 import { formatDistanceToNow } from 'date-fns'
 import { getTranslations } from 'next-intl/server'
 import type { Metadata } from 'next'
+import { cn } from '@/lib/utils'
 
 interface PageProps {
   params: Promise<{ id: string }>
@@ -244,24 +245,22 @@ export default async function PromptDetailPage({ params }: PageProps) {
               userId={user?.id}
             />
 
-            <Button asChild variant="primary" size="lg">
-              <Link href={`/prompts/${prompt.id}/remix`}>
-                <svg
-                  className="w-4 h-4 mr-2"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
-                  />
-                </svg>
-                {tCommon('remix')} {remixCount ? `(${remixCount})` : ''}
-              </Link>
-            </Button>
+            <Link href={`/prompts/${prompt.id}/remix`} className={cn(buttonVariants({ variant: "primary", size: "lg" }))}>
+              <svg
+                className="w-4 h-4 mr-2"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+                />
+              </svg>
+              {tCommon('remix')} {remixCount ? `(${remixCount})` : ''}
+            </Link>
 
             <SaveToCollectionButton promptId={prompt.id} userId={user?.id} />
 

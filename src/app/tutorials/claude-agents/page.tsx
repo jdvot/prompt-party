@@ -1,12 +1,13 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-import { Button } from '@/components/ui/button'
+import { buttonVariants } from '@/components/ui/button'
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { CodeBlock } from '@/components/tutorials/code-block'
 import { Sparkles, Lightbulb, Code, CheckCircle, ArrowLeft } from 'lucide-react'
 import Link from 'next/link'
 import type { Metadata } from 'next'
+import { cn } from '@/lib/utils'
 
 export const metadata: Metadata = {
   title: 'Building Claude Agents | Tutorials | Prompt Party',
@@ -17,12 +18,10 @@ export default function ClaudeAgentsTutorial() {
   return (
     <div className="container mx-auto px-4 py-8 max-w-4xl">
       {/* Back Button */}
-      <Button asChild variant="ghost" className="mb-6">
-        <Link href="/tutorials">
-          <ArrowLeft className="w-4 h-4 mr-2" />
-          Back to Tutorials
-        </Link>
-      </Button>
+      <Link href="/tutorials" className={cn(buttonVariants({ variant: "ghost" }), "mb-6")}>
+        <ArrowLeft className="w-4 h-4 mr-2" />
+        Back to Tutorials
+      </Link>
 
       {/* Header */}
       <div className="mb-8">
@@ -450,18 +449,14 @@ async function research(topic) {
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="grid md:grid-cols-2 gap-4">
-              <Button asChild variant="outline">
-                <Link href="/tutorials/multi-agent-systems">
-                  <Code className="w-4 h-4 mr-2" />
-                  Multi-Agent Systems →
-                </Link>
-              </Button>
-              <Button asChild variant="outline">
-                <Link href="/prompts?tag=claude-agent">
-                  <Sparkles className="w-4 h-4 mr-2" />
-                  Browse Agent Examples →
-                </Link>
-              </Button>
+              <Link href="/tutorials/multi-agent-systems" className={cn(buttonVariants({ variant: "outline" }))}>
+                <Code className="w-4 h-4 mr-2" />
+                Multi-Agent Systems →
+              </Link>
+              <Link href="/prompts?tag=claude-agent" className={cn(buttonVariants({ variant: "outline" }))}>
+                <Sparkles className="w-4 h-4 mr-2" />
+                Browse Agent Examples →
+              </Link>
             </div>
             <div className="text-sm text-muted-foreground">
               <p className="font-semibold mb-2">Recommended Resources:</p>

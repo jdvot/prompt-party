@@ -75,8 +75,7 @@ export function RealtimeEditor({
     return () => {
       presenceChannel.unsubscribe()
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [promptId, userId, userName])
+  }, [promptId, userId, userName, supabase])
 
   // Broadcast cursor position
   const broadcastCursor = useCallback(

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { createClient } from '@/lib/supabase/client'
 import { Button } from '@/components/ui/button'
 import { UserPlusIcon, UserMinusIcon } from 'lucide-react'
@@ -20,12 +20,7 @@ export function FollowButton({
   const [loading, setLoading] = useState(false)
   const supabase = createClient()
 
-  useEffect(() => {
-    checkFollowStatus()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [targetUserId])
-
-  const checkFollowStatus = async () => {
+  const checkFollowStatus = useCallback(async () => {
     const {
       data: { user },
     } = await supabase.auth.getUser()
@@ -39,7 +34,11 @@ export function FollowButton({
       .single()
 
     setIsFollowing(!!data)
-  }
+  }, [supabase, targetUserId])
+
+  useEffect(() => {
+    checkFollowStatus()
+  }, [targetUserId, checkFollowStatus])
 
   const handleFollow = async () => {
     setLoading(true)

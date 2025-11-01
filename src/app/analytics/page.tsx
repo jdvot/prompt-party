@@ -5,7 +5,8 @@ import type { Metadata } from 'next'
 import { Card, CardContent } from '@/components/ui/card'
 import { LockIcon } from 'lucide-react'
 import Link from 'next/link'
-import { Button } from '@/components/ui/button'
+import { buttonVariants } from '@/components/ui/button'
+import { cn } from '@/lib/utils'
 
 export const metadata: Metadata = {
   title: 'Analytics | Prompt Party',
@@ -74,11 +75,9 @@ export default async function AnalyticsPage() {
                 </div>
               </div>
 
-              <Button asChild>
-                <Link href="/pricing">
-                  Upgrade to Pro
-                </Link>
-              </Button>
+              <Link href="/pricing" className={cn(buttonVariants())}>
+                Upgrade to Pro
+              </Link>
             </CardContent>
           </Card>
         </div>

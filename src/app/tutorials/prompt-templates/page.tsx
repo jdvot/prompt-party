@@ -1,12 +1,13 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-import { Button } from '@/components/ui/button'
+import { buttonVariants } from '@/components/ui/button'
 import { Alert, AlertDescription } from '@/components/ui/alert'
 import { CodeBlock } from '@/components/tutorials/code-block'
 import * as Icons from 'lucide-react'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import { getTranslations } from 'next-intl/server'
+import { cn } from '@/lib/utils'
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('tutorials.prompt_templates')
@@ -24,12 +25,10 @@ export default async function PromptTemplatesTutorial() {
   return (
     <div className="container mx-auto px-4 py-8 max-w-4xl">
       {/* Back Button */}
-      <Button asChild variant="ghost" className="mb-6">
-        <Link href="/tutorials">
-          <Icons.ArrowLeft className="w-4 h-4 mr-2" />
-          {tCommon('back_to_tutorials')}
-        </Link>
-      </Button>
+      <Link href="/tutorials" className={cn(buttonVariants({ variant: "ghost" }), "mb-6")}>
+        <Icons.ArrowLeft className="w-4 h-4 mr-2" />
+        {tCommon('back_to_tutorials')}
+      </Link>
 
       {/* Header */}
       <div className="mb-8">
@@ -569,16 +568,12 @@ Audience: [AUDIENCE, default: general readers]`}
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="grid md:grid-cols-2 gap-4">
-              <Button asChild>
-                <Link href="/tutorials/advanced-prompting">
-                  {t('next_advanced_prompting')}
-                </Link>
-              </Button>
-              <Button asChild variant="outline">
-                <Link href="/prompts/wizard">
-                  {t('next_wizard')}
-                </Link>
-              </Button>
+              <Link href="/tutorials/advanced-prompting" className={cn(buttonVariants())}>
+                {t('next_advanced_prompting')}
+              </Link>
+              <Link href="/prompts/wizard" className={cn(buttonVariants({ variant: "outline" }))}>
+                {t('next_wizard')}
+              </Link>
             </div>
             <div className="text-sm text-muted-foreground">
               <p className="font-semibold mb-2">{tCommon('keep_learning')}</p>

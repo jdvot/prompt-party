@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -40,14 +40,7 @@ export function VersionHistory({ promptId, onRestore }: VersionHistoryProps) {
   const [isOpen, setIsOpen] = useState(false)
   const [selectedVersion, setSelectedVersion] = useState<Version | null>(null)
 
-  useEffect(() => {
-    if (isOpen && versions.length === 0) {
-      fetchVersions()
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isOpen])
-
-  const fetchVersions = async () => {
+  const fetchVersions = useCallback(async () => {
     setLoading(true)
     try {
       const response = await fetch(`/api/prompts/${promptId}/versions`)
@@ -58,7 +51,13 @@ export function VersionHistory({ promptId, onRestore }: VersionHistoryProps) {
     } finally {
       setLoading(false)
     }
-  }
+  }, [promptId])
+
+  useEffect(() => {
+    if (isOpen && versions.length === 0) {
+      fetchVersions()
+    }
+  }, [isOpen, versions.length, fetchVersions])
 
   const handleRestore = async (version: Version) => {
     if (!confirm(`Restore to version ${version.version_number}?`)) return

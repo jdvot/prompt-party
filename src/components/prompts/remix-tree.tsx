@@ -1,6 +1,7 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
+import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -40,14 +41,7 @@ export function RemixTree({ promptId, promptTitle }: RemixTreeProps) {
   const [isOpen, setIsOpen] = useState(false)
   const [expandedNodes, setExpandedNodes] = useState<Set<string>>(new Set([promptId]))
 
-  useEffect(() => {
-    if (isOpen && !tree) {
-      fetchRemixTree()
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isOpen])
-
-  const fetchRemixTree = async () => {
+  const fetchRemixTree = useCallback(async () => {
     setLoading(true)
     try {
       const response = await fetch(`/api/prompts/${promptId}/remix-tree`)
@@ -58,7 +52,13 @@ export function RemixTree({ promptId, promptTitle }: RemixTreeProps) {
     } finally {
       setLoading(false)
     }
-  }
+  }, [promptId])
+
+  useEffect(() => {
+    if (isOpen && !tree) {
+      fetchRemixTree()
+    }
+  }, [isOpen, tree, fetchRemixTree])
 
   const toggleNode = (nodeId: string) => {
     setExpandedNodes((prev) => {
@@ -118,10 +118,13 @@ export function RemixTree({ promptId, promptTitle }: RemixTreeProps) {
                 {/* Author */}
                 <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
                   {node.author.avatar_url ? (
-                    <img
+                    <Image
                       src={node.author.avatar_url}
                       alt={node.author.name || 'User'}
+                      width={20}
+                      height={20}
                       className="w-5 h-5 rounded-full"
+                      unoptimized
                     />
                   ) : (
                     <User className="w-4 h-4" />

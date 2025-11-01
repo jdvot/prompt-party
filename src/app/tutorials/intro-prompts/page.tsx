@@ -1,12 +1,13 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-import { Button } from '@/components/ui/button'
+import { buttonVariants } from '@/components/ui/button'
 import { Alert, AlertDescription } from '@/components/ui/alert'
 import { CodeBlock } from '@/components/tutorials/code-block'
 import { BookOpen, Lightbulb, CheckCircle, ArrowLeft, XCircle } from 'lucide-react'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import { getTranslations } from 'next-intl/server'
+import { cn } from '@/lib/utils'
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('tutorials.intro_prompts')
@@ -24,12 +25,10 @@ export default async function IntroPromptsTutorial() {
   return (
     <div className="container mx-auto px-4 py-8 max-w-4xl">
       {/* Back Button */}
-      <Button asChild variant="ghost" className="mb-6">
-        <Link href="/tutorials">
-          <ArrowLeft className="w-4 h-4 mr-2" />
-          {tCommon('back_to_tutorials')}
-        </Link>
-      </Button>
+      <Link href="/tutorials" className={cn(buttonVariants({ variant: "ghost" }), "mb-6")}>
+        <ArrowLeft className="w-4 h-4 mr-2" />
+        {tCommon('back_to_tutorials')}
+      </Link>
 
       {/* Header */}
       <div className="mb-8">
@@ -387,16 +386,12 @@ export default async function IntroPromptsTutorial() {
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="grid md:grid-cols-2 gap-4">
-              <Button asChild>
-                <Link href="/tutorials/claude-basics">
-                  {t('next_claude')}
-                </Link>
-              </Button>
-              <Button asChild variant="outline">
-                <Link href="/tutorials/advanced-prompting">
-                  {t('next_advanced')}
-                </Link>
-              </Button>
+              <Link href="/tutorials/claude-basics" className={cn(buttonVariants())}>
+                {t('next_claude')}
+              </Link>
+              <Link href="/tutorials/advanced-prompting" className={cn(buttonVariants({ variant: "outline" }))}>
+                {t('next_advanced')}
+              </Link>
             </div>
             <div className="text-sm text-muted-foreground">
               <p className="font-semibold mb-2">{tCommon('keep_learning')}</p>

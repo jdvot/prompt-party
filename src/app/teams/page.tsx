@@ -1,13 +1,14 @@
 import { createClient } from '@/lib/supabase/server'
 import { redirect } from 'next/navigation'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
+import { Button, buttonVariants } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { getTranslations } from 'next-intl/server'
 import type { Metadata } from 'next'
 import { Users, Plus, Settings, LockIcon } from 'lucide-react'
 import Link from 'next/link'
+import { cn } from '@/lib/utils'
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('teams')
@@ -103,9 +104,9 @@ export default async function TeamsPage() {
                 </div>
               </div>
 
-              <Button asChild>
-                <Link href="/pricing">{t('upgrade_to_team')}</Link>
-              </Button>
+              <Link href="/pricing" className={cn(buttonVariants())}>
+                {t('upgrade_to_team')}
+              </Link>
             </CardContent>
           </Card>
         </div>
@@ -122,12 +123,10 @@ export default async function TeamsPage() {
             <h1 className="text-3xl font-bold mb-2">{t('title')}</h1>
             <p className="text-muted-foreground">{t('subtitle')}</p>
           </div>
-          <Button asChild>
-            <Link href="/teams/new">
-              <Plus className="w-4 h-4 mr-2" />
-              {t('create_team')}
-            </Link>
-          </Button>
+          <Link href="/teams/new" className={cn(buttonVariants())}>
+            <Plus className="w-4 h-4 mr-2" />
+            {t('create_team')}
+          </Link>
         </div>
 
         {/* Teams Grid */}
@@ -167,15 +166,13 @@ export default async function TeamsPage() {
                     </div>
 
                     <div className="flex gap-2">
-                      <Button asChild className="flex-1" size="sm">
-                        <Link href={`/teams/${team.slug}`}>{t('view')}</Link>
-                      </Button>
+                      <Link href={`/teams/${team.slug}`} className={cn(buttonVariants({ size: "sm" }), "flex-1")}>
+                        {t('view')}
+                      </Link>
                       {team.owner_id === user.id && (
-                        <Button asChild variant="outline" size="sm">
-                          <Link href={`/teams/${team.slug}/settings`}>
-                            <Settings className="w-4 h-4" />
-                          </Link>
-                        </Button>
+                        <Link href={`/teams/${team.slug}/settings`} className={cn(buttonVariants({ variant: "outline", size: "sm" }))}>
+                          <Settings className="w-4 h-4" />
+                        </Link>
                       )}
                     </div>
                   </CardContent>
@@ -188,12 +185,10 @@ export default async function TeamsPage() {
             <Users className="w-16 h-16 mx-auto mb-4 text-muted-foreground opacity-50" />
             <h2 className="text-2xl font-semibold mb-2">{t('no_teams')}</h2>
             <p className="text-muted-foreground mb-6">{t('no_teams_description')}</p>
-            <Button asChild>
-              <Link href="/teams/new">
-                <Plus className="w-4 h-4 mr-2" />
-                {t('create_first_team')}
-              </Link>
-            </Button>
+            <Link href="/teams/new" className={cn(buttonVariants())}>
+              <Plus className="w-4 h-4 mr-2" />
+              {t('create_first_team')}
+            </Link>
           </div>
         )}
       </div>

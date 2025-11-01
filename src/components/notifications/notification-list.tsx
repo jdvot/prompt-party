@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useCallback } from 'react'
 import { createClient } from '@/lib/supabase/client'
 import { formatDistanceToNow } from 'date-fns'
 import Link from 'next/link'
@@ -46,6 +46,23 @@ export function NotificationList({ onClose }: NotificationListProps) {
   const t = useTranslations('notifications')
   const tCommon = useTranslations('common')
 
+  const fetchNotifications = useCallback(async () => {
+    const {
+      data: { user },
+    } = await supabase.auth.getUser()
+    if (!user) return
+
+    const { data } = await supabase
+      .from('notifications')
+      .select('*')
+      .eq('user_id', user.id)
+      .order('created_at', { ascending: false })
+      .limit(20)
+
+    setNotifications((data as Notification[]) || [])
+    setLoading(false)
+  }, [supabase])
+
   useEffect(() => {
     fetchNotifications()
 
@@ -68,25 +85,7 @@ export function NotificationList({ onClose }: NotificationListProps) {
     return () => {
       supabase.removeChannel(channel)
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
-
-  const fetchNotifications = async () => {
-    const {
-      data: { user },
-    } = await supabase.auth.getUser()
-    if (!user) return
-
-    const { data } = await supabase
-      .from('notifications')
-      .select('*')
-      .eq('user_id', user.id)
-      .order('created_at', { ascending: false })
-      .limit(20)
-
-    setNotifications((data as Notification[]) || [])
-    setLoading(false)
-  }
+  }, [supabase, fetchNotifications])
 
   const markAsRead = async (notificationId: string) => {
     await supabase.rpc('mark_notification_read', {

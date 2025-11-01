@@ -67,7 +67,7 @@ export function NotificationsPage({ initialNotifications, userId }: Notification
     return () => {
       channel.unsubscribe()
     }
-  }, [userId])
+  }, [userId, supabase])
 
   const filteredNotifications =
     filter === 'unread'

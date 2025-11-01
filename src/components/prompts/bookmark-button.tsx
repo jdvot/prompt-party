@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { createClient } from '@/lib/supabase/client'
 import { Button } from '@/components/ui/button'
 import { BookmarkIcon } from 'lucide-react'
@@ -25,13 +25,7 @@ export function BookmarkButton({ promptId, variant = 'ghost', size = 'sm' }: Boo
   const [loading, setLoading] = useState(false)
   const supabase = createClient()
 
-  useEffect(() => {
-    checkBookmarkStatus()
-    loadFolders()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [promptId])
-
-  const checkBookmarkStatus = async () => {
+  const checkBookmarkStatus = useCallback(async () => {
     const {
       data: { user },
     } = await supabase.auth.getUser()
@@ -46,9 +40,9 @@ export function BookmarkButton({ promptId, variant = 'ghost', size = 'sm' }: Boo
 
     setIsBookmarked(!!data)
     setCurrentFolder(data?.folder || null)
-  }
+  }, [supabase, promptId])
 
-  const loadFolders = async () => {
+  const loadFolders = useCallback(async () => {
     const {
       data: { user },
     } = await supabase.auth.getUser()
@@ -61,7 +55,12 @@ export function BookmarkButton({ promptId, variant = 'ghost', size = 'sm' }: Boo
       .order('name')
 
     setFolders(data || [])
-  }
+  }, [supabase])
+
+  useEffect(() => {
+    checkBookmarkStatus()
+    loadFolders()
+  }, [promptId, checkBookmarkStatus, loadFolders])
 
   const handleBookmark = async (folderName: string) => {
     setLoading(true)

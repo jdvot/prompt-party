@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 
@@ -119,11 +120,14 @@ export function AvatarPicker({ currentAvatar, onSelect }: AvatarPickerProps) {
               }`}
               title={`${avatar.style} - ${avatar.seed}`}
             >
-              <img
+              <Image
                 src={avatar.url}
                 alt={avatar.id}
+                width={128}
+                height={128}
                 className="w-full h-full object-cover"
                 loading="lazy"
+                unoptimized
               />
               {isSelected && (
                 <div className="absolute -top-1 -right-1 w-6 h-6 bg-primary rounded-full flex items-center justify-center shadow-lg">
@@ -166,10 +170,13 @@ export function renderAvatar(avatarUrl: string | null, name: string, size: 'sm' 
   }
 
   return (
-    <img
+    <Image
       src={avatarUrl}
       alt={name}
+      width={size === 'lg' ? 96 : size === 'md' ? 48 : 32}
+      height={size === 'lg' ? 96 : size === 'md' ? 48 : 32}
       className={`${sizeClasses[size]} rounded-full object-cover shadow-md ring-2 ring-white dark:ring-gray-800`}
+      unoptimized
     />
   )
 }

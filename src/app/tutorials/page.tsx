@@ -1,11 +1,12 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-import { Button } from '@/components/ui/button'
+import { Button, buttonVariants } from '@/components/ui/button'
 import { TutorialCard } from '@/components/tutorials/tutorial-card'
 import * as Icons from 'lucide-react'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import { getTranslations } from 'next-intl/server'
+import { cn } from '@/lib/utils'
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('tutorials.index')
@@ -185,12 +186,10 @@ export default async function TutorialsPage() {
                   <Icons.ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </span>
               </Button>
-              <Button size="lg" variant="outline" className="min-w-[200px] group" asChild>
-                <Link href="#beginner">
-                  <Icons.BookOpen className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
-                  {t('browse_tutorials')}
-                </Link>
-              </Button>
+              <Link href="#beginner" className={cn(buttonVariants({ size: "lg", variant: "outline" }), "min-w-[200px] group")}>
+                <Icons.BookOpen className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
+                {t('browse_tutorials')}
+              </Link>
             </div>
 
             {/* Stats */}
@@ -252,12 +251,10 @@ export default async function TutorialsPage() {
                       <span className="text-muted-foreground">{path.steps}</span>
                       <span className="text-muted-foreground">{path.duration}</span>
                     </div>
-                    <Button className="w-full group/btn" variant="outline" asChild>
-                      <Link href={path.link}>
-                        {t('start_path')}
-                        <Icons.ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
-                      </Link>
-                    </Button>
+                    <Link href={path.link} className={cn(buttonVariants({ variant: "outline" }), "w-full group/btn")}>
+                      {t('start_path')}
+                      <Icons.ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
+                    </Link>
                   </CardContent>
                 </Card>
               )

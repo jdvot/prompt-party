@@ -62,6 +62,14 @@ export function CollaborativeEditor({
   const bodyRef = useRef<HTMLTextAreaElement>(null)
   const presenceChannel = useRef<any>(null)
   const updateTimeout = useRef<NodeJS.Timeout | undefined>(undefined)
+  const onTitleChangeRef = useRef(onTitleChange)
+  const onBodyChangeRef = useRef(onBodyChange)
+
+  // Keep refs up to date
+  useEffect(() => {
+    onTitleChangeRef.current = onTitleChange
+    onBodyChangeRef.current = onBodyChange
+  }, [onTitleChange, onBodyChange])
 
   const userColor = COLORS[Math.floor(Math.random() * COLORS.length)]
 
@@ -123,7 +131,7 @@ export function CollaborativeEditor({
         (payload: { title: string; user_id: string }) => {
           if (payload.user_id !== currentUserId) {
             setTitle(payload.title)
-            onTitleChange(payload.title)
+            onTitleChangeRef.current(payload.title)
           }
         }
       )
@@ -133,7 +141,7 @@ export function CollaborativeEditor({
         (payload: { body: string; user_id: string }) => {
           if (payload.user_id !== currentUserId) {
             setBody(payload.body)
-            onBodyChange(payload.body)
+            onBodyChangeRef.current(payload.body)
           }
         }
       )
@@ -170,7 +178,7 @@ export function CollaborativeEditor({
     return () => {
       channel.unsubscribe()
     }
-  }, [promptId, currentUserId, currentUserName, userColor])
+  }, [promptId, currentUserId, currentUserName, userColor, supabase, toast])
 
   const handleTitleChange = useCallback(
     (newTitle: string) => {

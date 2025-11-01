@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import { createClient } from '@/lib/supabase/client'
 import { useRouter } from 'next/navigation'
 
@@ -73,10 +74,13 @@ export function AvatarUpload({ userId, currentAvatarUrl }: AvatarUploadProps) {
     <div className="flex items-center gap-6">
       <div className="w-20 h-20 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-2xl overflow-hidden">
         {previewUrl ? (
-          <img
+          <Image
             src={previewUrl}
             alt="Avatar preview"
+            width={80}
+            height={80}
             className="w-full h-full object-cover"
+            unoptimized
           />
         ) : (
           'A'

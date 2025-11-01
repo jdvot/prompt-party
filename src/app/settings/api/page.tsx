@@ -4,8 +4,9 @@ import { ApiKeyManager } from '@/components/api/api-key-manager'
 import { Card, CardContent } from '@/components/ui/card'
 import { LockIcon } from 'lucide-react'
 import Link from 'next/link'
-import { Button } from '@/components/ui/button'
+import { buttonVariants } from '@/components/ui/button'
 import type { Metadata } from 'next'
+import { cn } from '@/lib/utils'
 
 export const metadata: Metadata = {
   title: 'API Access | Prompt Party',
@@ -73,11 +74,9 @@ export default async function ApiSettingsPage() {
                 </div>
               </div>
 
-              <Button asChild>
-                <Link href="/pricing">
-                  Upgrade to Business
-                </Link>
-              </Button>
+              <Link href="/pricing" className={cn(buttonVariants())}>
+                Upgrade to Business
+              </Link>
             </CardContent>
           </Card>
         </div>

@@ -1,11 +1,12 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-import { Button } from '@/components/ui/button'
+import { Button, buttonVariants } from '@/components/ui/button'
 import { Progress } from '@/components/ui/progress'
 import * as Icons from 'lucide-react'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import { getTranslations } from 'next-intl/server'
+import { cn } from '@/lib/utils'
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('tutorials.expert_path')
@@ -90,12 +91,10 @@ export default async function ExpertPath() {
   return (
     <div className="container mx-auto px-4 py-8 max-w-5xl">
       {/* Back Button */}
-      <Button asChild variant="ghost" className="mb-6">
-        <Link href="/tutorials">
-          <Icons.ArrowLeft className="w-4 h-4 mr-2" />
-          {tCommon('back_to_tutorials')}
-        </Link>
-      </Button>
+      <Link href="/tutorials" className={cn(buttonVariants({ variant: "ghost" }), "mb-6")}>
+        <Icons.ArrowLeft className="w-4 h-4 mr-2" />
+        {tCommon('back_to_tutorials')}
+      </Link>
 
       {/* Header */}
       <div className="mb-8">
@@ -299,21 +298,19 @@ export default async function ExpertPath() {
 
               <CardContent>
                 <div className="flex items-center gap-3">
-                  <Button asChild className="group/btn" variant={isFirst || isLast ? undefined : "outline"}>
-                    <Link href={lesson.link}>
-                      {isLocked ? (
-                        <>
-                          <Icons.Lock className="w-4 h-4 mr-2" />
-                          {tCommon('locked')}
-                        </>
-                      ) : (
-                        <>
-                          {isFirst ? tCommon('start_lesson') : isLast ? t('start_final_project') : tCommon('go_to_lesson')}
-                          <Icons.ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
-                        </>
-                      )}
-                    </Link>
-                  </Button>
+                  <Link href={lesson.link} className={cn(buttonVariants({ variant: isFirst || isLast ? undefined : "outline" }), "group/btn")}>
+                    {isLocked ? (
+                      <>
+                        <Icons.Lock className="w-4 h-4 mr-2" />
+                        {tCommon('locked')}
+                      </>
+                    ) : (
+                      <>
+                        {isFirst ? tCommon('start_lesson') : isLast ? t('start_final_project') : tCommon('go_to_lesson')}
+                        <Icons.ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
+                      </>
+                    )}
+                  </Link>
 
                   {!isFirst && !isLast && !isLocked && (
                     <span className="text-sm text-muted-foreground">
@@ -345,16 +342,12 @@ export default async function ExpertPath() {
             {t('after_mastering')}
           </p>
           <div className="grid md:grid-cols-2 gap-4">
-            <Button asChild variant="outline">
-              <Link href="/tutorials/paths/beginner">
-                ← Beginner Path
-              </Link>
-            </Button>
-            <Button asChild variant="outline">
-              <Link href="/tutorials/paths/pro">
-                Prompt Engineering Pro →
-              </Link>
-            </Button>
+            <Link href="/tutorials/paths/beginner" className={cn(buttonVariants({ variant: "outline" }))}>
+              ← Beginner Path
+            </Link>
+            <Link href="/tutorials/paths/pro" className={cn(buttonVariants({ variant: "outline" }))}>
+              Prompt Engineering Pro →
+            </Link>
           </div>
         </CardContent>
       </Card>

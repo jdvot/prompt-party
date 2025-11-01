@@ -1,9 +1,10 @@
-import { Button } from '@/components/ui/button'
+import { buttonVariants } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { AlertCircle } from 'lucide-react'
 import Link from 'next/link'
 import { getTranslations } from 'next-intl/server'
 import type { Metadata } from 'next'
+import { cn } from '@/lib/utils'
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('auth')
@@ -52,12 +53,12 @@ export default async function AuthCodeErrorPage() {
             </div>
 
             <div className="flex gap-2 pt-4">
-              <Button asChild className="flex-1">
-                <Link href="/auth/login">{t('back_to_login')}</Link>
-              </Button>
-              <Button asChild variant="outline" className="flex-1">
-                <Link href="/">{t('back_to_home')}</Link>
-              </Button>
+              <Link href="/auth/login" className={cn(buttonVariants(), "flex-1")}>
+                {t('back_to_login')}
+              </Link>
+              <Link href="/" className={cn(buttonVariants({ variant: "outline" }), "flex-1")}>
+                {t('back_to_home')}
+              </Link>
             </div>
           </CardContent>
         </Card>

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { createClient } from '@/lib/supabase/client'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
@@ -49,6 +49,28 @@ export function NotificationCenter() {
 
   const unreadCount = notifications.filter((n) => !n.is_read).length
 
+  const loadNotifications = useCallback(async () => {
+    setIsLoading(true)
+    const { data: { user } } = await supabase.auth.getUser()
+
+    if (!user) {
+      setIsLoading(false)
+      return
+    }
+
+    const { data } = await supabase
+      .from('notifications')
+      .select('*')
+      .eq('user_id', user.id)
+      .order('created_at', { ascending: false })
+      .limit(50)
+
+    if (data) {
+      setNotifications(data as Notification[])
+    }
+    setIsLoading(false)
+  }, [supabase])
+
   useEffect(() => {
     loadNotifications()
 
@@ -78,29 +100,7 @@ export function NotificationCenter() {
     return () => {
       channel.unsubscribe()
     }
-  }, [])
-
-  const loadNotifications = async () => {
-    setIsLoading(true)
-    const { data: { user } } = await supabase.auth.getUser()
-
-    if (!user) {
-      setIsLoading(false)
-      return
-    }
-
-    const { data } = await supabase
-      .from('notifications')
-      .select('*')
-      .eq('user_id', user.id)
-      .order('created_at', { ascending: false })
-      .limit(50)
-
-    if (data) {
-      setNotifications(data as Notification[])
-    }
-    setIsLoading(false)
-  }
+  }, [loadNotifications, supabase, toast])
 
   const markAsRead = async (id: string) => {
     await supabase

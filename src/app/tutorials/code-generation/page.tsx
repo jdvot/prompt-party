@@ -1,12 +1,13 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-import { Button } from '@/components/ui/button'
+import { buttonVariants } from '@/components/ui/button'
 import { Alert, AlertDescription } from '@/components/ui/alert'
 import { CodeBlock } from '@/components/tutorials/code-block'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import * as Icons from 'lucide-react'
 import Link from 'next/link'
 import { getTranslations } from 'next-intl/server'
+import { cn } from '@/lib/utils'
 
 export async function generateMetadata() {
   const t = await getTranslations('tutorials.code_generation')
@@ -22,12 +23,10 @@ export default async function CodeGenerationTutorial() {
   const tCommon = await getTranslations('tutorials')
   return (
     <div className="container mx-auto px-4 py-8 max-w-4xl">
-      <Button asChild variant="ghost" className="mb-6">
-        <Link href="/tutorials">
-          <Icons.ArrowLeft className="w-4 h-4 mr-2" />
-          {tCommon('back_to_tutorials')}
-        </Link>
-      </Button>
+      <Link href="/tutorials" className={cn(buttonVariants({ variant: "ghost" }), "mb-6")}>
+        <Icons.ArrowLeft className="w-4 h-4 mr-2" />
+        {tCommon('back_to_tutorials')}
+      </Link>
 
       <div className="mb-8">
         <div className="flex items-center gap-3 mb-4">
@@ -667,16 +666,12 @@ Explain significant differences in approach between the languages.`}
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="grid md:grid-cols-2 gap-4">
-              <Button asChild>
-                <Link href="/tutorials/multi-agent-systems">
-                  Multi-Agent Systems →
-                </Link>
-              </Button>
-              <Button asChild variant="outline">
-                <Link href="/tutorials">
-                  ← Back to All Tutorials
-                </Link>
-              </Button>
+              <Link href="/tutorials/multi-agent-systems" className={cn(buttonVariants())}>
+                Multi-Agent Systems →
+              </Link>
+              <Link href="/tutorials" className={cn(buttonVariants({ variant: "outline" }))}>
+                ← Back to All Tutorials
+              </Link>
             </div>
             <div className="text-sm text-muted-foreground">
               <p className="font-semibold mb-2">Continue Learning:</p>
