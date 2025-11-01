@@ -3,12 +3,14 @@ import { Badge } from '@/components/ui/badge'
 import { buttonVariants } from '@/components/ui/button'
 import { Alert, AlertDescription } from '@/components/ui/alert'
 import { CodeBlock } from '@/components/tutorials/code-block'
+import { TutorialProgress } from '@/components/tutorials/tutorial-progress'
 import { Container } from '@/components/layout/container'
 import * as Icons from 'lucide-react'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import { getTranslations } from 'next-intl/server'
 import { cn } from '@/lib/utils'
+import { ClaudeBasicsQuiz } from './quiz-section'
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('tutorials.claude_basics')
@@ -24,12 +26,16 @@ export default async function ClaudeBasicsTutorial() {
   const tCommon = await getTranslations('tutorials')
 
   return (
-    <Container size="lg" className="py-8">
+    <Container size="xl" className="py-8">
       {/* Back Button */}
       <Link href="/tutorials" className={cn(buttonVariants({ variant: "ghost" }), "mb-6")}>
         <Icons.ArrowLeft className="w-4 h-4 mr-2" />
         {tCommon('back_to_tutorials')}
       </Link>
+
+      {/* Two-column layout */}
+      <div className="grid lg:grid-cols-[1fr_300px] gap-8">
+        <div>
 
       {/* Header */}
       <div className="mb-8">
@@ -407,6 +413,11 @@ export default async function ClaudeBasicsTutorial() {
           </Card>
         </section>
 
+        {/* Quiz Section */}
+        <section>
+          <ClaudeBasicsQuiz />
+        </section>
+
         {/* Next Steps */}
         <Card className="bg-gradient-to-r from-violet-600/10 to-fuchsia-600/10 border-violet-600/20">
           <CardHeader>
@@ -434,6 +445,21 @@ export default async function ClaudeBasicsTutorial() {
             </div>
           </CardContent>
         </Card>
+      </div>
+        </div>
+
+        {/* Sidebar - Progress Tracker */}
+        <aside className="hidden lg:block">
+          <TutorialProgress
+            tutorialId="claude-basics"
+            title="Les bases de Claude"
+            duration="20 min"
+            level="beginner"
+            rewardPoints={50}
+            rewardBadge="Premier Pas"
+            completed={false}
+          />
+        </aside>
       </div>
     </Container>
   )

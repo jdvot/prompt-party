@@ -22,11 +22,11 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL('https://prompt-party.netlify.app'),
   title: {
-    default: "Prompt Party - The Social Network for AI Prompts",
+    default: "Prompt Party - Learn AI Prompt Engineering",
     template: "%s | Prompt Party"
   },
-  description: "Create, share, and discover the most inspiring AI prompts. Join the community of prompt engineers, creators, and AI enthusiasts.",
-  keywords: ['AI prompts', 'ChatGPT', 'Claude', 'Gemini', 'prompt engineering', 'prompt library', 'AI tools', 'GPT-4', 'prompt sharing'],
+  description: "Master AI prompt engineering through interactive tutorials, challenges, and gamified learning. Learn to create effective prompts for ChatGPT, Claude, and Gemini.",
+  keywords: ['AI prompts', 'prompt engineering', 'ChatGPT tutorials', 'Claude AI', 'Gemini AI', 'AI learning', 'prompt engineering course', 'AI education', 'learn AI'],
   authors: [{ name: 'Prompt Party' }],
   creator: 'Prompt Party',
   publisher: 'Prompt Party',
@@ -40,8 +40,8 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://prompt-party.netlify.app',
     siteName: 'Prompt Party',
-    title: 'Prompt Party - The Social Network for AI Prompts',
-    description: 'Create, share, and discover the most inspiring AI prompts. Join the community of prompt engineers, creators, and AI enthusiasts.',
+    title: 'Prompt Party - Learn AI Prompt Engineering',
+    description: 'Master AI prompt engineering through interactive tutorials, challenges, and gamified learning. Learn to create effective prompts for ChatGPT, Claude, and Gemini.',
     images: [
       {
         url: '/og-image.png',

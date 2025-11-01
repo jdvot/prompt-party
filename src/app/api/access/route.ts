@@ -1,61 +1,73 @@
+/**
+ * Site Access Protection API
+ * Validates password and issues access token
+ */
 import { NextRequest, NextResponse } from 'next/server'
-import { cookies } from 'next/headers'
-import bcrypt from 'bcryptjs'
 import { createAccessToken, ACCESS_TOKEN_COOKIE_CONFIG } from '@/lib/access-token'
+import { createHash } from 'crypto'
 
+/**
+ * Verify password matches the hashed password in environment
+ */
+function verifyPassword(password: string): boolean {
+  const expectedHash = process.env.ACCESS_PASSWORD_HASH
+  if (!expectedHash) {
+    console.error('❌ ACCESS_PASSWORD_HASH not configured')
+    return false
+  }
+
+  // Hash the provided password
+  const hash = createHash('sha256').update(password).digest('hex')
+
+  return hash === expectedHash
+}
+
+/**
+ * POST /api/access - Validate password and issue access token
+ */
 export async function POST(request: NextRequest) {
   try {
-    const { password, redirect } = await request.json()
+    const body = await request.json()
+    const { password } = body
 
-    if (!password) {
+    if (!password || typeof password !== 'string') {
       return NextResponse.json(
         { error: 'Password is required' },
         { status: 400 }
       )
     }
 
-    // Only accept hashed passwords for security (no plaintext)
-    const passwordHash = process.env.ACCESS_PASSWORD_HASH
-
-    if (!passwordHash) {
-      console.error('❌ ACCESS_PASSWORD_HASH is not set - plaintext passwords are not allowed')
-      return NextResponse.json(
-        { error: 'Access protection not configured properly' },
-        { status: 503 }
-      )
-    }
-
-    // Validate password using bcrypt
-    const isValidPassword = await bcrypt.compare(password, passwordHash)
-
-    if (!isValidPassword) {
+    // Verify password
+    if (!verifyPassword(password)) {
       return NextResponse.json(
         { error: 'Invalid password' },
         { status: 401 }
       )
     }
 
-    // Create signed access token instead of simple cookie
-    const accessToken = await createAccessToken()
+    // Create access token
+    const token = await createAccessToken()
 
-    const response = NextResponse.json({
-      success: true,
-      redirect: redirect || '/'
-    })
+    // Create response with cookie
+    const response = NextResponse.json(
+      { success: true, message: 'Access granted' },
+      { status: 200 }
+    )
 
-    // Set secure token cookie
-    const cookieStore = await cookies()
-    cookieStore.set(ACCESS_TOKEN_COOKIE_CONFIG.name, accessToken, {
+    // Set the access token cookie
+    response.cookies.set({
+      name: ACCESS_TOKEN_COOKIE_CONFIG.name,
+      value: token,
       httpOnly: ACCESS_TOKEN_COOKIE_CONFIG.httpOnly,
       secure: ACCESS_TOKEN_COOKIE_CONFIG.secure,
       sameSite: ACCESS_TOKEN_COOKIE_CONFIG.sameSite,
       maxAge: ACCESS_TOKEN_COOKIE_CONFIG.maxAge,
-      path: ACCESS_TOKEN_COOKIE_CONFIG.path
+      path: ACCESS_TOKEN_COOKIE_CONFIG.path,
     })
 
     return response
   } catch (error) {
-    console.error('Access verification error:', error)
+    console.error('Error in access API:', error)
     return NextResponse.json(
       { error: 'Internal server error' },
       { status: 500 }

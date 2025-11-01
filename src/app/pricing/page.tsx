@@ -1,132 +1,53 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button, buttonVariants } from '@/components/ui/button'
-import { CheckIcon, SparklesIcon, ZapIcon, RocketIcon, BuildingIcon } from 'lucide-react'
+import { CheckIcon, HeartIcon, SparklesIcon } from 'lucide-react'
 import Link from 'next/link'
-import { getTranslations } from 'next-intl/server'
 import { Container } from '@/components/layout/container'
 import { Section } from '@/components/layout/section'
-import { Grid } from '@/components/layout/grid'
 import { cn } from '@/lib/utils'
 
 export async function generateMetadata() {
-  const t = await getTranslations('metadata')
   return {
-    title: t('pricing_title'),
-    description: t('pricing_description'),
+    title: 'Soutenir le projet | Prompt Party',
+    description: 'Soutiens le projet Prompt Party et aide-nous à garder l\'éducation IA gratuite pour tous',
   }
 }
 
-export default async function PricingPage() {
-  const t = await getTranslations('pricing_full')
+export default function PricingPage() {
+  const freePlan = {
+    name: 'Gratuit',
+    price: '0€',
+    period: 'toujours',
+    description: 'Tout ce dont tu as besoin pour apprendre l\'IA',
+    features: [
+      'Tous les parcours d\'apprentissage',
+      'Tous les tutoriels et concepts',
+      'Playground (20 tests/mois)',
+      'Bibliothèque de prompts complète',
+      'Challenges et leaderboard',
+      'Communauté et forum',
+      'Collections et bookmarks',
+      'Certificats de complétion'
+    ]
+  }
 
-  const plans = [
-    {
-      name: t('free_name'),
-      price: t('free_price'),
-      period: t('free_period'),
-      description: t('free_desc'),
-      icon: SparklesIcon,
-      features: [
-        t('free_f1'),
-        t('free_f2'),
-        t('free_f3'),
-        t('free_f4'),
-        t('free_f5'),
-        t('free_f6'),
-      ],
-      cta: t('get_started'),
-      href: '/auth/signup',
-      popular: false,
-      badge: null,
-    },
-    {
-      name: t('pro_name'),
-      price: t('pro_price'),
-      period: t('pro_period'),
-      description: t('pro_desc'),
-      icon: ZapIcon,
-      features: [
-        t('pro_f1'),
-        t('pro_f2'),
-        t('pro_f3'),
-        t('pro_f4'),
-        t('pro_f5'),
-        t('pro_f6'),
-        t('pro_f7'),
-        t('pro_f8'),
-        t('pro_f9'),
-      ],
-      cta: t('start_pro'),
-      href: '/auth/signup?plan=pro',
-      popular: false,
-      badge: null,
-    },
-    {
-      name: 'Marketing Suite',
-      price: '€49',
-      period: 'month',
-      description: 'For marketing professionals & content creators',
-      icon: RocketIcon,
-      features: [
-        '500+ Marketing Prompts Library',
-        'Unlimited Multi-LLM Testing',
-        'Brand Voice Training',
-        'Marketing Analytics Dashboard',
-        'Mini-Team (3 seats)',
-        'Priority Support (<2h)',
-        '12 Masterclasses/year',
-        'Export PDF Reports',
-        'Advanced A/B Testing',
-      ],
-      cta: 'Start Free Trial',
-      href: '/marketing-suite',
-      popular: true,
-      badge: 'Best for Marketers',
-    },
-    {
-      name: t('team_name'),
-      price: t('team_price'),
-      period: t('team_period'),
-      description: t('team_desc'),
-      icon: RocketIcon,
-      features: [
-        t('team_f1'),
-        t('team_f2'),
-        t('team_f3'),
-        t('team_f4'),
-        t('team_f5'),
-        t('team_f6'),
-        t('team_f7'),
-        t('team_f8'),
-      ],
-      cta: t('start_team'),
-      href: '/auth/signup?plan=team',
-      popular: false,
-      badge: null,
-    },
-    {
-      name: t('business_name'),
-      price: t('business_price'),
-      period: t('business_period'),
-      description: t('business_desc'),
-      icon: BuildingIcon,
-      features: [
-        t('business_f1'),
-        t('business_f2'),
-        t('business_f3'),
-        t('business_f4'),
-        t('business_f5'),
-        t('business_f6'),
-        t('business_f7'),
-        t('business_f8'),
-      ],
-      cta: t('contact_sales'),
-      href: '/contact',
-      popular: false,
-      badge: null,
-    },
-  ]
+  const supportPlan = {
+    name: 'Soutien',
+    price: '5€',
+    period: 'mois',
+    description: 'Soutiens le projet et aide-nous à rester gratuit',
+    features: [
+      'Tout du plan Gratuit +',
+      'Badge "Supporter" 💎',
+      'Tests playground illimités',
+      'Vidéos bonus exclusives',
+      'Accès early aux nouveautés',
+      'Ton nom dans les crédits',
+      'Sentiment de faire le bien 💚',
+      'Notre gratitude éternelle'
+    ]
+  }
 
   return (
     <>
@@ -135,14 +56,14 @@ export default async function PricingPage() {
         <Container size="lg">
           <div className="text-center animate-fade-in-up">
             <Badge variant="soft" className="mb-4">
-              <SparklesIcon className="w-3 h-3 mr-1" />
-              Pricing
+              <HeartIcon className="w-3 h-3 mr-1" />
+              100% Gratuit
             </Badge>
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              {t('title')}
+              L'éducation IA doit rester <span className="bg-gradient-to-r from-violet-600 to-fuchsia-600 bg-clip-text text-transparent">gratuite</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              {t('subtitle')}
+              Tous nos cours, tutoriels et outils sont 100% gratuits. Si tu souhaites soutenir le projet, voici comment aider.
             </p>
           </div>
         </Container>
@@ -150,122 +71,186 @@ export default async function PricingPage() {
 
       {/* Pricing Cards */}
       <Section spacing="xl">
-        <Container size="xl">
-          <Grid cols={5} gap="lg" className="animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
-            {plans.map((plan, index) => {
-              const Icon = plan.icon
-              return (
-                <Card
-                  key={plan.name}
-                  variant={plan.popular ? 'interactive' : 'default'}
-                  className={`relative h-full flex flex-col ${
-                    plan.popular ? 'border-primary/50 shadow-lg scale-105' : ''
-                  }`}
-                  style={{ animationDelay: `${0.1 + index * 0.1}s` }}
+        <Container size="lg">
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {/* Free Plan */}
+            <Card className="relative border-2">
+              <CardHeader>
+                <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-green-500 to-emerald-600 mb-4">
+                  <SparklesIcon className="w-6 h-6 text-white" />
+                </div>
+                <CardTitle className="text-2xl mb-2">{freePlan.name}</CardTitle>
+                <div className="mb-3">
+                  <span className="text-5xl font-bold">{freePlan.price}</span>
+                  <span className="text-muted-foreground ml-2">
+                    / {freePlan.period}
+                  </span>
+                </div>
+                <p className="text-sm text-muted-foreground">
+                  {freePlan.description}
+                </p>
+              </CardHeader>
+
+              <CardContent>
+                <Link
+                  href="/auth/signup"
+                  className={cn(buttonVariants({ variant: "outline", size: "lg" }), "w-full mb-6")}
                 >
-                  {plan.popular && plan.badge && (
-                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10">
-                      <Badge className="bg-gradient-primary text-white px-4 py-1 shadow-md">
-                        {plan.badge}
-                      </Badge>
-                    </div>
-                  )}
+                  Commencer gratuitement
+                </Link>
 
-                  <CardHeader>
-                    <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-primary mb-4">
-                      <Icon className="w-6 h-6 text-white" />
-                    </div>
-                    <CardTitle className="text-2xl mb-2">{plan.name}</CardTitle>
-                    <div className="mb-3">
-                      <span className="text-4xl font-bold">{plan.price}</span>
-                      {plan.price !== t('free_price') && (
-                        <span className="text-muted-foreground ml-2">
-                          / {plan.period}
-                        </span>
-                      )}
-                    </div>
-                    <p className="text-sm text-muted-foreground">
-                      {plan.description}
-                    </p>
-                  </CardHeader>
+                <ul className="space-y-3">
+                  {freePlan.features.map((feature) => (
+                    <li key={feature} className="flex items-start gap-2 text-sm">
+                      <div className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-primary/10 flex-shrink-0 mt-0.5">
+                        <CheckIcon className="w-3 h-3 text-primary" />
+                      </div>
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
 
-                  <CardContent className="flex-1 flex flex-col">
-                    <Link
-                      href={plan.href}
-                      className={cn(buttonVariants({ variant: plan.popular ? 'gradient' : 'outline', size: "lg" }), "w-full mb-6")}
-                    >
-                      {plan.cta}
-                    </Link>
+            {/* Support Plan */}
+            <Card className="relative border-2 border-primary shadow-xl scale-105">
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2">
+                <Badge className="bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white px-4 py-1 shadow-md">
+                  Recommandé
+                </Badge>
+              </div>
 
-                    <ul className="space-y-3 flex-1">
-                      {plan.features.map((feature) => (
-                        <li key={feature} className="flex items-start gap-2 text-sm">
-                          <div className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-primary/10 flex-shrink-0 mt-0.5">
-                            <CheckIcon className="w-3 h-3 text-primary" />
-                          </div>
-                          <span>{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </CardContent>
-                </Card>
-              )
-            })}
-          </Grid>
+              <CardHeader className="pt-8">
+                <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-violet-600 to-fuchsia-600 mb-4">
+                  <HeartIcon className="w-6 h-6 text-white" />
+                </div>
+                <CardTitle className="text-2xl mb-2">{supportPlan.name}</CardTitle>
+                <div className="mb-3">
+                  <span className="text-5xl font-bold">{supportPlan.price}</span>
+                  <span className="text-muted-foreground ml-2">
+                    / {supportPlan.period}
+                  </span>
+                </div>
+                <p className="text-sm text-muted-foreground">
+                  {supportPlan.description}
+                </p>
+              </CardHeader>
+
+              <CardContent>
+                <Link
+                  href="/auth/signup?plan=support"
+                  className={cn(buttonVariants({ size: "lg" }), "w-full mb-6")}
+                >
+                  Soutenir le projet
+                </Link>
+
+                <ul className="space-y-3">
+                  {supportPlan.features.map((feature) => (
+                    <li key={feature} className="flex items-start gap-2 text-sm">
+                      <div className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-primary/10 flex-shrink-0 mt-0.5">
+                        <CheckIcon className="w-3 h-3 text-primary" />
+                      </div>
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+        </Container>
+      </Section>
+
+      {/* Why Support Section */}
+      <Section spacing="xl" className="bg-muted/30">
+        <Container size="md">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">
+              Pourquoi ton soutien compte
+            </h2>
+          </div>
+
+          <div className="space-y-6">
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="font-semibold mb-2 text-lg">💚 Garder l'éducation gratuite</h3>
+                <p className="text-muted-foreground">
+                  Ton soutien nous permet de maintenir tous les cours, tutoriels et outils 100% gratuits pour tout le monde, sans publicité.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="font-semibold mb-2 text-lg">🚀 Créer du nouveau contenu</h3>
+                <p className="text-muted-foreground">
+                  Nous investissons dans de nouveaux parcours, tutoriels vidéo, webinaires et outils pour la communauté.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="font-semibold mb-2 text-lg">🌍 Rendre l'IA accessible</h3>
+                <p className="text-muted-foreground">
+                  Nous vulgarisons l'IA en français pour la rendre accessible à tous, sans barrière de langue ou de prix.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="font-semibold mb-2 text-lg">⚡ Améliorer la plateforme</h3>
+                <p className="text-muted-foreground">
+                  Serveurs, outils de développement, intégrations API - tout ça a un coût que ton soutien couvre.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
         </Container>
       </Section>
 
       {/* FAQ Section */}
-      <Section spacing="xl" className="bg-muted/30">
+      <Section spacing="xl">
         <Container size="md">
-          <div className="text-center mb-12 animate-fade-in-up">
+          <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">
-              {t('faq_title')}
+              Questions fréquentes
             </h2>
           </div>
 
-          <div className="space-y-4 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-            <Card variant="interactive">
+          <div className="space-y-4">
+            <Card>
               <CardContent className="p-6">
-                <h3 className="font-semibold mb-2 text-lg">{t('faq_1_q')}</h3>
+                <h3 className="font-semibold mb-2 text-lg">C'est vraiment gratuit pour toujours ?</h3>
                 <p className="text-muted-foreground">
-                  {t('faq_1_a')}
+                  Oui. Tous les cours, tutoriels, outils et fonctionnalités principales restent 100% gratuits, sans limite de temps. C'est notre engagement.
                 </p>
               </CardContent>
             </Card>
 
-            <Card variant="interactive">
+            <Card>
               <CardContent className="p-6">
-                <h3 className="font-semibold mb-2 text-lg">{t('faq_2_q')}</h3>
+                <h3 className="font-semibold mb-2 text-lg">Puis-je annuler mon soutien ?</h3>
                 <p className="text-muted-foreground">
-                  {t('faq_2_a')}
+                  Bien sûr ! Tu peux annuler à tout moment, sans engagement. Tu conserves tes avantages jusqu'à la fin de ton mois en cours.
                 </p>
               </CardContent>
             </Card>
 
-            <Card variant="interactive">
+            <Card>
               <CardContent className="p-6">
-                <h3 className="font-semibold mb-2 text-lg">{t('faq_3_q')}</h3>
+                <h3 className="font-semibold mb-2 text-lg">Y a-t-il d'autres moyens de soutenir ?</h3>
                 <p className="text-muted-foreground">
-                  {t('faq_3_a')}
+                  Oui ! Partage la plateforme, contribue des prompts, aide dans le forum, ou fais un don ponctuel. Chaque contribution compte.
                 </p>
               </CardContent>
             </Card>
 
-            <Card variant="interactive">
+            <Card>
               <CardContent className="p-6">
-                <h3 className="font-semibold mb-2 text-lg">{t('faq_4_q')}</h3>
+                <h3 className="font-semibold mb-2 text-lg">Que se passe-t-il si je ne peux pas payer ?</h3>
                 <p className="text-muted-foreground">
-                  {t('faq_4_a')}
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card variant="interactive">
-              <CardContent className="p-6">
-                <h3 className="font-semibold mb-2 text-lg">{t('faq_5_q')}</h3>
-                <p className="text-muted-foreground">
-                  {t('faq_5_a')}
+                  Rien ne change ! Tout reste gratuit et accessible. Le soutien est 100% optionnel et n'affecte pas l'accès au contenu éducatif.
                 </p>
               </CardContent>
             </Card>
@@ -276,15 +261,20 @@ export default async function PricingPage() {
       {/* CTA Section */}
       <Section spacing="xl" variant="gradient">
         <Container size="md">
-          <Card variant="glass" className="text-center">
-            <CardContent className="p-12">
-              <h3 className="text-3xl font-bold mb-3">{t('cta_title')}</h3>
+          <Card className="border-2 border-primary/20 bg-background/95 backdrop-blur">
+            <CardContent className="p-12 text-center">
+              <h3 className="text-3xl font-bold mb-3">Prêt à commencer ?</h3>
               <p className="text-lg text-muted-foreground mb-6">
-                {t('cta_subtitle')}
+                Rejoins des milliers d'apprenants dès aujourd'hui
               </p>
-              <Link href="/auth/signup" className={cn(buttonVariants({ size: "lg", variant: "gradient" }))}>
-                {t('start_free')}
-              </Link>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <Link href="/auth/signup" className={cn(buttonVariants({ size: "lg" }))}>
+                  Commencer gratuitement
+                </Link>
+                <Link href="/tutorials" className={cn(buttonVariants({ variant: "outline", size: "lg" }))}>
+                  Explorer les cours
+                </Link>
+              </div>
             </CardContent>
           </Card>
         </Container>

@@ -1,12 +1,15 @@
 import { createClient } from '@/lib/supabase/server'
 import Link from 'next/link'
 import { Badge } from '@/components/ui/badge'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { TrophyIcon, ClockIcon, SparklesIcon } from 'lucide-react'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Button, buttonVariants } from '@/components/ui/button'
+import { TrophyIcon, ClockIcon, SparklesIcon, CheckCircle2Icon, TargetIcon, AwardIcon } from 'lucide-react'
+import { Container } from '@/components/layout/container'
+import { Section } from '@/components/layout/section'
+import { cn } from '@/lib/utils'
 import { getTranslations } from 'next-intl/server'
-import type { Metadata } from 'next'
 
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata() {
   const t = await getTranslations('challenges')
   return {
     title: t('page_title'),
@@ -15,192 +18,358 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function ChallengesPage() {
-  const t = await getTranslations('challenges')
   const supabase = await createClient()
-
-  // Get active challenges
-  const { data: challenges } = await supabase
-    .from('challenges')
-    .select('*')
-    .eq('is_active', true)
-    .gte('ends_at', new Date().toISOString())
-    .order('created_at', { ascending: false })
+  const t = await getTranslations('challenges')
 
   // Get user
   const {
     data: { user },
   } = await supabase.auth.getUser()
 
+  // Fetch real active challenges from database
+  const { data: activeChallenges } = await supabase
+    .from('challenges')
+    .select('*')
+    .eq('is_active', true)
+    .gte('end_date', new Date().toISOString())
+    .order('type')
+
+  // If user is logged in, fetch their progress
+  let userChallengeProgress: any[] = []
+  if (user) {
+    const { data } = await supabase
+      .from('user_challenge_progress')
+      .select(`
+        challenge_id,
+        current_progress,
+        completed,
+        completed_at
+      `)
+      .eq('user_id', user.id)
+
+    userChallengeProgress = data || []
+  }
+
+  // Merge challenges with user progress
+  const challenges = activeChallenges?.map(challenge => {
+    const progress = userChallengeProgress.find(p => p.challenge_id === challenge.id)
+    return {
+      ...challenge,
+      current_progress: progress?.current_progress || 0,
+      user_completed: progress?.completed || false
+    }
+  }) || []
+
+  // Separate challenges by type
+  const weeklyChallenge = challenges.find(c => c.type === 'weekly') || {
+    id: '1',
+    title: 'Challenge Hebdo - Apprentissage',
+    description: 'Complète 2 leçons cette semaine et gagne des points',
+    type: 'weekly',
+    category: 'learning',
+    reward_points: 50,
+    goal_type: 'lessons',
+    goal_value: 2,
+    current_progress: 0,
+    end_date: new Date(Date.now() + 5 * 24 * 60 * 60 * 1000)
+  }
+
+  const monthlyChallenge = challenges.find(c => c.type === 'monthly') || {
+    id: '2',
+    title: 'Challenge Mensuel - Expert',
+    description: 'Complète 5 leçons ce mois et débloque le badge Expert',
+    type: 'monthly',
+    category: 'learning',
+    reward_points: 200,
+    reward_badge: 'Expert du Mois',
+    goal_type: 'lessons',
+    goal_value: 5,
+    current_progress: 0,
+    end_date: new Date(Date.now() + 25 * 24 * 60 * 60 * 1000)
+  }
+
+  // For community challenge, calculate total progress from all users
+  const { count: totalPromptsShared } = await supabase
+    .from('prompts')
+    .select('*', { count: 'exact', head: true })
+    .eq('is_public', true)
+    .gte('created_at', new Date(new Date().getFullYear(), new Date().getMonth(), 1).toISOString())
+
+  const communityChallenge = {
+    id: '3',
+    title: 'Challenge Communauté',
+    description: 'Ensemble, partageons 500 prompts ce mois !',
+    type: 'community',
+    category: 'community',
+    reward: 'Unlock Parcours Avancé pour tous',
+    goal_type: 'prompts',
+    goal_value: 500,
+    current_progress: totalPromptsShared || 0,
+    end_date: new Date(new Date().getFullYear(), new Date().getMonth() + 1, 0)
+  }
+
   return (
-    <div className="container mx-auto px-4 py-12">
-      <div className="max-w-6xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-            <TrophyIcon className="w-4 h-4" />
-            <span>{t('badge')}</span>
+    <>
+      {/* Hero */}
+      <Section variant="gradient" spacing="xl">
+        <Container size="lg">
+          <div className="text-center">
+            <Badge variant="soft" className="mb-4">
+              <TrophyIcon className="w-3 h-3 mr-1" />
+              {t('hero_badge')}
+            </Badge>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">
+              {t('hero_title')}
+            </h1>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              {t('hero_subtitle')}
+            </p>
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            {t('title')}
-          </h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            {t('subtitle')}
-          </p>
-        </div>
+        </Container>
+      </Section>
 
-        {/* How it Works */}
-        <Card className="mb-12">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <SparklesIcon className="w-5 h-5 text-primary" />
-              {t('how_it_works')}
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="text-center">
-                <div className="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-xl mx-auto mb-3">
-                  {t('step1_number')}
+      {/* Active Challenges */}
+      <Section spacing="xl">
+        <Container size="lg">
+          <div className="mb-8">
+            <h2 className="text-2xl font-bold mb-2">{t('active_challenges_title')}</h2>
+            <p className="text-muted-foreground">
+              {t('active_challenges_subtitle')}
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {/* Weekly Challenge */}
+            <Card className="relative overflow-hidden border-2 border-green-500/20">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-green-500/10 to-transparent rounded-bl-full" />
+              <CardHeader>
+                <div className="flex items-start justify-between mb-2">
+                  <Badge variant="soft" className="bg-green-500/10 text-green-700 dark:text-green-400">
+                    <ClockIcon className="w-3 h-3 mr-1" />
+                    {t('weekly_badge')}
+                  </Badge>
+                  <div className="text-right">
+                    <div className="text-2xl font-bold text-green-600">+{weeklyChallenge.reward_points}</div>
+                    <div className="text-xs text-muted-foreground">{t('points_label')}</div>
+                  </div>
                 </div>
-                <h3 className="font-semibold mb-1">{t('step1_title')}</h3>
-                <p className="text-sm text-muted-foreground">
-                  {t('step1_description')}
-                </p>
-              </div>
-              <div className="text-center">
-                <div className="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-xl mx-auto mb-3">
-                  {t('step2_number')}
+                <CardTitle className="text-xl">{weeklyChallenge.title}</CardTitle>
+                <CardDescription>{weeklyChallenge.description}</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  {/* Progress */}
+                  <div>
+                    <div className="flex justify-between text-sm mb-2">
+                      <span className="text-muted-foreground">{t('progress_label')}</span>
+                      <span className="font-semibold">{weeklyChallenge.current_progress}/{weeklyChallenge.goal_value}</span>
+                    </div>
+                    <div className="h-3 bg-muted rounded-full overflow-hidden">
+                      <div
+                        className="h-full bg-gradient-to-r from-green-500 to-emerald-600 transition-all duration-300"
+                        style={{ width: `${(weeklyChallenge.current_progress / weeklyChallenge.goal_value) * 100}%` }}
+                      />
+                    </div>
+                  </div>
+
+                  {/* Time remaining */}
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <ClockIcon className="w-4 h-4" />
+                    <span>Se termine dans 5 jours</span>
+                  </div>
+
+                  {!user ? (
+                    <Link href="/auth/signup" className={cn(buttonVariants(), "w-full")}>
+                      S'inscrire pour participer
+                    </Link>
+                  ) : (
+                    <Link href="/tutorials" className={cn(buttonVariants({ variant: "outline" }), "w-full")}>
+                      Commencer une leçon
+                    </Link>
+                  )}
                 </div>
-                <h3 className="font-semibold mb-1">{t('step2_title')}</h3>
-                <p className="text-sm text-muted-foreground">
-                  {t('step2_description')}
-                </p>
-              </div>
-              <div className="text-center">
-                <div className="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-xl mx-auto mb-3">
-                  {t('step3_number')}
+              </CardContent>
+            </Card>
+
+            {/* Monthly Challenge */}
+            <Card className="relative overflow-hidden border-2 border-violet-500/20">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-violet-500/10 to-transparent rounded-bl-full" />
+              <CardHeader>
+                <div className="flex items-start justify-between mb-2">
+                  <Badge variant="soft" className="bg-violet-500/10 text-violet-700 dark:text-violet-400">
+                    <TrophyIcon className="w-3 h-3 mr-1" />
+                    {t('monthly_badge')}
+                  </Badge>
+                  <div className="text-right">
+                    <div className="text-2xl font-bold text-violet-600">+{monthlyChallenge.reward_points}</div>
+                    <div className="text-xs text-muted-foreground">points + badge</div>
+                  </div>
                 </div>
-                <h3 className="font-semibold mb-1">{t('step3_title')}</h3>
-                <p className="text-sm text-muted-foreground">
-                  {t('step3_description')}
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+                <CardTitle className="text-xl">{monthlyChallenge.title}</CardTitle>
+                <CardDescription>{monthlyChallenge.description}</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  {/* Progress */}
+                  <div>
+                    <div className="flex justify-between text-sm mb-2">
+                      <span className="text-muted-foreground">{t('progress_label')}</span>
+                      <span className="font-semibold">{monthlyChallenge.current_progress}/{monthlyChallenge.goal_value}</span>
+                    </div>
+                    <div className="h-3 bg-muted rounded-full overflow-hidden">
+                      <div
+                        className="h-full bg-gradient-to-r from-violet-500 to-purple-600 transition-all duration-300"
+                        style={{ width: `${(monthlyChallenge.current_progress / monthlyChallenge.goal_value) * 100}%` }}
+                      />
+                    </div>
+                  </div>
 
-        {/* Active Challenges */}
-        <div>
-          <h2 className="text-2xl font-bold mb-6">{t('active_challenges')}</h2>
-          {!challenges || challenges.length === 0 ? (
-            <div className="text-center py-16 text-muted-foreground">
-              <TrophyIcon className="w-16 h-16 mx-auto mb-4 opacity-20" />
-              <p>{t('no_challenges')}</p>
-              <p className="text-sm mt-2">{t('check_back')}</p>
-            </div>
-          ) : (
-            <div className="grid md:grid-cols-2 gap-6">
-              {challenges.map((challenge: any) => {
-                const daysLeft = Math.ceil(
-                  (new Date(challenge.ends_at).getTime() - Date.now()) /
-                    (1000 * 60 * 60 * 24)
-                )
+                  {/* Reward */}
+                  <div className="flex items-center gap-2 p-3 bg-violet-500/5 rounded-lg border border-violet-500/20">
+                    <AwardIcon className="w-5 h-5 text-violet-600" />
+                    <div className="text-sm">
+                      <div className="font-semibold text-violet-700 dark:text-violet-400">{t('reward_label')}</div>
+                      <div className="text-muted-foreground">{monthlyChallenge.reward_badge}</div>
+                    </div>
+                  </div>
 
-                const difficultyColors = {
-                  easy: 'bg-green-500/10 text-green-500 border-green-500/20',
-                  medium: 'bg-yellow-500/10 text-yellow-500 border-yellow-500/20',
-                  hard: 'bg-red-500/10 text-red-500 border-red-500/20',
-                }
+                  {/* Time remaining */}
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <ClockIcon className="w-4 h-4" />
+                    <span>Se termine dans 25 jours</span>
+                  </div>
 
-                const categoryEmojis = {
-                  creativity: '🎨',
-                  code: '💻',
-                  marketing: '📈',
-                  writing: '✍️',
-                  general: '🌟',
-                }
-
-                const difficultyKey = `difficulty_${challenge.difficulty}` as 'difficulty_easy' | 'difficulty_medium' | 'difficulty_hard'
-
-                return (
-                  <Link
-                    key={challenge.id}
-                    href={`/challenges/${challenge.id}`}
-                    className="block"
-                  >
-                    <Card className="h-full hover:border-primary/50 transition-all hover:shadow-lg">
-                      <CardHeader>
-                        <div className="flex items-start justify-between mb-2">
-                          <div>
-                            <Badge
-                              className={`mb-2 ${difficultyColors[challenge.difficulty as keyof typeof difficultyColors]}`}
-                            >
-                              {t(difficultyKey)}
-                            </Badge>
-                          </div>
-                          <span className="text-2xl">
-                            {categoryEmojis[challenge.category as keyof typeof categoryEmojis]}
-                          </span>
-                        </div>
-                        <CardTitle className="text-xl">{challenge.title}</CardTitle>
-                      </CardHeader>
-                      <CardContent>
-                        <p className="text-muted-foreground mb-4 line-clamp-2">
-                          {challenge.description}
-                        </p>
-
-                        <div className="flex items-center justify-between text-sm">
-                          <div className="flex items-center gap-1 text-muted-foreground">
-                            <ClockIcon className="w-4 h-4" />
-                            <span>{t('days_left', { count: daysLeft })}</span>
-                          </div>
-                          <div className="flex items-center gap-1 text-primary font-medium">
-                            <TrophyIcon className="w-4 h-4" />
-                            <span>{t('reward_credits', { count: challenge.reward_credits })}</span>
-                          </div>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </Link>
-                )
-              })}
-            </div>
-          )}
-        </div>
-
-        {/* Past Winners (Coming Soon) */}
-        <div className="mt-16">
-          <h2 className="text-2xl font-bold mb-6">{t('past_winners')}</h2>
-          <Card>
-            <CardContent className="text-center py-12">
-              <TrophyIcon className="w-12 h-12 mx-auto mb-4 text-muted-foreground opacity-50" />
-              <p className="text-muted-foreground">
-                {t('past_winners_text')}
-              </p>
-            </CardContent>
-          </Card>
-        </div>
-
-        {/* CTA */}
-        {!user && (
-          <div className="mt-12 text-center">
-            <Card className="bg-primary/5 border-primary/20">
-              <CardContent className="py-8">
-                <h3 className="text-2xl font-bold mb-2">{t('cta_title')}</h3>
-                <p className="text-muted-foreground mb-4">
-                  {t('cta_subtitle')}
-                </p>
-                <Link
-                  href="/auth/signup"
-                  className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-md font-medium hover:bg-primary/90 transition-colors"
-                >
-                  {t('cta_button')}
-                </Link>
+                  {!user ? (
+                    <Link href="/auth/signup" className={cn(buttonVariants(), "w-full")}>
+                      S'inscrire pour participer
+                    </Link>
+                  ) : (
+                    <Link href="/tutorials/paths/expert" className={cn(buttonVariants({ variant: "outline" }), "w-full")}>
+                      Voir le parcours
+                    </Link>
+                  )}
+                </div>
               </CardContent>
             </Card>
           </div>
-        )}
-      </div>
-    </div>
+        </Container>
+      </Section>
+
+      {/* Community Challenge */}
+      <Section spacing="xl" className="bg-muted/30">
+        <Container size="lg">
+          <Card className="border-2 border-orange-500/20 overflow-hidden">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-orange-500/5 to-transparent rounded-full -translate-y-1/2 translate-x-1/2" />
+            <CardHeader>
+              <div className="flex items-start justify-between mb-4">
+                <div>
+                  <Badge variant="soft" className="mb-3 bg-orange-500/10 text-orange-700 dark:text-orange-400">
+                    <SparklesIcon className="w-3 h-3 mr-1" />
+                    {t('community_badge')}
+                  </Badge>
+                  <CardTitle className="text-2xl mb-2">{communityChallenge.title}</CardTitle>
+                  <CardDescription className="text-base">{communityChallenge.description}</CardDescription>
+                </div>
+                <div className="text-center px-6 py-4 bg-orange-500/10 rounded-xl">
+                  <div className="text-3xl font-bold text-orange-600">
+                    {communityChallenge.current_progress}
+                  </div>
+                  <div className="text-sm text-muted-foreground">/ {communityChallenge.goal_value}</div>
+                </div>
+              </div>
+            </CardHeader>
+            <CardContent>
+              {/* Progress Bar */}
+              <div className="mb-6">
+                <div className="h-6 bg-muted rounded-full overflow-hidden relative">
+                  <div
+                    className="h-full bg-gradient-to-r from-orange-500 to-red-600 transition-all duration-500"
+                    style={{ width: `${(communityChallenge.current_progress / communityChallenge.goal_value) * 100}%` }}
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center text-sm font-semibold">
+                    {Math.round((communityChallenge.current_progress / communityChallenge.goal_value) * 100)}%
+                  </div>
+                </div>
+                <div className="flex justify-between text-sm text-muted-foreground mt-2">
+                  <span>Plus que {communityChallenge.goal_value - communityChallenge.current_progress} prompts !</span>
+                  <span className="flex items-center gap-1">
+                    <ClockIcon className="w-3 h-3" />
+                    20 jours restants
+                  </span>
+                </div>
+              </div>
+
+              {/* Reward */}
+              <div className="flex items-center justify-between p-4 bg-orange-500/5 rounded-lg border border-orange-500/20 mb-4">
+                <div className="flex items-center gap-3">
+                  <TargetIcon className="w-8 h-8 text-orange-600" />
+                  <div>
+                    <div className="font-semibold text-orange-700 dark:text-orange-400">{t('if_goal_reached')}</div>
+                    <div className="text-sm text-muted-foreground">{communityChallenge.reward}</div>
+                  </div>
+                </div>
+              </div>
+
+              {!user ? (
+                <Link href="/auth/signup" className={cn(buttonVariants({ size: "lg" }), "w-full")}>
+                  Contribuer au challenge
+                </Link>
+              ) : (
+                <Link href="/prompts/new" className={cn(buttonVariants({ size: "lg", variant: "outline" }), "w-full")}>
+                  Partager un prompt
+                </Link>
+              )}
+            </CardContent>
+          </Card>
+        </Container>
+      </Section>
+
+      {/* How It Works */}
+      <Section spacing="xl">
+        <Container size="md">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">{t('how_works_title')}</h2>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            <Card>
+              <CardContent className="p-6 text-center">
+                <div className="w-12 h-12 mx-auto mb-4 rounded-xl bg-green-500/10 flex items-center justify-center">
+                  <CheckCircle2Icon className="w-6 h-6 text-green-600" />
+                </div>
+                <h3 className="font-semibold mb-2">1. Choisis un challenge</h3>
+                <p className="text-sm text-muted-foreground">
+                  Hebdomadaire, mensuel ou communautaire - trouve celui qui te motive
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="p-6 text-center">
+                <div className="w-12 h-12 mx-auto mb-4 rounded-xl bg-violet-500/10 flex items-center justify-center">
+                  <TargetIcon className="w-6 h-6 text-violet-600" />
+                </div>
+                <h3 className="font-semibold mb-2">2. Progresse à ton rythme</h3>
+                <p className="text-sm text-muted-foreground">
+                  Chaque action compte - leçons, prompts partagés, aide communautaire
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="p-6 text-center">
+                <div className="w-12 h-12 mx-auto mb-4 rounded-xl bg-orange-500/10 flex items-center justify-center">
+                  <AwardIcon className="w-6 h-6 text-orange-600" />
+                </div>
+                <h3 className="font-semibold mb-2">3. Gagne des récompenses</h3>
+                <p className="text-sm text-muted-foreground">
+                  Points, badges et déblocages de contenu exclusif
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </Container>
+      </Section>
+    </>
   )
 }

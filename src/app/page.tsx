@@ -1,24 +1,27 @@
 import { createClient } from '@/lib/supabase/server'
 import { FeedContent } from '@/components/feed/feed-content'
-import { HeroSection } from '@/components/home/hero-section'
-import { StatsSection } from '@/components/home/stats-section'
-import { HowItWorksSection } from '@/components/home/how-it-works-section'
-import { TestimonialsSection } from '@/components/home/testimonials-section'
-import { FinalCTASection } from '@/components/home/final-cta-section'
 import { Container } from '@/components/layout/container'
 import { Section } from '@/components/layout/section'
 import { Grid } from '@/components/layout/grid'
-import { Card } from '@/components/ui/card'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button, buttonVariants } from '@/components/ui/button'
-import { SparklesIcon, TrendingUpIcon, UsersIcon, ZapIcon, RocketIcon, CodeIcon, BookOpenIcon, ArrowRightIcon } from 'lucide-react'
+import {
+  BookOpenIcon,
+  FlaskConicalIcon,
+  UsersIcon,
+  RocketIcon,
+  BrainIcon,
+  SparklesIcon,
+  ArrowRightIcon,
+  TrendingUpIcon,
+  AwardIcon,
+  ZapIcon
+} from 'lucide-react'
 import Link from 'next/link'
-import { getTranslations } from 'next-intl/server'
 import { cn } from '@/lib/utils'
 
 export default async function Home() {
-  const t = await getTranslations('home')
-  const tFeatures = await getTranslations('home.features')
   const supabase = await createClient()
 
   // Fetch initial prompts with comment counts
@@ -30,7 +33,7 @@ export default async function Home() {
     `)
     .eq('is_public', true)
     .order('created_at', { ascending: false })
-    .limit(20)
+    .limit(10)
 
   // Fetch profiles
   if (prompts && prompts.length > 0) {
@@ -59,210 +62,304 @@ export default async function Home() {
     .from('profiles')
     .select('*', { count: 'exact', head: true })
 
+  const learningPaths = [
+    {
+      title: 'Débutant',
+      description: 'Découvre les bases du prompting et apprends à communiquer efficacement avec l\'IA',
+      duration: '~2h',
+      lessons: '5 leçons',
+      icon: BookOpenIcon,
+      color: 'from-green-500 to-emerald-600',
+      link: '/tutorials/paths/beginner'
+    },
+    {
+      title: 'Intermédiaire',
+      description: 'Maîtrise les techniques avancées et explore MCP, RAG et les agents IA',
+      duration: '~4h',
+      lessons: '8 leçons',
+      icon: BrainIcon,
+      color: 'from-violet-500 to-purple-600',
+      link: '/tutorials/paths/expert'
+    },
+    {
+      title: 'Avancé',
+      description: 'Deviens expert en systèmes multi-agents et optimisation de prompts',
+      duration: '~6h',
+      lessons: '10 leçons',
+      icon: RocketIcon,
+      color: 'from-orange-500 to-red-600',
+      link: '/tutorials/paths/pro'
+    }
+  ]
+
+  const concepts = [
+    {
+      title: 'MCP vs RAG',
+      description: 'Comprends la différence entre ces deux approches IA',
+      icon: '🧠',
+      link: '/mcp-vs-rag'
+    },
+    {
+      title: 'Prompt Wizard',
+      description: 'Crée des prompts optimisés avec notre assistant IA',
+      icon: '✨',
+      link: '/prompts/wizard'
+    },
+    {
+      title: 'Playground',
+      description: 'Teste tes prompts sur GPT, Claude et Gemini',
+      icon: '🧪',
+      link: '/prompts/wizard'
+    }
+  ]
+
   return (
     <>
       {/* Hero Section */}
       <Section variant="gradient" spacing="xl">
-        <Container>
-          <HeroSection />
-        </Container>
-      </Section>
-
-      {/* Stats Section - UX: Animated counters show platform activity */}
-      <Section spacing="lg">
         <Container size="lg">
-          <StatsSection totalPrompts={totalPrompts || 0} totalUsers={totalUsers || 0} />
+          <div className="text-center max-w-4xl mx-auto space-y-8 py-12">
+            <Badge variant="soft" className="mb-4">
+              <SparklesIcon className="w-3 h-3 mr-1" />
+              100% Gratuit
+            </Badge>
+
+            <h1 className="text-5xl md:text-6xl font-bold tracking-tight">
+              <span className="bg-gradient-to-r from-violet-600 via-fuchsia-600 to-violet-600 bg-clip-text text-transparent">
+                Apprends à parler à l'IA
+              </span>
+              <br />
+              <span className="text-foreground">comme un pro</span>
+            </h1>
+
+            <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto">
+              Cours interactifs, exemples concrets, communauté bienveillante.<br />
+              Maîtrise le prompting en quelques heures.
+            </p>
+
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+              <Link
+                href="/tutorials/paths/beginner"
+                className={cn(buttonVariants({ size: "lg" }), "min-w-[200px]")}
+              >
+                Commencer gratuitement
+                <ArrowRightIcon className="w-4 h-4 ml-2" />
+              </Link>
+              <Link
+                href="/tutorials"
+                className={cn(buttonVariants({ variant: "outline", size: "lg" }), "min-w-[200px]")}
+              >
+                Explorer les cours
+              </Link>
+            </div>
+
+            {/* Stats */}
+            <div className="grid grid-cols-3 gap-8 pt-12 max-w-2xl mx-auto">
+              <div>
+                <div className="text-4xl font-bold bg-gradient-to-r from-violet-600 to-fuchsia-600 bg-clip-text text-transparent">
+                  {totalUsers || 0}+
+                </div>
+                <div className="text-sm text-muted-foreground mt-1">Apprenants</div>
+              </div>
+              <div>
+                <div className="text-4xl font-bold bg-gradient-to-r from-violet-600 to-fuchsia-600 bg-clip-text text-transparent">
+                  {totalPrompts || 0}+
+                </div>
+                <div className="text-sm text-muted-foreground mt-1">Prompts partagés</div>
+              </div>
+              <div>
+                <div className="text-4xl font-bold bg-gradient-to-r from-violet-600 to-fuchsia-600 bg-clip-text text-transparent">
+                  100%
+                </div>
+                <div className="text-sm text-muted-foreground mt-1">Gratuit</div>
+              </div>
+            </div>
+          </div>
         </Container>
       </Section>
 
-      {/* How It Works Section - UX: Educates users on the value proposition */}
-      <Section spacing="xl" className="bg-muted/30">
-        <Container size="lg">
-          <HowItWorksSection />
-        </Container>
-      </Section>
-
-      {/* Features Section - UX: Enhanced with better visual hierarchy and benefits */}
+      {/* 3 Cartes Principales */}
       <Section spacing="xl">
         <Container size="lg">
-          <div className="text-center mb-12 animate-fade-in-up">
-            <Badge variant="soft" className="mb-4 text-sm font-semibold" startIcon={<RocketIcon className="w-3.5 h-3.5" />}>
-              {tFeatures('badge')}
-            </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              {tFeatures('title')}
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              {tFeatures('subtitle')}
-            </p>
-          </div>
-
-          {/* Primary features - Larger cards for main value props */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
-            {/* Feature 1 - Prompt Wizard */}
-            <Card variant="bento" className="group relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-brand-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-              <div className="p-8 lg:p-10 relative">
-                <div className="flex items-start gap-4 mb-6">
-                  <div className="flex-shrink-0 inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-brand-primary to-brand-primary-dark group-hover:scale-110 transition-transform duration-300">
-                    <SparklesIcon className="w-8 h-8 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold mb-2">{tFeatures('wizard_title')}</h3>
-                    <p className="text-muted-foreground">
-                      {tFeatures('wizard_desc')}
-                    </p>
-                  </div>
+          <Grid cols={3} gap="lg">
+            <Card className="group relative overflow-hidden hover:shadow-xl transition-all duration-300">
+              <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity" />
+              <CardHeader className="relative">
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <BookOpenIcon className="w-7 h-7 text-white" />
                 </div>
-
-                <ul className="space-y-3 mb-6">
-                  <li className="flex items-start gap-3 text-sm">
-                    <div className="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-brand-primary/10 flex items-center justify-center">
-                      <div className="w-2 h-2 rounded-full bg-brand-primary" />
-                    </div>
-                    <span>{tFeatures('wizard_feature1')}</span>
-                  </li>
-                  <li className="flex items-start gap-3 text-sm">
-                    <div className="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-brand-primary/10 flex items-center justify-center">
-                      <div className="w-2 h-2 rounded-full bg-brand-primary" />
-                    </div>
-                    <span>{tFeatures('wizard_feature2')}</span>
-                  </li>
-                  <li className="flex items-start gap-3 text-sm">
-                    <div className="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-brand-primary/10 flex items-center justify-center">
-                      <div className="w-2 h-2 rounded-full bg-brand-primary" />
-                    </div>
-                    <span>{tFeatures('wizard_feature3')}</span>
-                  </li>
+                <CardTitle className="text-2xl">📚 Apprendre</CardTitle>
+                <CardDescription className="text-base">
+                  Parcours guidés de débutant à expert
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-2 mb-6 text-sm text-muted-foreground">
+                  <li>• Cours interactifs avec quiz</li>
+                  <li>• Exemples concrets</li>
+                  <li>• Certificats de complétion</li>
                 </ul>
+                <Link
+                  href="/tutorials"
+                  className={cn(buttonVariants({ variant: "ghost" }), "w-full group/btn")}
+                >
+                  Commencer
+                  <ArrowRightIcon className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
+                </Link>
+              </CardContent>
+            </Card>
 
+            <Card className="group relative overflow-hidden hover:shadow-xl transition-all duration-300">
+              <div className="absolute inset-0 bg-gradient-to-br from-violet-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity" />
+              <CardHeader className="relative">
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <FlaskConicalIcon className="w-7 h-7 text-white" />
+                </div>
+                <CardTitle className="text-2xl">🧪 Expérimenter</CardTitle>
+                <CardDescription className="text-base">
+                  Teste tes prompts en temps réel
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-2 mb-6 text-sm text-muted-foreground">
+                  <li>• Comparaison GPT vs Claude vs Gemini</li>
+                  <li>• Templates pré-remplis</li>
+                  <li>• 20 tests gratuits/mois</li>
+                </ul>
                 <Link
                   href="/prompts/wizard"
-                  className={cn(
-                    buttonVariants({ variant: "ghost", size: "sm" }),
-                    "group/link hover:gap-2 transition-all"
-                  )}
+                  className={cn(buttonVariants({ variant: "ghost" }), "w-full group/btn")}
                 >
-                  {tFeatures('wizard_cta')}
-                  <ArrowRightIcon className="w-4 h-4 ml-1 group-hover/link:translate-x-1 transition-transform" />
+                  Essayer
+                  <ArrowRightIcon className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
                 </Link>
-              </div>
+              </CardContent>
             </Card>
 
-            {/* Feature 2 - Community */}
-            <Card variant="bento" className="group relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-brand-secondary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-              <div className="p-8 lg:p-10 relative">
-                <div className="flex items-start gap-4 mb-6">
-                  <div className="flex-shrink-0 inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-brand-secondary to-brand-secondary-dark group-hover:scale-110 transition-transform duration-300">
-                    <UsersIcon className="w-8 h-8 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold mb-2">{tFeatures('community_title')}</h3>
-                    <p className="text-muted-foreground">
-                      {tFeatures('community_desc')}
-                    </p>
-                  </div>
+            <Card className="group relative overflow-hidden hover:shadow-xl transition-all duration-300">
+              <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-red-500/5 opacity-0 group-hover:opacity-100 transition-opacity" />
+              <CardHeader className="relative">
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <UsersIcon className="w-7 h-7 text-white" />
                 </div>
-
-                <ul className="space-y-3 mb-6">
-                  <li className="flex items-start gap-3 text-sm">
-                    <div className="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-brand-secondary/10 flex items-center justify-center">
-                      <div className="w-2 h-2 rounded-full bg-brand-secondary" />
-                    </div>
-                    <span>{tFeatures('community_feature1')}</span>
-                  </li>
-                  <li className="flex items-start gap-3 text-sm">
-                    <div className="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-brand-secondary/10 flex items-center justify-center">
-                      <div className="w-2 h-2 rounded-full bg-brand-secondary" />
-                    </div>
-                    <span>{tFeatures('community_feature2')}</span>
-                  </li>
-                  <li className="flex items-start gap-3 text-sm">
-                    <div className="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-brand-secondary/10 flex items-center justify-center">
-                      <div className="w-2 h-2 rounded-full bg-brand-secondary" />
-                    </div>
-                    <span>{tFeatures('community_feature3')}</span>
-                  </li>
+                <CardTitle className="text-2xl">💬 Communauté</CardTitle>
+                <CardDescription className="text-base">
+                  Partage et apprends avec les autres
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-2 mb-6 text-sm text-muted-foreground">
+                  <li>• Challenges hebdomadaires</li>
+                  <li>• Entraide bienveillante</li>
+                  <li>• Badges et progression</li>
                 </ul>
-
                 <Link
-                  href="/trending"
-                  className={cn(
-                    buttonVariants({ variant: "ghost", size: "sm" }),
-                    "group/link hover:gap-2 transition-all"
-                  )}
+                  href="/challenges"
+                  className={cn(buttonVariants({ variant: "ghost" }), "w-full group/btn")}
                 >
-                  {tFeatures('community_cta')}
-                  <ArrowRightIcon className="w-4 h-4 ml-1 group-hover/link:translate-x-1 transition-transform" />
+                  Rejoindre
+                  <ArrowRightIcon className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
                 </Link>
-              </div>
-            </Card>
-          </div>
-
-          {/* Secondary features - Smaller cards in 3-column grid */}
-          <Grid cols={3} gap="lg" className="animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
-            <Card variant="feature" className="group">
-              <div className="p-6">
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-brand-accent/10 group-hover:bg-brand-accent/20 transition-colors mb-4">
-                  <ZapIcon className="w-6 h-6 text-brand-accent" />
-                </div>
-                <h3 className="text-lg font-semibold mb-2">{tFeatures('remix_title')}</h3>
-                <p className="text-sm text-muted-foreground mb-4">
-                  {tFeatures('remix_desc')}
-                </p>
-                <Badge variant="soft" className="text-xs">{tFeatures('remix_badge')}</Badge>
-              </div>
-            </Card>
-
-            <Card variant="feature" className="group">
-              <div className="p-6">
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-green-500/10 group-hover:bg-green-500/20 transition-colors mb-4">
-                  <CodeIcon className="w-6 h-6 text-green-600 dark:text-green-500" />
-                </div>
-                <h3 className="text-lg font-semibold mb-2">{tFeatures('collections_title')}</h3>
-                <p className="text-sm text-muted-foreground mb-4">
-                  {tFeatures('collections_desc')}
-                </p>
-                <Badge variant="soft" className="text-xs">{tFeatures('collections_badge')}</Badge>
-              </div>
-            </Card>
-
-            <Card variant="feature" className="group">
-              <div className="p-6">
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-orange-500/10 group-hover:bg-orange-500/20 transition-colors mb-4">
-                  <BookOpenIcon className="w-6 h-6 text-orange-600 dark:text-orange-500" />
-                </div>
-                <h3 className="text-lg font-semibold mb-2">{tFeatures('learn_title')}</h3>
-                <p className="text-sm text-muted-foreground mb-4">
-                  {tFeatures('learn_desc')}
-                </p>
-                <Badge variant="soft" className="text-xs">{tFeatures('learn_badge')}</Badge>
-              </div>
+              </CardContent>
             </Card>
           </Grid>
         </Container>
       </Section>
 
-      {/* Testimonials Section - UX: Social proof builds trust */}
+      {/* Parcours d'apprentissage */}
       <Section spacing="xl" className="bg-muted/30">
         <Container size="lg">
-          <TestimonialsSection />
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Choisis ton parcours
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Des cours structurés pour passer de débutant à expert, à ton rythme
+            </p>
+          </div>
+
+          <Grid cols={3} gap="lg">
+            {learningPaths.map((path) => {
+              const Icon = path.icon
+              return (
+                <Card key={path.title} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                  <CardHeader>
+                    <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${path.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
+                      <Icon className="w-7 h-7 text-white" />
+                    </div>
+                    <CardTitle>{path.title}</CardTitle>
+                    <CardDescription>{path.description}</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="flex items-center justify-between text-sm text-muted-foreground mb-4">
+                      <span>{path.lessons}</span>
+                      <span>{path.duration}</span>
+                    </div>
+                    <Link
+                      href={path.link}
+                      className={cn(buttonVariants({ variant: "outline" }), "w-full")}
+                    >
+                      Commencer
+                      <ArrowRightIcon className="w-4 h-4 ml-2" />
+                    </Link>
+                  </CardContent>
+                </Card>
+              )
+            })}
+          </Grid>
         </Container>
       </Section>
 
-      {/* Latest Prompts Section */}
+      {/* Concepts clés */}
       <Section spacing="xl">
+        <Container size="lg">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Concepts clés expliqués
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Comprends les fondamentaux de l'IA avec des explications simples
+            </p>
+          </div>
+
+          <Grid cols={3} gap="lg">
+            {concepts.map((concept) => (
+              <Link
+                key={concept.title}
+                href={concept.link}
+                className="group"
+              >
+                <Card className="h-full hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                  <CardContent className="p-6 text-center">
+                    <div className="text-5xl mb-4">{concept.icon}</div>
+                    <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
+                      {concept.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground">
+                      {concept.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              </Link>
+            ))}
+          </Grid>
+        </Container>
+      </Section>
+
+      {/* Prompts Communautaires */}
+      <Section spacing="xl" className="bg-muted/30">
         <Container size="lg">
           <div className="flex items-center justify-between mb-8">
             <div>
-              <h2 className="text-2xl md:text-3xl font-bold mb-2">Latest Prompts</h2>
-              <p className="text-muted-foreground">Discover the newest AI prompts from the community</p>
+              <h2 className="text-2xl md:text-3xl font-bold mb-2">
+                Prompts de la communauté
+              </h2>
+              <p className="text-muted-foreground">
+                Découvre les meilleurs prompts partagés par les apprenants
+              </p>
             </div>
             <Link href="/trending" className={cn(buttonVariants({ variant: "outline" }))}>
-              View All
+              Voir tout
             </Link>
           </div>
 
@@ -272,10 +369,36 @@ export default async function Home() {
         </Container>
       </Section>
 
-      {/* Final CTA Section - UX: Compelling conversion-optimized call to action */}
+      {/* CTA Final */}
       <Section spacing="xl" variant="gradient">
         <Container size="md">
-          <FinalCTASection />
+          <Card className="border-2 border-primary/20 bg-background/95 backdrop-blur">
+            <CardContent className="p-12 text-center">
+              <AwardIcon className="w-16 h-16 mx-auto mb-6 text-primary" />
+              <h3 className="text-3xl font-bold mb-4">
+                Prêt à devenir un expert du prompting ?
+              </h3>
+              <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+                Rejoins des milliers d'apprenants qui maîtrisent déjà l'IA.
+                Commence gratuitement dès maintenant.
+              </p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <Link
+                  href="/tutorials/paths/beginner"
+                  className={cn(buttonVariants({ size: "lg" }), "min-w-[200px]")}
+                >
+                  Commencer gratuitement
+                  <ArrowRightIcon className="w-4 h-4 ml-2" />
+                </Link>
+                <Link
+                  href="/about"
+                  className={cn(buttonVariants({ variant: "ghost", size: "lg" }), "min-w-[200px]")}
+                >
+                  En savoir plus
+                </Link>
+              </div>
+            </CardContent>
+          </Card>
         </Container>
       </Section>
     </>

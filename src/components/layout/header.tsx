@@ -41,31 +41,31 @@ export function Header() {
               href="/tutorials"
               className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200"
             >
-              {t('tutorials')}
-            </Link>
-            <Link
-              href="/trending"
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200"
-            >
-              {t('trending')}
-            </Link>
-            <Link
-              href="/top"
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200"
-            >
-              {t('top')}
+              📚 Apprendre
             </Link>
             <Link
               href="/prompts/wizard"
               className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200"
             >
-              {t('wizard')}
+              🧪 Playground
+            </Link>
+            <Link
+              href="/trending"
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200"
+            >
+              💡 Bibliothèque
+            </Link>
+            <Link
+              href="/challenges"
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200"
+            >
+              🏆 Défis
             </Link>
             <Link
               href="/mcp-vs-rag"
               className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200"
             >
-              {t('guides')}
+              🧠 Concepts
             </Link>
           </nav>
         </div>

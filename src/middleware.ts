@@ -2,6 +2,7 @@ import { createServerClient } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
 import createMiddleware from 'next-intl/middleware'
 import { locales } from './i18n/request'
+import { withAuthCheck } from './middleware/auth'
 
 // Create the next-intl middleware
 const intlMiddleware = createMiddleware({
@@ -80,7 +81,10 @@ export async function middleware(request: NextRequest) {
     }
   }
 
-  return supabaseResponse
+  // Apply site-wide access protection check (if enabled)
+  const finalResponse = await withAuthCheck(request, supabaseResponse)
+
+  return finalResponse
 }
 
 export const config = {

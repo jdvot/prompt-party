@@ -17,60 +17,60 @@ export function Footer() {
               <LogoText />
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed text-balance">
-              {t('subtitle')}
+              Apprends à parler à l'IA comme un pro. Cours interactifs, exemples concrets, 100% gratuit.
             </p>
           </div>
 
           <div>
-            <h3 className="font-semibold mb-4 text-foreground gradient-text">{t('community')}</h3>
+            <h3 className="font-semibold mb-4 text-foreground gradient-text">📚 Apprendre</h3>
             <div className="space-y-3">
-              <Link href="/" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
-                {tNav('home')}
+              <Link href="/tutorials/paths/beginner" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
+                Parcours Débutant
               </Link>
-              <Link href="/trending" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
-                {tNav('trending')}
-              </Link>
-              <Link href="/top" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
-                {tNav('top')}
-              </Link>
-            </div>
-          </div>
-
-          <div>
-            <h3 className="font-semibold mb-4 text-foreground gradient-text">{t('resources')}</h3>
-            <div className="space-y-3">
-              <Link href="/prompts/wizard" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
-                ✨ Prompt Wizard
+              <Link href="/tutorials" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
+                Tous les tutoriels
               </Link>
               <Link href="/mcp-vs-rag" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
-                📚 MCP vs RAG
+                MCP vs RAG
               </Link>
-              <Link href="/pricing" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
-                {t('pricing')}
-              </Link>
-              <Link href="/challenges" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
-                {t('challenges')}
-              </Link>
-              <Link href="/about" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
-                {t('about')}
-              </Link>
-              <Link href="/docs" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
-                {t('docs')}
-              </Link>
-              <Link href="/faq" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
-                {t('faq')}
+              <Link href="/prompts/wizard" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
+                Playground
               </Link>
             </div>
           </div>
 
           <div>
-            <h3 className="font-semibold mb-4 text-foreground gradient-text">{t('legal')}</h3>
+            <h3 className="font-semibold mb-4 text-foreground gradient-text">🤝 Communauté</h3>
             <div className="space-y-3">
+              <Link href="/trending" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
+                Bibliothèque Prompts
+              </Link>
+              <Link href="/challenges" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
+                Challenges
+              </Link>
+              <Link href="/leaderboard" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
+                Leaderboard
+              </Link>
+              <Link href="/about" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
+                À propos
+              </Link>
+              <Link href="/faq" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
+                FAQ
+              </Link>
+            </div>
+          </div>
+
+          <div>
+            <h3 className="font-semibold mb-4 text-foreground gradient-text">⚖️ Légal</h3>
+            <div className="space-y-3">
+              <Link href="/pricing" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
+                Soutenir le projet
+              </Link>
               <Link href="/privacy" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
-                {t('privacy')}
+                Confidentialité
               </Link>
               <Link href="/terms" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
-                {t('terms')}
+                Conditions
               </Link>
             </div>
           </div>

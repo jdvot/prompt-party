@@ -3,12 +3,14 @@ import { Badge } from '@/components/ui/badge'
 import { buttonVariants } from '@/components/ui/button'
 import { Alert, AlertDescription } from '@/components/ui/alert'
 import { CodeBlock } from '@/components/tutorials/code-block'
+import { TutorialProgress } from '@/components/tutorials/tutorial-progress'
 import { Container } from '@/components/layout/container'
 import * as Icons from 'lucide-react'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import { getTranslations } from 'next-intl/server'
 import { cn } from '@/lib/utils'
+import { AdvancedPromptingQuiz } from './quiz-section'
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('tutorials.advanced_prompting')
@@ -24,11 +26,15 @@ export default async function AdvancedPromptingTutorial() {
   const tCommon = await getTranslations('tutorials')
 
   return (
-    <Container size="lg" className="py-8">
+    <Container size="xl" className="py-8">
       <Link href="/tutorials" className={cn(buttonVariants({ variant: "ghost" }), "mb-6")}>
         <Icons.ArrowLeft className="w-4 h-4 mr-2" />
         {tCommon('back_to_tutorials')}
       </Link>
+
+      {/* Two-column layout */}
+      <div className="grid lg:grid-cols-[1fr_300px] gap-8">
+        <div>
 
       <div className="mb-8">
         <div className="flex items-center gap-3 mb-4">
@@ -454,6 +460,11 @@ This is helpful! Can you refine it by:
           </Card>
         </section>
 
+        {/* Quiz Section */}
+        <section>
+          <AdvancedPromptingQuiz />
+        </section>
+
         <Card className="bg-gradient-to-r from-violet-600/10 to-fuchsia-600/10 border-violet-600/20">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
@@ -472,6 +483,21 @@ This is helpful! Can you refine it by:
             </div>
           </CardContent>
         </Card>
+      </div>
+        </div>
+
+        {/* Sidebar - Progress Tracker */}
+        <aside className="hidden lg:block">
+          <TutorialProgress
+            tutorialId="advanced-prompting"
+            title="Techniques Avancées"
+            duration="30 min"
+            level="intermediate"
+            rewardPoints={100}
+            rewardBadge="Intermédiaire Certifié"
+            completed={false}
+          />
+        </aside>
       </div>
     </Container>
   )

@@ -1,0 +1,120 @@
+{
+  "access": {
+    "title": "Toegang Beveiligd",
+    "description": "Voer het wachtwoord in om door te gaan naar Prompt Party",
+    "passwordLabel": "Wachtwoord",
+    "passwordPlaceholder": "Voer wachtwoord in",
+    "submitButton": "Doorgaan",
+    "submitting": "Verifiëren...",
+    "errorMessage": "Ongeldig wachtwoord. Probeer het opnieuw.",
+    "contactSupport": "Toegang nodig? Neem contact op met support voor hulp."
+  },
+  "marketing_suite": {
+    "hero_badge": "Ontworpen voor Marketing Professionals",
+    "hero_title": "Bespaar 10+ Uur Per Week Bij Het Creëren van Content",
+    "hero_subtitle": "De complete AI marketingsuite met 500+ bewezen prompts, multi-LLM testing, merkstemontwikkeling en geavanceerde analytics. Speciaal gebouwd voor marketeers en content creators.",
+    "hero_cta_trial": "Start 14 Dagen Gratis Proefperiode",
+    "hero_cta_compare": "Vergelijk Abonnementen",
+    "hero_no_card": "Geen creditcard vereist • Altijd opzegbaar • 14 dagen geld-terug-garantie"
+  },
+  "emptyStates": {
+    "noPrompts": {
+      "title": "Nog geen prompts",
+      "description": "Begin met het delen van je geweldige AI-prompts met de gemeenschap",
+      "action": "Creëer je eerste prompt"
+    },
+    "noResults": {
+      "title": "Geen resultaten gevonden",
+      "description": "Probeer je zoektermen of filters aan te passen"
+    },
+    "noLikes": {
+      "title": "Nog geen likes",
+      "description": "Prompts die je leuk vindt verschijnen hier",
+      "action": "Verken prompts"
+    },
+    "noComments": {
+      "title": "Nog geen reacties",
+      "description": "Wees de eerste om je gedachten over deze prompt te delen"
+    },
+    "noFollowers": {
+      "title": "Nog geen volgers",
+      "description": "Deel geweldige prompts om volgers aan te trekken",
+      "action": "Creëer een prompt"
+    },
+    "noCollections": {
+      "title": "Nog geen collecties",
+      "description": "Organiseer je favoriete prompts in collecties",
+      "action": "Collectie aanmaken"
+    },
+    "noNotifications": {
+      "title": "Geen meldingen",
+      "description": "Wanneer je meldingen ontvangt, verschijnen ze hier"
+    },
+    "noBookmarks": {
+      "title": "Nog geen bladwijzers",
+      "description": "Bewaar prompts die je later opnieuw wilt bekijken",
+      "action": "Verken prompts"
+    },
+    "noActivity": {
+      "title": "Nog geen activiteit",
+      "description": "Je activiteit wordt hier weergegeven zodra je begint te interacteren"
+    },
+    "noData": {
+      "title": "Geen gegevens beschikbaar",
+      "description": "Gegevens verschijnen hier zodra ze beschikbaar zijn"
+    }
+  },
+  "commandPalette": {
+    "placeholder": "Typ een commando of zoek...",
+    "noResults": "Geen resultaten gevonden.",
+    "searchResults": "Zoekresultaten",
+    "quickActions": "Snelle acties",
+    "navigation": "Navigatie",
+    "proFeatures": "Pro-functies",
+    "account": "Account",
+    "actions": {
+      "createPrompt": "Nieuwe prompt maken",
+      "advancedSearch": "Geavanceerd zoeken"
+    },
+    "nav": {
+      "home": "Home",
+      "trending": "Trending",
+      "following": "Volgend",
+      "collections": "Collecties",
+      "bookmarks": "Bladwijzers"
+    },
+    "pro": {
+      "analytics": "Analytics",
+      "apiAccess": "API-toegang",
+      "designSystem": "Ontwerpsysteem"
+    },
+    "accountMenu": {
+      "profile": "Profiel",
+      "notifications": "Meldingen",
+      "settings": "Instellingen",
+      "signOut": "Uitloggen"
+    }
+  },
+  "shortcuts": {
+    "title": "Sneltoetsen",
+    "close": "Sluiten",
+    "navigation": "Navigatie",
+    "actions": "Acties (op promptpagina's)",
+    "general": "Algemeen",
+    "helpText": "Druk op ? om sneltoetsen te bekijken",
+    "keys": {
+      "goHome": "Ga naar Home",
+      "goTrending": "Ga naar Trending",
+      "goCollections": "Ga naar Collecties",
+      "createPrompt": "Nieuwe prompt maken",
+      "likePrompt": "Prompt liken/unliken",
+      "saveToCollection": "Opslaan in collectie",
+      "duplicate": "Prompt dupliceren",
+      "remix": "Prompt remixen",
+      "share": "Prompt delen",
+      "focusSearch": "Zoeken focussen",
+      "showHelp": "Toon deze help",
+      "closeModals": "Modals sluiten"
+    }
+  }
+}
