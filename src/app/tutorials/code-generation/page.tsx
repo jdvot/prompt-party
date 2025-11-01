@@ -105,8 +105,8 @@ Tech stack: [FRAMEWORKS/LIBRARIES]`}
 
           <Tabs defaultValue="bad" className="mb-4">
             <TabsList className="grid w-full grid-cols-2">
-              <TabsTrigger value="bad">❌ Vague Request</TabsTrigger>
-              <TabsTrigger value="good">✅ Clear Request</TabsTrigger>
+              <TabsTrigger value="bad">{t('vague_request')}</TabsTrigger>
+              <TabsTrigger value="good">{t('clear_request')}</TabsTrigger>
             </TabsList>
             <TabsContent value="bad">
               <Card>
@@ -116,7 +116,7 @@ Tech stack: [FRAMEWORKS/LIBRARIES]`}
                     code="Write a function to validate emails"
                   />
                   <p className="text-sm text-muted-foreground mt-3">
-                    Too vague - what language? What validation rules? Error handling?
+                    {t('vague_problem')}
                   </p>
                 </CardContent>
               </Card>
@@ -142,7 +142,7 @@ Include:
 No external libraries.`}
                   />
                   <p className="text-sm text-muted-foreground mt-3">
-                    Clear requirements = better code output!
+                    {t('clear_benefit')}
                   </p>
                 </CardContent>
               </Card>
@@ -151,11 +151,11 @@ No external libraries.`}
         </section>
 
         <section>
-          <h2 className="text-3xl font-bold mb-4">2. Code Review Prompts</h2>
+          <h2 className="text-3xl font-bold mb-4">{t('code_review_title')}</h2>
 
           <Card className="mb-4">
             <CardHeader>
-              <CardTitle>Comprehensive Code Review Template</CardTitle>
+              <CardTitle>{t('comprehensive_review')}</CardTitle>
             </CardHeader>
             <CardContent>
               <CodeBlock
@@ -188,14 +188,14 @@ End with overall rating (1-10) and summary.`}
 
           <Card>
             <CardHeader>
-              <CardTitle>Specialized Review Prompts</CardTitle>
+              <CardTitle>{t('specialized_review')}</CardTitle>
             </CardHeader>
             <CardContent>
               <Tabs defaultValue="security">
                 <TabsList className="grid w-full grid-cols-3">
-                  <TabsTrigger value="security">Security</TabsTrigger>
-                  <TabsTrigger value="performance">Performance</TabsTrigger>
-                  <TabsTrigger value="react">React</TabsTrigger>
+                  <TabsTrigger value="security">{t('security_tab')}</TabsTrigger>
+                  <TabsTrigger value="performance">{t('performance_tab')}</TabsTrigger>
+                  <TabsTrigger value="react">{t('react_tab')}</TabsTrigger>
                 </TabsList>
 
                 <TabsContent value="security">
@@ -261,11 +261,11 @@ Suggest improvements aligned with React best practices.`}
         </section>
 
         <section>
-          <h2 className="text-3xl font-bold mb-4">3. Debugging with AI</h2>
+          <h2 className="text-3xl font-bold mb-4">{t('debugging_title')}</h2>
 
           <Card className="mb-4">
             <CardHeader>
-              <CardTitle>Debug Template</CardTitle>
+              <CardTitle>{t('debug_template')}</CardTitle>
             </CardHeader>
             <CardContent>
               <CodeBlock
@@ -307,18 +307,18 @@ Please:
           <Alert>
             <Icons.Lightbulb className="w-4 h-4" />
             <AlertDescription>
-              <strong>Pro Tip:</strong> Include the full error stack trace and relevant environment info (Node version, browser, etc.)
+              {t('debug_pro_tip')}
             </AlertDescription>
           </Alert>
         </section>
 
         <section>
-          <h2 className="text-3xl font-bold mb-4">4. Test Generation</h2>
+          <h2 className="text-3xl font-bold mb-4">{t('test_generation')}</h2>
 
           <div className="grid md:grid-cols-2 gap-4 mb-4">
             <Card>
               <CardHeader>
-                <CardTitle className="text-lg">Unit Tests</CardTitle>
+                <CardTitle className="text-lg">{t('unit_tests')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <CodeBlock
@@ -344,7 +344,7 @@ Format as [describe/it blocks]`}
 
             <Card>
               <CardHeader>
-                <CardTitle className="text-lg">E2E Tests</CardTitle>
+                <CardTitle className="text-lg">{t('e2e_tests')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <CodeBlock
@@ -370,7 +370,7 @@ Test for:
 
           <Card>
             <CardHeader>
-              <CardTitle>Real Example: API Endpoint Tests</CardTitle>
+              <CardTitle>{t('real_example_api')}</CardTitle>
             </CardHeader>
             <CardContent>
               <CodeBlock
@@ -404,15 +404,15 @@ Mock the database calls.`}
         </section>
 
         <section>
-          <h2 className="text-3xl font-bold mb-4">5. Documentation Generation</h2>
+          <h2 className="text-3xl font-bold mb-4">{t('documentation_generation')}</h2>
 
           <Card>
             <CardHeader>
-              <CardTitle>Auto-Generate Docs</CardTitle>
+              <CardTitle>{t('auto_generate_docs')}</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <div>
-                <h4 className="font-semibold mb-2">JSDoc/TSDoc Comments</h4>
+                <h4 className="font-semibold mb-2">{t('jsdoc_comments')}</h4>
                 <CodeBlock
                   language="text"
                   code={`Add comprehensive JSDoc comments to this code:
@@ -431,7 +431,7 @@ Include:
               </div>
 
               <div>
-                <h4 className="font-semibold mb-2">README Generation</h4>
+                <h4 className="font-semibold mb-2">{t('readme_generation')}</h4>
                 <CodeBlock
                   language="text"
                   code={`Create a README.md for this project:
@@ -454,7 +454,7 @@ Target audience: [DEVELOPERS/END-USERS/BOTH]`}
               </div>
 
               <div>
-                <h4 className="font-semibold mb-2">API Documentation</h4>
+                <h4 className="font-semibold mb-2">{t('api_documentation')}</h4>
                 <CodeBlock
                   language="text"
                   code={`Document this API:
@@ -477,11 +477,11 @@ Generate OpenAPI/Swagger spec including:
         </section>
 
         <section>
-          <h2 className="text-3xl font-bold mb-4">6. Code Refactoring</h2>
+          <h2 className="text-3xl font-bold mb-4">{t('code_refactoring')}</h2>
 
           <Card className="mb-4">
             <CardHeader>
-              <CardTitle>Refactoring Prompt</CardTitle>
+              <CardTitle>{t('refactoring_prompt')}</CardTitle>
             </CardHeader>
             <CardContent>
               <CodeBlock
@@ -512,23 +512,23 @@ Provide:
           <div className="grid md:grid-cols-2 gap-4">
             <Card>
               <CardHeader>
-                <CardTitle className="text-lg">Common Refactorings</CardTitle>
+                <CardTitle className="text-lg">{t('common_refactorings')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <ul className="text-sm space-y-2">
-                  <li>• Extract function</li>
-                  <li>• Rename variables</li>
-                  <li>• Remove duplication</li>
-                  <li>• Simplify conditionals</li>
-                  <li>• Replace magic numbers</li>
-                  <li>• Improve error handling</li>
+                  <li>{t('refactoring_1')}</li>
+                  <li>{t('refactoring_2')}</li>
+                  <li>{t('refactoring_3')}</li>
+                  <li>{t('refactoring_4')}</li>
+                  <li>{t('refactoring_5')}</li>
+                  <li>{t('refactoring_6')}</li>
                 </ul>
               </CardContent>
             </Card>
 
             <Card>
               <CardHeader>
-                <CardTitle className="text-lg">Design Patterns</CardTitle>
+                <CardTitle className="text-lg">{t('design_patterns')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <CodeBlock
@@ -548,11 +548,11 @@ Show before/after examples.`}
         </section>
 
         <section>
-          <h2 className="text-3xl font-bold mb-4">7. Code Translation</h2>
+          <h2 className="text-3xl font-bold mb-4">{t('code_translation')}</h2>
 
           <Card>
             <CardHeader>
-              <CardTitle>Language Translation Template</CardTitle>
+              <CardTitle>{t('language_translation')}</CardTitle>
             </CardHeader>
             <CardContent>
               <CodeBlock
@@ -573,9 +573,9 @@ Explain significant differences in approach between the languages.`}
               />
 
               <div className="mt-4 p-4 bg-muted rounded-lg">
-                <p className="text-sm font-semibold mb-2">Example: Python to Rust</p>
+                <p className="text-sm font-semibold mb-2">{t('translation_example')}</p>
                 <p className="text-sm text-muted-foreground">
-                  "Convert this Python data processing script to Rust. Use appropriate error handling with Result types and leverage Rust's ownership system for memory safety."
+                  {t('translation_example_desc')}
                 </p>
               </div>
             </CardContent>
@@ -583,19 +583,19 @@ Explain significant differences in approach between the languages.`}
         </section>
 
         <section>
-          <h2 className="text-3xl font-bold mb-4">Best Practices</h2>
+          <h2 className="text-3xl font-bold mb-4">{t('best_practices')}</h2>
 
           <div className="grid md:grid-cols-2 gap-4">
             <Card className="border-green-500/20">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
                   <Icons.CheckCircle className="w-5 h-5 text-green-600" />
-                  Do This
+                  {t('do_this')}
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <ul className="text-sm space-y-2">
-                  <li>✓ Always specify the language/framework</li>
+                  <li>{t('do_1')}</li>
                   <li>✓ Provide full context and requirements</li>
                   <li>✓ Request comments and documentation</li>
                   <li>✓ Ask for error handling</li>
