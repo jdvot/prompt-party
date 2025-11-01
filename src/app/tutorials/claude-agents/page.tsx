@@ -4,6 +4,7 @@ import { buttonVariants } from '@/components/ui/button'
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { CodeBlock } from '@/components/tutorials/code-block'
+import { Container } from '@/components/layout/container'
 import { Sparkles, Lightbulb, Code, CheckCircle, ArrowLeft } from 'lucide-react'
 import Link from 'next/link'
 import type { Metadata } from 'next'
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
 
 export default function ClaudeAgentsTutorial() {
   return (
-    <div className="container mx-auto px-4 py-8 max-w-4xl">
+    <Container size="lg" className="py-8">
       {/* Back Button */}
       <Link href="/tutorials" className={cn(buttonVariants({ variant: "ghost" }), "mb-6")}>
         <ArrowLeft className="w-4 h-4 mr-2" />
@@ -468,6 +469,6 @@ async function research(topic) {
           </CardContent>
         </Card>
       </div>
-    </div>
+    </Container>
   )
 }

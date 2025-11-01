@@ -14,7 +14,7 @@ const sectionVariants = cva('w-full', {
     variant: {
       default: 'bg-background',
       muted: 'bg-muted/30',
-      gradient: 'bg-gradient-to-b from-primary/5 via-background to-background',
+      gradient: 'bg-gradient-to-b from-primary/5 via-background to-background dark:from-primary/10 dark:via-background dark:to-background',
       dark: 'bg-muted',
     },
   },

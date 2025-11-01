@@ -29,8 +29,8 @@ const cardVariants = cva(
 
         // Feature - Cards for feature sections
         feature: [
-          'bg-gradient-to-b from-white to-gray-50',
-          'dark:from-gray-900 dark:to-gray-950',
+          'bg-gradient-to-b from-white to-gray-50/50',
+          'dark:from-surface-raised dark:to-surface-base',
           'border-border',
           'hover:shadow-xl hover:-translate-y-1',
         ].join(' '),

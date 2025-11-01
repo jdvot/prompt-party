@@ -3,6 +3,7 @@ import { Badge } from '@/components/ui/badge'
 import { buttonVariants } from '@/components/ui/button'
 import { Alert, AlertDescription } from '@/components/ui/alert'
 import { CodeBlock } from '@/components/tutorials/code-block'
+import { Container } from '@/components/layout/container'
 import * as Icons from 'lucide-react'
 import Link from 'next/link'
 import type { Metadata } from 'next'
@@ -23,7 +24,7 @@ export default async function AdvancedPromptingTutorial() {
   const tCommon = await getTranslations('tutorials')
 
   return (
-    <div className="container mx-auto px-4 py-8 max-w-4xl">
+    <Container size="lg" className="py-8">
       <Link href="/tutorials" className={cn(buttonVariants({ variant: "ghost" }), "mb-6")}>
         <Icons.ArrowLeft className="w-4 h-4 mr-2" />
         {tCommon('back_to_tutorials')}
@@ -472,6 +473,6 @@ This is helpful! Can you refine it by:
           </CardContent>
         </Card>
       </div>
-    </div>
+    </Container>
   )
 }

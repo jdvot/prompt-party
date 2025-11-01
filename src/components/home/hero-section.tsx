@@ -3,12 +3,14 @@
 import { useTranslations } from 'next-intl'
 import { Button, buttonVariants } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
+import { useUser } from '@/lib/supabase/hooks'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
 import { ArrowRightIcon, CheckCircle2Icon, SparklesIcon, TrendingUpIcon, UsersIcon, ZapIcon } from 'lucide-react'
 
 export function HeroSection() {
   const t = useTranslations('home')
+  const { user } = useUser()
 
   return (
     <div className="relative mb-16 md:mb-24 text-center space-y-8 max-w-6xl mx-auto animate-fade-in-up">
@@ -24,14 +26,16 @@ export function HeroSection() {
 
       {/* Announcement Badge - UX: Creates urgency and highlights new feature */}
       <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full glass border border-brand-primary/20 text-sm font-semibold mb-2 animate-scale-in hover:scale-105 transition-transform duration-300 cursor-pointer group">
-        <span className="relative flex h-2 w-2">
+        <span className="relative flex h-2 w-2 shrink-0">
           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-primary opacity-75"></span>
           <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-primary"></span>
         </span>
         <span className="bg-gradient-to-r from-brand-primary via-brand-accent to-brand-secondary bg-clip-text text-transparent font-bold">
           Join 10,000+ AI enthusiasts
         </span>
-        <ArrowRightIcon className="w-3.5 h-3.5 text-brand-primary group-hover:translate-x-1 transition-transform" />
+        <span className="inline-flex shrink-0">
+          <ArrowRightIcon className="w-3.5 h-3.5 text-brand-primary group-hover:translate-x-1 transition-transform" />
+        </span>
       </div>
 
       {/* Main heading with gradient - UX: Clear value proposition */}
@@ -65,14 +69,14 @@ export function HeroSection() {
       {/* CTA Buttons - UX: Clear primary action with supporting secondary CTA */}
       <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
         <Link
-          href="/prompts/new"
+          href={user ? "/prompts/new" : "/auth/signup"}
           className={cn(
             buttonVariants({ variant: "gradient", size: "lg" }),
             "min-w-[200px] group shadow-lg shadow-brand-primary/25 hover:shadow-xl hover:shadow-brand-primary/40 transition-all"
           )}
         >
           <SparklesIcon className="w-5 h-5 mr-2" />
-          Start Creating Free
+          {user ? "Create New Prompt" : "Start Creating Free"}
           <ArrowRightIcon className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
         </Link>
 

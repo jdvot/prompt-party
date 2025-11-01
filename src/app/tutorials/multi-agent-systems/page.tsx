@@ -3,6 +3,7 @@ import { Badge } from '@/components/ui/badge'
 import { buttonVariants } from '@/components/ui/button'
 import { Alert, AlertDescription } from '@/components/ui/alert'
 import { CodeBlock } from '@/components/tutorials/code-block'
+import { Container } from '@/components/layout/container'
 import * as Icons from 'lucide-react'
 import Link from 'next/link'
 import { getTranslations } from 'next-intl/server'
@@ -21,7 +22,7 @@ export default async function MultiAgentSystemsTutorial() {
   const t = await getTranslations('tutorials.multi_agent_systems')
   const tCommon = await getTranslations('tutorials')
   return (
-    <div className="container mx-auto px-4 py-8 max-w-4xl">
+    <Container size="lg" className="py-8">
       <Link href="/tutorials" className={cn(buttonVariants({ variant: "ghost" }), "mb-6")}>
         <Icons.ArrowLeft className="w-4 h-4 mr-2" />
         {tCommon('back_to_tutorials')}
@@ -551,6 +552,6 @@ Your task: ...
           </CardContent>
         </Card>
       </div>
-    </div>
+    </Container>
   )
 }
