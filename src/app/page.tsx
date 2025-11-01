@@ -18,6 +18,7 @@ import { cn } from '@/lib/utils'
 
 export default async function Home() {
   const t = await getTranslations('home')
+  const tFeatures = await getTranslations('home.features')
   const supabase = await createClient()
 
   // Fetch initial prompts with comment counts
@@ -86,13 +87,13 @@ export default async function Home() {
         <Container size="lg">
           <div className="text-center mb-12 animate-fade-in-up">
             <Badge variant="soft" className="mb-4 text-sm font-semibold" startIcon={<RocketIcon className="w-3.5 h-3.5" />}>
-              Powerful Features
+              {tFeatures('badge')}
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Everything you need to master AI prompts
+              {tFeatures('title')}
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Professional-grade tools designed for prompt engineers, content creators, and AI enthusiasts
+              {tFeatures('subtitle')}
             </p>
           </div>
 
@@ -108,9 +109,9 @@ export default async function Home() {
                     <SparklesIcon className="w-8 h-8 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold mb-2">Prompt Wizard</h3>
+                    <h3 className="text-2xl font-bold mb-2">{tFeatures('wizard_title')}</h3>
                     <p className="text-muted-foreground">
-                      AI-powered assistant that helps you craft perfect prompts step-by-step
+                      {tFeatures('wizard_desc')}
                     </p>
                   </div>
                 </div>
@@ -120,19 +121,19 @@ export default async function Home() {
                     <div className="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-brand-primary/10 flex items-center justify-center">
                       <div className="w-2 h-2 rounded-full bg-brand-primary" />
                     </div>
-                    <span>Smart suggestions based on your use case</span>
+                    <span>{tFeatures('wizard_feature1')}</span>
                   </li>
                   <li className="flex items-start gap-3 text-sm">
                     <div className="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-brand-primary/10 flex items-center justify-center">
                       <div className="w-2 h-2 rounded-full bg-brand-primary" />
                     </div>
-                    <span>Template library with 1000+ examples</span>
+                    <span>{tFeatures('wizard_feature2')}</span>
                   </li>
                   <li className="flex items-start gap-3 text-sm">
                     <div className="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-brand-primary/10 flex items-center justify-center">
                       <div className="w-2 h-2 rounded-full bg-brand-primary" />
                     </div>
-                    <span>Real-time preview and testing</span>
+                    <span>{tFeatures('wizard_feature3')}</span>
                   </li>
                 </ul>
 
@@ -143,7 +144,7 @@ export default async function Home() {
                     "group/link hover:gap-2 transition-all"
                   )}
                 >
-                  Try Wizard
+                  {tFeatures('wizard_cta')}
                   <ArrowRightIcon className="w-4 h-4 ml-1 group-hover/link:translate-x-1 transition-transform" />
                 </Link>
               </div>
@@ -159,9 +160,9 @@ export default async function Home() {
                     <UsersIcon className="w-8 h-8 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold mb-2">Vibrant Community</h3>
+                    <h3 className="text-2xl font-bold mb-2">{tFeatures('community_title')}</h3>
                     <p className="text-muted-foreground">
-                      Learn from 10,000+ prompt engineers and share your expertise
+                      {tFeatures('community_desc')}
                     </p>
                   </div>
                 </div>
@@ -171,19 +172,19 @@ export default async function Home() {
                     <div className="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-brand-secondary/10 flex items-center justify-center">
                       <div className="w-2 h-2 rounded-full bg-brand-secondary" />
                     </div>
-                    <span>Vote and comment on prompts</span>
+                    <span>{tFeatures('community_feature1')}</span>
                   </li>
                   <li className="flex items-start gap-3 text-sm">
                     <div className="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-brand-secondary/10 flex items-center justify-center">
                       <div className="w-2 h-2 rounded-full bg-brand-secondary" />
                     </div>
-                    <span>Follow your favorite creators</span>
+                    <span>{tFeatures('community_feature2')}</span>
                   </li>
                   <li className="flex items-start gap-3 text-sm">
                     <div className="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-brand-secondary/10 flex items-center justify-center">
                       <div className="w-2 h-2 rounded-full bg-brand-secondary" />
                     </div>
-                    <span>Trending prompts and collections</span>
+                    <span>{tFeatures('community_feature3')}</span>
                   </li>
                 </ul>
 
@@ -194,7 +195,7 @@ export default async function Home() {
                     "group/link hover:gap-2 transition-all"
                   )}
                 >
-                  Explore Community
+                  {tFeatures('community_cta')}
                   <ArrowRightIcon className="w-4 h-4 ml-1 group-hover/link:translate-x-1 transition-transform" />
                 </Link>
               </div>
@@ -208,11 +209,11 @@ export default async function Home() {
                 <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-brand-accent/10 group-hover:bg-brand-accent/20 transition-colors mb-4">
                   <ZapIcon className="w-6 h-6 text-brand-accent" />
                 </div>
-                <h3 className="text-lg font-semibold mb-2">Instant Remix</h3>
+                <h3 className="text-lg font-semibold mb-2">{tFeatures('remix_title')}</h3>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Fork any prompt and customize it for your needs. Track versions and improvements.
+                  {tFeatures('remix_desc')}
                 </p>
-                <Badge variant="soft" className="text-xs">Version control built-in</Badge>
+                <Badge variant="soft" className="text-xs">{tFeatures('remix_badge')}</Badge>
               </div>
             </Card>
 
@@ -221,11 +222,11 @@ export default async function Home() {
                 <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-green-500/10 group-hover:bg-green-500/20 transition-colors mb-4">
                   <CodeIcon className="w-6 h-6 text-green-600 dark:text-green-500" />
                 </div>
-                <h3 className="text-lg font-semibold mb-2">Smart Collections</h3>
+                <h3 className="text-lg font-semibold mb-2">{tFeatures('collections_title')}</h3>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Organize prompts into collections. Public or private. Share with your team.
+                  {tFeatures('collections_desc')}
                 </p>
-                <Badge variant="soft" className="text-xs">Unlimited collections</Badge>
+                <Badge variant="soft" className="text-xs">{tFeatures('collections_badge')}</Badge>
               </div>
             </Card>
 
@@ -234,11 +235,11 @@ export default async function Home() {
                 <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-orange-500/10 group-hover:bg-orange-500/20 transition-colors mb-4">
                   <BookOpenIcon className="w-6 h-6 text-orange-600 dark:text-orange-500" />
                 </div>
-                <h3 className="text-lg font-semibold mb-2">Learn & Grow</h3>
+                <h3 className="text-lg font-semibold mb-2">{tFeatures('learn_title')}</h3>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Tutorials, guides, and best practices from prompt engineering experts.
+                  {tFeatures('learn_desc')}
                 </p>
-                <Badge variant="soft" className="text-xs">Free resources</Badge>
+                <Badge variant="soft" className="text-xs">{tFeatures('learn_badge')}</Badge>
               </div>
             </Card>
           </Grid>
