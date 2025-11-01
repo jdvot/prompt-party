@@ -29,7 +29,7 @@ export async function withSecurity(
 
   // Rate limiting
   if (config.rateLimit?.enabled) {
-    const clientIp = request.ip || request.headers.get('x-forwarded-for') || 'unknown'
+    const clientIp = request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip') || 'unknown'
     const key = `${pathname}:${clientIp}`
     const now = Date.now()
 
