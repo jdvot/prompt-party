@@ -39,6 +39,48 @@
 
     /* Border Radius */
     --radius: 0.75rem;
+
+    /* Brand Colors - Premium Palette */
+    --brand-primary: 256 67% 59%;
+    --brand-primary-light: 256 67% 69%;
+    --brand-primary-dark: 256 67% 49%;
+    --brand-secondary: 221 83% 53%;
+    --brand-secondary-light: 221 83% 63%;
+    --brand-secondary-dark: 221 83% 43%;
+    --brand-accent: 280 87% 65%;
+    --brand-accent-light: 280 87% 75%;
+
+    /* Gray Scale */
+    --gray-50: 220 18% 98%;
+    --gray-100: 220 18% 96%;
+    --gray-200: 220 16% 92%;
+    --gray-300: 220 14% 85%;
+    --gray-400: 220 12% 70%;
+    --gray-500: 220 10% 50%;
+    --gray-600: 220 13% 41%;
+    --gray-700: 220 20% 30%;
+    --gray-800: 220 24% 20%;
+    --gray-900: 220 28% 12%;
+    --gray-950: 220 30% 8%;
+
+    /* Surface Colors */
+    --surface-base: 0 0% 100%;
+    --surface-raised: 0 0% 100%;
+    --surface-overlay: 0 0% 100%;
+
+    /* Semantic Colors */
+    --color-success: 142 71% 45%;
+    --color-success-light: 142 71% 55%;
+    --color-success-bg: 142 71% 95%;
+    --color-error: 0 84% 60%;
+    --color-error-light: 0 84% 70%;
+    --color-error-bg: 0 84% 95%;
+    --color-warning: 38 92% 50%;
+    --color-warning-light: 38 92% 60%;
+    --color-warning-bg: 38 92% 95%;
+    --color-info: 199 89% 48%;
+    --color-info-light: 199 89% 58%;
+    --color-info-bg: 199 89% 95%;
   }
 
   .dark {
@@ -74,6 +116,48 @@
     --border: 220 24% 20%;
     --input: 220 24% 20%;
     --ring: 256 67% 69%;
+
+    /* Brand Colors - Premium Palette (Dark Mode) */
+    --brand-primary: 256 67% 69%;
+    --brand-primary-light: 256 67% 79%;
+    --brand-primary-dark: 256 67% 59%;
+    --brand-secondary: 221 83% 63%;
+    --brand-secondary-light: 221 83% 73%;
+    --brand-secondary-dark: 221 83% 53%;
+    --brand-accent: 280 87% 75%;
+    --brand-accent-light: 280 87% 85%;
+
+    /* Gray Scale (Dark Mode) */
+    --gray-50: 220 30% 8%;
+    --gray-100: 220 28% 12%;
+    --gray-200: 220 24% 20%;
+    --gray-300: 220 20% 30%;
+    --gray-400: 220 13% 41%;
+    --gray-500: 220 10% 50%;
+    --gray-600: 220 12% 70%;
+    --gray-700: 220 14% 85%;
+    --gray-800: 220 16% 92%;
+    --gray-900: 220 18% 96%;
+    --gray-950: 220 18% 98%;
+
+    /* Surface Colors (Dark Mode) */
+    --surface-base: 220 28% 8%;
+    --surface-raised: 220 24% 12%;
+    --surface-overlay: 220 24% 16%;
+
+    /* Semantic Colors (Dark Mode) */
+    --color-success: 142 71% 55%;
+    --color-success-light: 142 71% 65%;
+    --color-success-bg: 142 71% 15%;
+    --color-error: 0 84% 70%;
+    --color-error-light: 0 84% 80%;
+    --color-error-bg: 0 84% 20%;
+    --color-warning: 38 92% 60%;
+    --color-warning-light: 38 92% 70%;
+    --color-warning-bg: 38 92% 20%;
+    --color-info: 199 89% 58%;
+    --color-info-light: 199 89% 68%;
+    --color-info-bg: 199 89% 18%;
   }
 }
 
