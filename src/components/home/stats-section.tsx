@@ -1,5 +1,6 @@
 'use client'
 
+import { useTranslations } from 'next-intl'
 import { Card } from '@/components/ui/card'
 import { SparklesIcon, TrendingUpIcon, UsersIcon, HeartIcon } from 'lucide-react'
 import { useEffect, useState } from 'react'
@@ -38,6 +39,7 @@ function useCounter(end: number, duration: number = 2000) {
 }
 
 export function StatsSection({ totalPrompts, totalUsers }: StatsProps) {
+  const t = useTranslations('home.stats')
   const animatedPrompts = useCounter(totalPrompts || 0)
   const animatedUsers = useCounter(totalUsers || 0)
   const animatedLikes = useCounter(Math.floor((totalPrompts || 0) * 12.5)) // Estimate
@@ -59,8 +61,8 @@ export function StatsSection({ totalPrompts, totalUsers }: StatsProps) {
             {animatedPrompts.toLocaleString()}+
           </div>
 
-          <div className="text-sm font-medium text-muted-foreground mb-1">AI Prompts</div>
-          <div className="text-xs text-muted-foreground/80">Ready to use & remix</div>
+          <div className="text-sm font-medium text-muted-foreground mb-1">{t('prompts_label')}</div>
+          <div className="text-xs text-muted-foreground/80">{t('prompts_sublabel')}</div>
         </div>
       </Card>
 
@@ -76,8 +78,8 @@ export function StatsSection({ totalPrompts, totalUsers }: StatsProps) {
             {animatedUsers.toLocaleString()}+
           </div>
 
-          <div className="text-sm font-medium text-muted-foreground mb-1">Active Creators</div>
-          <div className="text-xs text-muted-foreground/80">Growing every day</div>
+          <div className="text-sm font-medium text-muted-foreground mb-1">{t('users_label')}</div>
+          <div className="text-xs text-muted-foreground/80">{t('users_sublabel')}</div>
         </div>
       </Card>
 
@@ -93,8 +95,8 @@ export function StatsSection({ totalPrompts, totalUsers }: StatsProps) {
             {animatedLikes.toLocaleString()}+
           </div>
 
-          <div className="text-sm font-medium text-muted-foreground mb-1">Community Likes</div>
-          <div className="text-xs text-muted-foreground/80">And counting!</div>
+          <div className="text-sm font-medium text-muted-foreground mb-1">{t('likes_label')}</div>
+          <div className="text-xs text-muted-foreground/80">{t('likes_sublabel')}</div>
         </div>
       </Card>
     </div>

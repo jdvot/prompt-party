@@ -1,5 +1,6 @@
 'use client'
 
+import { useTranslations } from 'next-intl'
 import { Card } from '@/components/ui/card'
 import { Avatar } from '@/components/ui/avatar'
 import { Badge } from '@/components/ui/badge'
@@ -11,50 +12,51 @@ import { QuoteIcon, StarIcon } from 'lucide-react'
  * Pattern: Card-based layout with user avatars, ratings, and quotes
  */
 
-const testimonials = [
-  {
-    name: 'Sarah Chen',
-    role: 'AI Product Manager',
-    company: 'TechFlow',
-    avatar: 'SC',
-    rating: 5,
-    quote: 'Prompt Party transformed how our team collaborates on AI prompts. The community feedback is invaluable!',
-    highlight: 'Game changer for our workflow'
-  },
-  {
-    name: 'Marcus Rodriguez',
-    role: 'Content Creator',
-    company: 'CreativeAI',
-    avatar: 'MR',
-    rating: 5,
-    quote: 'I\'ve saved hundreds of hours using templates from the community. The quality is consistently excellent.',
-    highlight: 'Saved 100+ hours'
-  },
-  {
-    name: 'Emily Watson',
-    role: 'Prompt Engineer',
-    company: 'DataGen Labs',
-    avatar: 'EW',
-    rating: 5,
-    quote: 'The remix feature is brilliant! I can iterate on existing prompts and share improvements back to the community.',
-    highlight: 'Love the remix feature'
-  }
-]
-
 export function TestimonialsSection() {
+  const t = useTranslations('home.testimonials')
+
+  const testimonials = [
+    {
+      name: t('testimonial1_name'),
+      role: t('testimonial1_role'),
+      company: t('testimonial1_company'),
+      avatar: 'SC',
+      rating: 5,
+      quote: t('testimonial1_quote'),
+      highlight: t('testimonial1_highlight')
+    },
+    {
+      name: t('testimonial2_name'),
+      role: t('testimonial2_role'),
+      company: t('testimonial2_company'),
+      avatar: 'MR',
+      rating: 5,
+      quote: t('testimonial2_quote'),
+      highlight: t('testimonial2_highlight')
+    },
+    {
+      name: t('testimonial3_name'),
+      role: t('testimonial3_role'),
+      company: t('testimonial3_company'),
+      avatar: 'EW',
+      rating: 5,
+      quote: t('testimonial3_quote'),
+      highlight: t('testimonial3_highlight')
+    }
+  ]
   return (
     <div className="space-y-8">
       {/* Section header - UX: Clear context for social proof */}
       <div className="text-center space-y-4">
         <Badge variant="soft" className="text-sm font-semibold">
           <StarIcon className="w-3.5 h-3.5 mr-1.5 fill-current" />
-          Trusted by thousands
+          {t('badge')}
         </Badge>
         <h2 className="text-3xl md:text-4xl font-bold">
-          Loved by prompt engineers worldwide
+          {t('title')}
         </h2>
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          Join thousands of AI enthusiasts who are already creating amazing prompts
+          {t('subtitle')}
         </p>
       </div>
 
@@ -116,17 +118,17 @@ export function TestimonialsSection() {
       <div className="flex flex-wrap items-center justify-center gap-8 pt-8 text-sm text-muted-foreground">
         <div className="flex items-center gap-2">
           <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-          <span>1,234 active users right now</span>
+          <span>{t('trust_active_users')}</span>
         </div>
         <div className="flex items-center gap-2">
           <StarIcon className="w-4 h-4 text-yellow-500 fill-yellow-500" />
-          <span>4.9/5 average rating (500+ reviews)</span>
+          <span>{t('trust_rating')}</span>
         </div>
         <div className="flex items-center gap-2">
           <svg className="w-4 h-4 text-brand-primary" fill="currentColor" viewBox="0 0 20 20">
             <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
           </svg>
-          <span>Verified reviews</span>
+          <span>{t('trust_verified')}</span>
         </div>
       </div>
     </div>

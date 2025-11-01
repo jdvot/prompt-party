@@ -1,5 +1,6 @@
 'use client'
 
+import { useTranslations } from 'next-intl'
 import { useUser } from '@/lib/supabase/hooks'
 import { Card } from '@/components/ui/card'
 import { buttonVariants } from '@/components/ui/button'
@@ -8,6 +9,7 @@ import Link from 'next/link'
 import { cn } from '@/lib/utils'
 
 export function FinalCTASection() {
+  const t = useTranslations('home.finalCta')
   const { user } = useUser()
 
   return (
@@ -20,22 +22,21 @@ export function FinalCTASection() {
         {/* Urgency badge - UX: Creates FOMO and encourages action */}
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20 text-green-700 dark:text-green-400 text-sm font-semibold mb-6">
           <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-          <span>234 people joined this week</span>
+          <span>{t('badge')}</span>
         </div>
 
         {/* Main CTA headline - UX: Benefit-focused, action-oriented */}
         <h2 className="text-3xl md:text-5xl font-bold mb-4">
-          Start creating better AI prompts
+          {t('title_line1')}
           <br />
           <span className="bg-gradient-to-r from-brand-primary via-brand-accent to-brand-secondary bg-clip-text text-transparent">
-            in the next 5 minutes
+            {t('title_line2')}
           </span>
         </h2>
 
         {/* Supporting copy - UX: Addresses objections and reinforces value */}
         <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
-          Join 10,000+ AI enthusiasts who are already creating, sharing, and discovering amazing prompts.
-          No credit card required. Free forever.
+          {t('subtitle')}
         </p>
 
         {/* Value props checklist - UX: Quick scan of key benefits */}
@@ -46,7 +47,7 @@ export function FinalCTASection() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
               </svg>
             </div>
-            <span className="font-medium">Free forever</span>
+            <span className="font-medium">{t('benefit_free')}</span>
           </div>
           <div className="flex items-center gap-2">
             <div className="w-5 h-5 rounded-full bg-green-500/20 flex items-center justify-center">
@@ -54,7 +55,7 @@ export function FinalCTASection() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
               </svg>
             </div>
-            <span className="font-medium">No setup required</span>
+            <span className="font-medium">{t('benefit_no_setup')}</span>
           </div>
           <div className="flex items-center gap-2">
             <div className="w-5 h-5 rounded-full bg-green-500/20 flex items-center justify-center">
@@ -62,7 +63,7 @@ export function FinalCTASection() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
               </svg>
             </div>
-            <span className="font-medium">Cancel anytime</span>
+            <span className="font-medium">{t('benefit_cancel')}</span>
           </div>
         </div>
 
@@ -76,7 +77,7 @@ export function FinalCTASection() {
             )}
           >
             <RocketIcon className="w-5 h-5 mr-2" />
-            {user ? "Create New Prompt" : "Get Started Free"}
+            {user ? t('cta_create') : t('cta_get_started')}
             <ArrowRightIcon className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
           </Link>
 
@@ -88,13 +89,13 @@ export function FinalCTASection() {
             )}
           >
             <TrendingUpIcon className="w-5 h-5 mr-2" />
-            Browse Examples
+            {t('cta_browse')}
           </Link>
         </div>
 
         {/* Trust signal - UX: Final reassurance before conversion */}
         <p className="text-xs text-muted-foreground mt-8">
-          Trusted by teams at Google, Microsoft, OpenAI, and 1,000+ companies
+          {t('trust_text')}
         </p>
       </div>
     </Card>

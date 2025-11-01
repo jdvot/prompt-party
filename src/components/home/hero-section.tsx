@@ -31,7 +31,7 @@ export function HeroSection() {
           <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-primary"></span>
         </span>
         <span className="bg-gradient-to-r from-brand-primary via-brand-accent to-brand-secondary bg-clip-text text-transparent font-bold">
-          Join 10,000+ AI enthusiasts
+          {t('hero.badge_text')}
         </span>
         <span className="inline-flex shrink-0">
           <ArrowRightIcon className="w-3.5 h-3.5 text-brand-primary group-hover:translate-x-1 transition-transform" />
@@ -47,22 +47,22 @@ export function HeroSection() {
 
       {/* Subtitle - UX: Benefit-focused copy that addresses user pain points */}
       <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed text-balance font-medium">
-        Discover, create, and share AI prompts that get results. Join the community of prompt engineers building the future.
+        {t('hero.subtitle_long')}
       </p>
 
       {/* Key Benefits List - UX: Quick scan of top 3 value props */}
       <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6 pt-2 pb-4">
         <div className="flex items-center gap-2 text-sm md:text-base text-foreground">
           <CheckCircle2Icon className="w-5 h-5 text-brand-primary" />
-          <span className="font-medium">Free forever</span>
+          <span className="font-medium">{t('hero.benefit_free')}</span>
         </div>
         <div className="flex items-center gap-2 text-sm md:text-base text-foreground">
           <CheckCircle2Icon className="w-5 h-5 text-brand-primary" />
-          <span className="font-medium">No credit card</span>
+          <span className="font-medium">{t('hero.benefit_no_card')}</span>
         </div>
         <div className="flex items-center gap-2 text-sm md:text-base text-foreground">
           <CheckCircle2Icon className="w-5 h-5 text-brand-primary" />
-          <span className="font-medium">1000+ templates</span>
+          <span className="font-medium">{t('hero.benefit_templates')}</span>
         </div>
       </div>
 
@@ -76,7 +76,7 @@ export function HeroSection() {
           )}
         >
           <SparklesIcon className="w-5 h-5 mr-2" />
-          {user ? "Create New Prompt" : "Start Creating Free"}
+          {user ? t('hero.cta_create_new') : t('hero.cta_start_free')}
           <ArrowRightIcon className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
         </Link>
 
@@ -88,7 +88,7 @@ export function HeroSection() {
           )}
         >
           <TrendingUpIcon className="w-5 h-5 mr-2" />
-          Explore Trending
+          {t('hero.cta_explore')}
         </Link>
       </div>
 
@@ -98,24 +98,24 @@ export function HeroSection() {
           <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-brand-primary/10">
             <UsersIcon className="w-6 h-6 text-brand-primary" />
           </div>
-          <div className="text-2xl md:text-3xl font-bold">10K+</div>
-          <div className="text-xs md:text-sm text-muted-foreground font-medium">Active Users</div>
+          <div className="text-2xl md:text-3xl font-bold">{t('hero.stat_users')}</div>
+          <div className="text-xs md:text-sm text-muted-foreground font-medium">{t('hero.stat_users_label')}</div>
         </div>
 
         <div className="flex flex-col items-center gap-2 p-4 rounded-2xl bg-gradient-to-br from-brand-secondary/5 to-transparent border border-brand-secondary/10 hover:border-brand-secondary/20 transition-colors">
           <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-brand-secondary/10">
             <SparklesIcon className="w-6 h-6 text-brand-secondary" />
           </div>
-          <div className="text-2xl md:text-3xl font-bold">50K+</div>
-          <div className="text-xs md:text-sm text-muted-foreground font-medium">Prompts Shared</div>
+          <div className="text-2xl md:text-3xl font-bold">{t('hero.stat_prompts')}</div>
+          <div className="text-xs md:text-sm text-muted-foreground font-medium">{t('hero.stat_prompts_label')}</div>
         </div>
 
         <div className="flex flex-col items-center gap-2 p-4 rounded-2xl bg-gradient-to-br from-brand-accent/5 to-transparent border border-brand-accent/10 hover:border-brand-accent/20 transition-colors">
           <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-brand-accent/10">
             <TrendingUpIcon className="w-6 h-6 text-brand-accent" />
           </div>
-          <div className="text-2xl md:text-3xl font-bold">100K+</div>
-          <div className="text-xs md:text-sm text-muted-foreground font-medium">Monthly Views</div>
+          <div className="text-2xl md:text-3xl font-bold">{t('hero.stat_views')}</div>
+          <div className="text-xs md:text-sm text-muted-foreground font-medium">{t('hero.stat_views_label')}</div>
         </div>
 
         <div className="flex flex-col items-center gap-2 p-4 rounded-2xl bg-gradient-to-br from-yellow-500/5 to-transparent border border-yellow-500/10 hover:border-yellow-500/20 transition-colors">
@@ -124,8 +124,8 @@ export function HeroSection() {
               <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
             </svg>
           </div>
-          <div className="text-2xl md:text-3xl font-bold">4.9/5</div>
-          <div className="text-xs md:text-sm text-muted-foreground font-medium">User Rating</div>
+          <div className="text-2xl md:text-3xl font-bold">{t('hero.stat_rating')}</div>
+          <div className="text-xs md:text-sm text-muted-foreground font-medium">{t('hero.stat_rating_label')}</div>
         </div>
       </div>
 
@@ -133,15 +133,15 @@ export function HeroSection() {
       <div className="flex flex-wrap items-center justify-center gap-4 pt-6 text-xs text-muted-foreground">
         <div className="flex items-center gap-1.5">
           <CheckCircle2Icon className="w-4 h-4 text-green-600 dark:text-green-500" />
-          <span>Trusted by leading AI companies</span>
+          <span>{t('hero.trust_companies')}</span>
         </div>
         <div className="flex items-center gap-1.5">
           <CheckCircle2Icon className="w-4 h-4 text-green-600 dark:text-green-500" />
-          <span>Open source community</span>
+          <span>{t('hero.trust_opensource')}</span>
         </div>
         <div className="flex items-center gap-1.5">
           <CheckCircle2Icon className="w-4 h-4 text-green-600 dark:text-green-500" />
-          <span>Regular updates & new features</span>
+          <span>{t('hero.trust_updates')}</span>
         </div>
       </div>
     </div>

@@ -1,5 +1,6 @@
 'use client'
 
+import { useTranslations } from 'next-intl'
 import { Card } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { ArrowRightIcon, SparklesIcon, SearchIcon, HeartIcon, Share2Icon } from 'lucide-react'
@@ -10,55 +11,56 @@ import { ArrowRightIcon, SparklesIcon, SearchIcon, HeartIcon, Share2Icon } from 
  * Pattern: Numbered step cards with icons and connecting arrows
  */
 
-const steps = [
-  {
-    number: '01',
-    title: 'Discover',
-    description: 'Browse thousands of curated AI prompts or search for exactly what you need',
-    icon: SearchIcon,
-    color: 'brand-primary',
-    features: ['Advanced search', 'Category filters', 'Trending tags']
-  },
-  {
-    number: '02',
-    title: 'Create or Remix',
-    description: 'Build your own prompts from scratch or remix existing ones to fit your needs',
-    icon: SparklesIcon,
-    color: 'brand-secondary',
-    features: ['Prompt wizard', 'Template library', 'Version control']
-  },
-  {
-    number: '03',
-    title: 'Engage',
-    description: 'Like, comment, and save prompts to your collections. Join the conversation!',
-    icon: HeartIcon,
-    color: 'brand-accent',
-    features: ['Vote & comment', 'Collections', 'Follow creators']
-  },
-  {
-    number: '04',
-    title: 'Share',
-    description: 'Publish your prompts to help the community and get valuable feedback',
-    icon: Share2Icon,
-    color: 'green-600',
-    features: ['Public/private', 'Analytics', 'Earn reputation']
-  }
-]
-
 export function HowItWorksSection() {
+  const t = useTranslations('home.howItWorks')
+
+  const steps = [
+    {
+      number: '01',
+      title: t('step1_title'),
+      description: t('step1_description'),
+      icon: SearchIcon,
+      color: 'brand-primary',
+      features: [t('step1_feature1'), t('step1_feature2'), t('step1_feature3')]
+    },
+    {
+      number: '02',
+      title: t('step2_title'),
+      description: t('step2_description'),
+      icon: SparklesIcon,
+      color: 'brand-secondary',
+      features: [t('step2_feature1'), t('step2_feature2'), t('step2_feature3')]
+    },
+    {
+      number: '03',
+      title: t('step3_title'),
+      description: t('step3_description'),
+      icon: HeartIcon,
+      color: 'brand-accent',
+      features: [t('step3_feature1'), t('step3_feature2'), t('step3_feature3')]
+    },
+    {
+      number: '04',
+      title: t('step4_title'),
+      description: t('step4_description'),
+      icon: Share2Icon,
+      color: 'green-600',
+      features: [t('step4_feature1'), t('step4_feature2'), t('step4_feature3')]
+    }
+  ]
   return (
     <div className="space-y-12">
       {/* Section header - UX: Sets expectation for learning journey */}
       <div className="text-center space-y-4">
         <Badge variant="soft" className="text-sm font-semibold">
           <SparklesIcon className="w-3.5 h-3.5 mr-1.5" />
-          Simple & Powerful
+          {t('badge')}
         </Badge>
         <h2 className="text-3xl md:text-4xl font-bold">
-          How Prompt Party Works
+          {t('title')}
         </h2>
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          Get started in minutes. Here's how to make the most of our platform
+          {t('subtitle')}
         </p>
       </div>
 
@@ -129,11 +131,11 @@ export function HowItWorksSection() {
       {/* CTA below steps - UX: Natural next action after learning how it works */}
       <div className="text-center pt-8">
         <p className="text-muted-foreground mb-4">
-          Ready to join the community?
+          {t('cta_text')}
         </p>
         <div className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-brand-primary/10 to-brand-secondary/10 border border-brand-primary/20 hover:border-brand-primary/40 transition-colors cursor-pointer group">
           <SparklesIcon className="w-5 h-5 text-brand-primary" />
-          <span className="font-semibold">Get started for free</span>
+          <span className="font-semibold">{t('cta_button')}</span>
           <ArrowRightIcon className="w-4 h-4 text-brand-primary group-hover:translate-x-1 transition-transform" />
         </div>
       </div>
