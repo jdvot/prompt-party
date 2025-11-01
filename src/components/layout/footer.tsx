@@ -9,7 +9,7 @@ export function Footer() {
   const tNav = useTranslations('nav')
   return (
     <footer className="border-t bg-muted/30 mt-auto backdrop-blur-sm">
-      <div className="container mx-auto px-4 py-10 md:py-12">
+      <div className="w-full px-20 py-10 md:py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-10">
           <div className="md:col-span-1">
             <Link href="/" className="flex items-center gap-3 font-bold text-lg mb-4 group">

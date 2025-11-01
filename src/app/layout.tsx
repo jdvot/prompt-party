@@ -110,12 +110,18 @@ export default async function RootLayout({
         />
       </head>
       <body className={inter.className}>
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground focus:rounded-md focus:shadow-lg"
+        >
+          Skip to content
+        </a>
         <IntlProvider messages={messages} locale={locale}>
           <ThemeProvider defaultTheme="system" storageKey="prompt-party-theme">
             <ShortcutsProvider>
               <div className="flex flex-col min-h-screen pb-16 lg:pb-0">
                 <Header />
-                <main className="flex-1">{children}</main>
+                <main id="main-content" className="flex-1">{children}</main>
                 <Footer />
                 <BottomNav />
                 <FloatingCreateButton />

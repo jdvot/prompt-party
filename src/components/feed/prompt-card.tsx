@@ -2,10 +2,10 @@
 
 import { memo } from 'react'
 import Link from 'next/link'
-import { useRouter } from 'next/navigation'
 import { formatDistanceToNow } from 'date-fns'
 import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { HeartIcon, MessageCircleIcon } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 
@@ -33,21 +33,14 @@ export const PromptCard = memo(function PromptCard({
   comments_count = 0,
   created_at,
 }: PromptCardProps) {
-  const router = useRouter()
   const t = useTranslations('common')
   const preview = body.length > 200 ? body.substring(0, 200) + '...' : body
 
-  const handleCardClick = () => {
-    router.push(`/prompts/${id}`)
-  }
-
-  const handleAuthorClick = (e: React.MouseEvent) => {
-    e.stopPropagation()
-    router.push(`/profile/${author.name || 'anonymous'}`)
-  }
-
   return (
-    <div onClick={handleCardClick} className="cursor-pointer group">
+    <Link
+      href={`/prompts/${id}`}
+      className="block group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-2xl"
+    >
       <Card className="h-full bento-card overflow-hidden relative">
         <CardHeader className="space-y-3">
           <div className="flex items-start justify-between gap-4">
@@ -56,15 +49,19 @@ export const PromptCard = memo(function PromptCard({
                 {title}
               </h2>
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                <button
-                  onClick={handleAuthorClick}
-                  className="flex items-center gap-2 hover:text-primary transition-colors"
+                <Link
+                  href={`/profile/${author.name || 'anonymous'}`}
+                  onClick={(e) => e.stopPropagation()}
+                  className="flex items-center gap-2 hover:text-primary transition-colors min-h-[44px] -m-2 p-2 rounded-md hover:bg-muted/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                 >
-                  <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center text-xs font-medium">
-                    {(author.name || 'A').charAt(0).toUpperCase()}
-                  </div>
+                  <Avatar className="w-6 h-6">
+                    <AvatarImage src={author.avatar_url || undefined} alt={author.name || t('anonymous')} />
+                    <AvatarFallback className="bg-primary/10 text-primary text-xs">
+                      {(author.name || 'A').charAt(0).toUpperCase()}
+                    </AvatarFallback>
+                  </Avatar>
                   <span className="truncate">{author.name || t('anonymous')}</span>
-                </button>
+                </Link>
                 <span className="text-muted-foreground/60">•</span>
                 <time className="text-muted-foreground whitespace-nowrap">
                   {formatDistanceToNow(new Date(created_at), { addSuffix: true })}
@@ -114,6 +111,6 @@ export const PromptCard = memo(function PromptCard({
           </div>
         </CardFooter>
       </Card>
-    </div>
+    </Link>
   )
 })

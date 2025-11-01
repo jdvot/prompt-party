@@ -312,17 +312,6 @@
   }
 
   /* 2025 UI/UX Best Practices */
-  .glass {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  .dark .glass {
-    background: rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-  }
 
   .glow-on-hover {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -373,9 +362,12 @@
     text-wrap: balance;
   }
 
-  /* Gradient text - Modern vibrant gradients */
+  /* Gradient text - Modern vibrant gradients using design tokens */
   .gradient-text {
-    @apply bg-gradient-to-r from-violet-500 via-fuchsia-500 to-pink-500 bg-clip-text text-transparent;
+    background: linear-gradient(to right, hsl(var(--brand-primary)), hsl(var(--brand-accent)), hsl(var(--brand-secondary)));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
     animation: gradient-shift 8s ease infinite;
     background-size: 200% auto;
   }
@@ -462,10 +454,25 @@
     @apply badge-primary shadow-lg shadow-brand-primary/30;
   }
 
-  /* Focus ring */
+  /* Focus ring - Comprehensive keyboard navigation styles */
   .focus-ring {
-    @apply focus:outline-none focus:ring-2 focus:ring-brand-primary focus:ring-offset-2;
-    @apply dark:focus:ring-offset-gray-900;
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2;
+    @apply dark:focus-visible:ring-offset-gray-900;
+  }
+
+  .focus-ring-strong {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+  }
+
+  /* Apply focus styles to interactive elements globally */
+  a:focus-visible,
+  button:focus-visible,
+  [role="button"]:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible {
+    outline: 2px solid hsl(var(--brand-primary));
+    outline-offset: 2px;
   }
 
   /* Elevation shadows */
@@ -537,5 +544,269 @@
 
   .animate-scale-in {
     animation: scale-in 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* ============================================================================
+   * ENHANCED UTILITIES - 2025 Design System
+   * ============================================================================ */
+
+  /* Container Utilities */
+  .container-narrow {
+    @apply max-w-4xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .container-wide {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .full-bleed {
+    width: 100vw;
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* Text Utilities */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  .text-gradient-brand {
+    @apply bg-gradient-to-r from-brand-primary via-brand-accent to-brand-secondary;
+    @apply bg-clip-text text-transparent;
+    background-size: 200% auto;
+  }
+
+  /* Interactive States */
+  .hover-lift {
+    @apply transition-transform duration-300 ease-smooth;
+    @apply hover:-translate-y-1;
+  }
+
+  .hover-grow {
+    @apply transition-transform duration-300 ease-smooth;
+    @apply hover:scale-105 active:scale-95;
+  }
+
+  .press-scale {
+    @apply transition-transform duration-150 ease-smooth;
+    @apply active:scale-95;
+  }
+
+  /* Focus Styles */
+  .focus-ring-brand {
+    @apply focus-visible:outline-none;
+    @apply focus-visible:ring-2 focus-visible:ring-brand-primary;
+    @apply focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+  }
+
+  .focus-ring-inset {
+    @apply focus-visible:outline-none;
+    @apply focus-visible:ring-2 focus-visible:ring-inset;
+    @apply focus-visible:ring-brand-primary;
+  }
+
+  /* Link Styles */
+  .link {
+    @apply text-brand-primary underline-offset-4;
+    @apply hover:underline focus-visible:underline;
+    @apply transition-colors duration-200;
+  }
+
+  .link-subtle {
+    @apply text-foreground hover:text-brand-primary;
+    @apply transition-colors duration-200;
+    @apply focus-visible:text-brand-primary;
+  }
+
+  /* Aspect Ratios */
+  .aspect-square {
+    aspect-ratio: 1 / 1;
+  }
+
+  .aspect-video {
+    aspect-ratio: 16 / 9;
+  }
+
+  .aspect-portrait {
+    aspect-ratio: 3 / 4;
+  }
+
+  /* Scrollbar Styles (Enhanced) */
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted-foreground) / 0.3);
+    border-radius: 3px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground) / 0.5);
+  }
+
+  /* Hide Scrollbar (but keep functionality) */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Gradient Backgrounds */
+  .bg-gradient-radial {
+    background-image: radial-gradient(circle at center, var(--tw-gradient-stops));
+  }
+
+  .bg-gradient-conic {
+    background-image: conic-gradient(from 0deg at center, var(--tw-gradient-stops));
+  }
+
+  /* Mesh Gradient Background */
+  .bg-mesh {
+    background-image:
+      radial-gradient(at 0% 0%, hsl(var(--brand-primary) / 0.15) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, hsl(var(--brand-secondary) / 0.15) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, hsl(var(--brand-accent) / 0.15) 0px, transparent 50%),
+      radial-gradient(at 0% 100%, hsl(var(--brand-primary) / 0.15) 0px, transparent 50%);
+  }
+
+  /* Dotted Background Pattern */
+  .bg-dots {
+    background-image: radial-gradient(circle, hsl(var(--muted-foreground) / 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+
+  /* Grid Background Pattern */
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, hsl(var(--border)) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(var(--border)) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+
+  /* Noise Texture */
+  .bg-noise {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
+  }
+
+  /* Clip Path Utilities */
+  .clip-diagonal {
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 3rem), 0 100%);
+  }
+
+  .clip-notch {
+    clip-path: polygon(0 0, calc(100% - 1rem) 0, 100% 1rem, 100% 100%, 0 100%);
+  }
+
+  /* Backdrop Blur */
+  .backdrop-blur-safari {
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  /* Safe Area Padding (for mobile notches) */
+  .safe-top {
+    padding-top: env(safe-area-inset-top);
+  }
+
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .safe-left {
+    padding-left: env(safe-area-inset-left);
+  }
+
+  .safe-right {
+    padding-right: env(safe-area-inset-right);
+  }
+
+  /* Truncate Utilities */
+  .truncate-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .truncate-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .truncate-4 {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Center Content */
+  .center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .center-x {
+    display: flex;
+    justify-content: center;
+  }
+
+  .center-y {
+    display: flex;
+    align-items: center;
+  }
+
+  /* Debug Utilities (remove in production) */
+  .debug-outline * {
+    outline: 1px solid red;
+  }
+
+  .debug-grid {
+    background-image:
+      linear-gradient(rgba(255, 0, 0, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 0, 0, 0.1) 1px, transparent 1px);
+    background-size: 8px 8px;
+  }
+
+  /* Selection Styles */
+  ::selection {
+    background-color: hsl(var(--brand-primary) / 0.2);
+    color: hsl(var(--foreground));
+  }
+
+  ::-moz-selection {
+    background-color: hsl(var(--brand-primary) / 0.2);
+    color: hsl(var(--foreground));
+  }
+
+  /* Print Styles */
+  @media print {
+    .no-print {
+      display: none !important;
+    }
+
+    .print-only {
+      display: block !important;
+    }
+
+    body {
+      background: white !important;
+      color: black !important;
+    }
   }
 }
