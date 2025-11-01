@@ -5,6 +5,7 @@ import { MarkdownPreview } from './markdown-preview'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { cn } from '@/lib/utils'
+import { useTranslations } from 'next-intl'
 
 interface MarkdownEditorProps {
   value: string
@@ -14,6 +15,7 @@ interface MarkdownEditorProps {
 
 export function MarkdownEditor({ value, onChange, placeholder }: MarkdownEditorProps) {
   const [showPreview, setShowPreview] = useState(false)
+  const t = useTranslations('editor')
 
   return (
     <Card className="overflow-hidden">
@@ -29,7 +31,7 @@ export function MarkdownEditor({ value, onChange, placeholder }: MarkdownEditorP
               : 'text-muted-foreground hover:text-foreground hover:bg-muted/30'
           )}
         >
-          Write
+          {t('write')}
         </button>
         <button
           type="button"
@@ -41,7 +43,7 @@ export function MarkdownEditor({ value, onChange, placeholder }: MarkdownEditorP
               : 'text-muted-foreground hover:text-foreground hover:bg-muted/30'
           )}
         >
-          Preview
+          {t('preview')}
         </button>
 
         {/* Quick actions */}
@@ -51,8 +53,8 @@ export function MarkdownEditor({ value, onChange, placeholder }: MarkdownEditorP
             variant="ghost"
             size="sm"
             className="h-7 px-2 text-xs"
-            onClick={() => onChange(value + '\n**bold text**')}
-            title="Bold (Ctrl+B)"
+            onClick={() => onChange(value + '\n**' + t('bold_text') + '**')}
+            title={t('bold_tooltip')}
           >
             <span className="font-bold">B</span>
           </Button>
@@ -61,8 +63,8 @@ export function MarkdownEditor({ value, onChange, placeholder }: MarkdownEditorP
             variant="ghost"
             size="sm"
             className="h-7 px-2 text-xs"
-            onClick={() => onChange(value + '\n*italic text*')}
-            title="Italic (Ctrl+I)"
+            onClick={() => onChange(value + '\n*' + t('italic_text') + '*')}
+            title={t('italic_tooltip')}
           >
             <span className="italic">I</span>
           </Button>
@@ -71,8 +73,8 @@ export function MarkdownEditor({ value, onChange, placeholder }: MarkdownEditorP
             variant="ghost"
             size="sm"
             className="h-7 px-2 text-xs"
-            onClick={() => onChange(value + '\n`code`')}
-            title="Inline Code"
+            onClick={() => onChange(value + '\n`' + t('code_text') + '`')}
+            title={t('inline_code_tooltip')}
           >
             <span className="font-mono">{`</>`}</span>
           </Button>
@@ -81,8 +83,8 @@ export function MarkdownEditor({ value, onChange, placeholder }: MarkdownEditorP
             variant="ghost"
             size="sm"
             className="h-7 px-2 text-xs"
-            onClick={() => onChange(value + '\n```\ncode block\n```')}
-            title="Code Block"
+            onClick={() => onChange(value + '\n```\n' + t('code_block_text') + '\n```')}
+            title={t('code_block_tooltip')}
           >
             <span className="font-mono">{ }</span>
           </Button>
@@ -91,8 +93,8 @@ export function MarkdownEditor({ value, onChange, placeholder }: MarkdownEditorP
             variant="ghost"
             size="sm"
             className="h-7 px-2 text-xs"
-            onClick={() => onChange(value + '\n# Heading')}
-            title="Heading"
+            onClick={() => onChange(value + '\n# ' + t('heading_text'))}
+            title={t('heading_tooltip')}
           >
             H
           </Button>
@@ -101,8 +103,8 @@ export function MarkdownEditor({ value, onChange, placeholder }: MarkdownEditorP
             variant="ghost"
             size="sm"
             className="h-7 px-2 text-xs"
-            onClick={() => onChange(value + '\n- List item')}
-            title="Bullet List"
+            onClick={() => onChange(value + '\n- ' + t('list_item_text'))}
+            title={t('bullet_list_tooltip')}
           >
             •
           </Button>
@@ -111,8 +113,8 @@ export function MarkdownEditor({ value, onChange, placeholder }: MarkdownEditorP
             variant="ghost"
             size="sm"
             className="h-7 px-2 text-xs"
-            onClick={() => onChange(value + '\n1. Numbered item')}
-            title="Numbered List"
+            onClick={() => onChange(value + '\n1. ' + t('numbered_item_text'))}
+            title={t('numbered_list_tooltip')}
           >
             1.
           </Button>
@@ -121,8 +123,8 @@ export function MarkdownEditor({ value, onChange, placeholder }: MarkdownEditorP
             variant="ghost"
             size="sm"
             className="h-7 px-2 text-xs"
-            onClick={() => onChange(value + '\n> Quote')}
-            title="Quote"
+            onClick={() => onChange(value + '\n> ' + t('quote_text'))}
+            title={t('quote_tooltip')}
           >
             "
           </Button>
@@ -131,8 +133,8 @@ export function MarkdownEditor({ value, onChange, placeholder }: MarkdownEditorP
             variant="ghost"
             size="sm"
             className="h-7 px-2 text-xs"
-            onClick={() => onChange(value + '\n[link text](url)')}
-            title="Link"
+            onClick={() => onChange(value + '\n[' + t('link_text') + '](url)')}
+            title={t('link_tooltip')}
           >
             🔗
           </Button>
@@ -146,7 +148,7 @@ export function MarkdownEditor({ value, onChange, placeholder }: MarkdownEditorP
             <textarea
               value={value}
               onChange={(e) => onChange(e.target.value)}
-              placeholder={placeholder || 'Write your prompt here... (Markdown supported)'}
+              placeholder={placeholder || t('default_placeholder')}
               className="w-full min-h-[300px] p-4 bg-background border-0 focus:outline-none focus:ring-0 resize-none font-mono text-sm leading-relaxed transition-colors duration-200"
             />
           </div>
@@ -155,7 +157,7 @@ export function MarkdownEditor({ value, onChange, placeholder }: MarkdownEditorP
             {value ? (
               <MarkdownPreview content={value} />
             ) : (
-              <p className="text-muted-foreground italic">Nothing to preview yet. Start writing to see the preview.</p>
+              <p className="text-muted-foreground italic">{t('preview_empty')}</p>
             )}
           </div>
         )}
@@ -164,8 +166,8 @@ export function MarkdownEditor({ value, onChange, placeholder }: MarkdownEditorP
       {/* Helper text */}
       {!showPreview && (
         <div className="px-4 py-2.5 bg-muted/30 text-xs text-muted-foreground border-t flex items-center justify-between">
-          <span>Markdown supported: **bold**, *italic*, `code`, [links](url), etc.</span>
-          <span className="text-muted-foreground/60">{value.length} characters</span>
+          <span>{t('markdown_help')}</span>
+          <span className="text-muted-foreground/60">{t('characters_count', { count: value.length })}</span>
         </div>
       )}
     </Card>

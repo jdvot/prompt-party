@@ -1,4 +1,14 @@
 {
+  "access": {
+    "title": "Access Protected",
+    "description": "Enter the password to continue to Prompt Party",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "Enter password",
+    "submitButton": "Continue",
+    "submitting": "Verifying...",
+    "errorMessage": "Invalid password. Please try again.",
+    "contactSupport": "Need access? Contact support for assistance."
+  },
   "common": {
     "loading": "Loading...",
     "error": "Error",
@@ -762,6 +772,62 @@
     "feature_3": "Remix and build upon existing prompts",
     "feature_4": "Organize prompts in collections",
     "feature_5": "Follow trending prompts"
+  },
+  "marketing_suite": {
+    "hero_badge": "Designed for Marketing Professionals",
+    "hero_title": "Save 10+ Hours Per Week on Content Creation",
+    "hero_subtitle": "The complete AI marketing suite with 500+ proven prompts, multi-LLM testing, brand voice training, and advanced analytics. Purpose-built for marketers and content creators.",
+    "hero_cta_trial": "Start 14-Day Free Trial",
+    "hero_cta_compare": "Compare Plans",
+    "hero_no_card": "No credit card required • Cancel anytime • 14-day money-back guarantee",
+    "stats_prompts": "Marketing Prompts",
+    "stats_time_saved": "Saved Per Week",
+    "stats_faster": "Faster Creation",
+    "stats_marketers": "Happy Marketers",
+    "features_badge": "Everything You Need",
+    "features_title": "Professional Marketing Tools in One Suite",
+    "features_subtitle": "Stop juggling multiple tools. Get everything you need to create world-class marketing content.",
+    "feature_library_title": "500+ Marketing Prompts",
+    "feature_library_desc": "Pre-tested prompts for copywriting, SEO, social media, ads, and email marketing",
+    "feature_testing_title": "Unlimited AI Testing",
+    "feature_testing_desc": "Test prompts on GPT-4, Claude 3.5, and Gemini simultaneously. Compare results instantly.",
+    "feature_brand_title": "Brand Voice Training",
+    "feature_brand_desc": "Train AI on your brand style. Get consistent, on-brand content every time.",
+    "feature_analytics_title": "Marketing Analytics",
+    "feature_analytics_desc": "Track prompt performance, A/B test results, and ROI. Export PDF reports for clients.",
+    "feature_team_title": "Mini-Team (3 Seats)",
+    "feature_team_desc": "Collaborate with clients or colleagues. Share collections and prompts seamlessly.",
+    "feature_support_title": "Priority Support",
+    "feature_support_desc": "<2h response time + 12 masterclasses/year on advanced AI marketing strategies.",
+    "usecase_title": "Prompts for Every Marketing Use Case",
+    "usecase_subtitle": "From copywriting to video scripts, we've got you covered with battle-tested prompts.",
+    "usecase_more": "+ Dozens more categories and 500+ ready-to-use prompts",
+    "usecase_cta": "Browse Full Library",
+    "testimonials_title": "Loved by 1,000+ Marketing Professionals",
+    "testimonials_rating": "from 500+ reviews",
+    "comparison_title": "Compare Plans",
+    "comparison_subtitle": "Choose the plan that fits your needs",
+    "comparison_recommended": "Recommended",
+    "comparison_feature": "Feature",
+    "comparison_cta": "Start Free Trial",
+    "faq_title": "Frequently Asked Questions",
+    "faq_1_q": "How does the 14-day free trial work?",
+    "faq_1_a": "Start using Marketing Suite immediately with full access to all features. No credit card required. If you love it (you will), upgrade after 14 days. Otherwise, downgrade to Free with no questions asked.",
+    "faq_2_q": "Can I upgrade or downgrade anytime?",
+    "faq_2_a": "Yes! Upgrade to unlock more features or downgrade if your needs change. Changes take effect immediately, and billing is prorated.",
+    "faq_3_q": "What AI models are included?",
+    "faq_3_a": "Marketing Suite includes unlimited testing on GPT-4, GPT-3.5, Claude 3.5 Sonnet, Claude 3.5 Haiku, Gemini 1.5 Pro, and Gemini 1.5 Flash. Compare results side-by-side.",
+    "faq_4_q": "How does the Mini-Team feature work?",
+    "faq_4_a": "Invite up to 2 additional team members or clients. Share collections, collaborate on prompts, and manage permissions. Perfect for agencies working with clients.",
+    "faq_5_q": "Do you offer refunds?",
+    "faq_5_a": "Yes! 14-day money-back guarantee, no questions asked. If Marketing Suite doesn't save you 10+ hours in the first 2 weeks, we'll refund 100%.",
+    "faq_6_q": "Can I use this commercially?",
+    "faq_6_a": "Absolutely! All prompts and AI outputs can be used for commercial purposes. Create content for your business or clients without restrictions.",
+    "final_cta_title": "Ready to 3x Your Marketing Productivity?",
+    "final_cta_subtitle": "Join 1,000+ marketers who save 10+ hours per week with Marketing Suite. Start your 14-day free trial today.",
+    "final_cta_trial": "Start Free Trial",
+    "final_cta_plans": "View All Plans",
+    "final_cta_features": "✓ No credit card required  •  ✓ 14-day free trial  •  ✓ Cancel anytime"
   },
   "pricing_full": {
     "title": "Choose Your Plan",
@@ -1970,6 +2036,106 @@
       "keep_learning_challenges": "Join a <link>prompting challenge</link>",
       "bad_label": "Bad:",
       "good_label": "Good:"
+    }
+  },
+  "emptyStates": {
+    "noPrompts": {
+      "title": "No prompts yet",
+      "description": "Start sharing your amazing AI prompts with the community",
+      "action": "Create your first prompt"
+    },
+    "noResults": {
+      "title": "No results found",
+      "description": "Try adjusting your search terms or filters"
+    },
+    "noLikes": {
+      "title": "No likes yet",
+      "description": "Prompts you like will appear here",
+      "action": "Explore prompts"
+    },
+    "noComments": {
+      "title": "No comments yet",
+      "description": "Be the first to share your thoughts on this prompt"
+    },
+    "noFollowers": {
+      "title": "No followers yet",
+      "description": "Share great prompts to attract followers",
+      "action": "Create a prompt"
+    },
+    "noCollections": {
+      "title": "No collections yet",
+      "description": "Organize your favorite prompts into collections",
+      "action": "Create collection"
+    },
+    "noNotifications": {
+      "title": "No notifications",
+      "description": "When you get notifications, they'll appear here"
+    },
+    "noBookmarks": {
+      "title": "No bookmarks yet",
+      "description": "Save prompts you want to revisit later",
+      "action": "Explore prompts"
+    },
+    "noActivity": {
+      "title": "No activity yet",
+      "description": "Your activity will be shown here once you start interacting"
+    },
+    "noData": {
+      "title": "No data available",
+      "description": "Data will appear here once it becomes available"
+    }
+  },
+  "commandPalette": {
+    "placeholder": "Type a command or search...",
+    "noResults": "No results found.",
+    "searchResults": "Search Results",
+    "quickActions": "Quick Actions",
+    "navigation": "Navigation",
+    "proFeatures": "Pro Features",
+    "account": "Account",
+    "actions": {
+      "createPrompt": "Create new prompt",
+      "advancedSearch": "Advanced search"
+    },
+    "nav": {
+      "home": "Home",
+      "trending": "Trending",
+      "following": "Following",
+      "collections": "Collections",
+      "bookmarks": "Bookmarks"
+    },
+    "pro": {
+      "analytics": "Analytics",
+      "apiAccess": "API Access",
+      "designSystem": "Design System"
+    },
+    "accountMenu": {
+      "profile": "Profile",
+      "notifications": "Notifications",
+      "settings": "Settings",
+      "signOut": "Sign out"
+    }
+  },
+  "shortcuts": {
+    "title": "Keyboard Shortcuts",
+    "close": "Close",
+    "navigation": "Navigation",
+    "actions": "Actions (on prompt pages)",
+    "general": "General",
+    "helpText": "Press ? anytime to view shortcuts",
+    "keys": {
+      "goHome": "Go to Home",
+      "goTrending": "Go to Trending",
+      "goCollections": "Go to Collections",
+      "createPrompt": "Create new prompt",
+      "likePrompt": "Like/Unlike prompt",
+      "saveToCollection": "Save to collection",
+      "duplicate": "Duplicate prompt",
+      "remix": "Remix prompt",
+      "share": "Share prompt",
+      "focusSearch": "Focus search",
+      "showHelp": "Show this help",
+      "closeModals": "Close modals"
     }
   }
 }

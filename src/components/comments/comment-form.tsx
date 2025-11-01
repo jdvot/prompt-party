@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { useTranslations } from 'next-intl'
 
 interface CommentFormProps {
   promptId: string
@@ -10,6 +11,7 @@ interface CommentFormProps {
 export function CommentForm({ promptId, onCommentAdded }: CommentFormProps) {
   const [content, setContent] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const t = useTranslations('comments')
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -27,14 +29,14 @@ export function CommentForm({ promptId, onCommentAdded }: CommentFormProps) {
 
       if (!response.ok) {
         const error = await response.json()
-        throw new Error(error.error || 'Failed to post comment')
+        throw new Error(error.error || t('error_posting'))
       }
 
       setContent('')
       onCommentAdded()
     } catch (error) {
       console.error('Error posting comment:', error)
-      alert(error instanceof Error ? error.message : 'Failed to post comment')
+      alert(error instanceof Error ? error.message : t('error_posting'))
     } finally {
       setIsSubmitting(false)
     }
@@ -45,7 +47,7 @@ export function CommentForm({ promptId, onCommentAdded }: CommentFormProps) {
       <textarea
         value={content}
         onChange={(e) => setContent(e.target.value)}
-        placeholder="Write a comment..."
+        placeholder={t('add_comment')}
         className="w-full min-h-[100px] px-4 py-3 border rounded-md resize-none focus:outline-none focus:ring-2 focus:ring-primary"
         disabled={isSubmitting}
       />
@@ -55,7 +57,7 @@ export function CommentForm({ promptId, onCommentAdded }: CommentFormProps) {
           disabled={isSubmitting || !content.trim()}
           className="px-4 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          {isSubmitting ? 'Posting...' : 'Post Comment'}
+          {isSubmitting ? t('posting') : t('post_comment')}
         </button>
       </div>
     </form>

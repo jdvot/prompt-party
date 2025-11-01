@@ -1,3 +1,5 @@
+'use client'
+
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import Link from 'next/link'
@@ -14,6 +16,7 @@ import {
   Sparkles,
   Plus,
 } from 'lucide-react'
+import { useTranslations } from 'next-intl'
 
 interface EmptyStateProps {
   icon?: React.ReactNode
@@ -58,13 +61,14 @@ export function EmptyState({ icon, title, description, action }: EmptyStateProps
 }
 
 export function NoPromptsFound() {
+  const t = useTranslations('emptyStates')
   return (
     <EmptyState
       icon={<FileText className="w-16 h-16" />}
-      title="No prompts yet"
-      description="Start sharing your amazing AI prompts with the community"
+      title={t('noPrompts.title')}
+      description={t('noPrompts.description')}
       action={{
-        label: 'Create your first prompt',
+        label: t('noPrompts.action'),
         href: '/prompts/new',
       }}
     />
@@ -72,23 +76,25 @@ export function NoPromptsFound() {
 }
 
 export function NoSearchResults() {
+  const t = useTranslations('emptyStates')
   return (
     <EmptyState
       icon={<Search className="w-16 h-16" />}
-      title="No results found"
-      description="Try adjusting your search terms or filters"
+      title={t('noResults.title')}
+      description={t('noResults.description')}
     />
   )
 }
 
 export function NoLikes() {
+  const t = useTranslations('emptyStates')
   return (
     <EmptyState
       icon={<Heart className="w-16 h-16" />}
-      title="No likes yet"
-      description="Prompts you like will appear here"
+      title={t('noLikes.title')}
+      description={t('noLikes.description')}
       action={{
-        label: 'Explore prompts',
+        label: t('noLikes.action'),
         href: '/',
       }}
     />
@@ -96,23 +102,25 @@ export function NoLikes() {
 }
 
 export function NoComments() {
+  const t = useTranslations('emptyStates')
   return (
     <EmptyState
       icon={<MessageCircle className="w-16 h-16" />}
-      title="No comments yet"
-      description="Be the first to share your thoughts on this prompt"
+      title={t('noComments.title')}
+      description={t('noComments.description')}
     />
   )
 }
 
 export function NoFollowers() {
+  const t = useTranslations('emptyStates')
   return (
     <EmptyState
       icon={<Users className="w-16 h-16" />}
-      title="No followers yet"
-      description="Share great prompts to attract followers"
+      title={t('noFollowers.title')}
+      description={t('noFollowers.description')}
       action={{
-        label: 'Create a prompt',
+        label: t('noFollowers.action'),
         href: '/prompts/new',
       }}
     />
@@ -120,13 +128,14 @@ export function NoFollowers() {
 }
 
 export function NoCollections() {
+  const t = useTranslations('emptyStates')
   return (
     <EmptyState
       icon={<FolderOpen className="w-16 h-16" />}
-      title="No collections yet"
-      description="Organize your favorite prompts into collections"
+      title={t('noCollections.title')}
+      description={t('noCollections.description')}
       action={{
-        label: 'Create collection',
+        label: t('noCollections.action'),
         href: '/collections/new',
       }}
     />
@@ -134,23 +143,25 @@ export function NoCollections() {
 }
 
 export function NoNotifications() {
+  const t = useTranslations('emptyStates')
   return (
     <EmptyState
       icon={<Bell className="w-16 h-16" />}
-      title="No notifications"
-      description="When you get notifications, they'll appear here"
+      title={t('noNotifications.title')}
+      description={t('noNotifications.description')}
     />
   )
 }
 
 export function NoBookmarks() {
+  const t = useTranslations('emptyStates')
   return (
     <EmptyState
       icon={<Bookmark className="w-16 h-16" />}
-      title="No bookmarks yet"
-      description="Save prompts you want to revisit later"
+      title={t('noBookmarks.title')}
+      description={t('noBookmarks.description')}
       action={{
-        label: 'Explore prompts',
+        label: t('noBookmarks.action'),
         href: '/',
       }}
     />
@@ -158,21 +169,23 @@ export function NoBookmarks() {
 }
 
 export function NoActivity() {
+  const t = useTranslations('emptyStates')
   return (
     <EmptyState
       icon={<TrendingUp className="w-16 h-16" />}
-      title="No activity yet"
-      description="Your activity will be shown here once you start interacting"
+      title={t('noActivity.title')}
+      description={t('noActivity.description')}
     />
   )
 }
 
 export function NoData() {
+  const t = useTranslations('emptyStates')
   return (
     <EmptyState
       icon={<Sparkles className="w-16 h-16" />}
-      title="No data available"
-      description="Data will appear here once it becomes available"
+      title={t('noData.title')}
+      description={t('noData.description')}
     />
   )
 }

@@ -2,6 +2,7 @@
 
 import * as React from 'react'
 import { useRouter } from 'next/navigation'
+import { useTranslations } from 'next-intl'
 
 interface ShortcutsContextValue {
   showHelp: () => void
@@ -12,6 +13,7 @@ const ShortcutsContext = React.createContext<ShortcutsContextValue | undefined>(
 )
 
 export function ShortcutsProvider({ children }: { children: React.ReactNode }) {
+  const t = useTranslations('shortcuts')
   const [showModal, setShowModal] = React.useState(false)
   const router = useRouter()
 
@@ -107,11 +109,11 @@ export function ShortcutsProvider({ children }: { children: React.ReactNode }) {
           >
             <div className="p-6">
               <div className="flex items-center justify-between mb-6">
-                <h2 className="text-2xl font-bold">Keyboard Shortcuts</h2>
+                <h2 className="text-2xl font-bold">{t('title')}</h2>
                 <button
                   onClick={() => setShowModal(false)}
                   className="text-muted-foreground hover:text-foreground transition-colors"
-                  aria-label="Close"
+                  aria-label={t('close')}
                 >
                   <svg
                     className="w-6 h-6"
@@ -133,17 +135,17 @@ export function ShortcutsProvider({ children }: { children: React.ReactNode }) {
                 {/* Navigation */}
                 <div>
                   <h3 className="text-sm font-semibold text-muted-foreground uppercase mb-3">
-                    Navigation
+                    {t('navigation')}
                   </h3>
                   <div className="space-y-2">
-                    <ShortcutRow keys={['H']} description="Go to Home" />
-                    <ShortcutRow keys={['T']} description="Go to Trending" />
-                    <ShortcutRow keys={['C']} description="Go to Collections" />
+                    <ShortcutRow keys={['H']} description={t('keys.goHome')} />
+                    <ShortcutRow keys={['T']} description={t('keys.goTrending')} />
+                    <ShortcutRow keys={['C']} description={t('keys.goCollections')} />
                     <ShortcutRow
                       keys={['⌘', 'N']}
                       macKeys={['⌘', 'N']}
                       winKeys={['Ctrl', 'N']}
-                      description="Create new prompt"
+                      description={t('keys.createPrompt')}
                     />
                   </div>
                 </div>
@@ -151,33 +153,33 @@ export function ShortcutsProvider({ children }: { children: React.ReactNode }) {
                 {/* Actions */}
                 <div>
                   <h3 className="text-sm font-semibold text-muted-foreground uppercase mb-3">
-                    Actions (on prompt pages)
+                    {t('actions')}
                   </h3>
                   <div className="space-y-2">
-                    <ShortcutRow keys={['L']} description="Like/Unlike prompt" />
-                    <ShortcutRow keys={['S']} description="Save to collection" />
-                    <ShortcutRow keys={['D']} description="Duplicate prompt" />
-                    <ShortcutRow keys={['R']} description="Remix prompt" />
-                    <ShortcutRow keys={['Shift', 'S']} description="Share prompt" />
+                    <ShortcutRow keys={['L']} description={t('keys.likePrompt')} />
+                    <ShortcutRow keys={['S']} description={t('keys.saveToCollection')} />
+                    <ShortcutRow keys={['D']} description={t('keys.duplicate')} />
+                    <ShortcutRow keys={['R']} description={t('keys.remix')} />
+                    <ShortcutRow keys={['Shift', 'S']} description={t('keys.share')} />
                   </div>
                 </div>
 
                 {/* General */}
                 <div>
                   <h3 className="text-sm font-semibold text-muted-foreground uppercase mb-3">
-                    General
+                    {t('general')}
                   </h3>
                   <div className="space-y-2">
-                    <ShortcutRow keys={['/']} description="Focus search" />
-                    <ShortcutRow keys={['?']} description="Show this help" />
-                    <ShortcutRow keys={['Esc']} description="Close modals" />
+                    <ShortcutRow keys={['/']} description={t('keys.focusSearch')} />
+                    <ShortcutRow keys={['?']} description={t('keys.showHelp')} />
+                    <ShortcutRow keys={['Esc']} description={t('keys.closeModals')} />
                   </div>
                 </div>
               </div>
 
               <div className="mt-6 pt-6 border-t">
                 <p className="text-sm text-muted-foreground text-center">
-                  Press <kbd className="px-2 py-1 bg-muted rounded text-xs">?</kbd> anytime to view shortcuts
+                  {t('helpText')}
                 </p>
               </div>
             </div>

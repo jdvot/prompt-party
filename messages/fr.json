@@ -1,4 +1,14 @@
 {
+  "access": {
+    "title": "Accès Protégé",
+    "description": "Entrez le mot de passe pour continuer vers Prompt Party",
+    "passwordLabel": "Mot de passe",
+    "passwordPlaceholder": "Entrez le mot de passe",
+    "submitButton": "Continuer",
+    "submitting": "Vérification...",
+    "errorMessage": "Mot de passe invalide. Veuillez réessayer.",
+    "contactSupport": "Besoin d'accès ? Contactez le support pour obtenir de l'aide."
+  },
   "common": {
     "loading": "Chargement...",
     "error": "Erreur",
@@ -778,6 +788,62 @@
     "feature_3": "Remixer et construire sur des prompts existants",
     "feature_4": "Organiser les prompts en collections",
     "feature_5": "Suivre les prompts tendances"
+  },
+  "marketing_suite": {
+    "hero_badge": "Conçu pour les Professionnels du Marketing",
+    "hero_title": "Économisez 10+ Heures Par Semaine Sur La Création de Contenu",
+    "hero_subtitle": "La suite marketing IA complète avec 500+ prompts éprouvés, tests multi-LLM, formation de voix de marque et analytics avancées. Conçue spécifiquement pour les marketeurs et créateurs de contenu.",
+    "hero_cta_trial": "Démarrer l'Essai Gratuit 14 Jours",
+    "hero_cta_compare": "Comparer les Plans",
+    "hero_no_card": "Aucune carte bancaire requise • Annulez à tout moment • Garantie satisfait ou remboursé 14 jours",
+    "stats_prompts": "Prompts Marketing",
+    "stats_time_saved": "Économisés Par Semaine",
+    "stats_faster": "Plus Rapide",
+    "stats_marketers": "Marketeurs Satisfaits",
+    "features_badge": "Tout Ce Dont Vous Avez Besoin",
+    "features_title": "Outils Marketing Professionnels En Une Suite",
+    "features_subtitle": "Arrêtez de jongler entre plusieurs outils. Obtenez tout ce dont vous avez besoin pour créer du contenu marketing de classe mondiale.",
+    "feature_library_title": "500+ Prompts Marketing",
+    "feature_library_desc": "Prompts pré-testés pour copywriting, SEO, réseaux sociaux, publicités et email marketing",
+    "feature_testing_title": "Tests IA Illimités",
+    "feature_testing_desc": "Testez les prompts sur GPT-4, Claude 3.5 et Gemini simultanément. Comparez les résultats instantanément.",
+    "feature_brand_title": "Formation de Voix de Marque",
+    "feature_brand_desc": "Entraînez l'IA sur le style de votre marque. Obtenez du contenu cohérent et aligné avec votre marque à chaque fois.",
+    "feature_analytics_title": "Analytics Marketing",
+    "feature_analytics_desc": "Suivez la performance des prompts, résultats de tests A/B et ROI. Exportez des rapports PDF pour vos clients.",
+    "feature_team_title": "Mini-Équipe (3 Sièges)",
+    "feature_team_desc": "Collaborez avec des clients ou collègues. Partagez des collections et prompts en toute fluidité.",
+    "feature_support_title": "Support Prioritaire",
+    "feature_support_desc": "Réponse <2h + 12 masterclasses/an sur les stratégies marketing IA avancées.",
+    "usecase_title": "Prompts Pour Chaque Cas d'Usage Marketing",
+    "usecase_subtitle": "Du copywriting aux scripts vidéo, nous vous couvrons avec des prompts testés en production.",
+    "usecase_more": "+ Des dizaines d'autres catégories et 500+ prompts prêts à l'emploi",
+    "usecase_cta": "Parcourir La Bibliothèque Complète",
+    "testimonials_title": "Adoré par 1 000+ Professionnels du Marketing",
+    "testimonials_rating": "d'après 500+ avis",
+    "comparison_title": "Comparer les Plans",
+    "comparison_subtitle": "Choisissez le plan qui correspond à vos besoins",
+    "comparison_recommended": "Recommandé",
+    "comparison_feature": "Fonctionnalité",
+    "comparison_cta": "Démarrer l'Essai Gratuit",
+    "faq_title": "Questions Fréquemment Posées",
+    "faq_1_q": "Comment fonctionne l'essai gratuit de 14 jours ?",
+    "faq_1_a": "Commencez à utiliser Marketing Suite immédiatement avec un accès complet à toutes les fonctionnalités. Aucune carte bancaire requise. Si vous l'adorez (ce sera le cas), passez à la version payante après 14 jours. Sinon, revenez à la version gratuite sans questions posées.",
+    "faq_2_q": "Puis-je mettre à niveau ou rétrograder à tout moment ?",
+    "faq_2_a": "Oui ! Passez à un plan supérieur pour débloquer plus de fonctionnalités ou rétrogradez si vos besoins changent. Les modifications prennent effet immédiatement et la facturation est au prorata.",
+    "faq_3_q": "Quels modèles IA sont inclus ?",
+    "faq_3_a": "Marketing Suite inclut des tests illimités sur GPT-4, GPT-3.5, Claude 3.5 Sonnet, Claude 3.5 Haiku, Gemini 1.5 Pro et Gemini 1.5 Flash. Comparez les résultats côte à côte.",
+    "faq_4_q": "Comment fonctionne la fonctionnalité Mini-Équipe ?",
+    "faq_4_a": "Invitez jusqu'à 2 membres d'équipe ou clients supplémentaires. Partagez des collections, collaborez sur les prompts et gérez les permissions. Parfait pour les agences travaillant avec des clients.",
+    "faq_5_q": "Offrez-vous des remboursements ?",
+    "faq_5_a": "Oui ! Garantie satisfait ou remboursé de 14 jours, sans questions posées. Si Marketing Suite ne vous fait pas économiser 10+ heures dans les 2 premières semaines, nous vous remboursons 100%.",
+    "faq_6_q": "Puis-je utiliser ceci commercialement ?",
+    "faq_6_a": "Absolument ! Tous les prompts et sorties IA peuvent être utilisés à des fins commerciales. Créez du contenu pour votre entreprise ou vos clients sans restrictions.",
+    "final_cta_title": "Prêt à Tripler Votre Productivité Marketing ?",
+    "final_cta_subtitle": "Rejoignez 1 000+ marketeurs qui économisent 10+ heures par semaine avec Marketing Suite. Démarrez votre essai gratuit de 14 jours aujourd'hui.",
+    "final_cta_trial": "Démarrer l'Essai Gratuit",
+    "final_cta_plans": "Voir Tous Les Plans",
+    "final_cta_features": "✓ Aucune carte requise  •  ✓ Essai gratuit 14 jours  •  ✓ Annulez à tout moment"
   },
   "pricing_full": {
     "title": "Choisissez Votre Forfait",
@@ -2007,6 +2073,106 @@
       "keep_learning_challenges": "Rejoignez un <link>défi de prompting</link>",
       "bad_label": "Mauvais :",
       "good_label": "Bon :"
+    }
+  },
+  "emptyStates": {
+    "noPrompts": {
+      "title": "Aucun prompt pour le moment",
+      "description": "Commencez à partager vos incroyables prompts IA avec la communauté",
+      "action": "Créer votre premier prompt"
+    },
+    "noResults": {
+      "title": "Aucun résultat trouvé",
+      "description": "Essayez d'ajuster vos termes de recherche ou filtres"
+    },
+    "noLikes": {
+      "title": "Aucun like pour le moment",
+      "description": "Les prompts que vous aimez apparaîtront ici",
+      "action": "Explorer les prompts"
+    },
+    "noComments": {
+      "title": "Aucun commentaire pour le moment",
+      "description": "Soyez le premier à partager vos réflexions sur ce prompt"
+    },
+    "noFollowers": {
+      "title": "Aucun abonné pour le moment",
+      "description": "Partagez d'excellents prompts pour attirer des abonnés",
+      "action": "Créer un prompt"
+    },
+    "noCollections": {
+      "title": "Aucune collection pour le moment",
+      "description": "Organisez vos prompts préférés en collections",
+      "action": "Créer une collection"
+    },
+    "noNotifications": {
+      "title": "Aucune notification",
+      "description": "Lorsque vous recevrez des notifications, elles apparaîtront ici"
+    },
+    "noBookmarks": {
+      "title": "Aucun favori pour le moment",
+      "description": "Enregistrez les prompts que vous souhaitez consulter plus tard",
+      "action": "Explorer les prompts"
+    },
+    "noActivity": {
+      "title": "Aucune activité pour le moment",
+      "description": "Votre activité sera affichée ici une fois que vous commencerez à interagir"
+    },
+    "noData": {
+      "title": "Aucune donnée disponible",
+      "description": "Les données apparaîtront ici dès qu'elles seront disponibles"
+    }
+  },
+  "commandPalette": {
+    "placeholder": "Tapez une commande ou recherchez...",
+    "noResults": "Aucun résultat trouvé.",
+    "searchResults": "Résultats de recherche",
+    "quickActions": "Actions rapides",
+    "navigation": "Navigation",
+    "proFeatures": "Fonctionnalités Pro",
+    "account": "Compte",
+    "actions": {
+      "createPrompt": "Créer un nouveau prompt",
+      "advancedSearch": "Recherche avancée"
+    },
+    "nav": {
+      "home": "Accueil",
+      "trending": "Tendances",
+      "following": "Abonnements",
+      "collections": "Collections",
+      "bookmarks": "Favoris"
+    },
+    "pro": {
+      "analytics": "Analytiques",
+      "apiAccess": "Accès API",
+      "designSystem": "Système de design"
+    },
+    "accountMenu": {
+      "profile": "Profil",
+      "notifications": "Notifications",
+      "settings": "Paramètres",
+      "signOut": "Se déconnecter"
+    }
+  },
+  "shortcuts": {
+    "title": "Raccourcis clavier",
+    "close": "Fermer",
+    "navigation": "Navigation",
+    "actions": "Actions (sur les pages de prompts)",
+    "general": "Général",
+    "helpText": "Appuyez sur ? à tout moment pour voir les raccourcis",
+    "keys": {
+      "goHome": "Aller à l'accueil",
+      "goTrending": "Aller aux tendances",
+      "goCollections": "Aller aux collections",
+      "createPrompt": "Créer un nouveau prompt",
+      "likePrompt": "Aimer/Ne plus aimer le prompt",
+      "saveToCollection": "Enregistrer dans une collection",
+      "duplicate": "Dupliquer le prompt",
+      "remix": "Remixer le prompt",
+      "share": "Partager le prompt",
+      "focusSearch": "Rechercher",
+      "showHelp": "Afficher cette aide",
+      "closeModals": "Fermer les fenêtres"
     }
   }
 }

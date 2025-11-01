@@ -30,8 +30,10 @@ import {
   Plus,
   Palette,
 } from 'lucide-react'
+import { useTranslations } from 'next-intl'
 
 export function CommandPalette() {
+  const t = useTranslations('commandPalette')
   const router = useRouter()
   const supabase = createClient()
   const [open, setOpen] = useState(false)
@@ -83,16 +85,16 @@ export function CommandPalette() {
   return (
     <CommandDialog open={open} onOpenChange={setOpen}>
       <CommandInput
-        placeholder="Type a command or search..."
+        placeholder={t('placeholder')}
         value={searchQuery}
         onValueChange={setSearchQuery}
       />
       <CommandList>
-        <CommandEmpty>No results found.</CommandEmpty>
+        <CommandEmpty>{t('noResults')}</CommandEmpty>
 
         {searchResults.length > 0 && (
           <>
-            <CommandGroup heading="Search Results">
+            <CommandGroup heading={t('searchResults')}>
               {searchResults.map((prompt) => (
                 <CommandItem
                   key={prompt.id}
@@ -112,77 +114,77 @@ export function CommandPalette() {
           </>
         )}
 
-        <CommandGroup heading="Quick Actions">
+        <CommandGroup heading={t('quickActions')}>
           <CommandItem onSelect={() => navigate('/prompts/new')}>
             <Plus className="mr-2 h-4 w-4" />
-            <span>Create new prompt</span>
+            <span>{t('actions.createPrompt')}</span>
           </CommandItem>
           <CommandItem onSelect={() => navigate('/search')}>
             <Search className="mr-2 h-4 w-4" />
-            <span>Advanced search</span>
+            <span>{t('actions.advancedSearch')}</span>
           </CommandItem>
         </CommandGroup>
 
         <CommandSeparator />
 
-        <CommandGroup heading="Navigation">
+        <CommandGroup heading={t('navigation')}>
           <CommandItem onSelect={() => navigate('/')}>
             <Home className="mr-2 h-4 w-4" />
-            <span>Home</span>
+            <span>{t('nav.home')}</span>
           </CommandItem>
           <CommandItem onSelect={() => navigate('/trending')}>
             <TrendingUp className="mr-2 h-4 w-4" />
-            <span>Trending</span>
+            <span>{t('nav.trending')}</span>
           </CommandItem>
           <CommandItem onSelect={() => navigate('/following')}>
             <Users className="mr-2 h-4 w-4" />
-            <span>Following</span>
+            <span>{t('nav.following')}</span>
           </CommandItem>
           <CommandItem onSelect={() => navigate('/collections')}>
             <FolderOpen className="mr-2 h-4 w-4" />
-            <span>Collections</span>
+            <span>{t('nav.collections')}</span>
           </CommandItem>
           <CommandItem onSelect={() => navigate('/bookmarks')}>
             <Clock className="mr-2 h-4 w-4" />
-            <span>Bookmarks</span>
+            <span>{t('nav.bookmarks')}</span>
           </CommandItem>
         </CommandGroup>
 
         <CommandSeparator />
 
-        <CommandGroup heading="Pro Features">
+        <CommandGroup heading={t('proFeatures')}>
           <CommandItem onSelect={() => navigate('/analytics')}>
             <BarChart3 className="mr-2 h-4 w-4" />
-            <span>Analytics</span>
+            <span>{t('pro.analytics')}</span>
           </CommandItem>
           <CommandItem onSelect={() => navigate('/api-access')}>
             <Key className="mr-2 h-4 w-4" />
-            <span>API Access</span>
+            <span>{t('pro.apiAccess')}</span>
           </CommandItem>
           <CommandItem onSelect={() => navigate('/design-system-new')}>
             <Palette className="mr-2 h-4 w-4" />
-            <span>Design System</span>
+            <span>{t('pro.designSystem')}</span>
           </CommandItem>
         </CommandGroup>
 
         <CommandSeparator />
 
-        <CommandGroup heading="Account">
+        <CommandGroup heading={t('account')}>
           <CommandItem onSelect={() => navigate('/profile')}>
             <User className="mr-2 h-4 w-4" />
-            <span>Profile</span>
+            <span>{t('accountMenu.profile')}</span>
           </CommandItem>
           <CommandItem onSelect={() => navigate('/notifications')}>
             <Bell className="mr-2 h-4 w-4" />
-            <span>Notifications</span>
+            <span>{t('accountMenu.notifications')}</span>
           </CommandItem>
           <CommandItem onSelect={() => navigate('/settings')}>
             <Settings className="mr-2 h-4 w-4" />
-            <span>Settings</span>
+            <span>{t('accountMenu.settings')}</span>
           </CommandItem>
           <CommandItem onSelect={signOut}>
             <LogOut className="mr-2 h-4 w-4" />
-            <span>Sign out</span>
+            <span>{t('accountMenu.signOut')}</span>
           </CommandItem>
         </CommandGroup>
       </CommandList>

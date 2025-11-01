@@ -38,6 +38,7 @@ export default async function PricingPage() {
       cta: t('get_started'),
       href: '/auth/signup',
       popular: false,
+      badge: null,
     },
     {
       name: t('pro_name'),
@@ -58,7 +59,30 @@ export default async function PricingPage() {
       ],
       cta: t('start_pro'),
       href: '/auth/signup?plan=pro',
+      popular: false,
+      badge: null,
+    },
+    {
+      name: 'Marketing Suite',
+      price: '€49',
+      period: 'month',
+      description: 'For marketing professionals & content creators',
+      icon: RocketIcon,
+      features: [
+        '500+ Marketing Prompts Library',
+        'Unlimited Multi-LLM Testing',
+        'Brand Voice Training',
+        'Marketing Analytics Dashboard',
+        'Mini-Team (3 seats)',
+        'Priority Support (<2h)',
+        '12 Masterclasses/year',
+        'Export PDF Reports',
+        'Advanced A/B Testing',
+      ],
+      cta: 'Start Free Trial',
+      href: '/marketing-suite',
       popular: true,
+      badge: 'Best for Marketers',
     },
     {
       name: t('team_name'),
@@ -79,6 +103,7 @@ export default async function PricingPage() {
       cta: t('start_team'),
       href: '/auth/signup?plan=team',
       popular: false,
+      badge: null,
     },
     {
       name: t('business_name'),
@@ -99,6 +124,7 @@ export default async function PricingPage() {
       cta: t('contact_sales'),
       href: '/contact',
       popular: false,
+      badge: null,
     },
   ]
 
@@ -125,7 +151,7 @@ export default async function PricingPage() {
       {/* Pricing Cards */}
       <Section spacing="xl">
         <Container size="xl">
-          <Grid cols={4} gap="lg" className="animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
+          <Grid cols={5} gap="lg" className="animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
             {plans.map((plan, index) => {
               const Icon = plan.icon
               return (
@@ -137,10 +163,10 @@ export default async function PricingPage() {
                   }`}
                   style={{ animationDelay: `${0.1 + index * 0.1}s` }}
                 >
-                  {plan.popular && (
+                  {plan.popular && plan.badge && (
                     <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10">
                       <Badge className="bg-gradient-primary text-white px-4 py-1 shadow-md">
-                        {t('most_popular')}
+                        {plan.badge}
                       </Badge>
                     </div>
                   )}
