@@ -6,46 +6,54 @@ import Link from 'next/link'
 import { Container } from '@/components/layout/container'
 import { Section } from '@/components/layout/section'
 import { cn } from '@/lib/utils'
+import { getTranslations } from 'next-intl/server'
 
 export async function generateMetadata() {
+  const t = await getTranslations('pricing.metadata')
+
   return {
-    title: 'Soutenir le projet | Prompt Party',
-    description: 'Soutiens le projet Prompt Party et aide-nous à garder l\'éducation IA gratuite pour tous',
+    title: t('title'),
+    description: t('description'),
   }
 }
 
-export default function PricingPage() {
+export default async function PricingPage() {
+  const t = await getTranslations('pricing')
+
   const freePlan = {
-    name: 'Gratuit',
-    price: '0€',
-    period: 'toujours',
-    description: 'Tout ce dont tu as besoin pour apprendre l\'IA',
+    name: t('free.name'),
+    price: t('free.price'),
+    period: t('free.period'),
+    description: t('free.description'),
+    cta: t('free.cta'),
     features: [
-      'Tous les parcours d\'apprentissage',
-      'Tous les tutoriels et concepts',
-      'Playground (20 tests/mois)',
-      'Bibliothèque de prompts complète',
-      'Challenges et leaderboard',
-      'Communauté et forum',
-      'Collections et bookmarks',
-      'Certificats de complétion'
+      t('free.feature_1'),
+      t('free.feature_2'),
+      t('free.feature_3'),
+      t('free.feature_4'),
+      t('free.feature_5'),
+      t('free.feature_6'),
+      t('free.feature_7'),
+      t('free.feature_8')
     ]
   }
 
   const supportPlan = {
-    name: 'Soutien',
-    price: '5€',
-    period: 'mois',
-    description: 'Soutiens le projet et aide-nous à rester gratuit',
+    name: t('support.name'),
+    price: t('support.price'),
+    period: t('support.period'),
+    description: t('support.description'),
+    badge: t('support.badge'),
+    cta: t('support.cta'),
     features: [
-      'Tout du plan Gratuit +',
-      'Badge "Supporter" 💎',
-      'Tests playground illimités',
-      'Vidéos bonus exclusives',
-      'Accès early aux nouveautés',
-      'Ton nom dans les crédits',
-      'Sentiment de faire le bien 💚',
-      'Notre gratitude éternelle'
+      t('support.feature_1'),
+      t('support.feature_2'),
+      t('support.feature_3'),
+      t('support.feature_4'),
+      t('support.feature_5'),
+      t('support.feature_6'),
+      t('support.feature_7'),
+      t('support.feature_8')
     ]
   }
 
@@ -57,13 +65,13 @@ export default function PricingPage() {
           <div className="text-center animate-fade-in-up">
             <Badge variant="soft" className="mb-4">
               <HeartIcon className="w-3 h-3 mr-1" />
-              100% Gratuit
+              {t('hero.badge')}
             </Badge>
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              L'éducation IA doit rester <span className="bg-gradient-to-r from-violet-600 to-fuchsia-600 bg-clip-text text-transparent">gratuite</span>
+              {t('hero.title')} <span className="bg-gradient-to-r from-violet-600 to-fuchsia-600 bg-clip-text text-transparent">{t('hero.title_highlight')}</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Tous nos cours, tutoriels et outils sont 100% gratuits. Si tu souhaites soutenir le projet, voici comment aider.
+              {t('hero.subtitle')}
             </p>
           </div>
         </Container>
@@ -96,7 +104,7 @@ export default function PricingPage() {
                   href="/auth/signup"
                   className={cn(buttonVariants({ variant: "outline", size: "lg" }), "w-full mb-6")}
                 >
-                  Commencer gratuitement
+                  {freePlan.cta}
                 </Link>
 
                 <ul className="space-y-3">
@@ -116,7 +124,7 @@ export default function PricingPage() {
             <Card className="relative border-2 border-primary shadow-xl scale-105">
               <div className="absolute -top-4 left-1/2 -translate-x-1/2">
                 <Badge className="bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white px-4 py-1 shadow-md">
-                  Recommandé
+                  {supportPlan.badge}
                 </Badge>
               </div>
 
@@ -141,7 +149,7 @@ export default function PricingPage() {
                   href="/auth/signup?plan=support"
                   className={cn(buttonVariants({ size: "lg" }), "w-full mb-6")}
                 >
-                  Soutenir le projet
+                  {supportPlan.cta}
                 </Link>
 
                 <ul className="space-y-3">
@@ -165,43 +173,43 @@ export default function PricingPage() {
         <Container size="md">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">
-              Pourquoi ton soutien compte
+              {t('why_support.title')}
             </h2>
           </div>
 
           <div className="space-y-6">
             <Card>
               <CardContent className="p-6">
-                <h3 className="font-semibold mb-2 text-lg">💚 Garder l'éducation gratuite</h3>
+                <h3 className="font-semibold mb-2 text-lg">{t('why_support.reason_1_title')}</h3>
                 <p className="text-muted-foreground">
-                  Ton soutien nous permet de maintenir tous les cours, tutoriels et outils 100% gratuits pour tout le monde, sans publicité.
+                  {t('why_support.reason_1_description')}
                 </p>
               </CardContent>
             </Card>
 
             <Card>
               <CardContent className="p-6">
-                <h3 className="font-semibold mb-2 text-lg">🚀 Créer du nouveau contenu</h3>
+                <h3 className="font-semibold mb-2 text-lg">{t('why_support.reason_2_title')}</h3>
                 <p className="text-muted-foreground">
-                  Nous investissons dans de nouveaux parcours, tutoriels vidéo, webinaires et outils pour la communauté.
+                  {t('why_support.reason_2_description')}
                 </p>
               </CardContent>
             </Card>
 
             <Card>
               <CardContent className="p-6">
-                <h3 className="font-semibold mb-2 text-lg">🌍 Rendre l'IA accessible</h3>
+                <h3 className="font-semibold mb-2 text-lg">{t('why_support.reason_3_title')}</h3>
                 <p className="text-muted-foreground">
-                  Nous vulgarisons l'IA en français pour la rendre accessible à tous, sans barrière de langue ou de prix.
+                  {t('why_support.reason_3_description')}
                 </p>
               </CardContent>
             </Card>
 
             <Card>
               <CardContent className="p-6">
-                <h3 className="font-semibold mb-2 text-lg">⚡ Améliorer la plateforme</h3>
+                <h3 className="font-semibold mb-2 text-lg">{t('why_support.reason_4_title')}</h3>
                 <p className="text-muted-foreground">
-                  Serveurs, outils de développement, intégrations API - tout ça a un coût que ton soutien couvre.
+                  {t('why_support.reason_4_description')}
                 </p>
               </CardContent>
             </Card>
@@ -214,43 +222,43 @@ export default function PricingPage() {
         <Container size="md">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">
-              Questions fréquentes
+              {t('faq.title')}
             </h2>
           </div>
 
           <div className="space-y-4">
             <Card>
               <CardContent className="p-6">
-                <h3 className="font-semibold mb-2 text-lg">C'est vraiment gratuit pour toujours ?</h3>
+                <h3 className="font-semibold mb-2 text-lg">{t('faq.question_1')}</h3>
                 <p className="text-muted-foreground">
-                  Oui. Tous les cours, tutoriels, outils et fonctionnalités principales restent 100% gratuits, sans limite de temps. C'est notre engagement.
+                  {t('faq.answer_1')}
                 </p>
               </CardContent>
             </Card>
 
             <Card>
               <CardContent className="p-6">
-                <h3 className="font-semibold mb-2 text-lg">Puis-je annuler mon soutien ?</h3>
+                <h3 className="font-semibold mb-2 text-lg">{t('faq.question_2')}</h3>
                 <p className="text-muted-foreground">
-                  Bien sûr ! Tu peux annuler à tout moment, sans engagement. Tu conserves tes avantages jusqu'à la fin de ton mois en cours.
+                  {t('faq.answer_2')}
                 </p>
               </CardContent>
             </Card>
 
             <Card>
               <CardContent className="p-6">
-                <h3 className="font-semibold mb-2 text-lg">Y a-t-il d'autres moyens de soutenir ?</h3>
+                <h3 className="font-semibold mb-2 text-lg">{t('faq.question_3')}</h3>
                 <p className="text-muted-foreground">
-                  Oui ! Partage la plateforme, contribue des prompts, aide dans le forum, ou fais un don ponctuel. Chaque contribution compte.
+                  {t('faq.answer_3')}
                 </p>
               </CardContent>
             </Card>
 
             <Card>
               <CardContent className="p-6">
-                <h3 className="font-semibold mb-2 text-lg">Que se passe-t-il si je ne peux pas payer ?</h3>
+                <h3 className="font-semibold mb-2 text-lg">{t('faq.question_4')}</h3>
                 <p className="text-muted-foreground">
-                  Rien ne change ! Tout reste gratuit et accessible. Le soutien est 100% optionnel et n'affecte pas l'accès au contenu éducatif.
+                  {t('faq.answer_4')}
                 </p>
               </CardContent>
             </Card>
@@ -263,16 +271,16 @@ export default function PricingPage() {
         <Container size="md">
           <Card className="border-2 border-primary/20 bg-background/95 backdrop-blur">
             <CardContent className="p-12 text-center">
-              <h3 className="text-3xl font-bold mb-3">Prêt à commencer ?</h3>
+              <h3 className="text-3xl font-bold mb-3">{t('cta.title')}</h3>
               <p className="text-lg text-muted-foreground mb-6">
-                Rejoins des milliers d'apprenants dès aujourd'hui
+                {t('cta.subtitle')}
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link href="/auth/signup" className={cn(buttonVariants({ size: "lg" }))}>
-                  Commencer gratuitement
+                  {t('cta.button_start')}
                 </Link>
                 <Link href="/tutorials" className={cn(buttonVariants({ variant: "outline", size: "lg" }))}>
-                  Explorer les cours
+                  {t('cta.button_explore')}
                 </Link>
               </div>
             </CardContent>

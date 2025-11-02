@@ -5,7 +5,7 @@ import { Section } from '@/components/layout/section'
 import { Grid } from '@/components/layout/grid'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-import { Button, buttonVariants } from '@/components/ui/button'
+import { buttonVariants } from '@/components/ui/button'
 import {
   BookOpenIcon,
   FlaskConicalIcon,
@@ -20,8 +20,10 @@ import {
 } from 'lucide-react'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
+import { getTranslations } from 'next-intl/server'
 
 export default async function Home() {
+  const t = await getTranslations('home')
   const supabase = await createClient()
 
   // Fetch initial prompts with comment counts
@@ -64,28 +66,28 @@ export default async function Home() {
 
   const learningPaths = [
     {
-      title: 'Débutant',
-      description: 'Découvre les bases du prompting et apprends à communiquer efficacement avec l\'IA',
-      duration: '~2h',
-      lessons: '5 leçons',
+      title: t('learningPaths.beginner_title'),
+      description: t('learningPaths.beginner_description'),
+      duration: t('learningPaths.beginner_duration'),
+      lessons: t('learningPaths.beginner_lessons'),
       icon: BookOpenIcon,
       color: 'from-green-500 to-emerald-600',
       link: '/tutorials/paths/beginner'
     },
     {
-      title: 'Intermédiaire',
-      description: 'Maîtrise les techniques avancées et explore MCP, RAG et les agents IA',
-      duration: '~4h',
-      lessons: '8 leçons',
+      title: t('learningPaths.intermediate_title'),
+      description: t('learningPaths.intermediate_description'),
+      duration: t('learningPaths.intermediate_duration'),
+      lessons: t('learningPaths.intermediate_lessons'),
       icon: BrainIcon,
       color: 'from-violet-500 to-purple-600',
       link: '/tutorials/paths/expert'
     },
     {
-      title: 'Avancé',
-      description: 'Deviens expert en systèmes multi-agents et optimisation de prompts',
-      duration: '~6h',
-      lessons: '10 leçons',
+      title: t('learningPaths.advanced_title'),
+      description: t('learningPaths.advanced_description'),
+      duration: t('learningPaths.advanced_duration'),
+      lessons: t('learningPaths.advanced_lessons'),
       icon: RocketIcon,
       color: 'from-orange-500 to-red-600',
       link: '/tutorials/paths/pro'
@@ -94,21 +96,21 @@ export default async function Home() {
 
   const concepts = [
     {
-      title: 'MCP vs RAG',
-      description: 'Comprends la différence entre ces deux approches IA',
-      icon: '🧠',
+      title: t('keyConcepts.mcp_vs_rag_title'),
+      description: t('keyConcepts.mcp_vs_rag_description'),
+      icon: t('keyConcepts.mcp_vs_rag_icon'),
       link: '/mcp-vs-rag'
     },
     {
-      title: 'Prompt Wizard',
-      description: 'Crée des prompts optimisés avec notre assistant IA',
-      icon: '✨',
+      title: t('keyConcepts.prompt_wizard_title'),
+      description: t('keyConcepts.prompt_wizard_description'),
+      icon: t('keyConcepts.prompt_wizard_icon'),
       link: '/prompts/wizard'
     },
     {
-      title: 'Playground',
-      description: 'Teste tes prompts sur GPT, Claude et Gemini',
-      icon: '🧪',
+      title: t('keyConcepts.playground_title'),
+      description: t('keyConcepts.playground_description'),
+      icon: t('keyConcepts.playground_icon'),
       link: '/prompts/wizard'
     }
   ]
@@ -121,20 +123,20 @@ export default async function Home() {
           <div className="text-center max-w-4xl mx-auto space-y-8 py-12">
             <Badge variant="soft" className="mb-4">
               <SparklesIcon className="w-3 h-3 mr-1" />
-              100% Gratuit
+              {t('newHero.badge')}
             </Badge>
 
             <h1 className="text-5xl md:text-6xl font-bold tracking-tight">
               <span className="bg-gradient-to-r from-violet-600 via-fuchsia-600 to-violet-600 bg-clip-text text-transparent">
-                Apprends à parler à l'IA
+                {t('newHero.title_gradient')}
               </span>
               <br />
-              <span className="text-foreground">comme un pro</span>
+              <span className="text-foreground">{t('newHero.title_plain')}</span>
             </h1>
 
             <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto">
-              Cours interactifs, exemples concrets, communauté bienveillante.<br />
-              Maîtrise le prompting en quelques heures.
+              {t('newHero.subtitle_line1')}<br />
+              {t('newHero.subtitle_line2')}
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
@@ -142,14 +144,14 @@ export default async function Home() {
                 href="/tutorials/paths/beginner"
                 className={cn(buttonVariants({ size: "lg" }), "min-w-[200px]")}
               >
-                Commencer gratuitement
+                {t('newHero.cta_start')}
                 <ArrowRightIcon className="w-4 h-4 ml-2" />
               </Link>
               <Link
                 href="/tutorials"
                 className={cn(buttonVariants({ variant: "outline", size: "lg" }), "min-w-[200px]")}
               >
-                Explorer les cours
+                {t('newHero.cta_explore')}
               </Link>
             </div>
 
@@ -159,19 +161,19 @@ export default async function Home() {
                 <div className="text-4xl font-bold bg-gradient-to-r from-violet-600 to-fuchsia-600 bg-clip-text text-transparent">
                   {totalUsers || 0}+
                 </div>
-                <div className="text-sm text-muted-foreground mt-1">Apprenants</div>
+                <div className="text-sm text-muted-foreground mt-1">{t('newHero.stats_learners')}</div>
               </div>
               <div>
                 <div className="text-4xl font-bold bg-gradient-to-r from-violet-600 to-fuchsia-600 bg-clip-text text-transparent">
                   {totalPrompts || 0}+
                 </div>
-                <div className="text-sm text-muted-foreground mt-1">Prompts partagés</div>
+                <div className="text-sm text-muted-foreground mt-1">{t('newHero.stats_prompts')}</div>
               </div>
               <div>
                 <div className="text-4xl font-bold bg-gradient-to-r from-violet-600 to-fuchsia-600 bg-clip-text text-transparent">
-                  100%
+                  {t('newHero.stats_free_value')}
                 </div>
-                <div className="text-sm text-muted-foreground mt-1">Gratuit</div>
+                <div className="text-sm text-muted-foreground mt-1">{t('newHero.stats_free')}</div>
               </div>
             </div>
           </div>
@@ -188,22 +190,22 @@ export default async function Home() {
                 <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                   <BookOpenIcon className="w-7 h-7 text-white" />
                 </div>
-                <CardTitle className="text-2xl">📚 Apprendre</CardTitle>
+                <CardTitle className="text-2xl">{t('mainCards.learn_emoji')} {t('mainCards.learn_title')}</CardTitle>
                 <CardDescription className="text-base">
-                  Parcours guidés de débutant à expert
+                  {t('mainCards.learn_description')}
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2 mb-6 text-sm text-muted-foreground">
-                  <li>• Cours interactifs avec quiz</li>
-                  <li>• Exemples concrets</li>
-                  <li>• Certificats de complétion</li>
+                  <li>• {t('mainCards.learn_feature1')}</li>
+                  <li>• {t('mainCards.learn_feature2')}</li>
+                  <li>• {t('mainCards.learn_feature3')}</li>
                 </ul>
                 <Link
                   href="/tutorials"
-                  className={cn(buttonVariants({ variant: "ghost" }), "w-full group/btn")}
+                  className={cn(buttonVariants({ variant: "primary" }), "w-full group/btn")}
                 >
-                  Commencer
+                  {t('mainCards.learn_cta')}
                   <ArrowRightIcon className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
                 </Link>
               </CardContent>
@@ -215,22 +217,22 @@ export default async function Home() {
                 <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                   <FlaskConicalIcon className="w-7 h-7 text-white" />
                 </div>
-                <CardTitle className="text-2xl">🧪 Expérimenter</CardTitle>
+                <CardTitle className="text-2xl">{t('mainCards.experiment_emoji')} {t('mainCards.experiment_title')}</CardTitle>
                 <CardDescription className="text-base">
-                  Teste tes prompts en temps réel
+                  {t('mainCards.experiment_description')}
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2 mb-6 text-sm text-muted-foreground">
-                  <li>• Comparaison GPT vs Claude vs Gemini</li>
-                  <li>• Templates pré-remplis</li>
-                  <li>• 20 tests gratuits/mois</li>
+                  <li>• {t('mainCards.experiment_feature1')}</li>
+                  <li>• {t('mainCards.experiment_feature2')}</li>
+                  <li>• {t('mainCards.experiment_feature3')}</li>
                 </ul>
                 <Link
                   href="/prompts/wizard"
-                  className={cn(buttonVariants({ variant: "ghost" }), "w-full group/btn")}
+                  className={cn(buttonVariants({ variant: "primary" }), "w-full group/btn")}
                 >
-                  Essayer
+                  {t('mainCards.experiment_cta')}
                   <ArrowRightIcon className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
                 </Link>
               </CardContent>
@@ -242,22 +244,22 @@ export default async function Home() {
                 <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                   <UsersIcon className="w-7 h-7 text-white" />
                 </div>
-                <CardTitle className="text-2xl">💬 Communauté</CardTitle>
+                <CardTitle className="text-2xl">{t('mainCards.community_emoji')} {t('mainCards.community_title')}</CardTitle>
                 <CardDescription className="text-base">
-                  Partage et apprends avec les autres
+                  {t('mainCards.community_description')}
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2 mb-6 text-sm text-muted-foreground">
-                  <li>• Challenges hebdomadaires</li>
-                  <li>• Entraide bienveillante</li>
-                  <li>• Badges et progression</li>
+                  <li>• {t('mainCards.community_feature1')}</li>
+                  <li>• {t('mainCards.community_feature2')}</li>
+                  <li>• {t('mainCards.community_feature3')}</li>
                 </ul>
                 <Link
                   href="/challenges"
-                  className={cn(buttonVariants({ variant: "ghost" }), "w-full group/btn")}
+                  className={cn(buttonVariants({ variant: "primary" }), "w-full group/btn")}
                 >
-                  Rejoindre
+                  {t('mainCards.community_cta')}
                   <ArrowRightIcon className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
                 </Link>
               </CardContent>
@@ -271,10 +273,10 @@ export default async function Home() {
         <Container size="lg">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Choisis ton parcours
+              {t('learningPaths.section_title')}
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Des cours structurés pour passer de débutant à expert, à ton rythme
+              {t('learningPaths.section_subtitle')}
             </p>
           </div>
 
@@ -299,7 +301,7 @@ export default async function Home() {
                       href={path.link}
                       className={cn(buttonVariants({ variant: "outline" }), "w-full")}
                     >
-                      Commencer
+                      {t('learningPaths.path_cta')}
                       <ArrowRightIcon className="w-4 h-4 ml-2" />
                     </Link>
                   </CardContent>
@@ -315,10 +317,10 @@ export default async function Home() {
         <Container size="lg">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Concepts clés expliqués
+              {t('keyConcepts.section_title')}
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Comprends les fondamentaux de l'IA avec des explications simples
+              {t('keyConcepts.section_subtitle')}
             </p>
           </div>
 
@@ -352,14 +354,14 @@ export default async function Home() {
           <div className="flex items-center justify-between mb-8">
             <div>
               <h2 className="text-2xl md:text-3xl font-bold mb-2">
-                Prompts de la communauté
+                {t('communitySection.title')}
               </h2>
               <p className="text-muted-foreground">
-                Découvre les meilleurs prompts partagés par les apprenants
+                {t('communitySection.subtitle')}
               </p>
             </div>
             <Link href="/trending" className={cn(buttonVariants({ variant: "outline" }))}>
-              Voir tout
+              {t('communitySection.view_all')}
             </Link>
           </div>
 
@@ -376,25 +378,24 @@ export default async function Home() {
             <CardContent className="p-12 text-center">
               <AwardIcon className="w-16 h-16 mx-auto mb-6 text-primary" />
               <h3 className="text-3xl font-bold mb-4">
-                Prêt à devenir un expert du prompting ?
+                {t('endCta.title')}
               </h3>
               <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-                Rejoins des milliers d'apprenants qui maîtrisent déjà l'IA.
-                Commence gratuitement dès maintenant.
+                {t('endCta.subtitle')}
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link
                   href="/tutorials/paths/beginner"
                   className={cn(buttonVariants({ size: "lg" }), "min-w-[200px]")}
                 >
-                  Commencer gratuitement
+                  {t('endCta.cta_start')}
                   <ArrowRightIcon className="w-4 h-4 ml-2" />
                 </Link>
                 <Link
                   href="/about"
                   className={cn(buttonVariants({ variant: "ghost", size: "lg" }), "min-w-[200px]")}
                 >
-                  En savoir plus
+                  {t('endCta.cta_learn_more')}
                 </Link>
               </div>
             </CardContent>

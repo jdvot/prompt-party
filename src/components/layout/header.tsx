@@ -21,7 +21,7 @@ export function Header() {
 
   return (
     <header className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-sticky">
-      <div className="w-full px-20 py-4 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div className="w-full px-4 sm:px-6 lg:px-8 py-4 flex flex-col md:flex-row items-center justify-between gap-4">
         <div className="flex items-center gap-8 w-full md:w-auto justify-between md:justify-start">
           <Link href="/" className="flex items-center gap-3 group">
             <Logo className="w-10 h-10 transition-transform duration-300 group-hover:scale-110" />
