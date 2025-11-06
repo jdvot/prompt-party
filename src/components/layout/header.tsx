@@ -81,7 +81,7 @@ export function Header() {
             size="sm"
             className="hidden lg:inline-flex w-9 px-0"
             onClick={showHelp}
-            aria-label="Keyboard shortcuts"
+            aria-label={t('aria_keyboard_shortcuts') || 'Keyboard shortcuts'}
           >
             <CommandIcon className="h-4 w-4" />
           </Button>
