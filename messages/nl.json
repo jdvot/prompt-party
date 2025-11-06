@@ -1026,7 +1026,26 @@
           "explanation": "Geeft voorbeelden om de AI het patroon te leren."
         }
       }
-    }
+    },
+    "quiz_validation_title": "Quizvalidatie",
+    "quiz_validation_description": "Antwoord correct op alle vragen om deze les te valideren",
+    "quiz_lesson_completed": "Les gevalideerd !",
+    "quiz_points_earned": "Je hebt verdient",
+    "quiz_badge_earned": "en de badge",
+    "quiz_completed_badge": "Voltooid ✓",
+    "quiz_perfect_score": "Perfect ! 100% slagingspercentage",
+    "quiz_not_perfect": "Niet helemaal...",
+    "quiz_correct_answers": "Je hebt correct op alle {totalQuestions} vragen geantwoord !",
+    "quiz_partial_answers": "{score}/{totalQuestions} juiste antwoorden. Probeer opnieuw om de les te valideren.",
+    "quiz_your_answers": "Je antwoorden :",
+    "quiz_retry": "Probeer opnieuw",
+    "quiz_validate_lesson": "Les valideren",
+    "quiz_awarding": "Punten toekennen...",
+    "quiz_previous": "Vorig",
+    "quiz_next": "Volgende",
+    "quiz_finish": "Finish",
+    "quiz_question_of": "Vraag {current}/{total}",
+    "quiz_answers_given": "{answered}/{total} antwoorden"
   },
   "leaderboard": {
     "level_beginner": "🌱 Beginner",

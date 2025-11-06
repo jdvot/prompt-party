@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { useTranslations } from 'next-intl'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
@@ -31,13 +32,16 @@ interface QuizProps {
 
 export function Quiz({
   tutorialId,
-  title = 'Quiz de validation',
-  description = 'Réponds correctement à toutes les questions pour valider cette leçon',
+  title: titleProp,
+  description: descriptionProp,
   questions,
   rewardPoints,
   rewardBadge,
   onComplete
 }: QuizProps) {
+  const t = useTranslations('tutorials')
+  const title = titleProp || t('quiz_validation_title')
+  const description = descriptionProp || t('quiz_validation_description')
   const [currentQuestion, setCurrentQuestion] = useState(0)
   const [selectedAnswers, setSelectedAnswers] = useState<number[]>(new Array(questions.length).fill(-1))
   const [showResults, setShowResults] = useState(false)
@@ -103,13 +107,13 @@ export function Quiz({
           >
             <Trophy className="w-20 h-20 mx-auto mb-4 text-green-600" />
           </motion.div>
-          <h3 className="text-2xl font-bold mb-2">Leçon validée !</h3>
+          <h3 className="text-2xl font-bold mb-2">{t('quiz_lesson_completed')}</h3>
           <p className="text-muted-foreground mb-6">
-            Tu as gagné <strong className="text-green-600">+{rewardPoints} points</strong>
-            {rewardBadge && <> et le badge <strong className="text-violet-600">{rewardBadge}</strong></>}
+            {t('quiz_points_earned')} <strong className="text-green-600">+{rewardPoints} points</strong>
+            {rewardBadge && <> {t('quiz_badge_earned')} <strong className="text-violet-600">{rewardBadge}</strong></>}
           </p>
           <Badge className="bg-gradient-to-r from-green-500 to-emerald-600 text-white">
-            Complété ✓
+            {t('quiz_completed_badge')}
           </Badge>
         </CardContent>
       </Card>
@@ -127,26 +131,26 @@ export function Quiz({
             {passed ? (
               <>
                 <CheckCircle className="w-6 h-6 text-green-600" />
-                Parfait ! 100% de réussite
+                {t('quiz_perfect_score')}
               </>
             ) : (
               <>
                 <XCircle className="w-6 h-6 text-orange-600" />
-                Pas tout à fait...
+                {t('quiz_not_perfect')}
               </>
             )}
           </CardTitle>
           <CardDescription>
             {passed
-              ? `Tu as répondu correctement aux ${totalQuestions} questions !`
-              : `${score}/${totalQuestions} bonnes réponses. Réessaie pour valider la leçon.`}
+              ? t('quiz_correct_answers', { totalQuestions })
+              : t('quiz_partial_answers', { score, totalQuestions })}
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           {/* Review wrong answers */}
           {!passed && (
             <div className="space-y-3">
-              <h4 className="font-semibold">Tes réponses :</h4>
+              <h4 className="font-semibold">{t('quiz_your_answers')}</h4>
               {questions.map((question, index) => {
                 const isCorrect = selectedAnswers[index] === question.correctAnswer
                 return (
@@ -182,13 +186,13 @@ export function Quiz({
                 setCurrentQuestion(0)
                 setSelectedAnswers(new Array(questions.length).fill(-1))
               }} variant="outline" className="flex-1">
-                Réessayer
+                {t('quiz_retry')}
               </Button>
             )}
             {passed && (
               <Button onClick={handleComplete} className="flex-1" disabled={isAwarding}>
                 <Sparkles className="w-4 h-4 mr-2" />
-                {isAwarding ? 'Attribution des points...' : `Valider la leçon (+${rewardPoints} points)`}
+                {isAwarding ? t('quiz_awarding') : `${t('quiz_validate_lesson')} (+${rewardPoints} points)`}
               </Button>
             )}
           </div>
@@ -204,7 +208,7 @@ export function Quiz({
     <Card className="bg-gradient-to-br from-violet-600/5 to-violet-600/5 border-violet-600/20">
       <CardHeader>
         <div className="flex items-center justify-between mb-2">
-          <Badge variant="soft">Question {currentQuestion + 1}/{totalQuestions}</Badge>
+          <Badge variant="soft">{t('quiz_question_of', { current: currentQuestion + 1, total: totalQuestions })}</Badge>
           <Badge variant="soft" className="bg-green-500/10 text-green-700 dark:text-green-400">
             +{rewardPoints} points
           </Badge>
@@ -264,16 +268,16 @@ export function Quiz({
             disabled={currentQuestion === 0}
           >
             <ArrowLeft className="w-4 h-4" />
-            <span className="leading-none">Précédent</span>
+            <span className="leading-none">{t('quiz_previous')}</span>
           </Button>
           <div className="text-sm text-muted-foreground">
-            {selectedAnswers.filter(a => a !== -1).length}/{totalQuestions} réponses
+            {t('quiz_answers_given', { answered: selectedAnswers.filter(a => a !== -1).length, total: totalQuestions })}
           </div>
           <Button
             onClick={handleNext}
             disabled={selectedAnswers[currentQuestion] === -1}
           >
-            <span className="leading-none">{currentQuestion === totalQuestions - 1 ? 'Terminer' : 'Suivant'}</span>
+            <span className="leading-none">{currentQuestion === totalQuestions - 1 ? t('quiz_finish') : t('quiz_next')}</span>
             <ArrowRight className="w-4 h-4" />
           </Button>
         </div>
