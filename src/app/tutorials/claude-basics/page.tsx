@@ -377,7 +377,7 @@ export default async function ClaudeBasicsTutorial() {
 
         {/* Practice Exercise */}
         <section>
-          <Card className="bg-gradient-to-r from-violet-600/10 to-fuchsia-600/10 border-violet-600/20">
+          <Card className="bg-gradient-to-r from-violet-600/10 to-violet-600/10 border-violet-600/20">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Icons.BookOpen className="w-5 h-5 text-primary" />
@@ -419,7 +419,7 @@ export default async function ClaudeBasicsTutorial() {
         </section>
 
         {/* Next Steps */}
-        <Card className="bg-gradient-to-r from-violet-600/10 to-fuchsia-600/10 border-violet-600/20">
+        <Card className="bg-gradient-to-r from-violet-600/10 to-violet-600/10 border-violet-600/20">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Icons.Lightbulb className="w-5 h-5 text-primary" />

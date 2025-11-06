@@ -1,12 +1,6 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge'
-import { Button, buttonVariants } from '@/components/ui/button'
-import { TutorialCard } from '@/components/tutorials/tutorial-card'
-import * as Icons from 'lucide-react'
-import Link from 'next/link'
 import type { Metadata } from 'next'
 import { getTranslations } from 'next-intl/server'
-import { cn } from '@/lib/utils'
+import { TutorialsPageClient } from '@/components/pages/tutorials-page-client'
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('tutorials.index')
@@ -53,7 +47,7 @@ export default async function TutorialsPage() {
         iconName: 'Layers',
         topics: [t('tutorial_prompt_templates_topic1'), t('tutorial_prompt_templates_topic2'), t('tutorial_prompt_templates_topic3')],
         link: '/tutorials/prompt-templates',
-        color: 'from-purple-500 to-pink-500'
+        color: 'from-purple-500 to-cyan-500'
       }
     ],
     intermediate: [
@@ -101,7 +95,7 @@ export default async function TutorialsPage() {
         iconName: 'Rocket',
         topics: [t('tutorial_multi_agent_systems_topic1'), t('tutorial_multi_agent_systems_topic2'), t('tutorial_multi_agent_systems_topic3')],
         link: '/tutorials/multi-agent-systems',
-        color: 'from-red-500 to-pink-500'
+        color: 'from-red-500 to-cyan-500'
       },
       {
         id: 'code-generation',
@@ -147,248 +141,45 @@ export default async function TutorialsPage() {
     }
   ]
 
+  // Get translations as an object to pass to client component
+  const translations = {
+    hero_badge: t('hero_badge'),
+    hero_title: t('hero_title'),
+    hero_subtitle: t('hero_subtitle'),
+    start_learning: t('start_learning'),
+    browse_tutorials: t('browse_tutorials'),
+    stat_tutorials: t('stat_tutorials'),
+    stat_tutorials_label: t('stat_tutorials_label'),
+    stat_examples: t('stat_examples'),
+    stat_examples_label: t('stat_examples_label'),
+    stat_free: t('stat_free'),
+    stat_free_label: t('stat_free_label'),
+    choose_path: t('choose_path'),
+    choose_path_subtitle: t('choose_path_subtitle'),
+    start_path: t('start_path'),
+    beginner_title: t('beginner_title'),
+    beginner_subtitle: t('beginner_subtitle'),
+    intermediate_title: t('intermediate_title'),
+    intermediate_subtitle: t('intermediate_subtitle'),
+    advanced_title: t('advanced_title'),
+    advanced_subtitle: t('advanced_subtitle'),
+    resources_title: t('resources_title'),
+    resources_subtitle: t('resources_subtitle'),
+    resources_official_docs: t('resources_official_docs'),
+    resources_community: t('resources_community'),
+    resource_claude_docs: t('resource_claude_docs'),
+    resource_openai_docs: t('resource_openai_docs'),
+    resource_prompting_guide: t('resource_prompting_guide'),
+    resource_community_tutorials: t('resource_community_tutorials'),
+    resource_challenges: t('resource_challenges'),
+    resource_teams: t('resource_teams')
+  }
+
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background via-background to-muted/20">
-      {/* Hero Section - Atlas Style */}
-      <section className="relative overflow-hidden">
-        {/* Background Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-violet-500/10 via-fuchsia-500/10 to-transparent opacity-50" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-violet-500/20 via-transparent to-transparent" />
-
-        <div className="container mx-auto px-4 py-20 md:py-32 relative">
-          <div className="max-w-4xl mx-auto text-center space-y-8">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-violet-500/10 border border-violet-500/20">
-              <Icons.BookMarked className="w-4 h-4 text-violet-600 dark:text-violet-400" />
-              <span className="text-sm font-medium text-violet-600 dark:text-violet-400">
-                {t('hero_badge')}
-              </span>
-            </div>
-
-            {/* Title */}
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
-              <span className="bg-gradient-to-r from-violet-600 via-fuchsia-600 to-violet-600 bg-clip-text text-transparent animate-gradient bg-[length:200%_auto]">
-                {t('hero_title')}
-              </span>
-            </h1>
-
-            {/* Subtitle */}
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              {t('hero_subtitle')}
-            </p>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-              <Button size="lg" className="group relative overflow-hidden bg-gradient-to-r from-violet-600 to-fuchsia-600 hover:from-violet-700 hover:to-fuchsia-700 text-white border-0 min-w-[200px]">
-                <span className="relative z-10 flex items-center gap-2">
-                  <Icons.Play className="w-5 h-5" />
-                  {t('start_learning')}
-                  <Icons.ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </span>
-              </Button>
-              <Link href="#beginner" className={cn(buttonVariants({ size: "lg", variant: "outline" }), "min-w-[200px] group")}>
-                <Icons.BookOpen className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
-                {t('browse_tutorials')}
-              </Link>
-            </div>
-
-            {/* Stats */}
-            <div className="grid grid-cols-3 gap-8 pt-12 max-w-2xl mx-auto">
-              <div className="space-y-2">
-                <div className="text-4xl font-bold bg-gradient-to-r from-violet-600 to-fuchsia-600 bg-clip-text text-transparent">
-                  {t('stat_tutorials')}
-                </div>
-                <div className="text-sm text-muted-foreground">{t('stat_tutorials_label')}</div>
-              </div>
-              <div className="space-y-2">
-                <div className="text-4xl font-bold bg-gradient-to-r from-violet-600 to-fuchsia-600 bg-clip-text text-transparent">
-                  {t('stat_examples')}
-                </div>
-                <div className="text-sm text-muted-foreground">{t('stat_examples_label')}</div>
-              </div>
-              <div className="space-y-2">
-                <div className="text-4xl font-bold bg-gradient-to-r from-violet-600 to-fuchsia-600 bg-clip-text text-transparent">
-                  {t('stat_free')}
-                </div>
-                <div className="text-sm text-muted-foreground">{t('stat_free_label')}</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Learning Paths Section */}
-      <section className="container mx-auto px-4 py-20">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              {t('choose_path')}
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              {t('choose_path_subtitle')}
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {learningPaths.map((path, index) => {
-              const Icon = Icons[path.iconName as keyof typeof Icons] as React.ComponentType<{ className?: string }>
-              return (
-                <Card key={index} className="group relative overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border-2 hover:border-violet-500/50">
-                  {/* Gradient Background */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${path.color} opacity-5 group-hover:opacity-10 transition-opacity`} />
-
-                  <CardHeader className="relative">
-                    <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${path.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
-                      <Icon className="w-7 h-7 text-white" />
-                    </div>
-                    <CardTitle className="text-xl">{path.title}</CardTitle>
-                    <CardDescription className="text-base">
-                      {path.description}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent className="relative space-y-4">
-                    <div className="flex items-center justify-between text-sm">
-                      <span className="text-muted-foreground">{path.steps}</span>
-                      <span className="text-muted-foreground">{path.duration}</span>
-                    </div>
-                    <Link href={path.link} className={cn(buttonVariants({ variant: "outline" }), "w-full group/btn")}>
-                      {t('start_path')}
-                      <Icons.ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
-                    </Link>
-                  </CardContent>
-                </Card>
-              )
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Tutorials Grid */}
-      <section className="container mx-auto px-4 py-20" id="beginner">
-        <div className="max-w-7xl mx-auto space-y-20">
-          {/* Beginner */}
-          <div>
-            <div className="flex items-center gap-3 mb-8">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center">
-                <Icons.BookOpen className="w-6 h-6 text-white" />
-              </div>
-              <div>
-                <h2 className="text-3xl font-bold">{t('beginner_title')}</h2>
-                <p className="text-muted-foreground">{t('beginner_subtitle')}</p>
-              </div>
-            </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {tutorials.beginner.map((tutorial) => (
-                <TutorialCard key={tutorial.id} tutorial={tutorial} />
-              ))}
-            </div>
-          </div>
-
-          {/* Intermediate */}
-          <div>
-            <div className="flex items-center gap-3 mb-8">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-violet-500 to-purple-500 flex items-center justify-center">
-                <Icons.Brain className="w-6 h-6 text-white" />
-              </div>
-              <div>
-                <h2 className="text-3xl font-bold">{t('intermediate_title')}</h2>
-                <p className="text-muted-foreground">{t('intermediate_subtitle')}</p>
-              </div>
-            </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {tutorials.intermediate.map((tutorial) => (
-                <TutorialCard key={tutorial.id} tutorial={tutorial} />
-              ))}
-            </div>
-          </div>
-
-          {/* Advanced */}
-          <div>
-            <div className="flex items-center gap-3 mb-8">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-red-500 to-pink-500 flex items-center justify-center">
-                <Icons.Rocket className="w-6 h-6 text-white" />
-              </div>
-              <div>
-                <h2 className="text-3xl font-bold">{t('advanced_title')}</h2>
-                <p className="text-muted-foreground">{t('advanced_subtitle')}</p>
-              </div>
-            </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {tutorials.advanced.map((tutorial) => (
-                <TutorialCard key={tutorial.id} tutorial={tutorial} />
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Resources Section */}
-      <section className="container mx-auto px-4 py-20">
-        <Card className="max-w-5xl mx-auto bg-gradient-to-br from-violet-500/5 via-fuchsia-500/5 to-violet-500/5 border-violet-500/20">
-          <CardHeader className="text-center pb-8">
-            <CardTitle className="text-3xl mb-2">{t('resources_title')}</CardTitle>
-            <CardDescription className="text-base">
-              {t('resources_subtitle')}
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="space-y-4">
-                <h4 className="font-semibold text-lg flex items-center gap-2">
-                  <Icons.BookMarked className="w-5 h-5 text-violet-600" />
-                  {t('resources_official_docs')}
-                </h4>
-                <ul className="space-y-3">
-                  <li>
-                    <a href="https://docs.anthropic.com/claude/docs" target="_blank" rel="noopener" className="group flex items-center gap-2 text-muted-foreground hover:text-violet-600 transition-colors">
-                      <Icons.ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                      {t('resource_claude_docs')}
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://platform.openai.com/docs" target="_blank" rel="noopener" className="group flex items-center gap-2 text-muted-foreground hover:text-violet-600 transition-colors">
-                      <Icons.ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                      {t('resource_openai_docs')}
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://www.promptingguide.ai/" target="_blank" rel="noopener" className="group flex items-center gap-2 text-muted-foreground hover:text-violet-600 transition-colors">
-                      <Icons.ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                      {t('resource_prompting_guide')}
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div className="space-y-4">
-                <h4 className="font-semibold text-lg flex items-center gap-2">
-                  <Icons.Sparkles className="w-5 h-5 text-fuchsia-600" />
-                  {t('resources_community')}
-                </h4>
-                <ul className="space-y-3">
-                  <li>
-                    <Link href="/prompts?tag=tutorial" className="group flex items-center gap-2 text-muted-foreground hover:text-fuchsia-600 transition-colors">
-                      <Icons.ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                      {t('resource_community_tutorials')}
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/challenges" className="group flex items-center gap-2 text-muted-foreground hover:text-fuchsia-600 transition-colors">
-                      <Icons.ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                      {t('resource_challenges')}
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/teams" className="group flex items-center gap-2 text-muted-foreground hover:text-fuchsia-600 transition-colors">
-                      <Icons.ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                      {t('resource_teams')}
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-      </section>
-    </div>
+    <TutorialsPageClient
+      tutorials={tutorials}
+      learningPaths={learningPaths}
+      t={translations}
+    />
   )
 }

@@ -1,52 +1,83 @@
+import Image from 'next/image'
+
 export function Logo({ className = "w-8 h-8" }: { className?: string }) {
   return (
     <svg
       className={className}
-      viewBox="0 0 200 200"
+      viewBox="0 0 512 512"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
       <defs>
-        <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#8B5CF6" />
-          <stop offset="50%" stopColor="#EC4899" />
-          <stop offset="100%" stopColor="#F59E0B" />
+        {/* Main gradient Indigo to Violet */}
+        <linearGradient id="logoMainGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#6366F1" />
+          <stop offset="100%" stopColor="#8B5CF6" />
+        </linearGradient>
+
+        {/* Cyan accent */}
+        <linearGradient id="logoAccentGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#22D3EE" />
+          <stop offset="100%" stopColor="#06B6D4" />
         </linearGradient>
       </defs>
 
-      {/* Main circle background */}
-      <circle cx="100" cy="100" r="90" fill="url(#logoGradient)" opacity="0.1" />
+      {/* Graduation Cap - Simplified for header */}
 
-      {/* Speech bubble shape */}
-      <path
-        d="M140 60 C160 60 170 70 170 85 L170 115 C170 130 160 140 140 140 L75 140 L55 160 L55 140 C40 140 30 130 30 115 L30 85 C30 70 40 60 55 60 Z"
-        fill="url(#logoGradient)"
-      />
+      {/* Cap Top (mortarboard) - diamond/square rotated */}
+      <rect x="156" y="156" width="200" height="200"
+            rx="12"
+            transform="rotate(45 256 256)"
+            fill="url(#logoMainGradient)"/>
 
-      {/* Sparkle stars inside */}
-      <circle cx="70" cy="90" r="4" fill="white" opacity="0.9" />
-      <circle cx="100" cy="85" r="5" fill="white" opacity="0.9" />
-      <circle cx="130" cy="95" r="4" fill="white" opacity="0.9" />
+      {/* Cap base shadow for depth */}
+      <ellipse cx="256" cy="300" rx="100" ry="20"
+               fill="url(#logoMainGradient)" opacity="0.2"/>
 
-      {/* Small star accent top right */}
-      <path
-        d="M155 50 L157 55 L162 57 L157 59 L155 64 L153 59 L148 57 L153 55 Z"
-        fill="#F59E0B"
-      />
+      {/* Book pages integrated into design */}
+      <rect x="206" y="320" width="100" height="130"
+            rx="8"
+            fill="url(#logoMainGradient)" opacity="0.15"/>
 
-      {/* Small star accent bottom left */}
-      <path
-        d="M45 150 L47 155 L52 157 L47 159 L45 164 L43 159 L38 157 L43 155 Z"
-        fill="#EC4899"
-      />
+      {/* Book spine/divider */}
+      <rect x="254" y="320" width="4" height="130"
+            rx="2"
+            fill="url(#logoMainGradient)" opacity="0.3"/>
+
+      {/* Tassel - simple line + circle (Cyan accent) */}
+      <line x1="340" y1="220" x2="365" y2="275"
+            stroke="url(#logoAccentGradient)"
+            strokeWidth="6"
+            strokeLinecap="round"/>
+
+      <circle cx="365" cy="280" r="10"
+              fill="url(#logoAccentGradient)"/>
+
+      {/* Small decorative dots (sparkle effect) */}
+      <circle cx="180" cy="180" r="6" fill="#22D3EE" opacity="0.6"/>
+      <circle cx="332" cy="180" r="6" fill="#22D3EE" opacity="0.6"/>
+      <circle cx="256" cy="140" r="8" fill="#22D3EE" opacity="0.8"/>
     </svg>
   )
 }
 
 export function LogoText({ className = "" }: { className?: string }) {
   return (
-    <span className={`font-bold bg-gradient-to-r from-purple-500 via-pink-500 to-amber-500 bg-clip-text text-transparent ${className}`}>
-      Prompt Party
+    <span className={`font-bold bg-gradient-to-r from-indigo-600 via-violet-600 to-cyan-500 bg-clip-text text-transparent ${className}`}>
+      Prompt Academy
     </span>
+  )
+}
+
+export function LogoFull({ className = "" }: { className?: string }) {
+  return (
+    <Image
+      src="/branding/logo/logo-full.svg"
+      alt="Prompt Academy"
+      width={200}
+      height={60}
+      className={className}
+      priority
+    />
   )
 }

@@ -5,6 +5,7 @@ import { AdvancedFilters, SearchFilters } from '@/components/search/advanced-fil
 import { getTranslations } from 'next-intl/server'
 import type { Metadata } from 'next'
 import { SearchIcon } from 'lucide-react'
+import Image from 'next/image'
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('search')
@@ -170,12 +171,35 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
             )}
           </>
         ) : (
-          <div className="text-center py-16">
-            <SearchIcon className="w-16 h-16 mx-auto mb-4 text-muted-foreground opacity-50" />
-            <h2 className="text-2xl font-semibold mb-2">{t('no_results')}</h2>
-            <p className="text-muted-foreground">
+          <div className="text-center py-16 max-w-2xl mx-auto">
+            <div className="relative w-64 h-64 mx-auto mb-8 animate-in fade-in zoom-in duration-500">
+              <div className="absolute inset-0 bg-gradient-to-br from-violet-500/10 via-indigo-500/10 to-cyan-500/10 rounded-full blur-2xl" />
+              <Image
+                src="/branding/illustrations/empty-states/empty-search.svg"
+                alt="No search results"
+                width={256}
+                height={256}
+                className="relative z-10 drop-shadow-lg"
+              />
+            </div>
+            <h2 className="text-3xl font-bold mb-3">{t('no_results')}</h2>
+            <p className="text-lg text-muted-foreground mb-6">
               {t('no_results_description')}
             </p>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <a
+                href="/search"
+                className="px-6 py-2.5 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors font-medium"
+              >
+                Clear filters
+              </a>
+              <a
+                href="/tutorials"
+                className="px-6 py-2.5 rounded-lg border border-border hover:bg-muted transition-colors font-medium"
+              >
+                Browse tutorials
+              </a>
+            </div>
           </div>
         )}
       </div>

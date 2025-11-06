@@ -112,7 +112,7 @@ Show your reasoning for each step.`}
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
                   <Icons.XCircle className="w-5 h-5 text-red-600" />
-                  Without CoT
+                  {t('without_cot')}
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -121,7 +121,7 @@ Show your reasoning for each step.`}
                   code="What's 15% of $87.50?"
                 />
                 <p className="text-sm text-muted-foreground mt-3">
-                  Direct answer without explanation. Harder to verify or learn from.
+                  {t('without_cot_desc')}
                 </p>
               </CardContent>
             </Card>
@@ -130,7 +130,7 @@ Show your reasoning for each step.`}
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
                   <Icons.CheckCircle className="w-5 h-5 text-green-600" />
-                  With CoT
+                  {t('with_cot')}
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -143,7 +143,7 @@ Show your reasoning for each step.`}
 4. Show final answer`}
                 />
                 <p className="text-sm text-muted-foreground mt-3">
-                  Clear reasoning process. Easy to verify and understand.
+                  {t('with_cot_desc')}
                 </p>
               </CardContent>
             </Card>
@@ -151,18 +151,18 @@ Show your reasoning for each step.`}
         </section>
 
         <section>
-          <h2 className="text-3xl font-bold mb-4">2. Few-Shot Learning</h2>
+          <h2 className="text-3xl font-bold mb-4">{t('few_shot_title')}</h2>
 
           <div className="prose prose-neutral dark:prose-invert max-w-none mb-6">
             <p className="text-lg">
-              Provide examples of the desired input-output pattern to guide the AI's responses.
+              {t('few_shot_intro')}
             </p>
           </div>
 
           <Card className="mb-4">
             <CardHeader>
-              <CardTitle>Few-Shot Pattern</CardTitle>
-              <CardDescription>Show 2-3 examples before your actual request</CardDescription>
+              <CardTitle>{t('few_shot_pattern')}</CardTitle>
+              <CardDescription>{t('few_shot_pattern_desc')}</CardDescription>
             </CardHeader>
             <CardContent>
               <CodeBlock
@@ -191,24 +191,24 @@ Output:`}
           <Alert>
             <Icons.Lightbulb className="w-4 h-4" />
             <AlertDescription>
-              <strong>{tCommon('pro_tip')}:</strong> 2-5 examples usually work best. Too few and the pattern isn't clear. Too many and you waste tokens!
+              <strong>{tCommon('pro_tip')}:</strong> {t('few_shot_tip')}
             </AlertDescription>
           </Alert>
         </section>
 
         <section>
-          <h2 className="text-3xl font-bold mb-4">3. Role-Based Prompting</h2>
+          <h2 className="text-3xl font-bold mb-4">{t('role_prompting_title')}</h2>
 
           <div className="prose prose-neutral dark:prose-invert max-w-none mb-6">
             <p className="text-lg">
-              Assign a specific role or persona to the AI to get responses aligned with that perspective and expertise.
+              {t('role_prompting_intro')}
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-4">
             <Card>
               <CardHeader>
-                <CardTitle className="text-lg">Role Pattern</CardTitle>
+                <CardTitle className="text-lg">{t('role_pattern')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <CodeBlock
@@ -230,18 +230,18 @@ Respond as this role would.`}
 
             <Card>
               <CardHeader>
-                <CardTitle className="text-lg">Example Roles</CardTitle>
+                <CardTitle className="text-lg">{t('example_roles')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <ul className="text-sm space-y-2">
-                  <li>• Senior software architect</li>
-                  <li>• Marketing strategist</li>
-                  <li>• Technical writer</li>
-                  <li>• UX researcher</li>
-                  <li>• Financial analyst</li>
-                  <li>• Customer support expert</li>
-                  <li>• Product manager</li>
-                  <li>• Data scientist</li>
+                  <li>{t('role_example_1')}</li>
+                  <li>{t('role_example_2')}</li>
+                  <li>{t('role_example_3')}</li>
+                  <li>{t('role_example_4')}</li>
+                  <li>{t('role_example_5')}</li>
+                  <li>{t('role_example_6')}</li>
+                  <li>{t('role_example_7')}</li>
+                  <li>{t('role_example_8')}</li>
                 </ul>
               </CardContent>
             </Card>
@@ -249,7 +249,7 @@ Respond as this role would.`}
 
           <Card className="mt-4">
             <CardHeader>
-              <CardTitle>Real Example</CardTitle>
+              <CardTitle>{t('real_example')}</CardTitle>
             </CardHeader>
             <CardContent>
               <CodeBlock
@@ -273,21 +273,21 @@ Provide 5 specific, actionable recommendations.`}
         </section>
 
         <section>
-          <h2 className="text-3xl font-bold mb-4">4. Meta-Prompting</h2>
+          <h2 className="text-3xl font-bold mb-4">{t('meta_prompting_title')}</h2>
 
           <div className="prose prose-neutral dark:prose-invert max-w-none mb-6">
             <p className="text-lg">
-              Ask the AI to help you create or improve prompts. The AI becomes your prompting assistant!
+              {t('meta_prompting_intro')}
             </p>
           </div>
 
           <Card className="mb-4">
             <CardHeader>
-              <CardTitle>Meta-Prompting Techniques</CardTitle>
+              <CardTitle>{t('meta_prompting_techniques')}</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <div>
-                <h4 className="font-semibold mb-2">Prompt Improvement</h4>
+                <h4 className="font-semibold mb-2">{t('prompt_improvement')}</h4>
                 <CodeBlock
                   language="text"
                   code={`I want to create a prompt for [PURPOSE].
@@ -305,7 +305,7 @@ Provide the improved version.`}
               </div>
 
               <div>
-                <h4 className="font-semibold mb-2">Prompt Generation</h4>
+                <h4 className="font-semibold mb-2">{t('prompt_generation')}</h4>
                 <CodeBlock
                   language="text"
                   code={`Help me create an effective prompt for this task:
@@ -323,11 +323,11 @@ Generate an optimized prompt I can use.`}
         </section>
 
         <section>
-          <h2 className="text-3xl font-bold mb-4">5. Iterative Refinement</h2>
+          <h2 className="text-3xl font-bold mb-4">{t('iterative_refinement_title')}</h2>
 
           <Card className="mb-4">
             <CardHeader>
-              <CardTitle>The Refinement Loop</CardTitle>
+              <CardTitle>{t('refinement_loop')}</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="space-y-3">
@@ -336,8 +336,8 @@ Generate an optimized prompt I can use.`}
                     <span className="text-sm font-bold text-primary">1</span>
                   </div>
                   <div>
-                    <h4 className="font-semibold">Start with basic prompt</h4>
-                    <p className="text-sm text-muted-foreground">Get initial response</p>
+                    <h4 className="font-semibold">{t('refinement_step_1')}</h4>
+                    <p className="text-sm text-muted-foreground">{t('refinement_step_1_desc')}</p>
                   </div>
                 </div>
 
@@ -346,8 +346,8 @@ Generate an optimized prompt I can use.`}
                     <span className="text-sm font-bold text-primary">2</span>
                   </div>
                   <div>
-                    <h4 className="font-semibold">Identify what's missing or wrong</h4>
-                    <p className="text-sm text-muted-foreground">Analyze the output</p>
+                    <h4 className="font-semibold">{t('refinement_step_2')}</h4>
+                    <p className="text-sm text-muted-foreground">{t('refinement_step_2_desc')}</p>
                   </div>
                 </div>
 
@@ -356,8 +356,8 @@ Generate an optimized prompt I can use.`}
                     <span className="text-sm font-bold text-primary">3</span>
                   </div>
                   <div>
-                    <h4 className="font-semibold">Add specific refinements</h4>
-                    <p className="text-sm text-muted-foreground">"This is good, but could you also..."</p>
+                    <h4 className="font-semibold">{t('refinement_step_3')}</h4>
+                    <p className="text-sm text-muted-foreground">{t('refinement_step_3_desc')}</p>
                   </div>
                 </div>
 
@@ -366,8 +366,8 @@ Generate an optimized prompt I can use.`}
                     <span className="text-sm font-bold text-primary">4</span>
                   </div>
                   <div>
-                    <h4 className="font-semibold">Iterate until satisfied</h4>
-                    <p className="text-sm text-muted-foreground">Refine 2-3 times for best results</p>
+                    <h4 className="font-semibold">{t('refinement_step_4')}</h4>
+                    <p className="text-sm text-muted-foreground">{t('refinement_step_4_desc')}</p>
                   </div>
                 </div>
               </div>
@@ -387,20 +387,20 @@ This is helpful! Can you refine it by:
         </section>
 
         <section>
-          <h2 className="text-3xl font-bold mb-4">6. Constraint-Based Prompting</h2>
+          <h2 className="text-3xl font-bold mb-4">{t('constraint_prompting_title')}</h2>
 
           <Card>
             <CardHeader>
-              <CardTitle>Using Constraints Creatively</CardTitle>
+              <CardTitle>{t('using_constraints')}</CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground mb-4">
-                Constraints can paradoxically improve creativity and output quality:
+                {t('constraints_intro')}
               </p>
 
               <div className="space-y-4">
                 <div>
-                  <h4 className="font-semibold mb-2">Length Constraints</h4>
+                  <h4 className="font-semibold mb-2">{t('length_constraints')}</h4>
                   <CodeBlock
                     language="text"
                     code="Explain quantum computing in exactly 3 sentences, each under 20 words."
@@ -408,7 +408,7 @@ This is helpful! Can you refine it by:
                 </div>
 
                 <div>
-                  <h4 className="font-semibold mb-2">Format Constraints</h4>
+                  <h4 className="font-semibold mb-2">{t('format_constraints')}</h4>
                   <CodeBlock
                     language="text"
                     code="Summarize this article as: 1 headline, 3 bullet points, 1 call-to-action. Use emoji for each bullet."
@@ -416,7 +416,7 @@ This is helpful! Can you refine it by:
                 </div>
 
                 <div>
-                  <h4 className="font-semibold mb-2">Style Constraints</h4>
+                  <h4 className="font-semibold mb-2">{t('style_constraints')}</h4>
                   <CodeBlock
                     language="text"
                     code="Write this technical documentation using only words a 10-year-old would understand. No jargon."
@@ -424,7 +424,7 @@ This is helpful! Can you refine it by:
                 </div>
 
                 <div>
-                  <h4 className="font-semibold mb-2">Perspective Constraints</h4>
+                  <h4 className="font-semibold mb-2">{t('perspective_constraints')}</h4>
                   <CodeBlock
                     language="text"
                     code="Analyze this product from 3 different perspectives: a developer, a marketer, and an end user."
@@ -436,25 +436,25 @@ This is helpful! Can you refine it by:
         </section>
 
         <section>
-          <Card className="bg-gradient-to-r from-violet-600/10 to-fuchsia-600/10 border-violet-600/20">
+          <Card className="bg-gradient-to-r from-violet-600/10 to-violet-600/10 border-violet-600/20">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Icons.BookOpen className="w-5 h-5 text-primary" />
-                Practice Challenge
+                {t('practice_challenge')}
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="mb-4">Combine at least 3 techniques from this tutorial to create a prompt for:</p>
+              <p className="mb-4">{t('practice_intro')}</p>
 
               <div className="bg-background/50 p-4 rounded-lg border">
-                <p className="font-semibold mb-2">Task:</p>
+                <p className="font-semibold mb-2">{t('practice_task_label')}</p>
                 <p className="text-muted-foreground">
-                  Create a product description for a new smartphone that appeals to both tech enthusiasts and casual users.
+                  {t('practice_task')}
                 </p>
               </div>
 
               <p className="text-sm text-muted-foreground mt-4">
-                Hint: Try combining role-based prompting + few-shot examples + constraints!
+                {t('practice_hint')}
               </p>
             </CardContent>
           </Card>
@@ -465,7 +465,7 @@ This is helpful! Can you refine it by:
           <AdvancedPromptingQuiz />
         </section>
 
-        <Card className="bg-gradient-to-r from-violet-600/10 to-fuchsia-600/10 border-violet-600/20">
+        <Card className="bg-gradient-to-r from-violet-600/10 to-violet-600/10 border-violet-600/20">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Icons.Lightbulb className="w-5 h-5 text-primary" />

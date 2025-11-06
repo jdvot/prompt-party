@@ -4,7 +4,7 @@ import { cn } from '@/lib/utils'
 import { cva, type VariantProps } from 'class-variance-authority'
 
 const buttonVariants = cva(
-  'inline-flex items-center justify-center gap-2 font-semibold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none whitespace-nowrap',
+  'inline-flex items-center justify-center gap-2 font-semibold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none whitespace-nowrap leading-none',
   {
     variants: {
       variant: {
@@ -58,9 +58,9 @@ const buttonVariants = cva(
 
         // Gradient - Premium vibrant gradient
         gradient: [
-          'bg-gradient-to-r from-violet-600 via-fuchsia-600 to-pink-600',
-          'text-white shadow-lg shadow-violet-500/30',
-          'hover:shadow-xl hover:shadow-fuchsia-500/40 hover:scale-[1.02]',
+          'bg-gradient-to-r from-indigo-600 via-violet-600 to-cyan-500',
+          'text-white shadow-lg shadow-indigo-500/30',
+          'hover:shadow-xl hover:shadow-indigo-500/40 hover:scale-[1.02]',
           'active:scale-[0.98]',
           'bg-[length:200%_100%] hover:bg-right-bottom',
           'transition-all duration-500',
@@ -98,37 +98,44 @@ export interface ButtonProps
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, asChild = false, loading, children, disabled, ...props }, ref) => {
     const Comp = asChild ? Slot : 'button'
+    const isDisabled = disabled || loading
 
     return (
       <Comp
         className={cn(buttonVariants({ variant, size, className }))}
         ref={ref}
-        disabled={disabled || loading}
+        disabled={isDisabled}
+        aria-busy={loading}
+        aria-disabled={isDisabled}
         {...props}
       >
         {loading && (
-          <svg
-            className="animate-spin h-4 w-4"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-          >
-            <circle
-              className="opacity-25"
-              cx="12"
-              cy="12"
-              r="10"
-              stroke="currentColor"
-              strokeWidth="4"
-            />
-            <path
-              className="opacity-75"
-              fill="currentColor"
-              d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-            />
-          </svg>
+          <span className="inline-flex leading-none" aria-hidden="true">
+            <svg
+              className="animate-spin h-4 w-4"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              role="presentation"
+            >
+              <circle
+                className="opacity-25"
+                cx="12"
+                cy="12"
+                r="10"
+                stroke="currentColor"
+                strokeWidth="4"
+              />
+              <path
+                className="opacity-75"
+                fill="currentColor"
+                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+              />
+            </svg>
+          </span>
         )}
         {children}
+        {loading && <span className="sr-only">Loading...</span>}
       </Comp>
     )
   }

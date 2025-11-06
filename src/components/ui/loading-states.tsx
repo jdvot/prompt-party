@@ -1,50 +1,115 @@
+import * as React from 'react'
 import { Skeleton } from '@/components/ui/skeleton'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
+import { cn } from '@/lib/utils'
+
+// ============================================================================
+// LOADING CONTAINER - Wrapper with accessibility
+// ============================================================================
+
+export interface LoadingContainerProps {
+  children: React.ReactNode
+  className?: string
+  label?: string
+}
+
+export function LoadingContainer({ children, className, label = 'Loading content' }: LoadingContainerProps) {
+  return (
+    <div
+      className={cn('animate-fade-in-up', className)}
+      role="status"
+      aria-live="polite"
+      aria-label={label}
+    >
+      {children}
+      <span className="sr-only">{label}</span>
+    </div>
+  )
+}
+
+// ============================================================================
+// PROMPT CARD SKELETON
+// ============================================================================
 
 export function PromptCardSkeleton() {
   return (
-    <Card>
-      <CardHeader>
-        <div className="flex items-center gap-3 mb-2">
-          <Skeleton className="h-10 w-10 rounded-full" />
-          <div className="flex-1">
-            <Skeleton className="h-4 w-32 mb-2" />
-            <Skeleton className="h-3 w-24" />
+    <LoadingContainer label="Loading prompt card">
+      <Card>
+        <CardHeader>
+          <div className="flex items-center gap-3 mb-2">
+            <Skeleton className="h-10 w-10 rounded-full" />
+            <div className="flex-1">
+              <Skeleton className="h-4 w-32 mb-2" />
+              <Skeleton className="h-3 w-24" />
+            </div>
           </div>
-        </div>
-        <Skeleton className="h-6 w-3/4 mb-2" />
-      </CardHeader>
-      <CardContent>
-        <div className="space-y-2 mb-4">
-          <Skeleton className="h-4 w-full" />
-          <Skeleton className="h-4 w-full" />
-          <Skeleton className="h-4 w-2/3" />
-        </div>
-        <div className="flex gap-2 mb-4">
-          <Skeleton className="h-6 w-16" />
-          <Skeleton className="h-6 w-20" />
-          <Skeleton className="h-6 w-18" />
-        </div>
-        <div className="flex items-center justify-between">
-          <div className="flex gap-4">
-            <Skeleton className="h-4 w-12" />
-            <Skeleton className="h-4 w-12" />
-            <Skeleton className="h-4 w-12" />
+          <Skeleton className="h-6 w-3/4 mb-2" />
+        </CardHeader>
+        <CardContent>
+          <div className="space-y-2 mb-4">
+            <Skeleton className="h-4 w-full" />
+            <Skeleton className="h-4 w-full" />
+            <Skeleton className="h-4 w-2/3" />
           </div>
-          <Skeleton className="h-8 w-20" />
-        </div>
-      </CardContent>
-    </Card>
+          <div className="flex gap-2 mb-4">
+            <Skeleton className="h-6 w-16" />
+            <Skeleton className="h-6 w-20" />
+            <Skeleton className="h-6 w-18" />
+          </div>
+          <div className="flex items-center justify-between">
+            <div className="flex gap-4">
+              <Skeleton className="h-4 w-12" />
+              <Skeleton className="h-4 w-12" />
+              <Skeleton className="h-4 w-12" />
+            </div>
+            <Skeleton className="h-8 w-20" />
+          </div>
+        </CardContent>
+      </Card>
+    </LoadingContainer>
   )
 }
 
 export function PromptGridSkeleton({ count = 6 }: { count?: number }) {
   return (
-    <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-      {Array.from({ length: count }).map((_, i) => (
-        <PromptCardSkeleton key={i} />
-      ))}
-    </div>
+    <LoadingContainer label={`Loading ${count} prompt cards`}>
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {Array.from({ length: count }).map((_, i) => (
+          <Card key={i}>
+            <CardHeader>
+              <div className="flex items-center gap-3 mb-2">
+                <Skeleton className="h-10 w-10 rounded-full" />
+                <div className="flex-1">
+                  <Skeleton className="h-4 w-32 mb-2" />
+                  <Skeleton className="h-3 w-24" />
+                </div>
+              </div>
+              <Skeleton className="h-6 w-3/4 mb-2" />
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-2 mb-4">
+                <Skeleton className="h-4 w-full" />
+                <Skeleton className="h-4 w-full" />
+                <Skeleton className="h-4 w-2/3" />
+              </div>
+              <div className="flex gap-2 mb-4">
+                <Skeleton className="h-6 w-16" />
+                <Skeleton className="h-6 w-20" />
+                <Skeleton className="h-6 w-18" />
+              </div>
+              <div className="flex items-center justify-between">
+                <div className="flex gap-4">
+                  <Skeleton className="h-4 w-12" />
+                  <Skeleton className="h-4 w-12" />
+                  <Skeleton className="h-4 w-12" />
+                </div>
+                <Skeleton className="h-8 w-20" />
+              </div>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+    </LoadingContainer>
   )
 }
 

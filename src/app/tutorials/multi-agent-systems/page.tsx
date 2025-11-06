@@ -105,12 +105,12 @@ export default async function MultiAgentSystemsTutorial() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-sm text-muted-foreground mb-3">Specialized agents collaborate:</p>
+                <p className="text-sm text-muted-foreground mb-3">{t('multi_desc')}</p>
                 <ul className="text-sm text-muted-foreground space-y-1">
-                  <li>• Each agent has expertise</li>
-                  <li>• Better quality results</li>
-                  <li>• Simpler individual prompts</li>
-                  <li>• Highly scalable</li>
+                  <li>• {t('multi_1')}</li>
+                  <li>• {t('multi_2')}</li>
+                  <li>• {t('multi_3')}</li>
+                  <li>• {t('multi_4')}</li>
                 </ul>
               </CardContent>
             </Card>
@@ -118,7 +118,7 @@ export default async function MultiAgentSystemsTutorial() {
         </section>
 
         <section>
-          <h2 className="text-3xl font-bold mb-4">Common Multi-Agent Patterns</h2>
+          <h2 className="text-3xl font-bold mb-4">{t('common_patterns')}</h2>
 
           <div className="space-y-6">
             {/* Pattern 1 */}
@@ -126,17 +126,17 @@ export default async function MultiAgentSystemsTutorial() {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Icons.ArrowRight className="w-5 h-5 text-blue-500" />
-                  1. Sequential Pipeline
+                  {t('pattern_1_title')}
                 </CardTitle>
-                <CardDescription>Agents work in a linear sequence, each processing the previous agent's output</CardDescription>
+                <CardDescription>{t('pattern_1_desc')}</CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="flex items-center gap-2 mb-4 overflow-x-auto">
-                  <div className="px-3 py-2 bg-blue-500/10 border border-blue-500/20 rounded whitespace-nowrap">Agent 1: Research</div>
+                  <div className="px-3 py-2 bg-blue-500/10 border border-blue-500/20 rounded whitespace-nowrap">{t('pattern_1_agent_1')}</div>
                   <Icons.ArrowRight className="w-4 h-4 flex-shrink-0" />
-                  <div className="px-3 py-2 bg-green-500/10 border border-green-500/20 rounded whitespace-nowrap">Agent 2: Analyze</div>
+                  <div className="px-3 py-2 bg-green-500/10 border border-green-500/20 rounded whitespace-nowrap">{t('pattern_1_agent_2')}</div>
                   <Icons.ArrowRight className="w-4 h-4 flex-shrink-0" />
-                  <div className="px-3 py-2 bg-purple-500/10 border border-purple-500/20 rounded whitespace-nowrap">Agent 3: Summarize</div>
+                  <div className="px-3 py-2 bg-purple-500/10 border border-purple-500/20 rounded whitespace-nowrap">{t('pattern_1_agent_3')}</div>
                 </div>
 
                 <CodeBlock
@@ -178,22 +178,22 @@ const writer = await claude.messages.create({
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Icons.GitBranch className="w-5 h-5 text-green-500" />
-                  2. Parallel Processing
+                  {t('pattern_2_title')}
                 </CardTitle>
-                <CardDescription>Multiple agents work simultaneously, then results are combined</CardDescription>
+                <CardDescription>{t('pattern_2_desc')}</CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="mb-4">
                   <div className="flex flex-col items-center gap-2">
-                    <div className="px-3 py-2 bg-blue-500/10 border border-blue-500/20 rounded">Input Task</div>
+                    <div className="px-3 py-2 bg-blue-500/10 border border-blue-500/20 rounded">{t('pattern_2_input')}</div>
                     <Icons.ArrowDown className="w-4 h-4" />
                     <div className="flex gap-4">
-                      <div className="px-3 py-2 bg-green-500/10 border border-green-500/20 rounded text-sm">Agent A</div>
-                      <div className="px-3 py-2 bg-yellow-500/10 border border-yellow-500/20 rounded text-sm">Agent B</div>
-                      <div className="px-3 py-2 bg-purple-500/10 border border-purple-500/20 rounded text-sm">Agent C</div>
+                      <div className="px-3 py-2 bg-green-500/10 border border-green-500/20 rounded text-sm">{t('pattern_2_agent_a')}</div>
+                      <div className="px-3 py-2 bg-yellow-500/10 border border-yellow-500/20 rounded text-sm">{t('pattern_2_agent_b')}</div>
+                      <div className="px-3 py-2 bg-purple-500/10 border border-purple-500/20 rounded text-sm">{t('pattern_2_agent_c')}</div>
                     </div>
                     <Icons.ArrowDown className="w-4 h-4" />
-                    <div className="px-3 py-2 bg-red-500/10 border border-red-500/20 rounded">Combine Results</div>
+                    <div className="px-3 py-2 bg-red-500/10 border border-red-500/20 rounded">{t('pattern_2_combine')}</div>
                   </div>
                 </div>
 
@@ -246,9 +246,9 @@ UX: \${ux.content[0].text}\`
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Icons.RefreshCw className="w-5 h-5 text-purple-500" />
-                  3. Iterative Refinement
+                  {t('pattern_3_title')}
                 </CardTitle>
-                <CardDescription>Agents critique and improve each other's work in cycles</CardDescription>
+                <CardDescription>{t('pattern_3_desc')}</CardDescription>
               </CardHeader>
               <CardContent>
                 <CodeBlock
@@ -302,9 +302,9 @@ console.log("Final code:", code);`}
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Icons.Network className="w-5 h-5 text-orange-500" />
-                  4. Hierarchical Orchestration
+                  {t('pattern_4_title')}
                 </CardTitle>
-                <CardDescription>A coordinator agent manages and delegates to specialized workers</CardDescription>
+                <CardDescription>{t('pattern_4_desc')}</CardDescription>
               </CardHeader>
               <CardContent>
                 <CodeBlock
@@ -358,28 +358,28 @@ Return as JSON array of tasks with: {id, description, agent_type}\`
         </section>
 
         <section>
-          <h2 className="text-3xl font-bold mb-4">Agent Communication</h2>
+          <h2 className="text-3xl font-bold mb-4">{t('agent_communication')}</h2>
 
           <Card className="mb-4">
             <CardHeader>
-              <CardTitle>Designing Agent Interfaces</CardTitle>
+              <CardTitle>{t('designing_interfaces')}</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <div>
-                <h4 className="font-semibold mb-2">1. Structured Output</h4>
+                <h4 className="font-semibold mb-2">{t('interface_1_title')}</h4>
                 <p className="text-sm text-muted-foreground mb-2">
-                  Make agents output in predictable formats:
+                  {t('interface_1_desc')}
                 </p>
                 <CodeBlock
                   language="text"
-                  code={`Agent prompt: "Return results as JSON with fields: summary, confidence, next_steps"`}
+                  code={t('interface_1_example')}
                 />
               </div>
 
               <div>
-                <h4 className="font-semibold mb-2">2. Clear Handoffs</h4>
+                <h4 className="font-semibold mb-2">{t('interface_2_title')}</h4>
                 <p className="text-sm text-muted-foreground mb-2">
-                  Explicitly state what the next agent needs:
+                  {t('interface_2_desc')}
                 </p>
                 <CodeBlock
                   language="javascript"
@@ -393,9 +393,9 @@ Return as JSON array of tasks with: {id, description, agent_type}\`
               </div>
 
               <div>
-                <h4 className="font-semibold mb-2">3. Shared Context</h4>
+                <h4 className="font-semibold mb-2">{t('interface_3_title')}</h4>
                 <p className="text-sm text-muted-foreground mb-2">
-                  Maintain conversation history for continuity:
+                  {t('interface_3_desc')}
                 </p>
                 <CodeBlock
                   language="javascript"
@@ -418,25 +418,25 @@ Your task: ...
         </section>
 
         <section>
-          <h2 className="text-3xl font-bold mb-4">Best Practices</h2>
+          <h2 className="text-3xl font-bold mb-4">{t('best_practices')}</h2>
 
           <div className="grid md:grid-cols-2 gap-4">
             <Card className="border-green-500/20">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
                   <Icons.CheckCircle className="w-5 h-5 text-green-600" />
-                  Do This
+                  {t('do_this')}
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <ul className="text-sm space-y-2">
-                  <li>✓ Give each agent a clear, specific role</li>
-                  <li>✓ Use structured data formats (JSON, YAML)</li>
-                  <li>✓ Add error handling and retries</li>
-                  <li>✓ Log all agent interactions</li>
-                  <li>✓ Set timeouts for each agent</li>
-                  <li>✓ Test agents individually first</li>
-                  <li>✓ Monitor token usage</li>
+                  <li>{t('do_1')}</li>
+                  <li>{t('do_2')}</li>
+                  <li>{t('do_3')}</li>
+                  <li>{t('do_4')}</li>
+                  <li>{t('do_5')}</li>
+                  <li>{t('do_6')}</li>
+                  <li>{t('do_7')}</li>
                 </ul>
               </CardContent>
             </Card>
@@ -445,18 +445,18 @@ Your task: ...
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
                   <Icons.XCircle className="w-5 h-5 text-red-600" />
-                  Avoid This
+                  {t('avoid_this')}
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <ul className="text-sm space-y-2">
-                  <li>✗ Overlapping responsibilities</li>
-                  <li>✗ Circular dependencies between agents</li>
-                  <li>✗ Too many agents (diminishing returns)</li>
-                  <li>✗ Unclear data formats</li>
-                  <li>✗ No fallback mechanisms</li>
-                  <li>✗ Ignoring failures silently</li>
-                  <li>✗ Excessive nesting (&gt;3 levels)</li>
+                  <li>{t('avoid_1')}</li>
+                  <li>{t('avoid_2')}</li>
+                  <li>{t('avoid_3')}</li>
+                  <li>{t('avoid_4')}</li>
+                  <li>{t('avoid_5')}</li>
+                  <li>{t('avoid_6')}</li>
+                  <li>{t('avoid_7')}</li>
                 </ul>
               </CardContent>
             </Card>
@@ -464,16 +464,16 @@ Your task: ...
         </section>
 
         <section>
-          <Card className="bg-gradient-to-r from-violet-600/10 to-fuchsia-600/10 border-violet-600/20">
+          <Card className="bg-gradient-to-r from-violet-600/10 to-violet-600/10 border-violet-600/20">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Icons.BookOpen className="w-5 h-5 text-primary" />
-                Real-World Example: Content Generation System
+                {t('real_world_example')}
               </CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground mb-4">
-                A complete multi-agent system for creating high-quality blog posts:
+                {t('real_world_intro')}
               </p>
 
               <div className="space-y-3 text-sm">
@@ -482,7 +482,7 @@ Your task: ...
                     <span className="text-xs font-bold text-blue-600">1</span>
                   </div>
                   <div>
-                    <strong>Researcher Agent:</strong> Gathers information on the topic
+                    <strong>{t('agent_1')}</strong> {t('agent_1_desc')}
                   </div>
                 </div>
 
@@ -491,16 +491,16 @@ Your task: ...
                     <span className="text-xs font-bold text-green-600">2</span>
                   </div>
                   <div>
-                    <strong>Outliner Agent:</strong> Creates a structured outline
+                    <strong>{t('agent_2')}</strong> {t('agent_2_desc')}
                   </div>
                 </div>
 
                 <div className="flex items-start gap-2">
                   <div className="w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <span className="text-xs font-bold text-purple-600">3</span>
+                    <span className="text-xs font-bold text-violet-600">3</span>
                   </div>
                   <div>
-                    <strong>Writer Agent:</strong> Writes engaging content
+                    <strong>{t('agent_3')}</strong> {t('agent_3_desc')}
                   </div>
                 </div>
 
@@ -509,16 +509,16 @@ Your task: ...
                     <span className="text-xs font-bold text-orange-600">4</span>
                   </div>
                   <div>
-                    <strong>Editor Agent:</strong> Reviews and improves the draft
+                    <strong>{t('agent_4')}</strong> {t('agent_4_desc')}
                   </div>
                 </div>
 
                 <div className="flex items-start gap-2">
-                  <div className="w-6 h-6 rounded-full bg-pink-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <span className="text-xs font-bold text-pink-600">5</span>
+                  <div className="w-6 h-6 rounded-full bg-cyan-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <span className="text-xs font-bold text-cyan-600">5</span>
                   </div>
                   <div>
-                    <strong>SEO Agent:</strong> Optimizes for search engines
+                    <strong>{t('agent_5')}</strong> {t('agent_5_desc')}
                   </div>
                 </div>
               </div>
@@ -526,14 +526,14 @@ Your task: ...
               <Alert className="mt-4">
                 <Icons.Rocket className="w-4 h-4" />
                 <AlertDescription>
-                  Result: High-quality content in 1-2 minutes that would take a human 2-3 hours!
+                  {t('result_message')}
                 </AlertDescription>
               </Alert>
             </CardContent>
           </Card>
         </section>
 
-        <Card className="bg-gradient-to-r from-violet-600/10 to-fuchsia-600/10 border-violet-600/20">
+        <Card className="bg-gradient-to-r from-violet-600/10 to-violet-600/10 border-violet-600/20">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Icons.Lightbulb className="w-5 h-5 text-primary" />

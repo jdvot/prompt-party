@@ -1,0 +1,73 @@
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Isometric Challenge Trophy Illustration -->
+  <!-- Brand Colors: Indigo #6366F1, Violet #8B5CF6, Cyan #22D3EE -->
+
+  <!-- Background gradient circle -->
+  <circle cx="200" cy="200" r="180" fill="url(#bgGradient)" opacity="0.1"/>
+
+  <!-- Trophy base - isometric view -->
+  <g transform="translate(200, 280)">
+    <!-- Base platform -->
+    <path d="M -60 0 L -50 -8 L 50 -8 L 60 0 L 50 8 L -50 8 Z" fill="#6366F1" opacity="0.3"/>
+    <path d="M -50 -8 L -50 0 L 50 0 L 50 -8 Z" fill="#6366F1" opacity="0.5"/>
+
+    <!-- Middle platform -->
+    <g transform="translate(0, -15)">
+      <path d="M -40 0 L -32 -6 L 32 -6 L 40 0 L 32 6 L -32 6 Z" fill="#8B5CF6" opacity="0.4"/>
+      <path d="M -32 -6 L -32 0 L 32 0 L 32 -6 Z" fill="#8B5CF6" opacity="0.6"/>
+    </g>
+
+    <!-- Trophy stem -->
+    <g transform="translate(0, -30)">
+      <rect x="-8" y="-30" width="16" height="30" fill="#6366F1"/>
+      <path d="M -8 -30 L -6 -32 L 6 -32 L 8 -30 Z" fill="#8B5CF6"/>
+    </g>
+
+    <!-- Trophy cup -->
+    <g transform="translate(0, -60)">
+      <!-- Cup body -->
+      <ellipse cx="0" cy="0" rx="35" ry="10" fill="#22D3EE" opacity="0.3"/>
+      <path d="M -35 0 L -30 -40 L 30 -40 L 35 0 Z" fill="url(#cupGradient)"/>
+      <ellipse cx="0" cy="-40" rx="30" ry="8" fill="#6366F1"/>
+
+      <!-- Cup handles - left -->
+      <path d="M -35 -10 Q -50 -15 -50 -25 Q -50 -35 -35 -30" stroke="#8B5CF6" stroke-width="3" fill="none" opacity="0.6"/>
+
+      <!-- Cup handles - right -->
+      <path d="M 35 -10 Q 50 -15 50 -25 Q 50 -35 35 -30" stroke="#8B5CF6" stroke-width="3" fill="none" opacity="0.6"/>
+
+      <!-- Shine on cup -->
+      <ellipse cx="-10" cy="-25" rx="8" ry="15" fill="white" opacity="0.3"/>
+    </g>
+  </g>
+
+  <!-- Floating stars around trophy -->
+  <g opacity="0.6">
+    <path d="M 100 120 L 105 130 L 115 132 L 107 140 L 109 150 L 100 145 L 91 150 L 93 140 L 85 132 L 95 130 Z" fill="#22D3EE"/>
+    <path d="M 300 140 L 305 150 L 315 152 L 307 160 L 309 170 L 300 165 L 291 170 L 293 160 L 285 152 L 295 150 Z" fill="#8B5CF6"/>
+    <path d="M 150 80 L 155 90 L 165 92 L 157 100 L 159 110 L 150 105 L 141 110 L 143 100 L 135 92 L 145 90 Z" fill="#6366F1"/>
+    <path d="M 280 100 L 285 110 L 295 112 L 287 120 L 289 130 L 280 125 L 271 130 L 273 120 L 265 112 L 275 110 Z" fill="#22D3EE"/>
+  </g>
+
+  <!-- Sparkle effects -->
+  <g opacity="0.4">
+    <circle cx="120" cy="180" r="3" fill="#22D3EE"/>
+    <circle cx="280" cy="200" r="3" fill="#6366F1"/>
+    <circle cx="160" cy="240" r="2" fill="#8B5CF6"/>
+    <circle cx="240" cy="160" r="2" fill="#22D3EE"/>
+  </g>
+
+  <!-- Gradients -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366F1;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#8B5CF6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#22D3EE;stop-opacity:1" />
+    </linearGradient>
+
+    <linearGradient id="cupGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366F1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#22D3EE;stop-opacity:0.8" />
+    </linearGradient>
+  </defs>
+</svg>

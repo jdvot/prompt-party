@@ -1,0 +1,181 @@
+<svg width="400" height="350" viewBox="0 0 400 350" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="indigoGradColl" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366F1"/>
+      <stop offset="100%" style="stop-color:#4F46E5"/>
+    </linearGradient>
+
+    <linearGradient id="violetGradColl" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B5CF6"/>
+      <stop offset="100%" style="stop-color:#7C3AED"/>
+    </linearGradient>
+
+    <linearGradient id="cyanGradColl" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#22D3EE"/>
+      <stop offset="100%" style="stop-color:#06B6D4"/>
+    </linearGradient>
+
+    <radialGradient id="shadowColl">
+      <stop offset="0%" style="stop-color:#000;stop-opacity:0.1"/>
+      <stop offset="100%" style="stop-color:#000;stop-opacity:0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background elements -->
+  <circle cx="70" cy="70" r="4" fill="#22D3EE" opacity="0.2"/>
+  <circle cx="330" cy="90" r="5" fill="#8B5CF6" opacity="0.2"/>
+  <circle cx="350" cy="270" r="4" fill="#6366F1" opacity="0.2"/>
+  <circle cx="50" cy="290" r="6" fill="#22D3EE" opacity="0.2"/>
+
+  <!-- Shadow -->
+  <ellipse cx="200" cy="320" rx="120" ry="12" fill="url(#shadowColl)"/>
+
+  <!-- Filing cabinet (isometric view) -->
+  <g id="filingCabinet" transform="translate(200, 180)">
+    <!-- Main body -->
+    <path d="M -70 -80 L 70 -80 L 90 -60 L 90 100 L -50 100 L -70 80 Z"
+          fill="url(#indigoGradColl)"/>
+
+    <!-- Side panel (depth) -->
+    <path d="M 70 -80 L 90 -60 L 90 100 L 70 80 Z"
+          fill="#4338CA"/>
+
+    <!-- Top drawer -->
+    <g id="topDrawer">
+      <rect x="-60" y="-70" width="125" height="40" rx="2" fill="#5B21B6" opacity="0.3"/>
+      <rect x="-55" y="-65" width="115" height="32" rx="2" fill="white" opacity="0.1"/>
+
+      <!-- Drawer pull -->
+      <rect x="15" y="-55" width="30" height="8" rx="4" fill="white" opacity="0.2"/>
+      <circle cx="30" cy="-51" r="3" fill="#E0E7FF" opacity="0.4"/>
+
+      <!-- Empty folder outline in drawer -->
+      <g transform="translate(-20, -55)" opacity="0.2">
+        <path d="M 0 0 L 15 0 L 18 3 L 35 3 L 35 20 L 0 20 Z"
+              fill="none"
+              stroke="white"
+              stroke-width="1.5"
+              stroke-dasharray="3,2"/>
+      </g>
+    </g>
+
+    <!-- Middle drawer -->
+    <g id="middleDrawer">
+      <rect x="-60" y="-20" width="125" height="40" rx="2" fill="#5B21B6" opacity="0.3"/>
+      <rect x="-55" y="-15" width="115" height="32" rx="2" fill="white" opacity="0.1"/>
+
+      <!-- Drawer pull -->
+      <rect x="15" y="-5" width="30" height="8" rx="4" fill="white" opacity="0.2"/>
+      <circle cx="30" cy="-1" r="3" fill="#E0E7FF" opacity="0.4"/>
+
+      <!-- Empty state icon -->
+      <g transform="translate(10, 5)" opacity="0.2">
+        <circle r="8" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="2,2"/>
+      </g>
+    </g>
+
+    <!-- Bottom drawer -->
+    <g id="bottomDrawer">
+      <rect x="-60" y="30" width="125" height="40" rx="2" fill="#5B21B6" opacity="0.3"/>
+      <rect x="-55" y="35" width="115" height="32" rx="2" fill="white" opacity="0.1"/>
+
+      <!-- Drawer pull -->
+      <rect x="15" y="45" width="30" height="8" rx="4" fill="white" opacity="0.2"/>
+      <circle cx="30" cy="49" r="3" fill="#E0E7FF" opacity="0.4"/>
+    </g>
+
+    <!-- Cabinet label plates -->
+    <rect x="-65" y="-78" width="60" height="6" rx="2" fill="#E0E7FF" opacity="0.3"/>
+  </g>
+
+  <!-- Floating empty folder (to the left) -->
+  <g id="emptyFolder1" transform="translate(100, 150)">
+    <path d="M 0 0 L 25 0 L 30 6 L 60 6 L 60 45 L 0 45 Z"
+          fill="url(#violetGradColl)"
+          opacity="0.4"/>
+    <path d="M 5 8 L 55 8 L 55 40 L 5 40 Z"
+          fill="white"
+          opacity="0.1"/>
+
+    <!-- Dashed lines indicating emptiness -->
+    <line x1="15" y1="18" x2="45" y2="18" stroke="white" stroke-width="1" stroke-dasharray="3,3" opacity="0.3"/>
+    <line x1="15" y1="25" x2="45" y2="25" stroke="white" stroke-width="1" stroke-dasharray="3,3" opacity="0.3"/>
+    <line x1="15" y1="32" x2="45" y2="32" stroke="white" stroke-width="1" stroke-dasharray="3,3" opacity="0.3"/>
+
+    <animateTransform
+      attributeName="transform"
+      type="translate"
+      values="100 150; 100 145; 100 150"
+      dur="3s"
+      repeatCount="indefinite"/>
+  </g>
+
+  <!-- Floating empty folder (to the right) -->
+  <g id="emptyFolder2" transform="translate(280, 140)">
+    <path d="M 0 0 L 20 0 L 24 5 L 50 5 L 50 38 L 0 38 Z"
+          fill="url(#cyanGradColl)"
+          opacity="0.5"/>
+    <path d="M 4 7 L 46 7 L 46 34 L 4 34 Z"
+          fill="white"
+          opacity="0.1"/>
+
+    <!-- Empty icon -->
+    <circle cx="25" cy="20" r="8" fill="none" stroke="white" stroke-width="1.5" opacity="0.3" stroke-dasharray="2,2"/>
+
+    <animateTransform
+      attributeName="transform"
+      type="translate"
+      values="280 140; 280 135; 280 140"
+      dur="2.5s"
+      repeatCount="indefinite"/>
+  </g>
+
+  <!-- Plus signs (suggesting to add collections) -->
+  <g id="plusIconBig" transform="translate(200, 280)">
+    <circle r="20" fill="none" stroke="url(#indigoGradColl)" stroke-width="2.5" opacity="0.3"/>
+    <line x1="0" y1="-10" x2="0" y2="10" stroke="url(#indigoGradColl)" stroke-width="2.5" opacity="0.4" stroke-linecap="round"/>
+    <line x1="-10" y1="0" x2="10" y2="0" stroke="url(#indigoGradColl)" stroke-width="2.5" opacity="0.4" stroke-linecap="round"/>
+
+    <animate attributeName="opacity" values="0.3;0.6;0.3" dur="2s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- Decorative document icons -->
+  <g id="docIcon1" transform="translate(130, 260)">
+    <rect width="16" height="20" rx="2" fill="none" stroke="#8B5CF6" stroke-width="1.5" opacity="0.3"/>
+    <line x1="4" y1="6" x2="12" y2="6" stroke="#8B5CF6" stroke-width="1" opacity="0.3"/>
+    <line x1="4" y1="10" x2="12" y2="10" stroke="#8B5CF6" stroke-width="1" opacity="0.3"/>
+    <line x1="4" y1="14" x2="9" y2="14" stroke="#8B5CF6" stroke-width="1" opacity="0.3"/>
+  </g>
+
+  <g id="docIcon2" transform="translate(254, 250)">
+    <rect width="14" height="18" rx="2" fill="none" stroke="#22D3EE" stroke-width="1.5" opacity="0.3"/>
+    <line x1="3" y1="5" x2="11" y2="5" stroke="#22D3EE" stroke-width="1" opacity="0.3"/>
+    <line x1="3" y1="9" x2="11" y2="9" stroke="#22D3EE" stroke-width="1" opacity="0.3"/>
+    <line x1="3" y1="13" x2="8" y2="13" stroke="#22D3EE" stroke-width="1" opacity="0.3"/>
+  </g>
+
+  <!-- Sparkles -->
+  <g id="sparkle1" transform="translate(150, 100)">
+    <path d="M 0 -4 L 1 -1.2 L 4 -1 L 1.5 1 L 2 4 L 0 2.5 L -2 4 L -1.5 1 L -4 -1 L -1 -1.2 Z"
+          fill="#22D3EE"
+          opacity="0.4">
+      <animate attributeName="opacity" values="0.4;0.7;0.4" dur="2s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <g id="sparkle2" transform="translate(250, 110)">
+    <path d="M 0 -3.5 L 0.9 -1 L 3.5 -0.9 L 1.3 0.9 L 1.7 3.5 L 0 2.2 L -1.7 3.5 L -1.3 0.9 L -3.5 -0.9 L -0.9 -1 Z"
+          fill="#8B5CF6"
+          opacity="0.5">
+      <animate attributeName="opacity" values="0.5;0.8;0.5" dur="2.5s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- Animated dots -->
+  <circle cx="110" cy="220" r="3" fill="#22D3EE" opacity="0.3">
+    <animate attributeName="cy" values="220;215;220" dur="2.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="290" cy="230" r="3" fill="#8B5CF6" opacity="0.3">
+    <animate attributeName="cy" values="230;225;230" dur="3s" repeatCount="indefinite"/>
+  </circle>
+</svg>

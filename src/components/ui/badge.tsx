@@ -8,7 +8,7 @@ import { X } from 'lucide-react'
 // ============================================================================
 
 const badgeVariants = cva(
-  'inline-flex items-center font-medium transition-all duration-200 whitespace-nowrap',
+  'inline-flex items-center font-medium transition-all duration-200 whitespace-nowrap leading-none',
   {
     variants: {
       variant: {
@@ -43,9 +43,9 @@ const badgeVariants = cva(
       },
 
       size: {
-        sm: 'h-5 px-2 text-xs gap-1',
-        md: 'h-6 px-2.5 text-xs gap-1',
-        lg: 'h-7 px-3 text-sm gap-1.5',
+        sm: 'h-5 px-2 text-xs gap-1.5',
+        md: 'h-6 px-2.5 text-xs gap-1.5',
+        lg: 'h-7 px-3 text-sm gap-2',
       },
 
       shape: {
@@ -110,7 +110,7 @@ const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>(
         {dot && (
           <span
             className={cn(
-              'h-1.5 w-1.5 rounded-full',
+              'h-1.5 w-1.5 rounded-full shrink-0',
               dotColor ? `bg-[${dotColor}]` : 'bg-current'
             )}
             style={dotColor ? { backgroundColor: dotColor } : undefined}
@@ -119,17 +119,17 @@ const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>(
 
         {/* Start icon */}
         {startIcon && (
-          <span className="inline-flex shrink-0" aria-hidden="true">
+          <span className="inline-flex items-center justify-center shrink-0 leading-none" aria-hidden="true">
             {startIcon}
           </span>
         )}
 
         {/* Content */}
-        {children && <span className="truncate">{children}</span>}
+        {children && <span className="truncate leading-none">{children}</span>}
 
         {/* End icon */}
         {endIcon && !removable && (
-          <span className="inline-flex shrink-0" aria-hidden="true">
+          <span className="inline-flex items-center justify-center shrink-0 leading-none" aria-hidden="true">
             {endIcon}
           </span>
         )}

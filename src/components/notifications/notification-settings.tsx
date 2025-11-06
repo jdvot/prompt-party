@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { useTranslations } from 'next-intl'
 import { createClient } from '@/lib/supabase/client'
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
 import { Label } from '@/components/ui/label'
@@ -27,6 +28,7 @@ interface NotificationSettingsProps {
 }
 
 export function NotificationSettings({ initialPreferences }: NotificationSettingsProps) {
+  const t = useTranslations('settings.notificationSettings')
   const [preferences, setPreferences] = useState<NotificationPreferences>(
     initialPreferences || {
       user_id: '',
@@ -87,18 +89,18 @@ export function NotificationSettings({ initialPreferences }: NotificationSetting
         <CardHeader>
           <div className="flex items-center gap-2">
             <MailIcon className="h-5 w-5 text-primary" />
-            <CardTitle>Email Notifications</CardTitle>
+            <CardTitle>{t('email.title')}</CardTitle>
           </div>
           <CardDescription>
-            Receive notifications via email for important updates
+            {t('email.description')}
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="flex items-center justify-between">
             <div className="space-y-0.5">
-              <Label htmlFor="email_comments">Comments</Label>
+              <Label htmlFor="email_comments">{t('email.comments.label')}</Label>
               <p className="text-sm text-muted-foreground">
-                When someone comments on your prompts
+                {t('email.comments.description')}
               </p>
             </div>
             <Switch
@@ -110,9 +112,9 @@ export function NotificationSettings({ initialPreferences }: NotificationSetting
 
           <div className="flex items-center justify-between">
             <div className="space-y-0.5">
-              <Label htmlFor="email_likes">Likes</Label>
+              <Label htmlFor="email_likes">{t('email.likes.label')}</Label>
               <p className="text-sm text-muted-foreground">
-                When someone likes your prompts
+                {t('email.likes.description')}
               </p>
             </div>
             <Switch
@@ -124,9 +126,9 @@ export function NotificationSettings({ initialPreferences }: NotificationSetting
 
           <div className="flex items-center justify-between">
             <div className="space-y-0.5">
-              <Label htmlFor="email_remixes">Remixes</Label>
+              <Label htmlFor="email_remixes">{t('email.remixes.label')}</Label>
               <p className="text-sm text-muted-foreground">
-                When someone remixes your prompts
+                {t('email.remixes.description')}
               </p>
             </div>
             <Switch
@@ -138,9 +140,9 @@ export function NotificationSettings({ initialPreferences }: NotificationSetting
 
           <div className="flex items-center justify-between">
             <div className="space-y-0.5">
-              <Label htmlFor="email_challenges">Challenges</Label>
+              <Label htmlFor="email_challenges">{t('email.challenges.label')}</Label>
               <p className="text-sm text-muted-foreground">
-                Updates about prompt challenges
+                {t('email.challenges.description')}
               </p>
             </div>
             <Switch
@@ -152,9 +154,9 @@ export function NotificationSettings({ initialPreferences }: NotificationSetting
 
           <div className="flex items-center justify-between">
             <div className="space-y-0.5">
-              <Label htmlFor="email_follows">New Followers</Label>
+              <Label htmlFor="email_follows">{t('email.follows.label')}</Label>
               <p className="text-sm text-muted-foreground">
-                When someone follows you
+                {t('email.follows.description')}
               </p>
             </div>
             <Switch
@@ -166,9 +168,9 @@ export function NotificationSettings({ initialPreferences }: NotificationSetting
 
           <div className="flex items-center justify-between border-t pt-4">
             <div className="space-y-0.5">
-              <Label htmlFor="email_weekly_digest">Weekly Digest</Label>
+              <Label htmlFor="email_weekly_digest">{t('email.weeklyDigest.label')}</Label>
               <p className="text-sm text-muted-foreground">
-                Weekly summary of trending prompts and activity
+                {t('email.weeklyDigest.description')}
               </p>
             </div>
             <Switch
@@ -185,18 +187,18 @@ export function NotificationSettings({ initialPreferences }: NotificationSetting
         <CardHeader>
           <div className="flex items-center gap-2">
             <BellIcon className="h-5 w-5 text-primary" />
-            <CardTitle>In-App Notifications</CardTitle>
+            <CardTitle>{t('push.title')}</CardTitle>
           </div>
           <CardDescription>
-            Real-time notifications while using Prompt Party
+            {t('push.description')}
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="flex items-center justify-between">
             <div className="space-y-0.5">
-              <Label htmlFor="push_comments">Comments</Label>
+              <Label htmlFor="push_comments">{t('push.comments.label')}</Label>
               <p className="text-sm text-muted-foreground">
-                When someone comments on your prompts
+                {t('push.comments.description')}
               </p>
             </div>
             <Switch
@@ -208,9 +210,9 @@ export function NotificationSettings({ initialPreferences }: NotificationSetting
 
           <div className="flex items-center justify-between">
             <div className="space-y-0.5">
-              <Label htmlFor="push_likes">Likes</Label>
+              <Label htmlFor="push_likes">{t('push.likes.label')}</Label>
               <p className="text-sm text-muted-foreground">
-                When someone likes your prompts
+                {t('push.likes.description')}
               </p>
             </div>
             <Switch
@@ -222,9 +224,9 @@ export function NotificationSettings({ initialPreferences }: NotificationSetting
 
           <div className="flex items-center justify-between">
             <div className="space-y-0.5">
-              <Label htmlFor="push_remixes">Remixes</Label>
+              <Label htmlFor="push_remixes">{t('push.remixes.label')}</Label>
               <p className="text-sm text-muted-foreground">
-                When someone remixes your prompts
+                {t('push.remixes.description')}
               </p>
             </div>
             <Switch
@@ -236,9 +238,9 @@ export function NotificationSettings({ initialPreferences }: NotificationSetting
 
           <div className="flex items-center justify-between">
             <div className="space-y-0.5">
-              <Label htmlFor="push_challenges">Challenges</Label>
+              <Label htmlFor="push_challenges">{t('push.challenges.label')}</Label>
               <p className="text-sm text-muted-foreground">
-                Updates about prompt challenges
+                {t('push.challenges.description')}
               </p>
             </div>
             <Switch
@@ -260,10 +262,10 @@ export function NotificationSettings({ initialPreferences }: NotificationSetting
           {saved ? (
             <>
               <CheckIcon className="mr-2 h-4 w-4" />
-              Saved
+              {t('saved')}
             </>
           ) : (
-            'Save Preferences'
+            t('saveButton')
           )}
         </Button>
       </div>

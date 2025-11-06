@@ -163,7 +163,7 @@ export function renderAvatar(avatarUrl: string | null, name: string, size: 'sm' 
   if (!avatarUrl) {
     // Default fallback with gradient
     return (
-      <div className={`${sizeClasses[size]} rounded-full bg-gradient-to-br from-violet-500 to-fuchsia-500 flex items-center justify-center font-bold text-white shadow-lg`}>
+      <div className={`${sizeClasses[size]} rounded-full bg-gradient-to-br from-indigo-500 to-violet-600 flex items-center justify-center font-bold text-white shadow-lg`}>
         {(name || 'A').charAt(0).toUpperCase()}
       </div>
     )

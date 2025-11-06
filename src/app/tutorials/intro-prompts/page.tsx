@@ -344,7 +344,7 @@ export default async function IntroPromptsTutorial() {
 
         {/* Section 5: Practice Exercise */}
         <section>
-          <Card className="bg-gradient-to-r from-violet-600/10 to-fuchsia-600/10 border-violet-600/20">
+          <Card className="bg-gradient-to-r from-violet-600/10 to-violet-600/10 border-violet-600/20">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <BookOpen className="w-5 h-5 text-primary" />
@@ -389,7 +389,7 @@ export default async function IntroPromptsTutorial() {
         </section>
 
         {/* Next Steps */}
-        <Card className="bg-gradient-to-r from-violet-600/10 to-fuchsia-600/10 border-violet-600/20">
+        <Card className="bg-gradient-to-r from-violet-600/10 to-violet-600/10 border-violet-600/20">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Lightbulb className="w-5 h-5 text-primary" />

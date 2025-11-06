@@ -17,60 +17,60 @@ export function Footer() {
               <LogoText />
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed text-balance">
-              Apprends à parler à l'IA comme un pro. Cours interactifs, exemples concrets, 100% gratuit.
+              {t('about_section_subtitle')}
             </p>
           </div>
 
           <div>
-            <h3 className="font-semibold mb-4 text-foreground gradient-text">📚 Apprendre</h3>
+            <h3 className="font-semibold mb-4 text-foreground gradient-text">{t('guides_section_title')}</h3>
             <div className="space-y-3">
               <Link href="/tutorials/paths/beginner" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
-                Parcours Débutant
+                {t('beginner_path')}
               </Link>
               <Link href="/tutorials" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
-                Tous les tutoriels
+                {t('all_tutorials')}
               </Link>
               <Link href="/mcp-vs-rag" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
-                MCP vs RAG
+                {t('mcp_vs_rag')}
               </Link>
               <Link href="/prompts/wizard" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
-                Playground
+                {t('playground')}
               </Link>
             </div>
           </div>
 
           <div>
-            <h3 className="font-semibold mb-4 text-foreground gradient-text">🤝 Communauté</h3>
+            <h3 className="font-semibold mb-4 text-foreground gradient-text">{t('community_section_title')}</h3>
             <div className="space-y-3">
               <Link href="/trending" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
-                Bibliothèque Prompts
+                {t('prompts_library')}
               </Link>
               <Link href="/challenges" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
-                Challenges
+                {t('challenges')}
               </Link>
               <Link href="/leaderboard" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
-                Leaderboard
+                {t('leaderboard')}
               </Link>
               <Link href="/about" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
-                À propos
+                {t('about')}
               </Link>
               <Link href="/faq" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
-                FAQ
+                {t('faq')}
               </Link>
             </div>
           </div>
 
           <div>
-            <h3 className="font-semibold mb-4 text-foreground gradient-text">⚖️ Légal</h3>
+            <h3 className="font-semibold mb-4 text-foreground gradient-text">{t('legal_section_title')}</h3>
             <div className="space-y-3">
               <Link href="/pricing" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
-                Soutenir le projet
+                {t('support_project')}
               </Link>
               <Link href="/privacy" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
-                Confidentialité
+                {t('privacy')}
               </Link>
               <Link href="/terms" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
-                Conditions
+                {t('terms')}
               </Link>
             </div>
           </div>

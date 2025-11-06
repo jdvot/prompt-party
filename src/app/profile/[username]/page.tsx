@@ -145,8 +145,21 @@ export default async function PublicProfilePage({ params }: PageProps) {
         {/* Prompts */}
         <div className="space-y-6">
           {!prompts || prompts.length === 0 ? (
-            <div className="text-center py-16 text-muted-foreground">
-              <p>{t('no_public_prompts')}</p>
+            <div className="text-center py-16 max-w-2xl mx-auto">
+              <div className="relative w-64 h-64 mx-auto mb-8 animate-in fade-in zoom-in duration-500">
+                <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/10 via-violet-500/10 to-cyan-500/10 rounded-full blur-2xl" />
+                <Image
+                  src="/branding/illustrations/empty-states/empty-prompts.svg"
+                  alt="No prompts yet"
+                  width={256}
+                  height={256}
+                  className="relative z-10 drop-shadow-lg"
+                />
+              </div>
+              <h3 className="text-2xl font-bold mb-3">{t('no_public_prompts')}</h3>
+              <p className="text-lg text-muted-foreground">
+                This user hasn't shared any prompts yet
+              </p>
             </div>
           ) : (
             prompts.map((prompt: any) => <PromptCard key={prompt.id} {...prompt} />)

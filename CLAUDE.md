@@ -154,10 +154,12 @@ Core tables (all with RLS enabled):
 
 **Vercel Hobby Tier:**
 - 100 GB/month bandwidth
-- 100k Function invocations/month
-- 6000 build minutes/month
-- Function duration: 10s max
+- Unlimited serverless function invocations
+- Unlimited build minutes
+- Function duration: 10s max (60s on Pro)
 - SSL + custom domain included
+- Automatic HTTPS
+- Edge Network (global CDN)
 
 **Supabase Free Tier:**
 - 0.5 GB database

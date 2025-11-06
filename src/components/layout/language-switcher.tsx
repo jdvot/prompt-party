@@ -1,6 +1,6 @@
 'use client';
 
-import { Globe } from 'lucide-react';
+import { Globe, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
@@ -39,21 +39,33 @@ export function LanguageSwitcher() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="sm" disabled={isPending}>
-          <Globe className="h-4 w-4 mr-2" />
-          <span className="hidden sm:inline">{currentLanguage.flag} {currentLanguage.name}</span>
-          <span className="sm:hidden">{currentLanguage.flag}</span>
+        <Button
+          variant="outline"
+          size="sm"
+          disabled={isPending}
+          className="gap-2 min-w-[120px] justify-start"
+        >
+          <Globe className="h-4 w-4" />
+          <span className="flex items-center gap-1.5">
+            <span className="text-base leading-none">{currentLanguage.flag}</span>
+            <span className="hidden sm:inline leading-none">{currentLanguage.name}</span>
+          </span>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="z-dropdown">
+      <DropdownMenuContent align="end" className="w-[180px]">
         {languages.map((language) => (
           <DropdownMenuItem
             key={language.code}
             onClick={() => changeLanguage(language.code)}
-            className={locale === language.code ? 'bg-accent' : ''}
+            className={locale === language.code ? 'bg-accent font-medium' : ''}
           >
-            <span className="mr-2">{language.flag}</span>
-            {t(language.code)}
+            <span className="flex items-center gap-3 w-full">
+              <span className="text-lg leading-none">{language.flag}</span>
+              <span className="flex-1 leading-none">{t(language.code)}</span>
+              {locale === language.code && (
+                <Check className="h-4 w-4 text-primary" />
+              )}
+            </span>
           </DropdownMenuItem>
         ))}
       </DropdownMenuContent>

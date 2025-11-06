@@ -7,7 +7,7 @@ import { Badge } from '@/components/ui/badge'
 import { Alert, AlertDescription } from '@/components/ui/alert'
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
 import { Label } from '@/components/ui/label'
-import { CheckCircle, XCircle, Trophy, Sparkles, ArrowRight } from 'lucide-react'
+import { CheckCircle, XCircle, Trophy, Sparkles, ArrowRight, ArrowLeft } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { motion, AnimatePresence } from 'framer-motion'
 import { completeLessonClient } from '@/lib/gamification-client'
@@ -201,7 +201,7 @@ export function Quiz({
   const progress = ((currentQuestion + 1) / totalQuestions) * 100
 
   return (
-    <Card className="bg-gradient-to-br from-violet-600/5 to-fuchsia-600/5 border-violet-600/20">
+    <Card className="bg-gradient-to-br from-violet-600/5 to-violet-600/5 border-violet-600/20">
       <CardHeader>
         <div className="flex items-center justify-between mb-2">
           <Badge variant="soft">Question {currentQuestion + 1}/{totalQuestions}</Badge>
@@ -216,7 +216,7 @@ export function Quiz({
         <div className="mt-4">
           <div className="h-2 bg-muted rounded-full overflow-hidden">
             <div
-              className="h-full bg-gradient-to-r from-violet-600 to-fuchsia-600 transition-all duration-300"
+              className="h-full bg-gradient-to-r from-indigo-600 to-violet-600 transition-all duration-300"
               style={{ width: `${progress}%` }}
             />
           </div>
@@ -263,7 +263,8 @@ export function Quiz({
             onClick={handlePrevious}
             disabled={currentQuestion === 0}
           >
-            Précédent
+            <ArrowLeft className="w-4 h-4" />
+            <span className="leading-none">Précédent</span>
           </Button>
           <div className="text-sm text-muted-foreground">
             {selectedAnswers.filter(a => a !== -1).length}/{totalQuestions} réponses
@@ -272,8 +273,8 @@ export function Quiz({
             onClick={handleNext}
             disabled={selectedAnswers[currentQuestion] === -1}
           >
-            {currentQuestion === totalQuestions - 1 ? 'Terminer' : 'Suivant'}
-            <ArrowRight className="w-4 h-4 ml-2" />
+            <span className="leading-none">{currentQuestion === totalQuestions - 1 ? 'Terminer' : 'Suivant'}</span>
+            <ArrowRight className="w-4 h-4" />
           </Button>
         </div>
       </CardContent>

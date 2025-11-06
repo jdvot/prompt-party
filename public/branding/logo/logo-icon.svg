@@ -1,0 +1,61 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradient Indigo to Violet for cap -->
+    <linearGradient id="capGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366F1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8B5CF6;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Cyan accent for tassel -->
+    <linearGradient id="tasselGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#22D3EE;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#06B6D4;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Graduation Cap Base (bottom part) -->
+  <path d="M256 180 L140 220 L140 280 C140 300 180 340 256 340 C332 340 372 300 372 280 L372 220 L256 180 Z"
+        fill="url(#capGradient)" opacity="0.9"/>
+
+  <!-- Graduation Cap Top (mortarboard square) -->
+  <path d="M256 120 L100 180 L256 240 L412 180 L256 120 Z"
+        fill="url(#capGradient)"/>
+
+  <!-- Book pages underneath (educational symbol) -->
+  <rect x="180" y="340" width="152" height="120" rx="8"
+        fill="url(#capGradient)" opacity="0.3"/>
+  <rect x="190" y="350" width="132" height="100" rx="6"
+        fill="white" opacity="0.9"/>
+
+  <!-- Book divider line (spine) -->
+  <line x1="256" y1="350" x2="256" y2="450"
+        stroke="url(#capGradient)" stroke-width="3" opacity="0.4"/>
+
+  <!-- Book text lines (left page) -->
+  <line x1="205" y1="370" x2="240" y2="370"
+        stroke="url(#capGradient)" stroke-width="2" opacity="0.3"/>
+  <line x1="205" y1="385" x2="240" y2="385"
+        stroke="url(#capGradient)" stroke-width="2" opacity="0.3"/>
+  <line x1="205" y1="400" x2="235" y2="400"
+        stroke="url(#capGradient)" stroke-width="2" opacity="0.3"/>
+
+  <!-- Book text lines (right page) -->
+  <line x1="270" y1="370" x2="305" y2="370"
+        stroke="url(#capGradient)" stroke-width="2" opacity="0.3"/>
+  <line x1="270" y1="385" x2="305" y2="385"
+        stroke="url(#capGradient)" stroke-width="2" opacity="0.3"/>
+  <line x1="270" y1="400" x2="300" y2="400"
+        stroke="url(#capGradient)" stroke-width="2" opacity="0.3"/>
+
+  <!-- Tassel (hanging from cap corner with Cyan accent) -->
+  <line x1="412" y1="180" x2="432" y2="240"
+        stroke="url(#tasselGradient)" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- Tassel end (decorative knot) -->
+  <circle cx="432" cy="245" r="8" fill="url(#tasselGradient)"/>
+
+  <!-- Small sparkles for AI/tech feel -->
+  <circle cx="140" cy="150" r="4" fill="#22D3EE" opacity="0.6"/>
+  <circle cx="370" cy="150" r="4" fill="#22D3EE" opacity="0.6"/>
+  <circle cx="256" cy="90" r="5" fill="#22D3EE" opacity="0.8"/>
+</svg>

@@ -20,43 +20,56 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://prompt-party.netlify.app'),
+  metadataBase: new URL('https://promptacademy.com'),
   title: {
-    default: "Prompt Party - Learn AI Prompt Engineering",
-    template: "%s | Prompt Party"
+    default: "Prompt Academy - Master AI Prompt Engineering",
+    template: "%s | Prompt Academy"
   },
-  description: "Master AI prompt engineering through interactive tutorials, challenges, and gamified learning. Learn to create effective prompts for ChatGPT, Claude, and Gemini.",
-  keywords: ['AI prompts', 'prompt engineering', 'ChatGPT tutorials', 'Claude AI', 'Gemini AI', 'AI learning', 'prompt engineering course', 'AI education', 'learn AI'],
-  authors: [{ name: 'Prompt Party' }],
-  creator: 'Prompt Party',
-  publisher: 'Prompt Party',
+  description: "Master AI prompt engineering with 12 interactive tutorials and 3 learning paths. 100% free and open-source education platform for ChatGPT, Claude, and Gemini.",
+  keywords: ['AI prompts', 'prompt engineering', 'ChatGPT tutorials', 'Claude AI', 'Gemini AI', 'AI learning', 'prompt engineering course', 'AI education', 'learn AI', 'free AI course', 'prompt academy'],
+  authors: [{ name: 'Prompt Academy' }],
+  creator: 'Prompt Academy',
+  publisher: 'Prompt Academy',
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
+  icons: {
+    icon: [
+      { url: '/branding/logo/favicon.svg', type: 'image/svg+xml' },
+      { url: '/branding/logo/logo-icon-simple.svg', type: 'image/svg+xml', sizes: '32x32' },
+    ],
+    apple: [
+      { url: '/branding/logo/apple-touch-icon.svg', type: 'image/svg+xml', sizes: '180x180' },
+    ],
+    other: [
+      { rel: 'mask-icon', url: '/branding/logo/logo-icon-simple.svg', color: '#6366F1' },
+    ],
+  },
+  manifest: '/manifest.json',
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://prompt-party.netlify.app',
-    siteName: 'Prompt Party',
-    title: 'Prompt Party - Learn AI Prompt Engineering',
-    description: 'Master AI prompt engineering through interactive tutorials, challenges, and gamified learning. Learn to create effective prompts for ChatGPT, Claude, and Gemini.',
+    url: 'https://promptacademy.com',
+    siteName: 'Prompt Academy',
+    title: 'Prompt Academy - Master AI Prompt Engineering',
+    description: 'Master AI prompt engineering with 12 interactive tutorials and 3 learning paths. 100% free and open-source education platform.',
     images: [
       {
-        url: '/og-image.png',
+        url: '/branding/og-image.svg',
         width: 1200,
         height: 630,
-        alt: 'Prompt Party - Social Network for AI Prompts',
+        alt: 'Prompt Academy - Master AI Prompt Engineering',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Prompt Party - The Social Network for AI Prompts',
-    description: 'Create, share, and discover the most inspiring AI prompts.',
-    images: ['/og-image.png'],
-    creator: '@promptparty',
+    title: 'Prompt Academy - Master AI Prompt Engineering',
+    description: '12 interactive tutorials, 3 learning paths. 100% free & open-source.',
+    images: ['/branding/og-image.svg'],
+    creator: '@promptacademy',
   },
   robots: {
     index: true,
@@ -73,8 +86,15 @@ export const metadata: Metadata = {
     google: 'your-google-verification-code',
   },
   alternates: {
-    canonical: 'https://prompt-party.netlify.app',
+    canonical: 'https://promptacademy.com',
   },
+  applicationName: 'Prompt Academy',
+  appleWebApp: {
+    capable: true,
+    title: 'Prompt Academy',
+    statusBarStyle: 'default',
+  },
+  category: 'education',
 };
 
 export default async function RootLayout({

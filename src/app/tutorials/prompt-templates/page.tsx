@@ -290,7 +290,7 @@ Content to summarize:
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
-                  <Icons.Share2 className="w-5 h-5 text-pink-500" />
+                  <Icons.Share2 className="w-5 h-5 text-cyan-500" />
                   {t('social_media')}
                 </CardTitle>
                 <CardDescription>{t('social_media_desc')}</CardDescription>
@@ -513,7 +513,7 @@ Audience: [AUDIENCE, default: general readers]`}
 
         {/* Practice Exercise */}
         <section>
-          <Card className="bg-gradient-to-r from-violet-600/10 to-fuchsia-600/10 border-violet-600/20">
+          <Card className="bg-gradient-to-r from-violet-600/10 to-violet-600/10 border-violet-600/20">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Icons.BookOpen className="w-5 h-5 text-primary" />
@@ -560,7 +560,7 @@ Audience: [AUDIENCE, default: general readers]`}
         </section>
 
         {/* Next Steps */}
-        <Card className="bg-gradient-to-r from-violet-600/10 to-fuchsia-600/10 border-violet-600/20">
+        <Card className="bg-gradient-to-r from-violet-600/10 to-violet-600/10 border-violet-600/20">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Icons.Lightbulb className="w-5 h-5 text-primary" />

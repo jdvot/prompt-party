@@ -596,13 +596,13 @@ Explain significant differences in approach between the languages.`}
               <CardContent>
                 <ul className="text-sm space-y-2">
                   <li>{t('do_1')}</li>
-                  <li>✓ Provide full context and requirements</li>
-                  <li>✓ Request comments and documentation</li>
-                  <li>✓ Ask for error handling</li>
-                  <li>✓ Specify coding style/conventions</li>
-                  <li>✓ Review generated code carefully</li>
-                  <li>✓ Test generated code thoroughly</li>
-                  <li>✓ Iterate and refine</li>
+                  <li>{t('do_2')}</li>
+                  <li>{t('do_3')}</li>
+                  <li>{t('do_4')}</li>
+                  <li>{t('do_5')}</li>
+                  <li>{t('do_6')}</li>
+                  <li>{t('do_7')}</li>
+                  <li>{t('do_8')}</li>
                 </ul>
               </CardContent>
             </Card>
@@ -611,18 +611,18 @@ Explain significant differences in approach between the languages.`}
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
                   <Icons.XCircle className="w-5 h-5 text-red-600" />
-                  Avoid This
+                  {t('avoid_this')}
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <ul className="text-sm space-y-2">
-                  <li>✗ Blindly copying generated code</li>
-                  <li>✗ Ignoring security implications</li>
-                  <li>✗ Skipping code review</li>
-                  <li>✗ Not testing edge cases</li>
-                  <li>✗ Using outdated patterns</li>
-                  <li>✗ Generating without requirements</li>
-                  <li>✗ Trusting complex logic without verification</li>
+                  <li>{t('avoid_1')}</li>
+                  <li>{t('avoid_2')}</li>
+                  <li>{t('avoid_3')}</li>
+                  <li>{t('avoid_4')}</li>
+                  <li>{t('avoid_5')}</li>
+                  <li>{t('avoid_6')}</li>
+                  <li>{t('avoid_7')}</li>
                 </ul>
               </CardContent>
             </Card>
@@ -630,35 +630,35 @@ Explain significant differences in approach between the languages.`}
         </section>
 
         <section>
-          <Card className="bg-gradient-to-r from-violet-600/10 to-fuchsia-600/10 border-violet-600/20">
+          <Card className="bg-gradient-to-r from-violet-600/10 to-violet-600/10 border-violet-600/20">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Icons.BookOpen className="w-5 h-5 text-primary" />
-                Practice Project
+                {t('practice_project')}
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="mb-4">Build a complete feature using AI assistance:</p>
+              <p className="mb-4">{t('practice_intro')}</p>
 
               <div className="space-y-2 text-sm">
-                <div>1. <strong>Generate:</strong> Create a user authentication system</div>
-                <div>2. <strong>Review:</strong> Have AI review your implementation</div>
-                <div>3. <strong>Test:</strong> Generate comprehensive tests</div>
-                <div>4. <strong>Document:</strong> Create API docs and README</div>
-                <div>5. <strong>Refactor:</strong> Optimize based on AI suggestions</div>
+                <div dangerouslySetInnerHTML={{ __html: t('practice_step_1') }} />
+                <div dangerouslySetInnerHTML={{ __html: t('practice_step_2') }} />
+                <div dangerouslySetInnerHTML={{ __html: t('practice_step_3') }} />
+                <div dangerouslySetInnerHTML={{ __html: t('practice_step_4') }} />
+                <div dangerouslySetInnerHTML={{ __html: t('practice_step_5') }} />
               </div>
 
               <Alert className="mt-4">
                 <Icons.Target className="w-4 h-4" />
                 <AlertDescription>
-                  Challenge: Complete this in under 2 hours using AI assistance!
+                  {t('practice_challenge')}
                 </AlertDescription>
               </Alert>
             </CardContent>
           </Card>
         </section>
 
-        <Card className="bg-gradient-to-r from-violet-600/10 to-fuchsia-600/10 border-violet-600/20">
+        <Card className="bg-gradient-to-r from-violet-600/10 to-violet-600/10 border-violet-600/20">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Icons.Lightbulb className="w-5 h-5 text-primary" />
@@ -675,11 +675,11 @@ Explain significant differences in approach between the languages.`}
               </Link>
             </div>
             <div className="text-sm text-muted-foreground">
-              <p className="font-semibold mb-2">Continue Learning:</p>
+              <p className="font-semibold mb-2">{t('continue_learning')}</p>
               <ul className="space-y-1">
-                <li>• Practice with real projects</li>
-                <li>• Share your best prompts in the <Link href="/prompts/new" className="text-primary hover:underline">community</Link></li>
-                <li>• Join <Link href="/challenges" className="text-primary hover:underline">coding challenges</Link></li>
+                <li>{t('continue_1')}</li>
+                <li>{t('continue_2')} <Link href="/prompts/new" className="text-primary hover:underline">{t('continue_2_link')}</Link></li>
+                <li>{t('continue_3')} <Link href="/challenges" className="text-primary hover:underline">{t('continue_3_link')}</Link></li>
               </ul>
             </div>
           </CardContent>

@@ -1,0 +1,111 @@
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Isometric Leaderboard Podium Illustration -->
+  <!-- Brand Colors: Indigo #6366F1, Violet #8B5CF6, Cyan #22D3EE -->
+
+  <!-- Background gradient circle -->
+  <circle cx="200" cy="200" r="180" fill="url(#bgGradient)" opacity="0.08"/>
+
+  <!-- Podium isometric view -->
+  <g transform="translate(200, 300)">
+    <!-- 3rd place (left) - Bronze/Cyan -->
+    <g transform="translate(-100, 30)">
+      <!-- Top face -->
+      <path d="M -30 -40 L 0 -50 L 30 -40 L 0 -30 Z" fill="#22D3EE" opacity="0.6"/>
+      <!-- Front face -->
+      <path d="M -30 -40 L -30 0 L 0 10 L 0 -30 Z" fill="#22D3EE" opacity="0.4"/>
+      <!-- Right face -->
+      <path d="M 0 -30 L 0 10 L 30 0 L 30 -40 Z" fill="#22D3EE" opacity="0.5"/>
+      <!-- Number 3 -->
+      <text x="0" y="-15" text-anchor="middle" fill="white" font-size="24" font-weight="bold" font-family="Arial">3</text>
+    </g>
+
+    <!-- 1st place (center) - Gold/Indigo -->
+    <g transform="translate(0, 0)">
+      <!-- Top face -->
+      <path d="M -35 -70 L 0 -82 L 35 -70 L 0 -58 Z" fill="#6366F1" opacity="0.7"/>
+      <!-- Front face -->
+      <path d="M -35 -70 L -35 0 L 0 12 L 0 -58 Z" fill="#6366F1" opacity="0.5"/>
+      <!-- Right face -->
+      <path d="M 0 -58 L 0 12 L 35 0 L 35 -70 Z" fill="#6366F1" opacity="0.6"/>
+      <!-- Number 1 -->
+      <text x="0" y="-30" text-anchor="middle" fill="white" font-size="28" font-weight="bold" font-family="Arial">1</text>
+      <!-- Crown on top -->
+      <g transform="translate(0, -82)">
+        <path d="M -12 -8 L -8 0 L 0 -4 L 8 0 L 12 -8 L 8 -6 L 0 -10 L -8 -6 Z" fill="#FFD700" opacity="0.9"/>
+        <circle cx="-12" cy="-8" r="2" fill="#FFD700"/>
+        <circle cx="0" cy="-10" r="2" fill="#FFD700"/>
+        <circle cx="12" cy="-8" r="2" fill="#FFD700"/>
+      </g>
+    </g>
+
+    <!-- 2nd place (right) - Silver/Violet -->
+    <g transform="translate(100, 20)">
+      <!-- Top face -->
+      <path d="M -30 -50 L 0 -62 L 30 -50 L 0 -38 Z" fill="#8B5CF6" opacity="0.6"/>
+      <!-- Front face -->
+      <path d="M -30 -50 L -30 0 L 0 12 L 0 -38 Z" fill="#8B5CF6" opacity="0.4"/>
+      <!-- Right face -->
+      <path d="M 0 -38 L 0 12 L 30 0 L 30 -50 Z" fill="#8B5CF6" opacity="0.5"/>
+      <!-- Number 2 -->
+      <text x="0" y="-20" text-anchor="middle" fill="white" font-size="24" font-weight="bold" font-family="Arial">2</text>
+    </g>
+  </g>
+
+  <!-- Floating achievement badges -->
+  <g opacity="0.5">
+    <!-- Left badge -->
+    <g transform="translate(60, 120)">
+      <circle cx="0" cy="0" r="25" fill="#22D3EE" opacity="0.3"/>
+      <circle cx="0" cy="0" r="20" fill="#22D3EE" opacity="0.5"/>
+      <path d="M 0 -8 L 3 0 L 8 2 L 3 6 L 3 12 L 0 8 L -3 12 L -3 6 L -8 2 L -3 0 Z" fill="white" opacity="0.8"/>
+    </g>
+
+    <!-- Right badge -->
+    <g transform="translate(340, 160)">
+      <circle cx="0" cy="0" r="25" fill="#6366F1" opacity="0.3"/>
+      <circle cx="0" cy="0" r="20" fill="#6366F1" opacity="0.5"/>
+      <path d="M 0 -8 L 3 0 L 8 2 L 3 6 L 3 12 L 0 8 L -3 12 L -3 6 L -8 2 L -3 0 Z" fill="white" opacity="0.8"/>
+    </g>
+  </g>
+
+  <!-- Confetti -->
+  <g opacity="0.6">
+    <rect x="80" y="80" width="6" height="6" fill="#6366F1" transform="rotate(20 83 83)"/>
+    <rect x="320" y="100" width="6" height="6" fill="#22D3EE" transform="rotate(-15 323 103)"/>
+    <rect x="140" y="60" width="5" height="5" fill="#8B5CF6" transform="rotate(45 142.5 62.5)"/>
+    <rect x="260" y="70" width="5" height="5" fill="#6366F1" transform="rotate(-30 262.5 72.5)"/>
+    <rect x="100" y="140" width="4" height="4" fill="#22D3EE" transform="rotate(60 102 142)"/>
+    <rect x="300" y="180" width="4" height="4" fill="#8B5CF6" transform="rotate(-45 302 182)"/>
+  </g>
+
+  <!-- Trophy icon above podium -->
+  <g transform="translate(200, 80)">
+    <ellipse cx="0" cy="0" rx="20" ry="6" fill="#FFD700" opacity="0.3"/>
+    <path d="M -15 0 L -12 -25 L 12 -25 L 15 0 Z" fill="url(#trophyGradient)"/>
+    <ellipse cx="0" cy="-25" rx="12" ry="4" fill="#6366F1"/>
+    <path d="M -15 -8 Q -22 -12 -22 -18 Q -22 -24 -15 -20" stroke="#8B5CF6" stroke-width="2" fill="none" opacity="0.6"/>
+    <path d="M 15 -8 Q 22 -12 22 -18 Q 22 -24 15 -20" stroke="#8B5CF6" stroke-width="2" fill="none" opacity="0.6"/>
+  </g>
+
+  <!-- Sparkles -->
+  <g opacity="0.4">
+    <circle cx="120" cy="160" r="2" fill="#FFD700"/>
+    <circle cx="280" cy="180" r="2" fill="#FFD700"/>
+    <circle cx="160" cy="120" r="3" fill="#22D3EE"/>
+    <circle cx="240" cy="140" r="3" fill="#6366F1"/>
+  </g>
+
+  <!-- Gradients -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366F1;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#8B5CF6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#22D3EE;stop-opacity:1" />
+    </linearGradient>
+
+    <linearGradient id="trophyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFA500;stop-opacity:0.8" />
+    </linearGradient>
+  </defs>
+</svg>

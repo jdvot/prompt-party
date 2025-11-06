@@ -1,6 +1,5 @@
 import { createClient } from '@/lib/supabase/server'
-import { FeedContent } from '@/components/feed/feed-content'
-import { TrendingHeader } from '@/components/pages/trending-header'
+import { TrendingPageClient } from '@/components/pages/trending-page-client'
 import { getTranslations } from 'next-intl/server'
 
 export async function generateMetadata() {
@@ -43,12 +42,5 @@ export default async function TrendingPage() {
     }
   }
 
-  return (
-    <div className="container mx-auto px-4 py-8">
-      <div className="max-w-4xl mx-auto">
-        <TrendingHeader />
-        <FeedContent initialPrompts={prompts || []} />
-      </div>
-    </div>
-  )
+  return <TrendingPageClient initialPrompts={prompts || []} />
 }

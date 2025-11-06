@@ -1,0 +1,190 @@
+<svg width="400" height="350" viewBox="0 0 400 350" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="indigoGradPrompt" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366F1"/>
+      <stop offset="100%" style="stop-color:#4F46E5"/>
+    </linearGradient>
+
+    <linearGradient id="violetGradPrompt" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B5CF6"/>
+      <stop offset="100%" style="stop-color:#7C3AED"/>
+    </linearGradient>
+
+    <linearGradient id="cyanGradPrompt" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#22D3EE"/>
+      <stop offset="100%" style="stop-color:#06B6D4"/>
+    </linearGradient>
+
+    <radialGradient id="shadowPrompt">
+      <stop offset="0%" style="stop-color:#000;stop-opacity:0.1"/>
+      <stop offset="100%" style="stop-color:#000;stop-opacity:0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background elements -->
+  <circle cx="70" cy="70" r="4" fill="#22D3EE" opacity="0.3"/>
+  <circle cx="330" cy="80" r="5" fill="#8B5CF6" opacity="0.3"/>
+  <circle cx="350" cy="270" r="4" fill="#6366F1" opacity="0.3"/>
+  <circle cx="60" cy="290" r="6" fill="#22D3EE" opacity="0.3"/>
+
+  <!-- Shadow -->
+  <ellipse cx="200" cy="320" rx="130" ry="12" fill="url(#shadowPrompt)"/>
+
+  <!-- Large text editor/document (empty) -->
+  <g id="emptyEditor" transform="translate(200, 180)">
+    <!-- Editor window -->
+    <rect x="-120" y="-100" width="240" height="180" rx="8"
+          fill="white"
+          stroke="#E5E7EB"
+          stroke-width="3"/>
+
+    <!-- Title bar -->
+    <rect x="-120" y="-100" width="240" height="35" rx="8"
+          fill="url(#indigoGradPrompt)"
+          opacity="0.1"/>
+
+    <!-- Window controls -->
+    <circle cx="-100" cy="-82" r="5" fill="#EF4444" opacity="0.6"/>
+    <circle cx="-85" cy="-82" r="5" fill="#F59E0B" opacity="0.6"/>
+    <circle cx="-70" cy="-82" r="5" fill="#10B981" opacity="0.6"/>
+
+    <!-- Title text -->
+    <text x="0" y="-75" font-family="Inter, sans-serif" font-size="11" font-weight="600"
+          fill="#6B7280" text-anchor="middle">New Prompt</text>
+
+    <!-- Empty document lines (faded) -->
+    <line x1="-100" y1="-40" x2="-30" y2="-40" stroke="#F3F4F6" stroke-width="3"/>
+    <line x1="-100" y1="-20" x2="80" y2="-20" stroke="#F3F4F6" stroke-width="3"/>
+    <line x1="-100" y1="0" x2="60" y2="0" stroke="#F3F4F6" stroke-width="3"/>
+    <line x1="-100" y1="20" x2="90" y2="20" stroke="#F3F4F6" stroke-width="3"/>
+    <line x1="-100" y1="40" x2="50" y2="40" stroke="#F3F4F6" stroke-width="3"/>
+
+    <!-- Blinking cursor -->
+    <rect x="-95" y="-50" width="2" height="16" fill="url(#indigoGradPrompt)">
+      <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+
+  <!-- Pencil/pen (writing tool) -->
+  <g id="pencil" transform="translate(100, 160) rotate(-30)">
+    <!-- Pencil body -->
+    <rect x="-8" y="0" width="16" height="80" rx="8" fill="url(#violetGradPrompt)"/>
+
+    <!-- Pencil tip (darker) -->
+    <path d="M -8 75 L 0 90 L 8 75 Z" fill="#5B21B6"/>
+    <path d="M -5 80 L 0 87 L 5 80 Z" fill="#1F2937"/>
+
+    <!-- Pencil eraser -->
+    <rect x="-8" y="-5" width="16" height="10" rx="8" fill="#F472B6"/>
+
+    <!-- Metal band -->
+    <rect x="-8" y="5" width="16" height="5" fill="#94A3B8"/>
+
+    <!-- Shine effect -->
+    <ellipse cx="3" cy="40" rx="3" ry="15" fill="white" opacity="0.3"/>
+  </g>
+
+  <!-- Plus icon (create new) -->
+  <g id="plusCreate" transform="translate(300, 160)">
+    <circle r="30" fill="none" stroke="url(#cyanGradPrompt)" stroke-width="3" opacity="0.4">
+      <animate attributeName="r" values="30;33;30" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.4;0.6;0.4" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <line x1="0" y1="-15" x2="0" y2="15"
+          stroke="url(#cyanGradPrompt)"
+          stroke-width="4"
+          stroke-linecap="round"/>
+    <line x1="-15" y1="0" x2="15" y2="0"
+          stroke="url(#cyanGradPrompt)"
+          stroke-width="4"
+          stroke-linecap="round"/>
+  </g>
+
+  <!-- Floating prompt cards (suggestions) -->
+  <g id="suggestionCard1" transform="translate(80, 260)" opacity="0.5">
+    <rect width="90" height="50" rx="6"
+          fill="white"
+          stroke="url(#indigoGradPrompt)"
+          stroke-width="2"/>
+    <text x="10" y="18" font-family="Inter, sans-serif" font-size="9" font-weight="600"
+          fill="#6366F1">Template</text>
+    <line x1="10" y1="26" x2="70" y2="26" stroke="#E0E7FF" stroke-width="2"/>
+    <line x1="10" y1="34" x2="60" y2="34" stroke="#E0E7FF" stroke-width="2"/>
+
+    <animate attributeName="opacity" values="0.5;0.8;0.5" dur="3s" repeatCount="indefinite"/>
+    <animateTransform
+      attributeName="transform"
+      type="translate"
+      values="80 260; 80 255; 80 260"
+      dur="3s"
+      repeatCount="indefinite"/>
+  </g>
+
+  <g id="suggestionCard2" transform="translate(230, 270)" opacity="0.5">
+    <rect width="100" height="55" rx="6"
+          fill="white"
+          stroke="url(#violetGradPrompt)"
+          stroke-width="2"/>
+    <text x="10" y="18" font-family="Inter, sans-serif" font-size="9" font-weight="600"
+          fill="#8B5CF6">Example</text>
+    <line x1="10" y1="28" x2="80" y2="28" stroke="#F3E8FF" stroke-width="2"/>
+    <line x1="10" y1="36" x2="70" y2="36" stroke="#F3E8FF" stroke-width="2"/>
+    <line x1="10" y1="44" x2="60" y2="44" stroke="#F3E8FF" stroke-width="2"/>
+
+    <animate attributeName="opacity" values="0.5;0.8;0.5" dur="3.5s" repeatCount="indefinite"/>
+    <animateTransform
+      attributeName="transform"
+      type="translate"
+      values="230 270; 230 265; 230 270"
+      dur="3.5s"
+      repeatCount="indefinite"/>
+  </g>
+
+  <!-- Lightbulb (idea) -->
+  <g id="lightbulb" transform="translate(200, 70)">
+    <ellipse cx="0" cy="-5" rx="18" ry="22" fill="url(#cyanGradPrompt)" opacity="0.3"/>
+    <circle cx="0" cy="-5" r="15" fill="url(#cyanGradPrompt)" opacity="0.5"/>
+
+    <!-- Bulb base -->
+    <rect x="-8" y="12" width="16" height="8" rx="2" fill="#94A3B8" opacity="0.5"/>
+
+    <!-- Light rays -->
+    <line x1="-25" y1="-10" x2="-30" y2="-15" stroke="#22D3EE" stroke-width="2" stroke-linecap="round" opacity="0.6">
+      <animate attributeName="opacity" values="0.6;0.2;0.6" dur="2s" repeatCount="indefinite"/>
+    </line>
+    <line x1="25" y1="-10" x2="30" y2="-15" stroke="#22D3EE" stroke-width="2" stroke-linecap="round" opacity="0.6">
+      <animate attributeName="opacity" values="0.6;0.2;0.6" dur="2s" repeatCount="indefinite"/>
+    </line>
+    <line x1="-20" y1="-20" x2="-25" y2="-27" stroke="#22D3EE" stroke-width="2" stroke-linecap="round" opacity="0.6">
+      <animate attributeName="opacity" values="0.6;0.2;0.6" dur="2s" begin="0.3s" repeatCount="indefinite"/>
+    </line>
+    <line x1="20" y1="-20" x2="25" y2="-27" stroke="#22D3EE" stroke-width="2" stroke-linecap="round" opacity="0.6">
+      <animate attributeName="opacity" values="0.6;0.2;0.6" dur="2s" begin="0.3s" repeatCount="indefinite"/>
+    </line>
+
+    <animate attributeName="opacity" values="0.5;0.8;0.5" dur="2s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- Sparkles -->
+  <g id="sparkle1" transform="translate(130, 110)">
+    <path d="M 0 -5 L 1.2 -1.5 L 5 -1 L 2 1.2 L 2.5 5 L 0 3 L -2.5 5 L -2 1.2 L -5 -1 L -1.2 -1.5 Z"
+          fill="#22D3EE" opacity="0.6">
+      <animate attributeName="opacity" values="0.6;0.3;0.6" dur="2s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <g id="sparkle2" transform="translate(270, 120)">
+    <path d="M 0 -4 L 1 -1.2 L 4 -1 L 1.5 1 L 2 4 L 0 2.5 L -2 4 L -1.5 1 L -4 -1 L -1 -1.2 Z"
+          fill="#8B5CF6" opacity="0.6">
+      <animate attributeName="opacity" values="0.6;0.3;0.6" dur="2.5s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- Decorative dots -->
+  <circle cx="150" cy="230" r="3" fill="#22D3EE" opacity="0.4">
+    <animate attributeName="opacity" values="0.4;0.7;0.4" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="250" cy="240" r="3" fill="#8B5CF6" opacity="0.4">
+    <animate attributeName="opacity" values="0.4;0.7;0.4" dur="2.5s" repeatCount="indefinite"/>
+  </circle>
+</svg>

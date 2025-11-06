@@ -9,30 +9,36 @@ import { Sparkles, Lightbulb, Code, CheckCircle, ArrowLeft } from 'lucide-react'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import { cn } from '@/lib/utils'
+import { useTranslations } from 'next-intl'
+import { getTranslations } from 'next-intl/server'
 
-export const metadata: Metadata = {
-  title: 'Building Claude Agents | Tutorials | Prompt Party',
-  description: 'Learn how to create intelligent Claude AI agents that can perform complex tasks autonomously with tool use and function calling.',
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations('tutorials.claudeAgents')
+  return {
+    title: t('page_title'),
+    description: t('page_description'),
+  }
 }
 
 export default function ClaudeAgentsTutorial() {
+  const t = useTranslations('tutorials.claudeAgents')
   return (
     <Container size="lg" className="py-8">
       {/* Back Button */}
       <Link href="/tutorials" className={cn(buttonVariants({ variant: "ghost" }), "mb-6")}>
         <ArrowLeft className="w-4 h-4 mr-2" />
-        Back to Tutorials
+        {t('back_to_tutorials')}
       </Link>
 
       {/* Header */}
       <div className="mb-8">
         <div className="flex items-center gap-3 mb-4">
-          <Badge>Intermediate</Badge>
-          <Badge variant="outline">30 min</Badge>
+          <Badge>{t('badge_intermediate')}</Badge>
+          <Badge variant="outline">{t('badge_duration')}</Badge>
         </div>
-        <h1 className="text-4xl font-bold mb-4">Building Claude Agents</h1>
+        <h1 className="text-4xl font-bold mb-4">{t('title')}</h1>
         <p className="text-xl text-muted-foreground">
-          Create intelligent agents with Claude that can perform complex tasks autonomously using tool use and function calling.
+          {t('description')}
         </p>
       </div>
 
@@ -41,26 +47,26 @@ export default function ClaudeAgentsTutorial() {
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Lightbulb className="w-5 h-5 text-primary" />
-            What You'll Learn
+            {t('what_you_learn')}
           </CardTitle>
         </CardHeader>
         <CardContent>
           <ul className="space-y-2">
             <li className="flex items-start gap-2">
               <CheckCircle className="w-5 h-5 text-primary mt-0.5" />
-              <span>Understanding Claude's tool use capabilities</span>
+              <span>{t('learn_tool_use')}</span>
             </li>
             <li className="flex items-start gap-2">
               <CheckCircle className="w-5 h-5 text-primary mt-0.5" />
-              <span>Defining and implementing tools for Claude</span>
+              <span>{t('learn_defining_tools')}</span>
             </li>
             <li className="flex items-start gap-2">
               <CheckCircle className="w-5 h-5 text-primary mt-0.5" />
-              <span>Creating autonomous agents with decision-making</span>
+              <span>{t('learn_autonomous')}</span>
             </li>
             <li className="flex items-start gap-2">
               <CheckCircle className="w-5 h-5 text-primary mt-0.5" />
-              <span>Best practices for agent design and safety</span>
+              <span>{t('learn_best_practices')}</span>
             </li>
           </ul>
         </CardContent>
@@ -70,32 +76,30 @@ export default function ClaudeAgentsTutorial() {
       <div className="space-y-8">
         {/* Section 1: Introduction */}
         <section>
-          <h2 className="text-3xl font-bold mb-4">What are Claude Agents?</h2>
+          <h2 className="text-3xl font-bold mb-4">{t('intro_title')}</h2>
           <div className="prose prose-neutral dark:prose-invert max-w-none">
             <p>
-              Claude agents are autonomous AI assistants that can use tools and make decisions to accomplish complex tasks. Unlike simple chat interactions, agents can:
+              {t('intro_para1')}
             </p>
             <ul>
-              <li>Call external APIs and services</li>
-              <li>Access databases and search engines</li>
-              <li>Perform calculations and data analysis</li>
-              <li>Chain multiple operations together</li>
-              <li>Make decisions based on intermediate results</li>
+              <li>{t('intro_capability1')}</li>
+              <li>{t('intro_capability2')}</li>
+              <li>{t('intro_capability3')}</li>
+              <li>{t('intro_capability4')}</li>
+              <li>{t('intro_capability5')}</li>
             </ul>
-            <p>
-              The key to building effective agents is <strong>tool use</strong> (also called function calling). This allows Claude to interact with the outside world beyond just generating text.
-            </p>
+            <p dangerouslySetInnerHTML={{ __html: t('intro_para2') }} />
           </div>
         </section>
 
         {/* Section 2: Tool Use Basics */}
         <section>
-          <h2 className="text-3xl font-bold mb-4">Tool Use Basics</h2>
+          <h2 className="text-3xl font-bold mb-4">{t('tool_use_title')}</h2>
 
           <Card className="mb-6">
             <CardHeader>
-              <CardTitle>Defining a Tool</CardTitle>
-              <CardDescription>Tools are functions Claude can call to perform actions</CardDescription>
+              <CardTitle>{t('tool_defining_title')}</CardTitle>
+              <CardDescription>{t('tool_defining_description')}</CardDescription>
             </CardHeader>
             <CardContent>
               <CodeBlock
@@ -127,28 +131,26 @@ export default function ClaudeAgentsTutorial() {
 
           <Alert className="mb-6">
             <Sparkles className="w-4 h-4" />
-            <AlertTitle>Key Concept</AlertTitle>
-            <AlertDescription>
-              The <code>input_schema</code> tells Claude exactly what parameters the tool accepts. Be specific in your descriptions!
-            </AlertDescription>
+            <AlertTitle>{t('alert_key_concept')}</AlertTitle>
+            <AlertDescription dangerouslySetInnerHTML={{ __html: t('alert_input_schema') }} />
           </Alert>
         </section>
 
         {/* Section 3: Building Your First Agent */}
         <section>
-          <h2 className="text-3xl font-bold mb-4">Building Your First Agent</h2>
+          <h2 className="text-3xl font-bold mb-4">{t('building_title')}</h2>
 
           <Tabs defaultValue="setup" className="mb-6">
             <TabsList className="grid w-full grid-cols-3">
-              <TabsTrigger value="setup">1. Setup</TabsTrigger>
-              <TabsTrigger value="agent">2. Agent Loop</TabsTrigger>
-              <TabsTrigger value="tools">3. Tool Execution</TabsTrigger>
+              <TabsTrigger value="setup">{t('tab_setup')}</TabsTrigger>
+              <TabsTrigger value="agent">{t('tab_agent_loop')}</TabsTrigger>
+              <TabsTrigger value="tools">{t('tab_tool_execution')}</TabsTrigger>
             </TabsList>
 
             <TabsContent value="setup" className="space-y-4">
               <Card>
                 <CardHeader>
-                  <CardTitle>Install Dependencies</CardTitle>
+                  <CardTitle>{t('install_dependencies')}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <CodeBlock
@@ -160,7 +162,7 @@ export default function ClaudeAgentsTutorial() {
 
               <Card>
                 <CardHeader>
-                  <CardTitle>Initialize Claude Client</CardTitle>
+                  <CardTitle>{t('initialize_client')}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <CodeBlock
@@ -178,8 +180,8 @@ const anthropic = new Anthropic({
             <TabsContent value="agent" className="space-y-4">
               <Card>
                 <CardHeader>
-                  <CardTitle>Agent Loop Pattern</CardTitle>
-                  <CardDescription>The agent runs in a loop until task completion</CardDescription>
+                  <CardTitle>{t('agent_loop_title')}</CardTitle>
+                  <CardDescription>{t('agent_loop_description')}</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <CodeBlock
@@ -223,8 +225,8 @@ const anthropic = new Anthropic({
             <TabsContent value="tools" className="space-y-4">
               <Card>
                 <CardHeader>
-                  <CardTitle>Implementing Tool Functions</CardTitle>
-                  <CardDescription>Map tool names to actual implementations</CardDescription>
+                  <CardTitle>{t('tool_functions_title')}</CardTitle>
+                  <CardDescription>{t('tool_functions_description')}</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <CodeBlock
@@ -282,16 +284,16 @@ async function executeTools(content) {
 
         {/* Section 4: Advanced Patterns */}
         <section>
-          <h2 className="text-3xl font-bold mb-4">Advanced Agent Patterns</h2>
+          <h2 className="text-3xl font-bold mb-4">{t('advanced_title')}</h2>
 
           <div className="grid md:grid-cols-2 gap-6">
             <Card>
               <CardHeader>
-                <CardTitle className="text-lg">Multi-Step Reasoning</CardTitle>
+                <CardTitle className="text-lg">{t('advanced_multi_step')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Guide the agent to break down complex tasks into steps:
+                  {t('advanced_multi_step_description')}
                 </p>
                 <CodeBlock
                   language="text"
@@ -306,11 +308,11 @@ async function executeTools(content) {
 
             <Card>
               <CardHeader>
-                <CardTitle className="text-lg">Error Handling</CardTitle>
+                <CardTitle className="text-lg">{t('advanced_error_handling')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Tools should return errors that Claude can understand:
+                  {t('advanced_error_handling_description')}
                 </p>
                 <CodeBlock
                   language="javascript"
@@ -331,24 +333,24 @@ async function executeTools(content) {
 
         {/* Section 5: Best Practices */}
         <section>
-          <h2 className="text-3xl font-bold mb-4">Best Practices</h2>
+          <h2 className="text-3xl font-bold mb-4">{t('best_practices_title')}</h2>
 
           <div className="space-y-4">
             <Card className="border-green-600/20 bg-green-600/5">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
                   <CheckCircle className="w-5 h-5 text-green-600" />
-                  Do's
+                  {t('best_practices_dos')}
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2 text-sm">
-                  <li>✅ Provide clear, detailed tool descriptions</li>
-                  <li>✅ Include examples in tool descriptions</li>
-                  <li>✅ Validate tool inputs before execution</li>
-                  <li>✅ Return structured, parseable tool outputs</li>
-                  <li>✅ Set max iteration limits to prevent infinite loops</li>
-                  <li>✅ Log agent decisions for debugging</li>
+                  <li>{t('best_practices_do1')}</li>
+                  <li>{t('best_practices_do2')}</li>
+                  <li>{t('best_practices_do3')}</li>
+                  <li>{t('best_practices_do4')}</li>
+                  <li>{t('best_practices_do5')}</li>
+                  <li>{t('best_practices_do6')}</li>
                 </ul>
               </CardContent>
             </Card>
@@ -357,16 +359,16 @@ async function executeTools(content) {
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
                   <span className="text-red-600">⚠️</span>
-                  Don'ts
+                  {t('best_practices_donts')}
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2 text-sm">
-                  <li>❌ Don't give tools access to dangerous operations without safeguards</li>
-                  <li>❌ Don't rely on the agent to validate its own permissions</li>
-                  <li>❌ Don't return unstructured or ambiguous tool results</li>
-                  <li>❌ Don't create tools that modify critical data without confirmation</li>
-                  <li>❌ Don't skip error handling in tool implementations</li>
+                  <li>{t('best_practices_dont1')}</li>
+                  <li>{t('best_practices_dont2')}</li>
+                  <li>{t('best_practices_dont3')}</li>
+                  <li>{t('best_practices_dont4')}</li>
+                  <li>{t('best_practices_dont5')}</li>
                 </ul>
               </CardContent>
             </Card>
@@ -375,12 +377,12 @@ async function executeTools(content) {
 
         {/* Section 6: Real World Example */}
         <section>
-          <h2 className="text-3xl font-bold mb-4">Real-World Example: Research Assistant</h2>
+          <h2 className="text-3xl font-bold mb-4">{t('example_title')}</h2>
 
           <Card>
             <CardHeader>
-              <CardTitle>Complete Research Agent</CardTitle>
-              <CardDescription>An agent that can search, analyze, and synthesize information</CardDescription>
+              <CardTitle>{t('example_card_title')}</CardTitle>
+              <CardDescription>{t('example_card_description')}</CardDescription>
             </CardHeader>
             <CardContent>
               <CodeBlock
@@ -441,29 +443,29 @@ async function research(topic) {
         </section>
 
         {/* Next Steps */}
-        <Card className="bg-gradient-to-r from-violet-600/10 to-fuchsia-600/10 border-violet-600/20">
+        <Card className="bg-gradient-to-r from-violet-600/10 to-violet-600/10 border-violet-600/20">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Sparkles className="w-5 h-5 text-primary" />
-              Next Steps
+              {t('next_steps_title')}
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="grid md:grid-cols-2 gap-4">
               <Link href="/tutorials/multi-agent-systems" className={cn(buttonVariants({ variant: "outline" }))}>
                 <Code className="w-4 h-4 mr-2" />
-                Multi-Agent Systems →
+                {t('next_multi_agent')}
               </Link>
               <Link href="/prompts?tag=claude-agent" className={cn(buttonVariants({ variant: "outline" }))}>
                 <Sparkles className="w-4 h-4 mr-2" />
-                Browse Agent Examples →
+                {t('next_browse_examples')}
               </Link>
             </div>
             <div className="text-sm text-muted-foreground">
-              <p className="font-semibold mb-2">Recommended Resources:</p>
+              <p className="font-semibold mb-2">{t('resources_title')}</p>
               <ul className="space-y-1">
-                <li>• <a href="https://docs.anthropic.com/claude/docs/tool-use" target="_blank" rel="noopener" className="text-primary hover:underline">Official Claude Tool Use Guide</a></li>
-                <li>• <a href="https://github.com/anthropics/anthropic-cookbook" target="_blank" rel="noopener" className="text-primary hover:underline">Anthropic Cookbook (GitHub)</a></li>
+                <li>• <a href="https://docs.anthropic.com/claude/docs/tool-use" target="_blank" rel="noopener" className="text-primary hover:underline">{t('resource_tool_use')}</a></li>
+                <li>• <a href="https://github.com/anthropics/anthropic-cookbook" target="_blank" rel="noopener" className="text-primary hover:underline">{t('resource_cookbook')}</a></li>
               </ul>
             </div>
           </CardContent>

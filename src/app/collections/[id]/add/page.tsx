@@ -1,5 +1,6 @@
 import { createClient } from '@/lib/supabase/server'
 import { notFound, redirect } from 'next/navigation'
+import { getTranslations } from 'next-intl/server'
 import type { Metadata } from 'next'
 
 interface PageProps {
@@ -7,14 +8,18 @@ interface PageProps {
   searchParams: Promise<{ q?: string }>
 }
 
-export const metadata: Metadata = {
-  title: 'Add to Collection | Prompt Party',
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations('collections')
+  return {
+    title: `${t('action_add_to_collection')} | Prompt Party`,
+  }
 }
 
 export default async function AddToCollectionPage({ params, searchParams }: PageProps) {
   const { id } = await params
   const { q } = await searchParams
   const supabase = await createClient()
+  const t = await getTranslations('collections')
 
   const {
     data: { user },
@@ -99,13 +104,13 @@ export default async function AddToCollectionPage({ params, searchParams }: Page
     <div className="container mx-auto px-4 py-8">
       <div className="max-w-4xl mx-auto">
         <div className="mb-8">
-          <h1 className="text-3xl font-bold mb-2">Add to {collection.name}</h1>
+          <h1 className="text-3xl font-bold mb-2">{t('action_add_to')} {collection.name}</h1>
           <form method="GET" className="mt-4">
             <input
               type="text"
               name="q"
               defaultValue={q}
-              placeholder="Search prompts..."
+              placeholder={t('form_search_prompts')}
               className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
             />
           </form>
@@ -136,7 +141,7 @@ export default async function AddToCollectionPage({ params, searchParams }: Page
                     disabled
                     className="px-4 py-2 border rounded-md bg-muted text-muted-foreground cursor-not-allowed"
                   >
-                    Added
+                    {t('action_added')}
                   </button>
                 ) : (
                   <form action={addToCollection}>
@@ -145,7 +150,7 @@ export default async function AddToCollectionPage({ params, searchParams }: Page
                       type="submit"
                       className="px-4 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors"
                     >
-                      Add
+                      {t('action_add')}
                     </button>
                   </form>
                 )}
@@ -156,7 +161,7 @@ export default async function AddToCollectionPage({ params, searchParams }: Page
 
         {(!prompts || prompts.length === 0) && (
           <div className="text-center py-8 text-muted-foreground">
-            <p>No prompts found.</p>
+            <p>{t('no_prompts_found')}</p>
           </div>
         )}
       </div>

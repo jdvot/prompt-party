@@ -1,4 +1,5 @@
 import * as React from 'react'
+import Image from 'next/image'
 import { cn } from '@/lib/utils'
 import { Button } from './button'
 import { FileQuestion, Search, Database, Inbox, AlertCircle } from 'lucide-react'
@@ -43,6 +44,7 @@ export interface EmptyStateProps extends React.HTMLAttributes<HTMLDivElement> {
   variant?: keyof typeof emptyStatePresets
   icon?: React.ComponentType<{ className?: string }>
   illustration?: React.ReactNode
+  illustrationSrc?: string // Path to SVG illustration
   title?: string
   description?: string
   action?: {
@@ -64,6 +66,7 @@ const EmptyState = React.forwardRef<HTMLDivElement, EmptyStateProps>(
       variant,
       icon: IconComponent,
       illustration,
+      illustrationSrc,
       title,
       description,
       action,
@@ -84,18 +87,21 @@ const EmptyState = React.forwardRef<HTMLDivElement, EmptyStateProps>(
       sm: {
         container: 'py-8',
         icon: 'h-12 w-12',
+        illustration: 'max-w-[200px]',
         title: 'text-base',
         description: 'text-sm',
       },
       md: {
         container: 'py-12',
         icon: 'h-16 w-16',
+        illustration: 'max-w-[300px]',
         title: 'text-lg',
         description: 'text-base',
       },
       lg: {
         container: 'py-16',
         icon: 'h-20 w-20',
+        illustration: 'max-w-[400px]',
         title: 'text-xl',
         description: 'text-lg',
       },
@@ -114,7 +120,17 @@ const EmptyState = React.forwardRef<HTMLDivElement, EmptyStateProps>(
         {...props}
       >
         {/* Icon or Illustration */}
-        {illustration ? (
+        {illustrationSrc ? (
+          <div className={cn('mb-8', sizes.illustration, 'w-full relative')}>
+            <Image
+              src={illustrationSrc}
+              alt={finalTitle || 'Empty state'}
+              width={400}
+              height={300}
+              className="w-full h-auto"
+            />
+          </div>
+        ) : illustration ? (
           <div className="mb-6">{illustration}</div>
         ) : Icon ? (
           <div

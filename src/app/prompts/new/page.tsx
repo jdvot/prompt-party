@@ -100,8 +100,8 @@ export default function NewPromptPage() {
                 </div>
 
                 <Button className="w-full gap-2 mt-4" size="lg">
-                  {t('start_wizard')}
-                  <ArrowRight className="w-4 h-4" />
+                  <span className="leading-none">{t('start_wizard')}</span>
+                  <ArrowRight className="w-4 h-4 leading-none" />
                 </Button>
               </CardContent>
             </Card>
@@ -139,8 +139,8 @@ export default function NewPromptPage() {
                 </div>
 
                 <Button variant="outline" className="w-full gap-2 mt-4" size="lg">
-                  {t('manual_creation')}
-                  <ArrowRight className="w-4 h-4" />
+                  <span className="leading-none">{t('manual_creation')}</span>
+                  <ArrowRight className="w-4 h-4 leading-none" />
                 </Button>
               </CardContent>
             </Card>
@@ -148,11 +148,11 @@ export default function NewPromptPage() {
 
           <div className="text-center mt-8">
             <Button
-              variant="ghost"
+              variant="outline"
               onClick={() => router.push('/')}
               className="gap-2"
             >
-              {tCommon('cancel')}
+              <span className="leading-none">{tCommon('cancel')}</span>
             </Button>
           </div>
         </div>

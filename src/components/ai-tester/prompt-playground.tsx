@@ -22,7 +22,7 @@ export function PromptPlayground({ promptContent, userId }: PromptPlaygroundProp
   const models = [
     { id: 'gpt-4' as const, name: 'GPT-4', badge: 'OpenAI', color: 'from-emerald-500 to-teal-600' },
     { id: 'claude-3' as const, name: 'Claude 3', badge: 'Anthropic', color: 'from-orange-500 to-amber-600' },
-    { id: 'gemini-1.5-pro' as const, name: 'Gemini 1.5 Pro', badge: 'Google', color: 'from-blue-500 to-purple-600' },
+    { id: 'gemini-1.5-pro' as const, name: 'Gemini 1.5 Pro', badge: 'Google', color: 'from-blue-500 to-violet-600' },
   ]
 
   const testPrompt = async () => {

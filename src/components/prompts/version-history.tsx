@@ -137,7 +137,7 @@ export function VersionHistory({ promptId, onRestore }: VersionHistoryProps) {
                       variant={index === 0 ? 'default' : 'secondary'}
                       className={
                         index === 0
-                          ? 'bg-gradient-to-r from-violet-600 to-fuchsia-600'
+                          ? 'bg-gradient-to-r from-indigo-600 to-violet-600'
                           : ''
                       }
                     >

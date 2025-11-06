@@ -105,12 +105,12 @@ export default async function PromptOptimizationTutorial() {
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
                   <Icons.Target className="w-5 h-5 text-blue-500" />
-                  Reliability
+                  {t('reliability')}
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground">
-                  Clearer, optimized prompts produce more consistent results.
+                  {t('reliability_desc')}
                 </p>
               </CardContent>
             </Card>
@@ -118,21 +118,21 @@ export default async function PromptOptimizationTutorial() {
         </section>
 
         <section>
-          <h2 className="text-3xl font-bold mb-4">1. Token Optimization</h2>
+          <h2 className="text-3xl font-bold mb-4">{t('token_optimization')}</h2>
 
           <Card className="mb-4">
             <CardHeader>
-              <CardTitle>Understanding Tokens</CardTitle>
+              <CardTitle>{t('understanding_tokens')}</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <p className="text-muted-foreground">
-                Tokens are pieces of words. On average: 1 token ≈ 4 characters or ¾ of a word.
+                {t('tokens_intro')}
               </p>
 
               <Alert>
                 <Icons.Info className="w-4 h-4" />
                 <AlertDescription>
-                  Both your prompt AND the response count toward token usage and cost!
+                  {t('tokens_alert')}
                 </AlertDescription>
               </Alert>
             </CardContent>
@@ -143,7 +143,7 @@ export default async function PromptOptimizationTutorial() {
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
                   <Icons.XCircle className="w-5 h-5 text-red-600" />
-                  Token Waste
+                  {t('token_waste')}
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -152,7 +152,7 @@ export default async function PromptOptimizationTutorial() {
                   code={`Please, if you would be so kind, could you perhaps take a moment to analyze this code and provide me with some detailed feedback about what might be wrong with it and how I could potentially improve it? I would really appreciate your help with this.`}
                 />
                 <p className="text-sm text-muted-foreground mt-3">
-                  ~45 tokens of fluff before getting to the point
+                  {t('token_waste_example')}
                 </p>
               </CardContent>
             </Card>
@@ -161,7 +161,7 @@ export default async function PromptOptimizationTutorial() {
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
                   <Icons.CheckCircle className="w-5 h-5 text-green-600" />
-                  Token Efficient
+                  {t('token_efficient')}
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -170,7 +170,7 @@ export default async function PromptOptimizationTutorial() {
                   code={`Analyze this code and suggest improvements:`}
                 />
                 <p className="text-sm text-muted-foreground mt-3">
-                  ~7 tokens. Same meaning, 85% fewer tokens!
+                  {t('token_efficient_example')}
                 </p>
               </CardContent>
             </Card>
@@ -178,43 +178,43 @@ export default async function PromptOptimizationTutorial() {
 
           <Card className="mt-4">
             <CardHeader>
-              <CardTitle>Token Saving Strategies</CardTitle>
+              <CardTitle>{t('token_saving_strategies')}</CardTitle>
             </CardHeader>
             <CardContent>
               <ul className="space-y-3">
                 <li className="flex items-start gap-2">
                   <Icons.Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
                   <div>
-                    <strong>Remove redundant words:</strong>
+                    <strong>{t('strategy_redundant')}</strong>
                     <div className="text-sm text-muted-foreground mt-1">
-                      "Please help me" → "Help:" or just start with the request
+                      {t('strategy_redundant_example')}
                     </div>
                   </div>
                 </li>
                 <li className="flex items-start gap-2">
                   <Icons.Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
                   <div>
-                    <strong>Use abbreviations where clear:</strong>
+                    <strong>{t('strategy_abbreviations')}</strong>
                     <div className="text-sm text-muted-foreground mt-1">
-                      "JavaScript" → "JS", "maximum" → "max"
+                      {t('strategy_abbreviations_example')}
                     </div>
                   </div>
                 </li>
                 <li className="flex items-start gap-2">
                   <Icons.Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
                   <div>
-                    <strong>Specify output length:</strong>
+                    <strong>{t('strategy_output_length')}</strong>
                     <div className="text-sm text-muted-foreground mt-1">
-                      "Summarize in 3 sentences" prevents unnecessarily long responses
+                      {t('strategy_output_length_example')}
                     </div>
                   </div>
                 </li>
                 <li className="flex items-start gap-2">
                   <Icons.Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
                   <div>
-                    <strong>Extract only what you need:</strong>
+                    <strong>{t('strategy_extract')}</strong>
                     <div className="text-sm text-muted-foreground mt-1">
-                      Instead of "Analyze this document", ask "Extract the 5 main action items from this document"
+                      {t('strategy_extract_example')}
                     </div>
                   </div>
                 </li>
@@ -224,21 +224,21 @@ export default async function PromptOptimizationTutorial() {
         </section>
 
         <section>
-          <h2 className="text-3xl font-bold mb-4">2. Prompt Caching</h2>
+          <h2 className="text-3xl font-bold mb-4">{t('prompt_caching')}</h2>
 
           <Card className="mb-4">
             <CardHeader>
-              <CardTitle>What is Prompt Caching?</CardTitle>
+              <CardTitle>{t('what_is_caching')}</CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground mb-4">
-                Claude can cache parts of your prompt that don't change, reducing costs by ~90% for cached content and speeding up responses.
+                {t('caching_intro')}
               </p>
 
               <Alert className="mb-4">
                 <Icons.Lightbulb className="w-4 h-4" />
                 <AlertDescription>
-                  <strong>Best for:</strong> Large context (docs, codebases) that you query multiple times
+                  {t('caching_best_for')}
                 </AlertDescription>
               </Alert>
 
@@ -266,59 +266,54 @@ const userQuery = "Review this component: [CODE]";
 
           <Card>
             <CardHeader>
-              <CardTitle>Caching Best Practices</CardTitle>
+              <CardTitle>{t('caching_best_practices')}</CardTitle>
             </CardHeader>
             <CardContent>
               <ul className="space-y-2 text-sm">
-                <li>✓ Put static content (docs, guidelines) at the start</li>
-                <li>✓ Variable content (queries, data) at the end</li>
-                <li>✓ Use caching for documents you reference repeatedly</li>
-                <li>✓ Cache expires after 5 minutes of inactivity</li>
+                <li>{t('caching_practice_1')}</li>
+                <li>{t('caching_practice_2')}</li>
+                <li>{t('caching_practice_3')}</li>
+                <li>{t('caching_practice_4')}</li>
               </ul>
             </CardContent>
           </Card>
         </section>
 
         <section>
-          <h2 className="text-3xl font-bold mb-4">3. Response Optimization</h2>
+          <h2 className="text-3xl font-bold mb-4">{t('response_optimization')}</h2>
 
           <Card className="mb-4">
             <CardHeader>
-              <CardTitle>Control Output Length</CardTitle>
+              <CardTitle>{t('control_output_length')}</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <div>
-                <h4 className="font-semibold mb-2">Be Specific About Length</h4>
+                <h4 className="font-semibold mb-2">{t('be_specific_length')}</h4>
                 <div className="grid md:grid-cols-2 gap-3">
                   <div>
-                    <p className="text-xs text-muted-foreground mb-1">Vague:</p>
+                    <p className="text-xs text-muted-foreground mb-1">{t('vague_example')}</p>
                     <CodeBlock language="text" code="Summarize this article." />
                   </div>
                   <div>
-                    <p className="text-xs text-muted-foreground mb-1">Specific:</p>
+                    <p className="text-xs text-muted-foreground mb-1">{t('specific_example')}</p>
                     <CodeBlock language="text" code="Summarize in exactly 3 bullet points, 15 words each." />
                   </div>
                 </div>
               </div>
 
               <div>
-                <h4 className="font-semibold mb-2">Use Format Constraints</h4>
+                <h4 className="font-semibold mb-2">{t('use_format_constraints')}</h4>
                 <CodeBlock
                   language="text"
-                  code={`Instead of: "List the main points"
-
-Use: "Create a markdown table with 2 columns: Point, Impact. Max 5 rows."`}
+                  code={t('format_constraints_example')}
                 />
               </div>
 
               <div>
-                <h4 className="font-semibold mb-2">Request Concise Explanations</h4>
+                <h4 className="font-semibold mb-2">{t('request_concise')}</h4>
                 <CodeBlock
                   language="text"
-                  code={`Add to prompts:
-"Be concise. One sentence per point."
-"Use bullet points, not paragraphs."
-"Explain like I'm 5."`}
+                  code={t('concise_tips')}
                 />
               </div>
             </CardContent>
@@ -326,16 +321,16 @@ Use: "Create a markdown table with 2 columns: Point, Impact. Max 5 rows."`}
         </section>
 
         <section>
-          <h2 className="text-3xl font-bold mb-4">4. Batch Processing</h2>
+          <h2 className="text-3xl font-bold mb-4">{t('batch_processing')}</h2>
 
           <Card>
             <CardHeader>
-              <CardTitle>Process Multiple Items at Once</CardTitle>
+              <CardTitle>{t('process_multiple')}</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="grid md:grid-cols-2 gap-4 mb-4">
                 <div>
-                  <p className="text-sm font-semibold mb-2 text-red-600">❌ Inefficient (5 separate requests):</p>
+                  <p className="text-sm font-semibold mb-2 text-red-600">{t('inefficient_label')}</p>
                   <CodeBlock
                     language="text"
                     code={`Translate "Hello" to French
@@ -347,7 +342,7 @@ Translate "Sorry" to French`}
                 </div>
 
                 <div>
-                  <p className="text-sm font-semibold mb-2 text-green-600">✅ Efficient (1 request):</p>
+                  <p className="text-sm font-semibold mb-2 text-green-600">{t('efficient_label')}</p>
                   <CodeBlock
                     language="text"
                     code={`Translate to French:
@@ -365,7 +360,7 @@ Return as: number. translation`}
               <Alert>
                 <Icons.Zap className="w-4 h-4" />
                 <AlertDescription>
-                  Batching can reduce costs by 80%+ and dramatically speed up processing!
+                  {t('batching_alert')}
                 </AlertDescription>
               </Alert>
             </CardContent>
@@ -373,46 +368,36 @@ Return as: number. translation`}
         </section>
 
         <section>
-          <h2 className="text-3xl font-bold mb-4">5. Error Prevention</h2>
+          <h2 className="text-3xl font-bold mb-4">{t('error_prevention')}</h2>
 
           <Card className="mb-4">
             <CardHeader>
-              <CardTitle>Make Prompts More Reliable</CardTitle>
+              <CardTitle>{t('make_prompts_reliable')}</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <div>
-                <h4 className="font-semibold mb-2">Clear Output Format</h4>
+                <h4 className="font-semibold mb-2">{t('clear_output_format')}</h4>
                 <CodeBlock
                   language="text"
-                  code={`Bad: "Give me the data"
+                  code={`${t('output_format_bad')}
 
-Good: "Return as JSON with fields: name, age, role"`}
+${t('output_format_good')}`}
                 />
               </div>
 
               <div>
-                <h4 className="font-semibold mb-2">Handle Edge Cases</h4>
+                <h4 className="font-semibold mb-2">{t('handle_edge_cases')}</h4>
                 <CodeBlock
                   language="text"
-                  code={`Analyze the sentiment of this review.
-
-If the review is empty or unclear, respond with: "INSUFFICIENT_DATA"
-Otherwise, respond with: POSITIVE, NEGATIVE, or NEUTRAL`}
+                  code={t('edge_case_example')}
                 />
               </div>
 
               <div>
-                <h4 className="font-semibold mb-2">Add Validation Instructions</h4>
+                <h4 className="font-semibold mb-2">{t('add_validation')}</h4>
                 <CodeBlock
                   language="text"
-                  code={`Extract email addresses from this text.
-
-Validate that each email:
-- Contains @ symbol
-- Has a domain name
-- Follows standard format
-
-Return only valid emails, one per line.`}
+                  code={t('validation_example')}
                 />
               </div>
             </CardContent>
@@ -420,48 +405,48 @@ Return only valid emails, one per line.`}
         </section>
 
         <section>
-          <h2 className="text-3xl font-bold mb-4">Optimization Checklist</h2>
+          <h2 className="text-3xl font-bold mb-4">{t('optimization_checklist')}</h2>
 
           <Card>
             <CardHeader>
-              <CardTitle>Before Sending Your Prompt</CardTitle>
+              <CardTitle>{t('checklist_before_sending')}</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="space-y-3">
                 <label className="flex items-start gap-3 cursor-pointer">
                   <input type="checkbox" className="mt-1" />
-                  <span className="text-sm">Remove unnecessary pleasantries and filler words</span>
+                  <span className="text-sm">{t('checklist_1')}</span>
                 </label>
                 <label className="flex items-start gap-3 cursor-pointer">
                   <input type="checkbox" className="mt-1" />
-                  <span className="text-sm">Specify exact output format and length</span>
+                  <span className="text-sm">{t('checklist_2')}</span>
                 </label>
                 <label className="flex items-start gap-3 cursor-pointer">
                   <input type="checkbox" className="mt-1" />
-                  <span className="text-sm">Put static content first (for caching)</span>
+                  <span className="text-sm">{t('checklist_3')}</span>
                 </label>
                 <label className="flex items-start gap-3 cursor-pointer">
                   <input type="checkbox" className="mt-1" />
-                  <span className="text-sm">Batch similar requests together</span>
+                  <span className="text-sm">{t('checklist_4')}</span>
                 </label>
                 <label className="flex items-start gap-3 cursor-pointer">
                   <input type="checkbox" className="mt-1" />
-                  <span className="text-sm">Include error handling instructions</span>
+                  <span className="text-sm">{t('checklist_5')}</span>
                 </label>
                 <label className="flex items-start gap-3 cursor-pointer">
                   <input type="checkbox" className="mt-1" />
-                  <span className="text-sm">Use clear, unambiguous language</span>
+                  <span className="text-sm">{t('checklist_6')}</span>
                 </label>
                 <label className="flex items-start gap-3 cursor-pointer">
                   <input type="checkbox" className="mt-1" />
-                  <span className="text-sm">Test with edge cases</span>
+                  <span className="text-sm">{t('checklist_7')}</span>
                 </label>
               </div>
             </CardContent>
           </Card>
         </section>
 
-        <Card className="bg-gradient-to-r from-violet-600/10 to-fuchsia-600/10 border-violet-600/20">
+        <Card className="bg-gradient-to-r from-violet-600/10 to-violet-600/10 border-violet-600/20">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Icons.Lightbulb className="w-5 h-5 text-primary" />

@@ -1,0 +1,1415 @@
+{
+  "files": {
+    "src/app/auth/signup/page.tsx": [
+      {
+        "line": 30,
+        "text": "Join Prompt Academy",
+        "context": "alt=\"Join Prompt Academy\"",
+        "type": "prop-alt"
+      }
+    ],
+    "src/app/collections/[id]/page.tsx": [
+      {
+        "line": 138,
+        "text": "• Private",
+        "context": "<span className=\"ml-2 text-amber-600\">• Private</span>",
+        "type": "jsx-text"
+      }
+    ],
+    "src/app/design-system-test/badge-test/page.tsx": [
+      {
+        "line": 31,
+        "text": "Badge Icon Alignment Test",
+        "context": "<h1 className=\"text-4xl font-bold\">Badge Icon Alignment Test</h1>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 39,
+        "text": "Small Badges (size=&quot;sm&quot;)",
+        "context": "<h2 className=\"text-2xl font-bold\">Small Badges (size=&quot;sm&quot;)</h2>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 78,
+        "text": "Medium Badges (size=&quot;md&quot;)",
+        "context": "<h2 className=\"text-2xl font-bold\">Medium Badges (size=&quot;md&quot;)</h2>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 117,
+        "text": "Large Badges (size=&quot;lg&quot;)",
+        "context": "<h2 className=\"text-2xl font-bold\">Large Badges (size=&quot;lg&quot;)</h2>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 156,
+        "text": "All Variants (Medium Size)",
+        "context": "<h2 className=\"text-2xl font-bold\">All Variants (Medium Size)</h2>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 229,
+        "text": "Shape Variants",
+        "context": "<h2 className=\"text-2xl font-bold\">Shape Variants</h2>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 257,
+        "text": "Removable Badges",
+        "context": "<h2 className=\"text-2xl font-bold\">Removable Badges</h2>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 290,
+        "text": "Dark Mode Test",
+        "context": "<h2 className=\"text-2xl font-bold\">Dark Mode Test</h2>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 336,
+        "text": "Real-World Use Cases",
+        "context": "<h2 className=\"text-2xl font-bold\">Real-World Use Cases</h2>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 339,
+        "text": "Tutorial Header",
+        "context": "<h3 className=\"text-lg font-semibold mb-3\">Tutorial Header</h3>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 358,
+        "text": "Status Indicators",
+        "context": "<h3 className=\"text-lg font-semibold mb-3\">Status Indicators</h3>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 388,
+        "text": "Feature Tags",
+        "context": "<h3 className=\"text-lg font-semibold mb-3\">Feature Tags</h3>",
+        "type": "jsx-text"
+      }
+    ],
+    "src/app/mcp/page.tsx": [
+      {
+        "line": 100,
+        "text": "MCP Integration",
+        "context": "alt=\"MCP Integration\"",
+        "type": "prop-alt"
+      }
+    ],
+    "src/app/mcp-vs-rag/page.tsx": [
+      {
+        "line": 45,
+        "text": "AI Concepts",
+        "context": "alt=\"AI Concepts\"",
+        "type": "prop-alt"
+      }
+    ],
+    "src/app/profile/[username]/page.tsx": [
+      {
+        "line": 153,
+        "text": "No prompts yet",
+        "context": "alt=\"No prompts yet\"",
+        "type": "prop-alt"
+      }
+    ],
+    "src/app/prompts/[id]/not-found.tsx": [
+      {
+        "line": 8,
+        "text": "Prompt Not Found",
+        "context": "<h2 className=\"text-2xl font-semibold mb-4\">Prompt Not Found</h2>",
+        "type": "jsx-text"
+      }
+    ],
+    "src/app/search/page.tsx": [
+      {
+        "line": 179,
+        "text": "No search results",
+        "context": "alt=\"No search results\"",
+        "type": "prop-alt"
+      }
+    ],
+    "src/app/settings/notifications/page.tsx": [
+      {
+        "line": 45,
+        "text": "Notification Settings",
+        "context": "<h1 className=\"text-3xl font-bold mb-2\">Notification Settings</h1>",
+        "type": "jsx-text"
+      }
+    ],
+    "src/app/tutorials/advanced-prompting/page.tsx": [
+      {
+        "line": 493,
+        "text": "Techniques Avancées",
+        "context": "title=\"Techniques Avancées\"",
+        "type": "prop-title"
+      }
+    ],
+    "src/app/tutorials/advanced-prompting/quiz-section.tsx": [
+      {
+        "line": 67,
+        "text": "Quiz de validation",
+        "context": "title=\"Quiz de validation\"",
+        "type": "prop-title"
+      }
+    ],
+    "src/app/tutorials/claude-agents/quiz-section.tsx": [
+      {
+        "line": 67,
+        "text": "Quiz de validation",
+        "context": "title=\"Quiz de validation\"",
+        "type": "prop-title"
+      }
+    ],
+    "src/app/tutorials/claude-basics/page.tsx": [
+      {
+        "line": 455,
+        "text": "Les bases de Claude",
+        "context": "title=\"Les bases de Claude\"",
+        "type": "prop-title"
+      }
+    ],
+    "src/app/tutorials/claude-basics/quiz-section.tsx": [
+      {
+        "line": 67,
+        "text": "Quiz de validation",
+        "context": "title=\"Quiz de validation\"",
+        "type": "prop-title"
+      }
+    ],
+    "src/app/tutorials/code-generation/page.tsx": [
+      {
+        "line": 34,
+        "text": "Advanced",
+        "context": "<Badge className=\"bg-red-500\">Advanced</Badge>",
+        "type": "jsx-text"
+      }
+    ],
+    "src/app/tutorials/code-generation/quiz-section.tsx": [
+      {
+        "line": 67,
+        "text": "Quiz de validation",
+        "context": "title=\"Quiz de validation\"",
+        "type": "prop-title"
+      }
+    ],
+    "src/app/tutorials/intro-prompts/page.tsx": [
+      {
+        "line": 431,
+        "text": "Introduction aux Prompts",
+        "context": "title=\"Introduction aux Prompts\"",
+        "type": "prop-title"
+      }
+    ],
+    "src/app/tutorials/intro-prompts/quiz-section.tsx": [
+      {
+        "line": 67,
+        "text": "Quiz de validation",
+        "context": "title=\"Quiz de validation\"",
+        "type": "prop-title"
+      }
+    ],
+    "src/app/tutorials/multi-agent-systems/page.tsx": [
+      {
+        "line": 33,
+        "text": "Advanced",
+        "context": "<Badge className=\"bg-red-500\">Advanced</Badge>",
+        "type": "jsx-text"
+      }
+    ],
+    "src/app/tutorials/multi-agent-systems/quiz-section.tsx": [
+      {
+        "line": 67,
+        "text": "Quiz de validation",
+        "context": "title=\"Quiz de validation\"",
+        "type": "prop-title"
+      }
+    ],
+    "src/app/tutorials/prompt-optimization/page.tsx": [
+      {
+        "line": 33,
+        "text": "Intermediate",
+        "context": "<Badge className=\"bg-yellow-500\">Intermediate</Badge>",
+        "type": "jsx-text"
+      }
+    ],
+    "src/app/tutorials/prompt-optimization/quiz-section.tsx": [
+      {
+        "line": 67,
+        "text": "Quiz de validation",
+        "context": "title=\"Quiz de validation\"",
+        "type": "prop-title"
+      }
+    ],
+    "src/app/tutorials/prompt-templates/page.tsx": [
+      {
+        "line": 212,
+        "text": "our design team",
+        "context": "Write a professional email to <strong>our design team</strong> about <strong>the new branding guidel",
+        "type": "jsx-text"
+      },
+      {
+        "line": 212,
+        "text": "about",
+        "context": "Write a professional email to <strong>our design team</strong> about <strong>the new branding guidel",
+        "type": "jsx-text"
+      },
+      {
+        "line": 212,
+        "text": "the new branding guidelines",
+        "context": "Write a professional email to <strong>our design team</strong> about <strong>the new branding guidel",
+        "type": "jsx-text"
+      },
+      {
+        "line": 212,
+        "text": ". Tone:",
+        "context": "Write a professional email to <strong>our design team</strong> about <strong>the new branding guidel",
+        "type": "jsx-text"
+      },
+      {
+        "line": 212,
+        "text": "Friendly",
+        "context": "Write a professional email to <strong>our design team</strong> about <strong>the new branding guidel",
+        "type": "jsx-text"
+      },
+      {
+        "line": 212,
+        "text": ". Purpose:",
+        "context": "Write a professional email to <strong>our design team</strong> about <strong>the new branding guidel",
+        "type": "jsx-text"
+      },
+      {
+        "line": 212,
+        "text": "Inform",
+        "context": "Write a professional email to <strong>our design team</strong> about <strong>the new branding guidel",
+        "type": "jsx-text"
+      }
+    ],
+    "src/app/tutorials/prompt-templates/quiz-section.tsx": [
+      {
+        "line": 67,
+        "text": "Quiz de validation",
+        "context": "title=\"Quiz de validation\"",
+        "type": "prop-title"
+      }
+    ],
+    "src/components/ai-optimizer/prompt-optimizer.tsx": [
+      {
+        "line": 86,
+        "text": "Pro",
+        "context": "<Badge variant=\"secondary\" className=\"ml-1\">Pro</Badge>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 103,
+        "text": "Analyzing your prompt...",
+        "context": "<p className=\"text-sm text-muted-foreground\">Analyzing your prompt...</p>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 111,
+        "text": "Prompt Quality Score",
+        "context": "<h3 className=\"text-lg font-semibold mb-1\">Prompt Quality Score</h3>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 140,
+        "text": "Optimized Version",
+        "context": "<TabsTrigger value=\"optimized\">Optimized Version</TabsTrigger>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 141,
+        "text": "Key Improvements",
+        "context": "<TabsTrigger value=\"improvements\">Key Improvements</TabsTrigger>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 189,
+        "text": "AI-Optimized Prompt",
+        "context": "<h3 className=\"font-semibold mb-2\">AI-Optimized Prompt</h3>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 211,
+        "text": "Key Improvements Made",
+        "context": "<h3 className=\"font-semibold mb-4\">Key Improvements Made</h3>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 227,
+        "text": "💡 Pro Tip:",
+        "context": "<strong>💡 Pro Tip:</strong> These suggestions are AI-generated based on prompt",
+        "type": "jsx-text"
+      }
+    ],
+    "src/components/ai-tester/prompt-playground.tsx": [
+      {
+        "line": 85,
+        "text": "AI Prompt Tester",
+        "context": "<h3 className=\"text-lg font-semibold\">AI Prompt Tester</h3>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 86,
+        "text": "Premium",
+        "context": "<Badge variant=\"secondary\" className=\"text-xs\">Premium</Badge>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 100,
+        "text": "AI Model",
+        "context": "<label className=\"text-sm font-medium mb-2 block\">AI Model</label>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 123,
+        "text": "Test Input (Optional)",
+        "context": "<label className=\"text-sm font-medium mb-2 block\">Test Input (Optional)</label>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 127,
+        "text": "Add any variables or context for your prompt...",
+        "context": "placeholder=\"Add any variables or context for your prompt...\"",
+        "type": "prop-placeholder"
+      },
+      {
+        "line": 169,
+        "text": "AI Response",
+        "context": "<label className=\"text-sm font-medium\">AI Response</label>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 185,
+        "text": "💡 Pro Tip:",
+        "context": "<strong>💡 Pro Tip:</strong> Testing helps you optimize prompts before sharing.",
+        "type": "jsx-text"
+      },
+      {
+        "line": 187,
+        "text": "Upgrade",
+        "context": "<a href=\"/pricing\" className=\"underline font-medium\">Upgrade</a>",
+        "type": "jsx-text"
+      }
+    ],
+    "src/components/api/api-key-manager.tsx": [
+      {
+        "line": 96,
+        "text": "API Key Created!",
+        "context": "<CardTitle>API Key Created!</CardTitle>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 134,
+        "text": "Create New API Key",
+        "context": "<CardTitle>Create New API Key</CardTitle>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 142,
+        "text": "Key Name",
+        "context": "<Label htmlFor=\"keyName\">Key Name</Label>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 145,
+        "text": "My App Integration",
+        "context": "placeholder=\"My App Integration\"",
+        "type": "prop-placeholder"
+      },
+      {
+        "line": 214,
+        "text": "API Documentation",
+        "context": "<CardTitle>API Documentation</CardTitle>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 221,
+        "text": "Base URL:",
+        "context": "<p><strong>Base URL:</strong> <code className=\"bg-muted px-2 py-1 rounded\">https://promptparty.com/a",
+        "type": "jsx-text"
+      },
+      {
+        "line": 221,
+        "text": "https://promptparty.com/api/v1",
+        "context": "<p><strong>Base URL:</strong> <code className=\"bg-muted px-2 py-1 rounded\">https://promptparty.com/a",
+        "type": "jsx-text"
+      },
+      {
+        "line": 222,
+        "text": "Authentication:",
+        "context": "<p><strong>Authentication:</strong> Include your API key in the <code className=\"bg-muted px-2 py-1 ",
+        "type": "jsx-text"
+      },
+      {
+        "line": 222,
+        "text": "Include your API key in the",
+        "context": "<p><strong>Authentication:</strong> Include your API key in the <code className=\"bg-muted px-2 py-1 ",
+        "type": "jsx-text"
+      },
+      {
+        "line": 222,
+        "text": "x-api-key",
+        "context": "<p><strong>Authentication:</strong> Include your API key in the <code className=\"bg-muted px-2 py-1 ",
+        "type": "jsx-text"
+      },
+      {
+        "line": 222,
+        "text": "header",
+        "context": "<p><strong>Authentication:</strong> Include your API key in the <code className=\"bg-muted px-2 py-1 ",
+        "type": "jsx-text"
+      },
+      {
+        "line": 223,
+        "text": "Endpoints:",
+        "context": "<p><strong>Endpoints:</strong></p>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 225,
+        "text": "GET /prompts",
+        "context": "<li><code className=\"bg-muted px-2 py-1 rounded\">GET /prompts</code> - List prompts</li>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 225,
+        "text": "- List prompts",
+        "context": "<li><code className=\"bg-muted px-2 py-1 rounded\">GET /prompts</code> - List prompts</li>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 226,
+        "text": "POST /prompts",
+        "context": "<li><code className=\"bg-muted px-2 py-1 rounded\">POST /prompts</code> - Create prompt</li>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 226,
+        "text": "- Create prompt",
+        "context": "<li><code className=\"bg-muted px-2 py-1 rounded\">POST /prompts</code> - Create prompt</li>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 227,
+        "text": "GET /prompts/:id",
+        "context": "<li><code className=\"bg-muted px-2 py-1 rounded\">GET /prompts/:id</code> - Get prompt</li>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 227,
+        "text": "- Get prompt",
+        "context": "<li><code className=\"bg-muted px-2 py-1 rounded\">GET /prompts/:id</code> - Get prompt</li>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 228,
+        "text": "PUT /prompts/:id",
+        "context": "<li><code className=\"bg-muted px-2 py-1 rounded\">PUT /prompts/:id</code> - Update prompt</li>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 228,
+        "text": "- Update prompt",
+        "context": "<li><code className=\"bg-muted px-2 py-1 rounded\">PUT /prompts/:id</code> - Update prompt</li>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 229,
+        "text": "DELETE /prompts/:id",
+        "context": "<li><code className=\"bg-muted px-2 py-1 rounded\">DELETE /prompts/:id</code> - Delete prompt</li>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 229,
+        "text": "- Delete prompt",
+        "context": "<li><code className=\"bg-muted px-2 py-1 rounded\">DELETE /prompts/:id</code> - Delete prompt</li>",
+        "type": "jsx-text"
+      }
+    ],
+    "src/components/brand/logo.tsx": [
+      {
+        "line": 76,
+        "text": "Prompt Academy",
+        "context": "alt=\"Prompt Academy\"",
+        "type": "prop-alt"
+      }
+    ],
+    "src/components/collections/collection-share.tsx": [
+      {
+        "line": 155,
+        "text": "Twitter",
+        "context": "<span className=\"text-sm font-medium\">Twitter</span>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 162,
+        "text": "Email",
+        "context": "<span className=\"text-sm font-medium\">Email</span>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 196,
+        "text": "💡 Tip:",
+        "context": "<strong>💡 Tip:</strong> Make this collection public to share it with",
+        "type": "jsx-text"
+      }
+    ],
+    "src/components/comments/comment-item.tsx": [
+      {
+        "line": 74,
+        "text": "Delete comment",
+        "context": "<span className=\"sr-only\">Delete comment</span>",
+        "type": "jsx-text"
+      }
+    ],
+    "src/components/design-system/component-preview.tsx": [
+      {
+        "line": 31,
+        "text": "Preview",
+        "context": "<TabsTrigger value=\"preview\">Preview</TabsTrigger>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 32,
+        "text": "Code",
+        "context": "<TabsTrigger value=\"code\">Code</TabsTrigger>",
+        "type": "jsx-text"
+      }
+    ],
+    "src/components/editor/remix-editor.tsx": [
+      {
+        "line": 50,
+        "text": "Write your prompt here... (Markdown supported)",
+        "context": "placeholder=\"Write your prompt here... (Markdown supported)\"",
+        "type": "prop-placeholder"
+      }
+    ],
+    "src/components/feed/trending-tags.tsx": [
+      {
+        "line": 39,
+        "text": "Trending Tags",
+        "context": "<h2 className=\"text-lg font-semibold gradient-text\">Trending Tags</h2>",
+        "type": "jsx-text"
+      }
+    ],
+    "src/components/layout/footer.tsx": [
+      {
+        "line": 25,
+        "text": "📚 Apprendre",
+        "context": "<h3 className=\"font-semibold mb-4 text-foreground gradient-text\">📚 Apprendre</h3>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 43,
+        "text": "🤝 Communauté",
+        "context": "<h3 className=\"font-semibold mb-4 text-foreground gradient-text\">🤝 Communauté</h3>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 64,
+        "text": "⚖️ Légal",
+        "context": "<h3 className=\"font-semibold mb-4 text-foreground gradient-text\">⚖️ Légal</h3>",
+        "type": "jsx-text"
+      }
+    ],
+    "src/components/layout/header.tsx": [
+      {
+        "line": 84,
+        "text": "Keyboard shortcuts",
+        "context": "aria-label=\"Keyboard shortcuts\"",
+        "type": "prop-aria-label"
+      }
+    ],
+    "src/components/notifications/notification-center.tsx": [
+      {
+        "line": 218,
+        "text": "Notifications",
+        "context": "<h3 className=\"font-semibold\">Notifications</h3>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 247,
+        "text": "No notifications yet",
+        "context": "<p className=\"text-sm text-muted-foreground\">No notifications yet</p>",
+        "type": "jsx-text"
+      }
+    ],
+    "src/components/notifications/notifications-page.tsx": [
+      {
+        "line": 155,
+        "text": "Notifications",
+        "context": "<h1 className=\"text-4xl font-bold mb-2\">Notifications</h1>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 171,
+        "text": "All",
+        "context": "<TabsTrigger value=\"all\">All</TabsTrigger>",
+        "type": "jsx-text"
+      }
+    ],
+    "src/components/onboarding/feature-tour.tsx": [
+      {
+        "line": 21,
+        "text": "You're all set!",
+        "context": "<span>You're all set!</span>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 39,
+        "text": "Like & Comment",
+        "context": "<h3 className=\"font-semibold mb-2\">Like & Comment</h3>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 53,
+        "text": "Remix Prompts",
+        "context": "<h3 className=\"font-semibold mb-2\">Remix Prompts</h3>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 67,
+        "text": "Save to Collections",
+        "context": "<h3 className=\"font-semibold mb-2\">Save to Collections</h3>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 81,
+        "text": "Share & Collaborate",
+        "context": "<h3 className=\"font-semibold mb-2\">Share & Collaborate</h3>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 94,
+        "text": "Pro tip:",
+        "context": "<span className=\"font-semibold\">Pro tip:</span> Press{' '}",
+        "type": "jsx-text"
+      },
+      {
+        "line": 121,
+        "text": "Step 4 of 4",
+        "context": "<p className=\"text-xs text-muted-foreground mb-2\">Step 4 of 4</p>",
+        "type": "jsx-text"
+      }
+    ],
+    "src/components/onboarding/follow-creators.tsx": [
+      {
+        "line": 152,
+        "text": "Step 3 of 4",
+        "context": "<p className=\"text-xs text-muted-foreground mb-2\">Step 3 of 4</p>",
+        "type": "jsx-text"
+      }
+    ],
+    "src/components/onboarding/interest-selection.tsx": [
+      {
+        "line": 122,
+        "text": "Step 2 of 4",
+        "context": "<p className=\"text-xs text-muted-foreground mb-2\">Step 2 of 4</p>",
+        "type": "jsx-text"
+      }
+    ],
+    "src/components/onboarding/welcome-screen.tsx": [
+      {
+        "line": 21,
+        "text": "Welcome to Prompt Party!",
+        "context": "<span>Welcome to Prompt Party!</span>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 39,
+        "text": "Join the Community",
+        "context": "<h3 className=\"font-semibold mb-1\">Join the Community</h3>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 49,
+        "text": "Discover & Learn",
+        "context": "<h3 className=\"font-semibold mb-1\">Discover & Learn</h3>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 59,
+        "text": "Remix & Create",
+        "context": "<h3 className=\"font-semibold mb-1\">Remix & Create</h3>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 88,
+        "text": "Step 1 of 4",
+        "context": "<p className=\"text-xs text-muted-foreground mb-2\">Step 1 of 4</p>",
+        "type": "jsx-text"
+      }
+    ],
+    "src/components/pages/challenges-page-client.tsx": [
+      {
+        "line": 63,
+        "text": "Challenge Trophy",
+        "context": "alt=\"Challenge Trophy\"",
+        "type": "prop-alt"
+      },
+      {
+        "line": 129,
+        "text": "Se termine dans 5 jours",
+        "context": "<span>Se termine dans 5 jours</span>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 162,
+        "text": "points + badge",
+        "context": "<div className=\"text-xs text-muted-foreground\">points + badge</div>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 196,
+        "text": "Se termine dans 25 jours",
+        "context": "<span>Se termine dans 25 jours</span>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 307,
+        "text": "1. Choisis un challenge",
+        "context": "<h3 className=\"font-semibold mb-2\">1. Choisis un challenge</h3>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 321,
+        "text": "2. Progresse à ton rythme",
+        "context": "<h3 className=\"font-semibold mb-2\">2. Progresse à ton rythme</h3>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 335,
+        "text": "3. Gagne des récompenses",
+        "context": "<h3 className=\"font-semibold mb-2\">3. Gagne des récompenses</h3>",
+        "type": "jsx-text"
+      }
+    ],
+    "src/components/pages/leaderboard-page-client.tsx": [
+      {
+        "line": 66,
+        "text": "Leaderboard Podium",
+        "context": "alt=\"Leaderboard Podium\"",
+        "type": "prop-alt"
+      },
+      {
+        "line": 149,
+        "text": "points",
+        "context": "<div className=\"text-xs text-muted-foreground\">points</div>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 178,
+        "text": "🤝 Top 10 Contributeurs (Ce Mois)",
+        "context": "<h3 className=\"text-2xl font-bold mb-2\">🤝 Top 10 Contributeurs (Ce Mois)</h3>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 217,
+        "text": "points",
+        "context": "<div className=\"text-xs text-muted-foreground\">points</div>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 231,
+        "text": "5 personnes",
+        "context": "<span className=\"font-bold text-orange-600\">5 personnes</span> aidées ce mois",
+        "type": "jsx-text"
+      },
+      {
+        "line": 246,
+        "text": "⭐ Légendes de la Plateforme",
+        "context": "<h3 className=\"text-2xl font-bold mb-2\">⭐ Légendes de la Plateforme</h3>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 294,
+        "text": "points totaux",
+        "context": "<div className=\"text-xs text-muted-foreground\">points totaux</div>",
+        "type": "jsx-text"
+      }
+    ],
+    "src/components/pages/mcp-vs-rag-page-client.tsx": [
+      {
+        "line": 166,
+        "text": "AI Concepts",
+        "context": "alt=\"AI Concepts\"",
+        "type": "prop-alt"
+      }
+    ],
+    "src/components/pages/pricing-page-client.tsx": [
+      {
+        "line": 50,
+        "text": "Support the Community",
+        "context": "alt=\"Support the Community\"",
+        "type": "prop-alt"
+      }
+    ],
+    "src/components/pages/tutorials-page-client.tsx": [
+      {
+        "line": 100,
+        "text": "Learning Path Journey",
+        "context": "alt=\"Learning Path Journey\"",
+        "type": "prop-alt"
+      }
+    ],
+    "src/components/pages/wizard-page-client.tsx": [
+      {
+        "line": 93,
+        "text": "AI Prompt Wizard",
+        "context": "alt=\"AI Prompt Wizard\"",
+        "type": "prop-alt"
+      }
+    ],
+    "src/components/profile/avatar-picker.tsx": [
+      {
+        "line": 97,
+        "text": "Choose Your Avatar",
+        "context": "<h3 className=\"text-sm font-medium\">Choose Your Avatar</h3>",
+        "type": "jsx-text"
+      }
+    ],
+    "src/components/profile/avatar-upload.tsx": [
+      {
+        "line": 79,
+        "text": "Avatar preview",
+        "context": "alt=\"Avatar preview\"",
+        "type": "prop-alt"
+      }
+    ],
+    "src/components/profile/profile-badges.tsx": [
+      {
+        "line": 77,
+        "text": "Badges",
+        "context": "<h3 className=\"text-lg font-semibold mb-4\">Badges</h3>",
+        "type": "jsx-text"
+      }
+    ],
+    "src/components/profile/settings-form.tsx": [
+      {
+        "line": 53,
+        "text": "Profile Information",
+        "context": "<h2 className=\"text-xl font-semibold mb-4\">Profile Information</h2>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 93,
+        "text": "Your name",
+        "context": "placeholder=\"Your name\"",
+        "type": "prop-placeholder"
+      },
+      {
+        "line": 107,
+        "text": "username",
+        "context": "placeholder=\"username\"",
+        "type": "prop-placeholder"
+      },
+      {
+        "line": 127,
+        "text": "Account",
+        "context": "<h2 className=\"text-xl font-semibold mb-4\">Account</h2>",
+        "type": "jsx-text"
+      }
+    ],
+    "src/components/prompts/bookmark-button.tsx": [
+      {
+        "line": 133,
+        "text": "Favorites",
+        "context": "<span>Favorites</span>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 156,
+        "text": "Manage folders...",
+        "context": "<span className=\"text-primary\">Manage folders...</span>",
+        "type": "jsx-text"
+      }
+    ],
+    "src/components/prompts/collaborative-editor.tsx": [
+      {
+        "line": 301,
+        "text": "Prompt title...",
+        "context": "placeholder=\"Prompt title...\"",
+        "type": "prop-placeholder"
+      },
+      {
+        "line": 325,
+        "text": "Write your prompt here...",
+        "context": "placeholder=\"Write your prompt here...\"",
+        "type": "prop-placeholder"
+      },
+      {
+        "line": 364,
+        "text": "You are the only one editing",
+        "context": "<span>You are the only one editing</span>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 367,
+        "text": "Changes are saved automatically",
+        "context": "<span>Changes are saved automatically</span>",
+        "type": "jsx-text"
+      }
+    ],
+    "src/components/prompts/embed-button.tsx": [
+      {
+        "line": 27,
+        "text": "Prompt Party Embed",
+        "context": "title=\"Prompt Party Embed\"",
+        "type": "prop-title"
+      },
+      {
+        "line": 46,
+        "text": "Embed prompt",
+        "context": "aria-label=\"Embed prompt\"",
+        "type": "prop-aria-label"
+      },
+      {
+        "line": 63,
+        "text": "Embed Prompt",
+        "context": "<h2 className=\"text-2xl font-bold\">Embed Prompt</h2>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 67,
+        "text": "Close",
+        "context": "aria-label=\"Close\"",
+        "type": "prop-aria-label"
+      },
+      {
+        "line": 113,
+        "text": "Theme",
+        "context": "<label className=\"text-sm font-medium mb-2 block\">Theme</label>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 141,
+        "text": "Preview",
+        "context": "<label className=\"text-sm font-medium mb-2 block\">Preview</label>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 148,
+        "text": "Prompt Party Embed Preview",
+        "context": "title=\"Prompt Party Embed Preview\"",
+        "type": "prop-title"
+      },
+      {
+        "line": 165,
+        "text": "Copy code",
+        "context": "aria-label=\"Copy code\"",
+        "type": "prop-aria-label"
+      }
+    ],
+    "src/components/prompts/how-to-use-section.tsx": [
+      {
+        "line": 28,
+        "text": "How to Use This Prompt",
+        "context": "<CardTitle className=\"text-lg\">How to Use This Prompt</CardTitle>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 33,
+        "text": "Copy the prompt",
+        "context": "<strong className=\"text-foreground\">Copy the prompt</strong> using the button below",
+        "type": "jsx-text"
+      },
+      {
+        "line": 36,
+        "text": "Open your AI assistant",
+        "context": "<strong className=\"text-foreground\">Open your AI assistant</strong> (ChatGPT, Claude, Gemini, etc.)",
+        "type": "jsx-text"
+      },
+      {
+        "line": 39,
+        "text": "Paste the prompt",
+        "context": "<strong className=\"text-foreground\">Paste the prompt</strong> and customize any variables or placeho",
+        "type": "jsx-text"
+      },
+      {
+        "line": 42,
+        "text": "Review the output",
+        "context": "<strong className=\"text-foreground\">Review the output</strong> and iterate as needed",
+        "type": "jsx-text"
+      },
+      {
+        "line": 65,
+        "text": "Compatible AI Models",
+        "context": "<h4 className=\"text-sm font-semibold mb-2\">Compatible AI Models</h4>",
+        "type": "jsx-text"
+      }
+    ],
+    "src/components/prompts/import-export.tsx": [
+      {
+        "line": 203,
+        "text": "Export",
+        "context": "<TabsTrigger value=\"export\">Export</TabsTrigger>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 204,
+        "text": "Import",
+        "context": "<TabsTrigger value=\"import\">Import</TabsTrigger>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 270,
+        "text": "Paste your JSON export here...",
+        "context": "placeholder=\"Paste your JSON export here...\"",
+        "type": "prop-placeholder"
+      }
+    ],
+    "src/components/prompts/remix-tree.tsx": [
+      {
+        "line": 114,
+        "text": "Original",
+        "context": "<Badge variant=\"default\" className=\"shrink-0\">Original</Badge>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 200,
+        "text": "💡 Tip:",
+        "context": "<strong>💡 Tip:</strong> Click the + or − buttons to expand or collapse remix branches.",
+        "type": "jsx-text"
+      },
+      {
+        "line": 209,
+        "text": "No Remixes Yet",
+        "context": "<p className=\"text-lg font-medium mb-2\">No Remixes Yet</p>",
+        "type": "jsx-text"
+      }
+    ],
+    "src/components/prompts/share-button.tsx": [
+      {
+        "line": 81,
+        "text": "Share prompt",
+        "context": "aria-label=\"Share prompt\"",
+        "type": "prop-aria-label"
+      },
+      {
+        "line": 95,
+        "text": "Share on Twitter",
+        "context": "<span className=\"text-sm\">Share on Twitter</span>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 103,
+        "text": "Share on LinkedIn",
+        "context": "<span className=\"text-sm\">Share on LinkedIn</span>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 112,
+        "text": "Share...",
+        "context": "<span className=\"text-sm\">Share...</span>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 125,
+        "text": "Copied!",
+        "context": "<span className=\"text-sm text-success\">Copied!</span>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 130,
+        "text": "Copy link",
+        "context": "<span className=\"text-sm\">Copy link</span>",
+        "type": "jsx-text"
+      }
+    ],
+    "src/components/prompts/version-history.tsx": [
+      {
+        "line": 115,
+        "text": "No version history available",
+        "context": "<p>No version history available</p>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 116,
+        "text": "This is the original version",
+        "context": "<p className=\"text-sm mt-1\">This is the original version</p>",
+        "type": "jsx-text"
+      }
+    ],
+    "src/components/search/advanced-filters.tsx": [
+      {
+        "line": 178,
+        "text": "Tags",
+        "context": "<h4 className=\"font-medium mb-2 text-sm\">Tags</h4>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 195,
+        "text": "AI Models",
+        "context": "<h4 className=\"font-medium mb-2 text-sm\">AI Models</h4>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 212,
+        "text": "Date Range",
+        "context": "<h4 className=\"font-medium mb-2 text-sm\">Date Range</h4>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 233,
+        "text": "Pick a date range",
+        "context": "<span>Pick a date range</span>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 250,
+        "text": "Verified Prompts Only",
+        "context": "<label className=\"text-sm font-medium\">Verified Prompts Only</label>",
+        "type": "jsx-text"
+      }
+    ],
+    "src/components/search/saved-searches.tsx": [
+      {
+        "line": 103,
+        "text": "Quick access to your favorite search queries",
+        "context": "<CardDescription>Quick access to your favorite search queries</CardDescription>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 109,
+        "text": "Name this search...",
+        "context": "placeholder=\"Name this search...\"",
+        "type": "prop-placeholder"
+      },
+      {
+        "line": 124,
+        "text": "No saved searches yet",
+        "context": "<p className=\"text-sm\">No saved searches yet</p>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 125,
+        "text": "Search for something and save it here for quick access",
+        "context": "<p className=\"text-xs\">Search for something and save it here for quick access</p>",
+        "type": "jsx-text"
+      }
+    ],
+    "src/components/search/search-autocomplete.tsx": [
+      {
+        "line": 182,
+        "text": "Search prompts, tags...",
+        "context": "placeholder=\"Search prompts, tags...\"",
+        "type": "prop-placeholder"
+      },
+      {
+        "line": 206,
+        "text": "Recent Searches",
+        "context": "<span className=\"text-xs text-muted-foreground font-medium\">Recent Searches</span>",
+        "type": "jsx-text"
+      }
+    ],
+    "src/components/theme/theme-toggle.tsx": [
+      {
+        "line": 18,
+        "text": "Toggle theme",
+        "context": "<span className=\"sr-only\">Toggle theme</span>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 37,
+        "text": "Toggle theme",
+        "context": "aria-label=\"Toggle theme\"",
+        "type": "prop-aria-label"
+      },
+      {
+        "line": 87,
+        "text": "Toggle theme",
+        "context": "<span className=\"sr-only\">Toggle theme</span>",
+        "type": "jsx-text"
+      }
+    ],
+    "src/components/tutorials/quiz.tsx": [
+      {
+        "line": 106,
+        "text": "Leçon validée !",
+        "context": "<h3 className=\"text-2xl font-bold mb-2\">Leçon validée !</h3>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 109,
+        "text": "et le badge",
+        "context": "{rewardBadge && <> et le badge <strong className=\"text-violet-600\">{rewardBadge}</strong></>}",
+        "type": "jsx-text"
+      },
+      {
+        "line": 149,
+        "text": "Tes réponses :",
+        "context": "<h4 className=\"font-semibold\">Tes réponses :</h4>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 267,
+        "text": "Précédent",
+        "context": "<span className=\"leading-none\">Précédent</span>",
+        "type": "jsx-text"
+      }
+    ],
+    "src/components/tutorials/tutorial-progress.tsx": [
+      {
+        "line": 69,
+        "text": "Leçon complétée",
+        "context": "<span className=\"font-semibold\">Leçon complétée</span>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 88,
+        "text": "Progression",
+        "context": "<span className=\"text-muted-foreground\">Progression</span>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 96,
+        "text": "Récompenses :",
+        "context": "<div className=\"font-semibold text-muted-foreground\">Récompenses :</div>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 113,
+        "text": "💡 Complète le quiz à la fin pour valider cette leçon",
+        "context": "<p>💡 Complète le quiz à la fin pour valider cette leçon</p>",
+        "type": "jsx-text"
+      }
+    ],
+    "src/components/ui/badge.tsx": [
+      {
+        "line": 146,
+        "text": "Remove",
+        "context": "aria-label=\"Remove\"",
+        "type": "prop-aria-label"
+      }
+    ],
+    "src/components/ui/button.tsx": [
+      {
+        "line": 138,
+        "text": "Loading...",
+        "context": "{loading && <span className=\"sr-only\">Loading...</span>}",
+        "type": "jsx-text"
+      }
+    ],
+    "src/components/ui/dialog.tsx": [
+      {
+        "line": 49,
+        "text": "Close",
+        "context": "<span className=\"sr-only\">Close</span>",
+        "type": "jsx-text"
+      }
+    ],
+    "src/components/ui/form.tsx": [
+      {
+        "line": 22,
+        "text": "= FieldPath",
+        "context": "TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 31,
+        "text": "= FieldPath",
+        "context": "TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>",
+        "type": "jsx-text"
+      }
+    ],
+    "src/components/ui/input.tsx": [
+      {
+        "line": 167,
+        "text": "Clear input",
+        "context": "aria-label=\"Clear input\"",
+        "type": "prop-aria-label"
+      }
+    ],
+    "src/components/ui/loading-skeleton.tsx": [
+      {
+        "line": 221,
+        "text": "Loading...",
+        "context": "<span className=\"sr-only\">Loading...</span>",
+        "type": "jsx-text"
+      }
+    ],
+    "src/components/ui/sheet.tsx": [
+      {
+        "line": 70,
+        "text": "Close",
+        "context": "<span className=\"sr-only\">Close</span>",
+        "type": "jsx-text"
+      }
+    ],
+    "src/components/ui/skeleton.tsx": [
+      {
+        "line": 57,
+        "text": "Loading...",
+        "context": "aria-label=\"Loading...\"",
+        "type": "prop-aria-label"
+      }
+    ],
+    "src/components/ui/success-celebration.tsx": [
+      {
+        "line": 75,
+        "text": "Close",
+        "context": "aria-label=\"Close\"",
+        "type": "prop-aria-label"
+      },
+      {
+        "line": 87,
+        "text": "Success",
+        "context": "alt=\"Success\"",
+        "type": "prop-alt"
+      }
+    ],
+    "src/lib/email/client.ts": [
+      {
+        "line": 97,
+        "text": "🪩 Prompt Party",
+        "context": "<h1 style=\"margin: 0; color: #6366f1; font-size: 24px;\">🪩 Prompt Party</h1>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 135,
+        "text": "Manage notification preferences",
+        "context": "<a href=\"https://prompt-party.com/settings/notifications\" style=\"color: #6366f1; text-decoration: no",
+        "type": "jsx-text"
+      }
+    ],
+    "src/lib/email/send-notification.ts": [
+      {
+        "line": 161,
+        "text": "Your week on Prompt Party",
+        "context": "<h3>Your week on Prompt Party</h3>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 163,
+        "text": "new followers",
+        "context": "<li><strong>${stats.newFollowers}</strong> new followers</li>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 164,
+        "text": "likes on your prompts",
+        "context": "<li><strong>${stats.totalLikes}</strong> likes on your prompts</li>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 165,
+        "text": "new comments",
+        "context": "<li><strong>${stats.totalComments}</strong> new comments</li>",
+        "type": "jsx-text"
+      },
+      {
+        "line": 169,
+        "text": "Your top prompt this week: \"",
+        "context": "? `<p>Your top prompt this week: \"<strong>${stats.topPrompt.title}</strong>\" with ${stats.topPrompt.",
+        "type": "jsx-text"
+      }
+    ]
+  },
+  "summary": {
+    "totalFilesScanned": 223,
+    "filesWithHardcoded": 76,
+    "totalHardcodedStrings": 209
+  }
+}

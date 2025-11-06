@@ -38,13 +38,13 @@ Avec **800 millions d'utilisateurs hebdomadaires** de ChatGPT et l'explosion de 
 
 ### ✨ La Solution
 
-Une **plateforme sociale freemium** combinant :
+Une **plateforme éducative et sociale freemium** combinant :
 
-1. **Réseau social** : Follow, like, comment, remix (comme GitHub pour le code)
-2. **Multi-LLM testing** : Tester le même prompt sur GPT-4, Claude 3.5, Gemini
-3. **Gamification** : Challenges, leaderboards, badges, XP
-4. **Monétisation** : Freemium (€10/mois Pro) + marketplace (20% commission)
-5. **Collaboration** : Teams, workspaces, version control
+1. **Plateforme d'apprentissage** : Tutoriels interactifs, parcours guidés (débutant, expert, pro)
+2. **Réseau social** : Follow, like, comment, remix (comme GitHub pour le code)
+3. **AI Playground** : Prompt Wizard pour tester et expérimenter avec l'IA
+4. **Gamification** : Challenges hebdomadaires, achievement badges, leaderboards
+5. **Monétisation** : Support volontaire (€4.99/mois) pour soutenir le projet open-source
 
 ### 📊 Marché
 
@@ -60,7 +60,13 @@ Une **plateforme sociale freemium** combinant :
 - ❌ **PromptBase/Hero** : Marketplace prompts **images** (Midjourney, DALL-E) - marché différent
 - ❌ **LangChain/LangSmith** : Outils dev/LLMOps - pas consumer-facing
 
-**Notre avantage compétitif** : Seule plateforme combinant aspects sociaux + collaboration + multi-LLM + business focus.
+**Notre avantage compétitif** :
+- ✅ **Focus éducatif unique** : 12 tutoriels interactifs (vs. zéro chez concurrents)
+- ✅ **Parcours d'apprentissage structurés** : Débutant → Expert → Pro
+- ✅ **Open-source first** : Gratuit, communauté-driven (vs. paywall FlowGPT)
+- ✅ **UI/UX moderne** : Shadcn UI, Next.js 15, design premium
+- ✅ **Social natif** : Follow, badges, challenges (pas juste marketplace)
+- ⚠️ **Multi-LLM** : Planifié mais non implémenté (roadmap Phase 2)
 
 ### 💰 Business Model
 
@@ -79,10 +85,24 @@ Une **plateforme sociale freemium** combinant :
 ### 📈 Traction & Projections
 
 **Actuellement** :
-- MVP fonctionnel deployed sur Vercel
-- 57 routes/features, 111 composants React
-- Stack moderne : Next.js 15, Supabase, Vercel
-- Bootstrap, €0 levés
+- 🚀 Plateforme complète déployée sur Vercel
+- **46 routes/pages** implementées (vs. 57 planifiées)
+- **Stack** : Next.js 15 (React 19), Supabase, Vercel, TypeScript
+- **Features clés implémentées** :
+  - ✅ Authentification Supabase (email, Google, GitHub)
+  - ✅ Système de prompts complet (create, remix, share, embed)
+  - ✅ Collections publiques/privées
+  - ✅ Real-time likes, comments, views
+  - ✅ **12 tutoriels interactifs** (3 parcours d'apprentissage)
+  - ✅ Prompt Wizard (AI playground)
+  - ✅ Challenges communautaires avec voting
+  - ✅ Achievement badges (6 types)
+  - ✅ Profils utilisateurs avec stats
+  - ✅ Social sharing (Twitter, LinkedIn, embed widgets)
+  - ✅ Keyboard shortcuts
+  - ✅ i18n (EN/FR/NL)
+- **Focus** : Éducation AI + communauté, pas marketplace
+- Bootstrap, €0 levés, ~€0/mois coûts (Vercel Free + Supabase Free)
 
 **Projections 18 mois** :
 - **M6** : 1,000 users, €800 MRR (bootstrap)
@@ -100,6 +120,121 @@ Une **plateforme sociale freemium** combinant :
 - 10% Runway & imprévus
 
 **Objectif** : Atteindre **€30K MRR** et **10K users** en 12 mois pour lever Seed de €1M-€1.5M.
+
+---
+
+## 1.1 ÉTAT ACTUEL VS. BUSINESS PLAN ORIGINAL
+
+### ✅ Features Implémentées (100% fonctionnelles)
+
+#### 🎓 Éducation & Apprentissage (NOUVEAU - non prévu au BP original)
+- **12 tutoriels interactifs** :
+  - Intro to prompts, Claude basics, Advanced prompting
+  - Prompt templates, Prompt optimization, Code generation
+  - Claude agents, Multi-agent systems
+  - 3 parcours d'apprentissage (Beginner, Expert, Pro)
+- **Contenu i18n** : EN, FR, NL
+- **MCP vs RAG** : Page éducative comparant les approches
+
+#### 🎨 Social & Communauté
+- **Système de prompts** : Create, edit, delete, remix (fork)
+- **Real-time engagement** : Likes, comments, views (avec session tracking)
+- **Collections** : Publiques ET privées (pas juste publiques comme prévu)
+- **Profils utilisateurs** : Stats complètes (prompts créés, likes reçus, vues, remixes)
+- **Achievement badges** : 6 types (Creator, Popular, Influencer, Veteran, Prolific, Premium)
+- **Social sharing** : Twitter, LinkedIn, native share, copy link, embed widgets
+- **Follow system** : Implemente dans DB schema
+- **Keyboard shortcuts** : Globaux + page-specific
+
+#### 🎮 Gamification
+- **Challenges** : Système complet avec catégories, difficultés, récompenses
+- **Community voting** : Vote sur submissions de challenges
+- **Leaderboard** : Page dédiée (route implémentée)
+
+#### 🛠️ Features Techniques
+- **Prompt Wizard** : AI playground pour expérimenter
+- **Search** : Route implémentée
+- **Notifications** : Système + page settings
+- **Templates** : Bibliothèque de templates
+- **Trending** : Algorithme + page dédiée
+- **Bookmarks** : Système de favoris
+- **Following feed** : Feed personnalisé
+- **Embed widgets** : Iframe embeds pour partager prompts ailleurs
+
+### ⚠️ Features NON Implémentées (Roadmap)
+
+#### AI Testing (Feature clé du BP original)
+- ❌ **Multi-LLM comparison** : GPT-4 vs Claude vs Gemini
+- ❌ **AI tests quota** : Système de crédits (10 free, illimité Pro)
+- ❌ **LLM API integration** : OpenAI, Anthropic, Google APIs
+- **Impact** : Plan Pro (€9.99) non justifié sans cette feature
+
+#### Monétisation
+- ❌ **Stripe integration** : Payments, subscriptions, webhooks
+- ❌ **Tiers payants actifs** : Pro, Team, Business
+- ✅ **Pricing page** : UI implémentée, mais checkout non fonctionnel
+- ❌ **Marketplace** : Vente de prompts avec commission 20%
+- ❌ **Sponsored challenges** : Partenariats marques
+- ❌ **API commerciale** : Access payant
+
+#### Collaboration (Team/Business features)
+- ❌ **Team workspaces** : Espaces partagés
+- ❌ **Real-time collaboration** : Editing simultané
+- ❌ **Roles & permissions** : Admin, Editor, Viewer
+- ❌ **SSO** : Single Sign-On
+- ❌ **White-label** : Custom domain, branding
+
+#### Analytics & Observability
+- ❌ **Analytics dashboard** : Pro feature
+- ❌ **A/B testing** : Performance prompts
+- ❌ **PostHog / Sentry** : Monitoring (mentionné README mais non configuré)
+
+### 🎯 Positionnement Actuel vs. Original
+
+| Aspect | Business Plan Original | Implémentation Actuelle |
+|--------|------------------------|-------------------------|
+| **Focus principal** | B2B SaaS, monétisation agressive | Éducation gratuite, open-source |
+| **Valeur #1** | Multi-LLM testing | Tutoriels interactifs |
+| **Monetization** | Freemium €9.99 Pro | Donation volontaire €4.99 |
+| **Cible** | Power users, freelancers, entreprises | Apprenants, débutants AI, communauté |
+| **Différenciation** | "GitHub des prompts" + Multi-LLM | "École gratuite de prompt engineering" |
+| **Business model** | SaaS classique 12% conversion | Open-source + support volontaire |
+
+### 💡 Pourquoi ce Pivot ?
+
+**Avantages du positionnement actuel** :
+1. ✅ **Barrière à l'entrée nulle** : Tout gratuit = acquisition massive
+2. ✅ **Différenciation unique** : Seul concurrent avec focus éducatif
+3. ✅ **Coûts minimaux** : €10/mois (Netlify + Supabase free tiers)
+4. ✅ **Validation rapide** : Traction organique avant monétisation
+5. ✅ **Community goodwill** : Open-source = ambassadeurs passionnés
+
+**Trade-offs** :
+1. ❌ **Revenue retardé** : Pas de MRR court terme
+2. ❌ **Dépendance freemium conversion** : Besoin volume massif
+3. ❌ **Complexité AI testing** : Feature reportée (coût API LLM élevé)
+
+### 🚀 Recommandations Stratégiques
+
+**Court terme (M1-M6)** :
+1. **Doubler sur éducation** : Créer 10+ tutoriels supplémentaires
+2. **Valider traction** : Objectif 1,000 users organiques
+3. **Lancer donations** : Implémenter Stripe pour plan Support (€4.99)
+4. **Product Hunt launch** : Top 5 = 2,000+ visitors
+
+**Moyen terme (M6-M12)** :
+1. **Implémenter AI testing** : OpenAI + Anthropic APIs
+2. **Lancer tier Pro** : €9.99/mois avec tests illimités
+3. **Analytics dashboard** : Pro feature pour justifier pricing
+4. **B2B outreach** : Agencies, bootcamps (Team plan)
+
+**Levée de fonds** :
+- **Timing** : Attendre traction (1,000+ users, testimonials)
+- **Montant** : Réduire ask à €300K-€500K (vs. €600K original)
+- **Use of funds** :
+  - 50% Product (AI testing, analytics, mobile app)
+  - 30% Marketing (content, SEO, partnerships)
+  - 20% Ops + runway
 
 ---
 
@@ -297,66 +432,53 @@ Source : Precedence Research, 2025
 
 #### Freemium Tiers
 
-**FREE** - €0/mois
+**FREE** - €0/mois (Plan actuel par défaut)
 
-- ✅ Prompts publics illimités (création, like, comment)
-- ✅ 10 AI tests/mois (GPT-3.5, Claude Haiku, Gemini Flash)
-- ✅ Collections publiques
-- ✅ Profil basique + stats
-- ✅ Badges communauté
-- ❌ Pas de prompts privés
-- ❌ Pas d'analytics
-- ❌ Pas de multi-LLM comparison
+- ✅ **Tous les tutoriels** : 12 tutoriels interactifs, 3 parcours d'apprentissage
+- ✅ **Prompts publics illimités** (création, like, comment, remix)
+- ✅ **Prompt Wizard** : AI playground pour expérimenter
+- ✅ **Collections publiques** illimitées
+- ✅ **Profil complet** : Stats (prompts, likes, vues, remixes) + badges
+- ✅ **Achievement badges** : 6 types (Creator, Popular, Influencer, etc.)
+- ✅ **Challenges communautaires** : Participation + voting
+- ✅ **Social features** : Follow, share, embed widgets
+- ✅ **Keyboard shortcuts** complets
+- ✅ **Embeds** : Intégrer prompts ailleurs (iframe)
+- ✅ **Real-time** : Votes, comments, views en temps réel
+- ✅ Collections **privées** (feature implémentée)
+- ⚠️ **Note** : AI testing non implementé (pas de GPT-4, Claude, Gemini tests)
 
-**Objectif** : Acquisition massive, viral growth
-
----
-
-**PRO** - €9.99/mois (ou €99/an -17%)
-
-- ✅ **Tout Free +**
-- ✅ **Tests AI illimités** (tous modèles premium : GPT-4, Claude Opus, Gemini Pro)
-- ✅ **Multi-LLM comparison** : Tester simultanément GPT vs Claude vs Gemini
-- ✅ **Prompts privés** illimités
-- ✅ **Analytics avancées** : Performance prompts, A/B testing results
-- ✅ **Collections privées** illimitées
-- ✅ **Badges premium** : Verified, Pro Creator
-- ✅ **Export prompts** (PDF, JSON, API)
-- ✅ **Priority support**
-- ✅ **Pas de publicités**
-
-**Cible** : Power users, freelancers, créateurs de contenu
+**Objectif** : Éducation gratuite, acquisition massive, viral growth
 
 ---
 
-**TEAM** - €29/mois (5 sièges inclus, +€5/siège additionnel)
+**SUPPORT (Donation)** - €4.99/mois
 
-- ✅ **Tout Pro (pour chaque membre) +**
-- ✅ **Workspace partagé** : Bibliothèque prompts team
-- ✅ **Collaboration real-time** : Editing simultané
-- ✅ **Roles & permissions** : Admin, Editor, Viewer
-- ✅ **Team analytics** : Usage, performance collective
-- ✅ **API basique** : 10K requêtes/mois
-- ✅ **SSO** (Single Sign-On)
-- ✅ **Onboarding personnalisé**
+- ✅ **Tout Free +** (qui est déjà complet)
+- ✅ **Support le projet** open-source
+- ✅ **Badge "Supporter"** visible sur profil
+- ✅ **Accès anticipé** aux nouvelles features
+- ✅ **Nom dans les crédits** du projet
+- ✅ **Vote prioritaire** sur roadmap
 
-**Cible** : Startups, agences, équipes marketing
+**Cible** : Early adopters, supporters, passionnés du projet
+
+**Note importante** : La plateforme est **100% gratuite** dans sa version actuelle. Le plan Support est un système de **donation volontaire** pour soutenir le développement, pas un paywall.
 
 ---
 
-**BUSINESS** - €99/mois (10 sièges inclus, +€8/siège additionnel)
+**⚠️ TIERS NON IMPLEMENTÉS (Roadmap future)**
 
-- ✅ **Tout Team +**
-- ✅ **White-label** : Custom domain, branding
-- ✅ **API avancée** : 100K requêtes/mois, webhooks
-- ✅ **SLA 99.9%** uptime
-- ✅ **Support prioritaire 24/7**
-- ✅ **Custom integrations** : Slack, Teams, Discord
-- ✅ **Advanced security** : SOC 2, RGPD, audit logs
-- ✅ **Dedicated account manager**
-- ✅ **Custom billing** : Invoicing, PO
+Les tiers **PRO** (€9.99), **TEAM** (€29), **BUSINESS** (€99) du business plan original ne sont **pas encore implémentés**.
 
-**Cible** : Entreprises, cabinets conseil, plateformes
+**Pourquoi ?**
+1. **Philosophie actuelle** : Priorité à l'éducation gratuite et à la croissance communautaire
+2. **Features manquantes** : AI testing (GPT-4, Claude, Gemini) non développé
+3. **Validation product-market fit** : Besoin de traction avant de monétiser agressivement
+
+**Quand ?**
+- **Phase 2 (M6-M12)** : Implémentation AI testing + lancement tier Pro
+- **Phase 3 (M12-M18)** : Team workspaces + API access + tier Business
 
 ---
 
@@ -1349,92 +1471,135 @@ Source : Precedence Research, 2025
 
 ## 8. TIMELINE 12 MOIS
 
-### M1-M3 : Foundation
+### M1-M3 : Foundation ✅ COMPLETÉ
 
 **Product** :
-- ✅ P0 features : AI testing réel (OpenAI, Anthropic, Google APIs)
-- ✅ Payments Stripe (checkout, subscriptions, webhooks)
-- ✅ Email notifications (Resend/Postmark)
+- ✅ **Core features** : Prompts CRUD, remix, collections, real-time likes/comments
+- ✅ **12 tutoriels** : Parcours Beginner, Expert, Pro
+- ✅ **Gamification** : Challenges, badges, leaderboard
+- ✅ **Social** : Profiles, follow system, sharing, embeds
+- ✅ **UI/UX** : Keyboard shortcuts, i18n (EN/FR/NL), responsive
+- ❌ AI testing (reporté Phase 2)
+- ❌ Stripe payments (pricing page UI seulement)
 
 **Marketing** :
-- 🚀 Product Hunt launch (M1)
-- 📝 20 articles SEO published
-- 🐦 Twitter 500 followers
-- 💬 Discord server 200 members
+- 📝 Contenu éducatif : 12 tutoriels interactifs créés
+- 🎨 Branding : UI moderne Shadcn, design premium
+- 🌐 i18n : Support 3 langues
+- ⏳ Product Hunt launch : À venir
+- ⏳ Twitter, Discord : Non démarrés
 
-**Milestones** :
-- 300 users
-- €300 MRR
-- 5 Pro users
+**Milestones actuels** :
+- 🚀 Plateforme deployée sur Vercel
+- 💰 Coûts : €0/mois (Vercel + Supabase free)
+- 📊 Users : 0 (pre-launch)
+- 💵 MRR : €0
+
+**Gap vs. plan original** :
+- ✅ **Meilleur** : Contenu éducatif (12 tutoriels vs. 0 prévu)
+- ❌ **Manque** : AI testing, payments, marketing organique
 
 ---
 
-### M4-M6 : Traction
+### M4-M6 : Traction & Validation ⚠️ EN COURS
 
-**Product** :
-- ✅ P1 features : Multi-LLM comparison
-- ✅ Search avancé (Algolia/Typesense)
-- ✅ Moderation tools
+**Product (priorités ajustées)** :
+- 🎯 **P0** : Implémenter Stripe (plan Support €4.99)
+- 🎯 **P1** : AI testing MVP (OpenAI GPT-4 seulement pour commencer)
+- ⏳ Search avancé : Implémenté (route existe)
+- ⏳ Email notifications : System existe, envoi email à implémenter
+- ⏳ Moderation tools : Basique via RLS, améliorer
 
 **Marketing** :
-- 📝 40 articles SEO total
-- 🤝 5 micro-influenceurs partnerships
-- 📧 Newsletter 1,000 subscribers
+- 🚀 **Product Hunt launch** : M4 (objectif Top 5)
+- 📝 **SEO** : 20-30 articles (tutoriels existants à optimiser)
+- 🐦 **Twitter** : Lancer compte, build in public
+- 💬 **Discord** : Communauté early adopters
+- 🤝 **Partnerships** : Contacter bootcamps AI, influenceurs
+
+**Milestones révisés M6** :
+- 🎯 **500-1,000 users** (vs. 1,000 original, conservateur)
+- 🎯 **€200-€500 MRR** (donations Support, vs. €1,500 original)
+- 🎯 **20-50 supporters** (vs. 150 Pro users original)
+- 🎯 **NPS >40**, testimonials
+- 🎯 **Validation** : Users reviennent, créent prompts, partagent
 
 **Fundraising** :
-- 📊 Deck finalisé
-- 🎤 Pitch 10 VCs
-- 💰 Pre-seed term sheet
-
-**Milestones** :
-- 1,000 users
-- €1,500 MRR
-- 15% conversion
-- **€500K levés** 🎉
+- ⏳ Deck : À finaliser avec traction réelle
+- ⏳ Pitch VCs : Attendre 500+ users + testimonials
+- 🎯 **Ask révisé** : €300K-€500K (vs. €600K original)
 
 ---
 
-### M7-M9 : Scale Acquisition
+### M7-M9 : Growth & Monetization (Phase post-traction)
+
+**Product** :
+- 🎯 **AI testing complet** : GPT-4, Claude Opus, Gemini Pro
+- 🎯 **Multi-LLM comparison** : Side-by-side testing
+- 🎯 **Analytics dashboard** : Pro feature
+- 🎯 **Lancer tier Pro** : €9.99/mois justifié par AI testing
 
 **Team** :
-- 👨‍💻 Dev senior hired
-- 📈 Growth marketer hired
+- 🎯 Dev senior (si funding) OU freelance contractors
+- 🎯 Growth marketer (content + SEO + partnerships)
 
 **Marketing** :
-- 💸 Paid ads launched (€2K/mois)
-- 📺 YouTube channel started
-- 🎤 First webinar hosted
+- 💸 **Paid ads** : €1K-€2K/mois (Google, LinkedIn, Twitter)
+- 📺 **YouTube** : Tutoriels vidéo
+- 🎤 **Webinars** : "Prompt Engineering Masterclass"
+- 🤝 **Partnerships** : Agencies, bootcamps (referral)
 
-**Milestones** :
-- 5,000 users
-- €6,000 MRR
-- CAC €20
+**Milestones révisés M9** :
+- 🎯 **2,000-3,000 users** (vs. 5,000 original)
+- 🎯 **€2,000-€4,000 MRR** (mix Support + Pro)
+- 🎯 **100-200 paying users**
+- 🎯 **CAC <€25** (blended organic + paid)
 
 ---
 
-### M10-M12 : Pre-Seed Goals
+### M10-M12 : Scale & Pre-Seed Goals
 
 **Product** :
-- ✅ API publique launched
-- ✅ Analytics dashboard Pro users
-- ✅ Mobile-responsive optimized
+- 🎯 **Team workspaces** : MVP (shared collections)
+- 🎯 **API access** : Basic tier pour developers
+- 🎯 **Mobile app** : PWA ou React Native
+- 🎯 **Analytics avancé** : A/B testing prompts
 
 **Marketing** :
-- 💸 Paid ads €5K/mois
-- 🎯 First sponsored challenge
-- 🤝 2 channel partnerships
+- 💸 **Paid ads scale** : €3K-€5K/mois
+- 🎯 **First sponsored challenge** : €2K-€5K deal
+- 🤝 **Channel partnerships** : 2-3 agencies/platforms
+- 🏆 **Conference** : VivaTech ou Web Summit booth
 
 **Fundraising** :
-- 📊 Seed deck drafted
-- 🎯 Seed pipeline started
+- 📊 **Seed deck** : Préparer pour M12-M15
+- 🎤 **Pitch pipeline** : 15-20 VCs (Point Nine, Kima, etc.)
 
-**Milestones** :
-- **10,000 users** ✅
-- **€25,000 MRR** ✅
-- **1,500 paying customers** ✅
-- **LTV:CAC 6:1** ✅
-- **Churn <10%** ✅
-- **Ready for Seed** 🚀
+**Milestones révisés M12** :
+- 🎯 **5,000-8,000 users** (vs. 10,000 original)
+- 🎯 **€8,000-€15,000 MRR** (vs. €25,000 original)
+- 🎯 **500-1,000 paying users**
+- 🎯 **LTV:CAC >3:1**
+- 🎯 **Churn <12%**
+- 🎯 **Ready for Seed** : €500K-€1M @ €5M-€8M valuation
+
+---
+
+### 🔄 Résumé des Ajustements
+
+| Métrique | Plan Original M6 | Plan Révisé M6 | Justification |
+|----------|------------------|----------------|---------------|
+| **Users** | 1,000 | 500-1,000 | Acquisition organique plus lente sans paid ads |
+| **MRR** | €1,500 | €200-€500 | Donation model vs. freemium classique |
+| **Paying %** | 15% (150 Pro) | 5-10% (20-50 Support) | Support volontaire, pas value prop forte |
+| **ARPU** | €10 | €5 | €4.99 Support vs. €9.99 Pro |
+| **Features** | AI testing | Tutoriels | Pivot éducation, AI testing reporté |
+
+| Métrique | Plan Original M12 | Plan Révisé M12 | Justification |
+|----------|-------------------|-----------------|---------------|
+| **Users** | 10,000 | 5,000-8,000 | Croissance conservative sans funding |
+| **MRR** | €25,000 | €8,000-€15,000 | Mix Support + Pro (lancé M7-M9) |
+| **Funding ask** | €600K | €300K-€500K | Traction plus modeste, ask aligné |
 
 ---
 
@@ -1555,5 +1720,148 @@ Source : Precedence Research, 2025
 
 ---
 
-Pour questions : [votre email]
+## 11. ACTION ITEMS IMMÉDIATS (Prochaines 4 semaines)
+
+### 🔥 Priorité P0 (Blocker pour launch)
+
+1. **Stripe Integration** (Dev - 2-3 jours)
+   - Créer compte Stripe
+   - Implémenter checkout page pour plan Support (€4.99/mois)
+   - Webhooks : subscription.created, subscription.cancelled
+   - Update profile.subscription_tier après payment
+   - Badge "Supporter" visible sur profil
+   - Test en mode test Stripe
+
+2. **Product Hunt Preparation** (Marketing - 1 semaine)
+   - Hunter identifié : Contacter top 1% hunters
+   - Assets : Screenshots (5-6), GIF demo (30sec), video (60sec)
+   - Tagline : "Learn prompt engineering through interactive tutorials and community challenges"
+   - Description : 300 mots, focus éducation + gratuit + communauté
+   - Teaser campaign Twitter/LinkedIn (build in public 2 semaines avant)
+   - Beta access list : Landing page avec email signup
+
+3. **SEO Optimization** (Content - 3 jours)
+   - Meta tags : Title, description optimisés pour chaque page
+   - Sitemap.xml généré
+   - robots.txt configuré
+   - Open Graph images (og:image) pour social sharing
+   - Schema.org markup : Article, Course, HowTo
+   - Google Search Console setup
+
+### ⚡ Priorité P1 (Launch week)
+
+4. **Social Media Kickoff** (Marketing - ongoing)
+   - **Twitter** :
+     - Créer compte @PromptPartyAI
+     - Bio : "Free school for prompt engineering. Learn AI prompting through interactive tutorials 🎓"
+     - 10 tweets pré-écrits (build in public, feature teasers)
+     - Engagement plan : 30min/jour reply AI tweets
+   - **LinkedIn** :
+     - Page entreprise Prompt Party
+     - Post annonce launch (reach network personnel)
+   - **Product Hunt** :
+     - Upcoming page live 2 semaines avant
+     - Teaser daily updates
+
+5. **Email Setup** (Dev - 1 jour)
+   - Resend ou Postmark account
+   - Templates : Welcome email, weekly digest, notifications
+   - Trigger : User signup, new follower, comment on prompt
+   - Unsubscribe flow
+
+6. **Analytics** (Dev - 1 jour)
+   - PostHog installation (free tier)
+   - Events tracking : Signup, create prompt, like, share, support subscription
+   - Funnels : Visitor → Signup → Create prompt → Return D7
+   - Dashboards : Daily actives, retention, revenue
+
+### 🎯 Priorité P2 (Post-launch, M1-M2)
+
+7. **Content Marketing** (Content - ongoing)
+   - **Blog SEO** :
+     - 10 articles : "Best ChatGPT prompts for [X]"
+     - 5 articles : "How to write better AI prompts"
+     - 3 comparisons : "ChatGPT vs Claude vs Gemini"
+   - **Guest posts** :
+     - Dev.to : "I built a free prompt engineering school"
+     - Hacker News : Show HN post
+     - Reddit : r/ChatGPT, r/ClaudeAI, r/ArtificialIntelligence
+
+8. **Partnerships Early** (BD - 1-2/semaine)
+   - **Bootcamps AI** : Le Wagon, Ironhack, General Assembly
+     - Pitch : "Free resource for your students"
+     - Ask : Mention in newsletter, link on resources page
+   - **Micro-influenceurs** (5K-20K followers)
+     - AI educators YouTube/Twitter
+     - Contra deal : 6 mois gratuit + affiliate 20% recurring
+   - **Developer communities** :
+     - Indie Hackers showcase
+     - Hashnode featured post
+
+9. **Community Building** (Community - ongoing)
+   - **Discord** :
+     - Serveur créé, channels setup
+     - Modérateurs recrutés (2-3 early users actifs)
+     - Events : Weekly "Prompt Battle", Monthly AMA
+   - **Challenges** :
+     - Challenge hebdomadaire actif
+     - Thème varié : Marketing, Code, Creative writing
+     - Promotion Twitter + email newsletter
+
+10. **User Feedback Loop** (Product - ongoing)
+    - **Intercom/Crisp** : Chat widget pour support
+    - **Feature requests** : Notion board public
+    - **User interviews** : 5-10 early adopters (30min calls)
+    - **NPS survey** : Après 7 jours utilisation
+    - **Testimonials** : Collecter pour Product Hunt + site
+
+### 📊 Success Metrics (M1)
+
+| Métrique | Objectif M1 | Comment mesurer |
+|----------|-------------|-----------------|
+| **Product Hunt** | Top 5 Product of Day | Upvotes, comments, ranking |
+| **Signups** | 200-300 | PostHog events |
+| **Active users** | 100-150 (50% retention) | DAU/MAU |
+| **Prompts créés** | 150-300 | Supabase query |
+| **Support subscribers** | 5-10 | Stripe dashboard |
+| **MRR** | €25-€50 | Stripe MRR |
+| **Social** | 500 Twitter followers | Twitter analytics |
+| **Content** | 5 articles published | Blog CMS |
+
+### 🚀 Launch Checklist
+
+**1 semaine avant** :
+- [ ] Stripe live mode activé, plan Support testable
+- [ ] Product Hunt upcoming page live
+- [ ] Twitter account créé, 10 tweets scheduled
+- [ ] Assets finaux (screenshots, video, GIF)
+- [ ] Hunter confirmé
+- [ ] Email templates configurés
+- [ ] Analytics events testés
+
+**Jour J (Product Hunt launch)** :
+- [ ] Post live à 12:01 AM PST
+- [ ] Team mobilisée : Répondre tous comments <1h
+- [ ] Twitter announce + thread
+- [ ] LinkedIn post + personal networks
+- [ ] Reddit posts (valeur ajoutée, pas spam)
+- [ ] Monitoring analytics real-time
+- [ ] Screenshot milestones (100 upvotes, Top 10, etc.)
+
+**Post-launch (J+1 à J+7)** :
+- [ ] Thank you email à upvoters Product Hunt
+- [ ] Recap blog post "We launched on PH, here's what happened"
+- [ ] User interviews (5-10 early adopters)
+- [ ] Itérer sur feedback urgent
+- [ ] Newsletter #1 : Welcome + best prompts week
+
+---
+
+**Document créé le** : 1 novembre 2025
+**Version** : 2.0 - **Révisé avec implémentation réelle** : 2 novembre 2025
+**Confidentialité** : Interne uniquement
+
+---
+
+Pour questions : julien@promptparty.ai
 Pitch deck disponible sur demande.

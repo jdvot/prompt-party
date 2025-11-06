@@ -2,7 +2,7 @@
 
 **The social network for the best AI prompts — create, share, and discover the most inspiring prompts.**
 
-> A modern **Next.js + Supabase** web app deployed on **Netlify**.  
+> A modern **Next.js + Supabase** web app deployed on **Vercel**.
 > Built for AI creators, developers, and curious minds who love sharing and remixing prompts.
 
 ---
@@ -16,8 +16,8 @@
 ✅ **Remix system** — fork and enhance prompts
 ✅ **Markdown editor & preview**
 ✅ **RLS (Row Level Security)** for safety
-✅ **Next.js App Router + Edge Functions**
-✅ **Netlify Free Tier** — deploy instantly via CLI
+✅ **Next.js App Router + Server Components**
+✅ **Vercel Free Tier** — deploy instantly with Git
 ✅ **Optimized for SEO & social sharing**
 
 ### New Features ✨
@@ -53,9 +53,9 @@
 | **UI**              | [Tailwind CSS](https://tailwindcss.com/) + [Shadcn UI](https://ui.shadcn.com/) | Beautiful, composable UI             |
 | **Database / Auth** | [Supabase](https://supabase.com/)                                              | Postgres + Auth + Storage + Realtime |
 | **Language**        | TypeScript                                                                     | Full-stack type safety               |
-| **Deployment**      | [Netlify](https://www.netlify.com/)                                            | Free tier hosting with Functions     |
+| **Deployment**      | [Vercel](https://vercel.com/)                                                  | Free tier hosting with Edge Functions |
 | **Monitoring**      | [PostHog](https://posthog.com/) / [Sentry](https://sentry.io/) _(optional)_    | Analytics & crash tracking           |
-| **CLI**             | [Netlify CLI](https://docs.netlify.com/cli/get-started/)                       | Local dev & deployment               |
+| **CLI**             | [Vercel CLI](https://vercel.com/docs/cli)                                      | Local dev & deployment               |
 
 ---
 
@@ -65,9 +65,9 @@
 
 - [Node.js 20+](https://nodejs.org/en/download/)
 - [PNPM](https://pnpm.io/) or npm
-- [Netlify CLI](https://docs.netlify.com/cli/get-started/):
+- [Vercel CLI](https://vercel.com/docs/cli) (optional):
   ```bash
-  npm install -g netlify-cli
+  npm install -g vercel
   ```
 - Supabase project (EU region recommended)
 
@@ -94,20 +94,20 @@ pnpm install
 
 ---
 
-### 4️⃣ Run locally (with Netlify Dev)
+### 4️⃣ Run locally
 
 ```bash
-netlify dev
+pnpm dev
 ```
 
 Runs a full local environment with:
 
 - Next.js + SSR
-- API Routes as Netlify Functions
-- Env vars loaded automatically
+- API Routes as Server Functions
+- Env vars loaded from `.env.local`
 - Supabase connected
 
-App available at 👉 **http://localhost:8888**
+App available at 👉 **http://localhost:3000**
 
 ---
 
@@ -147,71 +147,72 @@ src/
 - **Policies** → read public, write restricted to `auth.uid()`.
 - Basic **moderation** layer (bad-word filter, user reports).
 - JWT auth verified by Supabase middleware.
-- HTTPS enforced automatically by Netlify.
+- HTTPS enforced automatically by Vercel.
 
 ---
 
-## 🌍 Deploy to Netlify (Free Tier)
+## 🌍 Deploy to Vercel (Free Tier)
 
-### 1️⃣ Initialize project
+### 1️⃣ Deploy with Git (Recommended)
+
+1. Push your code to GitHub/GitLab/Bitbucket
+2. Go to [vercel.com/new](https://vercel.com/new)
+3. Import your repository
+4. Vercel auto-detects Next.js and configures everything
+5. Add environment variables in the Vercel dashboard
+6. Deploy! 🚀
+
+### 2️⃣ Deploy with CLI
 
 ```bash
-netlify init
-```
+# Install Vercel CLI
+npm i -g vercel
 
-- Choose “**Create & configure a new site**” or link an existing one.
-- The CLI generates a `netlify.toml` automatically.
+# Login
+vercel login
 
-### 2️⃣ Example `netlify.toml`
-
-```toml
-[build]
-  command = "pnpm build"
-  publish = ".next"
-  functions = ".netlify/functions"
-
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
-
-[dev]
-  command = "pnpm dev"
-  port = 3000
+# Deploy to production
+vercel --prod
 ```
 
 ### 3️⃣ Environment variables
 
-```bash
-netlify env:set NEXT_PUBLIC_SUPABASE_URL https://xxxxx.supabase.co
-netlify env:set NEXT_PUBLIC_SUPABASE_ANON_KEY eyJhbGciOi...
+Add in Vercel Dashboard (Settings → Environment Variables):
+
+```
+NEXT_PUBLIC_SUPABASE_URL=https://xxxxx.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOi...
 ```
 
-### 4️⃣ Deploy manually
-
+Or via CLI:
 ```bash
-netlify deploy --prod
+vercel env add NEXT_PUBLIC_SUPABASE_URL
+vercel env add NEXT_PUBLIC_SUPABASE_ANON_KEY
 ```
 
-### 5️⃣ Free tier limits
+### 4️⃣ Free tier limits
 
-- 100 GB/month bandwidth
-- 125 k Function calls
-- 300 build minutes
-- 1 M Edge Function invocations
-- SSL + custom domain included
+- 100 GB bandwidth
+- Unlimited serverless function executions
+- Unlimited deployments
+- Automatic HTTPS + SSL
+- Edge Network (global CDN)
+- Custom domains included
 
 ---
 
-## 🧰 Useful Netlify CLI Commands
+## 🧰 Useful Vercel CLI Commands
 
 | Command                     | Description                            |
 | --------------------------- | -------------------------------------- |
-| `netlify dev`               | Run app locally with Functions         |
-| `netlify init`              | Create or link to a site               |
-| `netlify deploy`            | Deploy to staging                      |
-| `netlify deploy --prod`     | Deploy to production                   |
-| `netlify env:list`          | Show environment variables             |
-| `netlify env:set KEY VALUE` | Add/edit environment variables         |
-| `netlify status`            | Check link between local & remote site |
+| `vercel dev`                | Run app locally with serverless functions |
+| `vercel`                    | Deploy to preview                      |
+| `vercel --prod`             | Deploy to production                   |
+| `vercel env ls`             | List environment variables             |
+| `vercel env add NAME`       | Add environment variable               |
+| `vercel env rm NAME`        | Remove environment variable            |
+| `vercel logs`               | View deployment logs                   |
+| `vercel domains`            | Manage custom domains                  |
 
 ---
 
@@ -244,10 +245,10 @@ WITH CHECK (auth.uid() = author);
 
 | Service      | Tier | Quotas                                                      |
 | ------------ | ---- | ----------------------------------------------------------- |
-| **Netlify**  | Free | 100 GB bandwidth, 125 k Functions, 300 build minutes        |
+| **Vercel**   | Free | 100 GB bandwidth, unlimited functions, unlimited deployments |
 | **Supabase** | Free | 0.5 GB DB, 1 GB storage, 50 k Auth users, Realtime included |
 
-→ Fully functional **MVP at zero cost**.  
+→ Fully functional **MVP at zero cost**.
 Upgrade only if your traffic explodes 🚀
 
 ---

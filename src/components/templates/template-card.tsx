@@ -27,7 +27,7 @@ export function TemplateCard({ template }: TemplateCardProps) {
   const t = useTranslations('templates')
 
   const categoryColors: Record<string, string> = {
-    marketing: 'bg-pink-500/10 text-pink-500 border-pink-500/20',
+    marketing: 'bg-cyan-500/10 text-cyan-500 border-cyan-500/20',
     writing: 'bg-blue-500/10 text-blue-500 border-blue-500/20',
     code: 'bg-green-500/10 text-green-500 border-green-500/20',
     business: 'bg-purple-500/10 text-purple-500 border-purple-500/20',

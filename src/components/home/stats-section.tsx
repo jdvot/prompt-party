@@ -87,11 +87,11 @@ export function StatsSection({ totalPrompts, totalUsers }: StatsProps) {
         <div className="absolute inset-0 bg-gradient-to-br from-brand-accent/5 to-brand-accent/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
         <div className="p-8 relative">
-          <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-brand-accent to-pink-600 mb-4 group-hover:scale-110 transition-transform duration-300">
+          <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-brand-accent to-cyan-600 mb-4 group-hover:scale-110 transition-transform duration-300">
             <HeartIcon className="w-7 h-7 text-white fill-white" />
           </div>
 
-          <div className="text-4xl md:text-5xl font-bold mb-2 bg-gradient-to-br from-brand-accent to-pink-600 bg-clip-text text-transparent">
+          <div className="text-4xl md:text-5xl font-bold mb-2 bg-gradient-to-br from-brand-accent to-cyan-600 bg-clip-text text-transparent">
             {animatedLikes.toLocaleString()}+
           </div>
 

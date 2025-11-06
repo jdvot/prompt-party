@@ -119,7 +119,7 @@ export function RealtimeEditor({
                       className="w-6 h-6 rounded-full border-2 border-background"
                     />
                   ) : (
-                    <div className="w-6 h-6 rounded-full bg-gradient-to-br from-violet-500 to-fuchsia-500 border-2 border-background flex items-center justify-center text-xs text-white font-bold">
+                    <div className="w-6 h-6 rounded-full bg-gradient-to-br from-indigo-500 to-violet-600 border-2 border-background flex items-center justify-center text-xs text-white font-bold">
                       {collab.username.charAt(0).toUpperCase()}
                     </div>
                   )}

@@ -67,7 +67,7 @@ export function PromptOptimizer({ promptContent, onApply }: PromptOptimizerProps
   const getScoreColor = (score: number) => {
     if (score >= 80) return 'from-green-500 to-emerald-600'
     if (score >= 60) return 'from-yellow-500 to-orange-600'
-    return 'from-red-500 to-rose-600'
+    return 'from-red-500 to-red-600'
   }
 
   const getScoreLabel = (score: number) => {
@@ -105,7 +105,7 @@ export function PromptOptimizer({ promptContent, onApply }: PromptOptimizerProps
         ) : result ? (
           <div className="space-y-6 mt-4">
             {/* Score Card */}
-            <Card className="p-6 bg-gradient-to-br from-violet-50 to-fuchsia-50 dark:from-gray-800 dark:to-gray-900 border-2">
+            <Card className="p-6 bg-gradient-to-br from-indigo-50 to-violet-50 dark:from-gray-800 dark:to-gray-900 border-2">
               <div className="flex items-center justify-between mb-4">
                 <div>
                   <h3 className="text-lg font-semibold mb-1">Prompt Quality Score</h3>

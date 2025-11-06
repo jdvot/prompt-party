@@ -131,7 +131,7 @@ export default async function ExpertPath() {
       <Card className="mb-8 border-purple-500/20 bg-purple-500/5">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <Icons.Target className="w-5 h-5 text-purple-600" />
+            <Icons.Target className="w-5 h-5 text-violet-600" />
             {tCommon('your_progress')}
           </CardTitle>
         </CardHeader>
@@ -161,37 +161,37 @@ export default async function ExpertPath() {
           <div className="grid md:grid-cols-2 gap-4">
             <ul className="space-y-2">
               <li className="flex items-start gap-2">
-                <Icons.CheckCircle className="w-5 h-5 text-purple-600 mt-0.5 flex-shrink-0" />
+                <Icons.CheckCircle className="w-5 h-5 text-violet-600 mt-0.5 flex-shrink-0" />
                 <span>{t('learn_tool_use')}</span>
               </li>
               <li className="flex items-start gap-2">
-                <Icons.CheckCircle className="w-5 h-5 text-purple-600 mt-0.5 flex-shrink-0" />
+                <Icons.CheckCircle className="w-5 h-5 text-violet-600 mt-0.5 flex-shrink-0" />
                 <span>{t('learn_reasoning')}</span>
               </li>
               <li className="flex items-start gap-2">
-                <Icons.CheckCircle className="w-5 h-5 text-purple-600 mt-0.5 flex-shrink-0" />
+                <Icons.CheckCircle className="w-5 h-5 text-violet-600 mt-0.5 flex-shrink-0" />
                 <span>{t('learn_deployment')}</span>
               </li>
               <li className="flex items-start gap-2">
-                <Icons.CheckCircle className="w-5 h-5 text-purple-600 mt-0.5 flex-shrink-0" />
+                <Icons.CheckCircle className="w-5 h-5 text-violet-600 mt-0.5 flex-shrink-0" />
                 <span>{t('learn_error_handling')}</span>
               </li>
             </ul>
             <ul className="space-y-2">
               <li className="flex items-start gap-2">
-                <Icons.CheckCircle className="w-5 h-5 text-purple-600 mt-0.5 flex-shrink-0" />
+                <Icons.CheckCircle className="w-5 h-5 text-violet-600 mt-0.5 flex-shrink-0" />
                 <span>{t('learn_optimization')}</span>
               </li>
               <li className="flex items-start gap-2">
-                <Icons.CheckCircle className="w-5 h-5 text-purple-600 mt-0.5 flex-shrink-0" />
+                <Icons.CheckCircle className="w-5 h-5 text-violet-600 mt-0.5 flex-shrink-0" />
                 <span>{t('learn_multi_agent')}</span>
               </li>
               <li className="flex items-start gap-2">
-                <Icons.CheckCircle className="w-5 h-5 text-purple-600 mt-0.5 flex-shrink-0" />
+                <Icons.CheckCircle className="w-5 h-5 text-violet-600 mt-0.5 flex-shrink-0" />
                 <span>{t('learn_production')}</span>
               </li>
               <li className="flex items-start gap-2">
-                <Icons.CheckCircle className="w-5 h-5 text-purple-600 mt-0.5 flex-shrink-0" />
+                <Icons.CheckCircle className="w-5 h-5 text-violet-600 mt-0.5 flex-shrink-0" />
                 <span>{t('learn_debugging')}</span>
               </li>
             </ul>
@@ -330,10 +330,10 @@ export default async function ExpertPath() {
       </div>
 
       {/* Next Steps */}
-      <Card className="bg-gradient-to-r from-purple-600/10 to-violet-600/10 border-purple-600/20">
+      <Card className="bg-gradient-to-r from-violet-600/10 to-violet-600/10 border-violet-600/20">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <Icons.Rocket className="w-5 h-5 text-purple-600" />
+            <Icons.Rocket className="w-5 h-5 text-violet-600" />
             {t('continue_journey')}
           </CardTitle>
         </CardHeader>

@@ -53,7 +53,7 @@ export default function AccessPage() {
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-violet-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 px-4">
       <Card className="w-full max-w-md shadow-2xl border-2">
         <CardHeader className="text-center space-y-4">
-          <div className="mx-auto w-16 h-16 rounded-full bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center">
+          <div className="mx-auto w-16 h-16 rounded-full bg-gradient-to-br from-indigo-500 to-violet-600 flex items-center justify-center">
             <LockIcon className="w-8 h-8 text-white" />
           </div>
           <div>

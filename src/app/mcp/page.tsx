@@ -1,19 +1,14 @@
+'use client'
+
 import { Card } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-import { Button } from '@/components/ui/button'
+import { Button, buttonVariants } from '@/components/ui/button'
 import { Code, Database, Sparkles, Globe, Lock, Zap } from 'lucide-react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { useTranslations } from 'next-intl'
-import { getTranslations } from 'next-intl/server'
-import type { Metadata } from 'next'
-
-export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations('mcp_integration')
-  return {
-    title: t('page_title'),
-    description: t('page_description'),
-  }
-}
+import { cn } from '@/lib/utils'
+import { AnimatedContainer, StaggerContainer, FloatingElement, ScaleOnHover } from '@/components/animations'
 
 export default function MCPPage() {
   const t = useTranslations('mcp_integration')
@@ -68,86 +63,118 @@ export default function MCPPage() {
       icon: Globe,
       title: t('feature_public'),
       description: t('feature_public_desc'),
-      color: 'from-purple-500 to-pink-500',
+      color: 'from-purple-500 to-cyan-500',
     },
   ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-violet-50 via-fuchsia-50 to-pink-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 py-12">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-violet-50 to-cyan-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 py-8">
       <div className="container mx-auto px-4 max-w-6xl">
         {/* Header */}
-        <div className="text-center mb-12">
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <Sparkles className="w-10 h-10 text-primary" />
-            <h1 className="text-4xl md:text-5xl font-bold gradient-text">
-              {t('title')}
-            </h1>
-          </div>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            {t('subtitle')}
-          </p>
-          <Badge variant="secondary" className="mt-4">
-            {t('badge')}
-          </Badge>
+        <div className="grid lg:grid-cols-2 gap-8 items-center mb-8">
+          <AnimatedContainer animation="slide-up">
+            <div className="text-center lg:text-left">
+              <div className="flex items-center justify-center lg:justify-start gap-3 mb-4">
+                <Sparkles className="w-10 h-10 text-primary" />
+                <h1 className="text-4xl md:text-5xl font-bold gradient-text">
+                  {t('title')}
+                </h1>
+              </div>
+              <p className="text-xl text-muted-foreground max-w-2xl lg:max-w-none mx-auto lg:mx-0">
+                {t('subtitle')}
+              </p>
+              <Badge variant="secondary" className="mt-4">
+                {t('badge')}
+              </Badge>
+            </div>
+          </AnimatedContainer>
+
+          {/* Illustration */}
+          <AnimatedContainer animation="slide-left" delay={0.2}>
+            <div className="hidden lg:block relative">
+              <FloatingElement duration={4} intensity={15}>
+                <div className="relative aspect-square max-w-md mx-auto">
+                  <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/20 via-violet-500/20 to-cyan-500/20 rounded-full blur-3xl animate-pulse" />
+                  <Image
+                    src="/branding/illustrations/concepts-brain.svg"
+                    alt="MCP Integration"
+                    width={400}
+                    height={400}
+                    className="relative z-10 drop-shadow-2xl"
+                    priority
+                  />
+                </div>
+              </FloatingElement>
+            </div>
+          </AnimatedContainer>
         </div>
 
         {/* What is MCP */}
-        <Card className="p-8 mb-8 bento-card">
-          <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
-            <Code className="w-6 h-6 text-primary" />
-            {t('what_is_mcp')}
-          </h2>
-          <p className="text-muted-foreground mb-4">
-            {t('what_is_mcp_text')}
-          </p>
-          <div className="grid md:grid-cols-2 gap-4 mt-6">
-            {features.map((feature) => {
-              const Icon = feature.icon
-              return (
-                <div
-                  key={feature.title}
-                  className="p-4 rounded-xl bg-gradient-to-br from-background to-muted/50 border"
-                >
-                  <div className={`w-10 h-10 rounded-lg bg-gradient-to-br ${feature.color} flex items-center justify-center mb-3`}>
-                    <Icon className="w-5 h-5 text-white" />
-                  </div>
-                  <h3 className="font-semibold mb-1">{feature.title}</h3>
-                  <p className="text-sm text-muted-foreground">{feature.description}</p>
-                </div>
-              )
-            })}
-          </div>
-        </Card>
+        <AnimatedContainer animation="fade" delay={0.1} className="mb-6">
+          <ScaleOnHover scale={1.01}>
+            <Card className="p-8 bento-card">
+              <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
+                <Code className="w-6 h-6 text-primary" />
+                {t('what_is_mcp')}
+              </h2>
+              <p className="text-muted-foreground mb-4">
+                {t('what_is_mcp_text')}
+              </p>
+              <StaggerContainer className="grid md:grid-cols-2 gap-4 mt-6" staggerDelay={0.08}>
+                {features.map((feature) => {
+                  const Icon = feature.icon
+                  return (
+                    <ScaleOnHover key={feature.title} scale={1.03}>
+                      <div className="p-4 rounded-xl bg-gradient-to-br from-background to-muted/50 border h-full">
+                        <div className={`w-10 h-10 rounded-lg bg-gradient-to-br ${feature.color} flex items-center justify-center mb-3`}>
+                          <Icon className="w-5 h-5 text-white" />
+                        </div>
+                        <h3 className="font-semibold mb-1">{feature.title}</h3>
+                        <p className="text-sm text-muted-foreground">{feature.description}</p>
+                      </div>
+                    </ScaleOnHover>
+                  )
+                })}
+              </StaggerContainer>
+            </Card>
+          </ScaleOnHover>
+        </AnimatedContainer>
 
         {/* API Endpoints */}
-        <Card className="p-8 mb-8 bento-card">
-          <h2 className="text-2xl font-bold mb-6">{t('api_endpoints')}</h2>
+        <AnimatedContainer animation="slide-up" delay={0.2} className="mb-6">
+          <ScaleOnHover scale={1.01}>
+            <Card className="p-8 bento-card">
+              <h2 className="text-2xl font-bold mb-6">{t('api_endpoints')}</h2>
 
-          <div className="space-y-6">
-            {examples.map((example) => (
-              <div key={example.title} className="border-l-4 border-primary pl-4">
-                <div className="flex items-start justify-between mb-2">
-                  <div>
-                    <h3 className="font-semibold text-lg">{example.title}</h3>
-                    <p className="text-sm text-muted-foreground">{example.description}</p>
+              <StaggerContainer className="space-y-6" staggerDelay={0.1}>
+                {examples.map((example) => (
+                  <div key={example.title} className="border-l-4 border-primary pl-4">
+                    <div className="flex items-start justify-between mb-2">
+                      <div>
+                        <h3 className="font-semibold text-lg">{example.title}</h3>
+                        <p className="text-sm text-muted-foreground">{example.description}</p>
+                      </div>
+                      <Badge variant="outline">{example.method}</Badge>
+                    </div>
+                    <code className="block bg-muted/50 px-4 py-2 rounded-lg text-sm overflow-x-auto mt-2">
+                      {example.endpoint}
+                    </code>
                   </div>
-                  <Badge variant="outline">{example.method}</Badge>
-                </div>
-                <code className="block bg-muted/50 px-4 py-2 rounded-lg text-sm overflow-x-auto mt-2">
-                  {example.endpoint}
-                </code>
-              </div>
-            ))}
-          </div>
-        </Card>
+                ))}
+              </StaggerContainer>
+            </Card>
+          </ScaleOnHover>
+        </AnimatedContainer>
 
         {/* Response Format */}
-        <Card className="p-8 mb-8 bento-card">
-          <h2 className="text-2xl font-bold mb-4">{t('response_format')}</h2>
-          <p className="text-muted-foreground mb-4">
-            {t('response_format_text')}
-          </p>
-          <pre className="bg-muted/50 p-4 rounded-lg overflow-x-auto text-sm">
+        <AnimatedContainer animation="fade" delay={0.3} className="mb-6">
+          <ScaleOnHover scale={1.01}>
+            <Card className="p-8 bento-card">
+              <h2 className="text-2xl font-bold mb-4">{t('response_format')}</h2>
+              <p className="text-muted-foreground mb-4">
+                {t('response_format_text')}
+              </p>
+              <pre className="bg-muted/50 p-4 rounded-lg overflow-x-auto text-sm">
 {`{
   "type": "prompt_list",
   "count": 10,
@@ -169,11 +196,15 @@ export default function MCPPage() {
   ],
   "mcp_version": "1.0"
 }`}
-          </pre>
-        </Card>
+              </pre>
+            </Card>
+          </ScaleOnHover>
+        </AnimatedContainer>
 
         {/* Getting Started */}
-        <Card className="p-8 bento-card">
+        <AnimatedContainer animation="slide-up" delay={0.4}>
+          <ScaleOnHover scale={1.01}>
+            <Card className="p-8 bento-card">
           <h2 className="text-2xl font-bold mb-4">{t('getting_started')}</h2>
           <div className="space-y-4">
             <div>
@@ -214,14 +245,14 @@ export default function MCPPage() {
             </div>
           </div>
 
-          <div className="mt-6 pt-6 border-t">
-            <Link href="/prompts">
-              <Button className="btn-primary">
-                {t('browse_prompts')}
-              </Button>
-            </Link>
-          </div>
-        </Card>
+              <div className="mt-6 pt-6 border-t">
+                <Link href="/prompts" className={cn(buttonVariants({ size: "lg" }))}>
+                  {t('browse_prompts')}
+                </Link>
+              </div>
+            </Card>
+          </ScaleOnHover>
+        </AnimatedContainer>
       </div>
     </div>
   )

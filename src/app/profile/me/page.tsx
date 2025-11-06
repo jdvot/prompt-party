@@ -158,7 +158,7 @@ export default async function ProfilePage() {
   // Level configuration
   const levels = {
     beginner: { name: 'Débutant', color: 'from-green-500 to-emerald-600', pointsMin: 0, pointsMax: 300 },
-    intermediate: { name: 'Intermédiaire', color: 'from-violet-500 to-purple-600', pointsMin: 300, pointsMax: 800 },
+    intermediate: { name: 'Intermédiaire', color: 'from-indigo-500 to-violet-600', pointsMin: 300, pointsMax: 800 },
     expert: { name: 'Expert', color: 'from-orange-500 to-red-600', pointsMin: 800, pointsMax: 2000 },
     master: { name: 'Maître', color: 'from-blue-500 to-cyan-600', pointsMin: 2000, pointsMax: 5000 },
     legend: { name: 'Légende', color: 'from-yellow-500 to-amber-600', pointsMin: 5000, pointsMax: 10000 }

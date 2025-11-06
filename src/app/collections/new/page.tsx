@@ -1,14 +1,20 @@
 import { createClient } from '@/lib/supabase/server'
 import { redirect } from 'next/navigation'
+import { getTranslations } from 'next-intl/server'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 
-export const metadata: Metadata = {
-  title: 'New Collection | Prompt Party',
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations('collections')
+  return {
+    title: `${t('action_create_new_collection')} | Prompt Party`,
+  }
 }
 
 export default async function NewCollectionPage() {
   const supabase = await createClient()
+  const t = await getTranslations('collections')
+  const tCommon = await getTranslations('common')
 
   const {
     data: { user },
@@ -60,12 +66,12 @@ export default async function NewCollectionPage() {
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="max-w-2xl mx-auto">
-        <h1 className="text-3xl font-bold mb-8">Create New Collection</h1>
+        <h1 className="text-3xl font-bold mb-8">{t('action_create_new_collection')}</h1>
 
         <form action={createCollection} className="space-y-6">
           <div>
             <label htmlFor="name" className="block text-sm font-medium mb-2">
-              Collection Name
+              {t('name_label')}
             </label>
             <input
               type="text"
@@ -73,20 +79,20 @@ export default async function NewCollectionPage() {
               name="name"
               required
               className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
-              placeholder="My Favorite Prompts"
+              placeholder={t('form_my_favorite_prompts')}
             />
           </div>
 
           <div>
             <label htmlFor="description" className="block text-sm font-medium mb-2">
-              Description (optional)
+              {t('description_label')}
             </label>
             <textarea
               id="description"
               name="description"
               rows={4}
               className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary resize-none"
-              placeholder="A curated collection of prompts for..."
+              placeholder={t('form_a_curated_collection_of_prompts_for')}
             />
           </div>
 
@@ -100,7 +106,7 @@ export default async function NewCollectionPage() {
               className="w-4 h-4"
             />
             <label htmlFor="is_public" className="text-sm">
-              Make this collection public
+              {t('make_public')}
             </label>
           </div>
 
@@ -109,13 +115,13 @@ export default async function NewCollectionPage() {
               type="submit"
               className="px-6 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors"
             >
-              Create Collection
+              {t('create_collection')}
             </button>
             <Link
               href="/collections"
               className="px-6 py-2 border rounded-md hover:bg-accent transition-colors inline-flex items-center"
             >
-              Cancel
+              {tCommon('cancel')}
             </Link>
           </div>
         </form>

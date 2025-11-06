@@ -49,10 +49,13 @@ export const PromptCard = memo(function PromptCard({
                 {title}
               </h2>
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                <Link
-                  href={`/profile/${author.name || 'anonymous'}`}
-                  onClick={(e) => e.stopPropagation()}
-                  className="flex items-center gap-2 hover:text-primary transition-colors min-h-[44px] -m-2 p-2 rounded-md hover:bg-muted/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                <button
+                  onClick={(e) => {
+                    e.preventDefault()
+                    e.stopPropagation()
+                    window.location.href = `/profile/${author.name || 'anonymous'}`
+                  }}
+                  className="flex items-center gap-2 hover:text-primary transition-colors min-h-[44px] -m-2 p-2 rounded-md hover:bg-muted/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring cursor-pointer"
                 >
                   <Avatar className="w-6 h-6">
                     <AvatarImage src={author.avatar_url || undefined} alt={author.name || t('anonymous')} />
@@ -61,7 +64,7 @@ export const PromptCard = memo(function PromptCard({
                     </AvatarFallback>
                   </Avatar>
                   <span className="truncate">{author.name || t('anonymous')}</span>
-                </Link>
+                </button>
                 <span className="text-muted-foreground/60">•</span>
                 <time className="text-muted-foreground whitespace-nowrap">
                   {formatDistanceToNow(new Date(created_at), { addSuffix: true })}
