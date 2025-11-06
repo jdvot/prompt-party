@@ -1241,7 +1241,8 @@
     "level_intermediate": "Intermédiaire",
     "level_expert": "Expert",
     "level_master": "Maître",
-    "level_legend": "Légende"
+    "level_legend": "Légende",
+    "streak_days_label": "jours"
   },
   "prompt_types": {
     "business": "Professionnel",

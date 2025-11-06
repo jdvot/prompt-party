@@ -190,7 +190,7 @@ export default async function ProfilePage() {
                   {userProgress.streak_days > 0 && (
                     <Badge variant="soft" className="bg-orange-500/10 text-orange-700 dark:text-orange-400">
                       <FlameIcon className="w-3 h-3 mr-1" />
-                      {userProgress.streak_days} jours
+                      {userProgress.streak_days} {t('streak_days_label')}
                     </Badge>
                   )}
                 </div>
