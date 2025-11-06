@@ -2584,7 +2584,18 @@
           "explanation": "Fournit des exemples pour enseigner le modèle à l'IA."
         }
       }
-    }
+    },
+    "sidebar_advanced_prompting_title": "Techniques Avancées",
+    "sidebar_advanced_prompting_badge": "Intermédiaire Certifié",
+    "sidebar_claude_basics_title": "Les Bases de Claude",
+    "sidebar_claude_basics_badge": "Premiers Pas",
+    "sidebar_intro_prompts_title": "Introduction aux Prompts",
+    "sidebar_intro_prompts_badge": "Premiers Pas",
+    "navigation_building_claude_agents": "Construction d'Agents Claude →",
+    "navigation_multi_agent_systems": "Systèmes Multi-Agents →",
+    "navigation_ai_code_generation": "Génération de Code IA →",
+    "navigation_back_to_tutorials": "← Retour aux Tutoriels",
+    "badge_intermediate": "Intermédiaire"
   },
   "ui": {
     "close": "Fermer",

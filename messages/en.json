@@ -2600,7 +2600,18 @@
           "explanation": "Provides examples to teach the AI the pattern."
         }
       }
-    }
+    },
+    "sidebar_advanced_prompting_title": "Advanced Techniques",
+    "sidebar_advanced_prompting_badge": "Intermediate Certified",
+    "sidebar_claude_basics_title": "Claude Basics",
+    "sidebar_claude_basics_badge": "First Steps",
+    "sidebar_intro_prompts_title": "Introduction to Prompts",
+    "sidebar_intro_prompts_badge": "First Steps",
+    "navigation_building_claude_agents": "Building Claude Agents →",
+    "navigation_multi_agent_systems": "Multi-Agent Systems →",
+    "navigation_ai_code_generation": "AI Code Generation →",
+    "navigation_back_to_tutorials": "← Back to All Tutorials",
+    "badge_intermediate": "Intermediate"
   },
   "ui": {
     "close": "Close",
