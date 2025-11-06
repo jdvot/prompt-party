@@ -26,7 +26,7 @@ export function PricingPageClient({ freePlan, supportPlan, t }: PricingPageClien
           <div className="grid lg:grid-cols-2 gap-8 items-center">
             <AnimatedContainer animation="slide-up">
               <div className="text-center lg:text-left">
-                <Badge variant="soft" className="mb-4">
+                <Badge variant="soft" className="mb-4 inline-flex items-center">
                   <HeartIcon className="w-3 h-3 mr-1" />
                   {t.hero_badge}
                 </Badge>
