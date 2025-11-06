@@ -56,8 +56,8 @@ export default async function ChallengesPage() {
   // Separate challenges by type
   const weeklyChallenge = challenges.find(c => c.type === 'weekly') || {
     id: '1',
-    title: 'Challenge Hebdo - Apprentissage',
-    description: 'Complète 2 leçons cette semaine et gagne des points',
+    title: t('weekly_challenge_title'),
+    description: t('weekly_challenge_description'),
     type: 'weekly',
     category: 'learning',
     reward_points: 50,
@@ -69,12 +69,12 @@ export default async function ChallengesPage() {
 
   const monthlyChallenge = challenges.find(c => c.type === 'monthly') || {
     id: '2',
-    title: 'Challenge Mensuel - Expert',
-    description: 'Complète 5 leçons ce mois et débloque le badge Expert',
+    title: t('monthly_challenge_title'),
+    description: t('monthly_challenge_description'),
     type: 'monthly',
     category: 'learning',
     reward_points: 200,
-    reward_badge: 'Expert du Mois',
+    reward_badge: t('monthly_challenge_reward'),
     goal_type: 'lessons',
     goal_value: 5,
     current_progress: 0,
@@ -90,11 +90,11 @@ export default async function ChallengesPage() {
 
   const communityChallenge = {
     id: '3',
-    title: 'Challenge Communauté',
-    description: 'Ensemble, partageons 500 prompts ce mois !',
+    title: t('community_challenge_title'),
+    description: t('community_challenge_description'),
     type: 'community',
     category: 'community',
-    reward: 'Unlock Parcours Avancé pour tous',
+    reward: t('community_challenge_reward'),
     goal_type: 'prompts',
     goal_value: 500,
     current_progress: totalPromptsShared || 0,

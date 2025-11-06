@@ -9,6 +9,16 @@
     "submitting": "Verifiëren...",
     "title": "Toegang Beveiligd"
   },
+  "challenges": {
+    "community_challenge_description": "Laten we samen deze maand 500 prompts delen!",
+    "community_challenge_reward": "Ontgrendel geavanceerde leerpad voor iedereen",
+    "community_challenge_title": "Community Uitdaging",
+    "monthly_challenge_description": "Maak deze maand 5 lessen af en ontgrendel de Expert badge",
+    "monthly_challenge_reward": "Expert van de Maand",
+    "monthly_challenge_title": "Maandelijkse Uitdaging - Expert",
+    "weekly_challenge_description": "Maak deze week 2 lessen af en verdien punten",
+    "weekly_challenge_title": "Wekelijkse Uitdaging - Leren"
+  },
   "api": {
     "action_api_key_created": "API Key Created!",
     "action_create_new_api_key": "Create New API Key",
