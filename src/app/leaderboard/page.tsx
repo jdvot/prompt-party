@@ -127,11 +127,11 @@ export default async function LeaderboardPage() {
   }
 
   const levelLabels: Record<string, string> = {
-    beginner: '🌱 Débutant',
-    intermediate: '🌿 Intermédiaire',
-    expert: '🍀 Expert',
-    master: '🌳 Maître',
-    legend: '⭐ Légende'
+    beginner: t('level_beginner'),
+    intermediate: t('level_intermediate'),
+    expert: t('level_expert'),
+    master: t('level_master'),
+    legend: t('level_legend')
   }
 
   // Get translations as an object to pass to client component

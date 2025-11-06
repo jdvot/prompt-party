@@ -672,7 +672,12 @@
     "trending_week": "Tendances Cette Semaine",
     "trending_week_subtitle": "Prompts les plus populaires des 7 derniers jours",
     "your_impact": "Ton impact",
-    "your_position": "Ta position"
+    "your_position": "Ta position",
+    "level_beginner": "🌱 Débutant",
+    "level_intermediate": "🌿 Intermédiaire",
+    "level_expert": "🍀 Expert",
+    "level_master": "🌳 Maître",
+    "level_legend": "⭐ Légende"
   },
   "marketing_suite": {
     "comparison_cta": "Démarrer l'Essai Gratuit",
@@ -1231,7 +1236,12 @@
     "unlock_more_badges": "Comment débloquer plus de badges ?",
     "website_label": "Site Web",
     "weekly_goals": "Objectifs de la semaine",
-    "weekly_goals_subtitle": "Continue comme ça, tu es sur la bonne voie !"
+    "weekly_goals_subtitle": "Continue comme ça, tu es sur la bonne voie !",
+    "level_beginner": "Débutant",
+    "level_intermediate": "Intermédiaire",
+    "level_expert": "Expert",
+    "level_master": "Maître",
+    "level_legend": "Légende"
   },
   "prompt_types": {
     "business": "Professionnel",

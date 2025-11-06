@@ -690,7 +690,12 @@
     "trending_week": "Trending This Week",
     "trending_week_subtitle": "Hottest prompts from the last 7 days",
     "your_impact": "Your Impact",
-    "your_position": "Your Position"
+    "your_position": "Your Position",
+    "level_beginner": "🌱 Beginner",
+    "level_intermediate": "🌿 Intermediate",
+    "level_expert": "🍀 Expert",
+    "level_master": "🌳 Master",
+    "level_legend": "⭐ Legend"
   },
   "marketing_suite": {
     "comparison_cta": "Start Free Trial",
@@ -1247,7 +1252,12 @@
     "unlock_more_badges": "How to Unlock More Badges?",
     "website_label": "Website",
     "weekly_goals": "Weekly Goals",
-    "weekly_goals_subtitle": "Keep it up, you're on track!"
+    "weekly_goals_subtitle": "Keep it up, you're on track!",
+    "level_beginner": "Beginner",
+    "level_intermediate": "Intermediate",
+    "level_expert": "Expert",
+    "level_master": "Master",
+    "level_legend": "Legend"
   },
   "prompt_types": {
     "business": "Business",
