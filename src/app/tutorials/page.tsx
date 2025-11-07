@@ -83,6 +83,28 @@ export default async function TutorialsPage() {
         topics: [t('tutorial_prompt_optimization_topic1'), t('tutorial_prompt_optimization_topic2'), t('tutorial_prompt_optimization_topic3')],
         link: '/tutorials/prompt-optimization',
         color: 'from-yellow-500 to-orange-500'
+      },
+      {
+        id: 'ml-basics',
+        title: t('tutorial_ml_basics_title'),
+        description: t('tutorial_ml_basics_description'),
+        duration: t('tutorial_ml_basics_duration'),
+        level: t('tutorial_ml_basics_level'),
+        iconName: 'Brain',
+        topics: [t('tutorial_ml_basics_topic1'), t('tutorial_ml_basics_topic2'), t('tutorial_ml_basics_topic3')],
+        link: '/tutorials/ml-basics',
+        color: 'from-blue-500 to-cyan-500'
+      },
+      {
+        id: 'dl-fundamentals',
+        title: t('tutorial_dl_fundamentals_title'),
+        description: t('tutorial_dl_fundamentals_description'),
+        duration: t('tutorial_dl_fundamentals_duration'),
+        level: t('tutorial_dl_fundamentals_level'),
+        iconName: 'Zap',
+        topics: [t('tutorial_dl_fundamentals_topic1'), t('tutorial_dl_fundamentals_topic2'), t('tutorial_dl_fundamentals_topic3')],
+        link: '/tutorials/dl-fundamentals',
+        color: 'from-emerald-500 to-green-500'
       }
     ],
     advanced: [

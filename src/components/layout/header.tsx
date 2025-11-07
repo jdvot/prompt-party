@@ -67,6 +67,12 @@ export function Header() {
             >
               {t('concepts')}
             </Link>
+            <Link
+              href="/ml-vs-dl"
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200"
+            >
+              {t('ml_vs_dl')}
+            </Link>
           </nav>
         </div>
 

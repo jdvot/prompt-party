@@ -15,6 +15,7 @@ import { useLocale } from 'next-intl';
 const languages = [
   { code: 'en', name: 'English', flag: '🇬🇧' },
   { code: 'fr', name: 'Français', flag: '🇫🇷' },
+  { code: 'nl', name: 'Nederlands', flag: '🇳🇱' },
 ];
 
 export function LanguageSwitcher() {
