@@ -368,6 +368,30 @@ export function TechStackContent() {
       after: 'Optimized',
       improvement: t('comparison_improvement_40'),
     },
+    {
+      criterion: t('comparison_test_coverage'),
+      before: '40%',
+      after: '95%',
+      improvement: t('comparison_improvement_coverage'),
+    },
+    {
+      criterion: t('comparison_cicd_time'),
+      before: '25 min',
+      after: '5 min',
+      improvement: t('comparison_improvement_5x'),
+    },
+    {
+      criterion: t('comparison_review_time'),
+      before: '4 hours',
+      after: '30 min',
+      improvement: t('comparison_improvement_time'),
+    },
+    {
+      criterion: t('comparison_knowledge_transfer'),
+      before: t('comparison_manual'),
+      after: t('comparison_automated'),
+      improvement: t('comparison_improvement_systematic'),
+    },
   ]
 
   // FAQ data
@@ -450,10 +474,20 @@ export function TechStackContent() {
 
           <AnimatedContainer animation="fade" delay={0}>
             <div className="text-center space-y-6 max-w-3xl mx-auto">
-              <Badge className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-indigo-100 to-purple-100 text-indigo-700 border-indigo-200">
-                <Sparkles className="w-4 h-4" />
-                {t('hero_badge')}
-              </Badge>
+              {/* Enhanced Hero Badge with Animation */}
+              <div className="flex flex-col items-center gap-3">
+                <div className="relative inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-indigo-100 to-purple-100 text-indigo-700 border border-indigo-200 rounded-full hover:shadow-lg transition-all duration-300">
+                  <Sparkles className="w-4 h-4 animate-pulse" />
+                  {t('hero_badge')}
+                </div>
+                {/* Sub-badge with key metric */}
+                <div className="flex items-center gap-2 px-3 py-1 bg-green-50 border border-green-200 rounded-full text-sm text-green-700">
+                  <span className="inline-block w-2 h-2 bg-green-500 rounded-full"></span>
+                  <span className="font-semibold">{t('hero_badge_metric_1')}</span>
+                  <span className="text-green-600 text-xs">·</span>
+                  <span className="text-green-600 text-xs">{t('hero_badge_metric_2')}</span>
+                </div>
+              </div>
 
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
                 {t('hero_title')}
