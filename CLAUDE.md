@@ -44,6 +44,151 @@ supabase gen types typescript --project-id YOUR_PROJECT_ID > src/types/supabase.
 # Note: Make sure to run migrations and regenerate types after adding new tables/columns
 ```
 
+## Development Tools
+
+### Claude Code
+
+**Claude Code** is an AI-powered coding assistant that integrates seamlessly with this repository. It reads this CLAUDE.md file to understand project context, architecture, and conventions.
+
+**Setup & Usage:**
+- Access at [claude.ai/code](https://claude.ai/code) or via the Claude Code CLI
+- Link this repository for context-aware assistance
+- Claude Code will automatically reference CLAUDE.md for project guidelines
+
+**Key Capabilities:**
+- Generate new features following Next.js 15 + Supabase patterns
+- Refactor code while maintaining TypeScript safety and Tailwind consistency
+- Debug issues with full project context understanding
+- Generate documentation aligned with project standards
+- Create tests and migrations following established patterns
+
+**Common Workflows:**
+```
+# Feature development
+- Describe feature requirements → Claude Code generates implementation
+- Ask for code review → Validates against CLAUDE.md patterns
+- Request documentation → Generates markdown following project style
+
+# Bug fixes
+- Provide error context → Claude Code identifies root cause
+- Ask for solution → Implementation respects existing architecture
+```
+
+### Ragas
+
+**Ragas** is an open-source framework for evaluating the quality and effectiveness of AI prompts and responses. It's essential for Prompt Party to measure and improve prompt quality.
+
+**Installation:**
+```bash
+pnpm add ragas
+# or
+npm install ragas
+```
+
+**Purpose & Metrics:**
+Ragas evaluates prompts using key metrics:
+- **Faithfulness**: How closely responses adhere to the prompt intent
+- **Answer Relevancy**: Relevance of generated responses to the prompt
+- **Context Precision**: Quality and relevance of retrieved context
+- **Context Recall**: Completeness of context retrieval
+- **Semantic Similarity**: Alignment between prompt expectations and responses
+
+**Usage for Prompt Party:**
+```bash
+# Evaluate a prompt's effectiveness
+ragas evaluate --prompt "your-prompt-here" --responses "response-data"
+
+# Batch evaluate prompts from collection
+ragas evaluate-batch --input prompts.json --output metrics.json
+
+# Generate quality reports
+ragas report --metrics faithfulness,relevancy,context-precision
+```
+
+**Integration Example:**
+```typescript
+// Evaluate prompts before adding to featured collection
+import { evaluatePrompt } from '@/lib/ragas'
+
+const metrics = await evaluatePrompt({
+  prompt: promptText,
+  responses: testResponses,
+  model: 'gpt-4'
+})
+
+if (metrics.faithfulness > 0.8 && metrics.relevancy > 0.85) {
+  // Add to featured prompts
+}
+```
+
+**Best Practice:** Use Ragas evaluations when:
+- Creating featured or trending prompts
+- Evaluating community-submitted prompts
+- Benchmarking prompt quality improvements
+- A/B testing prompt variations
+
+### Spec Driven Development
+
+**Spec Driven** is a development methodology that prioritizes clear specifications before implementation. It ensures alignment between requirements, design, code, and validation.
+
+**Workflow:**
+1. **Write Spec**: Create detailed feature specification in GitHub issue or discussion
+2. **Review & Validate**: Team reviews spec for clarity, feasibility, and alignment
+3. **Implement**: Developers code following the approved specification
+4. **Validate**: Testing against spec ensures requirements are met
+5. **Documentation**: Update CLAUDE.md and relevant docs with new patterns
+
+**GitHub Integration:**
+- Use **Issues** for feature specifications with `spec` label
+- Create **Discussions** for design decisions and architecture questions
+- Link **PRs** to specification issues for traceability
+- Use **Checklists** in issues to track spec completion
+
+**Example Spec Template:**
+```markdown
+# [Feature Name] Specification
+
+## Description
+Brief overview of the feature
+
+## Requirements
+- [ ] Requirement 1
+- [ ] Requirement 2
+- [ ] Requirement 3
+
+## Architecture
+How this fits into existing system
+
+## Database Changes
+Tables/columns to be created or modified
+
+## API Endpoints
+Endpoints to be created or modified
+
+## UI Components
+New components or modifications
+
+## Testing Strategy
+How to validate the feature
+
+## Success Criteria
+Definition of done for this feature
+```
+
+**Benefits for Prompt Party:**
+- **Clear Alignment**: Everyone understands feature requirements before coding
+- **Reduced Rework**: Specs catch issues early, avoiding implementation cycles
+- **Better Code Reviews**: PRs reference clear specifications
+- **Easier Onboarding**: New developers understand feature intent from specs
+- **Quality Assurance**: Testing team has clear spec to validate against
+
+**Best Practices:**
+- Write specs in accessible language (avoid jargon where possible)
+- Include examples and use cases
+- Define scope boundaries clearly (what's included/excluded)
+- Get spec approval before starting implementation
+- Update spec if requirements change during development
+
 ## Environment Setup
 
 Create `.env.local` at project root:

@@ -73,6 +73,12 @@ export function Header() {
             >
               {t('ml_vs_dl')}
             </Link>
+            <Link
+              href="/tech-stack"
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200"
+            >
+              {t('tech_stack')}
+            </Link>
           </nav>
         </div>
 

@@ -33,6 +33,9 @@ export function Footer() {
               <Link href="/mcp-vs-rag" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
                 {t('mcp_vs_rag')}
               </Link>
+              <Link href="/tech-stack" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
+                {tNav('tech_stack')}
+              </Link>
               <Link href="/prompts/wizard" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
                 {t('playground')}
               </Link>
