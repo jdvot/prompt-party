@@ -105,6 +105,39 @@ export default async function TutorialsPage() {
         topics: [t('tutorial_dl_fundamentals_topic1'), t('tutorial_dl_fundamentals_topic2'), t('tutorial_dl_fundamentals_topic3')],
         link: '/tutorials/dl-fundamentals',
         color: 'from-emerald-500 to-green-500'
+      },
+      {
+        id: 'claude-code-basics',
+        title: t('tutorial_claude_code_basics_title'),
+        description: t('tutorial_claude_code_basics_description'),
+        duration: t('tutorial_claude_code_basics_duration'),
+        level: t('tutorial_claude_code_basics_level'),
+        iconName: 'Code',
+        topics: [t('tutorial_claude_code_basics_topic1'), t('tutorial_claude_code_basics_topic2'), t('tutorial_claude_code_basics_topic3')],
+        link: '/tutorials/claude-code-basics',
+        color: 'from-indigo-500 to-blue-500'
+      },
+      {
+        id: 'ragas-evaluation',
+        title: t('tutorial_ragas_evaluation_title'),
+        description: t('tutorial_ragas_evaluation_description'),
+        duration: t('tutorial_ragas_evaluation_duration'),
+        level: t('tutorial_ragas_evaluation_level'),
+        iconName: 'BarChart3',
+        topics: [t('tutorial_ragas_evaluation_topic1'), t('tutorial_ragas_evaluation_topic2'), t('tutorial_ragas_evaluation_topic3')],
+        link: '/tutorials/ragas-evaluation',
+        color: 'from-violet-500 to-purple-500'
+      },
+      {
+        id: 'spec-driven-development',
+        title: t('tutorial_spec_driven_development_title'),
+        description: t('tutorial_spec_driven_development_description'),
+        duration: t('tutorial_spec_driven_development_duration'),
+        level: t('tutorial_spec_driven_development_level'),
+        iconName: 'CheckSquare',
+        topics: [t('tutorial_spec_driven_development_topic1'), t('tutorial_spec_driven_development_topic2'), t('tutorial_spec_driven_development_topic3')],
+        link: '/tutorials/spec-driven-development',
+        color: 'from-cyan-500 to-blue-500'
       }
     ],
     advanced: [
