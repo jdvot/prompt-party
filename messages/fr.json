@@ -3421,6 +3421,15 @@
     "cta_stat_2_label": "Prompts Évalués et Optimisés",
     "cta_stat_3_value": "1M+",
     "cta_stat_3_label": "Lignes de Code Générées",
+    "tutorials_section_title": "Apprenez avec des Tutoriels Interactifs",
+    "tutorials_section_subtitle": "Maîtrisez Claude Code, l'évaluation Ragas et le développement guidé par les specs avec des guides complets et des exercices pratiques",
+    "start_tutorial": "Commencer à Apprendre",
+    "resource_claude_code_tutorial_title": "Maîtrise de Claude Code",
+    "resource_claude_code_tutorial_desc": "Apprenez la génération de code alimentée par l'IA, les modèles d'intégration et les meilleures pratiques avec Claude Code",
+    "resource_ragas_tutorial_title": "Évaluation Ragas",
+    "resource_ragas_tutorial_desc": "Évaluez et mesurez la qualité des prompts en utilisant les métriques Ragas avec des exemples réels",
+    "resource_spec_tutorial_title": "Développement Guidé par les Specs",
+    "resource_spec_tutorial_desc": "Écrivez des spécifications claires pour un meilleur alignement d'équipe et un flux de travail systématique",
     "metadata_title": "Tech Stack | Prompt Party",
     "metadata_description": "Découvrez les outils techniques et les méthodologies derrière l'engagement de Prompt Party envers l'excellence"
   }

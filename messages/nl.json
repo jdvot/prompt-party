@@ -3421,6 +3421,15 @@
     "cta_stat_2_label": "Prompts Geëvalueerd & Geoptimaliseerd",
     "cta_stat_3_value": "1M+",
     "cta_stat_3_label": "Regels Code Gegenereerd",
+    "tutorials_section_title": "Leer met Interactieve Tutorials",
+    "tutorials_section_subtitle": "Beheers Claude Code, Ragas-evaluatie en spec-driven development met uitgebreide gidsen en praktische oefeningen",
+    "start_tutorial": "Begin met Leren",
+    "resource_claude_code_tutorial_title": "Claude Code Meesterschap",
+    "resource_claude_code_tutorial_desc": "Leer AI-aangedreven codegeneratie, integratiepatronen en best practices met Claude Code",
+    "resource_ragas_tutorial_title": "Ragas-evaluatie",
+    "resource_ragas_tutorial_desc": "Evalueer en meet de kwaliteit van prompts met Ragas-metrieken aan de hand van echte voorbeelden",
+    "resource_spec_tutorial_title": "Spec Driven Development",
+    "resource_spec_tutorial_desc": "Schrijf duidelijke specificaties voor betere teamuitlijning en systematische werkstroom",
     "metadata_title": "Tech Stack | Prompt Party",
     "metadata_description": "Ontdek de technische tools en methodologieën achter Prompt Party's toewijding aan uitmuntendheid"
   }

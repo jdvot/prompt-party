@@ -18,7 +18,7 @@ import { WorkflowDiagram } from '@/components/tech-stack/workflow-diagram'
 import {
   Code, Brain, FileText, Sparkles, Zap, GitBranch, BarChart3,
   Gauge, Database, Lock, Rocket, Users, BookOpen, Github, ExternalLink,
-  Zap as Performance, Shield, Layers
+  Zap as Performance, Shield, Layers, CheckSquare
 } from 'lucide-react'
 
 export function TechStackContent() {
@@ -462,6 +462,30 @@ export function TechStackContent() {
     },
   ]
 
+  const tutorialLinks = [
+    {
+      title: t('resource_claude_code_tutorial_title'),
+      description: t('resource_claude_code_tutorial_desc'),
+      icon: Code,
+      href: '/tutorials/claude-code-basics',
+      external: false,
+    },
+    {
+      title: t('resource_ragas_tutorial_title'),
+      description: t('resource_ragas_tutorial_desc'),
+      icon: BarChart3,
+      href: '/tutorials/ragas-evaluation',
+      external: false,
+    },
+    {
+      title: t('resource_spec_tutorial_title'),
+      description: t('resource_spec_tutorial_desc'),
+      icon: CheckSquare,
+      href: '/tutorials/spec-driven-development',
+      external: false,
+    },
+  ]
+
   return (
     <div className="w-full">
       {/* Hero Section */}
@@ -763,6 +787,50 @@ export function TechStackContent() {
                           {resource.external && (
                             <ExternalLink className="w-4 h-4 text-muted-foreground" />
                           )}
+                        </CardContent>
+                      </Card>
+                    </Link>
+                  </AnimatedContainer>
+                )
+              })}
+            </div>
+          </StaggerContainer>
+        </div>
+      </section>
+
+      {/* Interactive Tutorials Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50 dark:bg-slate-900/50">
+        <div className="max-w-7xl mx-auto">
+          <AnimatedContainer animation="fade" delay={0}>
+            <div className="text-center mb-16">
+              <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+                {t('tutorials_section_title')}
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                {t('tutorials_section_subtitle')}
+              </p>
+            </div>
+          </AnimatedContainer>
+
+          <StaggerContainer>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {tutorialLinks.map((tutorial, idx) => {
+                const TutorialIcon = tutorial.icon
+                return (
+                  <AnimatedContainer key={idx} animation="slide-up" delay={idx * 0.1}>
+                    <Link href={tutorial.href}>
+                      <Card className="h-full overflow-hidden border-0 bg-white dark:bg-slate-950 hover:shadow-lg transition-all duration-300 cursor-pointer">
+                        <CardContent className="p-6 space-y-4">
+                          <div className="p-3 rounded-lg bg-indigo-100 dark:bg-indigo-900/20 w-fit">
+                            <TutorialIcon className="w-6 h-6 text-indigo-600 dark:text-indigo-400" />
+                          </div>
+                          <h3 className="font-semibold text-foreground">{tutorial.title}</h3>
+                          <p className="text-sm text-muted-foreground">{tutorial.description}</p>
+                          <div className="pt-4 border-t border-slate-200 dark:border-slate-800">
+                            <span className="text-sm font-semibold text-indigo-600 dark:text-indigo-400">
+                              {t('start_tutorial')} →
+                            </span>
+                          </div>
                         </CardContent>
                       </Card>
                     </Link>
