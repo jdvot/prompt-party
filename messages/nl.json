@@ -2775,7 +2775,6 @@
       "tool_defining_title": "Tools voor Claude Definiëren",
       "tool_defining_description": "Tools worden gedefinieerd met JSON-schema's die hun invoer en uitvoer beschrijven",
       "alert_key_concept": "Belangrijk Concept: Invoer Schema",
-      "alert_input_schema": "Het <strong>input_schema</strong> vertelt Claude welke parameters een tool accepteert. Goed gedefinieerde schema's helpen Claude uw tools correct te gebruiken.",
       "building_title": "Je Eerste Agent Bouwen",
       "tab_setup": "Setup",
       "tab_agent_loop": "Agent Loop",
@@ -2813,7 +2812,10 @@
       "next_browse_examples": "Blader door Agent Voorbeelden",
       "resources_title": "Resources",
       "resource_tool_use": "Tool-Gebruik Documentatie",
-      "resource_cookbook": "Anthropic Cookbook"
+      "resource_cookbook": "Anthropic Cookbook",
+      "alert_input_schema_intro": "De ",
+      "alert_input_schema_bold": "input_schema",
+      "alert_input_schema_text": " vertelt Claude welke parameters een tool accepteert. Goed gedefinieerde schema's helpen Claude begrijpen hoe uw tools correct kunnen worden gebruikt."
     },
     "prerequisites": "Vereisten",
     "pro_tip": "Pro Tip",

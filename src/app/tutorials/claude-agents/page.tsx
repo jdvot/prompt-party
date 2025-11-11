@@ -131,7 +131,11 @@ export default async function ClaudeAgentsTutorial() {
           <Alert className="mb-6">
             <Sparkles className="w-4 h-4" />
             <AlertTitle>{t('alert_key_concept')}</AlertTitle>
-            <AlertDescription dangerouslySetInnerHTML={{ __html: t('alert_input_schema') }} />
+            <AlertDescription>
+              {t('alert_input_schema_intro')}
+              <strong>{t('alert_input_schema_bold')}</strong>
+              {t('alert_input_schema_text')}
+            </AlertDescription>
           </Alert>
         </section>
 

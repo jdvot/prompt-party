@@ -2437,7 +2437,7 @@
       "learn_common": "Common templates for different tasks",
       "learn_customize": "How to customize templates for specific use cases",
       "what_are": "What Are Prompt Templates?",
-      "template_intro": "A <strong>prompt template</strong> is a reusable structure you fill with specific information to create consistent, high-quality prompts. Instead of writing prompts from scratch every time, templates help you maintain quality and save time.",
+      "template_intro": "A prompt template is a reusable structure you fill with specific information to create consistent, high-quality prompts. Instead of writing prompts from scratch every time, templates help you maintain quality and save time.",
       "without_templates": "Without Templates",
       "without_desc": "Inconsistent results from scratch",
       "without_1": "Spending time rewriting similar prompts",
@@ -2986,7 +2986,6 @@
       "tool_defining_title": "Defining Tools for Claude",
       "tool_defining_description": "Tools are defined with JSON schemas that describe their inputs and outputs",
       "alert_key_concept": "Key Concept: Input Schema",
-      "alert_input_schema": "The <strong>input_schema</strong> tells Claude what parameters a tool accepts. Well-defined schemas help Claude understand how to use your tools correctly.",
       "building_title": "Building Your First Agent",
       "tab_setup": "Setup",
       "tab_agent_loop": "Agent Loop",
@@ -3024,7 +3023,10 @@
       "next_browse_examples": "Browse Agent Examples",
       "resources_title": "Resources",
       "resource_tool_use": "Tool Use Documentation",
-      "resource_cookbook": "Anthropic Cookbook"
+      "resource_cookbook": "Anthropic Cookbook",
+      "alert_input_schema_intro": "The ",
+      "alert_input_schema_bold": "input_schema",
+      "alert_input_schema_text": " tells Claude what parameters a tool accepts. Well-defined schemas help Claude understand how to use your tools correctly."
     },
     "advanced_prompting": {
       "page_title": "Advanced Prompting Techniques | Tutorials | Prompt Party",
@@ -3330,7 +3332,8 @@
       "continue_2_link": "Prompt Party",
       "continue_3": "Test your new skills with real-world challenges in our",
       "continue_3_link": "Challenges section"
-    }
+    },
+    "pro_tip": "Pro tip"
   },
   "ui": {
     "close": "Close",

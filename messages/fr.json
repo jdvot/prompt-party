@@ -2854,7 +2854,6 @@
       "tool_defining_title": "Définir les Outils pour Claude",
       "tool_defining_description": "Les outils sont définis avec des schémas JSON qui décrivent leurs entrées et sorties",
       "alert_key_concept": "Concept Clé: Schéma d'Entrée",
-      "alert_input_schema": "Le <strong>input_schema</strong> indique à Claude quels paramètres un outil accepte. Des schémas bien définis aident Claude à comprendre comment utiliser correctement vos outils.",
       "building_title": "Construire Votre Premier Agent",
       "tab_setup": "Configuration",
       "tab_agent_loop": "Boucle d'Agent",
@@ -2892,7 +2891,10 @@
       "next_browse_examples": "Parcourir les Exemples d'Agents",
       "resources_title": "Ressources",
       "resource_tool_use": "Documentation sur l'Utilisation d'Outils",
-      "resource_cookbook": "Recueil d'Anthropic"
+      "resource_cookbook": "Recueil d'Anthropic",
+      "alert_input_schema_intro": "Le ",
+      "alert_input_schema_bold": "input_schema",
+      "alert_input_schema_text": " indique à Claude quels paramètres un outil accepte. Les schémas bien définis aident Claude à comprendre comment utiliser correctement vos outils."
     },
     "prerequisites": "Prérequis",
     "pro_tip": "Conseil professionnel",
