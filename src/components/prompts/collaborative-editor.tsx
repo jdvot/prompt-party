@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useCallback, useRef } from 'react'
+import { useTranslations } from 'next-intl'
 import { createClient } from '@/lib/supabase/client'
 import { Textarea } from '@/components/ui/textarea'
 import { Input } from '@/components/ui/input'
@@ -53,6 +54,7 @@ export function CollaborativeEditor({
   onTitleChange,
   onBodyChange,
 }: CollaborativeEditorProps) {
+  const t = useTranslations()
   const { toast } = useToast()
   const supabase = createClient()
   const [title, setTitle] = useState(initialTitle)
@@ -106,8 +108,8 @@ export function CollaborativeEditor({
         const user = newPresences[0]
         if (user.user_id !== currentUserId) {
           toast({
-            title: `${user.user_name} joined`,
-            description: 'Started editing this prompt',
+            title: t('components.collaborativeEditor.userJoined', { userName: user.user_name }),
+            description: t('components.collaborativeEditor.userJoinedDesc'),
           })
         }
       })
@@ -115,8 +117,8 @@ export function CollaborativeEditor({
         const user = leftPresences[0]
         if (user.user_id !== currentUserId) {
           toast({
-            title: `${user.user_name} left`,
-            description: 'Stopped editing this prompt',
+            title: t('components.collaborativeEditor.userLeft', { userName: user.user_name }),
+            description: t('components.collaborativeEditor.userLeftDesc'),
           })
         }
       })

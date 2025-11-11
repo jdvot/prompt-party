@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { useTranslations } from 'next-intl'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -28,6 +29,7 @@ interface SavedSearch {
 }
 
 export function SavedSearches() {
+  const t = useTranslations()
   const { toast } = useToast()
   const router = useRouter()
   const [savedSearches, setSavedSearches] = useState<SavedSearch[]>([])
@@ -44,8 +46,8 @@ export function SavedSearches() {
     if (!searchName.trim()) {
       toast({
         variant: 'destructive',
-        title: 'Name required',
-        description: 'Please enter a name for this search',
+        title: t('components.savedSearches.nameRequired'),
+        description: t('components.savedSearches.nameRequiredDesc'),
       })
       return
     }
@@ -71,7 +73,7 @@ export function SavedSearches() {
     setSearchName('')
 
     toast({
-      title: 'Search saved',
+      title: t('components.savedSearches.searchSaved'),
       description: `"${searchName}" has been saved to your searches`,
     })
   }
@@ -98,9 +100,9 @@ export function SavedSearches() {
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
           <Star className="w-5 h-5" />
-          Saved Searches
+          {t('components.savedSearches.title')}
         </CardTitle>
-        <CardDescription>Quick access to your favorite search queries</CardDescription>
+        <CardDescription>{t('components.savedSearches.description')}</CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">
         {/* Save Current Search */}

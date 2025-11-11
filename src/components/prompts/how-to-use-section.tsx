@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { useTranslations } from 'next-intl'
 import { Button } from '@/components/ui/button'
 import { CopyIcon, CheckIcon } from 'lucide-react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
@@ -10,6 +11,7 @@ interface HowToUseSectionProps {
 }
 
 export function HowToUseSection({ promptContent }: HowToUseSectionProps) {
+  const t = useTranslations()
   const [copied, setCopied] = useState(false)
 
   const copyToClipboard = async () => {
@@ -25,21 +27,21 @@ export function HowToUseSection({ promptContent }: HowToUseSectionProps) {
   return (
     <Card className="mb-6">
       <CardHeader>
-        <CardTitle className="text-lg">How to Use This Prompt</CardTitle>
+        <CardTitle className="text-lg">{t('components.howToUse.title')}</CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
         <ol className="list-decimal list-inside space-y-3 text-sm text-muted-foreground">
           <li>
-            <strong className="text-foreground">Copy the prompt</strong> using the button below
+            <strong className="text-foreground">{t('components.howToUse.step1')}</strong> using the button below
           </li>
           <li>
-            <strong className="text-foreground">Open your AI assistant</strong> (ChatGPT, Claude, Gemini, etc.)
+            <strong className="text-foreground">{t('components.howToUse.step2')}</strong> (ChatGPT, Claude, Gemini, etc.)
           </li>
           <li>
-            <strong className="text-foreground">Paste the prompt</strong> and customize any variables or placeholders
+            <strong className="text-foreground">{t('components.howToUse.step3')}</strong> and customize any variables or placeholders
           </li>
           <li>
-            <strong className="text-foreground">Review the output</strong> and iterate as needed
+            <strong className="text-foreground">{t('components.howToUse.step4')}</strong> and iterate as needed
           </li>
         </ol>
 
@@ -51,18 +53,18 @@ export function HowToUseSection({ promptContent }: HowToUseSectionProps) {
           {copied ? (
             <>
               <CheckIcon className="w-4 h-4 mr-2" />
-              Copied to Clipboard!
+              {t('components.howToUse.copiedFeedback')}
             </>
           ) : (
             <>
               <CopyIcon className="w-4 h-4 mr-2" />
-              Copy Prompt
+              {t('components.howToUse.copyButton')}
             </>
           )}
         </Button>
 
         <div className="pt-4 border-t">
-          <h4 className="text-sm font-semibold mb-2">Compatible AI Models</h4>
+          <h4 className="text-sm font-semibold mb-2">{t('components.howToUse.compatibleModels')}</h4>
           <div className="flex flex-wrap gap-2">
             <span className="px-3 py-1 bg-secondary text-secondary-foreground text-xs rounded-full">
               ChatGPT-4

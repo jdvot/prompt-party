@@ -118,7 +118,7 @@ export function SubmitPromptButton({ challengeId }: SubmitPromptButtonProps) {
               <Input
                 id="promptUrl"
                 type="url"
-                placeholder="https://prompt-party.com/prompts/..."
+                placeholder={t('components.submitPromptButton.urlPlaceholder')}
                 value={promptUrl}
                 onChange={(e) => setPromptUrl(e.target.value)}
                 required

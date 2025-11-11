@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { useTranslations } from 'next-intl'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import {
@@ -58,21 +59,27 @@ const AI_MODELS = [
   'Llama 2',
 ]
 
-const SORT_OPTIONS = [
-  { value: 'relevance', label: 'Most Relevant' },
-  { value: 'likes', label: 'Most Liked' },
-  { value: 'recent', label: 'Most Recent' },
-  { value: 'remixes', label: 'Most Remixed' },
-  { value: 'comments', label: 'Most Discussed' },
+const SORT_OPTIONS_KEYS = [
+  { value: 'relevance', key: 'components.advancedFilters.relevant' },
+  { value: 'likes', key: 'components.advancedFilters.liked' },
+  { value: 'recent', key: 'components.advancedFilters.recent' },
+  { value: 'remixes', key: 'components.advancedFilters.remixed' },
+  { value: 'comments', key: 'components.advancedFilters.discussed' },
 ]
 
 export function AdvancedFilters({ onFiltersChange }: AdvancedFiltersProps) {
+  const t = useTranslations()
   const [selectedTags, setSelectedTags] = useState<string[]>([])
   const [selectedModels, setSelectedModels] = useState<string[]>([])
   const [sortBy, setSortBy] = useState('relevance')
   const [dateRange, setDateRange] = useState<DateRange | undefined>()
   const [verifiedOnly, setVerifiedOnly] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
+
+  const SORT_OPTIONS = SORT_OPTIONS_KEYS.map(opt => ({
+    value: opt.value,
+    label: t(opt.key)
+  }))
 
   const toggleTag = (tag: string) => {
     const newTags = selectedTags.includes(tag)

@@ -1,5 +1,6 @@
 import * as React from 'react'
 import Image from 'next/image'
+import { useTranslations } from 'next-intl'
 import { cn } from '@/lib/utils'
 import { Button } from './button'
 import { FileQuestion, Search, Database, Inbox, AlertCircle } from 'lucide-react'
@@ -8,32 +9,12 @@ import { FileQuestion, Search, Database, Inbox, AlertCircle } from 'lucide-react
 // EMPTY STATE VARIANTS
 // ============================================================================
 
-const emptyStatePresets = {
-  'no-data': {
-    icon: Database,
-    title: 'No data available',
-    description: 'There is currently no data to display.',
-  },
-  'no-results': {
-    icon: Search,
-    title: 'No results found',
-    description: 'Try adjusting your search or filter criteria.',
-  },
-  'empty-inbox': {
-    icon: Inbox,
-    title: 'Your inbox is empty',
-    description: 'When you receive new messages, they will appear here.',
-  },
-  'not-found': {
-    icon: FileQuestion,
-    title: 'Page not found',
-    description: 'The page you are looking for does not exist.',
-  },
-  error: {
-    icon: AlertCircle,
-    title: 'Something went wrong',
-    description: 'An error occurred while loading this content.',
-  },
+const emptyStatePresetIcons = {
+  'no-data': Database,
+  'no-results': Search,
+  'empty-inbox': Inbox,
+  'not-found': FileQuestion,
+  error: AlertCircle,
 } as const
 
 // ============================================================================
@@ -41,12 +22,14 @@ const emptyStatePresets = {
 // ============================================================================
 
 export interface EmptyStateProps extends React.HTMLAttributes<HTMLDivElement> {
-  variant?: keyof typeof emptyStatePresets
+  variant?: keyof typeof emptyStatePresetIcons
   icon?: React.ComponentType<{ className?: string }>
   illustration?: React.ReactNode
   illustrationSrc?: string // Path to SVG illustration
   title?: string
+  titleKey?: string // Translation key for title
   description?: string
+  descriptionKey?: string // Translation key for description
   action?: {
     label: string
     onClick: () => void
@@ -68,7 +51,9 @@ const EmptyState = React.forwardRef<HTMLDivElement, EmptyStateProps>(
       illustration,
       illustrationSrc,
       title,
+      titleKey,
       description,
+      descriptionKey,
       action,
       secondaryAction,
       size = 'md',
@@ -76,11 +61,42 @@ const EmptyState = React.forwardRef<HTMLDivElement, EmptyStateProps>(
     },
     ref
   ) => {
-    // Get preset if variant is provided
-    const preset = variant ? emptyStatePresets[variant] : null
-    const Icon = IconComponent || preset?.icon
-    const finalTitle = title || preset?.title
-    const finalDescription = description || preset?.description
+    const t = useTranslations()
+
+    // Get preset icon if variant is provided
+    const Icon = IconComponent || (variant ? emptyStatePresetIcons[variant] : undefined)
+
+    // Get title from translation key or direct prop
+    let finalTitle = title
+    if (titleKey) {
+      finalTitle = t(titleKey)
+    } else if (variant && !title) {
+      // Use default translation key for preset variants
+      const titleKeyMap: Record<keyof typeof emptyStatePresetIcons, string> = {
+        'no-data': 'components.emptyState.noData',
+        'no-results': 'components.emptyState.noResults',
+        'empty-inbox': 'components.emptyState.emptyInbox',
+        'not-found': 'components.emptyState.notFound',
+        error: 'components.emptyState.error',
+      }
+      finalTitle = t(titleKeyMap[variant])
+    }
+
+    // Get description from translation key or direct prop
+    let finalDescription = description
+    if (descriptionKey) {
+      finalDescription = t(descriptionKey)
+    } else if (variant && !description) {
+      // Use default translation key for preset variants
+      const descKeyMap: Record<keyof typeof emptyStatePresetIcons, string> = {
+        'no-data': 'components.emptyState.noDataDesc',
+        'no-results': 'components.emptyState.noResultsDesc',
+        'empty-inbox': 'components.emptyState.emptyInboxDesc',
+        'not-found': 'components.emptyState.notFoundDesc',
+        error: 'components.emptyState.errorDesc',
+      }
+      finalDescription = t(descKeyMap[variant])
+    }
 
     // Size classes
     const sizeClasses = {

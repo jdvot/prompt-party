@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
+import { useTranslations } from 'next-intl'
 import type { User } from '@supabase/supabase-js'
 import { createClient } from '@/lib/supabase/client'
 
@@ -14,6 +15,7 @@ interface SettingsFormProps {
 }
 
 export function SettingsForm({ user, profile }: SettingsFormProps) {
+  const t = useTranslations()
   const router = useRouter()
   const [name, setName] = useState(profile?.name || '')
   const [username, setUsername] = useState((profile as any)?.username || '')
@@ -37,7 +39,7 @@ export function SettingsForm({ user, profile }: SettingsFormProps) {
 
       if (error) throw error
 
-      setMessage({ type: 'success', text: 'Profile updated successfully!' })
+      setMessage({ type: 'success', text: t('components.settingsForm.successMessage') })
       router.refresh()
     } catch (error: any) {
       setMessage({ type: 'error', text: error.message })
@@ -50,7 +52,7 @@ export function SettingsForm({ user, profile }: SettingsFormProps) {
     <div className="space-y-6">
       {/* Profile Settings */}
       <div className="bg-card border rounded-lg p-6">
-        <h2 className="text-xl font-semibold mb-4">Profile Information</h2>
+        <h2 className="text-xl font-semibold mb-4">{t('components.settingsForm.profileInfo')}</h2>
 
         {message && (
           <div
@@ -67,7 +69,7 @@ export function SettingsForm({ user, profile }: SettingsFormProps) {
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label htmlFor="email" className="block text-sm font-medium mb-2">
-              Email
+              {t('components.settingsForm.email')}
             </label>
             <input
               id="email"
@@ -77,38 +79,38 @@ export function SettingsForm({ user, profile }: SettingsFormProps) {
               className="w-full px-4 py-2 border rounded-md bg-muted text-muted-foreground cursor-not-allowed"
             />
             <p className="text-xs text-muted-foreground mt-1">
-              Email cannot be changed
+              {t('components.settingsForm.emailNotEditable')}
             </p>
           </div>
 
           <div>
             <label htmlFor="name" className="block text-sm font-medium mb-2">
-              Display Name
+              {t('components.settingsForm.displayName')}
             </label>
             <input
               id="name"
               type="text"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              placeholder="Your name"
+              placeholder={t('components.settingsForm.displayNamePlaceholder')}
               className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
             />
           </div>
 
           <div>
             <label htmlFor="username" className="block text-sm font-medium mb-2">
-              Username
+              {t('components.settingsForm.username')}
             </label>
             <input
               id="username"
               type="text"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-              placeholder="username"
+              placeholder={t('components.settingsForm.usernamePlaceholder')}
               className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
             />
             <p className="text-xs text-muted-foreground mt-1">
-              Your public profile will be at /profile/username
+              {t('components.settingsForm.usernameHint')}
             </p>
           </div>
 
@@ -117,7 +119,7 @@ export function SettingsForm({ user, profile }: SettingsFormProps) {
             disabled={loading}
             className="px-6 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 disabled:opacity-50 transition-colors"
           >
-            {loading ? 'Saving...' : 'Save Changes'}
+            {loading ? t('components.settingsForm.savingButton') : t('components.settingsForm.saveButton')}
           </button>
         </form>
       </div>

@@ -1,6 +1,7 @@
 'use client'
 
 import * as React from 'react'
+import { useTranslations } from 'next-intl'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { PlayIcon, StopCircleIcon, SparklesIcon } from 'lucide-react'
@@ -11,6 +12,7 @@ interface PromptPlaygroundProps {
 }
 
 export function PromptPlayground({ promptContent, userId }: PromptPlaygroundProps) {
+  const t = useTranslations()
   const [isOpen, setIsOpen] = React.useState(false)
   const [model, setModel] = React.useState<'gpt-4' | 'claude-3' | 'gemini-1.5-pro'>('gpt-4')
   const [input, setInput] = React.useState('')
@@ -27,7 +29,7 @@ export function PromptPlayground({ promptContent, userId }: PromptPlaygroundProp
 
   const testPrompt = async () => {
     if (!userId) {
-      setError('Please sign in to test prompts')
+      setError(t('components.promptPlayground.signInRequired'))
       return
     }
 
@@ -69,9 +71,9 @@ export function PromptPlayground({ promptContent, userId }: PromptPlaygroundProp
         variant="outline"
       >
         <SparklesIcon className="w-4 h-4 mr-2" />
-        Test with AI
+        {t('aiTester.buttonLabel')}
         <Badge variant="secondary" className="ml-2 text-xs inline-flex items-center">
-          Premium
+          {t('aiTester.premiumBadge')}
         </Badge>
       </Button>
     )
@@ -82,8 +84,8 @@ export function PromptPlayground({ promptContent, userId }: PromptPlaygroundProp
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center gap-2">
           <SparklesIcon className="w-5 h-5 text-primary" />
-          <h3 className="text-lg font-semibold">AI Prompt Tester</h3>
-          <Badge variant="secondary" className="text-xs">Premium</Badge>
+          <h3 className="text-lg font-semibold">{t('aiTester.title')}</h3>
+          <Badge variant="secondary" className="text-xs">{t('aiTester.premiumBadge')}</Badge>
         </div>
         <button
           onClick={() => setIsOpen(false)}
@@ -97,7 +99,7 @@ export function PromptPlayground({ promptContent, userId }: PromptPlaygroundProp
 
       {/* Model Selection */}
       <div className="mb-4">
-        <label className="text-sm font-medium mb-2 block">AI Model</label>
+        <label className="text-sm font-medium mb-2 block">{t('aiTester.modelLabel')}</label>
         <div className="grid grid-cols-3 gap-2">
           {models.map((m) => (
             <button
