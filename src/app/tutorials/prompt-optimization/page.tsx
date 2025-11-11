@@ -379,9 +379,9 @@ Return as: number. translation`}
                 <h4 className="font-semibold mb-2">{t('clear_output_format')}</h4>
                 <CodeBlock
                   language="text"
-                  code={`${t('output_format_bad')}
+                  code={`Bad: 'Analyze this data'
 
-${t('output_format_good')}`}
+Good: 'Return as JSON: {analysis: string, confidence: 0-100, next_steps: string[]}'`}
                 />
               </div>
 
