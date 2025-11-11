@@ -17,6 +17,7 @@ interface ChallengeDetailPageProps {
 
 export async function generateMetadata({ params }: ChallengeDetailPageProps): Promise<Metadata> {
   const { id } = await params
+  const t = await getTranslations('metadata')
   const supabase = await createClient()
   const { data: challenge } = await supabase
     .from('challenges')
@@ -26,7 +27,7 @@ export async function generateMetadata({ params }: ChallengeDetailPageProps): Pr
 
   if (!challenge) {
     return {
-      title: 'Challenge Not Found | Prompt Party',
+      title: t('challenge_not_found'),
     }
   }
 

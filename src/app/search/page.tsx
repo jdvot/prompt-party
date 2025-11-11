@@ -191,13 +191,13 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
                 href="/search"
                 className="px-6 py-2.5 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors font-medium"
               >
-                Clear filters
+                {t('clear_filters')}
               </a>
               <a
                 href="/tutorials"
                 className="px-6 py-2.5 rounded-lg border border-border hover:bg-muted transition-colors font-medium"
               >
-                Browse tutorials
+                {t('browse_tutorials')}
               </a>
             </div>
           </div>

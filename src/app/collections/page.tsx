@@ -27,7 +27,7 @@ export default async function CollectionsPage() {
           onClick: () => window.location.href = '/collections/new',
         }}
         secondaryAction={{
-          label: 'Browse Prompts',
+          label: emptyT('secondaryAction'),
           onClick: () => window.location.href = '/prompts',
         }}
       />

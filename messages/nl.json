@@ -85,7 +85,8 @@
     "join_academy_heading": "Word lid van Prompt Academy",
     "secure_auth_heading": "Beveiligde authenticatie",
     "secure_authentication": "Beveiligde Authenticatie",
-    "show_password": "Toon wachtwoord"
+    "show_password": "Toon wachtwoord",
+    "join_alt": "Join Prompt Academy"
   },
   "brand": {
     "logo_alt": "Prompt Academy-logo",
@@ -213,7 +214,9 @@
     "action_added": "Toegevoegd",
     "action_add_to": "Toevoegen aan",
     "action_add_to_collection": "Toevoegen aan Collectie",
-    "make_public": "Maak deze collectie openbaar"
+    "make_public": "Maak deze collectie openbaar",
+    "no_prompts_owner": "Nog geen prompts in deze collectie.",
+    "no_prompts_visitor": "Deze collectie is leeg."
   },
   "collectionsNew": {
     "cancel_button": "Annuleren",
@@ -391,7 +394,8 @@
     "upgrade": "Upgraden",
     "users": "Gebruikers",
     "view": "Bekijk",
-    "widthdevicewidth_initialscale10": "width=device-width, initial-scale=1.0"
+    "widthdevicewidth_initialscale10": "width=device-width, initial-scale=1.0",
+    "remove": "Verwijderen"
   },
   "design_system": {
     "accent": "Accent",
@@ -492,12 +496,14 @@
     "noBookmarks": {
       "action": "Verken prompts",
       "description": "Bewaar prompts die je later opnieuw wilt bekijken",
-      "title": "Nog geen bladwijzers"
+      "title": "Nog geen bladwijzers",
+      "secondaryAction": "Verken Prompts"
     },
     "noCollections": {
       "action": "Collectie aanmaken",
       "description": "Organiseer je favoriete prompts in collecties",
-      "title": "Nog geen collecties"
+      "title": "Nog geen collecties",
+      "secondaryAction": "Blader Prompts"
     },
     "noComments": {
       "description": "Wees de eerste om je gedachten over deze prompt te delen",
@@ -1043,7 +1049,13 @@
     "top_description": "Ontdek de populairste AI-prompts aller tijden",
     "top_title": "Top Prompts | Prompt Party",
     "trending_description": "Ontdek de heetste AI-prompts deze week",
-    "trending_title": "Prompts Tendances | Prompt Party"
+    "trending_title": "Prompts Tendances | Prompt Party",
+    "challenge_not_found": "Challenge Niet Gevonden | Prompt Party",
+    "collection_not_found": "Collectie Niet Gevonden | Prompt Party",
+    "notification_settings_description": "Beheer uw meldingsvoorkeuren",
+    "notification_settings_title": "Meldingsinstellingen | Prompt Party",
+    "profile_not_found": "Profiel Niet Gevonden | Prompt Party",
+    "prompt_not_found": "Prompt Niet Gevonden | Prompt Party"
   },
   "nav": {
     "aria_keyboard_shortcuts": "Sneltoetsen",
@@ -1404,7 +1416,8 @@
     "confirm_delete_account": "Ik begrijp het, verwijder mijn account",
     "privacy_settings": "Privacyinstellingen",
     "make_profile_private": "Profiel Privé Maken",
-    "private_profile_description": "Uw prompts zijn alleen voor u zichtbaar"
+    "private_profile_description": "Uw prompts zijn alleen voor u zichtbaar",
+    "no_public_prompts_description": "Deze gebruiker heeft nog geen prompts gedeeld"
   },
   "editor": {
     "title": "Titel",
@@ -1649,7 +1662,19 @@
     "heading_tags": "Tags",
     "pick_a_date_range": "Pick a date range",
     "quick_access_to_your_favorite_search_queries": "Quick access to your favorite search queries",
-    "recent_searches": "Recent Searches"
+    "recent_searches": "Recent Searches",
+    "page_description": "Zoek en filter prompts uit onze community",
+    "page_title": "Zoeken | Prompt Party",
+    "results_all": "resultaten gevonden",
+    "results_for": "resultaten voor",
+    "error": "Zoekfout. Probeer het opnieuw.",
+    "no_results": "Geen resultaten gevonden",
+    "no_results_description": "Probeer uw zoektermen of filters aan te passen",
+    "previous": "Vorige",
+    "next": "Volgende",
+    "page_of": "Pagina {current} van {total}",
+    "title": "Prompts Zoeken",
+    "subtitle": "Vind de perfecte prompt in onze communitybibliotheek"
   },
   "settings": {
     "account": "Compte",
@@ -1731,7 +1756,9 @@
       },
       "saveButton": "Voorkeuren Opslaan",
       "saved": "Opgeslagen"
-    }
+    },
+    "notification_settings_subtitle": "Kies hoe en wanneer u meldingen wilt ontvangen",
+    "notification_settings_title": "Meldingsinstellingen"
   },
   "shortcuts": {
     "actions": "Acties (op promptpagina's)",
@@ -2355,7 +2382,33 @@
     "back_to_tutorials": "Terug naar Tutorials",
     "what_you_learn": "Wat u leert",
     "next_steps": "Volgende Stappen",
-    "keep_learning": "Doorgaan met Leren"
+    "keep_learning": "Doorgaan met Leren",
+    "index": {
+      "back_to_tutorials": "← Terug naar Tutorials"
+    },
+    "intro_prompts": {
+      "badge_beginner": "BEGINNER",
+      "duration": "15 min",
+      "title": "Inleiding tot Prompts",
+      "subtitle": "Leer de basisprincipes van AI-prompting",
+      "reward_badge": "Eerste Stappen",
+      "page_title": "Inleiding tot AI-prompts",
+      "page_description": "Beheers de basisprincipes van AI-prompting",
+      "what_you_learn": "Wat u zult leren",
+      "learn_what_is": "Wat maakt een goede prompt",
+      "learn_anatomy": "De anatomie van effectieve prompts",
+      "learn_mistakes": "Veelgemaakte fouten om te vermijden",
+      "learn_examples": "Real-world voorbeelden",
+      "what_is_prompt_title": "Wat is een Prompt?",
+      "what_is_prompt_intro": "Een <strong>AI-prompt</strong> is een tekstinstructie die u aan een AI-model geeft om een specifieke output te genereren.",
+      "vague_prompt": "Vage Prompt",
+      "clear_prompt": "Duidelijke Prompt",
+      "next_claude": "Volgende: Claude Basics",
+      "next_advanced": "Advanced Prompting",
+      "keep_learning_prompts": "Verken meer <link>prompts in onze bibliotheek</link>",
+      "keep_learning_wizard": "Probeer de <link>Prompt Wizard</link>",
+      "keep_learning_challenges": "Doe mee aan <link>prompt challenges</link>"
+    }
   },
   "ui": {
     "close": "Sluiten",

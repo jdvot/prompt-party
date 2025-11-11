@@ -1,6 +1,7 @@
 import { createClient } from '@/lib/supabase/server'
 import { notFound, redirect } from 'next/navigation'
 import Link from 'next/link'
+import { getTranslations } from 'next-intl/server'
 import { PromptCard } from '@/components/feed/prompt-card'
 import { AddToCollectionButton } from '@/components/collections/add-to-collection-button'
 import type { Metadata } from 'next'
@@ -20,8 +21,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     .single()
 
   if (!collection) {
+    const t = await getTranslations('metadata')
     return {
-      title: 'Collection Not Found',
+      title: t('collection_not_found'),
     }
   }
 
@@ -33,6 +35,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function CollectionPage({ params }: PageProps) {
   const { id } = await params
+  const t = await getTranslations('collections')
+  const commonT = await getTranslations('common')
   const supabase = await createClient()
 
   const {
@@ -133,9 +137,9 @@ export default async function CollectionPage({ params }: PageProps) {
             <div>
               <h1 className="text-3xl font-bold mb-2">{collectionWithProfile.name}</h1>
               <p className="text-muted-foreground">
-                by {collectionWithProfile.profiles?.name || 'Anonymous'}
+                by {collectionWithProfile.profiles?.name || commonT('anonymous')}
                 {!collectionWithProfile.is_public && (
-                  <span className="ml-2 text-amber-600">• Private</span>
+                  <span className="ml-2 text-amber-600">• {commonT('private')}</span>
                 )}
               </p>
             </div>
@@ -153,7 +157,7 @@ export default async function CollectionPage({ params }: PageProps) {
         {!items || items.length === 0 ? (
           <div className="text-center py-16 border rounded-lg bg-muted/20">
             <p className="text-muted-foreground">
-              {isOwner ? 'No prompts in this collection yet.' : 'This collection is empty.'}
+              {isOwner ? t('no_prompts_owner') : t('no_prompts_visitor')}
             </p>
           </div>
         ) : (
@@ -169,7 +173,7 @@ export default async function CollectionPage({ params }: PageProps) {
                         type="submit"
                         className="px-3 py-1 text-sm border rounded-md hover:bg-accent transition-colors"
                       >
-                        Remove
+                        {commonT('remove')}
                       </button>
                     </form>
                   )}

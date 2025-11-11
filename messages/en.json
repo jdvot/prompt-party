@@ -83,6 +83,7 @@
   "auth": {
     "hide_password": "Hide password",
     "join_academy_heading": "Join Prompt Academy",
+    "join_alt": "Join Prompt Academy",
     "secure_auth_heading": "Secure Authentication",
     "secure_authentication": "Secure Authentication",
     "show_password": "Show password"
@@ -202,6 +203,8 @@
     "name_label": "Name",
     "name_placeholder": "Collection name",
     "no_prompts_found": "No prompts found.",
+    "no_prompts_owner": "No prompts in this collection yet.",
+    "no_prompts_visitor": "This collection is empty.",
     "private_description": "Only you can view this collection",
     "prompts_count": "{count} prompts",
     "public_description": "Anyone can view this collection",
@@ -372,6 +375,7 @@
     "prompts": "Prompts",
     "public": "Public",
     "published": "Published",
+    "remove": "Remove",
     "remix": "Remix",
     "save": "Save",
     "search": "Search",
@@ -492,12 +496,14 @@
     "noBookmarks": {
       "action": "Explore prompts",
       "description": "Save prompts you want to revisit later",
-      "title": "No bookmarks yet"
+      "title": "No bookmarks yet",
+      "secondaryAction": "Explore Prompts"
     },
     "noCollections": {
       "action": "Create collection",
       "description": "Organize your favorite prompts into collections",
-      "title": "No collections yet"
+      "title": "No collections yet",
+      "secondaryAction": "Browse Prompts"
     },
     "noComments": {
       "description": "Be the first to share your thoughts on this prompt",
@@ -1024,6 +1030,8 @@
     "about_title": "About | Prompt Party",
     "bookmarks_description": "Your saved prompts organized in folders",
     "bookmarks_title": "Bookmarks | Prompt Party",
+    "challenge_not_found": "Challenge Not Found | Prompt Party",
+    "collection_not_found": "Collection Not Found | Prompt Party",
     "collections_description": "Organize your favorite prompts in collections",
     "collections_title": "My Collections | Prompt Party",
     "following_description": "People you follow and their latest prompts",
@@ -1032,8 +1040,12 @@
     "home_title": "Prompt Party - The Social Network for AI Prompts",
     "login_description": "Sign in to your Prompt Party account",
     "login_title": "Login | Prompt Party",
+    "notification_settings_description": "Manage your notification preferences",
+    "notification_settings_title": "Notification Settings | Prompt Party",
     "pricing_description": "Choose the perfect plan for your prompt engineering needs",
     "pricing_title": "Pricing | Prompt Party",
+    "profile_not_found": "Profile Not Found | Prompt Party",
+    "prompt_not_found": "Prompt Not Found | Prompt Party",
     "signup_description": "Join the Prompt Party community",
     "signup_title": "Sign Up | Prompt Party",
     "teams_description": "Manage your team workspaces",
@@ -1350,6 +1362,7 @@
     "my_prompts": "My Prompts",
     "no_prompts_yet": "No prompts yet",
     "no_public_prompts": "No public prompts yet.",
+    "no_public_prompts_description": "This user hasn't shared any prompts yet",
     "people_helped": "People Helped",
     "points_label": "Points",
     "private": "Private",
@@ -1647,9 +1660,21 @@
     "heading_ai_models": "AI Models",
     "heading_date_range": "Date Range",
     "heading_tags": "Tags",
+    "page_description": "Search and filter prompts from our community",
+    "page_title": "Search | Prompt Party",
     "pick_a_date_range": "Pick a date range",
     "quick_access_to_your_favorite_search_queries": "Quick access to your favorite search queries",
-    "recent_searches": "Recent Searches"
+    "recent_searches": "Recent Searches",
+    "results_all": "results found",
+    "results_for": "results for",
+    "error": "Error searching. Please try again.",
+    "no_results": "No results found",
+    "no_results_description": "Try adjusting your search terms or filters",
+    "previous": "Previous",
+    "next": "Next",
+    "page_of": "Page {current} of {total}",
+    "title": "Search Prompts",
+    "subtitle": "Find the perfect prompt in our community library"
   },
   "settings": {
     "account": "Account",
@@ -1661,6 +1686,8 @@
     "heading_notification_settings": "Notification Settings",
     "language": "Language",
     "manage_account": "Manage your account settings",
+    "notification_settings_subtitle": "Choose how and when you want to be notified",
+    "notification_settings_title": "Notification Settings",
     "notifications": "Notifications",
     "notify_comments": "Notify me when someone comments on my prompts",
     "notify_follows": "Notify me when someone follows me",
@@ -1921,6 +1948,32 @@
     "title": "Terms of Service"
   },
   "tutorials": {
+    "index": {
+      "back_to_tutorials": "← Back to Tutorials"
+    },
+    "intro_prompts": {
+      "badge_beginner": "BEGINNER",
+      "duration": "15 min",
+      "title": "Introduction aux Prompts",
+      "subtitle": "Learn the fundamentals of AI prompting",
+      "reward_badge": "Premier Pas",
+      "page_title": "Introduction to AI Prompts",
+      "page_description": "Master the basics of AI prompting",
+      "what_you_learn": "What You'll Learn",
+      "learn_what_is": "What makes a good prompt",
+      "learn_anatomy": "The anatomy of effective prompts",
+      "learn_mistakes": "Common mistakes to avoid",
+      "learn_examples": "Real-world examples",
+      "what_is_prompt_title": "What is a Prompt?",
+      "what_is_prompt_intro": "An <strong>AI prompt</strong> is a text instruction you give to an AI model to generate a specific output.",
+      "vague_prompt": "Vague Prompt",
+      "clear_prompt": "Clear Prompt",
+      "next_claude": "Next: Claude Basics",
+      "next_advanced": "Advanced Prompting",
+      "keep_learning_prompts": "Explore more <link>prompts in our library</link>",
+      "keep_learning_wizard": "Try the <link>Prompt Wizard</link>",
+      "keep_learning_challenges": "Join <link>prompt challenges</link>"
+    },
     "claude_code_basics": {
       "page_title": "Claude Code Basics | Learn AI-Powered Development",
       "page_description": "Master Claude Code, the AI development assistant. Learn setup, practical usage, best practices, and real-world examples.",

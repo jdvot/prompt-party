@@ -29,6 +29,7 @@ interface PageProps {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { id } = await params
+  const t = await getTranslations('metadata')
   const supabase = await createClient()
 
   const { data: prompt } = await supabase
@@ -39,7 +40,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   if (!prompt) {
     return {
-      title: 'Prompt Not Found',
+      title: t('prompt_not_found'),
     }
   }
 

@@ -1,14 +1,19 @@
 import { createClient } from '@/lib/supabase/server'
 import { redirect } from 'next/navigation'
+import { getTranslations } from 'next-intl/server'
 import { NotificationSettings } from '@/components/notifications/notification-settings'
 import type { Metadata } from 'next'
 
-export const metadata: Metadata = {
-  title: 'Notification Settings | Prompt Party',
-  description: 'Manage your notification preferences',
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations('metadata')
+  return {
+    title: t('notification_settings_title'),
+    description: t('notification_settings_description'),
+  }
 }
 
 export default async function NotificationSettingsPage() {
+  const t = await getTranslations('settings')
   const supabase = await createClient()
 
   const {
@@ -42,9 +47,9 @@ export default async function NotificationSettingsPage() {
   return (
     <div className="container mx-auto px-4 py-12 max-w-2xl">
       <div className="mb-8">
-        <h1 className="text-3xl font-bold mb-2">Notification Settings</h1>
+        <h1 className="text-3xl font-bold mb-2">{t('notification_settings_title')}</h1>
         <p className="text-muted-foreground">
-          Choose how and when you want to be notified
+          {t('notification_settings_subtitle')}
         </p>
       </div>
 

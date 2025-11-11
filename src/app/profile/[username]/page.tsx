@@ -23,8 +23,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     .single()
 
   if (!profile) {
+    const t = await getTranslations('metadata')
     return {
-      title: 'Profile Not Found',
+      title: t('profile_not_found'),
     }
   }
 
@@ -158,7 +159,7 @@ export default async function PublicProfilePage({ params }: PageProps) {
               </div>
               <h3 className="text-2xl font-bold mb-3">{t('no_public_prompts')}</h3>
               <p className="text-lg text-muted-foreground">
-                This user hasn't shared any prompts yet
+                {t('no_public_prompts_description')}
               </p>
             </div>
           ) : (

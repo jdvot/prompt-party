@@ -85,7 +85,8 @@
     "join_academy_heading": "Rejoindre Prompt Academy",
     "secure_auth_heading": "Authentification sécurisée",
     "secure_authentication": "Authentification Sécurisée",
-    "show_password": "Afficher le mot de passe"
+    "show_password": "Afficher le mot de passe",
+    "join_alt": "Rejoignez Prompt Academy"
   },
   "brand": {
     "logo_alt": "Logo Prompt Academy",
@@ -213,7 +214,9 @@
     "action_added": "Ajouté",
     "action_add_to": "Ajouter à",
     "action_add_to_collection": "Ajouter à la Collection",
-    "make_public": "Rendre cette collection publique"
+    "make_public": "Rendre cette collection publique",
+    "no_prompts_owner": "Aucun prompt dans cette collection pour le moment.",
+    "no_prompts_visitor": "Cette collection est vide."
   },
   "collectionsNew": {
     "cancel_button": "Annuler",
@@ -391,7 +394,8 @@
     "upgrade": "Upgrade",
     "users": "Utilisateurs",
     "view": "Voir",
-    "widthdevicewidth_initialscale10": "width=device-width, initial-scale=1.0"
+    "widthdevicewidth_initialscale10": "width=device-width, initial-scale=1.0",
+    "remove": "Supprimer"
   },
   "design_system": {
     "accent": "Accent",
@@ -492,12 +496,14 @@
     "noBookmarks": {
       "action": "Explorer les prompts",
       "description": "Enregistrez les prompts que vous souhaitez consulter plus tard",
-      "title": "Aucun favori pour le moment"
+      "title": "Aucun favori pour le moment",
+      "secondaryAction": "Explorer les Prompts"
     },
     "noCollections": {
       "action": "Créer une collection",
       "description": "Organisez vos prompts préférés en collections",
-      "title": "Aucune collection pour le moment"
+      "title": "Aucune collection pour le moment",
+      "secondaryAction": "Parcourir les Prompts"
     },
     "noComments": {
       "description": "Soyez le premier à partager vos réflexions sur ce prompt",
@@ -1043,7 +1049,13 @@
     "top_description": "Découvrez les prompts IA les plus populaires de tous les temps",
     "top_title": "Top Prompts | Prompt Party",
     "trending_description": "Découvrez les prompts IA les plus populaires cette semaine",
-    "trending_title": "Prompts Tendances | Prompt Party"
+    "trending_title": "Prompts Tendances | Prompt Party",
+    "challenge_not_found": "Challenge Non Trouvé | Prompt Party",
+    "collection_not_found": "Collection Non Trouvée | Prompt Party",
+    "notification_settings_description": "Gérez vos préférences de notifications",
+    "notification_settings_title": "Paramètres de Notifications | Prompt Party",
+    "profile_not_found": "Profil Non Trouvé | Prompt Party",
+    "prompt_not_found": "Prompt Non Trouvé | Prompt Party"
   },
   "nav": {
     "aria_keyboard_shortcuts": "Raccourcis clavier",
@@ -1404,7 +1416,8 @@
     "confirm_delete_account": "Je comprends, supprimer mon compte",
     "privacy_settings": "Paramètres de Confidentialité",
     "make_profile_private": "Rendre le Profil Privé",
-    "private_profile_description": "Vos prompts ne seront visibles que par vous"
+    "private_profile_description": "Vos prompts ne seront visibles que par vous",
+    "no_public_prompts_description": "Cet utilisateur n'a pas encore partagé de prompts"
   },
   "editor": {
     "title": "Éditeur de Prompt",
@@ -1649,7 +1662,19 @@
     "heading_tags": "Tags",
     "pick_a_date_range": "Pick a date range",
     "quick_access_to_your_favorite_search_queries": "Quick access to your favorite search queries",
-    "recent_searches": "Recent Searches"
+    "recent_searches": "Recent Searches",
+    "page_description": "Recherchez et filtrez les prompts de notre communauté",
+    "page_title": "Recherche | Prompt Party",
+    "results_all": "résultats trouvés",
+    "results_for": "résultats pour",
+    "error": "Erreur de recherche. Veuillez réessayer.",
+    "no_results": "Aucun résultat trouvé",
+    "no_results_description": "Essayez d'ajuster vos termes de recherche ou filtres",
+    "previous": "Précédent",
+    "next": "Suivant",
+    "page_of": "Page {current} sur {total}",
+    "title": "Rechercher des Prompts",
+    "subtitle": "Trouvez le prompt parfait dans notre bibliothèque communautaire"
   },
   "settings": {
     "account": "Compte",
@@ -1731,7 +1756,9 @@
       },
       "saveButton": "Enregistrer les Préférences",
       "saved": "Enregistré"
-    }
+    },
+    "notification_settings_subtitle": "Choisissez comment et quand vous souhaitez être notifié",
+    "notification_settings_title": "Paramètres de Notifications"
   },
   "shortcuts": {
     "actions": "Actions (sur les pages de prompts)",
@@ -2355,7 +2382,33 @@
     "back_to_tutorials": "Retour aux Tutoriels",
     "what_you_learn": "Ce que vous apprendrez",
     "next_steps": "Prochaines Étapes",
-    "keep_learning": "Continuer à Apprendre"
+    "keep_learning": "Continuer à Apprendre",
+    "index": {
+      "back_to_tutorials": "← Retour aux Tutoriels"
+    },
+    "intro_prompts": {
+      "badge_beginner": "DÉBUTANT",
+      "duration": "15 min",
+      "title": "Introduction aux Prompts",
+      "subtitle": "Apprenez les bases de l'invite IA",
+      "reward_badge": "Premier Pas",
+      "page_title": "Introduction aux Prompts IA",
+      "page_description": "Maîtrisez les bases de l'invite IA",
+      "what_you_learn": "Ce que vous apprendrez",
+      "learn_what_is": "Ce qui fait un bon prompt",
+      "learn_anatomy": "L'anatomie des prompts efficaces",
+      "learn_mistakes": "Les erreurs courantes à éviter",
+      "learn_examples": "Exemples du monde réel",
+      "what_is_prompt_title": "Qu'est-ce qu'un Prompt ?",
+      "what_is_prompt_intro": "Une <strong>invite IA</strong> est une instruction textuelle que vous donnez à un modèle IA pour générer une sortie spécifique.",
+      "vague_prompt": "Prompt Vague",
+      "clear_prompt": "Prompt Clair",
+      "next_claude": "Suivant: Bases de Claude",
+      "next_advanced": "Prompting Avancé",
+      "keep_learning_prompts": "Explorez plus de <link>prompts dans notre bibliothèque</link>",
+      "keep_learning_wizard": "Essayez l'<link>Assistant Prompt</link>",
+      "keep_learning_challenges": "Rejoignez les <link>défis de prompts</link>"
+    }
   },
   "ui": {
     "close": "Fermer",

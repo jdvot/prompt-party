@@ -428,11 +428,11 @@ export default async function IntroPromptsTutorial() {
         <aside className="hidden lg:block">
           <TutorialProgress
             tutorialId="intro-prompts"
-            title="Introduction aux Prompts"
-            duration="15 min"
+            title={t('title')}
+            duration={t('duration')}
             level="beginner"
             rewardPoints={50}
-            rewardBadge="Premier Pas"
+            rewardBadge={t('reward_badge')}
             completed={false}
           />
         </aside>

@@ -29,7 +29,7 @@ export default async function BookmarksPage() {
           onClick: () => window.location.href = '/tutorials',
         }}
         secondaryAction={{
-          label: 'Explore Prompts',
+          label: emptyT('secondaryAction'),
           onClick: () => window.location.href = '/prompts',
         }}
       />
