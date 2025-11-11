@@ -2674,7 +2674,7 @@
       "learn_common": "Veelvoorkomende sjablonen voor schrijven, codering en analyse",
       "learn_customize": "Hoe u sjablonen aanpast voor specifieke gebruiksscenario's",
       "what_are": "Wat Zijn Promptsjablonen?",
-      "template_intro": "Een <strong>promptsjabloon</strong> is een herbruikbare structuur voor prompts die met verschillende taken en AI-modellen werkt. In plaats van elke keer prompts helemaal opnieuw te schrijven, bieden sjablonen een bewezen framework met plaatsaanduidingen voor aanpassing.",
+      "template_intro": "Een promptsjabloon is een herbruikbare structuur voor prompts die met verschillende taken en AI-modellen werkt. In plaats van elke keer prompts helemaal opnieuw te schrijven, bieden sjablonen een bewezen framework met plaatsaanduidingen voor aanpassing.",
       "without_templates": "❌ Zonder Sjablonen",
       "without_desc": "Elke keer vanaf nul beginnen betekent inconsistente resultaten en verspilde tijd",
       "without_1": "Inconsistente promptkwaliteit",

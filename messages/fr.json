@@ -2753,7 +2753,7 @@
       "learn_common": "Modèles courants pour l'écriture, la programmation et l'analyse",
       "learn_customize": "Comment personnaliser les modèles pour des cas d'usage spécifiques",
       "what_are": "Que Sont les Modèles de Prompts?",
-      "template_intro": "Un <strong>modèle de prompt</strong> est une structure réutilisable pour les prompts qui fonctionne avec différentes tâches et modèles IA. Au lieu d'écrire des prompts de zéro à chaque fois, les modèles fournissent un cadre éprouvé avec des emplacements à personnaliser.",
+      "template_intro": "Un modèle de prompt est une structure réutilisable pour les prompts qui fonctionne avec différentes tâches et modèles IA. Au lieu d'écrire des prompts de zéro à chaque fois, les modèles fournissent un cadre éprouvé avec des emplacements à personnaliser.",
       "without_templates": "❌ Sans Modèles",
       "without_desc": "Commencer de zéro à chaque fois signifie des résultats incohérents et du temps perdu",
       "without_1": "Qualité incohérente des prompts",
