@@ -9,7 +9,6 @@ import { Sparkles, Lightbulb, Code, CheckCircle, ArrowLeft } from 'lucide-react'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import { cn } from '@/lib/utils'
-import { useTranslations } from 'next-intl'
 import { getTranslations } from 'next-intl/server'
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -20,8 +19,8 @@ export async function generateMetadata(): Promise<Metadata> {
   }
 }
 
-export default function ClaudeAgentsTutorial() {
-  const t = useTranslations('tutorials.claudeAgents')
+export default async function ClaudeAgentsTutorial() {
+  const t = await getTranslations('tutorials.claudeAgents')
   return (
     <Container size="lg" className="py-8 overflow-hidden">
       {/* Back Button */}
