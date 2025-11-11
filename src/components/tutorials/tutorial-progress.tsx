@@ -57,8 +57,11 @@ export function TutorialProgress({
             <Badge variant="soft" className={levelInfo.color}>
               {levelLabels[level]}
             </Badge>
-            <Badge variant="outline" className="text-xs">
-              <Clock className="w-3 h-3 mr-1" />
+            <Badge
+              variant="outline"
+              className="text-xs"
+              startIcon={<Clock className="w-3 h-3" />}
+            >
               {duration}
             </Badge>
           </div>

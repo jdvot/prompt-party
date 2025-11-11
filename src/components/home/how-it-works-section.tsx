@@ -52,8 +52,11 @@ export function HowItWorksSection() {
     <div className="space-y-12">
       {/* Section header - UX: Sets expectation for learning journey */}
       <div className="text-center space-y-4">
-        <Badge variant="soft" className="text-sm font-semibold">
-          <SparklesIcon className="w-3.5 h-3.5 mr-1.5" />
+        <Badge
+          variant="soft"
+          className="text-sm font-semibold"
+          startIcon={<SparklesIcon className="w-3.5 h-3.5" />}
+        >
           {t('badge')}
         </Badge>
         <h2 className="text-3xl md:text-4xl font-bold">

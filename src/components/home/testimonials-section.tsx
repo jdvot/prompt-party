@@ -48,8 +48,11 @@ export function TestimonialsSection() {
     <div className="space-y-8">
       {/* Section header - UX: Clear context for social proof */}
       <div className="text-center space-y-4">
-        <Badge variant="soft" className="text-sm font-semibold">
-          <StarIcon className="w-3.5 h-3.5 mr-1.5 fill-current" />
+        <Badge
+          variant="soft"
+          className="text-sm font-semibold"
+          startIcon={<StarIcon className="w-3.5 h-3.5 fill-current" />}
+        >
           {t('badge')}
         </Badge>
         <h2 className="text-3xl md:text-4xl font-bold">
