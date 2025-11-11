@@ -61,23 +61,31 @@ const renderProgressBar = (before: boolean | string | number, after: boolean | s
 
   if (beforePercent !== null && afterPercent !== null) {
     return (
-      <div className="flex items-end justify-center gap-4">
-        {/* Before bar */}
-        <div className="flex flex-col items-center gap-2">
-          <div
-            className="w-4 bg-orange-500 dark:bg-orange-600 rounded-t transition-all duration-300"
-            style={{ height: `${(beforePercent / 100) * 60}px` }}
-          />
-          <span className="text-xs font-semibold text-orange-700 dark:text-orange-400">{beforePercent}%</span>
+      <div className="w-full space-y-3">
+        {/* Before bar - horizontal */}
+        <div className="space-y-1">
+          <div className="flex items-center justify-between">
+            <span className="text-xs font-semibold text-orange-700 dark:text-orange-400">{beforePercent}%</span>
+          </div>
+          <div className="w-full h-2 bg-orange-100 dark:bg-orange-900/30 rounded-full overflow-hidden">
+            <div
+              className="h-full bg-orange-500 dark:bg-orange-600 rounded-full transition-all duration-300"
+              style={{ width: `${beforePercent}%` }}
+            />
+          </div>
         </div>
 
-        {/* After bar */}
-        <div className="flex flex-col items-center gap-2">
-          <div
-            className="w-4 bg-green-500 dark:bg-green-600 rounded-t transition-all duration-300"
-            style={{ height: `${(afterPercent / 100) * 60}px` }}
-          />
-          <span className="text-xs font-semibold text-green-700 dark:text-green-400">{afterPercent}%</span>
+        {/* After bar - horizontal */}
+        <div className="space-y-1">
+          <div className="flex items-center justify-between">
+            <span className="text-xs font-semibold text-green-700 dark:text-green-400">{afterPercent}%</span>
+          </div>
+          <div className="w-full h-2 bg-green-100 dark:bg-green-900/30 rounded-full overflow-hidden">
+            <div
+              className="h-full bg-green-500 dark:bg-green-600 rounded-full transition-all duration-300"
+              style={{ width: `${afterPercent}%` }}
+            />
+          </div>
         </div>
       </div>
     )
@@ -95,7 +103,7 @@ export function ComparisonTable({
   yesLabel = 'Yes',
   noLabel = 'No'
 }: ComparisonTableProps) {
-  const renderCell = (value: boolean | string | number, isProgress?: boolean) => {
+  const renderCell = (value: boolean | string | number) => {
     if (typeof value === 'boolean') {
       return value ? (
         <div className="flex items-center gap-2 justify-center">
