@@ -173,9 +173,9 @@ export function TutorialsPageClient({ tutorials, learningPaths, t }: TutorialsPa
                 <p className="text-muted-foreground">{t.beginner_subtitle}</p>
               </div>
             </AnimatedContainer>
-            <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-6" staggerDelay={0.08}>
+            <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr" staggerDelay={0.08}>
               {tutorials.beginner.map((tutorial: any) => (
-                <TutorialCard key={tutorial.id} tutorial={tutorial} />
+                <TutorialCard key={tutorial.id} tutorial={tutorial} buttonLabel={t.start_tutorial} />
               ))}
             </StaggerContainer>
           </div>
@@ -191,9 +191,9 @@ export function TutorialsPageClient({ tutorials, learningPaths, t }: TutorialsPa
                 <p className="text-muted-foreground">{t.intermediate_subtitle}</p>
               </div>
             </AnimatedContainer>
-            <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-6" staggerDelay={0.08}>
+            <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr" staggerDelay={0.08}>
               {tutorials.intermediate.map((tutorial: any) => (
-                <TutorialCard key={tutorial.id} tutorial={tutorial} />
+                <TutorialCard key={tutorial.id} tutorial={tutorial} buttonLabel={t.start_tutorial} />
               ))}
             </StaggerContainer>
           </div>
@@ -209,9 +209,9 @@ export function TutorialsPageClient({ tutorials, learningPaths, t }: TutorialsPa
                 <p className="text-muted-foreground">{t.advanced_subtitle}</p>
               </div>
             </AnimatedContainer>
-            <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-6" staggerDelay={0.08}>
+            <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr" staggerDelay={0.08}>
               {tutorials.advanced.map((tutorial: any) => (
-                <TutorialCard key={tutorial.id} tutorial={tutorial} />
+                <TutorialCard key={tutorial.id} tutorial={tutorial} buttonLabel={t.start_tutorial} />
               ))}
             </StaggerContainer>
           </div>

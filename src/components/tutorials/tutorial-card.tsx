@@ -20,9 +20,10 @@ interface TutorialCardProps {
     link: string
     color?: string
   }
+  buttonLabel?: string
 }
 
-export function TutorialCard({ tutorial }: TutorialCardProps) {
+export function TutorialCard({ tutorial, buttonLabel = "Start Tutorial" }: TutorialCardProps) {
   const Icon = Icons[tutorial.iconName as keyof typeof Icons] as React.ComponentType<{ className?: string }>
 
   const levelColors = {
@@ -59,29 +60,26 @@ export function TutorialCard({ tutorial }: TutorialCardProps) {
           <CardTitle className="text-xl mb-2">{tutorial.title}</CardTitle>
           <CardDescription className="text-base">{tutorial.description}</CardDescription>
         </CardHeader>
-        <CardContent className="relative">
-          <div className="space-y-4">
-            {/* Topics */}
-            <div className="flex flex-wrap gap-2">
-              {tutorial.topics.map((topic) => (
-                <Badge key={topic} variant="secondary" className="text-xs">
-                  {topic}
-                </Badge>
-              ))}
-            </div>
-
-            {/* Duration Badge */}
-            <Badge variant="outline" className="w-fit flex items-center gap-2">
-              <Icons.Clock className="w-4 h-4" />
-              <span className="font-medium">{tutorial.duration}</span>
-            </Badge>
-
-            {/* Action Button */}
-            <Link href={tutorial.link} className={cn(buttonVariants({ variant: "outline" }), "w-full group/btn")}>
-              Start Tutorial
-              <Icons.ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
-            </Link>
+        <CardContent className="relative space-y-4">
+          {/* Topics */}
+          <div className="flex flex-wrap gap-2">
+            {tutorial.topics.map((topic) => (
+              <Badge key={topic} variant="secondary" className="text-xs">
+                {topic}
+              </Badge>
+            ))}
           </div>
+
+          {/* Duration Badge */}
+          <Badge variant="outline" startIcon={<Icons.Clock className="w-4 h-4" />}>
+            {tutorial.duration}
+          </Badge>
+
+          {/* Action Button */}
+          <Link href={tutorial.link} className={cn(buttonVariants({ variant: "outline" }), "w-full group/btn")}>
+            {buttonLabel}
+            <Icons.ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
+          </Link>
         </CardContent>
       </Card>
     </motion.div>
