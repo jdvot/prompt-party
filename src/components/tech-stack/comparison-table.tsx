@@ -45,47 +45,33 @@ const getCategoryIcon = (criterion: string) => {
   return { icon: CheckCircle, color: 'text-slate-600 dark:text-slate-400' }
 }
 
-const renderProgressBar = (before: boolean | string | number, after: boolean | string | number) => {
-  // Extract percentages from strings like "40%" or "95%"
-  const extractPercent = (val: boolean | string | number): number | null => {
-    if (typeof val === 'string') {
-      const match = val.match(/(\d+)%/)
-      return match ? parseInt(match[1]) : null
-    }
-    if (typeof val === 'number') return val
-    return null
+const extractPercent = (val: boolean | string | number): number | null => {
+  if (typeof val === 'string') {
+    const match = val.match(/(\d+)%/)
+    return match ? parseInt(match[1]) : null
   }
+  if (typeof val === 'number') return val
+  return null
+}
 
-  const beforePercent = extractPercent(before)
-  const afterPercent = extractPercent(after)
+const renderProgressBar = (value: boolean | string | number, color: 'orange' | 'green' = 'orange') => {
+  const percent = extractPercent(value)
 
-  if (beforePercent !== null && afterPercent !== null) {
+  if (percent !== null) {
+    const bgColor = color === 'orange' ? 'bg-orange-100 dark:bg-orange-900/30' : 'bg-green-100 dark:bg-green-900/30'
+    const barColor = color === 'orange' ? 'bg-orange-500 dark:bg-orange-600' : 'bg-green-500 dark:bg-green-600'
+    const textColor = color === 'orange' ? 'text-orange-700 dark:text-orange-400' : 'text-green-700 dark:text-green-400'
+
     return (
-      <div className="w-full space-y-3">
-        {/* Before bar - horizontal */}
-        <div className="space-y-1">
-          <div className="flex items-center justify-between">
-            <span className="text-xs font-semibold text-orange-700 dark:text-orange-400">{beforePercent}%</span>
-          </div>
-          <div className="w-full h-2 bg-orange-100 dark:bg-orange-900/30 rounded-full overflow-hidden">
-            <div
-              className="h-full bg-orange-500 dark:bg-orange-600 rounded-full transition-all duration-300"
-              style={{ width: `${beforePercent}%` }}
-            />
-          </div>
+      <div className="space-y-1">
+        <div className="flex items-center justify-between">
+          <span className={`text-xs font-semibold ${textColor}`}>{percent}%</span>
         </div>
-
-        {/* After bar - horizontal */}
-        <div className="space-y-1">
-          <div className="flex items-center justify-between">
-            <span className="text-xs font-semibold text-green-700 dark:text-green-400">{afterPercent}%</span>
-          </div>
-          <div className="w-full h-2 bg-green-100 dark:bg-green-900/30 rounded-full overflow-hidden">
-            <div
-              className="h-full bg-green-500 dark:bg-green-600 rounded-full transition-all duration-300"
-              style={{ width: `${afterPercent}%` }}
-            />
-          </div>
+        <div className={`w-full h-2 ${bgColor} rounded-full overflow-hidden`}>
+          <div
+            className={`h-full ${barColor} rounded-full transition-all duration-300`}
+            style={{ width: `${percent}%` }}
+          />
         </div>
       </div>
     )
@@ -136,7 +122,9 @@ export function ComparisonTable({
         <TableBody>
           {rows.map((row, idx) => {
             const { icon: IconComponent, color } = getCategoryIcon(row.criterion)
-            const progressBar = renderProgressBar(row.before, row.after)
+            const beforePercent = extractPercent(row.before)
+            const afterPercent = extractPercent(row.after)
+            const isProgressBar = beforePercent !== null && afterPercent !== null
 
             return (
               <TableRow
@@ -150,15 +138,15 @@ export function ComparisonTable({
                   </div>
                 </TableCell>
                 <TableCell className="text-center py-4 text-slate-600 dark:text-slate-400">
-                  {progressBar ? (
-                    <div className="min-w-max">{renderProgressBar(row.before, row.after)}</div>
+                  {isProgressBar ? (
+                    renderProgressBar(row.before, 'orange')
                   ) : (
                     renderCell(row.before)
                   )}
                 </TableCell>
                 <TableCell className="text-center py-4">
-                  {progressBar ? (
-                    <div className="invisible">{renderCell(row.after)}</div>
+                  {isProgressBar ? (
+                    renderProgressBar(row.after, 'green')
                   ) : (
                     renderCell(row.after)
                   )}
