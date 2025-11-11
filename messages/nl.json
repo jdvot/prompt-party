@@ -1948,6 +1948,7 @@
     "title": "Voorwaarden"
   },
   "tutorials": {
+    "pro_tip": "Pro Tip:",
     "claude_code_basics": {
       "page_title": "Claude Code Basics | Learn AI-Powered Development",
       "page_description": "Master Claude Code, the AI development assistant. Learn setup, practical usage, best practices, and real-world examples.",
