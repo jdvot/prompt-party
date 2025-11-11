@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { useTranslations } from 'next-intl'
 import { Button } from '@/components/ui/button'
 import { Check, Copy } from 'lucide-react'
 
@@ -12,6 +13,7 @@ interface CodeBlockProps {
 
 export function CodeBlock({ code, language, filename }: CodeBlockProps) {
   const [copied, setCopied] = useState(false)
+  const t = useTranslations('tutorials')
 
   const handleCopy = () => {
     navigator.clipboard.writeText(code)
@@ -39,12 +41,12 @@ export function CodeBlock({ code, language, filename }: CodeBlockProps) {
           {copied ? (
             <>
               <Check className="w-4 h-4 mr-1" />
-              Copied!
+              {t('code_copied')}
             </>
           ) : (
             <>
               <Copy className="w-4 h-4 mr-1" />
-              Copy
+              {t('code_copy')}
             </>
           )}
         </Button>
