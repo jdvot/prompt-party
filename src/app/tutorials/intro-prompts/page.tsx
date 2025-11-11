@@ -26,7 +26,7 @@ export default async function IntroPromptsTutorial() {
   const tCommon = await getTranslations('tutorials')
 
   return (
-    <Container size="xl" className="py-8">
+    <Container size="xl" className="py-8 overflow-hidden">
       {/* Back Button */}
       <Link href="/tutorials" className={cn(buttonVariants({ variant: "ghost" }), "mb-6")}>
         <ArrowLeft className="w-4 h-4 mr-2" />
@@ -34,7 +34,7 @@ export default async function IntroPromptsTutorial() {
       </Link>
 
       {/* Two-column layout */}
-      <div className="grid lg:grid-cols-[1fr_300px] gap-8">
+      <div className="grid lg:grid-cols-[1fr_300px] gap-8 w-full overflow-hidden">
         <div>
 
       {/* Header */}

@@ -22,7 +22,7 @@ export default async function PromptOptimizationTutorial() {
   const t = await getTranslations('tutorials.prompt_optimization')
   const tCommon = await getTranslations('tutorials')
   return (
-    <Container size="lg" className="py-8">
+    <Container size="lg" className="py-8 overflow-hidden">
       <Link href="/tutorials" className={cn(buttonVariants({ variant: "ghost" }), "mb-6")}>
         <Icons.ArrowLeft className="w-4 h-4 mr-2" />
         {tCommon('back_to_tutorials')}

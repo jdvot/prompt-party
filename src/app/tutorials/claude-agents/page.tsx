@@ -23,7 +23,7 @@ export async function generateMetadata(): Promise<Metadata> {
 export default function ClaudeAgentsTutorial() {
   const t = useTranslations('tutorials.claudeAgents')
   return (
-    <Container size="lg" className="py-8">
+    <Container size="lg" className="py-8 overflow-hidden">
       {/* Back Button */}
       <Link href="/tutorials" className={cn(buttonVariants({ variant: "ghost" }), "mb-6")}>
         <ArrowLeft className="w-4 h-4 mr-2" />

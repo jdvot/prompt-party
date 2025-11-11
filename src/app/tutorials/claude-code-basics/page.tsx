@@ -26,7 +26,7 @@ export default async function ClaudeCodeBasicsTutorial() {
   const tCommon = await getTranslations('tutorials')
 
   return (
-    <Container size="xl" className="py-8">
+    <Container size="xl" className="py-8 overflow-hidden">
       {/* Back Button */}
       <Link href="/tutorials" className={cn(buttonVariants({ variant: "ghost" }), "mb-6")}>
         <Icons.ArrowLeft className="w-4 h-4 mr-2" />
@@ -34,7 +34,7 @@ export default async function ClaudeCodeBasicsTutorial() {
       </Link>
 
       {/* Two-column layout */}
-      <div className="grid lg:grid-cols-[1fr_300px] gap-8">
+      <div className="grid lg:grid-cols-[1fr_300px] gap-8 w-full overflow-hidden">
         <div>
 
       {/* Header */}
@@ -81,10 +81,10 @@ export default async function ClaudeCodeBasicsTutorial() {
 
       {/* Main Content */}
       <div className="space-y-8">
-        {/* Section 1: Introduction */}
+        {/* Section 1: What is Claude Code */}
         <section>
           <h2 className="text-3xl font-bold mb-4">{t('section_1_title')}</h2>
-          <div className="prose prose-neutral dark:prose-invert max-w-none">
+          <div className="prose prose-neutral dark:prose-invert max-w-none overflow-hidden">
             <p className="text-lg mb-4">
               {t('section_1_intro')}
             </p>
@@ -338,16 +338,18 @@ export function Button({
               </CardHeader>
               <CardContent className="space-y-3">
                 <p className="text-sm text-muted-foreground">{t('section_4_example_1_desc')}</p>
-                <CodeBlock
-                  language="text"
-                  code="Generate a complete Next.js 15 dashboard layout component with:
+                <div className="overflow-x-auto">
+                  <CodeBlock
+                    language="text"
+                    code="Generate a complete Next.js 15 dashboard layout component with:
 - Responsive sidebar navigation
 - Header with user profile dropdown
 - Main content area with proper spacing
 - Dark mode support
 - TypeScript types
 Follow Shadcn UI patterns"
-                />
+                  />
+                </div>
                 <p className="text-xs text-muted-foreground">{t('section_4_example_result')}</p>
               </CardContent>
             </Card>
@@ -361,14 +363,16 @@ Follow Shadcn UI patterns"
               </CardHeader>
               <CardContent className="space-y-3">
                 <p className="text-sm text-muted-foreground">{t('section_4_example_2_desc')}</p>
-                <CodeBlock
-                  language="text"
-                  code="Refactor this Redux code to use Zustand:
+                <div className="overflow-x-auto">
+                  <CodeBlock
+                    language="text"
+                    code="Refactor this Redux code to use Zustand:
 - Simplify state management
 - Remove unnecessary boilerplate
 - Add TypeScript types
 - Maintain the same functionality"
-                />
+                  />
+                </div>
                 <p className="text-xs text-muted-foreground">{t('section_4_example_result')}</p>
               </CardContent>
             </Card>
@@ -382,15 +386,17 @@ Follow Shadcn UI patterns"
               </CardHeader>
               <CardContent className="space-y-3">
                 <p className="text-sm text-muted-foreground">{t('section_4_example_3_desc')}</p>
-                <CodeBlock
-                  language="text"
-                  code="Design a RESTful API for a blog platform with:
+                <div className="overflow-x-auto">
+                  <CodeBlock
+                    language="text"
+                    code="Design a RESTful API for a blog platform with:
 - CRUD operations for posts
 - Authentication with JWT
 - Rate limiting
 - Proper error handling
 - OpenAPI/Swagger documentation"
-                />
+                  />
+                </div>
                 <p className="text-xs text-muted-foreground">{t('section_4_example_result')}</p>
               </CardContent>
             </Card>
@@ -402,7 +408,7 @@ Follow Shadcn UI patterns"
           <h2 className="text-3xl font-bold mb-4">{t('section_5_title')}</h2>
 
           <div className="grid md:grid-cols-2 gap-4">
-            <Card className="border-green-500/20">
+            <Card className="border-green-500/20 bg-green-500/5">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
                   <Icons.CheckCircle className="w-5 h-5 text-green-600" />
@@ -412,30 +418,30 @@ Follow Shadcn UI patterns"
               <CardContent>
                 <ul className="text-sm space-y-2">
                   <li className="flex items-start gap-2">
-                    <span className="text-green-600">✓</span>
+                    <span className="text-green-600 flex-shrink-0">✓</span>
                     <span>{t('do_1')}</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-green-600">✓</span>
+                    <span className="text-green-600 flex-shrink-0">✓</span>
                     <span>{t('do_2')}</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-green-600">✓</span>
+                    <span className="text-green-600 flex-shrink-0">✓</span>
                     <span>{t('do_3')}</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-green-600">✓</span>
+                    <span className="text-green-600 flex-shrink-0">✓</span>
                     <span>{t('do_4')}</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-green-600">✓</span>
+                    <span className="text-green-600 flex-shrink-0">✓</span>
                     <span>{t('do_5')}</span>
                   </li>
                 </ul>
               </CardContent>
             </Card>
 
-            <Card className="border-red-500/20">
+            <Card className="border-red-500/20 bg-red-500/5">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
                   <Icons.XCircle className="w-5 h-5 text-red-600" />
@@ -445,23 +451,23 @@ Follow Shadcn UI patterns"
               <CardContent>
                 <ul className="text-sm space-y-2">
                   <li className="flex items-start gap-2">
-                    <span className="text-red-600">✗</span>
+                    <span className="text-red-600 flex-shrink-0">✗</span>
                     <span>{t('avoid_1')}</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-red-600">✗</span>
+                    <span className="text-red-600 flex-shrink-0">✗</span>
                     <span>{t('avoid_2')}</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-red-600">✗</span>
+                    <span className="text-red-600 flex-shrink-0">✗</span>
                     <span>{t('avoid_3')}</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-red-600">✗</span>
+                    <span className="text-red-600 flex-shrink-0">✗</span>
                     <span>{t('avoid_4')}</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-red-600">✗</span>
+                    <span className="text-red-600 flex-shrink-0">✗</span>
                     <span>{t('avoid_5')}</span>
                   </li>
                 </ul>
@@ -479,19 +485,19 @@ Follow Shadcn UI patterns"
             <CardContent>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li className="flex items-start gap-2">
-                  <Icons.CheckCircle className="w-4 h-4 text-green-600 mt-0.5" />
+                  <Icons.CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
                   <span>{t('section_5_integration_1')}</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <Icons.CheckCircle className="w-4 h-4 text-green-600 mt-0.5" />
+                  <Icons.CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
                   <span>{t('section_5_integration_2')}</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <Icons.CheckCircle className="w-4 h-4 text-green-600 mt-0.5" />
+                  <Icons.CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
                   <span>{t('section_5_integration_3')}</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <Icons.CheckCircle className="w-4 h-4 text-green-600 mt-0.5" />
+                  <Icons.CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
                   <span>{t('section_5_integration_4')}</span>
                 </li>
               </ul>
@@ -507,52 +513,23 @@ Follow Shadcn UI patterns"
             <Alert className="border-amber-500/20 bg-amber-500/5">
               <Icons.AlertTriangle className="w-4 h-4 text-amber-600" />
               <AlertDescription>
-                <h4 className="font-semibold mb-2">{t('section_6_pitfall_1_title')}</h4>
-                <p className="text-muted-foreground">{t('section_6_pitfall_1_desc')}</p>
+                <strong>{t('section_6_pitfall_1_title')}</strong> {t('section_6_pitfall_1_desc')}
               </AlertDescription>
             </Alert>
 
             <Alert className="border-amber-500/20 bg-amber-500/5">
               <Icons.AlertTriangle className="w-4 h-4 text-amber-600" />
               <AlertDescription>
-                <h4 className="font-semibold mb-2">{t('section_6_pitfall_2_title')}</h4>
-                <p className="text-muted-foreground">{t('section_6_pitfall_2_desc')}</p>
+                <strong>{t('section_6_pitfall_2_title')}</strong> {t('section_6_pitfall_2_desc')}
               </AlertDescription>
             </Alert>
 
             <Alert className="border-amber-500/20 bg-amber-500/5">
               <Icons.AlertTriangle className="w-4 h-4 text-amber-600" />
               <AlertDescription>
-                <h4 className="font-semibold mb-2">{t('section_6_pitfall_3_title')}</h4>
-                <p className="text-muted-foreground">{t('section_6_pitfall_3_desc')}</p>
+                <strong>{t('section_6_pitfall_3_title')}</strong> {t('section_6_pitfall_3_desc')}
               </AlertDescription>
             </Alert>
-
-            <Card className="border-green-500/20 bg-green-500/5">
-              <CardHeader>
-                <CardTitle className="text-lg">{t('section_6_limitations_title')}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li className="flex items-start gap-2">
-                    <Icons.X className="w-4 h-4 text-red-600 mt-0.5" />
-                    <span>{t('section_6_limitation_1')}</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Icons.X className="w-4 h-4 text-red-600 mt-0.5" />
-                    <span>{t('section_6_limitation_2')}</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Icons.X className="w-4 h-4 text-red-600 mt-0.5" />
-                    <span>{t('section_6_limitation_3')}</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Icons.X className="w-4 h-4 text-red-600 mt-0.5" />
-                    <span>{t('section_6_limitation_4')}</span>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
           </div>
         </section>
 
