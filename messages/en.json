@@ -3254,6 +3254,10 @@
     "resource_ragas_tutorial_desc": "Evaluate and measure prompt quality using Ragas metrics with real-world examples",
     "resource_spec_tutorial_title": "Spec Driven Development",
     "resource_spec_tutorial_desc": "Write clear specifications for better team alignment and systematic development workflow",
+    "comparison_criterion_header": "Criterion",
+    "comparison_improvement_header": "Improvement",
+    "comparison_yes": "Yes",
+    "comparison_no": "No",
     "metadata_title": "Tech Stack | Prompt Party",
     "metadata_description": "Discover the technical tools and methodologies behind Prompt Party's commitment to excellence"
   },

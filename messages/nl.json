@@ -3430,6 +3430,10 @@
     "resource_ragas_tutorial_desc": "Evalueer en meet de kwaliteit van prompts met Ragas-metrieken aan de hand van echte voorbeelden",
     "resource_spec_tutorial_title": "Spec Driven Development",
     "resource_spec_tutorial_desc": "Schrijf duidelijke specificaties voor betere teamuitlijning en systematische werkstroom",
+    "comparison_criterion_header": "Criterium",
+    "comparison_improvement_header": "Verbetering",
+    "comparison_yes": "Ja",
+    "comparison_no": "Nee",
     "metadata_title": "Tech Stack | Prompt Party",
     "metadata_description": "Ontdek de technische tools en methodologieën achter Prompt Party's toewijding aan uitmuntendheid"
   }

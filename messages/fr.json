@@ -3369,7 +3369,7 @@
     "comparison_improvement_50": "50% Moins",
     "comparison_improvement_fast": "90% Plus Rapide",
     "comparison_improvement_90": "90% Meilleur",
-    "comparison_improvement_proven": "Scalable Proven",
+    "comparison_improvement_proven": "Scalabilité Prouvée",
     "comparison_improvement_40": "Économies de 40%",
     "comparison_test_coverage": "Couverture de Test",
     "comparison_improvement_coverage": "55% D'Augmentation",
@@ -3430,6 +3430,10 @@
     "resource_ragas_tutorial_desc": "Évaluez et mesurez la qualité des prompts en utilisant les métriques Ragas avec des exemples réels",
     "resource_spec_tutorial_title": "Développement Guidé par les Specs",
     "resource_spec_tutorial_desc": "Écrivez des spécifications claires pour un meilleur alignement d'équipe et un flux de travail systématique",
+    "comparison_criterion_header": "Critère",
+    "comparison_improvement_header": "Amélioration",
+    "comparison_yes": "Oui",
+    "comparison_no": "Non",
     "metadata_title": "Tech Stack | Prompt Party",
     "metadata_description": "Découvrez les outils techniques et les méthodologies derrière l'engagement de Prompt Party envers l'excellence"
   }

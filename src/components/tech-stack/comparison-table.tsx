@@ -14,6 +14,10 @@ interface ComparisonTableProps {
   rows: ComparisonRow[]
   beforeLabel: string
   afterLabel: string
+  criterionLabel?: string
+  improvementLabel?: string
+  yesLabel?: string
+  noLabel?: string
 }
 
 const getCategoryIcon = (criterion: string) => {
@@ -57,22 +61,23 @@ const renderProgressBar = (before: boolean | string | number, after: boolean | s
 
   if (beforePercent !== null && afterPercent !== null) {
     return (
-      <div className="flex items-center gap-3">
-        <div className="flex-1">
-          <div className="flex justify-between text-xs text-muted-foreground mb-1">
-            <span>{beforePercent}%</span>
-            <span>{afterPercent}%</span>
-          </div>
-          <div className="flex gap-2 h-2 bg-slate-100 dark:bg-slate-700 rounded overflow-hidden">
-            <div
-              className="bg-red-500 dark:bg-red-600 rounded"
-              style={{ width: `${beforePercent}%` }}
-            />
-            <div
-              className="bg-green-500 dark:bg-green-600 rounded"
-              style={{ width: `${afterPercent - beforePercent}%` }}
-            />
-          </div>
+      <div className="flex items-end justify-center gap-4">
+        {/* Before bar */}
+        <div className="flex flex-col items-center gap-2">
+          <div
+            className="w-4 bg-orange-500 dark:bg-orange-600 rounded-t transition-all duration-300"
+            style={{ height: `${(beforePercent / 100) * 60}px` }}
+          />
+          <span className="text-xs font-semibold text-orange-700 dark:text-orange-400">{beforePercent}%</span>
+        </div>
+
+        {/* After bar */}
+        <div className="flex flex-col items-center gap-2">
+          <div
+            className="w-4 bg-green-500 dark:bg-green-600 rounded-t transition-all duration-300"
+            style={{ height: `${(afterPercent / 100) * 60}px` }}
+          />
+          <span className="text-xs font-semibold text-green-700 dark:text-green-400">{afterPercent}%</span>
         </div>
       </div>
     )
@@ -81,18 +86,26 @@ const renderProgressBar = (before: boolean | string | number, after: boolean | s
   return null
 }
 
-export function ComparisonTable({ rows, beforeLabel, afterLabel }: ComparisonTableProps) {
+export function ComparisonTable({
+  rows,
+  beforeLabel,
+  afterLabel,
+  criterionLabel = 'Criterion',
+  improvementLabel = 'Improvement',
+  yesLabel = 'Yes',
+  noLabel = 'No'
+}: ComparisonTableProps) {
   const renderCell = (value: boolean | string | number, isProgress?: boolean) => {
     if (typeof value === 'boolean') {
       return value ? (
         <div className="flex items-center gap-2 justify-center">
           <CheckCircle className="w-5 h-5 text-green-600 dark:text-green-400" />
-          <span className="text-sm text-green-700 dark:text-green-300 font-medium">Yes</span>
+          <span className="text-sm text-green-700 dark:text-green-300 font-medium">{yesLabel}</span>
         </div>
       ) : (
         <div className="flex items-center gap-2 justify-center">
           <XCircle className="w-5 h-5 text-red-600 dark:text-red-400" />
-          <span className="text-sm text-red-700 dark:text-red-300 font-medium">No</span>
+          <span className="text-sm text-red-700 dark:text-red-300 font-medium">{noLabel}</span>
         </div>
       )
     }
@@ -104,11 +117,11 @@ export function ComparisonTable({ rows, beforeLabel, afterLabel }: ComparisonTab
       <Table>
         <TableHeader className="bg-slate-50 dark:bg-slate-900">
           <TableRow className="border-b border-slate-200 dark:border-slate-700">
-            <TableHead className="font-semibold text-foreground">Criterion</TableHead>
+            <TableHead className="font-semibold text-foreground">{criterionLabel}</TableHead>
             <TableHead className="font-semibold text-foreground text-center">{beforeLabel}</TableHead>
             <TableHead className="font-semibold text-foreground text-center">{afterLabel}</TableHead>
             {rows[0]?.improvement && (
-              <TableHead className="font-semibold text-foreground text-center">Improvement</TableHead>
+              <TableHead className="font-semibold text-foreground text-center">{improvementLabel}</TableHead>
             )}
           </TableRow>
         </TableHeader>

@@ -496,8 +496,9 @@ export function TechStackContent() {
             <div className="absolute bottom-20 left-0 w-96 h-96 bg-gradient-to-tr from-blue-200 to-cyan-200 rounded-full blur-3xl opacity-20" />
           </div>
 
-          <AnimatedContainer animation="fade" delay={0}>
-            <div className="text-center space-y-6 max-w-3xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <AnimatedContainer animation="fade" delay={0}>
+              <div className="space-y-6">
               {/* Enhanced Hero Badge with Animation */}
               <div className="flex flex-col items-center gap-3">
                 <div className="relative inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-indigo-100 to-purple-100 text-indigo-700 border border-indigo-200 rounded-full hover:shadow-lg transition-all duration-300">
@@ -517,11 +518,126 @@ export function TechStackContent() {
                 {t('hero_title')}
               </h1>
 
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                {t('hero_subtitle')}
-              </p>
-            </div>
-          </AnimatedContainer>
+                <p className="text-lg text-muted-foreground">
+                  {t('hero_subtitle')}
+                </p>
+              </div>
+            </AnimatedContainer>
+
+            {/* Hero Illustration */}
+            <AnimatedContainer animation="slide-up" delay={0.2}>
+              <div className="relative h-80 lg:h-96 w-full">
+                <svg
+                  viewBox="0 0 400 300"
+                  className="w-full h-full drop-shadow-lg"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <defs>
+                    <linearGradient id="grad-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" style={{ stopColor: '#e0e7ff', stopOpacity: 1 }} />
+                      <stop offset="100%" style={{ stopColor: '#f3e8ff', stopOpacity: 1 }} />
+                    </linearGradient>
+                    <linearGradient id="grad-claude" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" style={{ stopColor: '#4f46e5', stopOpacity: 1 }} />
+                      <stop offset="100%" style={{ stopColor: '#7c3aed', stopOpacity: 1 }} />
+                    </linearGradient>
+                    <linearGradient id="grad-ragas" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" style={{ stopColor: '#06b6d4', stopOpacity: 1 }} />
+                      <stop offset="100%" style={{ stopColor: '#0891b2', stopOpacity: 1 }} />
+                    </linearGradient>
+                    <linearGradient id="grad-spec" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" style={{ stopColor: '#f59e0b', stopOpacity: 1 }} />
+                      <stop offset="100%" style={{ stopColor: '#d97706', stopOpacity: 1 }} />
+                    </linearGradient>
+                    <filter id="shadow">
+                      <feDropShadow dx="0" dy="2" stdDeviation="3" floodOpacity="0.15" />
+                    </filter>
+                  </defs>
+
+                  <rect width="400" height="300" fill="url(#grad-bg)" opacity="0.3" />
+
+                  {/* Center connection lines */}
+                  <g stroke="#cbd5e1" strokeWidth="2" strokeDasharray="5,5" opacity="0.5">
+                    <line x1="200" y1="150" x2="100" y2="80" />
+                    <line x1="200" y1="150" x2="300" y2="80" />
+                    <line x1="200" y1="150" x2="150" y2="260" />
+                    <line x1="200" y1="150" x2="250" y2="260" />
+                  </g>
+
+                  {/* Claude Code - Top Left */}
+                  <g filter="url(#shadow)">
+                    <rect x="40" y="30" width="120" height="120" rx="12" fill="url(#grad-claude)" opacity="0.1" stroke="url(#grad-claude)" strokeWidth="2" />
+                    <circle cx="100" cy="90" r="35" fill="url(#grad-claude)" opacity="0.2" />
+
+                    {/* Code bracket icon */}
+                    <path d="M 80 70 L 70 90 L 80 110" stroke="#4f46e5" strokeWidth="3" fill="none" strokeLinecap="round" />
+                    <path d="M 120 70 L 130 90 L 120 110" stroke="#4f46e5" strokeWidth="3" fill="none" strokeLinecap="round" />
+
+                    {/* Sparkles */}
+                    <circle cx="130" cy="60" r="3" fill="#4f46e5" opacity="0.8" />
+                    <circle cx="65" cy="55" r="2" fill="#4f46e5" opacity="0.6" />
+                    <circle cx="140" cy="110" r="2.5" fill="#4f46e5" opacity="0.7" />
+
+                    <text x="100" y="140" fontFamily="Arial, sans-serif" fontSize="12" fontWeight="bold" textAnchor="middle" fill="#4f46e5">Claude Code</text>
+                    <text x="100" y="155" fontFamily="Arial, sans-serif" fontSize="9" textAnchor="middle" fill="#4f46e5" opacity="0.7">AI Generation</text>
+                  </g>
+
+                  {/* Ragas Evaluation - Top Right */}
+                  <g filter="url(#shadow)">
+                    <rect x="240" y="30" width="120" height="120" rx="12" fill="url(#grad-ragas)" opacity="0.1" stroke="url(#grad-ragas)" strokeWidth="2" />
+                    <circle cx="300" cy="90" r="35" fill="url(#grad-ragas)" opacity="0.2" />
+
+                    {/* Chart */}
+                    <rect x="280" y="75" width="8" height="30" fill="#06b6d4" rx="1" />
+                    <rect x="293" y="65" width="8" height="40" fill="#06b6d4" rx="1" />
+                    <rect x="306" y="55" width="8" height="50" fill="#06b6d4" rx="1" />
+
+                    {/* Checkmark */}
+                    <circle cx="318" cy="58" r="8" fill="#10b981" opacity="0.8" />
+                    <path d="M 314 60 L 316 62 L 320 56" stroke="white" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+
+                    <text x="300" y="140" fontFamily="Arial, sans-serif" fontSize="12" fontWeight="bold" textAnchor="middle" fill="#06b6d4">Ragas</text>
+                    <text x="300" y="155" fontFamily="Arial, sans-serif" fontSize="9" textAnchor="middle" fill="#06b6d4" opacity="0.7">Evaluation</text>
+                  </g>
+
+                  {/* Spec Driven - Bottom Center */}
+                  <g filter="url(#shadow)">
+                    <rect x="90" y="180" width="220" height="100" rx="12" fill="url(#grad-spec)" opacity="0.1" stroke="url(#grad-spec)" strokeWidth="2" />
+                    <circle cx="200" cy="230" r="40" fill="url(#grad-spec)" opacity="0.2" />
+
+                    {/* Document */}
+                    <rect x="175" y="200" width="50" height="60" fill="none" stroke="#f59e0b" strokeWidth="2" rx="2" />
+
+                    {/* Checkmarks */}
+                    <g stroke="#10b981" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M 185 215 L 188 218 L 195 210" />
+                      <path d="M 185 235 L 188 238 L 195 230" />
+                      <path d="M 185 255 L 188 258 L 195 250" />
+                    </g>
+
+                    {/* Lines */}
+                    <line x1="205" y1="215" x2="215" y2="215" stroke="#f59e0b" strokeWidth="1.5" opacity="0.6" />
+                    <line x1="205" y1="235" x2="215" y2="235" stroke="#f59e0b" strokeWidth="1.5" opacity="0.6" />
+                    <line x1="205" y1="255" x2="215" y2="255" stroke="#f59e0b" strokeWidth="1.5" opacity="0.6" />
+
+                    <text x="200" y="275" fontFamily="Arial, sans-serif" fontSize="12" fontWeight="bold" textAnchor="middle" fill="#f59e0b">Spec Driven</text>
+                    <text x="200" y="290" fontFamily="Arial, sans-serif" fontSize="9" textAnchor="middle" fill="#f59e0b" opacity="0.7">Development</text>
+                  </g>
+
+                  {/* Center point */}
+                  <circle cx="200" cy="150" r="8" fill="#e0e7ff" stroke="#4f46e5" strokeWidth="2" />
+
+                  {/* Arrows */}
+                  <g stroke="#6366f1" strokeWidth="1.5" fill="none" opacity="0.4">
+                    <path d="M 160 100 L 175 145" strokeLinecap="round" />
+                    <path d="M 240 100 L 225 145" strokeLinecap="round" />
+                    <path d="M 170 220 L 185 165" strokeLinecap="round" />
+                    <path d="M 230 220 L 215 165" strokeLinecap="round" />
+                  </g>
+                </svg>
+              </div>
+            </AnimatedContainer>
+          </div>
         </div>
       </section>
 
@@ -723,6 +839,10 @@ export function TechStackContent() {
             rows={comparisonRows}
             beforeLabel={t('comparison_before')}
             afterLabel={t('comparison_after')}
+            criterionLabel={t('comparison_criterion_header')}
+            improvementLabel={t('comparison_improvement_header')}
+            yesLabel={t('comparison_yes')}
+            noLabel={t('comparison_no')}
           />
         </div>
       </section>
