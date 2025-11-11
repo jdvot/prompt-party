@@ -641,11 +641,11 @@ Explain significant differences in approach between the languages.`}
               <p className="mb-4">{t('practice_intro')}</p>
 
               <div className="space-y-2 text-sm">
-                <div dangerouslySetInnerHTML={{ __html: t('practice_step_1') }} />
-                <div dangerouslySetInnerHTML={{ __html: t('practice_step_2') }} />
-                <div dangerouslySetInnerHTML={{ __html: t('practice_step_3') }} />
-                <div dangerouslySetInnerHTML={{ __html: t('practice_step_4') }} />
-                <div dangerouslySetInnerHTML={{ __html: t('practice_step_5') }} />
+                <div><span className="font-semibold">{t('practice_step_1').split(' - ')[0]}</span> - {t('practice_step_1').split(' - ')[1]}</div>
+                <div><span className="font-semibold">{t('practice_step_2').split(' - ')[0]}</span> - {t('practice_step_2').split(' - ')[1]}</div>
+                <div><span className="font-semibold">{t('practice_step_3').split(' - ')[0]}</span> - {t('practice_step_3').split(' - ')[1]}</div>
+                <div><span className="font-semibold">{t('practice_step_4').split(' - ')[0]}</span> - {t('practice_step_4').split(' - ')[1]}</div>
+                <div><span className="font-semibold">{t('practice_step_5').split(' - ')[0]}</span> - {t('practice_step_5').split(' - ')[1]}</div>
               </div>
 
               <Alert className="mt-4">
