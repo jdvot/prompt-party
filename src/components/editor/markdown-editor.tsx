@@ -149,11 +149,11 @@ export function MarkdownEditor({ value, onChange, placeholder }: MarkdownEditorP
               value={value}
               onChange={(e) => onChange(e.target.value)}
               placeholder={placeholder || t('default_placeholder')}
-              className="w-full min-h-[300px] p-4 bg-background border-0 focus:outline-none focus:ring-0 resize-none font-mono text-sm leading-relaxed transition-colors duration-200"
+              className="w-full min-h-[200px] sm:min-h-[250px] md:min-h-[300px] p-3 sm:p-4 bg-background border-0 focus:outline-none focus:ring-0 resize-none font-mono text-sm leading-relaxed transition-colors duration-200"
             />
           </div>
         ) : (
-          <div className="min-h-[300px] p-4 prose prose-sm dark:prose-invert max-w-none">
+          <div className="min-h-[200px] sm:min-h-[250px] md:min-h-[300px] p-3 sm:p-4 prose prose-sm dark:prose-invert max-w-none">
             {value ? (
               <MarkdownPreview content={value} />
             ) : (

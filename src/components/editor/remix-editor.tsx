@@ -41,17 +41,17 @@ export function RemixEditor({ defaultValue }: RemixEditorProps) {
         </div>
 
         {/* Content */}
-        <div className="p-4">
+        <div className="p-3 sm:p-4">
           {!showPreview ? (
             <textarea
               name="body"
               value={value}
               onChange={(e) => setValue(e.target.value)}
               placeholder="Write your prompt here... (Markdown supported)"
-              className="w-full min-h-[300px] p-4 bg-background border-0 focus:outline-none focus:ring-0 resize-none font-mono text-sm"
+              className="w-full min-h-[200px] sm:min-h-[250px] md:min-h-[300px] p-3 sm:p-4 bg-background border-0 focus:outline-none focus:ring-0 resize-none font-mono text-sm"
             />
           ) : (
-            <div className="min-h-[300px] p-4">
+            <div className="min-h-[200px] sm:min-h-[250px] md:min-h-[300px] p-3 sm:p-4">
               <MarkdownPreview content={value} />
             </div>
           )}

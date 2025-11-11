@@ -93,7 +93,7 @@ export default async function PublicProfilePage({ params }: PageProps) {
         {/* Profile Header */}
         <div className="mb-8">
           <div className="flex flex-col md:flex-row items-center md:items-start gap-6 mb-8">
-            <div className="w-24 h-24 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-4xl ring-4 ring-primary/10">
+            <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-4xl ring-4 ring-primary/10">
               {profile.avatar_url ? (
                 <Image
                   src={profile.avatar_url}

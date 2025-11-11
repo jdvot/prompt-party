@@ -12,8 +12,8 @@ const gridVariants = cva('grid w-full', {
       5: 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5',
       6: 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6',
       auto: 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4',
-      'auto-fit': 'grid-cols-[repeat(auto-fit,minmax(280px,1fr))]',
-      'auto-fill': 'grid-cols-[repeat(auto-fill,minmax(280px,1fr))]',
+      'auto-fit': 'grid-cols-1 sm:grid-cols-[repeat(auto-fit,minmax(250px,1fr))] lg:grid-cols-[repeat(auto-fit,minmax(280px,1fr))]',
+      'auto-fill': 'grid-cols-1 sm:grid-cols-[repeat(auto-fill,minmax(250px,1fr))] lg:grid-cols-[repeat(auto-fill,minmax(280px,1fr))]',
     },
     gap: {
       none: 'gap-0',

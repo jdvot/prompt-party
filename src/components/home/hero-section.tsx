@@ -39,7 +39,7 @@ export function HeroSection() {
       </div>
 
       {/* Main heading with gradient - UX: Clear value proposition */}
-      <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-balance leading-[1.1]">
+      <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-balance leading-[1.1]">
         <span className="bg-gradient-to-r from-brand-primary via-brand-accent to-brand-secondary bg-clip-text text-transparent animate-gradient bg-[length:200%_auto]">
           {t('title')}
         </span>
@@ -93,7 +93,7 @@ export function HeroSection() {
       </div>
 
       {/* Social Proof - UX: Trust signals and community metrics */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 pt-12 max-w-4xl mx-auto">
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 pt-12 max-w-4xl mx-auto">
         <div className="flex flex-col items-center gap-2 p-4 rounded-2xl bg-gradient-to-br from-brand-primary/5 to-transparent border border-brand-primary/10 hover:border-brand-primary/20 transition-colors">
           <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-brand-primary/10">
             <UsersIcon className="w-6 h-6 text-brand-primary" />

@@ -15,7 +15,7 @@ export default async function CollectionsPage() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-6">{t('collections_heading')}</h1>
+      <h1 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">{t('collections_heading')}</h1>
 
       <EmptyState
         illustrationSrc="/branding/illustrations/empty-states/empty-collections.svg"

@@ -48,7 +48,7 @@ export function CommentForm({ promptId, onCommentAdded }: CommentFormProps) {
         value={content}
         onChange={(e) => setContent(e.target.value)}
         placeholder={t('add_comment')}
-        className="w-full min-h-[100px] px-4 py-3 border rounded-md resize-none focus:outline-none focus:ring-2 focus:ring-primary"
+        className="w-full min-h-[80px] sm:min-h-[100px] px-4 py-3 border rounded-md resize-none focus:outline-none focus:ring-2 focus:ring-primary"
         disabled={isSubmitting}
       />
       <div className="flex justify-end">

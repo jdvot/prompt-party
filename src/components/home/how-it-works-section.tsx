@@ -65,7 +65,7 @@ export function HowItWorksSection() {
       </div>
 
       {/* Steps Grid - UX: Visual progression with numbered steps */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-4 relative">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 lg:gap-4 relative">
         {/* Connecting line for desktop - UX: Shows flow between steps */}
         <div className="hidden lg:block absolute top-16 left-0 right-0 h-0.5 bg-gradient-to-r from-brand-primary via-brand-secondary to-green-600 opacity-20" />
 

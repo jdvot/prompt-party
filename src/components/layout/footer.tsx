@@ -10,7 +10,7 @@ export function Footer() {
   return (
     <footer className="border-t bg-muted/30 mt-auto backdrop-blur-sm">
       <div className="w-full px-4 sm:px-6 lg:px-8 py-10 md:py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-10">
+        <div className="grid grid-cols-1 gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-4 md:gap-10">
           <div className="md:col-span-1">
             <Link href="/" className="flex items-center gap-3 font-bold text-lg mb-4 group">
               <Logo className="w-8 h-8 transition-transform duration-300 group-hover:scale-110" />

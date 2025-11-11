@@ -18,7 +18,7 @@ export function FinalCTASection() {
       <div className="absolute top-0 left-0 w-32 h-32 bg-brand-primary/10 rounded-full blur-3xl" />
       <div className="absolute bottom-0 right-0 w-40 h-40 bg-brand-accent/10 rounded-full blur-3xl" />
 
-      <div className="p-12 md:p-16 relative">
+      <div className="p-6 sm:p-8 md:p-12 lg:p-16 relative">
         {/* Urgency badge - UX: Creates FOMO and encourages action */}
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20 text-green-700 dark:text-green-400 text-sm font-semibold mb-6">
           <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
