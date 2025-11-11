@@ -1,5 +1,6 @@
 'use client'
 
+import { useState } from 'react'
 import Link from 'next/link'
 import { useUser } from '@/lib/supabase/hooks'
 import { UserMenu } from './user-menu'
@@ -8,90 +9,65 @@ import { ThemeToggle } from '@/components/theme/theme-toggle'
 import { useShortcuts } from '@/components/keyboard-shortcuts/shortcuts-provider'
 import { NotificationBell } from '@/components/notifications/notification-bell'
 import { SearchAutocomplete } from '@/components/search/search-autocomplete'
-import { CommandIcon } from 'lucide-react'
+import { CommandIcon, Menu, X } from 'lucide-react'
 import { Logo, LogoText } from '@/components/brand/logo'
 import { LanguageSwitcher } from './language-switcher'
 import { useTranslations } from 'next-intl'
 import { cn } from '@/lib/utils'
 
+const navLinks = [
+  { href: '/', label: 'home' },
+  { href: '/tutorials', label: 'guides' },
+  { href: '/prompts/wizard', label: 'wizard' },
+  { href: '/trending', label: 'trending' },
+  { href: '/challenges', label: 'challenges' },
+  { href: '/mcp-vs-rag', label: 'concepts' },
+  { href: '/ml-vs-dl', label: 'ml_vs_dl' },
+  { href: '/tech-stack', label: 'tech_stack' },
+]
+
 export function Header() {
   const { user, loading } = useUser()
   const { showHelp } = useShortcuts()
   const t = useTranslations('nav')
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
     <header className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-sticky">
-      <div className="w-full px-4 sm:px-6 lg:px-8 py-4 flex flex-col md:flex-row items-center justify-between gap-4">
-        <div className="flex items-center gap-8 w-full md:w-auto justify-between md:justify-start">
-          <Link href="/" className="flex items-center gap-3 group">
-            <Logo className="w-10 h-10 transition-transform duration-300 group-hover:scale-110" />
-            <span className="hidden sm:inline">
-              <LogoText className="text-xl" />
-            </span>
-          </Link>
+      {/* Desktop/Tablet Header */}
+      <div className="w-full px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between gap-3 lg:gap-6">
+        {/* Logo */}
+        <Link href="/" className="flex items-center gap-3 group flex-shrink-0">
+          <Logo className="w-9 h-9 lg:w-10 lg:h-10 transition-transform duration-300 group-hover:scale-110" />
+          <span className="hidden sm:inline">
+            <LogoText className="text-lg lg:text-xl" />
+          </span>
+        </Link>
 
-          <nav className="hidden lg:flex items-center gap-6">
+        {/* Desktop Navigation */}
+        <nav className="hidden lg:flex items-center gap-6">
+          {navLinks.map(link => (
             <Link
-              href="/"
+              key={link.href}
+              href={link.href}
               className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200"
             >
-              {t('home')}
+              {t(link.label)}
             </Link>
-            <Link
-              href="/tutorials"
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200"
-            >
-              {t('guides')}
-            </Link>
-            <Link
-              href="/prompts/wizard"
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200"
-            >
-              {t('wizard')}
-            </Link>
-            <Link
-              href="/trending"
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200"
-            >
-              {t('trending')}
-            </Link>
-            <Link
-              href="/challenges"
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200"
-            >
-              {t('challenges')}
-            </Link>
-            <Link
-              href="/mcp-vs-rag"
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200"
-            >
-              {t('concepts')}
-            </Link>
-            <Link
-              href="/ml-vs-dl"
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200"
-            >
-              {t('ml_vs_dl')}
-            </Link>
-            <Link
-              href="/tech-stack"
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200"
-            >
-              {t('tech_stack')}
-            </Link>
-          </nav>
-        </div>
+          ))}
+        </nav>
 
-        {/* Search bar - centered on desktop, full width on mobile */}
-        <div className="w-full md:flex-1 md:max-w-md md:mx-8">
+        {/* Search bar - hidden on mobile, flex on tablet+ */}
+        <div className="hidden sm:flex flex-1 max-w-sm lg:max-w-md justify-center">
           <SearchAutocomplete />
         </div>
 
-        <div className="flex items-center gap-2 md:gap-3">
+        {/* Right Side Actions */}
+        <div className="flex items-center gap-1.5 lg:gap-2 flex-shrink-0">
           <Button
             variant="ghost"
             size="sm"
-            className="hidden lg:inline-flex w-9 px-0"
+            className="hidden lg:inline-flex w-9 h-9 p-0"
             onClick={showHelp}
             aria-label={t('aria_keyboard_shortcuts') || 'Keyboard shortcuts'}
           >
@@ -99,22 +75,35 @@ export function Header() {
           </Button>
           <LanguageSwitcher />
           <ThemeToggle />
+
+          {/* Mobile Menu Button */}
+          <Button
+            variant="ghost"
+            size="sm"
+            className="lg:hidden w-9 h-9 p-0"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            {mobileMenuOpen ? (
+              <X className="h-5 w-5" />
+            ) : (
+              <Menu className="h-5 w-5" />
+            )}
+          </Button>
+
           {!loading && (
             <>
               {user ? (
                 <>
                   <NotificationBell />
-                  <Link href="/prompts/new" className={cn(buttonVariants(), "hidden sm:inline-flex")}>
-                    {t('create')}
-                  </Link>
-                  <Link href="/prompts/new" className={cn(buttonVariants({ size: "sm" }), "sm:hidden")}>
+                  <Link href="/prompts/new" className={cn(buttonVariants({ size: "sm" }), "hidden lg:inline-flex")}>
                     {t('create')}
                   </Link>
                   <UserMenu user={user} />
                 </>
               ) : (
                 <>
-                  <Link href="/auth/login" className={cn(buttonVariants({ variant: "ghost" }), "hidden sm:inline-flex")}>
+                  <Link href="/auth/login" className={cn(buttonVariants({ variant: "ghost", size: "sm" }), "hidden sm:inline-flex")}>
                     {t('login')}
                   </Link>
                   <Link href="/auth/signup" className={cn(buttonVariants({ size: "sm" }))}>
@@ -126,6 +115,38 @@ export function Header() {
           )}
         </div>
       </div>
+
+      {/* Mobile Search Bar */}
+      <div className="sm:hidden px-4 pb-3">
+        <SearchAutocomplete />
+      </div>
+
+      {/* Mobile Menu */}
+      {mobileMenuOpen && (
+        <div className="lg:hidden border-t bg-background/50 backdrop-blur">
+          <nav className="px-4 py-3 space-y-2">
+            {navLinks.map(link => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="block px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted rounded-md transition-colors duration-200"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {t(link.label)}
+              </Link>
+            ))}
+            {user && (
+              <Link
+                href="/prompts/new"
+                className="block px-3 py-2 text-sm font-medium text-primary hover:bg-primary/10 rounded-md transition-colors duration-200"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {t('create')}
+              </Link>
+            )}
+          </nav>
+        </div>
+      )}
     </header>
   )
 }
