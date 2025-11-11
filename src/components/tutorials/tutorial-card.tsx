@@ -45,7 +45,7 @@ export function TutorialCard({ tutorial }: TutorialCardProps) {
         <div className={`absolute inset-0 bg-gradient-to-br ${gradientColor} opacity-0 group-hover:opacity-5 transition-opacity duration-300`} />
 
         <CardHeader className="relative">
-          <div className="flex items-start justify-between mb-3">
+          <div className="flex items-center justify-between mb-3">
             <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${gradientColor} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
               <Icon className="w-7 h-7 text-white" />
             </div>
@@ -70,11 +70,11 @@ export function TutorialCard({ tutorial }: TutorialCardProps) {
               ))}
             </div>
 
-            {/* Duration */}
-            <div className="flex items-center text-sm text-muted-foreground">
-              <Icons.Clock className="w-4 h-4 mr-2" />
+            {/* Duration Badge */}
+            <Badge variant="outline" className="w-fit flex items-center gap-2">
+              <Icons.Clock className="w-4 h-4" />
               <span className="font-medium">{tutorial.duration}</span>
-            </div>
+            </Badge>
 
             {/* Action Button */}
             <Link href={tutorial.link} className={cn(buttonVariants({ variant: "outline" }), "w-full group/btn")}>
