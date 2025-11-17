@@ -1,19 +1,17 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge'
-import { buttonVariants } from '@/components/ui/button'
 import { Alert, AlertDescription } from '@/components/ui/alert'
 import { CodeBlock } from '@/components/tutorials/code-block'
-import { TutorialProgress } from '@/components/tutorials/tutorial-progress'
-import { Container } from '@/components/layout/container'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import { TutorialLayout } from '@/components/tutorials/tutorial-layout'
 import * as Icons from 'lucide-react'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import Link from 'next/link'
+import type { Metadata } from 'next'
 import { getTranslations } from 'next-intl/server'
 import { cn } from '@/lib/utils'
+import { buttonVariants } from '@/components/ui/button'
 
-export async function generateMetadata() {
+export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('tutorials.code_generation')
-
   return {
     title: t('page_title'),
     description: t('page_description'),
@@ -23,56 +21,24 @@ export async function generateMetadata() {
 export default async function CodeGenerationTutorial() {
   const t = await getTranslations('tutorials.code_generation')
   const tCommon = await getTranslations('tutorials')
+
   return (
-    <Container size="lg" className="py-8">
-      <div className="grid lg:grid-cols-[1fr_300px] gap-8 w-full">
-        <div>
-      <Link href="/tutorials" className={cn(buttonVariants({ variant: "ghost" }), "mb-6")}>
-        <Icons.ArrowLeft className="w-4 h-4 mr-2" />
-        {tCommon('back_to_tutorials')}
-      </Link>
-
-      <div className="mb-8">
-        <div className="flex items-center gap-3 mb-4">
-          <Badge className="bg-red-500">Advanced</Badge>
-          <Badge variant="outline">{t('duration')}</Badge>
-        </div>
-        <h1 className="text-4xl font-bold mb-4">{t('title')}</h1>
-        <p className="text-xl text-muted-foreground">
-          {t('subtitle')}
-        </p>
-      </div>
-
-      <Card className="mb-8 border-primary/20 bg-primary/5">
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <Icons.Lightbulb className="w-5 h-5 text-primary" />
-            {tCommon('what_you_learn')}
-          </CardTitle>
-        </CardHeader>
-        <CardContent>
-          <ul className="space-y-2">
-            <li className="flex items-start gap-2">
-              <Icons.CheckCircle className="w-5 h-5 text-primary mt-0.5" />
-              <span>{t('learn_generation')}</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <Icons.CheckCircle className="w-5 h-5 text-primary mt-0.5" />
-              <span>{t('learn_review')}</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <Icons.CheckCircle className="w-5 h-5 text-primary mt-0.5" />
-              <span>{t('learn_debugging')}</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <Icons.CheckCircle className="w-5 h-5 text-primary mt-0.5" />
-              <span>{t('learn_testing')}</span>
-            </li>
-          </ul>
-        </CardContent>
-      </Card>
-
-      <div className="space-y-8">
+    <TutorialLayout
+      tutorialId="code-generation"
+      level="expert"
+      title={t('title')}
+      subtitle={t('subtitle')}
+      badge={t('badge_expert')}
+      duration={t('duration')}
+      objectives={[
+        t('learn_prompting'),
+        t('learn_testing'),
+        t('learn_refactoring'),
+        t('learn_documentation'),
+      ]}
+      rewardBadge={t('reward_badge')}
+      whatYouLearnTitle={tCommon('what_you_learn')}
+    >
         <section>
           <h2 className="text-3xl font-bold mb-4">{t('generating_code')}</h2>
 
@@ -687,22 +653,6 @@ Explain significant differences in approach between the languages.`}
             </div>
           </CardContent>
         </Card>
-        </div>
-      </div>
-
-      {/* Sidebar - Progress Tracker */}
-      <aside className="hidden lg:block">
-        <TutorialProgress
-          tutorialId="code-generation"
-          title={t('title')}
-          duration={t('duration')}
-          level="expert"
-          rewardPoints={100}
-          rewardBadge={t('reward_badge') || 'Code Master'}
-          completed={false}
-        />
-      </aside>
-    </div>
-    </Container>
+    </TutorialLayout>
   )
 }

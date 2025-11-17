@@ -1,15 +1,13 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge'
-import { buttonVariants } from '@/components/ui/button'
 import { Alert, AlertDescription } from '@/components/ui/alert'
 import { CodeBlock } from '@/components/tutorials/code-block'
-import { TutorialProgress } from '@/components/tutorials/tutorial-progress'
-import { Container } from '@/components/layout/container'
+import { TutorialLayout } from '@/components/tutorials/tutorial-layout'
 import * as Icons from 'lucide-react'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import { getTranslations } from 'next-intl/server'
 import { cn } from '@/lib/utils'
+import { buttonVariants } from '@/components/ui/button'
 import { SpecDrivenDevelopmentQuiz } from './quiz-section'
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -26,129 +24,22 @@ export default async function SpecDrivenDevelopmentTutorial() {
   const tCommon = await getTranslations('tutorials')
 
   return (
-    <Container size="xl" className="py-8">
-      {/* Back Button */}
-      <Link href="/tutorials" className={cn(buttonVariants({ variant: "ghost" }), "mb-6")}>
-        <Icons.ArrowLeft className="w-4 h-4 mr-2" />
-        {tCommon('back_to_tutorials')}
-      </Link>
-
-      {/* Two-column layout */}
-      <div className="grid lg:grid-cols-[1fr_300px] gap-8 w-full">
-        <div>
-
-      {/* Header */}
-      <div className="mb-8">
-        <div className="flex items-center gap-3 mb-4">
-          <Badge className="bg-yellow-500">{t('badge_level')}</Badge>
-          <Badge variant="outline">{t('duration')}</Badge>
-        </div>
-        <h1 className="text-4xl font-bold mb-4">{t('title')}</h1>
-        <p className="text-xl text-muted-foreground">
-          {t('subtitle')}
-        </p>
-      </div>
-
-      {/* What You'll Learn */}
-      <Card className="mb-8 border-primary/20 bg-primary/5">
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <Icons.Lightbulb className="w-5 h-5 text-primary" />
-            {tCommon('what_you_learn')}
-          </CardTitle>
-        </CardHeader>
-        <CardContent>
-          <ul className="space-y-2">
-            <li className="flex items-start gap-2">
-              <Icons.CheckCircle className="w-5 h-5 text-primary mt-0.5" />
-              <span>{t('learn_1')}</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <Icons.CheckCircle className="w-5 h-5 text-primary mt-0.5" />
-              <span>{t('learn_2')}</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <Icons.CheckCircle className="w-5 h-5 text-primary mt-0.5" />
-              <span>{t('learn_3')}</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <Icons.CheckCircle className="w-5 h-5 text-primary mt-0.5" />
-              <span>{t('learn_4')}</span>
-            </li>
-          </ul>
-        </CardContent>
-      </Card>
-
-      {/* Main Content */}
-      <div className="space-y-8">
-        {/* Section 1: What is Spec Driven Development */}
-        <section>
-          <h2 className="text-3xl font-bold mb-4">{t('section_1_title')}</h2>
-          <div className="prose prose-neutral dark:prose-invert max-w-none">
-            <p className="text-lg mb-4">
-              {t('section_1_intro')}
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-4 mt-6">
-            <Card className="border-blue-500/20 bg-blue-500/5">
-              <CardHeader>
-                <CardTitle className="text-lg flex items-center gap-2">
-                  <Icons.CheckSquare className="w-5 h-5 text-blue-500" />
-                  {t('section_1_principle_1_title')}
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">
-                  {t('section_1_principle_1_desc')}
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-green-500/20 bg-green-500/5">
-              <CardHeader>
-                <CardTitle className="text-lg flex items-center gap-2">
-                  <Icons.Target className="w-5 h-5 text-green-500" />
-                  {t('section_1_principle_2_title')}
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">
-                  {t('section_1_principle_2_desc')}
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-purple-500/20 bg-purple-500/5">
-              <CardHeader>
-                <CardTitle className="text-lg flex items-center gap-2">
-                  <Icons.MessageSquare className="w-5 h-5 text-purple-500" />
-                  {t('section_1_principle_3_title')}
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">
-                  {t('section_1_principle_3_desc')}
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-orange-500/20 bg-orange-500/5">
-              <CardHeader>
-                <CardTitle className="text-lg flex items-center gap-2">
-                  <Icons.CheckCircle className="w-5 h-5 text-orange-500" />
-                  {t('section_1_principle_4_title')}
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">
-                  {t('section_1_principle_4_desc')}
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
-
+    <TutorialLayout
+      tutorialId="spec-driven-development"
+      level="intermediate"
+      title={t('title')}
+      subtitle={t('subtitle')}
+      badge={t('badge_intermediate')}
+      duration={t('duration')}
+      objectives={[
+        t('learn_1'),
+        t('learn_2'),
+        t('learn_3'),
+        t('learn_4'),
+      ]}
+      rewardBadge={t('reward_badge')}
+      whatYouLearnTitle={tCommon('what_you_learn')}
+    >
         {/* Section 2: The Spec Driven Workflow */}
         <section>
           <h2 className="text-3xl font-bold mb-4">{t('section_2_title')}</h2>
@@ -532,22 +423,8 @@ Allow users to mark prompts as favorites and organize them in custom collections
             </div>
           </CardContent>
         </Card>
-      </div>
-        </div>
 
-        {/* Sidebar - Progress Tracker */}
-        <aside className="hidden lg:block">
-          <TutorialProgress
-            tutorialId="spec-driven-development"
-            title={t('title')}
-            duration={t('duration')}
-            level="expert"
-            rewardPoints={150}
-            rewardBadge={t('reward_badge')}
-            completed={false}
-          />
-        </aside>
-      </div>
-    </Container>
+    </TutorialLayout>
   )
 }
+

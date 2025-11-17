@@ -1,14 +1,12 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge'
-import { buttonVariants } from '@/components/ui/button'
 import { Alert, AlertDescription } from '@/components/ui/alert'
 import { CodeBlock } from '@/components/tutorials/code-block'
-import { TutorialProgress } from '@/components/tutorials/tutorial-progress'
-import { Container } from '@/components/layout/container'
+import { TutorialLayout } from '@/components/tutorials/tutorial-layout'
 import * as Icons from 'lucide-react'
 import Link from 'next/link'
 import { getTranslations } from 'next-intl/server'
 import { cn } from '@/lib/utils'
+import { buttonVariants } from '@/components/ui/button'
 
 export async function generateMetadata() {
   const t = await getTranslations('tutorials.prompt_optimization')
@@ -22,56 +20,24 @@ export async function generateMetadata() {
 export default async function PromptOptimizationTutorial() {
   const t = await getTranslations('tutorials.prompt_optimization')
   const tCommon = await getTranslations('tutorials')
+
   return (
-    <Container size="lg" className="py-8">
-      <div className="grid lg:grid-cols-[1fr_300px] gap-8 w-full">
-        <div>
-      <Link href="/tutorials" className={cn(buttonVariants({ variant: "ghost" }), "mb-6")}>
-        <Icons.ArrowLeft className="w-4 h-4 mr-2" />
-        {tCommon('back_to_tutorials')}
-      </Link>
-
-      <div className="mb-8">
-        <div className="flex items-center gap-3 mb-4">
-          <Badge className="bg-yellow-500">Intermediate</Badge>
-          <Badge variant="outline">{t('duration')}</Badge>
-        </div>
-        <h1 className="text-4xl font-bold mb-4">{t('title')}</h1>
-        <p className="text-xl text-muted-foreground">
-          {t('subtitle')}
-        </p>
-      </div>
-
-      <Card className="mb-8 border-primary/20 bg-primary/5">
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <Icons.Lightbulb className="w-5 h-5 text-primary" />
-            {tCommon('what_you_learn')}
-          </CardTitle>
-        </CardHeader>
-        <CardContent>
-          <ul className="space-y-2">
-            <li className="flex items-start gap-2">
-              <Icons.CheckCircle className="w-5 h-5 text-primary mt-0.5" />
-              <span>{t('learn_reduce')}</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <Icons.CheckCircle className="w-5 h-5 text-primary mt-0.5" />
-              <span>{t('learn_faster')}</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <Icons.CheckCircle className="w-5 h-5 text-primary mt-0.5" />
-              <span>{t('learn_reliability')}</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <Icons.CheckCircle className="w-5 h-5 text-primary mt-0.5" />
-              <span>{t('learn_caching')}</span>
-            </li>
-          </ul>
-        </CardContent>
-      </Card>
-
-      <div className="space-y-8">
+    <TutorialLayout
+      tutorialId="prompt-optimization"
+      level="intermediate"
+      title={t('title')}
+      subtitle={t('subtitle')}
+      badge={t('badge_intermediate')}
+      duration={t('duration')}
+      objectives={[
+        t('learn_reduce'),
+        t('learn_faster'),
+        t('learn_reliability'),
+        t('learn_caching'),
+      ]}
+      rewardBadge={t('reward_badge')}
+      whatYouLearnTitle={tCommon('what_you_learn')}
+    >
         <section>
           <h2 className="text-3xl font-bold mb-4">{t('why_optimization')}</h2>
 
@@ -467,22 +433,8 @@ Good: 'Return as JSON: {analysis: string, confidence: 0-100, next_steps: string[
             </div>
           </CardContent>
         </Card>
-        </div>
-      </div>
-
-      {/* Sidebar - Progress Tracker */}
-      <aside className="hidden lg:block">
-        <TutorialProgress
-          tutorialId="prompt-optimization"
-          title={t('title')}
-          duration={t('duration')}
-          level="intermediate"
-          rewardPoints={75}
-          rewardBadge={t('reward_badge') || 'Optimization Master'}
-          completed={false}
-        />
-      </aside>
-    </div>
-    </Container>
+  
+    </TutorialLayout>
   )
 }
+

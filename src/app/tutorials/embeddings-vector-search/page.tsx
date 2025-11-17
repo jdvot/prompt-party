@@ -1,14 +1,12 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge'
-import { buttonVariants } from '@/components/ui/button'
 import { Alert, AlertDescription } from '@/components/ui/alert'
-import { TutorialProgress } from '@/components/tutorials/tutorial-progress'
-import { Container } from '@/components/layout/container'
+import { TutorialLayout } from '@/components/tutorials/tutorial-layout'
 import * as Icons from 'lucide-react'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import { getTranslations } from 'next-intl/server'
 import { cn } from '@/lib/utils'
+import { buttonVariants } from '@/components/ui/button'
 import { EmbeddingsQuiz } from './quiz-section'
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -24,53 +22,23 @@ export default async function EmbeddingsVectorSearchTutorial() {
   const tCommon = await getTranslations('tutorials')
 
   return (
-    <Container size="xl" className="py-8">
-      <Link href="/tutorials" className={cn(buttonVariants({ variant: "ghost" }), "mb-6")}>
-        <Icons.ArrowLeft className="w-4 h-4 mr-2" />
-        {tCommon('back_to_tutorials')}
-      </Link>
-
-      <div className="grid lg:grid-cols-[1fr_300px] gap-8 w-full">
-        <div>
-          <div className="mb-8">
-            <div className="flex items-center gap-3 mb-4">
-              <Badge className="bg-yellow-500">{t('badge_intermediate')}</Badge>
-              <Badge variant="outline">{t('duration')}</Badge>
-            </div>
-            <h1 className="text-4xl font-bold mb-4">{t('title')}</h1>
-            <p className="text-xl text-muted-foreground">{t('subtitle')}</p>
-          </div>
-
-          <Card className="mb-8 border-primary/20 bg-primary/5">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Icons.Lightbulb className="w-5 h-5 text-primary" />
-                {tCommon('what_you_learn')}
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <ul className="space-y-2">
-                <li className="flex items-start gap-2">
-                  <Icons.CheckCircle className="w-5 h-5 text-primary mt-0.5" />
-                  <span>{t('learn_embeddings')}</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Icons.CheckCircle className="w-5 h-5 text-primary mt-0.5" />
-                  <span>{t('learn_similarity')}</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Icons.CheckCircle className="w-5 h-5 text-primary mt-0.5" />
-                  <span>{t('learn_vector_db')}</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Icons.CheckCircle className="w-5 h-5 text-primary mt-0.5" />
-                  <span>{t('learn_applications')}</span>
-                </li>
-              </ul>
-            </CardContent>
-          </Card>
-
-          <div className="space-y-8">
+    <TutorialLayout
+      tutorialId="embeddings-vector-search"
+      level="intermediate"
+      title={t('title')}
+      subtitle={t('subtitle')}
+      badge={t('badge_intermediate')}
+      duration={t('duration')}
+      objectives={[
+        t('learn_embeddings'),
+        t('learn_similarity'),
+        t('learn_vector_db'),
+        t('learn_applications'),
+      ]}
+      rewardBadge={t('reward_badge')}
+      whatYouLearnTitle={tCommon('what_you_learn')}
+      containerSize="xl"
+    >
             <section>
               <h2 className="text-3xl font-bold mb-4">{t('what_are_embeddings')}</h2>
               <p className="text-lg text-muted-foreground mb-6">{t('embeddings_intro')}</p>
@@ -160,21 +128,6 @@ export default async function EmbeddingsVectorSearchTutorial() {
                 </CardContent>
               </Card>
             </section>
-          </div>
-        </div>
-
-        <aside className="hidden lg:block">
-          <TutorialProgress
-            tutorialId="embeddings-vector-search"
-            title={t('title')}
-            duration={t('duration')}
-            level="intermediate"
-            rewardPoints={75}
-            rewardBadge="Embeddings Expert"
-            completed={false}
-          />
-        </aside>
-      </div>
-    </Container>
+    </TutorialLayout>
   )
 }

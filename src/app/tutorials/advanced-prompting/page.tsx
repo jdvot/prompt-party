@@ -1,15 +1,13 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge'
-import { buttonVariants } from '@/components/ui/button'
 import { Alert, AlertDescription } from '@/components/ui/alert'
 import { CodeBlock } from '@/components/tutorials/code-block'
-import { TutorialProgress } from '@/components/tutorials/tutorial-progress'
-import { Container } from '@/components/layout/container'
+import { TutorialLayout } from '@/components/tutorials/tutorial-layout'
 import * as Icons from 'lucide-react'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import { getTranslations } from 'next-intl/server'
 import { cn } from '@/lib/utils'
+import { buttonVariants } from '@/components/ui/button'
 import { AdvancedPromptingQuiz } from './quiz-section'
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -26,57 +24,22 @@ export default async function AdvancedPromptingTutorial() {
   const tCommon = await getTranslations('tutorials')
 
   return (
-    <Container size="xl" className="py-8">
-      <Link href="/tutorials" className={cn(buttonVariants({ variant: "ghost" }), "mb-6")}>
-        <Icons.ArrowLeft className="w-4 h-4 mr-2" />
-        {tCommon('back_to_tutorials')}
-      </Link>
-
-      {/* Two-column layout */}
-      <div className="grid lg:grid-cols-[1fr_300px] gap-8 w-full">
-        <div>
-
-      <div className="mb-8">
-        <div className="flex items-center gap-3 mb-4">
-          <Badge className="bg-yellow-500">{t('badge_intermediate')}</Badge>
-          <Badge variant="outline">{t('duration')}</Badge>
-        </div>
-        <h1 className="text-4xl font-bold mb-4">{t('title')}</h1>
-        <p className="text-xl text-muted-foreground">
-          {t('subtitle')}
-        </p>
-      </div>
-
-      <Card className="mb-8 border-primary/20 bg-primary/5">
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <Icons.Lightbulb className="w-5 h-5 text-primary" />
-            {tCommon('what_you_learn')}
-          </CardTitle>
-        </CardHeader>
-        <CardContent>
-          <ul className="space-y-2">
-            <li className="flex items-start gap-2">
-              <Icons.CheckCircle className="w-5 h-5 text-primary mt-0.5" />
-              <span>{t('learn_cot')}</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <Icons.CheckCircle className="w-5 h-5 text-primary mt-0.5" />
-              <span>{t('learn_few_shot')}</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <Icons.CheckCircle className="w-5 h-5 text-primary mt-0.5" />
-              <span>{t('learn_role')}</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <Icons.CheckCircle className="w-5 h-5 text-primary mt-0.5" />
-              <span>{t('learn_meta')}</span>
-            </li>
-          </ul>
-        </CardContent>
-      </Card>
-
-      <div className="space-y-8">
+    <TutorialLayout
+      tutorialId="advanced-prompting"
+      level="intermediate"
+      title={t('title')}
+      subtitle={t('subtitle')}
+      badge={t('badge_intermediate')}
+      duration={t('duration')}
+      objectives={[
+        t('learn_cot'),
+        t('learn_few_shot'),
+        t('learn_role'),
+        t('learn_meta'),
+      ]}
+      rewardBadge={t('reward_badge')}
+      whatYouLearnTitle={tCommon('what_you_learn')}
+    >
         <section>
           <h2 className="text-3xl font-bold mb-4">{t('cot_title')}</h2>
 
@@ -483,22 +446,8 @@ This is helpful! Can you refine it by:
             </div>
           </CardContent>
         </Card>
-      </div>
-        </div>
 
-        {/* Sidebar - Progress Tracker */}
-        <aside className="hidden lg:block">
-          <TutorialProgress
-            tutorialId="advanced-prompting"
-            title="Techniques Avancées"
-            duration="30 min"
-            level="intermediate"
-            rewardPoints={100}
-            rewardBadge="Intermédiaire Certifié"
-            completed={false}
-          />
-        </aside>
-      </div>
-    </Container>
+    </TutorialLayout>
   )
 }
+

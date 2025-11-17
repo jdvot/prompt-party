@@ -1,15 +1,13 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge'
-import { buttonVariants } from '@/components/ui/button'
 import { Alert, AlertDescription } from '@/components/ui/alert'
 import { CodeBlock } from '@/components/tutorials/code-block'
-import { TutorialProgress } from '@/components/tutorials/tutorial-progress'
-import { Container } from '@/components/layout/container'
+import { TutorialLayout } from '@/components/tutorials/tutorial-layout'
 import * as Icons from 'lucide-react'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import { getTranslations } from 'next-intl/server'
 import { cn } from '@/lib/utils'
+import { buttonVariants } from '@/components/ui/button'
 import { ClaudeBasicsQuiz } from './quiz-section'
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -26,141 +24,22 @@ export default async function ClaudeBasicsTutorial() {
   const tCommon = await getTranslations('tutorials')
 
   return (
-    <Container size="lg" className="py-8">
-      {/* Back Button */}
-      <Link href="/tutorials" className={cn(buttonVariants({ variant: "ghost" }), "mb-6")}>
-        <Icons.ArrowLeft className="w-4 h-4 mr-2" />
-        {tCommon('back_to_tutorials')}
-      </Link>
-
-      {/* Two-column layout */}
-      <div className="grid lg:grid-cols-[1fr_300px] gap-8 w-full">
-        <div>
-
-      {/* Header */}
-      <div className="mb-8">
-        <div className="flex items-center gap-3 mb-4">
-          <Badge className="bg-green-500">{t('badge_beginner')}</Badge>
-          <Badge variant="outline">{t('duration')}</Badge>
-        </div>
-        <h1 className="text-4xl font-bold mb-4">{t('title')}</h1>
-        <p className="text-xl text-muted-foreground">
-          {t('subtitle')}
-        </p>
-      </div>
-
-      {/* What You'll Learn */}
-      <Card className="mb-8 border-primary/20 bg-primary/5">
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <Icons.Lightbulb className="w-5 h-5 text-primary" />
-            {tCommon('what_you_learn')}
-          </CardTitle>
-        </CardHeader>
-        <CardContent>
-          <ul className="space-y-2">
-            <li className="flex items-start gap-2">
-              <Icons.CheckCircle className="w-5 h-5 text-primary mt-0.5" />
-              <span>{t('learn_unique')}</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <Icons.CheckCircle className="w-5 h-5 text-primary mt-0.5" />
-              <span>{t('learn_conversations')}</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <Icons.CheckCircle className="w-5 h-5 text-primary mt-0.5" />
-              <span>{t('learn_context')}</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <Icons.CheckCircle className="w-5 h-5 text-primary mt-0.5" />
-              <span>{t('learn_practices')}</span>
-            </li>
-          </ul>
-        </CardContent>
-      </Card>
-
-      {/* Main Content */}
-      <div className="space-y-8">
-        {/* Section 1 */}
-        <section>
-          <h2 className="text-3xl font-bold mb-4">{t('what_is_claude')}</h2>
-          <div className="prose prose-neutral dark:prose-invert max-w-none">
-            <p className="text-lg">
-              <strong>Claude</strong> {t('claude_intro')}
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-4 mt-6">
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg flex items-center gap-2">
-                  <Icons.FileText className="w-5 h-5 text-blue-500" />
-                  {t('writing_content')}
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="text-sm space-y-1 text-muted-foreground">
-                  <li>{t('writing_1')}</li>
-                  <li>{t('writing_2')}</li>
-                  <li>{t('writing_3')}</li>
-                  <li>{t('writing_4')}</li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg flex items-center gap-2">
-                  <Icons.Code className="w-5 h-5 text-green-500" />
-                  {t('programming')}
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="text-sm space-y-1 text-muted-foreground">
-                  <li>{t('programming_1')}</li>
-                  <li>{t('programming_2')}</li>
-                  <li>{t('programming_3')}</li>
-                  <li>{t('programming_4')}</li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg flex items-center gap-2">
-                  <Icons.Brain className="w-5 h-5 text-purple-500" />
-                  {t('analysis_research')}
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="text-sm space-y-1 text-muted-foreground">
-                  <li>{t('analysis_1')}</li>
-                  <li>{t('analysis_2')}</li>
-                  <li>{t('analysis_3')}</li>
-                  <li>{t('analysis_4')}</li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg flex items-center gap-2">
-                  <Icons.MessageSquare className="w-5 h-5 text-orange-500" />
-                  {t('conversation')}
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="text-sm space-y-1 text-muted-foreground">
-                  <li>{t('conversation_1')}</li>
-                  <li>{t('conversation_2')}</li>
-                  <li>{t('conversation_3')}</li>
-                  <li>{t('conversation_4')}</li>
-                </ul>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
-
+    <TutorialLayout
+      tutorialId="claude-basics"
+      level="beginner"
+      title={t('title')}
+      subtitle={t('subtitle')}
+      badge={t('badge_beginner')}
+      duration={t('duration')}
+      objectives={[
+        t('learn_unique'),
+        t('learn_conversations'),
+        t('learn_context'),
+        t('learn_practices'),
+      ]}
+      rewardBadge={t('reward_badge')}
+      whatYouLearnTitle={tCommon('what_you_learn')}
+    >
         {/* Section 2 */}
         <section>
           <h2 className="text-3xl font-bold mb-4">{t('key_features')}</h2>
@@ -445,22 +324,8 @@ export default async function ClaudeBasicsTutorial() {
             </div>
           </CardContent>
         </Card>
-      </div>
-        </div>
 
-        {/* Sidebar - Progress Tracker */}
-        <aside className="hidden lg:block">
-          <TutorialProgress
-            tutorialId="claude-basics"
-            title={t('title')}
-            duration={t('duration')}
-            level="beginner"
-            rewardPoints={50}
-            rewardBadge={t('reward_badge') || 'First Steps'}
-            completed={false}
-          />
-        </aside>
-      </div>
-    </Container>
+    </TutorialLayout>
   )
 }
+
