@@ -26,7 +26,7 @@ export default async function ClaudeBasicsTutorial() {
   const tCommon = await getTranslations('tutorials')
 
   return (
-    <Container size="xl" className="py-8 overflow-hidden">
+    <Container size="lg" className="py-8 overflow-hidden">
       {/* Back Button */}
       <Link href="/tutorials" className={cn(buttonVariants({ variant: "ghost" }), "mb-6")}>
         <Icons.ArrowLeft className="w-4 h-4 mr-2" />
@@ -452,11 +452,11 @@ export default async function ClaudeBasicsTutorial() {
         <aside className="hidden lg:block">
           <TutorialProgress
             tutorialId="claude-basics"
-            title="Les bases de Claude"
-            duration="20 min"
+            title={t('title')}
+            duration={t('duration')}
             level="beginner"
             rewardPoints={50}
-            rewardBadge="Premier Pas"
+            rewardBadge={t('reward_badge') || 'First Steps'}
             completed={false}
           />
         </aside>

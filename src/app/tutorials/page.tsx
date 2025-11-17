@@ -48,6 +48,17 @@ export default async function TutorialsPage() {
         topics: [t('tutorial_prompt_templates_topic1'), t('tutorial_prompt_templates_topic2'), t('tutorial_prompt_templates_topic3')],
         link: '/tutorials/prompt-templates',
         color: 'from-purple-500 to-cyan-500'
+      },
+      {
+        id: 'data-fundamentals',
+        title: t('tutorial_data_fundamentals_title'),
+        description: t('tutorial_data_fundamentals_description'),
+        duration: t('tutorial_data_fundamentals_duration'),
+        level: t('tutorial_data_fundamentals_level'),
+        iconName: 'BarChart3',
+        topics: [t('tutorial_data_fundamentals_topic1'), t('tutorial_data_fundamentals_topic2'), t('tutorial_data_fundamentals_topic3')],
+        link: '/tutorials/data-fundamentals',
+        color: 'from-slate-500 to-gray-500'
       }
     ],
     intermediate: [
@@ -138,6 +149,50 @@ export default async function TutorialsPage() {
         topics: [t('tutorial_spec_driven_development_topic1'), t('tutorial_spec_driven_development_topic2'), t('tutorial_spec_driven_development_topic3')],
         link: '/tutorials/spec-driven-development',
         color: 'from-cyan-500 to-blue-500'
+      },
+      {
+        id: 'nlp-fundamentals',
+        title: t('tutorial_nlp_fundamentals_title'),
+        description: t('tutorial_nlp_fundamentals_description'),
+        duration: t('tutorial_nlp_fundamentals_duration'),
+        level: t('tutorial_nlp_fundamentals_level'),
+        iconName: 'MessageSquare',
+        topics: [t('tutorial_nlp_fundamentals_topic1'), t('tutorial_nlp_fundamentals_topic2'), t('tutorial_nlp_fundamentals_topic3')],
+        link: '/tutorials/nlp-fundamentals',
+        color: 'from-rose-500 to-pink-500'
+      },
+      {
+        id: 'transformers-attention',
+        title: t('tutorial_transformers_attention_title'),
+        description: t('tutorial_transformers_attention_description'),
+        duration: t('tutorial_transformers_attention_duration'),
+        level: t('tutorial_transformers_attention_level'),
+        iconName: 'Zap',
+        topics: [t('tutorial_transformers_attention_topic1'), t('tutorial_transformers_attention_topic2'), t('tutorial_transformers_attention_topic3')],
+        link: '/tutorials/transformers-attention',
+        color: 'from-amber-500 to-orange-500'
+      },
+      {
+        id: 'embeddings-vector-search',
+        title: t('tutorial_embeddings_vector_search_title'),
+        description: t('tutorial_embeddings_vector_search_description'),
+        duration: t('tutorial_embeddings_vector_search_duration'),
+        level: t('tutorial_embeddings_vector_search_level'),
+        iconName: 'Layers',
+        topics: [t('tutorial_embeddings_vector_search_topic1'), t('tutorial_embeddings_vector_search_topic2'), t('tutorial_embeddings_vector_search_topic3')],
+        link: '/tutorials/embeddings-vector-search',
+        color: 'from-teal-500 to-cyan-500'
+      },
+      {
+        id: 'computer-vision-fundamentals',
+        title: t('tutorial_computer_vision_fundamentals_title'),
+        description: t('tutorial_computer_vision_fundamentals_description'),
+        duration: t('tutorial_computer_vision_fundamentals_duration'),
+        level: t('tutorial_computer_vision_fundamentals_level'),
+        iconName: 'Eye',
+        topics: [t('tutorial_computer_vision_fundamentals_topic1'), t('tutorial_computer_vision_fundamentals_topic2'), t('tutorial_computer_vision_fundamentals_topic3')],
+        link: '/tutorials/computer-vision-fundamentals',
+        color: 'from-fuchsia-500 to-purple-500'
       }
     ],
     advanced: [
@@ -162,6 +217,39 @@ export default async function TutorialsPage() {
         topics: [t('tutorial_code_generation_topic1'), t('tutorial_code_generation_topic2'), t('tutorial_code_generation_topic3')],
         link: '/tutorials/code-generation',
         color: 'from-indigo-500 to-blue-500'
+      },
+      {
+        id: 'llm-finetuning',
+        title: t('tutorial_llm_finetuning_title'),
+        description: t('tutorial_llm_finetuning_description'),
+        duration: t('tutorial_llm_finetuning_duration'),
+        level: t('tutorial_llm_finetuning_level'),
+        iconName: 'Wrench',
+        topics: [t('tutorial_llm_finetuning_topic1'), t('tutorial_llm_finetuning_topic2'), t('tutorial_llm_finetuning_topic3')],
+        link: '/tutorials/llm-finetuning',
+        color: 'from-lime-500 to-green-500'
+      },
+      {
+        id: 'rag-systems',
+        title: t('tutorial_rag_systems_title'),
+        description: t('tutorial_rag_systems_description'),
+        duration: t('tutorial_rag_systems_duration'),
+        level: t('tutorial_rag_systems_level'),
+        iconName: 'Search',
+        topics: [t('tutorial_rag_systems_topic1'), t('tutorial_rag_systems_topic2'), t('tutorial_rag_systems_topic3')],
+        link: '/tutorials/rag-systems',
+        color: 'from-sky-500 to-blue-500'
+      },
+      {
+        id: 'ai-ethics-responsible',
+        title: t('tutorial_ai_ethics_responsible_title'),
+        description: t('tutorial_ai_ethics_responsible_description'),
+        duration: t('tutorial_ai_ethics_responsible_duration'),
+        level: t('tutorial_ai_ethics_responsible_level'),
+        iconName: 'Shield',
+        topics: [t('tutorial_ai_ethics_responsible_topic1'), t('tutorial_ai_ethics_responsible_topic2'), t('tutorial_ai_ethics_responsible_topic3')],
+        link: '/tutorials/ai-ethics-responsible',
+        color: 'from-red-500 to-rose-500'
       }
     ]
   }

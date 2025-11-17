@@ -1,0 +1,20 @@
+'use client'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Button } from '@/components/ui/button'
+import * as Icons from 'lucide-react'
+import { useState } from 'react'
+
+const questions = [
+  {id:1, q:"What is historical bias in AI?", o:["Training data reflects past discrimination, models learn and perpetuate it","Bias only from old models","Doesn't affect modern models","Only in text data"], c:0, e:"If training data shows 'programmer'=male, the model learns this association and may discriminate in hiring."},
+  {id:2, q:"Why is accuracy misleading for imbalanced data?", o:["A model can achieve 95% accuracy by ignoring the minority class (5%)","Accuracy is always reliable","Imbalance doesn't matter","Only applies to classification"], c:0, e:"With 95% negative, 5% positive: always predicting negative = 95% accuracy but 0% recall on positives."},
+  {id:3, q:"What is differential privacy?", o:["Adds noise during training to guarantee individual data points are protected","Privacy through data encryption","User opt-out mechanisms","Data anonymization"], c:0, e:"Differential privacy provides mathematical guarantees that individual records can't be reconstructed, even with model access."},
+  {id:4, q:"What should a model card document?", o:["Architecture, training data, performance metrics (overall and by subgroup), limitations, intended use","Just the model accuracy","Only deployment details","Code snippets"], c:0, e:"Model cards enable transparency by documenting capabilities, limitations, biases, and intended/unintended uses."},
+  {id:5, q:"When should you decline to deploy an AI system?", o:["Insufficient bias testing, unacceptable risks, regulatory violations, or stakeholder concerns","Never, ship it","Only if performance is low","Only after deployment"], c:0, e:"Responsible deployment means saying 'no' when risks are unacceptable or fairness can't be assured."}
+]
+
+export function EthicsQuiz() {
+  const [c,sc]=useState(0),[s,ss]=useState<number|null>(null),[sh,ssh]=useState(false),[sc2,ssc]=useState(0),[d,sd]=useState(false)
+  const cur=questions[c]
+  if(d) return <Card className="bg-gradient-to-r from-red-600/10"><CardHeader><CardTitle className="flex gap-2"><Icons.Trophy className="w-5" />Done!</CardTitle></CardHeader><CardContent className="space-y-4"><div className="text-center"><div className="text-5xl font-bold">{Math.round((sc2/5)*100)}%</div><p className="text-muted-foreground">{sc2}/5 correct</p></div><Button onClick={()=>{sc(0);ss(null);ssh(false);ssc(0);sd(false)}} className="w-full"><Icons.RotateCcw className="w-4 mr-2" />Retake</Button></CardContent></Card>
+  return <Card className="bg-gradient-to-r from-red-600/10"><CardHeader><CardTitle className="flex gap-2"><Icons.Brain className="w-5" />Test Knowledge</CardTitle></CardHeader><CardContent className="space-y-6"><h3 className="font-semibold text-lg">{cur.q}</h3><div className="space-y-3">{cur.o.map((opt,i)=><button key={i} onClick={()=>!sh&&ss(i)} className={`w-full p-3 rounded-lg border-2 text-left ${s===i?i===cur.c&&sh?'border-green-500 bg-green-500/10':'border-red-500 bg-red-500/10':sh&&i===cur.c?'border-green-500 bg-green-500/10':'border-muted hover:border-primary/50'}`} disabled={sh}><div className="flex items-center gap-2"><div className="w-5 h-5 rounded-full border-2">{s===i&&<div className="w-3 h-3 rounded-full bg-primary m-auto" />}</div><span>{opt}</span>{sh&&i===cur.c&&<Icons.Check className="ml-auto text-green-600 w-5" />}{sh&&s===i&&i!==cur.c&&<Icons.X className="ml-auto text-red-600 w-5" />}</div></button>)}</div>{sh&&<div className="bg-blue-500/10 border rounded p-4"><p className="text-sm"><strong>Explanation:</strong> {cur.e}</p></div>}{!sh?<Button onClick={()=>{if(s!==null){if(s===cur.c)ssc(sc2+1);ssh(true)}}} className="w-full" disabled={s===null}>Submit</Button>:<Button onClick={()=>{if(c<4){sc(c+1);ss(null);ssh(false)}else sd(true)}} className="w-full">{c===4?'Results':'Next'}</Button>}</CardContent></Card>
+}

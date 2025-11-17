@@ -80,6 +80,35 @@ export default defineConfig({
     //   name: 'Mobile Safari',
     //   use: { ...devices['iPhone 12'] },
     // },
+
+    /* Translation Tests - Run for each language */
+    {
+      name: 'translations-en',
+      testDir: './e2e/translations',
+      testMatch: '**/*.spec.ts',
+      use: {
+        ...devices['Desktop Chrome'],
+        locale: 'en-US',
+      },
+    },
+    {
+      name: 'translations-fr',
+      testDir: './e2e/translations',
+      testMatch: '**/*.spec.ts',
+      use: {
+        ...devices['Desktop Chrome'],
+        locale: 'fr-FR',
+      },
+    },
+    {
+      name: 'translations-nl',
+      testDir: './e2e/translations',
+      testMatch: '**/*.spec.ts',
+      use: {
+        ...devices['Desktop Chrome'],
+        locale: 'nl-NL',
+      },
+    },
   ],
 
   /* Run your local dev server before starting the tests */
