@@ -38,8 +38,7 @@ export async function takeVisualSnapshot(
 
   await expect(page).toHaveScreenshot(screenshotName + '.png', {
     maxDiffPixels: options.maxDiffPixels || 100,
-    threshold: options.threshold || 0.2,
-    updateSnapshots: options.updateBaselines || false
+    threshold: options.threshold || 0.2
   })
 }
 

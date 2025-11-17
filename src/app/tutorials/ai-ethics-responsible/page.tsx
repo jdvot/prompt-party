@@ -104,7 +104,7 @@ export default async function EthicsTutorial() {
         </div>
 
         <aside className="hidden lg:block">
-          <TutorialProgress tutorialId="ai-ethics" title={t('title')} duration={t('duration')} level="advanced" rewardPoints={100} rewardBadge="Ethics Champion" completed={false} />
+          <TutorialProgress tutorialId="ai-ethics" title={t('title')} duration={t('duration')} level="expert" rewardPoints={100} rewardBadge="Ethics Champion" completed={false} />
         </aside>
       </div>
     </Container>

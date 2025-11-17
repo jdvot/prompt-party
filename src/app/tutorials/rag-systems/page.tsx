@@ -108,7 +108,7 @@ export default async function RAGTutorial() {
         </div>
 
         <aside className="hidden lg:block">
-          <TutorialProgress tutorialId="rag-systems" title={t('title')} duration={t('duration')} level="advanced" rewardPoints={100} rewardBadge="RAG Expert" completed={false} />
+          <TutorialProgress tutorialId="rag-systems" title={t('title')} duration={t('duration')} level="expert" rewardPoints={100} rewardBadge="RAG Expert" completed={false} />
         </aside>
       </div>
     </Container>

@@ -86,7 +86,7 @@ export default async function LLMTutorial() {
         </div>
 
         <aside className="hidden lg:block">
-          <TutorialProgress tutorialId="llm-finetuning" title={t('title')} duration={t('duration')} level="advanced" rewardPoints={100} rewardBadge="Fine-Tuning Master" completed={false} />
+          <TutorialProgress tutorialId="llm-finetuning" title={t('title')} duration={t('duration')} level="expert" rewardPoints={100} rewardBadge="Fine-Tuning Master" completed={false} />
         </aside>
       </div>
     </Container>
