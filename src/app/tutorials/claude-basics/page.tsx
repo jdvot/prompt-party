@@ -42,7 +42,7 @@ export default async function ClaudeBasicsTutorial() {
       containerSize="xl"
     >
         {/* Section 2 */}
-        <section>
+        <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('key_features')}</h2>
 
           <div className="space-y-4">
@@ -97,7 +97,7 @@ export default async function ClaudeBasicsTutorial() {
         </section>
 
         {/* Section 3 */}
-        <section>
+        <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('how_to_talk')}</h2>
 
           <Alert className="mb-6">
@@ -150,7 +150,7 @@ export default async function ClaudeBasicsTutorial() {
         </section>
 
         {/* Section 4 */}
-        <section>
+        <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('context_memory')}</h2>
 
           <Card className="mb-4">
@@ -183,10 +183,10 @@ export default async function ClaudeBasicsTutorial() {
         </section>
 
         {/* Section 5 */}
-        <section>
+        <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('best_practices')}</h2>
 
-          <div className="grid md:grid-cols-2 gap-4">
+          <div className="grid md:grid-cols-2 gap-4 w-full">
             <Card className="border-green-500/20">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
@@ -256,7 +256,7 @@ export default async function ClaudeBasicsTutorial() {
         </section>
 
         {/* Practice Exercise */}
-        <section>
+        <section className="w-full">
           <Card className="bg-gradient-to-r from-violet-600/10 to-violet-600/10 border-violet-600/20">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
@@ -294,7 +294,7 @@ export default async function ClaudeBasicsTutorial() {
         </section>
 
         {/* Quiz Section */}
-        <section>
+        <section className="w-full">
           <ClaudeBasicsQuiz />
         </section>
 
@@ -307,7 +307,7 @@ export default async function ClaudeBasicsTutorial() {
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
-            <div className="grid md:grid-cols-2 gap-4">
+            <div className="grid md:grid-cols-2 gap-4 w-full">
               <Link href="/tutorials/prompt-templates" className={cn(buttonVariants())}>
                 {t('next_prompt_templates')}
               </Link>

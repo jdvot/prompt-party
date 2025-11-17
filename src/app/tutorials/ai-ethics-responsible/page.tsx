@@ -32,7 +32,7 @@ export default async function EthicsTutorial() {
       whatYouLearnTitle={tCommon('what_you_learn')}
       containerSize="xl"
     >
-            <section>
+            <section className="w-full">
               <h2 className="text-3xl font-bold mb-4">{t('why_ethics')}</h2>
               <p className="text-muted-foreground mb-4">{t('ethics_intro')}</p>
               <Card className="border-red-500/20 bg-red-500/5">
@@ -40,7 +40,7 @@ export default async function EthicsTutorial() {
               </Card>
             </section>
 
-            <section>
+            <section className="w-full">
               <h2 className="text-3xl font-bold mb-4">{t('bias_fairness')}</h2>
               <div className="space-y-3">
                 <Card>
@@ -58,7 +58,7 @@ export default async function EthicsTutorial() {
               </div>
             </section>
 
-            <section>
+            <section className="w-full">
               <h2 className="text-3xl font-bold mb-4">{t('privacy_security')}</h2>
               <div className="space-y-3">
                 <Card>
@@ -72,7 +72,7 @@ export default async function EthicsTutorial() {
               </div>
             </section>
 
-            <section>
+            <section className="w-full">
               <h2 className="text-3xl font-bold mb-4">{t('transparency_accountability')}</h2>
               <p className="text-muted-foreground mb-4">{t('transparency_intro')}</p>
               <div className="space-y-2 text-sm text-muted-foreground">
@@ -82,7 +82,7 @@ export default async function EthicsTutorial() {
               </div>
             </section>
 
-            <section>
+            <section className="w-full">
               <h2 className="text-3xl font-bold mb-4">{tCommon('keep_learning')}</h2>
               <EthicsQuiz />
             </section>

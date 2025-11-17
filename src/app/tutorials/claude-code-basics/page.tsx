@@ -43,15 +43,15 @@ export default async function ClaudeCodeBasicsTutorial() {
     >
 
         {/* Section 1: What is Claude Code */}
-        <section>
+        <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('section_1_title')}</h2>
-          <div className="prose prose-neutral dark:prose-invert max-w-none ">
+          <div className="prose prose-neutral dark:prose-invert max-w-none  w-full">
             <p className="text-lg mb-4">
               {t('section_1_intro')}
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-4 mt-6">
+          <div className="grid md:grid-cols-2 gap-4 mt-6 w-full">
             <Card>
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
@@ -118,7 +118,7 @@ export default async function ClaudeCodeBasicsTutorial() {
         </section>
 
         {/* Section 2: Installation & Setup */}
-        <section>
+        <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('section_2_title')}</h2>
 
           <div className="space-y-6">
@@ -198,7 +198,7 @@ src/
         </section>
 
         {/* Section 3: Practical Usage */}
-        <section>
+        <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('section_3_title')}</h2>
 
           <Alert className="mb-6">
@@ -286,7 +286,7 @@ export function Button({
         </section>
 
         {/* Section 4: Real Examples */}
-        <section>
+        <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('section_4_title')}</h2>
 
           <div className="space-y-4">
@@ -365,10 +365,10 @@ Follow Shadcn UI patterns"
         </section>
 
         {/* Section 5: Best Practices */}
-        <section>
+        <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('section_5_title')}</h2>
 
-          <div className="grid md:grid-cols-2 gap-4">
+          <div className="grid md:grid-cols-2 gap-4 w-full">
             <Card className="border-green-500/20 bg-green-500/5">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
@@ -467,7 +467,7 @@ Follow Shadcn UI patterns"
         </section>
 
         {/* Section 6: Common Pitfalls */}
-        <section>
+        <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('section_6_title')}</h2>
 
           <div className="space-y-4">
@@ -495,7 +495,7 @@ Follow Shadcn UI patterns"
         </section>
 
         {/* Quiz Section */}
-        <section>
+        <section className="w-full">
           <ClaudeCodeBasicsQuiz />
         </section>
 
@@ -508,7 +508,7 @@ Follow Shadcn UI patterns"
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
-            <div className="grid md:grid-cols-2 gap-4">
+            <div className="grid md:grid-cols-2 gap-4 w-full">
               <Link href="/tutorials/ragas-evaluation" className={cn(buttonVariants())}>
                 {t('next_ragas')}
               </Link>

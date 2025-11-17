@@ -39,7 +39,7 @@ export default async function EmbeddingsVectorSearchTutorial() {
       whatYouLearnTitle={tCommon('what_you_learn')}
       containerSize="xl"
     >
-            <section>
+            <section className="w-full">
               <h2 className="text-3xl font-bold mb-4">{t('what_are_embeddings')}</h2>
               <p className="text-lg text-muted-foreground mb-6">{t('embeddings_intro')}</p>
               <Card className="border-blue-500/20 bg-blue-500/5">
@@ -55,7 +55,7 @@ export default async function EmbeddingsVectorSearchTutorial() {
               </Alert>
             </section>
 
-            <section>
+            <section className="w-full">
               <h2 className="text-3xl font-bold mb-4">{t('similarity_metrics_title')}</h2>
               <div className="space-y-3">
                 <Card>
@@ -77,7 +77,7 @@ export default async function EmbeddingsVectorSearchTutorial() {
               </div>
             </section>
 
-            <section>
+            <section className="w-full">
               <h2 className="text-3xl font-bold mb-4">{t('vector_databases_title')}</h2>
               <p className="text-lg text-muted-foreground mb-6">{t('vector_db_intro')}</p>
               <div className="space-y-2 text-sm text-muted-foreground">
@@ -93,7 +93,7 @@ export default async function EmbeddingsVectorSearchTutorial() {
               </Alert>
             </section>
 
-            <section>
+            <section className="w-full">
               <h2 className="text-3xl font-bold mb-4">{t('applications_title')}</h2>
               <div className="space-y-3">
                 <Card>
@@ -111,12 +111,12 @@ export default async function EmbeddingsVectorSearchTutorial() {
               </div>
             </section>
 
-            <section>
+            <section className="w-full">
               <h2 className="text-3xl font-bold mb-4">{tCommon('keep_learning')}</h2>
               <EmbeddingsQuiz />
             </section>
 
-            <section>
+            <section className="w-full">
               <h2 className="text-3xl font-bold mb-4">{tCommon('next_steps')}</h2>
               <Card>
                 <CardContent className="pt-6">

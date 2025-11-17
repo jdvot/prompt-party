@@ -41,16 +41,16 @@ export default async function MLBasicsTutorial() {
       whatYouLearnTitle={tCommon('what_you_learn')}
     containerSize="xl"
     >
-        <section>
+        <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('what_is_ml')}</h2>
 
-          <div className="prose prose-neutral dark:prose-invert max-w-none mb-6">
+          <div className="prose prose-neutral dark:prose-invert max-w-none mb-6 w-full">
             <p className="text-lg">
               {t('ml_intro')}
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-4">
+          <div className="grid md:grid-cols-2 gap-4 w-full">
             <Card className="border-blue-500/20 bg-blue-500/5">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
@@ -91,10 +91,10 @@ export default async function MLBasicsTutorial() {
           </div>
         </section>
 
-        <section>
+        <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('data_title')}</h2>
 
-          <div className="prose prose-neutral dark:prose-invert max-w-none mb-6">
+          <div className="prose prose-neutral dark:prose-invert max-w-none mb-6 w-full">
             <p className="text-lg">
               {t('data_intro')}
             </p>
@@ -128,10 +128,10 @@ export default async function MLBasicsTutorial() {
           </Card>
         </section>
 
-        <section>
+        <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('training_title')}</h2>
 
-          <div className="prose prose-neutral dark:prose-invert max-w-none mb-6">
+          <div className="prose prose-neutral dark:prose-invert max-w-none mb-6 w-full">
             <p className="text-lg">
               {t('training_intro')}
             </p>
@@ -195,10 +195,10 @@ export default async function MLBasicsTutorial() {
           </Card>
         </section>
 
-        <section>
+        <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('evaluation_title')}</h2>
 
-          <div className="prose prose-neutral dark:prose-invert max-w-none mb-6">
+          <div className="prose prose-neutral dark:prose-invert max-w-none mb-6 w-full">
             <p className="text-lg">
               {t('evaluation_intro')}
             </p>
@@ -229,7 +229,7 @@ export default async function MLBasicsTutorial() {
           </Card>
         </section>
 
-        <section>
+        <section className="w-full">
           <Card className="bg-gradient-to-r from-violet-600/10 to-violet-600/10 border-violet-600/20">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
@@ -255,7 +255,7 @@ export default async function MLBasicsTutorial() {
         </section>
 
         {/* Quiz Section */}
-        <section>
+        <section className="w-full">
           <MLBasicsQuiz />
         </section>
 
@@ -267,7 +267,7 @@ export default async function MLBasicsTutorial() {
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
-            <div className="grid md:grid-cols-2 gap-4">
+            <div className="grid md:grid-cols-2 gap-4 w-full">
               <Link href="/tutorials/dl-fundamentals" className={cn(buttonVariants())}>
                 Deep Learning →
               </Link>

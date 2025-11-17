@@ -43,9 +43,9 @@ export default async function ClaudeAgentsTutorial() {
     >
 
         {/* Section 1: Introduction */}
-        <section>
+        <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('intro_title')}</h2>
-          <div className="prose prose-neutral dark:prose-invert max-w-none">
+          <div className="prose prose-neutral dark:prose-invert max-w-none w-full">
             <p>
               {t('intro_para1')}
             </p>
@@ -61,7 +61,7 @@ export default async function ClaudeAgentsTutorial() {
         </section>
 
         {/* Section 2: Tool Use Basics */}
-        <section>
+        <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('tool_use_title')}</h2>
 
           <Card className="mb-6">
@@ -109,7 +109,7 @@ export default async function ClaudeAgentsTutorial() {
         </section>
 
         {/* Section 3: Building Your First Agent */}
-        <section>
+        <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('building_title')}</h2>
 
           <Tabs defaultValue="setup" className="mb-6">
@@ -255,10 +255,10 @@ async function executeTools(content) {
         </section>
 
         {/* Section 4: Advanced Patterns */}
-        <section>
+        <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('advanced_title')}</h2>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 gap-6 w-full">
             <Card>
               <CardHeader>
                 <CardTitle className="text-lg">{t('advanced_multi_step')}</CardTitle>
@@ -304,7 +304,7 @@ async function executeTools(content) {
         </section>
 
         {/* Section 5: Best Practices */}
-        <section>
+        <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('best_practices_title')}</h2>
 
           <div className="space-y-4">
@@ -348,7 +348,7 @@ async function executeTools(content) {
         </section>
 
         {/* Section 6: Real World Example */}
-        <section>
+        <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('example_title')}</h2>
 
           <Card>
@@ -423,7 +423,7 @@ async function research(topic) {
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
-            <div className="grid md:grid-cols-2 gap-4">
+            <div className="grid md:grid-cols-2 gap-4 w-full">
               <Link href="/tutorials/multi-agent-systems" className={cn(buttonVariants({ variant: "outline" }))}>
                 <Code className="w-4 h-4 mr-2" />
                 {t('next_multi_agent')}

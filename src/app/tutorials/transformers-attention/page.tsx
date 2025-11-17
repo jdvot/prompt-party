@@ -41,9 +41,9 @@ export default async function TransformersAttentionTutorial() {
       whatYouLearnTitle={tCommon('what_you_learn')}
     containerSize="xl"
     >
-            <section>
+            <section className="w-full">
               <h2 className="text-3xl font-bold mb-4">{t('rnn_limitations_title')}</h2>
-              <div className="prose prose-neutral dark:prose-invert max-w-none mb-6">
+              <div className="prose prose-neutral dark:prose-invert max-w-none mb-6 w-full">
                 <p className="text-lg">{t('rnn_limitations_intro')}</p>
               </div>
 
@@ -75,9 +75,9 @@ export default async function TransformersAttentionTutorial() {
               </Alert>
             </section>
 
-            <section>
+            <section className="w-full">
               <h2 className="text-3xl font-bold mb-4">{t('attention_mechanism_title')}</h2>
-              <div className="prose prose-neutral dark:prose-invert max-w-none mb-6">
+              <div className="prose prose-neutral dark:prose-invert max-w-none mb-6 w-full">
                 <p className="text-lg">{t('attention_mechanism_intro')}</p>
               </div>
 
@@ -103,9 +103,9 @@ export default async function TransformersAttentionTutorial() {
               </Alert>
             </section>
 
-            <section>
+            <section className="w-full">
               <h2 className="text-3xl font-bold mb-4">{t('transformer_architecture_title')}</h2>
-              <div className="prose prose-neutral dark:prose-invert max-w-none mb-6">
+              <div className="prose prose-neutral dark:prose-invert max-w-none mb-6 w-full">
                 <p className="text-lg">{t('transformer_architecture_intro')}</p>
               </div>
 
@@ -155,9 +155,9 @@ export default async function TransformersAttentionTutorial() {
               </Alert>
             </section>
 
-            <section>
+            <section className="w-full">
               <h2 className="text-3xl font-bold mb-4">{t('model_variants_title')}</h2>
-              <div className="prose prose-neutral dark:prose-invert max-w-none mb-6">
+              <div className="prose prose-neutral dark:prose-invert max-w-none mb-6 w-full">
                 <p className="text-lg">{t('model_variants_intro')}</p>
               </div>
 
@@ -194,9 +194,9 @@ export default async function TransformersAttentionTutorial() {
               </div>
             </section>
 
-            <section>
+            <section className="w-full">
               <h2 className="text-3xl font-bold mb-4">{t('prompting_implications_title')}</h2>
-              <div className="prose prose-neutral dark:prose-invert max-w-none mb-6">
+              <div className="prose prose-neutral dark:prose-invert max-w-none mb-6 w-full">
                 <p className="text-lg">{t('prompting_implications_intro')}</p>
               </div>
 
@@ -237,7 +237,7 @@ export default async function TransformersAttentionTutorial() {
               </Alert>
             </section>
 
-            <section>
+            <section className="w-full">
               <h2 className="text-3xl font-bold mb-4">{tCommon('try_yourself')}</h2>
               <Card>
                 <CardHeader>
@@ -260,13 +260,13 @@ export default async function TransformersAttentionTutorial() {
               </Card>
             </section>
 
-            <section>
+            <section className="w-full">
               <h2 className="text-3xl font-bold mb-4">{tCommon('keep_learning')}</h2>
               <p className="text-muted-foreground mb-4">{t('quiz_intro')}</p>
               <TransformersAttentionQuiz />
             </section>
 
-            <section>
+            <section className="w-full">
               <h2 className="text-3xl font-bold mb-4">{tCommon('next_steps')}</h2>
               <Card>
                 <CardContent className="pt-6">

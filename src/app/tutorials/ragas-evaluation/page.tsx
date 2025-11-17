@@ -43,15 +43,15 @@ export default async function RagasEvaluationTutorial() {
     >
 
         {/* Section 1: Why Evaluate Prompts */}
-        <section>
+        <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('section_1_title')}</h2>
-          <div className="prose prose-neutral dark:prose-invert max-w-none">
+          <div className="prose prose-neutral dark:prose-invert max-w-none w-full">
             <p className="text-lg mb-4">
               {t('section_1_intro')}
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-4 mt-6">
+          <div className="grid md:grid-cols-2 gap-4 mt-6 w-full">
             <Card className="border-blue-500/20 bg-blue-500/5">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
@@ -118,7 +118,7 @@ export default async function RagasEvaluationTutorial() {
         </section>
 
         {/* Section 2: Ragas Metrics Deep Dive */}
-        <section>
+        <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('section_2_title')}</h2>
 
           <div className="space-y-4">
@@ -211,7 +211,7 @@ export default async function RagasEvaluationTutorial() {
         </section>
 
         {/* Section 3: Installation & Configuration */}
-        <section>
+        <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('section_3_title')}</h2>
 
           <Alert className="mb-6">
@@ -285,7 +285,7 @@ RAGAS_PRECISION_THRESHOLD=0.75`}
         </section>
 
         {/* Section 4: CLI Usage */}
-        <section>
+        <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('section_4_title')}</h2>
 
           <div className="space-y-6">
@@ -370,7 +370,7 @@ ragas report \\
         </section>
 
         {/* Section 5: Code Integration */}
-        <section>
+        <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('section_5_title')}</h2>
 
           <div className="space-y-6">
@@ -503,7 +503,7 @@ jobs:
         </section>
 
         {/* Section 6: Real-world Examples */}
-        <section>
+        <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('section_6_title')}</h2>
 
           <div className="space-y-4">
@@ -583,7 +583,7 @@ jobs:
         </section>
 
         {/* Section 7: Advanced Techniques */}
-        <section>
+        <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('section_7_title')}</h2>
 
           <div className="space-y-4">
@@ -692,7 +692,7 @@ const ragas = new Ragas({
         </section>
 
         {/* Quiz Section */}
-        <section>
+        <section className="w-full">
           <RagasEvaluationQuiz />
         </section>
 
@@ -705,7 +705,7 @@ const ragas = new Ragas({
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
-            <div className="grid md:grid-cols-2 gap-4">
+            <div className="grid md:grid-cols-2 gap-4 w-full">
               <Link href="/tutorials/claude-code-basics" className={cn(buttonVariants())}>
                 {t('next_claude_code')}
               </Link>

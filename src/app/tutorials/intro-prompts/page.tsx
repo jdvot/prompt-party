@@ -42,9 +42,9 @@ export default async function IntroPromptsTutorial() {
       containerSize="xl"
     >
         {/* Section 1: What is a Prompt? */}
-        <section>
+        <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('what_is_prompt_title')}</h2>
-          <div className="prose prose-neutral dark:prose-invert max-w-none">
+          <div className="prose prose-neutral dark:prose-invert max-w-none w-full">
             <p className="text-lg">
               {t.rich('what_is_prompt_intro', {
                 strong: (chunks) => <strong>{chunks}</strong>
@@ -52,7 +52,7 @@ export default async function IntroPromptsTutorial() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-4 mt-6">
+          <div className="grid md:grid-cols-2 gap-4 mt-6 w-full">
             <Card className="border-red-600/20 bg-red-600/5">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
@@ -92,7 +92,7 @@ export default async function IntroPromptsTutorial() {
         </section>
 
         {/* Section 2: The Anatomy of a Good Prompt */}
-        <section>
+        <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('anatomy_title')}</h2>
 
           <Card className="mb-6">
@@ -165,7 +165,7 @@ export default async function IntroPromptsTutorial() {
         </section>
 
         {/* Section 3: Common Mistakes */}
-        <section>
+        <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('mistakes_title')}</h2>
 
           <div className="space-y-4">
@@ -244,10 +244,10 @@ export default async function IntroPromptsTutorial() {
         </section>
 
         {/* Section 4: Practical Templates */}
-        <section>
+        <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('templates_title')}</h2>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 gap-6 w-full">
             <Card>
               <CardHeader>
                 <CardTitle className="text-lg">{t('template_writing_title')}</CardTitle>
@@ -303,7 +303,7 @@ export default async function IntroPromptsTutorial() {
         </section>
 
         {/* Section 5: Practice Exercise */}
-        <section>
+        <section className="w-full">
           <Card className="bg-gradient-to-r from-violet-600/10 to-violet-600/10 border-violet-600/20">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
@@ -344,7 +344,7 @@ export default async function IntroPromptsTutorial() {
         </section>
 
         {/* Quiz Section */}
-        <section>
+        <section className="w-full">
           <IntroPromptsQuiz />
         </section>
 
@@ -357,7 +357,7 @@ export default async function IntroPromptsTutorial() {
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
-            <div className="grid md:grid-cols-2 gap-4">
+            <div className="grid md:grid-cols-2 gap-4 w-full">
               <Link href="/tutorials/claude-basics" className={cn(buttonVariants())}>
                 {t('next_claude')}
               </Link>

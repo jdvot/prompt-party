@@ -41,13 +41,13 @@ export default async function NLPFundamentalsTutorial() {
       whatYouLearnTitle={tCommon('what_you_learn')}
     containerSize="xl"
     >
-            <section>
+            <section className="w-full">
               <h2 className="text-3xl font-bold mb-4">{t('what_is_nlp')}</h2>
-              <div className="prose prose-neutral dark:prose-invert max-w-none mb-6">
+              <div className="prose prose-neutral dark:prose-invert max-w-none mb-6 w-full">
                 <p className="text-lg">{t('nlp_intro')}</p>
               </div>
 
-              <div className="grid md:grid-cols-3 gap-4">
+              <div className="grid md:grid-cols-3 gap-4 w-full">
                 <Card className="border-blue-500/20 bg-blue-500/5">
                   <CardHeader>
                     <CardTitle className="text-lg">{t('nlp_history_1')}</CardTitle>
@@ -82,9 +82,9 @@ export default async function NLPFundamentalsTutorial() {
               </Alert>
             </section>
 
-            <section>
+            <section className="w-full">
               <h2 className="text-3xl font-bold mb-4">{t('tokenization_title')}</h2>
-              <div className="prose prose-neutral dark:prose-invert max-w-none mb-6">
+              <div className="prose prose-neutral dark:prose-invert max-w-none mb-6 w-full">
                 <p className="text-lg">{t('tokenization_intro')}</p>
               </div>
 
@@ -125,9 +125,9 @@ export default async function NLPFundamentalsTutorial() {
               </Alert>
             </section>
 
-            <section>
+            <section className="w-full">
               <h2 className="text-3xl font-bold mb-4">{t('text_representation_title')}</h2>
-              <div className="prose prose-neutral dark:prose-invert max-w-none mb-6">
+              <div className="prose prose-neutral dark:prose-invert max-w-none mb-6 w-full">
                 <p className="text-lg">{t('text_representation_intro')}</p>
               </div>
 
@@ -170,9 +170,9 @@ export default async function NLPFundamentalsTutorial() {
               </div>
             </section>
 
-            <section>
+            <section className="w-full">
               <h2 className="text-3xl font-bold mb-4">{t('nlp_tasks_title')}</h2>
-              <div className="prose prose-neutral dark:prose-invert max-w-none mb-6">
+              <div className="prose prose-neutral dark:prose-invert max-w-none mb-6 w-full">
                 <p className="text-lg">{t('nlp_tasks_intro')}</p>
               </div>
 
@@ -215,9 +215,9 @@ export default async function NLPFundamentalsTutorial() {
               </div>
             </section>
 
-            <section>
+            <section className="w-full">
               <h2 className="text-3xl font-bold mb-4">{t('language_models_title')}</h2>
-              <div className="prose prose-neutral dark:prose-invert max-w-none mb-6">
+              <div className="prose prose-neutral dark:prose-invert max-w-none mb-6 w-full">
                 <p className="text-lg">{t('language_models_intro')}</p>
               </div>
 
@@ -243,7 +243,7 @@ export default async function NLPFundamentalsTutorial() {
               </Alert>
             </section>
 
-            <section>
+            <section className="w-full">
               <h2 className="text-3xl font-bold mb-4">{tCommon('try_yourself')}</h2>
               <Card>
                 <CardHeader>
@@ -266,13 +266,13 @@ export default async function NLPFundamentalsTutorial() {
               </Card>
             </section>
 
-            <section>
+            <section className="w-full">
               <h2 className="text-3xl font-bold mb-4">{tCommon('keep_learning')}</h2>
               <p className="text-muted-foreground mb-4">{t('quiz_intro')}</p>
               <NLPFundamentalsQuiz />
             </section>
 
-            <section>
+            <section className="w-full">
               <h2 className="text-3xl font-bold mb-4">{tCommon('next_steps')}</h2>
               <Card>
                 <CardContent className="pt-6">

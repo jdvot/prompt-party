@@ -40,13 +40,13 @@ export default async function DataFundamentalsTutorial() {
       whatYouLearnTitle={tCommon('what_you_learn')}
     containerSize="xl"
     >
-            <section>
+            <section className="w-full">
               <h2 className="text-3xl font-bold mb-4">{t('why_data_matters')}</h2>
-              <div className="prose prose-neutral dark:prose-invert max-w-none mb-6">
+              <div className="prose prose-neutral dark:prose-invert max-w-none mb-6 w-full">
                 <p className="text-lg">{t('data_foundation')}</p>
               </div>
 
-              <div className="grid md:grid-cols-2 gap-4 mb-6">
+              <div className="grid md:grid-cols-2 gap-4 mb-6 w-full">
                 <Card className="border-red-500/20 bg-red-500/5">
                   <CardHeader>
                     <CardTitle className="text-lg flex items-center gap-2">
@@ -83,9 +83,9 @@ export default async function DataFundamentalsTutorial() {
               </Alert>
             </section>
 
-            <section>
+            <section className="w-full">
               <h2 className="text-3xl font-bold mb-4">{t('data_types_title')}</h2>
-              <div className="prose prose-neutral dark:prose-invert max-w-none mb-6">
+              <div className="prose prose-neutral dark:prose-invert max-w-none mb-6 w-full">
                 <p className="text-lg">{t('data_types_intro')}</p>
               </div>
 
@@ -143,9 +143,9 @@ export default async function DataFundamentalsTutorial() {
               </div>
             </section>
 
-            <section>
+            <section className="w-full">
               <h2 className="text-3xl font-bold mb-4">{t('preprocessing_title')}</h2>
-              <div className="prose prose-neutral dark:prose-invert max-w-none mb-6">
+              <div className="prose prose-neutral dark:prose-invert max-w-none mb-6 w-full">
                 <p className="text-lg">{t('preprocessing_intro')}</p>
               </div>
 
@@ -201,9 +201,9 @@ export default async function DataFundamentalsTutorial() {
               </Alert>
             </section>
 
-            <section>
+            <section className="w-full">
               <h2 className="text-3xl font-bold mb-4">{t('train_test_split_title')}</h2>
-              <div className="prose prose-neutral dark:prose-invert max-w-none mb-6">
+              <div className="prose prose-neutral dark:prose-invert max-w-none mb-6 w-full">
                 <p className="text-lg">{t('train_test_split_intro')}</p>
               </div>
 
@@ -229,7 +229,7 @@ export default async function DataFundamentalsTutorial() {
                 </CardContent>
               </Card>
 
-              <div className="grid md:grid-cols-2 gap-4">
+              <div className="grid md:grid-cols-2 gap-4 w-full">
                 <Card>
                   <CardHeader>
                     <CardTitle className="text-lg">{t('random_sampling_title')}</CardTitle>
@@ -250,9 +250,9 @@ export default async function DataFundamentalsTutorial() {
               </div>
             </section>
 
-            <section>
+            <section className="w-full">
               <h2 className="text-3xl font-bold mb-4">{t('data_quality_title')}</h2>
-              <div className="prose prose-neutral dark:prose-invert max-w-none mb-6">
+              <div className="prose prose-neutral dark:prose-invert max-w-none mb-6 w-full">
                 <p className="text-lg">{t('data_quality_intro')}</p>
               </div>
 
@@ -302,7 +302,7 @@ export default async function DataFundamentalsTutorial() {
               </Alert>
             </section>
 
-            <section>
+            <section className="w-full">
               <h2 className="text-3xl font-bold mb-4">{tCommon('try_yourself')}</h2>
               <Card>
                 <CardHeader>
@@ -325,13 +325,13 @@ export default async function DataFundamentalsTutorial() {
               </Card>
             </section>
 
-            <section>
+            <section className="w-full">
               <h2 className="text-3xl font-bold mb-4">{tCommon('keep_learning')}</h2>
               <p className="text-muted-foreground mb-4">{t('quiz_intro')}</p>
               <DataFundamentalsQuiz />
             </section>
 
-            <section>
+            <section className="w-full">
               <h2 className="text-3xl font-bold mb-4">{tCommon('next_steps')}</h2>
               <Card>
                 <CardContent className="pt-6">

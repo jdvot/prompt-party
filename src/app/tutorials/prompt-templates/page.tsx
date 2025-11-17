@@ -41,7 +41,7 @@ export default async function PromptTemplatesTutorial() {
     containerSize="xl"
     >
         {/* Section 2 */}
-        <section>
+        <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('template_structure')}</h2>
 
           <Card className="mb-4">
@@ -88,7 +88,7 @@ export default async function PromptTemplatesTutorial() {
         </section>
 
         {/* Section 3: Ready-to-Use Templates */}
-        <section>
+        <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('ready_to_use')}</h2>
 
           <div className="space-y-6">
@@ -299,7 +299,7 @@ Additional information:
         </section>
 
         {/* Section 4: Customizing Templates */}
-        <section>
+        <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('customizing')}</h2>
 
           <Card className="mb-4">
@@ -351,7 +351,7 @@ Additional information:
         </section>
 
         {/* Section 5: Advanced Template Techniques */}
-        <section>
+        <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('advanced_techniques')}</h2>
 
           <div className="space-y-4">
@@ -425,7 +425,7 @@ Audience: [AUDIENCE, default: general readers]`}
         </section>
 
         {/* Practice Exercise */}
-        <section>
+        <section className="w-full">
           <Card className="bg-gradient-to-r from-violet-600/10 to-violet-600/10 border-violet-600/20">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
@@ -481,7 +481,7 @@ Audience: [AUDIENCE, default: general readers]`}
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
-            <div className="grid md:grid-cols-2 gap-4">
+            <div className="grid md:grid-cols-2 gap-4 w-full">
               <Link href="/tutorials/advanced-prompting" className={cn(buttonVariants())}>
                 {t('next_advanced_prompting')}
               </Link>

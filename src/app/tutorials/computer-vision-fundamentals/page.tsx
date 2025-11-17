@@ -35,7 +35,7 @@ export default async function CVTutorial() {
       whatYouLearnTitle={tCommon('what_you_learn')}
       containerSize="xl"
     >
-            <section>
+            <section className="w-full">
               <h2 className="text-3xl font-bold mb-4">{t('images_as_data')}</h2>
               <p className="text-muted-foreground mb-4">{t('images_intro')}</p>
               <div className="space-y-2 text-sm text-muted-foreground">
@@ -45,7 +45,7 @@ export default async function CVTutorial() {
               </div>
             </section>
 
-            <section>
+            <section className="w-full">
               <h2 className="text-3xl font-bold mb-4">{t('cnn_title')}</h2>
               <p className="text-muted-foreground mb-4">{t('cnn_intro')}</p>
               <Card className="border-purple-500/20 bg-purple-500/5">
@@ -57,7 +57,7 @@ export default async function CVTutorial() {
               </Card>
             </section>
 
-            <section>
+            <section className="w-full">
               <h2 className="text-3xl font-bold mb-4">{t('cv_tasks')}</h2>
               <div className="space-y-3">
                 <Card><CardHeader><CardTitle className="text-lg">{t('classification_label')}</CardTitle></CardHeader><CardContent><p className="text-sm text-muted-foreground">{t('classification_cv')}</p></CardContent></Card>
@@ -66,7 +66,7 @@ export default async function CVTutorial() {
               </div>
             </section>
 
-            <section>
+            <section className="w-full">
               <h2 className="text-3xl font-bold mb-4">{t('transfer_learning')}</h2>
               <p className="text-muted-foreground mb-4">{t('transfer_intro')}</p>
               <div className="space-y-2 text-sm text-muted-foreground">
@@ -76,12 +76,12 @@ export default async function CVTutorial() {
               </div>
             </section>
 
-            <section>
+            <section className="w-full">
               <h2 className="text-3xl font-bold mb-4">{tCommon('keep_learning')}</h2>
               <CVQuiz />
             </section>
 
-            <section>
+            <section className="w-full">
               <h2 className="text-3xl font-bold mb-4">{tCommon('next_steps')}</h2>
               <Link href="/tutorials" className={cn(buttonVariants({ variant: "outline" }), "w-full justify-start")}>
                 <Icons.ArrowRight className="w-4 h-4 mr-2" />

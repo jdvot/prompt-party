@@ -39,10 +39,10 @@ export default async function PromptOptimizationTutorial() {
       whatYouLearnTitle={tCommon('what_you_learn')}
     containerSize="xl"
     >
-        <section>
+        <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('why_optimization')}</h2>
 
-          <div className="grid md:grid-cols-3 gap-4">
+          <div className="grid md:grid-cols-3 gap-4 w-full">
             <Card>
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
@@ -87,7 +87,7 @@ export default async function PromptOptimizationTutorial() {
           </div>
         </section>
 
-        <section>
+        <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('token_optimization')}</h2>
 
           <Card className="mb-4">
@@ -108,7 +108,7 @@ export default async function PromptOptimizationTutorial() {
             </CardContent>
           </Card>
 
-          <div className="grid md:grid-cols-2 gap-4">
+          <div className="grid md:grid-cols-2 gap-4 w-full">
             <Card className="border-red-500/20">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
@@ -193,7 +193,7 @@ export default async function PromptOptimizationTutorial() {
           </Card>
         </section>
 
-        <section>
+        <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('prompt_caching')}</h2>
 
           <Card className="mb-4">
@@ -249,7 +249,7 @@ const userQuery = "Review this component: [CODE]";
           </Card>
         </section>
 
-        <section>
+        <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('response_optimization')}</h2>
 
           <Card className="mb-4">
@@ -259,7 +259,7 @@ const userQuery = "Review this component: [CODE]";
             <CardContent className="space-y-4">
               <div>
                 <h4 className="font-semibold mb-2">{t('be_specific_length')}</h4>
-                <div className="grid md:grid-cols-2 gap-3">
+                <div className="grid md:grid-cols-2 gap-3 w-full">
                   <div>
                     <p className="text-xs text-muted-foreground mb-1">{t('vague_example')}</p>
                     <CodeBlock language="text" code="Summarize this article." />
@@ -290,7 +290,7 @@ const userQuery = "Review this component: [CODE]";
           </Card>
         </section>
 
-        <section>
+        <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('batch_processing')}</h2>
 
           <Card>
@@ -298,7 +298,7 @@ const userQuery = "Review this component: [CODE]";
               <CardTitle>{t('process_multiple')}</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="grid md:grid-cols-2 gap-4 mb-4">
+              <div className="grid md:grid-cols-2 gap-4 mb-4 w-full">
                 <div>
                   <p className="text-sm font-semibold mb-2 text-red-600">{t('inefficient_label')}</p>
                   <CodeBlock
@@ -337,7 +337,7 @@ Return as: number. translation`}
           </Card>
         </section>
 
-        <section>
+        <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('error_prevention')}</h2>
 
           <Card className="mb-4">
@@ -374,7 +374,7 @@ Good: 'Return as JSON: {analysis: string, confidence: 0-100, next_steps: string[
           </Card>
         </section>
 
-        <section>
+        <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('optimization_checklist')}</h2>
 
           <Card>
@@ -424,7 +424,7 @@ Good: 'Return as JSON: {analysis: string, confidence: 0-100, next_steps: string[
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
-            <div className="grid md:grid-cols-2 gap-4">
+            <div className="grid md:grid-cols-2 gap-4 w-full">
               <Link href="/tutorials/multi-agent-systems" className={cn(buttonVariants())}>
                 Multi-Agent Systems →
               </Link>

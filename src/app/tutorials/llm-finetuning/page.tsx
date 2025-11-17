@@ -32,7 +32,7 @@ export default async function LLMTutorial() {
       whatYouLearnTitle={tCommon('what_you_learn')}
       containerSize="xl"
     >
-            <section>
+            <section className="w-full">
               <h2 className="text-3xl font-bold mb-4">{t('when_to_finetune')}</h2>
               <p className="text-muted-foreground mb-4">{t('intro')}</p>
               <div className="space-y-2 text-sm text-muted-foreground">
@@ -42,7 +42,7 @@ export default async function LLMTutorial() {
               </div>
             </section>
 
-            <section>
+            <section className="w-full">
               <h2 className="text-3xl font-bold mb-4">{t('methods_title')}</h2>
               <Card className="border-blue-500/20 bg-blue-500/5 mb-4">
                 <CardHeader><CardTitle className="text-lg">{t('lora_title')}</CardTitle></CardHeader>
@@ -54,7 +54,7 @@ export default async function LLMTutorial() {
               </Card>
             </section>
 
-            <section>
+            <section className="w-full">
               <h2 className="text-3xl font-bold mb-4">{t('data_prep')}</h2>
               <p className="text-muted-foreground mb-4">{t('data_intro')}</p>
               <ul className="space-y-2 text-sm text-muted-foreground">
@@ -64,7 +64,7 @@ export default async function LLMTutorial() {
               </ul>
             </section>
 
-            <section>
+            <section className="w-full">
               <h2 className="text-3xl font-bold mb-4">{tCommon('keep_learning')}</h2>
               <LLMQuiz />
             </section>

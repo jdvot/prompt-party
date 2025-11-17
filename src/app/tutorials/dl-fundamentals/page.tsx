@@ -41,10 +41,10 @@ export default async function DLFundamentalsTutorial() {
       whatYouLearnTitle={tCommon('what_you_learn')}
     containerSize="xl"
     >
-        <section>
+        <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('what_is_dl')}</h2>
 
-          <div className="prose prose-neutral dark:prose-invert max-w-none mb-6">
+          <div className="prose prose-neutral dark:prose-invert max-w-none mb-6 w-full">
             <p className="text-lg">
               {t('dl_intro')}
             </p>
@@ -76,16 +76,16 @@ export default async function DLFundamentalsTutorial() {
           </Card>
         </section>
 
-        <section>
+        <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('neural_networks_title')}</h2>
 
-          <div className="prose prose-neutral dark:prose-invert max-w-none mb-6">
+          <div className="prose prose-neutral dark:prose-invert max-w-none mb-6 w-full">
             <p className="text-lg">
               {t('neural_networks_intro')}
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-4 mb-6">
+          <div className="grid md:grid-cols-3 gap-4 mb-6 w-full">
             <Card>
               <CardHeader className="pb-3">
                 <CardTitle className="text-sm">{t('input_layer')}</CardTitle>
@@ -122,10 +122,10 @@ export default async function DLFundamentalsTutorial() {
           </Alert>
         </section>
 
-        <section>
+        <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('backpropagation_title')}</h2>
 
-          <div className="prose prose-neutral dark:prose-invert max-w-none mb-6">
+          <div className="prose prose-neutral dark:prose-invert max-w-none mb-6 w-full">
             <p className="text-lg">
               {t('backpropagation_intro')}
             </p>
@@ -169,16 +169,16 @@ export default async function DLFundamentalsTutorial() {
           </Card>
         </section>
 
-        <section>
+        <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('architectures_title')}</h2>
 
-          <div className="prose prose-neutral dark:prose-invert max-w-none mb-6">
+          <div className="prose prose-neutral dark:prose-invert max-w-none mb-6 w-full">
             <p className="text-lg">
               {t('architectures_intro')}
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-4">
+          <div className="grid md:grid-cols-2 gap-4 w-full">
             <Card className="border-blue-500/20 bg-blue-500/5">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
@@ -261,7 +261,7 @@ export default async function DLFundamentalsTutorial() {
           </div>
         </section>
 
-        <section>
+        <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('training_challenges_title')}</h2>
 
           <Card className="border-orange-500/20 bg-orange-500/5 mb-4">
@@ -289,7 +289,7 @@ export default async function DLFundamentalsTutorial() {
           </Card>
         </section>
 
-        <section>
+        <section className="w-full">
           <Card className="bg-gradient-to-r from-violet-600/10 to-violet-600/10 border-violet-600/20">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
@@ -315,7 +315,7 @@ export default async function DLFundamentalsTutorial() {
         </section>
 
         {/* Quiz Section */}
-        <section>
+        <section className="w-full">
           <DLFundamentalsQuiz />
         </section>
 
@@ -327,7 +327,7 @@ export default async function DLFundamentalsTutorial() {
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
-            <div className="grid md:grid-cols-2 gap-4">
+            <div className="grid md:grid-cols-2 gap-4 w-full">
               <Link href="/tutorials/ml-basics" className={cn(buttonVariants({ variant: "outline" }))}>
                 ML Basics ←
               </Link>

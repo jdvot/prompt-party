@@ -40,7 +40,7 @@ export default async function CodeGenerationTutorial() {
       whatYouLearnTitle={tCommon('what_you_learn')}
     containerSize="xl"
     >
-        <section>
+        <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('generating_code')}</h2>
 
           <Card className="mb-4">
@@ -120,7 +120,7 @@ No external libraries.`}
           </Tabs>
         </section>
 
-        <section>
+        <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('code_review_title')}</h2>
 
           <Card className="mb-4">
@@ -230,7 +230,7 @@ Suggest improvements aligned with React best practices.`}
           </Card>
         </section>
 
-        <section>
+        <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('debugging_title')}</h2>
 
           <Card className="mb-4">
@@ -282,10 +282,10 @@ Please:
           </Alert>
         </section>
 
-        <section>
+        <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('test_generation')}</h2>
 
-          <div className="grid md:grid-cols-2 gap-4 mb-4">
+          <div className="grid md:grid-cols-2 gap-4 mb-4 w-full">
             <Card>
               <CardHeader>
                 <CardTitle className="text-lg">{t('unit_tests')}</CardTitle>
@@ -373,7 +373,7 @@ Mock the database calls.`}
           </Card>
         </section>
 
-        <section>
+        <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('documentation_generation')}</h2>
 
           <Card>
@@ -446,7 +446,7 @@ Generate OpenAPI/Swagger spec including:
           </Card>
         </section>
 
-        <section>
+        <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('code_refactoring')}</h2>
 
           <Card className="mb-4">
@@ -479,7 +479,7 @@ Provide:
             </CardContent>
           </Card>
 
-          <div className="grid md:grid-cols-2 gap-4">
+          <div className="grid md:grid-cols-2 gap-4 w-full">
             <Card>
               <CardHeader>
                 <CardTitle className="text-lg">{t('common_refactorings')}</CardTitle>
@@ -517,7 +517,7 @@ Show before/after examples.`}
           </div>
         </section>
 
-        <section>
+        <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('code_translation')}</h2>
 
           <Card>
@@ -552,10 +552,10 @@ Explain significant differences in approach between the languages.`}
           </Card>
         </section>
 
-        <section>
+        <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('best_practices')}</h2>
 
-          <div className="grid md:grid-cols-2 gap-4">
+          <div className="grid md:grid-cols-2 gap-4 w-full">
             <Card className="border-green-500/20">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
@@ -599,7 +599,7 @@ Explain significant differences in approach between the languages.`}
           </div>
         </section>
 
-        <section>
+        <section className="w-full">
           <Card className="bg-gradient-to-r from-violet-600/10 to-violet-600/10 border-violet-600/20">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
@@ -636,7 +636,7 @@ Explain significant differences in approach between the languages.`}
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
-            <div className="grid md:grid-cols-2 gap-4">
+            <div className="grid md:grid-cols-2 gap-4 w-full">
               <Link href="/tutorials/multi-agent-systems" className={cn(buttonVariants())}>
                 Multi-Agent Systems →
               </Link>

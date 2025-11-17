@@ -93,7 +93,7 @@ export function TutorialLayout({
   const finalRewardPoints = rewardPoints || levelRewardPoints[level]
 
   return (
-    <Container size={containerSize} className="py-8 overflow-x-hidden">
+    <Container size={containerSize} className="py-8">
       {/* Back Button */}
       <Link href="/tutorials" className={cn(buttonVariants({ variant: 'ghost' }), 'mb-6')}>
         <Icons.ArrowLeft className="w-4 h-4 mr-2" />
@@ -101,8 +101,8 @@ export function TutorialLayout({
       </Link>
 
       {/* Two-column layout */}
-      <div className="grid lg:grid-cols-[1fr_300px] gap-8 w-full min-w-0 overflow-x-hidden">
-        <div className="min-w-0">
+      <div className="grid lg:grid-cols-[1fr_300px] gap-8 w-full">
+        <div className="w-full">
           {/* Header */}
           <div className="mb-8">
             <div className="flex items-center gap-3 mb-4">
@@ -136,7 +136,7 @@ export function TutorialLayout({
           )}
 
           {/* Main Content */}
-          <div className="space-y-8 w-full overflow-x-hidden">{children}</div>
+          <div className="space-y-8 w-full">{children}</div>
         </div>
 
         {/* Sidebar - Progress Tracker */}

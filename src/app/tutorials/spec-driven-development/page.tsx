@@ -42,7 +42,7 @@ export default async function SpecDrivenDevelopmentTutorial() {
     containerSize="xl"
     >
         {/* Section 2: The Spec Driven Workflow */}
-        <section>
+        <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('section_2_title')}</h2>
           <p className="text-lg text-muted-foreground mb-6">{t('section_2_intro')}</p>
 
@@ -119,7 +119,7 @@ export default async function SpecDrivenDevelopmentTutorial() {
         </section>
 
         {/* Section 3: Writing Effective Specifications */}
-        <section>
+        <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('section_3_title')}</h2>
 
           <Alert className="mb-6">
@@ -169,7 +169,7 @@ requiring at least 8 characters including 1 uppercase letter.
         </section>
 
         {/* Section 4: GitHub Integration */}
-        <section>
+        <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('section_4_title')}</h2>
 
           <div className="space-y-4">
@@ -230,10 +230,10 @@ Fixes #123 (link to spec issue)
         </section>
 
         {/* Section 5: Best Practices */}
-        <section>
+        <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('section_5_title')}</h2>
 
-          <div className="grid md:grid-cols-2 gap-4">
+          <div className="grid md:grid-cols-2 gap-4 w-full">
             <Card className="border-green-500/20 bg-green-500/5">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
@@ -287,7 +287,7 @@ Fixes #123 (link to spec issue)
         </section>
 
         {/* Section 6: Common Pitfalls */}
-        <section>
+        <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('section_6_title')}</h2>
 
           <div className="space-y-4">
@@ -315,7 +315,7 @@ Fixes #123 (link to spec issue)
         </section>
 
         {/* Section 7: Real-world Example */}
-        <section>
+        <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('section_7_title')}</h2>
 
           <Card>
@@ -359,7 +359,7 @@ Allow users to mark prompts as favorites and organize them in custom collections
         </section>
 
         {/* Section 8: Team Alignment */}
-        <section>
+        <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('section_8_title')}</h2>
 
           <div className="space-y-4">
@@ -393,7 +393,7 @@ Allow users to mark prompts as favorites and organize them in custom collections
         </section>
 
         {/* Quiz Section */}
-        <section>
+        <section className="w-full">
           <SpecDrivenDevelopmentQuiz />
         </section>
 
@@ -406,7 +406,7 @@ Allow users to mark prompts as favorites and organize them in custom collections
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
-            <div className="grid md:grid-cols-2 gap-4">
+            <div className="grid md:grid-cols-2 gap-4 w-full">
               <Link href="/tutorials/claude-code-basics" className={cn(buttonVariants())}>
                 {t('next_claude_code')}
               </Link>
