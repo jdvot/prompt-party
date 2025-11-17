@@ -3015,7 +3015,8 @@
       "browse_templates": "Parcourir les Modèles de Prompts",
       "share_with_team": "Partager avec l'Équipe",
       "join_challenge": "Rejoindre les Défis",
-      "what_you_learn": "Ce Que Vous Apprendrez"
+      "what_you_learn": "Ce Que Vous Apprendrez",
+      "reward_badge": "Template Master"
     },
     "claudeAgents": {
       "page_title": "Agents Claude | Construire des Agents IA Autonomes",
@@ -3160,7 +3161,8 @@
       "checklist_4": "Suis-je en train de traiter des demandes similaires par lot?",
       "checklist_5": "Pourrais-je utiliser la mise en cache pour le contenu statique?",
       "checklist_6": "Ai-je testé les cas limites?",
-      "checklist_7": "La longueur de la réponse est-elle contrôlée et spécifique?"
+      "checklist_7": "La longueur de la réponse est-elle contrôlée et spécifique?",
+      "reward_badge": "Prompt Optimization Expert"
     },
     "code_generation": {
       "page_title": "Génération de Code avec l'IA | Maîtrisez l'Ingénierie des Prompts pour le Codage",
@@ -3243,7 +3245,8 @@
       "continue_2": "Créez vos propres prompts et partagez-les avec la communauté dans",
       "continue_2_link": "Prompt Party",
       "continue_3": "Testez vos nouvelles compétences avec des défis du monde réel dans notre",
-      "continue_3_link": "section Défis"
+      "continue_3_link": "section Défis",
+      "reward_badge": "Code Generation Expert"
     },
     "advanced_prompting": {
       "page_title": "Techniques Avancées de Prompting | Tutoriels | Prompt Party",
@@ -3307,7 +3310,8 @@
       "practice_intro": "Combinez au moins 3 techniques de ce tutoriel pour créer un prompt pour:",
       "practice_task_label": "Tâche:",
       "practice_task": "Créer une description de produit pour un nouveau smartphone qui plaît à la fois aux passionnés de technologie et aux utilisateurs occasionnels.",
-      "practice_hint": "Astuce: Essayez de combiner prompting basé sur les rôles + exemples few-shot + contraintes!"
+      "practice_hint": "Astuce: Essayez de combiner prompting basé sur les rôles + exemples few-shot + contraintes!",
+      "reward_badge": "Advanced Prompting Master"
     },
     "ml_basics": {
       "page_title": "Bases du Machine Learning | Comprendre les fondamentaux du ML",
@@ -3373,7 +3377,8 @@
       "practice_intro": "Testez vos connaissances :",
       "practice_task_label": "Défi :",
       "practice_task": "Analysez un ensemble de données de prix immobiliers avec des fonctionnalités comme la taille, la localisation et l'âge. Quelles étapes de prétraitement feriez-vous ? Comment diviseriez-vous les données ? Quelle métrique utiliseriez-vous ?",
-      "practice_hint": "Indice : Pensez à la mise à l'échelle des fonctionnalités, à la gestion des valeurs manquantes et aux ratios appropriés d'entraînement/test."
+      "practice_hint": "Indice : Pensez à la mise à l'échelle des fonctionnalités, à la gestion des valeurs manquantes et aux ratios appropriés d'entraînement/test.",
+      "reward_badge": "ML Fundamentals Master"
     },
     "dl_fundamentals": {
       "page_title": "Fondamentaux du Deep Learning | Maîtriser les réseaux de neurones",
@@ -3446,7 +3451,8 @@
       "practice_intro": "Testez votre compréhension :",
       "practice_task_label": "Défi :",
       "practice_task": "Vous avez un ensemble de données de 10 000 images de chiffres manuscrits. Quelle architecture choisiriez-vous ? Pourquoi ? Comment géreriez-vous le problème du gradient qui s'évanouit avec des réseaux profonds ?",
-      "practice_hint": "Indice : Considérez pourquoi les CNNs sont excellents pour les images, et réfléchissez aux techniques modernes comme la normalisation par batch et les connexions de saut."
+      "practice_hint": "Indice : Considérez pourquoi les CNNs sont excellents pour les images, et réfléchissez aux techniques modernes comme la normalisation par batch et les connexions de saut.",
+      "reward_badge": "Deep Learning Master"
     },
     "data_fundamentals": {
       "page_title": "Fondamentaux des Données pour l'IA | Comprendre la Qualité des Données",
@@ -3531,7 +3537,8 @@
       "exercise_3_title": "Défi 3 : Détection de Biais",
       "exercise_3_desc": "Examinez un échantillon d'ensemble de données pour identifier les sources potentielles de biais. Quels groupes pourraient être sous-représentés ? Comment aborderiez-vous ces problèmes ?",
       "quiz_intro": "Testez votre compréhension des fondamentaux des données avec notre quiz interactif :",
-      "next_steps_desc": "Prêt à en apprendre plus ? Continuez votre parcours d'apprentissage avec ces tutoriels connexes :"
+      "next_steps_desc": "Prêt à en apprendre plus ? Continuez votre parcours d'apprentissage avec ces tutoriels connexes :",
+      "reward_badge": "Data Fundamentals Master"
     },
     "nlp_fundamentals": {
       "page_title": "Fondamentaux du Traitement du Langage Naturel | Maîtriser le NLP",
@@ -3596,7 +3603,8 @@
       "exercise_3_title": "Exercice 3 : Tâche NER",
       "exercise_3_desc": "Créez un prompt pour extraire des informations structurées (noms, dates, lieux) d'un texte non structuré.",
       "quiz_intro": "Testez vos connaissances en NLP avec notre quiz interactif :",
-      "next_steps_desc": "Prêt à approfondir ? Continuez avec Transformers et Attention pour comprendre les architectures NLP modernes."
+      "next_steps_desc": "Prêt à approfondir ? Continuez avec Transformers et Attention pour comprendre les architectures NLP modernes.",
+      "reward_badge": "NLP Fundamentals Master"
     },
     "transformers_attention": {
       "page_title": "Transformers et Mécanismes d'Attention | Architectures IA Modernes",
@@ -3663,7 +3671,8 @@
       "exercise_3_title": "Défi 3 : Expérience de Positionnement de Prompt",
       "exercise_3_desc": "Testez le même prompt avec des instructions critiques au début vs. milieu vs. fin. Documentez les différences de performance.",
       "quiz_intro": "Testez votre compréhension des transformers et de l'attention :",
-      "next_steps_desc": "Prêt pour les applications pratiques ? Apprenez les Embeddings et la Recherche Vectorielle pour voir comment la compréhension sémantique alimente les systèmes RAG."
+      "next_steps_desc": "Prêt pour les applications pratiques ? Apprenez les Embeddings et la Recherche Vectorielle pour voir comment la compréhension sémantique alimente les systèmes RAG.",
+      "reward_badge": "Transformer Master"
     },
     "embeddings_vector_search": {
       "page_title": "Embeddings et Recherche Vectorielle | IA Sémantique",
@@ -3698,7 +3707,8 @@
       "recommendations_desc": "Trouver des éléments similaires dans l'espace d'embeddings. Amazon l'utilise pour montrer 'les clients qui ont vu X ont aussi vu Y'.",
       "clustering_title": "Clustering et Catégorisation",
       "clustering_desc": "Grouper des éléments similaires par proximité dans l'espace d'embeddings. Utile pour organiser le contenu, détection de sujets et détection de communautés.",
-      "next_steps_desc": "Appliquez les embeddings aux systèmes RAG ! Apprenez comment combiner les embeddings avec les LLMs pour l'IA augmentée par la connaissance."
+      "next_steps_desc": "Appliquez les embeddings aux systèmes RAG ! Apprenez comment combiner les embeddings avec les LLMs pour l'IA augmentée par la connaissance.",
+      "reward_badge": "Embeddings Expert"
     },
     "computer_vision_fundamentals": {
       "page_title": "Fondamentaux de la Vision par Ordinateur | Vision Machine",
@@ -3736,7 +3746,8 @@
       "tl_benefit_1": "Pré-entraînés sur ImageNet (14M d'images, 1000 classes) capturent des caractéristiques généralisables",
       "tl_benefit_2": "Fine-tuning sur de petits ensembles de données cibles (100-1000 images) pour de fortes performances",
       "tl_benefit_3": "Modèles populaires : ResNet, EfficientNet, Vision Transformer (ViT)",
-      "next_steps_desc": "La vision par ordinateur se combine avec le langage dans les modèles multimodaux. Apprenez les capacités de vision de Claude pour des applications pratiques !"
+      "next_steps_desc": "La vision par ordinateur se combine avec le langage dans les modèles multimodaux. Apprenez les capacités de vision de Claude pour des applications pratiques !",
+      "reward_badge": "Computer Vision Master"
     },
     "ai_ethics_responsible": {
       "page_title": "AI Ethics and Responsible AI | Fair and Safe AI ",
@@ -3769,7 +3780,8 @@
       "transparency_point_1": "Model cards: document architecture, training data, performance metrics, known limitations, intended use ",
       "transparency_point_2": "Interpretability: SHAP/LIME for explaining individual predictions; attention visualization for transformers ",
       "transparency_point_3": "User communication: explain capabilities and limitations clearly; don't mislead about AI capabilities ",
-      "next_steps_desc": "Ethics applies to all tutorials! Every AI system should consider bias, fairness, and responsible deployment. This is ongoing—stay informed as the field evolves. "
+      "next_steps_desc": "Ethics applies to all tutorials! Every AI system should consider bias, fairness, and responsible deployment. This is ongoing—stay informed as the field evolves. ",
+      "reward_badge": "Ethics & AI Master"
     },
     "llm_finetuning": {
       "page_title": "Fine-Tuning Large Language Models | Customization ",
@@ -3797,7 +3809,8 @@
       "data_point_1": "Quality > Quantity: 1,000 hand-crafted examples > 100,000 noisy examples ",
       "data_point_2": "Format matters: Instruction-Input-Output structure; clear separation between components ",
       "data_point_3": "Diversity: Cover task variations; include edge cases; represent different use patterns ",
-      "next_steps_desc": "Ready to make models remember? Learn about RAG as an alternative (or complementary) approach to keep knowledge dynamic. "
+      "next_steps_desc": "Ready to make models remember? Learn about RAG as an alternative (or complementary) approach to keep knowledge dynamic. ",
+      "reward_badge": "Fine-tuning Master"
     },
     "multi_agent_systems": {
       "page_title": "Multi-Agent Systems | Tutorials | Prompt Party ",
@@ -3879,7 +3892,8 @@
       "agent_4_desc": "Reviews and improves the draft ",
       "agent_5": "SEO Agent: ",
       "agent_5_desc": "Optimizes for search engines ",
-      "result_message": "Result: High-quality content in 1-2 minutes that would take a human 2-3 hours! "
+      "result_message": "Result: High-quality content in 1-2 minutes that would take a human 2-3 hours! ",
+      "reward_badge": "Multi-Agent Expert"
     },
     "rag_systems": {
       "page_title": "Retrieval-Augmented Generation | Dynamic Knowledge AI ",
@@ -3914,7 +3928,8 @@
       "sparse_desc": "Keyword-based (BM25, TF-IDF). Exact lexical matching. Best for named entities, codes, specific terms. ",
       "hybrid_retrieval": "Hybrid Retrieval ",
       "hybrid_desc": "Combine dense and sparse using reciprocal rank fusion. Gets both semantics and keywords. Best of both worlds. ",
-      "next_steps_desc": "RAG + Fine-Tuning aren't mutually exclusive! Many systems use both for maximum power. Learn about RAG + fine-tuned models for best results. "
+      "next_steps_desc": "RAG + Fine-Tuning aren't mutually exclusive! Many systems use both for maximum power. Learn about RAG + fine-tuned models for best results. ",
+      "reward_badge": "RAG Systems Expert"
     }
   },
   "ui": {

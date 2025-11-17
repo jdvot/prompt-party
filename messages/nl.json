@@ -3015,7 +3015,8 @@
       "browse_templates": "Browse Promptsjablonen",
       "share_with_team": "Delen met Team",
       "join_challenge": "Deelnemen aan Uitdagingen",
-      "what_you_learn": "Wat U Leert"
+      "what_you_learn": "Wat U Leert",
+      "reward_badge": "Template Master"
     },
     "claudeAgents": {
       "page_title": "Claude Agents | Bouw Autonome AI-Agenten",
@@ -3160,7 +3161,8 @@
       "checklist_4": "Batch ik soortgelijke verzoeken?",
       "checklist_5": "Kan ik caching gebruiken voor statische inhoud?",
       "checklist_6": "Heb ik randgevallen getest?",
-      "checklist_7": "Is de reactielengte beheerst en specifiek?"
+      "checklist_7": "Is de reactielengte beheerst en specifiek?",
+      "reward_badge": "Prompt Optimization Expert"
     },
     "code_generation": {
       "page_title": "Code Generatie met AI | Beheers Prompt Engineering voor Coderen",
@@ -3243,7 +3245,8 @@
       "continue_2": "Creëer je eigen prompts en deel ze met de community in",
       "continue_2_link": "Prompt Party",
       "continue_3": "Test je nieuwe vaardigheden met real-world challenges in onze",
-      "continue_3_link": "Challenges sectie"
+      "continue_3_link": "Challenges sectie",
+      "reward_badge": "Code Generation Expert"
     },
     "advanced_prompting": {
       "page_title": "Geavanceerde Prompting Technieken | Tutorials | Prompt Party",
@@ -3307,7 +3310,8 @@
       "practice_intro": "Combineer minstens 3 technieken uit deze tutorial om een prompt te maken voor:",
       "practice_task_label": "Taak:",
       "practice_task": "Maak een productbeschrijving voor een nieuwe smartphone die zowel tech-enthousiastelingen als gewone gebruikers aanspreekt.",
-      "practice_hint": "Hint: Probeer rol-gebaseerde prompting + few-shot voorbeelden + beperkingen te combineren!"
+      "practice_hint": "Hint: Probeer rol-gebaseerde prompting + few-shot voorbeelden + beperkingen te combineren!",
+      "reward_badge": "Advanced Prompting Master"
     },
     "ml_basics": {
       "page_title": "Machine Learning Basisprincipes | Begrijp ML Fundamenten",
@@ -3373,7 +3377,8 @@
       "practice_intro": "Test uw kennis:",
       "practice_task_label": "Uitdaging:",
       "practice_task": "Analyseer een dataset met huizenprijzen met functies zoals grootte, locatie en leeftijd. Welke voorbewerkingsstappen zou u nemen? Hoe zou u de gegevens verdelen? Welke metriek zou u gebruiken?",
-      "practice_hint": "Hint: Denk aan schaling van functies, omgang met ontbrekende waarden en passende train/test-verhoudingen."
+      "practice_hint": "Hint: Denk aan schaling van functies, omgang met ontbrekende waarden en passende train/test-verhoudingen.",
+      "reward_badge": "ML Fundamentals Master"
     },
     "dl_fundamentals": {
       "page_title": "Deep Learning Fundamenten | Neurale Netwerken Beheersen",
@@ -3446,7 +3451,8 @@
       "practice_intro": "Test uw begrip:",
       "practice_task_label": "Uitdaging:",
       "practice_task": "U hebt een dataset van 10.000 afbeeldingen van handgeschreven cijfers. Welke architectuur zou u kiezen? Waarom? Hoe zou u het verdwijnende gradiëntprobleem bij diepe netwerken aanpakken?",
-      "practice_hint": "Hint: Overweeg waarom CNNs geweldig zijn voor afbeeldingen en denk na over moderne technieken zoals batchnormalisatie en overslaan-verbindingen."
+      "practice_hint": "Hint: Overweeg waarom CNNs geweldig zijn voor afbeeldingen en denk na over moderne technieken zoals batchnormalisatie en overslaan-verbindingen.",
+      "reward_badge": "Deep Learning Master"
     },
     "data_fundamentals": {
       "page_title": "Data Fundamenten voor AI | Begrijp Gegevenscwaliteit",
@@ -3531,7 +3537,8 @@
       "exercise_3_title": "Uitdaging 3: Bias Detectie",
       "exercise_3_desc": "Onderzoek een datasetmonster om mogelijke bias-bronnen te identificeren. Welke groepen zouden ondervertegenwoordigd kunnen zijn? Hoe zou u deze problemen aanpakken?",
       "quiz_intro": "Test uw begrip van gegevensfundamenten met onze interactieve quiz:",
-      "next_steps_desc": "Klaar om meer te leren? Ga verder met uw leertraject met deze gerelateerde tutorials:"
+      "next_steps_desc": "Klaar om meer te leren? Ga verder met uw leertraject met deze gerelateerde tutorials:",
+      "reward_badge": "Data Fundamentals Master"
     },
     "nlp_fundamentals": {
       "page_title": "Fundamenten van Natuurlijke Taalverwerking | Beheers NLP",
@@ -3596,7 +3603,8 @@
       "exercise_3_title": "Oefening 3: NER-Taak",
       "exercise_3_desc": "Creëer een prompt om gestructureerde informatie (namen, data, plaatsen) uit ongestructureerde tekst te extraheren.",
       "quiz_intro": "Test uw NLP-kennis met onze interactieve quiz:",
-      "next_steps_desc": "Klaar om dieper te gaan? Ga verder met Transformers en Attention om moderne NLP-architecturen te begrijpen."
+      "next_steps_desc": "Klaar om dieper te gaan? Ga verder met Transformers en Attention om moderne NLP-architecturen te begrijpen.",
+      "reward_badge": "NLP Fundamentals Master"
     },
     "transformers_attention": {
       "page_title": "Transformers en Aandachtsmechanismen | Moderne AI-Architecturen",
@@ -3663,7 +3671,8 @@
       "exercise_3_title": "Uitdaging 3: Prompt-Positie-Experiment",
       "exercise_3_desc": "Test dezelfde prompt met kritieke instructies aan het begin vs midden vs einde. Documenteer prestatie-verschillen.",
       "quiz_intro": "Test uw transformers- en aandachtsbegrip:",
-      "next_steps_desc": "Klaar voor praktische toepassingen? Leer Embeddings en Vectorzoeken om te zien hoe semantisch begrip RAG-systemen voeding geeft."
+      "next_steps_desc": "Klaar voor praktische toepassingen? Leer Embeddings en Vectorzoeken om te zien hoe semantisch begrip RAG-systemen voeding geeft.",
+      "reward_badge": "Transformer Master"
     },
     "embeddings_vector_search": {
       "page_title": "Embeddings en Vectorzoeken | Semantische AI",
@@ -3698,7 +3707,8 @@
       "recommendations_desc": "Vind gelijkaardige items in embedding-ruimte. Amazon gebruikt dit voor 'klanten die X zagen hebben ook Y gezien'.",
       "clustering_title": "Clustering en Categorisatie",
       "clustering_desc": "Groepeer gelijkaardige items door nabijheid in embedding-ruimte. Nuttig voor inhoudsorganisatie, onderwerpdetectie en gemeenschapsdetectie.",
-      "next_steps_desc": "Pas embeddings toe op RAG-systemen! Leer hoe embeddings met LLMs combineren voor kennisgeaugmenteerde AI."
+      "next_steps_desc": "Pas embeddings toe op RAG-systemen! Leer hoe embeddings met LLMs combineren voor kennisgeaugmenteerde AI.",
+      "reward_badge": "Embeddings Expert"
     },
     "computer_vision_fundamentals": {
       "page_title": "Computervision Fundamenten | Machine Vision",
@@ -3736,7 +3746,8 @@
       "tl_benefit_1": "Voorgetraind op ImageNet (14M afbeeldingen, 1000 klassen) vangt generaliseerbare kenmerken",
       "tl_benefit_2": "Fine-tuning op kleine doeldatasets (100-1000 afbeeldingen) voor sterke prestaties",
       "tl_benefit_3": "Populaire modellen: ResNet, EfficientNet, Vision Transformer (ViT)",
-      "next_steps_desc": "Computervision combineert met taal in multimodale modellen. Leer Claudes vision-capaciteiten voor praktische toepassingen!"
+      "next_steps_desc": "Computervision combineert met taal in multimodale modellen. Leer Claudes vision-capaciteiten voor praktische toepassingen!",
+      "reward_badge": "Computer Vision Master"
     },
     "ai_ethics_responsible": {
       "page_title": "AI Ethics and Responsible AI | Fair and Safe AI ",
@@ -3769,7 +3780,8 @@
       "transparency_point_1": "Model cards: document architecture, training data, performance metrics, known limitations, intended use ",
       "transparency_point_2": "Interpretability: SHAP/LIME for explaining individual predictions; attention visualization for transformers ",
       "transparency_point_3": "User communication: explain capabilities and limitations clearly; don't mislead about AI capabilities ",
-      "next_steps_desc": "Ethics applies to all tutorials! Every AI system should consider bias, fairness, and responsible deployment. This is ongoing—stay informed as the field evolves. "
+      "next_steps_desc": "Ethics applies to all tutorials! Every AI system should consider bias, fairness, and responsible deployment. This is ongoing—stay informed as the field evolves. ",
+      "reward_badge": "Ethics & AI Master"
     },
     "llm_finetuning": {
       "page_title": "Fine-Tuning Large Language Models | Customization ",
@@ -3797,7 +3809,8 @@
       "data_point_1": "Quality > Quantity: 1,000 hand-crafted examples > 100,000 noisy examples ",
       "data_point_2": "Format matters: Instruction-Input-Output structure; clear separation between components ",
       "data_point_3": "Diversity: Cover task variations; include edge cases; represent different use patterns ",
-      "next_steps_desc": "Ready to make models remember? Learn about RAG as an alternative (or complementary) approach to keep knowledge dynamic. "
+      "next_steps_desc": "Ready to make models remember? Learn about RAG as an alternative (or complementary) approach to keep knowledge dynamic. ",
+      "reward_badge": "Fine-tuning Master"
     },
     "multi_agent_systems": {
       "page_title": "Multi-Agent Systems | Tutorials | Prompt Party ",
@@ -3879,7 +3892,8 @@
       "agent_4_desc": "Reviews and improves the draft ",
       "agent_5": "SEO Agent: ",
       "agent_5_desc": "Optimizes for search engines ",
-      "result_message": "Result: High-quality content in 1-2 minutes that would take a human 2-3 hours! "
+      "result_message": "Result: High-quality content in 1-2 minutes that would take a human 2-3 hours! ",
+      "reward_badge": "Multi-Agent Expert"
     },
     "rag_systems": {
       "page_title": "Retrieval-Augmented Generation | Dynamic Knowledge AI ",
@@ -3914,7 +3928,8 @@
       "sparse_desc": "Keyword-based (BM25, TF-IDF). Exact lexical matching. Best for named entities, codes, specific terms. ",
       "hybrid_retrieval": "Hybrid Retrieval ",
       "hybrid_desc": "Combine dense and sparse using reciprocal rank fusion. Gets both semantics and keywords. Best of both worlds. ",
-      "next_steps_desc": "RAG + Fine-Tuning aren't mutually exclusive! Many systems use both for maximum power. Learn about RAG + fine-tuned models for best results. "
+      "next_steps_desc": "RAG + Fine-Tuning aren't mutually exclusive! Many systems use both for maximum power. Learn about RAG + fine-tuned models for best results. ",
+      "reward_badge": "RAG Systems Expert"
     }
   },
   "ui": {
