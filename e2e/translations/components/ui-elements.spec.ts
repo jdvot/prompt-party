@@ -211,7 +211,7 @@ test.describe('UI Elements - Translations', () => {
   test.describe('Icons with Text', () => {
     test('should have aria-labels for icon-only buttons', async ({ page }) => {
       await page.goto('/')
-      await page.waitForLoadStyle()
+      await page.waitForLoadState()
 
       // Look for icon-only buttons
       const iconButtons = page.locator('button:has(svg, [class*="icon"])').all()

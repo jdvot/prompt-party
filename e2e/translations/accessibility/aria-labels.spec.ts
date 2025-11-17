@@ -250,7 +250,7 @@ test.describe('Accessibility - ARIA Labels & Screen Readers', () => {
   test.describe('Image Alt Text', () => {
     test('should have alt text for decorative vs meaningful images', async ({ page }) => {
       await page.goto('/')
-      await page.waitForLoadStyle()
+      await page.waitForLoadState()
 
       const images = page.locator('img').all()
       const imageList = await images
@@ -298,7 +298,7 @@ test.describe('Accessibility - ARIA Labels & Screen Readers', () => {
   test.describe('Color Contrast', () => {
     test('should have sufficient color contrast for readability', async ({ page }) => {
       await page.goto('/')
-      await page.waitForLoadStyle()
+      await page.waitForLoadState()
 
       // This is a simplified check - real contrast testing needs more sophisticated analysis
       const bodyElements = page.locator('body').first()

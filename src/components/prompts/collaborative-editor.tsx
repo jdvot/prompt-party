@@ -180,7 +180,7 @@ export function CollaborativeEditor({
     return () => {
       channel.unsubscribe()
     }
-  }, [promptId, currentUserId, currentUserName, userColor, supabase, toast])
+  }, [promptId, currentUserId, currentUserName, userColor, supabase, toast, t])
 
   const handleTitleChange = useCallback(
     (newTitle: string) => {
