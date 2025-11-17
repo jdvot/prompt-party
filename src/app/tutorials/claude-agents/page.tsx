@@ -4,6 +4,7 @@ import { buttonVariants } from '@/components/ui/button'
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { CodeBlock } from '@/components/tutorials/code-block'
+import { TutorialProgress } from '@/components/tutorials/tutorial-progress'
 import { Container } from '@/components/layout/container'
 import { Sparkles, Lightbulb, Code, CheckCircle, ArrowLeft } from 'lucide-react'
 import Link from 'next/link'
@@ -22,7 +23,9 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function ClaudeAgentsTutorial() {
   const t = await getTranslations('tutorials.claudeAgents')
   return (
-    <Container size="lg" className="py-8 overflow-hidden">
+    <Container size="lg" className="py-8">
+      <div className="grid lg:grid-cols-[1fr_300px] gap-8 w-full overflow-hidden">
+        <div>
       {/* Back Button */}
       <Link href="/tutorials" className={cn(buttonVariants({ variant: "ghost" }), "mb-6")}>
         <ArrowLeft className="w-4 h-4 mr-2" />
@@ -473,7 +476,22 @@ async function research(topic) {
             </div>
           </CardContent>
         </Card>
+        </div>
       </div>
+
+      {/* Sidebar - Progress Tracker */}
+      <aside className="hidden lg:block">
+        <TutorialProgress
+          tutorialId="claude-agents"
+          title={t('title')}
+          duration={t('duration')}
+          level="intermediate"
+          rewardPoints={75}
+          rewardBadge={t('reward_badge') || 'Agent Master'}
+          completed={false}
+        />
+      </aside>
+    </div>
     </Container>
   )
 }

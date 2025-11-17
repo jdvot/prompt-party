@@ -3,6 +3,7 @@ import { Badge } from '@/components/ui/badge'
 import { buttonVariants } from '@/components/ui/button'
 import { Alert, AlertDescription } from '@/components/ui/alert'
 import { CodeBlock } from '@/components/tutorials/code-block'
+import { TutorialProgress } from '@/components/tutorials/tutorial-progress'
 import { Container } from '@/components/layout/container'
 import * as Icons from 'lucide-react'
 import Link from 'next/link'
@@ -22,7 +23,9 @@ export default async function MultiAgentSystemsTutorial() {
   const t = await getTranslations('tutorials.multi_agent_systems')
   const tCommon = await getTranslations('tutorials')
   return (
-    <Container size="lg" className="py-8 overflow-hidden">
+    <Container size="lg" className="py-8">
+      <div className="grid lg:grid-cols-[1fr_300px] gap-8 w-full overflow-hidden">
+        <div>
       <Link href="/tutorials" className={cn(buttonVariants({ variant: "ghost" }), "mb-6")}>
         <Icons.ArrowLeft className="w-4 h-4 mr-2" />
         {tCommon('back_to_tutorials')}
@@ -551,7 +554,22 @@ Your task: ...
             </div>
           </CardContent>
         </Card>
+        </div>
       </div>
+
+      {/* Sidebar - Progress Tracker */}
+      <aside className="hidden lg:block">
+        <TutorialProgress
+          tutorialId="multi-agent-systems"
+          title={t('title')}
+          duration={t('duration')}
+          level="expert"
+          rewardPoints={100}
+          rewardBadge={t('reward_badge') || 'Multi-Agent Expert'}
+          completed={false}
+        />
+      </aside>
+    </div>
     </Container>
   )
 }

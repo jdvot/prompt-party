@@ -3,6 +3,7 @@ import { Badge } from '@/components/ui/badge'
 import { buttonVariants } from '@/components/ui/button'
 import { Alert, AlertDescription } from '@/components/ui/alert'
 import { CodeBlock } from '@/components/tutorials/code-block'
+import { TutorialProgress } from '@/components/tutorials/tutorial-progress'
 import { Container } from '@/components/layout/container'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import * as Icons from 'lucide-react'
@@ -23,7 +24,9 @@ export default async function CodeGenerationTutorial() {
   const t = await getTranslations('tutorials.code_generation')
   const tCommon = await getTranslations('tutorials')
   return (
-    <Container size="lg" className="py-8 overflow-hidden">
+    <Container size="lg" className="py-8">
+      <div className="grid lg:grid-cols-[1fr_300px] gap-8 w-full overflow-hidden">
+        <div>
       <Link href="/tutorials" className={cn(buttonVariants({ variant: "ghost" }), "mb-6")}>
         <Icons.ArrowLeft className="w-4 h-4 mr-2" />
         {tCommon('back_to_tutorials')}
@@ -684,7 +687,22 @@ Explain significant differences in approach between the languages.`}
             </div>
           </CardContent>
         </Card>
+        </div>
       </div>
+
+      {/* Sidebar - Progress Tracker */}
+      <aside className="hidden lg:block">
+        <TutorialProgress
+          tutorialId="code-generation"
+          title={t('title')}
+          duration={t('duration')}
+          level="expert"
+          rewardPoints={100}
+          rewardBadge={t('reward_badge') || 'Code Master'}
+          completed={false}
+        />
+      </aside>
+    </div>
     </Container>
   )
 }
