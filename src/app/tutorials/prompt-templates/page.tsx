@@ -25,7 +25,7 @@ export default async function PromptTemplatesTutorial() {
   const tCommon = await getTranslations('tutorials')
 
   return (
-    <Container size="lg" className="py-8">
+    <Container size="lg" className="py-8 overflow-hidden">
       <div className="grid lg:grid-cols-[1fr_300px] gap-8 w-full">
         <div>
       {/* Back Button */}

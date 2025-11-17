@@ -23,7 +23,7 @@ export default async function MultiAgentSystemsTutorial() {
   const t = await getTranslations('tutorials.multi_agent_systems')
   const tCommon = await getTranslations('tutorials')
   return (
-    <Container size="lg" className="py-8">
+    <Container size="lg" className="py-8 overflow-hidden">
       <div className="grid lg:grid-cols-[1fr_300px] gap-8 w-full">
         <div>
       <Link href="/tutorials" className={cn(buttonVariants({ variant: "ghost" }), "mb-6")}>
