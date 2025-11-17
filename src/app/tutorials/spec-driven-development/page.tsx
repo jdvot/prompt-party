@@ -39,6 +39,7 @@ export default async function SpecDrivenDevelopmentTutorial() {
       ]}
       rewardBadge={t('reward_badge')}
       whatYouLearnTitle={tCommon('what_you_learn')}
+    containerSize="xl"
     >
         {/* Section 2: The Spec Driven Workflow */}
         <section>

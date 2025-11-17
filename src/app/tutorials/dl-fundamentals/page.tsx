@@ -39,6 +39,7 @@ export default async function DLFundamentalsTutorial() {
       ]}
       rewardBadge={t('reward_badge')}
       whatYouLearnTitle={tCommon('what_you_learn')}
+    containerSize="xl"
     >
         <section>
           <h2 className="text-3xl font-bold mb-4">{t('what_is_dl')}</h2>

@@ -39,6 +39,7 @@ export default async function ClaudeCodeBasicsTutorial() {
       ]}
       rewardBadge={t('reward_badge')}
       whatYouLearnTitle={tCommon('what_you_learn')}
+    containerSize="xl"
     >
 
         {/* Section 1: What is Claude Code */}
