@@ -1080,7 +1080,8 @@
     "top": "Populaire",
     "trending": "💡 Bibliothèque",
     "tutorials": "Tutoriels",
-    "wizard": "Assistant"
+    "wizard": "Assistant",
+    "resources": "Ressources"
   },
   "notifications": {
     "all": "All",
@@ -4319,5 +4320,26 @@
     "submitPromptButton": {
       "urlPlaceholder": "https://prompt-party.com/prompts/..."
     }
+  },
+  "resources": {
+    "page_title": "Ressources & Références | Centre d'apprentissage Prompt Party",
+    "page_description": "Collection d'outils et de guides pour le développement IA et l'ingénierie des prompts.",
+    "title": "Ressources & Références",
+    "subtitle": "Collection d'outils, guides et documentation pour améliorer vos compétences en IA",
+    "category_ai_development": "Développement IA",
+    "category_learning": "Apprentissage & Guides",
+    "category_tools": "Outils & Frameworks",
+    "claude_code_desc": "Documentation officielle de Claude Code avec support du protocole de contexte modèle",
+    "spec_kit_desc": "Kit de spécifications de GitHub pour créer des API cohérentes et bien documentées",
+    "prompt_library_desc": "Bibliothèque de prompts Claude efficaces pour divers cas d'usage",
+    "anthropic_docs_desc": "Documentation officielle d'Anthropic pour l'API Claude et les modèles",
+    "prompt_engineering_desc": "Guide complet des techniques et meilleures pratiques d'ingénierie des prompts",
+    "langchain_desc": "Framework pour développer des applications alimentées par des modèles de langage",
+    "back_to_tutorials": "Retour aux Tutoriels",
+    "visit_resource": "Visiter la Ressource",
+    "contribute_title": "Connaissez-vous une excellente ressource?",
+    "contribute_desc": "Aidez-nous à développer cette collection",
+    "contribute_text": "Si vous connaissez d'excellentes ressources pour l'ingénierie des prompts, le développement IA ou l'utilisation de Claude, nous serions ravis de les entendre! Contribuez à notre projet.",
+    "contribute_button": "Contribuer sur GitHub"
   }
 }

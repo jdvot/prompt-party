@@ -21,6 +21,7 @@ const navLinks = [
   { href: '/prompts/wizard', label: 'wizard' },
   { href: '/trending', label: 'trending' },
   { href: '/challenges', label: 'challenges' },
+  { href: '/resources', label: 'resources' },
   { href: '/mcp-vs-rag', label: 'concepts' },
   { href: '/ml-vs-dl', label: 'ml_vs_dl' },
   { href: '/tech-stack', label: 'tech_stack' },

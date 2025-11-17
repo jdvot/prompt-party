@@ -1080,7 +1080,8 @@
     "top": "Top",
     "trending": "💡 Trending",
     "tutorials": "Tutorials",
-    "wizard": "✨ Wizard"
+    "wizard": "✨ Wizard",
+    "resources": "Resources"
   },
   "notifications": {
     "all": "All",
@@ -4319,5 +4320,26 @@
     "submitPromptButton": {
       "urlPlaceholder": "https://prompt-party.com/prompts/..."
     }
+  },
+  "resources": {
+    "page_title": "Resources & References | Prompt Party Learning Hub",
+    "page_description": "Curated collection of external resources for AI development, prompt engineering, and learning.",
+    "title": "Resources & References",
+    "subtitle": "Curated collection of tools, guides, and documentation to enhance your AI skills",
+    "category_ai_development": "AI Development",
+    "category_learning": "Learning & Guides",
+    "category_tools": "Tools & Frameworks",
+    "claude_code_desc": "Official documentation for Claude Code with Model Context Protocol (MCP) support",
+    "spec_kit_desc": "GitHub's specification kit for creating consistent, well-documented APIs and tools",
+    "prompt_library_desc": "Community-curated library of effective Claude prompts for various use cases",
+    "anthropic_docs_desc": "Official Anthropic documentation for Claude API and models",
+    "prompt_engineering_desc": "Comprehensive guide to prompt engineering techniques and best practices",
+    "langchain_desc": "Framework for developing applications powered by language models",
+    "back_to_tutorials": "Back to Tutorials",
+    "visit_resource": "Visit Resource",
+    "contribute_title": "Know a Great Resource?",
+    "contribute_desc": "Help us expand this collection",
+    "contribute_text": "If you know of excellent resources for prompt engineering, AI development, or Claude usage, we'd love to hear about them! Contribute to our project.",
+    "contribute_button": "Contribute on GitHub"
   }
 }

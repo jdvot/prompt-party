@@ -1080,7 +1080,8 @@
     "top": "Populaire",
     "trending": "Trending",
     "tutorials": "Tutorials",
-    "wizard": "Wizard"
+    "wizard": "Wizard",
+    "resources": "Bronnen"
   },
   "notifications": {
     "all": "All",
@@ -4319,5 +4320,26 @@
     "submitPromptButton": {
       "urlPlaceholder": "https://prompt-party.com/prompts/..."
     }
+  },
+  "resources": {
+    "page_title": "Bronnen & Referenties | Prompt Party Leercentrum",
+    "page_description": "Verzameling van tools en gidsen voor AI-ontwikkeling en prompt engineering.",
+    "title": "Bronnen & Referenties",
+    "subtitle": "Verzameling van tools, gidsen en documentatie om uw AI-vaardigheden te verbeteren",
+    "category_ai_development": "AI-ontwikkeling",
+    "category_learning": "Leren & Gidsen",
+    "category_tools": "Tools & Frameworks",
+    "claude_code_desc": "Officiële documentatie voor Claude Code met Model Context Protocol (MCP) ondersteuning",
+    "spec_kit_desc": "GitHub's specificatiekit voor het maken van consistente, goed gedocumenteerde API's en tools",
+    "prompt_library_desc": "Door de gemeenschap samengestelde bibliotheek van effectieve Claude prompts voor verschillende use cases",
+    "anthropic_docs_desc": "Officiële Anthropic-documentatie voor Claude API en modellen",
+    "prompt_engineering_desc": "Uitgebreide gids voor prompt engineering-technieken en best practices",
+    "langchain_desc": "Framework voor het ontwikkelen van applicaties aangestuurd door taalmodellen",
+    "back_to_tutorials": "Terug naar Tutorials",
+    "visit_resource": "Bezoek Bron",
+    "contribute_title": "Kent u een geweldige bron?",
+    "contribute_desc": "Help ons deze verzameling uit te breiden",
+    "contribute_text": "Als u geweldige bronnen kent voor prompt engineering, AI-ontwikkeling of Claude-gebruik, horen we dit graag van u! Draag bij aan ons project.",
+    "contribute_button": "Bijdragen op GitHub"
   }
 }
