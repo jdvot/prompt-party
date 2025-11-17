@@ -51,7 +51,7 @@ export default async function MLBasicsTutorial() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-4 w-full">
-            <Card className="border-blue-500/20 bg-blue-500/5">
+            <Card className="border-blue-500/20 bg-blue-500/5 w-full">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
                   <Icons.Brain className="w-5 h-5 text-blue-600" />
@@ -70,7 +70,7 @@ export default async function MLBasicsTutorial() {
               </CardContent>
             </Card>
 
-            <Card className="border-green-500/20 bg-green-500/5">
+            <Card className="border-green-500/20 bg-green-500/5 w-full">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
                   <Icons.Sparkles className="w-5 h-5 text-green-600" />
@@ -137,7 +137,7 @@ export default async function MLBasicsTutorial() {
             </p>
           </div>
 
-          <Card className="mb-4">
+          <Card className="mb-4 w-full">
             <CardHeader>
               <CardTitle>{t('training_process')}</CardTitle>
             </CardHeader>
@@ -174,7 +174,7 @@ export default async function MLBasicsTutorial() {
             </CardContent>
           </Card>
 
-          <Card className="border-orange-500/20 bg-orange-500/5">
+          <Card className="border-orange-500/20 bg-orange-500/5 w-full">
             <CardHeader>
               <CardTitle className="text-lg flex items-center gap-2">
                 <Icons.AlertTriangle className="w-5 h-5 text-orange-600" />
@@ -204,7 +204,7 @@ export default async function MLBasicsTutorial() {
             </p>
           </div>
 
-          <Card className="mb-4">
+          <Card className="mb-4 w-full">
             <CardHeader>
               <CardTitle>{t('metrics_title')}</CardTitle>
             </CardHeader>
@@ -230,7 +230,7 @@ export default async function MLBasicsTutorial() {
         </section>
 
         <section className="w-full">
-          <Card className="bg-gradient-to-r from-violet-600/10 to-violet-600/10 border-violet-600/20">
+          <Card className="bg-gradient-to-r from-violet-600/10 to-violet-600/10 border-violet-600/20 w-full">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Icons.BookOpen className="w-5 h-5 text-primary" />
@@ -259,7 +259,7 @@ export default async function MLBasicsTutorial() {
           <MLBasicsQuiz />
         </section>
 
-        <Card className="bg-gradient-to-r from-violet-600/10 to-violet-600/10 border-violet-600/20">
+        <Card className="bg-gradient-to-r from-violet-600/10 to-violet-600/10 border-violet-600/20 w-full">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Icons.Lightbulb className="w-5 h-5 text-primary" />

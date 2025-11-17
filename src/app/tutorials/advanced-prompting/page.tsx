@@ -50,7 +50,7 @@ export default async function AdvancedPromptingTutorial() {
             </p>
           </div>
 
-          <Card className="mb-6">
+          <Card className="mb-6 w-full">
             <CardHeader>
               <CardTitle className="text-lg">{t('cot_pattern')}</CardTitle>
             </CardHeader>
@@ -72,7 +72,7 @@ Show your reasoning for each step.`}
           </Card>
 
           <div className="grid md:grid-cols-2 gap-4 w-full">
-            <Card className="border-red-500/20">
+            <Card className="border-red-500/20 w-full">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
                   <Icons.XCircle className="w-5 h-5 text-red-600" />
@@ -90,7 +90,7 @@ Show your reasoning for each step.`}
               </CardContent>
             </Card>
 
-            <Card className="border-green-500/20">
+            <Card className="border-green-500/20 w-full">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
                   <Icons.CheckCircle className="w-5 h-5 text-green-600" />
@@ -123,7 +123,7 @@ Show your reasoning for each step.`}
             </p>
           </div>
 
-          <Card className="mb-4">
+          <Card className="mb-4 w-full">
             <CardHeader>
               <CardTitle>{t('few_shot_pattern')}</CardTitle>
               <CardDescription>{t('few_shot_pattern_desc')}</CardDescription>
@@ -211,7 +211,7 @@ Respond as this role would.`}
             </Card>
           </div>
 
-          <Card className="mt-4">
+          <Card className="mt-4 w-full">
             <CardHeader>
               <CardTitle>{t('real_example')}</CardTitle>
             </CardHeader>
@@ -245,7 +245,7 @@ Provide 5 specific, actionable recommendations.`}
             </p>
           </div>
 
-          <Card className="mb-4">
+          <Card className="mb-4 w-full">
             <CardHeader>
               <CardTitle>{t('meta_prompting_techniques')}</CardTitle>
             </CardHeader>
@@ -289,12 +289,12 @@ Generate an optimized prompt I can use.`}
         <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('iterative_refinement_title')}</h2>
 
-          <Card className="mb-4">
+          <Card className="mb-4 w-full">
             <CardHeader>
               <CardTitle>{t('refinement_loop')}</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="space-y-3">
+              <div className="space-y-3 w-full">
                 <div className="flex items-start gap-3">
                   <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                     <span className="text-sm font-bold text-primary">1</span>
@@ -362,7 +362,7 @@ This is helpful! Can you refine it by:
                 {t('constraints_intro')}
               </p>
 
-              <div className="space-y-4">
+              <div className="space-y-4 w-full">
                 <div>
                   <h4 className="font-semibold mb-2">{t('length_constraints')}</h4>
                   <CodeBlock
@@ -400,7 +400,7 @@ This is helpful! Can you refine it by:
         </section>
 
         <section className="w-full">
-          <Card className="bg-gradient-to-r from-violet-600/10 to-violet-600/10 border-violet-600/20">
+          <Card className="bg-gradient-to-r from-violet-600/10 to-violet-600/10 border-violet-600/20 w-full">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Icons.BookOpen className="w-5 h-5 text-primary" />
@@ -429,7 +429,7 @@ This is helpful! Can you refine it by:
           <AdvancedPromptingQuiz />
         </section>
 
-        <Card className="bg-gradient-to-r from-violet-600/10 to-violet-600/10 border-violet-600/20">
+        <Card className="bg-gradient-to-r from-violet-600/10 to-violet-600/10 border-violet-600/20 w-full">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Icons.Lightbulb className="w-5 h-5 text-primary" />

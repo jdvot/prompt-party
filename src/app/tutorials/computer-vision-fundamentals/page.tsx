@@ -38,7 +38,7 @@ export default async function CVTutorial() {
             <section className="w-full">
               <h2 className="text-3xl font-bold mb-4">{t('images_as_data')}</h2>
               <p className="text-muted-foreground mb-4">{t('images_intro')}</p>
-              <div className="space-y-2 text-sm text-muted-foreground">
+              <div className="space-y-2 text-sm text-muted-foreground w-full">
                 <p>• {t('pixel_info')}</p>
                 <p>• {t('channels_info')}</p>
                 <p>• {t('resolution_info')}</p>
@@ -48,7 +48,7 @@ export default async function CVTutorial() {
             <section className="w-full">
               <h2 className="text-3xl font-bold mb-4">{t('cnn_title')}</h2>
               <p className="text-muted-foreground mb-4">{t('cnn_intro')}</p>
-              <Card className="border-purple-500/20 bg-purple-500/5">
+              <Card className="border-purple-500/20 bg-purple-500/5 w-full">
                 <CardContent className="pt-6 space-y-2 text-sm">
                   <p><strong>{t('conv_layers')}:</strong> {t('conv_desc')}</p>
                   <p><strong>{t('pooling')}:</strong> {t('pooling_desc')}</p>
@@ -59,7 +59,7 @@ export default async function CVTutorial() {
 
             <section className="w-full">
               <h2 className="text-3xl font-bold mb-4">{t('cv_tasks')}</h2>
-              <div className="space-y-3">
+              <div className="space-y-3 w-full">
                 <Card><CardHeader><CardTitle className="text-lg">{t('classification_label')}</CardTitle></CardHeader><CardContent><p className="text-sm text-muted-foreground">{t('classification_cv')}</p></CardContent></Card>
                 <Card><CardHeader><CardTitle className="text-lg">{t('detection_label')}</CardTitle></CardHeader><CardContent><p className="text-sm text-muted-foreground">{t('detection_desc')}</p></CardContent></Card>
                 <Card><CardHeader><CardTitle className="text-lg">{t('segmentation_label')}</CardTitle></CardHeader><CardContent><p className="text-sm text-muted-foreground">{t('segmentation_desc')}</p></CardContent></Card>
@@ -69,7 +69,7 @@ export default async function CVTutorial() {
             <section className="w-full">
               <h2 className="text-3xl font-bold mb-4">{t('transfer_learning')}</h2>
               <p className="text-muted-foreground mb-4">{t('transfer_intro')}</p>
-              <div className="space-y-2 text-sm text-muted-foreground">
+              <div className="space-y-2 text-sm text-muted-foreground w-full">
                 <p>✓ {t('tl_benefit_1')}</p>
                 <p>✓ {t('tl_benefit_2')}</p>
                 <p>✓ {t('tl_benefit_3')}</p>

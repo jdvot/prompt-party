@@ -53,7 +53,7 @@ export default async function IntroPromptsTutorial() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-4 mt-6 w-full">
-            <Card className="border-red-600/20 bg-red-600/5">
+            <Card className="border-red-600/20 bg-red-600/5 w-full">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
                   <XCircle className="w-5 h-5 text-red-600" />
@@ -71,7 +71,7 @@ export default async function IntroPromptsTutorial() {
               </CardContent>
             </Card>
 
-            <Card className="border-green-600/20 bg-green-600/5">
+            <Card className="border-green-600/20 bg-green-600/5 w-full">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
                   <CheckCircle className="w-5 h-5 text-green-600" />
@@ -95,12 +95,12 @@ export default async function IntroPromptsTutorial() {
         <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('anatomy_title')}</h2>
 
-          <Card className="mb-6">
+          <Card className="mb-6 w-full">
             <CardHeader>
               <CardTitle>{t('anatomy_subtitle')}</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
-              <div className="space-y-2">
+              <div className="space-y-2 w-full">
                 <h4 className="font-semibold flex items-center gap-2">
                   1️⃣ {t('element_context')}
                 </h4>
@@ -113,7 +113,7 @@ export default async function IntroPromptsTutorial() {
                 />
               </div>
 
-              <div className="space-y-2">
+              <div className="space-y-2 w-full">
                 <h4 className="font-semibold flex items-center gap-2">
                   2️⃣ {t('element_task')}
                 </h4>
@@ -126,7 +126,7 @@ export default async function IntroPromptsTutorial() {
                 />
               </div>
 
-              <div className="space-y-2">
+              <div className="space-y-2 w-full">
                 <h4 className="font-semibold flex items-center gap-2">
                   3️⃣ {t('element_constraints')}
                 </h4>
@@ -139,7 +139,7 @@ export default async function IntroPromptsTutorial() {
                 />
               </div>
 
-              <div className="space-y-2">
+              <div className="space-y-2 w-full">
                 <h4 className="font-semibold flex items-center gap-2">
                   4️⃣ {t('element_format')}
                 </h4>
@@ -168,8 +168,8 @@ export default async function IntroPromptsTutorial() {
         <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('mistakes_title')}</h2>
 
-          <div className="space-y-4">
-            <Card className="border-red-600/20">
+          <div className="space-y-4 w-full">
+            <Card className="border-red-600/20 w-full">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
                   <XCircle className="w-5 h-5 text-red-600" />
@@ -191,7 +191,7 @@ export default async function IntroPromptsTutorial() {
               </CardContent>
             </Card>
 
-            <Card className="border-red-600/20">
+            <Card className="border-red-600/20 w-full">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
                   <XCircle className="w-5 h-5 text-red-600" />
@@ -213,7 +213,7 @@ export default async function IntroPromptsTutorial() {
               </CardContent>
             </Card>
 
-            <Card className="border-red-600/20">
+            <Card className="border-red-600/20 w-full">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
                   <XCircle className="w-5 h-5 text-red-600" />
@@ -304,7 +304,7 @@ export default async function IntroPromptsTutorial() {
 
         {/* Section 5: Practice Exercise */}
         <section className="w-full">
-          <Card className="bg-gradient-to-r from-violet-600/10 to-violet-600/10 border-violet-600/20">
+          <Card className="bg-gradient-to-r from-violet-600/10 to-violet-600/10 border-violet-600/20 w-full">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <BookOpen className="w-5 h-5 text-primary" />
@@ -313,7 +313,7 @@ export default async function IntroPromptsTutorial() {
               <CardDescription>{t('exercise_subtitle')}</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
-              <div className="space-y-2">
+              <div className="space-y-2 w-full">
                 <h4 className="font-semibold">{t('exercise1_title')}</h4>
                 <CodeBlock language="text" code={t('exercise1_prompt')} />
                 <p className="text-sm text-muted-foreground">
@@ -321,7 +321,7 @@ export default async function IntroPromptsTutorial() {
                 </p>
               </div>
 
-              <div className="space-y-2">
+              <div className="space-y-2 w-full">
                 <h4 className="font-semibold">{t('exercise2_title')}</h4>
                 <CodeBlock language="text" code={t('exercise2_prompt')} />
                 <p className="text-sm text-muted-foreground">
@@ -329,7 +329,7 @@ export default async function IntroPromptsTutorial() {
                 </p>
               </div>
 
-              <div className="space-y-2">
+              <div className="space-y-2 w-full">
                 <h4 className="font-semibold">{t('exercise3_title')}</h4>
                 <CodeBlock
                   language="text"
@@ -349,7 +349,7 @@ export default async function IntroPromptsTutorial() {
         </section>
 
         {/* Next Steps */}
-        <Card className="bg-gradient-to-r from-violet-600/10 to-violet-600/10 border-violet-600/20">
+        <Card className="bg-gradient-to-r from-violet-600/10 to-violet-600/10 border-violet-600/20 w-full">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Lightbulb className="w-5 h-5 text-primary" />

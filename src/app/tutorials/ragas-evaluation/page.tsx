@@ -52,7 +52,7 @@ export default async function RagasEvaluationTutorial() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-4 mt-6 w-full">
-            <Card className="border-blue-500/20 bg-blue-500/5">
+            <Card className="border-blue-500/20 bg-blue-500/5 w-full">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
                   <Icons.Target className="w-5 h-5 text-blue-500" />
@@ -66,7 +66,7 @@ export default async function RagasEvaluationTutorial() {
               </CardContent>
             </Card>
 
-            <Card className="border-green-500/20 bg-green-500/5">
+            <Card className="border-green-500/20 bg-green-500/5 w-full">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
                   <Icons.TrendingUp className="w-5 h-5 text-green-500" />
@@ -80,7 +80,7 @@ export default async function RagasEvaluationTutorial() {
               </CardContent>
             </Card>
 
-            <Card className="border-purple-500/20 bg-purple-500/5">
+            <Card className="border-purple-500/20 bg-purple-500/5 w-full">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
                   <Icons.BarChart className="w-5 h-5 text-purple-500" />
@@ -94,7 +94,7 @@ export default async function RagasEvaluationTutorial() {
               </CardContent>
             </Card>
 
-            <Card className="border-orange-500/20 bg-orange-500/5">
+            <Card className="border-orange-500/20 bg-orange-500/5 w-full">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
                   <Icons.Shield className="w-5 h-5 text-orange-500" />
@@ -121,8 +121,8 @@ export default async function RagasEvaluationTutorial() {
         <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('section_2_title')}</h2>
 
-          <div className="space-y-4">
-            <Card className="border-violet-500/20 bg-violet-500/5">
+          <div className="space-y-4 w-full">
+            <Card className="border-violet-500/20 bg-violet-500/5 w-full">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
                   <Icons.CheckCircle className="w-5 h-5 text-violet-600" />
@@ -134,7 +134,7 @@ export default async function RagasEvaluationTutorial() {
                 <div className="bg-muted p-3 rounded-lg">
                   <p className="text-sm font-mono">{t('section_2_metric_1_formula')}</p>
                 </div>
-                <div className="space-y-2">
+                <div className="space-y-2 w-full">
                   <p className="text-sm font-semibold">{t('example')}</p>
                   <CodeBlock
                     language="text"
@@ -144,7 +144,7 @@ export default async function RagasEvaluationTutorial() {
               </CardContent>
             </Card>
 
-            <Card className="border-blue-500/20 bg-blue-500/5">
+            <Card className="border-blue-500/20 bg-blue-500/5 w-full">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
                   <Icons.Target className="w-5 h-5 text-blue-600" />
@@ -156,7 +156,7 @@ export default async function RagasEvaluationTutorial() {
                 <div className="bg-muted p-3 rounded-lg">
                   <p className="text-sm font-mono">{t('section_2_metric_2_formula')}</p>
                 </div>
-                <div className="space-y-2">
+                <div className="space-y-2 w-full">
                   <p className="text-sm font-semibold">{t('example')}</p>
                   <CodeBlock
                     language="text"
@@ -166,7 +166,7 @@ export default async function RagasEvaluationTutorial() {
               </CardContent>
             </Card>
 
-            <Card className="border-green-500/20 bg-green-500/5">
+            <Card className="border-green-500/20 bg-green-500/5 w-full">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
                   <Icons.Crosshair className="w-5 h-5 text-green-600" />
@@ -181,7 +181,7 @@ export default async function RagasEvaluationTutorial() {
               </CardContent>
             </Card>
 
-            <Card className="border-amber-500/20 bg-amber-500/5">
+            <Card className="border-amber-500/20 bg-amber-500/5 w-full">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
                   <Icons.Database className="w-5 h-5 text-amber-600" />
@@ -196,7 +196,7 @@ export default async function RagasEvaluationTutorial() {
               </CardContent>
             </Card>
 
-            <Card className="border-pink-500/20 bg-pink-500/5">
+            <Card className="border-pink-500/20 bg-pink-500/5 w-full">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
                   <Icons.Sparkles className="w-5 h-5 text-pink-600" />
@@ -221,7 +221,7 @@ export default async function RagasEvaluationTutorial() {
             </AlertDescription>
           </Alert>
 
-          <div className="space-y-6">
+          <div className="space-y-6 w-full">
             <div>
               <h3 className="text-xl font-semibold mb-3">{t('section_3_install_title')}</h3>
               <CodeBlock
@@ -288,7 +288,7 @@ RAGAS_PRECISION_THRESHOLD=0.75`}
         <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('section_4_title')}</h2>
 
-          <div className="space-y-6">
+          <div className="space-y-6 w-full">
             <div>
               <h3 className="text-xl font-semibold mb-3">{t('section_4_evaluate_title')}</h3>
               <p className="text-muted-foreground mb-3">{t('section_4_evaluate_desc')}</p>
@@ -373,7 +373,7 @@ ragas report \\
         <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('section_5_title')}</h2>
 
-          <div className="space-y-6">
+          <div className="space-y-6 w-full">
             <Card>
               <CardHeader>
                 <CardTitle className="text-lg">{t('section_5_basic_title')}</CardTitle>
@@ -506,8 +506,8 @@ jobs:
         <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('section_6_title')}</h2>
 
-          <div className="space-y-4">
-            <Card className="border-blue-500/20 bg-blue-500/5">
+          <div className="space-y-4 w-full">
+            <Card className="border-blue-500/20 bg-blue-500/5 w-full">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
                   <Icons.FileText className="w-5 h-5 text-blue-600" />
@@ -532,7 +532,7 @@ jobs:
               </CardContent>
             </Card>
 
-            <Card className="border-green-500/20 bg-green-500/5">
+            <Card className="border-green-500/20 bg-green-500/5 w-full">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
                   <Icons.Tags className="w-5 h-5 text-green-600" />
@@ -557,7 +557,7 @@ jobs:
               </CardContent>
             </Card>
 
-            <Card className="border-purple-500/20 bg-purple-500/5">
+            <Card className="border-purple-500/20 bg-purple-500/5 w-full">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
                   <Icons.Sparkles className="w-5 h-5 text-purple-600" />
@@ -586,8 +586,8 @@ jobs:
         <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('section_7_title')}</h2>
 
-          <div className="space-y-4">
-            <Card className="border-amber-500/20 bg-amber-500/5">
+          <div className="space-y-4 w-full">
+            <Card className="border-amber-500/20 bg-amber-500/5 w-full">
               <CardHeader>
                 <CardTitle className="text-lg">{t('section_7_custom_title')}</CardTitle>
               </CardHeader>
@@ -626,7 +626,7 @@ const result = await ragas.evaluate({
               </CardContent>
             </Card>
 
-            <Card className="border-indigo-500/20 bg-indigo-500/5">
+            <Card className="border-indigo-500/20 bg-indigo-500/5 w-full">
               <CardHeader>
                 <CardTitle className="text-lg">{t('section_7_threshold_title')}</CardTitle>
               </CardHeader>
@@ -654,7 +654,7 @@ if (!result.passed) {
               </CardContent>
             </Card>
 
-            <Card className="border-rose-500/20 bg-rose-500/5">
+            <Card className="border-rose-500/20 bg-rose-500/5 w-full">
               <CardHeader>
                 <CardTitle className="text-lg">{t('section_7_monitoring_title')}</CardTitle>
               </CardHeader>
@@ -697,7 +697,7 @@ const ragas = new Ragas({
         </section>
 
         {/* Next Steps */}
-        <Card className="bg-gradient-to-r from-violet-600/10 to-violet-600/10 border-violet-600/20">
+        <Card className="bg-gradient-to-r from-violet-600/10 to-violet-600/10 border-violet-600/20 w-full">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Icons.Lightbulb className="w-5 h-5 text-primary" />

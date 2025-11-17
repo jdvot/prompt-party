@@ -35,7 +35,7 @@ export default async function LLMTutorial() {
             <section className="w-full">
               <h2 className="text-3xl font-bold mb-4">{t('when_to_finetune')}</h2>
               <p className="text-muted-foreground mb-4">{t('intro')}</p>
-              <div className="space-y-2 text-sm text-muted-foreground">
+              <div className="space-y-2 text-sm text-muted-foreground w-full">
                 <p>✓ {t('use_case_1')}</p>
                 <p>✓ {t('use_case_2')}</p>
                 <p>✓ {t('use_case_3')}</p>
@@ -44,11 +44,11 @@ export default async function LLMTutorial() {
 
             <section className="w-full">
               <h2 className="text-3xl font-bold mb-4">{t('methods_title')}</h2>
-              <Card className="border-blue-500/20 bg-blue-500/5 mb-4">
+              <Card className="border-blue-500/20 bg-blue-500/5 mb-4 w-full">
                 <CardHeader><CardTitle className="text-lg">{t('lora_title')}</CardTitle></CardHeader>
                 <CardContent><p className="text-sm text-muted-foreground">{t('lora_desc')}</p></CardContent>
               </Card>
-              <Card className="border-purple-500/20 bg-purple-500/5">
+              <Card className="border-purple-500/20 bg-purple-500/5 w-full">
                 <CardHeader><CardTitle className="text-lg">{t('qlora_title')}</CardTitle></CardHeader>
                 <CardContent><p className="text-sm text-muted-foreground">{t('qlora_desc')}</p></CardContent>
               </Card>

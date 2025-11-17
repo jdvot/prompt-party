@@ -45,8 +45,8 @@ export default async function ClaudeBasicsTutorial() {
         <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('key_features')}</h2>
 
-          <div className="space-y-4">
-            <Card className="border-violet-500/20 bg-violet-500/5">
+          <div className="space-y-4 w-full">
+            <Card className="border-violet-500/20 bg-violet-500/5 w-full">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
                   <Icons.FileStack className="w-5 h-5 text-violet-600" />
@@ -66,7 +66,7 @@ export default async function ClaudeBasicsTutorial() {
               </CardContent>
             </Card>
 
-            <Card className="border-green-500/20 bg-green-500/5">
+            <Card className="border-green-500/20 bg-green-500/5 w-full">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
                   <Icons.Shield className="w-5 h-5 text-green-600" />
@@ -80,7 +80,7 @@ export default async function ClaudeBasicsTutorial() {
               </CardContent>
             </Card>
 
-            <Card className="border-blue-500/20 bg-blue-500/5">
+            <Card className="border-blue-500/20 bg-blue-500/5 w-full">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
                   <Icons.Zap className="w-5 h-5 text-blue-600" />
@@ -107,7 +107,7 @@ export default async function ClaudeBasicsTutorial() {
             </AlertDescription>
           </Alert>
 
-          <div className="space-y-6">
+          <div className="space-y-6 w-full">
             <div>
               <h3 className="text-xl font-semibold mb-3">✅ {t('good_example')}</h3>
               <Card>
@@ -153,7 +153,7 @@ export default async function ClaudeBasicsTutorial() {
         <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('context_memory')}</h2>
 
-          <Card className="mb-4">
+          <Card className="mb-4 w-full">
             <CardHeader>
               <CardTitle>{t('how_remembers')}</CardTitle>
             </CardHeader>
@@ -187,7 +187,7 @@ export default async function ClaudeBasicsTutorial() {
           <h2 className="text-3xl font-bold mb-4">{t('best_practices')}</h2>
 
           <div className="grid md:grid-cols-2 gap-4 w-full">
-            <Card className="border-green-500/20">
+            <Card className="border-green-500/20 w-full">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
                   <Icons.CheckCircle className="w-5 h-5 text-green-600" />
@@ -220,7 +220,7 @@ export default async function ClaudeBasicsTutorial() {
               </CardContent>
             </Card>
 
-            <Card className="border-red-500/20">
+            <Card className="border-red-500/20 w-full">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
                   <Icons.XCircle className="w-5 h-5 text-red-600" />
@@ -257,7 +257,7 @@ export default async function ClaudeBasicsTutorial() {
 
         {/* Practice Exercise */}
         <section className="w-full">
-          <Card className="bg-gradient-to-r from-violet-600/10 to-violet-600/10 border-violet-600/20">
+          <Card className="bg-gradient-to-r from-violet-600/10 to-violet-600/10 border-violet-600/20 w-full">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Icons.BookOpen className="w-5 h-5 text-primary" />
@@ -299,7 +299,7 @@ export default async function ClaudeBasicsTutorial() {
         </section>
 
         {/* Next Steps */}
-        <Card className="bg-gradient-to-r from-violet-600/10 to-violet-600/10 border-violet-600/20">
+        <Card className="bg-gradient-to-r from-violet-600/10 to-violet-600/10 border-violet-600/20 w-full">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Icons.Lightbulb className="w-5 h-5 text-primary" />

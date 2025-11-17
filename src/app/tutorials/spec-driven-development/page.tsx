@@ -46,8 +46,8 @@ export default async function SpecDrivenDevelopmentTutorial() {
           <h2 className="text-3xl font-bold mb-4">{t('section_2_title')}</h2>
           <p className="text-lg text-muted-foreground mb-6">{t('section_2_intro')}</p>
 
-          <div className="space-y-4">
-            <Card className="border-violet-500/20 bg-violet-500/5">
+          <div className="space-y-4 w-full">
+            <Card className="border-violet-500/20 bg-violet-500/5 w-full">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
                   <Icons.FileText className="w-5 h-5 text-violet-600" />
@@ -74,7 +74,7 @@ export default async function SpecDrivenDevelopmentTutorial() {
               </CardContent>
             </Card>
 
-            <Card className="border-blue-500/20 bg-blue-500/5">
+            <Card className="border-blue-500/20 bg-blue-500/5 w-full">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
                   <Icons.Eye className="w-5 h-5 text-blue-600" />
@@ -88,7 +88,7 @@ export default async function SpecDrivenDevelopmentTutorial() {
               </CardContent>
             </Card>
 
-            <Card className="border-green-500/20 bg-green-500/5">
+            <Card className="border-green-500/20 bg-green-500/5 w-full">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
                   <Icons.Code className="w-5 h-5 text-green-600" />
@@ -102,7 +102,7 @@ export default async function SpecDrivenDevelopmentTutorial() {
               </CardContent>
             </Card>
 
-            <Card className="border-amber-500/20 bg-amber-500/5">
+            <Card className="border-amber-500/20 bg-amber-500/5 w-full">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
                   <Icons.CheckCircle2 className="w-5 h-5 text-amber-600" />
@@ -129,7 +129,7 @@ export default async function SpecDrivenDevelopmentTutorial() {
             </AlertDescription>
           </Alert>
 
-          <div className="space-y-6">
+          <div className="space-y-6 w-full">
             <Card>
               <CardHeader>
                 <CardTitle>{t('section_3_clarity_title')}</CardTitle>
@@ -172,7 +172,7 @@ requiring at least 8 characters including 1 uppercase letter.
         <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('section_4_title')}</h2>
 
-          <div className="space-y-4">
+          <div className="space-y-4 w-full">
             <Card>
               <CardHeader>
                 <CardTitle className="text-lg">{t('section_4_issues_title')}</CardTitle>
@@ -234,7 +234,7 @@ Fixes #123 (link to spec issue)
           <h2 className="text-3xl font-bold mb-4">{t('section_5_title')}</h2>
 
           <div className="grid md:grid-cols-2 gap-4 w-full">
-            <Card className="border-green-500/20 bg-green-500/5">
+            <Card className="border-green-500/20 bg-green-500/5 w-full">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
                   <Icons.CheckCircle className="w-5 h-5 text-green-600" />
@@ -259,7 +259,7 @@ Fixes #123 (link to spec issue)
               </CardContent>
             </Card>
 
-            <Card className="border-red-500/20 bg-red-500/5">
+            <Card className="border-red-500/20 bg-red-500/5 w-full">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
                   <Icons.XCircle className="w-5 h-5 text-red-600" />
@@ -290,7 +290,7 @@ Fixes #123 (link to spec issue)
         <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('section_6_title')}</h2>
 
-          <div className="space-y-4">
+          <div className="space-y-4 w-full">
             <Alert>
               <Icons.AlertTriangle className="w-4 h-4" />
               <AlertDescription>
@@ -362,7 +362,7 @@ Allow users to mark prompts as favorites and organize them in custom collections
         <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('section_8_title')}</h2>
 
-          <div className="space-y-4">
+          <div className="space-y-4 w-full">
             <Card>
               <CardHeader>
                 <CardTitle className="text-lg">{t('section_8_review_title')}</CardTitle>
@@ -398,7 +398,7 @@ Allow users to mark prompts as favorites and organize them in custom collections
         </section>
 
         {/* Next Steps */}
-        <Card className="bg-gradient-to-r from-violet-600/10 to-violet-600/10 border-violet-600/20">
+        <Card className="bg-gradient-to-r from-violet-600/10 to-violet-600/10 border-violet-600/20 w-full">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Icons.Lightbulb className="w-5 h-5 text-primary" />

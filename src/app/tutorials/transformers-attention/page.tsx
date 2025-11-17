@@ -47,8 +47,8 @@ export default async function TransformersAttentionTutorial() {
                 <p className="text-lg">{t('rnn_limitations_intro')}</p>
               </div>
 
-              <div className="space-y-4">
-                <Card className="border-red-500/20 bg-red-500/5">
+              <div className="space-y-4 w-full">
+                <Card className="border-red-500/20 bg-red-500/5 w-full">
                   <CardHeader>
                     <CardTitle className="text-lg">{t('sequential_processing_title')}</CardTitle>
                   </CardHeader>
@@ -57,7 +57,7 @@ export default async function TransformersAttentionTutorial() {
                   </CardContent>
                 </Card>
 
-                <Card className="border-orange-500/20 bg-orange-500/5">
+                <Card className="border-orange-500/20 bg-orange-500/5 w-full">
                   <CardHeader>
                     <CardTitle className="text-lg">{t('long_range_dependency_title')}</CardTitle>
                   </CardHeader>
@@ -81,13 +81,13 @@ export default async function TransformersAttentionTutorial() {
                 <p className="text-lg">{t('attention_mechanism_intro')}</p>
               </div>
 
-              <Card className="border-blue-500/20 bg-blue-500/5 mb-6">
+              <Card className="border-blue-500/20 bg-blue-500/5 mb-6 w-full">
                 <CardHeader>
                   <CardTitle className="text-lg">{t('qkv_title')}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-muted-foreground mb-4">{t('qkv_desc')}</p>
-                  <div className="space-y-2 text-sm">
+                  <div className="space-y-2 text-sm w-full">
                     <div><strong>Q (Query):</strong> {t('query_desc')}</div>
                     <div><strong>K (Key):</strong> {t('key_desc')}</div>
                     <div><strong>V (Value):</strong> {t('value_desc')}</div>
@@ -109,7 +109,7 @@ export default async function TransformersAttentionTutorial() {
                 <p className="text-lg">{t('transformer_architecture_intro')}</p>
               </div>
 
-              <div className="space-y-4 mb-6">
+              <div className="space-y-4 mb-6 w-full">
                 <Card>
                   <CardHeader>
                     <CardTitle className="text-lg">{t('encoder_title')}</CardTitle>
@@ -161,8 +161,8 @@ export default async function TransformersAttentionTutorial() {
                 <p className="text-lg">{t('model_variants_intro')}</p>
               </div>
 
-              <div className="space-y-4">
-                <Card className="border-blue-500/20 bg-blue-500/5">
+              <div className="space-y-4 w-full">
+                <Card className="border-blue-500/20 bg-blue-500/5 w-full">
                   <CardHeader>
                     <CardTitle className="text-lg">{t('bert_title')}</CardTitle>
                   </CardHeader>
@@ -172,7 +172,7 @@ export default async function TransformersAttentionTutorial() {
                   </CardContent>
                 </Card>
 
-                <Card className="border-green-500/20 bg-green-500/5">
+                <Card className="border-green-500/20 bg-green-500/5 w-full">
                   <CardHeader>
                     <CardTitle className="text-lg">{t('gpt_title')}</CardTitle>
                   </CardHeader>
@@ -182,7 +182,7 @@ export default async function TransformersAttentionTutorial() {
                   </CardContent>
                 </Card>
 
-                <Card className="border-purple-500/20 bg-purple-500/5">
+                <Card className="border-purple-500/20 bg-purple-500/5 w-full">
                   <CardHeader>
                     <CardTitle className="text-lg">{t('t5_title')}</CardTitle>
                   </CardHeader>
@@ -200,7 +200,7 @@ export default async function TransformersAttentionTutorial() {
                 <p className="text-lg">{t('prompting_implications_intro')}</p>
               </div>
 
-              <div className="space-y-4">
+              <div className="space-y-4 w-full">
                 <Card>
                   <CardHeader>
                     <CardTitle className="text-lg">{t('context_window_title')}</CardTitle>
@@ -271,7 +271,7 @@ export default async function TransformersAttentionTutorial() {
               <Card>
                 <CardContent className="pt-6">
                   <p className="text-muted-foreground mb-4">{t('next_steps_desc')}</p>
-                  <div className="space-y-2">
+                  <div className="space-y-2 w-full">
                     <Link href="/tutorials/embeddings-vector-search" className={cn(buttonVariants({ variant: "outline" }), "w-full justify-start")}>
                       <Icons.ArrowRight className="w-4 h-4 mr-2" />
                       Embeddings and Vector Search

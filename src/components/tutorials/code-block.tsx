@@ -22,15 +22,15 @@ export function CodeBlock({ code, language, filename }: CodeBlockProps) {
   }
 
   return (
-    <div className="relative group">
+    <div className="relative group w-full">
       {filename && (
         <div className="bg-muted px-4 py-2 text-sm font-mono border-b text-muted-foreground rounded-t-lg">
           {filename}
         </div>
       )}
-      <div className="relative">
-        <pre className={`p-4 overflow-x-auto bg-muted/50 border ${filename ? '' : 'rounded-t-lg'} rounded-b-lg`}>
-          <code className={`language-${language} text-sm`}>{code}</code>
+      <div className="relative w-full">
+        <pre className={`w-full p-4 overflow-x-auto bg-muted/50 border ${filename ? '' : 'rounded-t-lg'} rounded-b-lg`}>
+          <code className={`language-${language} text-sm block whitespace-pre-wrap break-words`}>{code}</code>
         </pre>
         <Button
           size="sm"

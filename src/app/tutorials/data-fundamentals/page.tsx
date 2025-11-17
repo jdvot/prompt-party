@@ -47,7 +47,7 @@ export default async function DataFundamentalsTutorial() {
               </div>
 
               <div className="grid md:grid-cols-2 gap-4 mb-6 w-full">
-                <Card className="border-red-500/20 bg-red-500/5">
+                <Card className="border-red-500/20 bg-red-500/5 w-full">
                   <CardHeader>
                     <CardTitle className="text-lg flex items-center gap-2">
                       <Icons.AlertCircle className="w-5 h-5 text-red-600" />
@@ -60,7 +60,7 @@ export default async function DataFundamentalsTutorial() {
                     </p>
                   </CardContent>
                 </Card>
-                <Card className="border-green-500/20 bg-green-500/5">
+                <Card className="border-green-500/20 bg-green-500/5 w-full">
                   <CardHeader>
                     <CardTitle className="text-lg flex items-center gap-2">
                       <Icons.CheckCircle className="w-5 h-5 text-green-600" />
@@ -89,7 +89,7 @@ export default async function DataFundamentalsTutorial() {
                 <p className="text-lg">{t('data_types_intro')}</p>
               </div>
 
-              <div className="space-y-4">
+              <div className="space-y-4 w-full">
                 <Card>
                   <CardHeader>
                     <CardTitle className="text-lg flex items-center gap-2">
@@ -149,8 +149,8 @@ export default async function DataFundamentalsTutorial() {
                 <p className="text-lg">{t('preprocessing_intro')}</p>
               </div>
 
-              <div className="space-y-4 mb-6">
-                <Card className="border-amber-500/20 bg-amber-500/5">
+              <div className="space-y-4 mb-6 w-full">
+                <Card className="border-amber-500/20 bg-amber-500/5 w-full">
                   <CardHeader>
                     <CardTitle className="text-lg">{t('cleaning_title')}</CardTitle>
                   </CardHeader>
@@ -164,7 +164,7 @@ export default async function DataFundamentalsTutorial() {
                   </CardContent>
                 </Card>
 
-                <Card className="border-purple-500/20 bg-purple-500/5">
+                <Card className="border-purple-500/20 bg-purple-500/5 w-full">
                   <CardHeader>
                     <CardTitle className="text-lg">{t('normalization_title')}</CardTitle>
                   </CardHeader>
@@ -178,7 +178,7 @@ export default async function DataFundamentalsTutorial() {
                   </CardContent>
                 </Card>
 
-                <Card className="border-cyan-500/20 bg-cyan-500/5">
+                <Card className="border-cyan-500/20 bg-cyan-500/5 w-full">
                   <CardHeader>
                     <CardTitle className="text-lg">{t('feature_eng_title')}</CardTitle>
                   </CardHeader>
@@ -207,12 +207,12 @@ export default async function DataFundamentalsTutorial() {
                 <p className="text-lg">{t('train_test_split_intro')}</p>
               </div>
 
-              <Card className="border-blue-500/20 bg-blue-500/5 mb-6">
+              <Card className="border-blue-500/20 bg-blue-500/5 mb-6 w-full">
                 <CardHeader>
                   <CardTitle className="text-lg">{t('split_ratios_title')}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="space-y-3">
+                  <div className="space-y-3 w-full">
                     <div>
                       <p className="text-sm font-semibold mb-1">{t('split_ratio_1')}</p>
                       <p className="text-sm text-muted-foreground">{t('split_ratio_1_desc')}</p>
@@ -256,8 +256,8 @@ export default async function DataFundamentalsTutorial() {
                 <p className="text-lg">{t('data_quality_intro')}</p>
               </div>
 
-              <div className="space-y-4">
-                <Card className="border-red-500/20 bg-red-500/5">
+              <div className="space-y-4 w-full">
+                <Card className="border-red-500/20 bg-red-500/5 w-full">
                   <CardHeader>
                     <CardTitle className="text-lg flex items-center gap-2">
                       <Icons.AlertTriangle className="w-5 h-5 text-red-600" />
@@ -269,7 +269,7 @@ export default async function DataFundamentalsTutorial() {
                   </CardContent>
                 </Card>
 
-                <Card className="border-orange-500/20 bg-orange-500/5">
+                <Card className="border-orange-500/20 bg-orange-500/5 w-full">
                   <CardHeader>
                     <CardTitle className="text-lg flex items-center gap-2">
                       <Icons.BarChart3 className="w-5 h-5 text-orange-600" />
@@ -281,7 +281,7 @@ export default async function DataFundamentalsTutorial() {
                   </CardContent>
                 </Card>
 
-                <Card className="border-yellow-500/20 bg-yellow-500/5">
+                <Card className="border-yellow-500/20 bg-yellow-500/5 w-full">
                   <CardHeader>
                     <CardTitle className="text-lg flex items-center gap-2">
                       <Icons.AlertCircle className="w-5 h-5 text-yellow-600" />
@@ -336,7 +336,7 @@ export default async function DataFundamentalsTutorial() {
               <Card>
                 <CardContent className="pt-6">
                   <p className="text-muted-foreground mb-4">{t('next_steps_desc')}</p>
-                  <div className="space-y-2">
+                  <div className="space-y-2 w-full">
                     <Link href="/tutorials/ml-basics" className={cn(buttonVariants({ variant: "outline" }), "w-full justify-start")}>
                       <Icons.ArrowRight className="w-4 h-4 mr-2" />
                       ML Basics

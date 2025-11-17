@@ -48,7 +48,7 @@ export default async function NLPFundamentalsTutorial() {
               </div>
 
               <div className="grid md:grid-cols-3 gap-4 w-full">
-                <Card className="border-blue-500/20 bg-blue-500/5">
+                <Card className="border-blue-500/20 bg-blue-500/5 w-full">
                   <CardHeader>
                     <CardTitle className="text-lg">{t('nlp_history_1')}</CardTitle>
                   </CardHeader>
@@ -56,7 +56,7 @@ export default async function NLPFundamentalsTutorial() {
                     <p className="text-sm text-muted-foreground">{t('nlp_history_1_desc')}</p>
                   </CardContent>
                 </Card>
-                <Card className="border-green-500/20 bg-green-500/5">
+                <Card className="border-green-500/20 bg-green-500/5 w-full">
                   <CardHeader>
                     <CardTitle className="text-lg">{t('nlp_history_2')}</CardTitle>
                   </CardHeader>
@@ -64,7 +64,7 @@ export default async function NLPFundamentalsTutorial() {
                     <p className="text-sm text-muted-foreground">{t('nlp_history_2_desc')}</p>
                   </CardContent>
                 </Card>
-                <Card className="border-purple-500/20 bg-purple-500/5">
+                <Card className="border-purple-500/20 bg-purple-500/5 w-full">
                   <CardHeader>
                     <CardTitle className="text-lg">{t('nlp_history_3')}</CardTitle>
                   </CardHeader>
@@ -88,7 +88,7 @@ export default async function NLPFundamentalsTutorial() {
                 <p className="text-lg">{t('tokenization_intro')}</p>
               </div>
 
-              <div className="space-y-4 mb-6">
+              <div className="space-y-4 mb-6 w-full">
                 <Card>
                   <CardHeader>
                     <CardTitle className="text-lg">{t('word_tokenization_title')}</CardTitle>
@@ -131,8 +131,8 @@ export default async function NLPFundamentalsTutorial() {
                 <p className="text-lg">{t('text_representation_intro')}</p>
               </div>
 
-              <div className="space-y-4">
-                <Card className="border-amber-500/20 bg-amber-500/5">
+              <div className="space-y-4 w-full">
+                <Card className="border-amber-500/20 bg-amber-500/5 w-full">
                   <CardHeader>
                     <CardTitle className="text-lg">{t('bow_title')}</CardTitle>
                   </CardHeader>
@@ -145,7 +145,7 @@ export default async function NLPFundamentalsTutorial() {
                   </CardContent>
                 </Card>
 
-                <Card className="border-purple-500/20 bg-purple-500/5">
+                <Card className="border-purple-500/20 bg-purple-500/5 w-full">
                   <CardHeader>
                     <CardTitle className="text-lg">{t('tfidf_title')}</CardTitle>
                   </CardHeader>
@@ -158,7 +158,7 @@ export default async function NLPFundamentalsTutorial() {
                   </CardContent>
                 </Card>
 
-                <Card className="border-cyan-500/20 bg-cyan-500/5">
+                <Card className="border-cyan-500/20 bg-cyan-500/5 w-full">
                   <CardHeader>
                     <CardTitle className="text-lg">{t('embeddings_intro_title')}</CardTitle>
                   </CardHeader>
@@ -176,7 +176,7 @@ export default async function NLPFundamentalsTutorial() {
                 <p className="text-lg">{t('nlp_tasks_intro')}</p>
               </div>
 
-              <div className="space-y-3">
+              <div className="space-y-3 w-full">
                 <Card>
                   <CardHeader>
                     <CardTitle className="text-lg">{t('classification_title')}</CardTitle>
@@ -221,7 +221,7 @@ export default async function NLPFundamentalsTutorial() {
                 <p className="text-lg">{t('language_models_intro')}</p>
               </div>
 
-              <Card className="border-blue-500/20 bg-blue-500/5 mb-6">
+              <Card className="border-blue-500/20 bg-blue-500/5 mb-6 w-full">
                 <CardHeader>
                   <CardTitle className="text-lg">{t('how_lms_work_title')}</CardTitle>
                 </CardHeader>
@@ -277,7 +277,7 @@ export default async function NLPFundamentalsTutorial() {
               <Card>
                 <CardContent className="pt-6">
                   <p className="text-muted-foreground mb-4">{t('next_steps_desc')}</p>
-                  <div className="space-y-2">
+                  <div className="space-y-2 w-full">
                     <Link href="/tutorials/transformers-attention" className={cn(buttonVariants({ variant: "outline" }), "w-full justify-start")}>
                       <Icons.ArrowRight className="w-4 h-4 mr-2" />
                       Transformers and Attention

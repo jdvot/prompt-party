@@ -121,7 +121,7 @@ export default async function ClaudeCodeBasicsTutorial() {
         <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('section_2_title')}</h2>
 
-          <div className="space-y-6">
+          <div className="space-y-6 w-full">
             <div>
               <h3 className="text-xl font-semibold mb-3">{t('section_2_cloud_title')}</h3>
               <p className="text-muted-foreground mb-3">{t('section_2_cloud_desc')}</p>
@@ -160,7 +160,7 @@ claude-code chat`}
               </ol>
             </div>
 
-            <Card className="border-violet-500/20 bg-violet-500/5">
+            <Card className="border-violet-500/20 bg-violet-500/5 w-full">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
                   <Icons.FileCode className="w-5 h-5 text-violet-600" />
@@ -208,7 +208,7 @@ src/
             </AlertDescription>
           </Alert>
 
-          <div className="space-y-6">
+          <div className="space-y-6 w-full">
             <div>
               <h3 className="text-xl font-semibold mb-3">{t('section_3_generating_title')}</h3>
               <Card>
@@ -289,8 +289,8 @@ export function Button({
         <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('section_4_title')}</h2>
 
-          <div className="space-y-4">
-            <Card className="border-blue-500/20 bg-blue-500/5">
+          <div className="space-y-4 w-full">
+            <Card className="border-blue-500/20 bg-blue-500/5 w-full">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
                   <Icons.Layers className="w-5 h-5 text-blue-600" />
@@ -315,7 +315,7 @@ Follow Shadcn UI patterns"
               </CardContent>
             </Card>
 
-            <Card className="border-green-500/20 bg-green-500/5">
+            <Card className="border-green-500/20 bg-green-500/5 w-full">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
                   <Icons.RefreshCw className="w-5 h-5 text-green-600" />
@@ -338,7 +338,7 @@ Follow Shadcn UI patterns"
               </CardContent>
             </Card>
 
-            <Card className="border-purple-500/20 bg-purple-500/5">
+            <Card className="border-purple-500/20 bg-purple-500/5 w-full">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
                   <Icons.Server className="w-5 h-5 text-purple-600" />
@@ -369,7 +369,7 @@ Follow Shadcn UI patterns"
           <h2 className="text-3xl font-bold mb-4">{t('section_5_title')}</h2>
 
           <div className="grid md:grid-cols-2 gap-4 w-full">
-            <Card className="border-green-500/20 bg-green-500/5">
+            <Card className="border-green-500/20 bg-green-500/5 w-full">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
                   <Icons.CheckCircle className="w-5 h-5 text-green-600" />
@@ -402,7 +402,7 @@ Follow Shadcn UI patterns"
               </CardContent>
             </Card>
 
-            <Card className="border-red-500/20 bg-red-500/5">
+            <Card className="border-red-500/20 bg-red-500/5 w-full">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
                   <Icons.XCircle className="w-5 h-5 text-red-600" />
@@ -436,7 +436,7 @@ Follow Shadcn UI patterns"
             </Card>
           </div>
 
-          <Card className="mt-6 border-amber-500/20 bg-amber-500/5">
+          <Card className="mt-6 border-amber-500/20 bg-amber-500/5 w-full">
             <CardHeader>
               <CardTitle className="text-lg flex items-center gap-2">
                 <Icons.Workflow className="w-5 h-5 text-amber-600" />
@@ -470,7 +470,7 @@ Follow Shadcn UI patterns"
         <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('section_6_title')}</h2>
 
-          <div className="space-y-4">
+          <div className="space-y-4 w-full">
             <Alert className="border-amber-500/20 bg-amber-500/5">
               <Icons.AlertTriangle className="w-4 h-4 text-amber-600" />
               <AlertDescription>
@@ -500,7 +500,7 @@ Follow Shadcn UI patterns"
         </section>
 
         {/* Next Steps */}
-        <Card className="bg-gradient-to-r from-violet-600/10 to-violet-600/10 border-violet-600/20">
+        <Card className="bg-gradient-to-r from-violet-600/10 to-violet-600/10 border-violet-600/20 w-full">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Icons.Lightbulb className="w-5 h-5 text-primary" />

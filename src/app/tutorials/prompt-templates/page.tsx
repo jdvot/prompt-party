@@ -44,7 +44,7 @@ export default async function PromptTemplatesTutorial() {
         <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('template_structure')}</h2>
 
-          <Card className="mb-4">
+          <Card className="mb-4 w-full">
             <CardHeader>
               <CardTitle>{t('anatomy')}</CardTitle>
             </CardHeader>
@@ -91,7 +91,7 @@ export default async function PromptTemplatesTutorial() {
         <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('ready_to_use')}</h2>
 
-          <div className="space-y-6">
+          <div className="space-y-6 w-full">
             {/* Email Template */}
             <Card>
               <CardHeader>
@@ -302,7 +302,7 @@ Additional information:
         <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('customizing')}</h2>
 
-          <Card className="mb-4">
+          <Card className="mb-4 w-full">
             <CardHeader>
               <CardTitle>{t('tips_adaptation')}</CardTitle>
             </CardHeader>
@@ -354,7 +354,7 @@ Additional information:
         <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('advanced_techniques')}</h2>
 
-          <div className="space-y-4">
+          <div className="space-y-4 w-full">
             <Card>
               <CardHeader>
                 <CardTitle className="text-lg">{t('nested_templates')}</CardTitle>
@@ -426,7 +426,7 @@ Audience: [AUDIENCE, default: general readers]`}
 
         {/* Practice Exercise */}
         <section className="w-full">
-          <Card className="bg-gradient-to-r from-violet-600/10 to-violet-600/10 border-violet-600/20">
+          <Card className="bg-gradient-to-r from-violet-600/10 to-violet-600/10 border-violet-600/20 w-full">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Icons.BookOpen className="w-5 h-5 text-primary" />
@@ -473,7 +473,7 @@ Audience: [AUDIENCE, default: general readers]`}
         </section>
 
         {/* Next Steps */}
-        <Card className="bg-gradient-to-r from-violet-600/10 to-violet-600/10 border-violet-600/20">
+        <Card className="bg-gradient-to-r from-violet-600/10 to-violet-600/10 border-violet-600/20 w-full">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Icons.Lightbulb className="w-5 h-5 text-primary" />

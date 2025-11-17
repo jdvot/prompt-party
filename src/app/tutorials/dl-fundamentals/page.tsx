@@ -50,7 +50,7 @@ export default async function DLFundamentalsTutorial() {
             </p>
           </div>
 
-          <Card className="border-violet-500/20 bg-violet-500/5">
+          <Card className="border-violet-500/20 bg-violet-500/5 w-full">
             <CardHeader>
               <CardTitle className="text-lg flex items-center gap-2">
                 <Icons.Zap className="w-5 h-5 text-violet-600" />
@@ -131,7 +131,7 @@ export default async function DLFundamentalsTutorial() {
             </p>
           </div>
 
-          <Card className="mb-4">
+          <Card className="mb-4 w-full">
             <CardHeader>
               <CardTitle>{t('backprop_process')}</CardTitle>
             </CardHeader>
@@ -179,7 +179,7 @@ export default async function DLFundamentalsTutorial() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-4 w-full">
-            <Card className="border-blue-500/20 bg-blue-500/5">
+            <Card className="border-blue-500/20 bg-blue-500/5 w-full">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
                   <Icons.Network className="w-5 h-5 text-blue-600" />
@@ -199,7 +199,7 @@ export default async function DLFundamentalsTutorial() {
               </CardContent>
             </Card>
 
-            <Card className="border-green-500/20 bg-green-500/5">
+            <Card className="border-green-500/20 bg-green-500/5 w-full">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
                   <Icons.Repeat className="w-5 h-5 text-green-600" />
@@ -219,7 +219,7 @@ export default async function DLFundamentalsTutorial() {
               </CardContent>
             </Card>
 
-            <Card className="border-purple-500/20 bg-purple-500/5">
+            <Card className="border-purple-500/20 bg-purple-500/5 w-full">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
                   <Icons.Zap className="w-5 h-5 text-purple-600" />
@@ -239,7 +239,7 @@ export default async function DLFundamentalsTutorial() {
               </CardContent>
             </Card>
 
-            <Card className="border-orange-500/20 bg-orange-500/5">
+            <Card className="border-orange-500/20 bg-orange-500/5 w-full">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
                   <Icons.Lightbulb className="w-5 h-5 text-orange-600" />
@@ -264,7 +264,7 @@ export default async function DLFundamentalsTutorial() {
         <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('training_challenges_title')}</h2>
 
-          <Card className="border-orange-500/20 bg-orange-500/5 mb-4">
+          <Card className="border-orange-500/20 bg-orange-500/5 mb-4 w-full">
             <CardHeader>
               <CardTitle className="text-lg flex items-center gap-2">
                 <Icons.AlertTriangle className="w-5 h-5 text-orange-600" />
@@ -276,7 +276,7 @@ export default async function DLFundamentalsTutorial() {
             </CardContent>
           </Card>
 
-          <Card className="border-red-500/20 bg-red-500/5">
+          <Card className="border-red-500/20 bg-red-500/5 w-full">
             <CardHeader>
               <CardTitle className="text-lg flex items-center gap-2">
                 <Icons.AlertTriangle className="w-5 h-5 text-red-600" />
@@ -290,7 +290,7 @@ export default async function DLFundamentalsTutorial() {
         </section>
 
         <section className="w-full">
-          <Card className="bg-gradient-to-r from-violet-600/10 to-violet-600/10 border-violet-600/20">
+          <Card className="bg-gradient-to-r from-violet-600/10 to-violet-600/10 border-violet-600/20 w-full">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Icons.BookOpen className="w-5 h-5 text-primary" />
@@ -319,7 +319,7 @@ export default async function DLFundamentalsTutorial() {
           <DLFundamentalsQuiz />
         </section>
 
-        <Card className="bg-gradient-to-r from-violet-600/10 to-violet-600/10 border-violet-600/20">
+        <Card className="bg-gradient-to-r from-violet-600/10 to-violet-600/10 border-violet-600/20 w-full">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Icons.Lightbulb className="w-5 h-5 text-primary" />

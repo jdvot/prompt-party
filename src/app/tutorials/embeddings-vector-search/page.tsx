@@ -42,7 +42,7 @@ export default async function EmbeddingsVectorSearchTutorial() {
             <section className="w-full">
               <h2 className="text-3xl font-bold mb-4">{t('what_are_embeddings')}</h2>
               <p className="text-lg text-muted-foreground mb-6">{t('embeddings_intro')}</p>
-              <Card className="border-blue-500/20 bg-blue-500/5">
+              <Card className="border-blue-500/20 bg-blue-500/5 w-full">
                 <CardContent className="pt-6">
                   <p className="text-sm text-muted-foreground">{t('semantic_meaning')}</p>
                 </CardContent>
@@ -57,7 +57,7 @@ export default async function EmbeddingsVectorSearchTutorial() {
 
             <section className="w-full">
               <h2 className="text-3xl font-bold mb-4">{t('similarity_metrics_title')}</h2>
-              <div className="space-y-3">
+              <div className="space-y-3 w-full">
                 <Card>
                   <CardHeader>
                     <CardTitle className="text-lg">{t('cosine_similarity_title')}</CardTitle>
@@ -80,7 +80,7 @@ export default async function EmbeddingsVectorSearchTutorial() {
             <section className="w-full">
               <h2 className="text-3xl font-bold mb-4">{t('vector_databases_title')}</h2>
               <p className="text-lg text-muted-foreground mb-6">{t('vector_db_intro')}</p>
-              <div className="space-y-2 text-sm text-muted-foreground">
+              <div className="space-y-2 text-sm text-muted-foreground w-full">
                 <p>✓ {t('vdb_benefit_1')}</p>
                 <p>✓ {t('vdb_benefit_2')}</p>
                 <p>✓ {t('vdb_benefit_3')}</p>
@@ -95,7 +95,7 @@ export default async function EmbeddingsVectorSearchTutorial() {
 
             <section className="w-full">
               <h2 className="text-3xl font-bold mb-4">{t('applications_title')}</h2>
-              <div className="space-y-3">
+              <div className="space-y-3 w-full">
                 <Card>
                   <CardHeader><CardTitle className="text-lg">{t('semantic_search_title')}</CardTitle></CardHeader>
                   <CardContent><p className="text-sm text-muted-foreground">{t('semantic_search_desc')}</p></CardContent>

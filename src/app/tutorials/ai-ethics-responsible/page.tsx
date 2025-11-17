@@ -35,14 +35,14 @@ export default async function EthicsTutorial() {
             <section className="w-full">
               <h2 className="text-3xl font-bold mb-4">{t('why_ethics')}</h2>
               <p className="text-muted-foreground mb-4">{t('ethics_intro')}</p>
-              <Card className="border-red-500/20 bg-red-500/5">
+              <Card className="border-red-500/20 bg-red-500/5 w-full">
                 <CardContent className="pt-6"><p className="text-sm text-muted-foreground">{t('real_example')}</p></CardContent>
               </Card>
             </section>
 
             <section className="w-full">
               <h2 className="text-3xl font-bold mb-4">{t('bias_fairness')}</h2>
-              <div className="space-y-3">
+              <div className="space-y-3 w-full">
                 <Card>
                   <CardHeader><CardTitle className="text-lg">{t('historical_bias')}</CardTitle></CardHeader>
                   <CardContent><p className="text-sm text-muted-foreground">{t('historical_desc')}</p></CardContent>
@@ -60,7 +60,7 @@ export default async function EthicsTutorial() {
 
             <section className="w-full">
               <h2 className="text-3xl font-bold mb-4">{t('privacy_security')}</h2>
-              <div className="space-y-3">
+              <div className="space-y-3 w-full">
                 <Card>
                   <CardHeader><CardTitle className="text-lg">{t('data_privacy')}</CardTitle></CardHeader>
                   <CardContent><p className="text-sm text-muted-foreground">{t('privacy_desc')}</p></CardContent>
@@ -75,7 +75,7 @@ export default async function EthicsTutorial() {
             <section className="w-full">
               <h2 className="text-3xl font-bold mb-4">{t('transparency_accountability')}</h2>
               <p className="text-muted-foreground mb-4">{t('transparency_intro')}</p>
-              <div className="space-y-2 text-sm text-muted-foreground">
+              <div className="space-y-2 text-sm text-muted-foreground w-full">
                 <p>• {t('transparency_point_1')}</p>
                 <p>• {t('transparency_point_2')}</p>
                 <p>• {t('transparency_point_3')}</p>

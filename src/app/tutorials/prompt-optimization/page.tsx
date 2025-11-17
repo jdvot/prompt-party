@@ -90,7 +90,7 @@ export default async function PromptOptimizationTutorial() {
         <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('token_optimization')}</h2>
 
-          <Card className="mb-4">
+          <Card className="mb-4 w-full">
             <CardHeader>
               <CardTitle>{t('understanding_tokens')}</CardTitle>
             </CardHeader>
@@ -109,7 +109,7 @@ export default async function PromptOptimizationTutorial() {
           </Card>
 
           <div className="grid md:grid-cols-2 gap-4 w-full">
-            <Card className="border-red-500/20">
+            <Card className="border-red-500/20 w-full">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
                   <Icons.XCircle className="w-5 h-5 text-red-600" />
@@ -127,7 +127,7 @@ export default async function PromptOptimizationTutorial() {
               </CardContent>
             </Card>
 
-            <Card className="border-green-500/20">
+            <Card className="border-green-500/20 w-full">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
                   <Icons.CheckCircle className="w-5 h-5 text-green-600" />
@@ -146,7 +146,7 @@ export default async function PromptOptimizationTutorial() {
             </Card>
           </div>
 
-          <Card className="mt-4">
+          <Card className="mt-4 w-full">
             <CardHeader>
               <CardTitle>{t('token_saving_strategies')}</CardTitle>
             </CardHeader>
@@ -196,7 +196,7 @@ export default async function PromptOptimizationTutorial() {
         <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('prompt_caching')}</h2>
 
-          <Card className="mb-4">
+          <Card className="mb-4 w-full">
             <CardHeader>
               <CardTitle>{t('what_is_caching')}</CardTitle>
             </CardHeader>
@@ -252,7 +252,7 @@ const userQuery = "Review this component: [CODE]";
         <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('response_optimization')}</h2>
 
-          <Card className="mb-4">
+          <Card className="mb-4 w-full">
             <CardHeader>
               <CardTitle>{t('control_output_length')}</CardTitle>
             </CardHeader>
@@ -340,7 +340,7 @@ Return as: number. translation`}
         <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('error_prevention')}</h2>
 
-          <Card className="mb-4">
+          <Card className="mb-4 w-full">
             <CardHeader>
               <CardTitle>{t('make_prompts_reliable')}</CardTitle>
             </CardHeader>
@@ -382,7 +382,7 @@ Good: 'Return as JSON: {analysis: string, confidence: 0-100, next_steps: string[
               <CardTitle>{t('checklist_before_sending')}</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="space-y-3">
+              <div className="space-y-3 w-full">
                 <label className="flex items-start gap-3 cursor-pointer">
                   <input type="checkbox" className="mt-1" />
                   <span className="text-sm">{t('checklist_1')}</span>
@@ -416,7 +416,7 @@ Good: 'Return as JSON: {analysis: string, confidence: 0-100, next_steps: string[
           </Card>
         </section>
 
-        <Card className="bg-gradient-to-r from-violet-600/10 to-violet-600/10 border-violet-600/20">
+        <Card className="bg-gradient-to-r from-violet-600/10 to-violet-600/10 border-violet-600/20 w-full">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Icons.Lightbulb className="w-5 h-5 text-primary" />

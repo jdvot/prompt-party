@@ -64,7 +64,7 @@ export default async function ClaudeAgentsTutorial() {
         <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('tool_use_title')}</h2>
 
-          <Card className="mb-6">
+          <Card className="mb-6 w-full">
             <CardHeader>
               <CardTitle>{t('tool_defining_title')}</CardTitle>
               <CardDescription>{t('tool_defining_description')}</CardDescription>
@@ -307,8 +307,8 @@ async function executeTools(content) {
         <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('best_practices_title')}</h2>
 
-          <div className="space-y-4">
-            <Card className="border-green-600/20 bg-green-600/5">
+          <div className="space-y-4 w-full">
+            <Card className="border-green-600/20 bg-green-600/5 w-full">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
                   <CheckCircle className="w-5 h-5 text-green-600" />
@@ -327,7 +327,7 @@ async function executeTools(content) {
               </CardContent>
             </Card>
 
-            <Card className="border-red-600/20 bg-red-600/5">
+            <Card className="border-red-600/20 bg-red-600/5 w-full">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
                   <span className="text-red-600">⚠️</span>
@@ -415,7 +415,7 @@ async function research(topic) {
         </section>
 
         {/* Next Steps */}
-        <Card className="bg-gradient-to-r from-violet-600/10 to-violet-600/10 border-violet-600/20">
+        <Card className="bg-gradient-to-r from-violet-600/10 to-violet-600/10 border-violet-600/20 w-full">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Sparkles className="w-5 h-5 text-primary" />

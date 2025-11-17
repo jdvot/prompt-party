@@ -68,7 +68,7 @@ export default async function MultiAgentSystemsTutorial() {
               </CardContent>
             </Card>
 
-            <Card className="border-primary/20">
+            <Card className="border-primary/20 w-full">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
                   <Icons.Users className="w-5 h-5 text-primary" />
@@ -91,7 +91,7 @@ export default async function MultiAgentSystemsTutorial() {
         <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('common_patterns')}</h2>
 
-          <div className="space-y-6">
+          <div className="space-y-6 w-full">
             {/* Pattern 1 */}
             <Card>
               <CardHeader>
@@ -331,7 +331,7 @@ Return as JSON array of tasks with: {id, description, agent_type}\`
         <section className="w-full">
           <h2 className="text-3xl font-bold mb-4">{t('agent_communication')}</h2>
 
-          <Card className="mb-4">
+          <Card className="mb-4 w-full">
             <CardHeader>
               <CardTitle>{t('designing_interfaces')}</CardTitle>
             </CardHeader>
@@ -392,7 +392,7 @@ Your task: ...
           <h2 className="text-3xl font-bold mb-4">{t('best_practices')}</h2>
 
           <div className="grid md:grid-cols-2 gap-4 w-full">
-            <Card className="border-green-500/20">
+            <Card className="border-green-500/20 w-full">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
                   <Icons.CheckCircle className="w-5 h-5 text-green-600" />
@@ -412,7 +412,7 @@ Your task: ...
               </CardContent>
             </Card>
 
-            <Card className="border-red-500/20">
+            <Card className="border-red-500/20 w-full">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
                   <Icons.XCircle className="w-5 h-5 text-red-600" />
@@ -435,7 +435,7 @@ Your task: ...
         </section>
 
         <section className="w-full">
-          <Card className="bg-gradient-to-r from-violet-600/10 to-violet-600/10 border-violet-600/20">
+          <Card className="bg-gradient-to-r from-violet-600/10 to-violet-600/10 border-violet-600/20 w-full">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Icons.BookOpen className="w-5 h-5 text-primary" />
@@ -447,7 +447,7 @@ Your task: ...
                 {t('real_world_intro')}
               </p>
 
-              <div className="space-y-3 text-sm">
+              <div className="space-y-3 text-sm w-full">
                 <div className="flex items-start gap-2">
                   <div className="w-6 h-6 rounded-full bg-blue-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                     <span className="text-xs font-bold text-blue-600">1</span>
@@ -504,7 +504,7 @@ Your task: ...
           </Card>
         </section>
 
-        <Card className="bg-gradient-to-r from-violet-600/10 to-violet-600/10 border-violet-600/20">
+        <Card className="bg-gradient-to-r from-violet-600/10 to-violet-600/10 border-violet-600/20 w-full">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Icons.Lightbulb className="w-5 h-5 text-primary" />

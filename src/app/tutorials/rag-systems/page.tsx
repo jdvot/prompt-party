@@ -35,14 +35,14 @@ export default async function RAGTutorial() {
             <section className="w-full">
               <h2 className="text-3xl font-bold mb-4">{t('what_is_rag')}</h2>
               <p className="text-muted-foreground mb-4">{t('rag_intro')}</p>
-              <Card className="border-blue-500/20 bg-blue-500/5">
+              <Card className="border-blue-500/20 bg-blue-500/5 w-full">
                 <CardContent className="pt-6"><p className="text-sm text-muted-foreground">{t('rag_pipeline')}</p></CardContent>
               </Card>
             </section>
 
             <section className="w-full">
               <h2 className="text-3xl font-bold mb-4">{t('vs_finetuning')}</h2>
-              <div className="space-y-3">
+              <div className="space-y-3 w-full">
                 <Card>
                   <CardHeader><CardTitle className="text-lg">{t('rag_benefit_1')}</CardTitle></CardHeader>
                   <CardContent><p className="text-sm text-muted-foreground">{t('rag_benefit_1_desc')}</p></CardContent>
@@ -61,7 +61,7 @@ export default async function RAGTutorial() {
             <section className="w-full">
               <h2 className="text-3xl font-bold mb-4">{t('chunking_title')}</h2>
               <p className="text-muted-foreground mb-4">{t('chunking_intro')}</p>
-              <div className="space-y-2 text-sm text-muted-foreground">
+              <div className="space-y-2 text-sm text-muted-foreground w-full">
                 <p>• {t('chunk_point_1')}</p>
                 <p>• {t('chunk_point_2')}</p>
                 <p>• {t('chunk_point_3')}</p>
@@ -70,7 +70,7 @@ export default async function RAGTutorial() {
 
             <section className="w-full">
               <h2 className="text-3xl font-bold mb-4">{t('retrieval_title')}</h2>
-              <div className="space-y-3">
+              <div className="space-y-3 w-full">
                 <Card>
                   <CardHeader><CardTitle className="text-lg">{t('dense_retrieval')}</CardTitle></CardHeader>
                   <CardContent><p className="text-sm text-muted-foreground">{t('dense_desc')}</p></CardContent>
