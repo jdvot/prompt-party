@@ -2,6 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge'
 import { Button, buttonVariants } from '@/components/ui/button'
 import { Progress } from '@/components/ui/progress'
+import { TutorialProgress } from '@/components/tutorials/tutorial-progress'
 import * as Icons from 'lucide-react'
 import Link from 'next/link'
 import type { Metadata } from 'next'
@@ -89,7 +90,9 @@ export default async function ExpertPath() {
   ]
 
   return (
-    <div className="container mx-auto px-4 py-8 max-w-5xl">
+    <div className="container mx-auto px-4 py-8 max-w-7xl">
+      <div className="grid lg:grid-cols-[1fr_300px] gap-8">
+        <div>
       {/* Back Button */}
       <Link href="/tutorials" className={cn(buttonVariants({ variant: "ghost" }), "mb-6")}>
         <Icons.ArrowLeft className="w-4 h-4 mr-2" />
@@ -351,6 +354,21 @@ export default async function ExpertPath() {
           </div>
         </CardContent>
       </Card>
+        </div>
+
+        {/* Sidebar - Progress Tracker */}
+        <aside className="hidden lg:block">
+          <TutorialProgress
+            tutorialId="expert-path"
+            title={t('title')}
+            duration={t('duration')}
+            level="intermediate"
+            rewardPoints={150}
+            rewardBadge={t('reward_badge') || 'Expert Path Master'}
+            completed={false}
+          />
+        </aside>
+      </div>
     </div>
   )
 }

@@ -37,7 +37,7 @@ export default async function TransformersAttentionTutorial() {
         <div>
           <div className="mb-8">
             <div className="flex items-center gap-3 mb-4">
-              <Badge className="bg-amber-500">{t('badge_intermediate')}</Badge>
+              <Badge className="bg-yellow-500">{t('badge_intermediate')}</Badge>
               <Badge variant="outline">{t('duration')}</Badge>
             </div>
             <h1 className="text-4xl font-bold mb-4">{t('title')}</h1>

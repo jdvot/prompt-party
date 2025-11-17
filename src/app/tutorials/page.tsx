@@ -170,7 +170,7 @@ export default async function TutorialsPage() {
         iconName: 'Zap',
         topics: [t('tutorial_transformers_attention_topic1'), t('tutorial_transformers_attention_topic2'), t('tutorial_transformers_attention_topic3')],
         link: '/tutorials/transformers-attention',
-        color: 'from-amber-500 to-orange-500'
+        color: 'from-yellow-500 to-orange-500'
       },
       {
         id: 'embeddings-vector-search',

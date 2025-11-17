@@ -23,7 +23,7 @@ const levelColorConfig = {
     color: 'bg-green-500/10 text-green-700 dark:text-green-400 border-green-500/20'
   },
   intermediate: {
-    color: 'bg-violet-500/10 text-violet-700 dark:text-violet-400 border-violet-500/20'
+    color: 'bg-yellow-500/10 text-yellow-700 dark:text-yellow-400 border-yellow-500/20'
   },
   expert: {
     color: 'bg-orange-500/10 text-orange-700 dark:text-orange-400 border-orange-500/20'
