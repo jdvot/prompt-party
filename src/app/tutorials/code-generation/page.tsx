@@ -24,7 +24,7 @@ export default async function CodeGenerationTutorial() {
   const t = await getTranslations('tutorials.code_generation')
   const tCommon = await getTranslations('tutorials')
   return (
-    <Container size="lg" className="py-8 overflow-hidden">
+    <Container size="lg" className="py-8">
       <div className="grid lg:grid-cols-[1fr_300px] gap-8 w-full">
         <div>
       <Link href="/tutorials" className={cn(buttonVariants({ variant: "ghost" }), "mb-6")}>

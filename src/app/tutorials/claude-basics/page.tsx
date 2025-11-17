@@ -26,7 +26,7 @@ export default async function ClaudeBasicsTutorial() {
   const tCommon = await getTranslations('tutorials')
 
   return (
-    <Container size="lg" className="py-8 overflow-hidden">
+    <Container size="lg" className="py-8">
       {/* Back Button */}
       <Link href="/tutorials" className={cn(buttonVariants({ variant: "ghost" }), "mb-6")}>
         <Icons.ArrowLeft className="w-4 h-4 mr-2" />

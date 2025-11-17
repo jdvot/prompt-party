@@ -24,7 +24,7 @@ export default async function EmbeddingsVectorSearchTutorial() {
   const tCommon = await getTranslations('tutorials')
 
   return (
-    <Container size="xl" className="py-8 overflow-hidden">
+    <Container size="xl" className="py-8">
       <Link href="/tutorials" className={cn(buttonVariants({ variant: "ghost" }), "mb-6")}>
         <Icons.ArrowLeft className="w-4 h-4 mr-2" />
         {tCommon('back_to_tutorials')}

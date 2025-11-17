@@ -26,7 +26,7 @@ export default async function ClaudeCodeBasicsTutorial() {
   const tCommon = await getTranslations('tutorials')
 
   return (
-    <Container size="lg" className="py-8 overflow-hidden">
+    <Container size="lg" className="py-8">
       <div className="grid lg:grid-cols-[1fr_300px] gap-8 w-full">
         <div>
       {/* Back Button */}
@@ -81,7 +81,7 @@ export default async function ClaudeCodeBasicsTutorial() {
         {/* Section 1: What is Claude Code */}
         <section>
           <h2 className="text-3xl font-bold mb-4">{t('section_1_title')}</h2>
-          <div className="prose prose-neutral dark:prose-invert max-w-none overflow-hidden">
+          <div className="prose prose-neutral dark:prose-invert max-w-none ">
             <p className="text-lg mb-4">
               {t('section_1_intro')}
             </p>

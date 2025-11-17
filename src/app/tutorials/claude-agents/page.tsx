@@ -23,7 +23,7 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function ClaudeAgentsTutorial() {
   const t = await getTranslations('tutorials.claudeAgents')
   return (
-    <Container size="lg" className="py-8 overflow-hidden">
+    <Container size="lg" className="py-8">
       <div className="grid lg:grid-cols-[1fr_300px] gap-8 w-full">
         <div>
       {/* Back Button */}
