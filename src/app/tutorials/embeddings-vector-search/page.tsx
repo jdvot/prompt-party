@@ -30,7 +30,7 @@ export default async function EmbeddingsVectorSearchTutorial() {
         {tCommon('back_to_tutorials')}
       </Link>
 
-      <div className="grid lg:grid-cols-[1fr_300px] gap-8 w-full overflow-hidden">
+      <div className="grid lg:grid-cols-[1fr_300px] gap-8 w-full">
         <div>
           <div className="mb-8">
             <div className="flex items-center gap-3 mb-4">

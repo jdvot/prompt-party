@@ -27,7 +27,7 @@ export default async function ClaudeCodeBasicsTutorial() {
 
   return (
     <Container size="lg" className="py-8">
-      <div className="grid lg:grid-cols-[1fr_300px] gap-8 w-full overflow-hidden">
+      <div className="grid lg:grid-cols-[1fr_300px] gap-8 w-full">
         <div>
       {/* Back Button */}
       <Link href="/tutorials" className={cn(buttonVariants({ variant: "ghost" }), "mb-6")}>

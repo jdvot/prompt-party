@@ -34,13 +34,13 @@ export default async function ClaudeBasicsTutorial() {
       </Link>
 
       {/* Two-column layout */}
-      <div className="grid lg:grid-cols-[1fr_300px] gap-8 w-full overflow-hidden">
+      <div className="grid lg:grid-cols-[1fr_300px] gap-8 w-full">
         <div>
 
       {/* Header */}
       <div className="mb-8">
         <div className="flex items-center gap-3 mb-4">
-          <Badge>{t('badge_beginner')}</Badge>
+          <Badge className="bg-green-500">{t('badge_beginner')}</Badge>
           <Badge variant="outline">{t('duration')}</Badge>
         </div>
         <h1 className="text-4xl font-bold mb-4">{t('title')}</h1>

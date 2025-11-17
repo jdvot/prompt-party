@@ -24,7 +24,7 @@ export default async function ClaudeAgentsTutorial() {
   const t = await getTranslations('tutorials.claudeAgents')
   return (
     <Container size="lg" className="py-8">
-      <div className="grid lg:grid-cols-[1fr_300px] gap-8 w-full overflow-hidden">
+      <div className="grid lg:grid-cols-[1fr_300px] gap-8 w-full">
         <div>
       {/* Back Button */}
       <Link href="/tutorials" className={cn(buttonVariants({ variant: "ghost" }), "mb-6")}>
@@ -35,7 +35,7 @@ export default async function ClaudeAgentsTutorial() {
       {/* Header */}
       <div className="mb-8">
         <div className="flex items-center gap-3 mb-4">
-          <Badge>{t('badge_intermediate')}</Badge>
+          <Badge className="bg-yellow-500">{t('badge_intermediate')}</Badge>
           <Badge variant="outline">{t('badge_duration')}</Badge>
         </div>
         <h1 className="text-4xl font-bold mb-4">{t('title')}</h1>

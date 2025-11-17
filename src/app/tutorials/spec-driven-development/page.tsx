@@ -34,7 +34,7 @@ export default async function SpecDrivenDevelopmentTutorial() {
       </Link>
 
       {/* Two-column layout */}
-      <div className="grid lg:grid-cols-[1fr_300px] gap-8 w-full overflow-hidden">
+      <div className="grid lg:grid-cols-[1fr_300px] gap-8 w-full">
         <div>
 
       {/* Header */}
