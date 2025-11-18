@@ -1,0 +1,4746 @@
+{
+  "statistics": {
+    "en": 4095,
+    "fr": 4095,
+    "nl": 4095
+  },
+  "coverage": {
+    "en": 100.0,
+    "fr": 100.0,
+    "nl": 100.0
+  },
+  "missing_keys": {
+    "fr": [],
+    "nl": []
+  },
+  "untranslated_values": {
+    "fr": [
+      {
+        "key": "ui.message_bginfo_textinfoforeground",
+        "value": "bg-info text-info-foreground"
+      },
+      {
+        "key": "tutorials.index.tutorial_ragas_evaluation_duration",
+        "value": "40 minutes"
+      },
+      {
+        "key": "ml.hero_title",
+        "value": "Machine Learning vs Deep Learning"
+      },
+      {
+        "key": "techStack.cta_stat_1_value",
+        "value": "10k+"
+      },
+      {
+        "key": "ui.message_borderwarning_focusvisibleringwarning",
+        "value": "border-warning focus-visible:ring-warning"
+      },
+      {
+        "key": "components.submitPromptButton.urlPlaceholder",
+        "value": "https://prompt-party.com/prompts/..."
+      },
+      {
+        "key": "profile.collections_tab",
+        "value": "Collections"
+      },
+      {
+        "key": "notifications.form_comments",
+        "value": "Comments"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_4_example_3_title",
+        "value": "Designing a RESTful API"
+      },
+      {
+        "key": "techStack.cta_stat_3_value",
+        "value": "1M+"
+      },
+      {
+        "key": "components.emptyState.notFound",
+        "value": "Page not found"
+      },
+      {
+        "key": "common.form_ai_model",
+        "value": "AI Model"
+      },
+      {
+        "key": "onboarding.heading_discover_learn",
+        "value": "Discover & Learn"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_2_cli_title",
+        "value": "CLI Installation"
+      },
+      {
+        "key": "tutorials.claude_code_basics.learn_2",
+        "value": "Set up Claude Code on cloud or CLI"
+      },
+      {
+        "key": "profile.message_profile_information",
+        "value": "Profile Information"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_4_example_2_desc",
+        "value": "Migrate state management from Redux with less boilerplate and better types"
+      },
+      {
+        "key": "components.savedSearches.nameRequired",
+        "value": "Name required"
+      },
+      {
+        "key": "tutorials.claude_code_basics.avoid_4",
+        "value": "Blindly trusting generated code without review"
+      },
+      {
+        "key": "tutorials.beginner_path.lesson3_duration",
+        "value": "15 min"
+      },
+      {
+        "key": "tutorials.index.tutorial_dl_fundamentals_title",
+        "value": "Deep Learning"
+      },
+      {
+        "key": "search.action_no_saved_searches_yet",
+        "value": "No saved searches yet"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_2_github_step_1",
+        "value": "Create a CLAUDE.md file in your repository root"
+      },
+      {
+        "key": "notifications.heading_inapp_notifications",
+        "value": "In-App Notifications"
+      },
+      {
+        "key": "tutorials.claude_code_basics.you_prompt",
+        "value": "Your Prompt"
+      },
+      {
+        "key": "collections.description_label",
+        "value": "Description"
+      },
+      {
+        "key": "design_system.option_2",
+        "value": "Option 2"
+      },
+      {
+        "key": "prompts.message_copied",
+        "value": "Copied!"
+      },
+      {
+        "key": "languages.fr",
+        "value": "Français"
+      },
+      {
+        "key": "onboarding.welcome_to_prompt_party",
+        "value": "Welcome to Prompt Party!"
+      },
+      {
+        "key": "tutorials.index.stat_free",
+        "value": "100%"
+      },
+      {
+        "key": "prompts.action_copy_the_prompt",
+        "value": "Copy the prompt"
+      },
+      {
+        "key": "components.settingsForm.profileInfo",
+        "value": "Profile Information"
+      },
+      {
+        "key": "profile.heading_account",
+        "value": "Account"
+      },
+      {
+        "key": "tutorials.index.tutorial_spec_driven_development_duration",
+        "value": "50 minutes"
+      },
+      {
+        "key": "components.settingsForm.displayName",
+        "value": "Display Name"
+      },
+      {
+        "key": "common.heading_section_title",
+        "value": "Section Title"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_5_integration_3",
+        "value": "Share successful prompts with your team"
+      },
+      {
+        "key": "challenges.points_label",
+        "value": "points"
+      },
+      {
+        "key": "components.savedSearches.nameRequiredDesc",
+        "value": "Please enter a name for this search"
+      },
+      {
+        "key": "tutorials.advanced_prompting.meta_prompting_title",
+        "value": "4. Meta-Prompting"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q10_exp",
+        "value": "Keep CLAUDE.md updated to maintain Claude Code's accuracy"
+      },
+      {
+        "key": "profile.points_label",
+        "value": "Points"
+      },
+      {
+        "key": "tutorials.data_fundamentals.duration",
+        "value": "30 min"
+      },
+      {
+        "key": "tutorials.claude_code_basics.avoid_1",
+        "value": "Vague requests without context"
+      },
+      {
+        "key": "components.savedSearches.description",
+        "value": "Quick access to your favorite search queries"
+      },
+      {
+        "key": "profile.heading_choose_your_avatar",
+        "value": "Choose Your Avatar"
+      },
+      {
+        "key": "notifications.form_new_followers",
+        "value": "New Followers"
+      },
+      {
+        "key": "tutorials.claude_code_basics.read_docs",
+        "value": "Read Official Docs"
+      },
+      {
+        "key": "prompts.heading_prompt_title",
+        "value": "Prompt title..."
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q9_exp",
+        "value": "Team guidelines and shared knowledge maximize Claude Code benefits"
+      },
+      {
+        "key": "nav.notifications",
+        "value": "Notifications"
+      },
+      {
+        "key": "onboarding.heading_like_comment",
+        "value": "Like & Comment"
+      },
+      {
+        "key": "templates.variables",
+        "value": "variables"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_4_title",
+        "value": "Real-World Examples"
+      },
+      {
+        "key": "tutorials.computer_vision_fundamentals.duration",
+        "value": "40 min"
+      },
+      {
+        "key": "commandPalette.navigation",
+        "value": "Navigation"
+      },
+      {
+        "key": "auth.email",
+        "value": "Email"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q10",
+        "value": "How often should you update your CLAUDE.md?"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q6_exp",
+        "value": "Security review is essential for all generated code"
+      },
+      {
+        "key": "templates.premium",
+        "value": "Premium"
+      },
+      {
+        "key": "ui.form_loading_prompt_card",
+        "value": "Loading prompt card"
+      },
+      {
+        "key": "onboarding.action_save_to_collections",
+        "value": "Save to Collections"
+      },
+      {
+        "key": "ml.page_title",
+        "value": "Machine Learning vs Deep Learning | Prompt Party"
+      },
+      {
+        "key": "common.optimized_version",
+        "value": "Optimized Version"
+      },
+      {
+        "key": "search.form_name_this_search",
+        "value": "Name this search..."
+      },
+      {
+        "key": "common.heading_large_badges_sizequotlgquot",
+        "value": "Large Badges (size=&quot;lg&quot;)"
+      },
+      {
+        "key": "ml.limitations",
+        "value": "Limitations"
+      },
+      {
+        "key": "common.form_keyboard_shortcuts",
+        "value": "Keyboard shortcuts"
+      },
+      {
+        "key": "prompts.original",
+        "value": "Original"
+      },
+      {
+        "key": "tutorials.intro_prompts.element_format",
+        "value": "💡 Format"
+      },
+      {
+        "key": "tutorials.claude_code_basics.avoid_5",
+        "value": "Skipping security considerations"
+      },
+      {
+        "key": "nav.ml_vs_dl",
+        "value": "🧬 ML vs DL"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q7_o4",
+        "value": "Use vague instructions"
+      },
+      {
+        "key": "tutorials.claude_code_basics.do_4",
+        "value": "Use Claude Code for architecture decisions"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_2_github_step_2",
+        "value": "Add project overview, tech stack, and coding standards"
+      },
+      {
+        "key": "common.upgrade",
+        "value": "Upgrade"
+      },
+      {
+        "key": "search.pick_a_date_range",
+        "value": "Pick a date range"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_4_example_2_title",
+        "value": "Refactoring Redux to Zustand"
+      },
+      {
+        "key": "prompts.action_you_are_the_only_one_editing",
+        "value": "You are the only one editing"
+      },
+      {
+        "key": "tutorials.index.tutorial_multi_agent_systems_duration",
+        "value": "40 minutes"
+      },
+      {
+        "key": "components.advancedFilters.relevant",
+        "value": "Most Relevant"
+      },
+      {
+        "key": "prompts.wizard_title",
+        "value": "Prompt Wizard"
+      },
+      {
+        "key": "tutorials.beginner_path.lesson1_duration",
+        "value": "15 min"
+      },
+      {
+        "key": "notifications.all",
+        "value": "All"
+      },
+      {
+        "key": "prompts.open_your_ai_assistant",
+        "value": "Open your AI assistant"
+      },
+      {
+        "key": "components.howToUse.step1",
+        "value": "Copy the prompt"
+      },
+      {
+        "key": "tutorials.data_fundamentals.reward_badge",
+        "value": "Data Fundamentals Master"
+      },
+      {
+        "key": "components.emptyState.notFoundDesc",
+        "value": "The page you are looking for does not exist."
+      },
+      {
+        "key": "tutorials.index.tutorial_prompt_templates_duration",
+        "value": "15 minutes"
+      },
+      {
+        "key": "components.promptPlayground.modelLabel",
+        "value": "AI Model"
+      },
+      {
+        "key": "commandPalette.nav.collections",
+        "value": "Collections"
+      },
+      {
+        "key": "prompt_types.instruction",
+        "value": "Instruction"
+      },
+      {
+        "key": "nav.concepts",
+        "value": "🧠 MCP vs RAG"
+      },
+      {
+        "key": "components.settingsForm.savingButton",
+        "value": "Saving..."
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q10_o4",
+        "value": "Whenever significant project changes occur"
+      },
+      {
+        "key": "prompts.form_write_your_prompt_here",
+        "value": "Write your prompt here..."
+      },
+      {
+        "key": "tutorials.nlp_fundamentals.tfidf_title",
+        "value": "TF-IDF (Term Frequency-Inverse Document Frequency)"
+      },
+      {
+        "key": "components.howToUse.compatibleModels",
+        "value": "Compatible AI Models"
+      },
+      {
+        "key": "common.form_test_input_optional",
+        "value": "Test Input (Optional)"
+      },
+      {
+        "key": "tutorials.index.tutorial_code_generation_duration",
+        "value": "25 minutes"
+      },
+      {
+        "key": "tutorials.transformers_attention.reward_badge",
+        "value": "Transformer Master"
+      },
+      {
+        "key": "components.savedSearches.title",
+        "value": "Saved Searches"
+      },
+      {
+        "key": "prompts.no_version_history_available",
+        "value": "No version history available"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_review",
+        "value": "Review the material and try again."
+      },
+      {
+        "key": "tutorials.prompt_templates.reward_badge",
+        "value": "Template Master"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q6_o2",
+        "value": "Always review code for security vulnerabilities"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q6_o3",
+        "value": "Only use Claude Code for non-sensitive code"
+      },
+      {
+        "key": "tutorials.claude_code_basics.do_this",
+        "value": "✓ Do This"
+      },
+      {
+        "key": "pricing_full.business_f7",
+        "value": "SLA 99.9%"
+      },
+      {
+        "key": "onboarding.step_2_of_4",
+        "value": "Step 2 of 4"
+      },
+      {
+        "key": "common.pro",
+        "value": "Pro"
+      },
+      {
+        "key": "challenges.votes",
+        "value": "votes"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_6_limitation_2",
+        "value": "Needs clear business logic explanation for complex algorithms"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_title",
+        "value": "Test Your Knowledge"
+      },
+      {
+        "key": "design_system.action",
+        "value": "Action"
+      },
+      {
+        "key": "leaderboard.top_percent_value",
+        "value": "Top {percent}%"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q5_o4",
+        "value": "Making architectural decisions alone"
+      },
+      {
+        "key": "wizard.badge_system",
+        "value": "System"
+      },
+      {
+        "key": "tutorials.claude_code_basics.vs_copilot_title",
+        "value": "vs GitHub Copilot:"
+      },
+      {
+        "key": "components.howToUse.step3",
+        "value": "Paste the prompt"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_5_integration_title",
+        "value": "Team Integration"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_6_limitation_4",
+        "value": "Context window limits (manage with CLAUDE.md)"
+      },
+      {
+        "key": "tutorials.dl_fundamentals.reward_badge",
+        "value": "Deep Learning Master"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q8_o2",
+        "value": "Only refactor one file at a time"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_2_title",
+        "value": "Installation & Setup"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q6",
+        "value": "How should you handle security with Claude Code?"
+      },
+      {
+        "key": "tutorials.claude_code_basics.next_ragas",
+        "value": "Learn Ragas Evaluation →"
+      },
+      {
+        "key": "apiKeys.docs_auth_header",
+        "value": "x-api-key"
+      },
+      {
+        "key": "ui.message_bordererror_focusvisibleringerror",
+        "value": "border-error focus-visible:ring-error"
+      },
+      {
+        "key": "tutorials.index.tutorial_transformers_attention_title",
+        "value": "Transformers & Attention"
+      },
+      {
+        "key": "tutorials.spec_driven_development.quiz_q1_o2",
+        "value": "60%"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q8_exp",
+        "value": "Gradual refactoring with review is safer than large-scale automated changes"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_4_example_result",
+        "value": "Result: Production-ready component with TypeScript types and Tailwind styling"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q2_o2",
+        "value": "Licensing information"
+      },
+      {
+        "key": "mcp.comparison_nature",
+        "value": "Nature"
+      },
+      {
+        "key": "editor.prompt_description",
+        "value": "Description"
+      },
+      {
+        "key": "tutorials.index.tutorial_nlp_fundamentals_duration",
+        "value": "40 minutes"
+      },
+      {
+        "key": "components.savedSearches.searchSaved",
+        "value": "Search saved"
+      },
+      {
+        "key": "tutorials.points",
+        "value": "points"
+      },
+      {
+        "key": "tutorials.nlp_fundamentals.nlp_history_3",
+        "value": "Neural"
+      },
+      {
+        "key": "prompt_actions.remix",
+        "value": "Remix"
+      },
+      {
+        "key": "tutorials.nlp_fundamentals.reward_badge",
+        "value": "NLP Fundamentals Master"
+      },
+      {
+        "key": "techStack.comparison_documentation",
+        "value": "Documentation"
+      },
+      {
+        "key": "mcp.rag_strength_4",
+        "value": "Scalable"
+      },
+      {
+        "key": "components.collaborativeEditor.userJoined",
+        "value": "{userName} joined"
+      },
+      {
+        "key": "common.collections",
+        "value": "Collections"
+      },
+      {
+        "key": "tutorials.claude_code_basics.pro_tip",
+        "value": "Pro Tip"
+      },
+      {
+        "key": "notifications.form_challenges",
+        "value": "Challenges"
+      },
+      {
+        "key": "tutorials.multi_agent_systems.reward_badge",
+        "value": "Multi-Agent Expert"
+      },
+      {
+        "key": "pricing_full.business_f5",
+        "value": "SSO/SAML"
+      },
+      {
+        "key": "ui.message_bginfo10_textinfo_border_borderinfo20",
+        "value": "bg-info/10 text-info border border-info/20"
+      },
+      {
+        "key": "notifications.title",
+        "value": "Notifications"
+      },
+      {
+        "key": "footer.concepts",
+        "value": "Concepts"
+      },
+      {
+        "key": "settings.notificationSettings.push.remixes.label",
+        "value": "Remixes"
+      },
+      {
+        "key": "search.recent_searches",
+        "value": "Recent Searches"
+      },
+      {
+        "key": "common.heading_aioptimized_prompt",
+        "value": "AI-Optimized Prompt"
+      },
+      {
+        "key": "tutorials.ragas_evaluation.duration",
+        "value": "40 minutes"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q10_o3",
+        "value": "Never, set it once"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q4",
+        "value": "What's the best way to structure a Claude Code request?"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_4_example_1_title",
+        "value": "Building a Dashboard Layout"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q8_o4",
+        "value": "Only for specific modules"
+      },
+      {
+        "key": "editor.public",
+        "value": "Public"
+      },
+      {
+        "key": "profile.form_your_name",
+        "value": "Your name"
+      },
+      {
+        "key": "tutorials.spec_driven_development.duration",
+        "value": "50 minutes"
+      },
+      {
+        "key": "tutorials.claude_code_basics.avoid_2",
+        "value": "Ignoring TypeScript type errors"
+      },
+      {
+        "key": "tutorials.index.tutorial_dl_fundamentals_duration",
+        "value": "45 minutes"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_1_feature_2_title",
+        "value": "Smart Refactoring"
+      },
+      {
+        "key": "tutorials.claude_code_basics.do_2",
+        "value": "Reference your CLAUDE.md for consistency"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q10_o1",
+        "value": "Only when you change frameworks"
+      },
+      {
+        "key": "design_system.option_1",
+        "value": "Option 1"
+      },
+      {
+        "key": "components.emptyState.noResultsDesc",
+        "value": "Try adjusting your search or filter criteria."
+      },
+      {
+        "key": "collections.twitter",
+        "value": "Twitter"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_1_feature_3_title",
+        "value": "Intelligent Debugging"
+      },
+      {
+        "key": "prompts.tags_label",
+        "value": "Tags"
+      },
+      {
+        "key": "common.leaderboard_podium",
+        "value": "Leaderboard Podium"
+      },
+      {
+        "key": "tutorials.claude_code_basics.browse_community",
+        "value": "Browse Community Prompts"
+      },
+      {
+        "key": "ui.message_bgsuccess10_textsuccess_border_bordersuccess20",
+        "value": "bg-success/10 text-success border border-success/20"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q7_o1",
+        "value": "Give up and manually write the code"
+      },
+      {
+        "key": "mcp.comparison_action",
+        "value": "Action"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_5_integration_4",
+        "value": "Measure productivity improvements"
+      },
+      {
+        "key": "prompts.import",
+        "value": "Import"
+      },
+      {
+        "key": "components.settingsForm.saveButton",
+        "value": "Save Changes"
+      },
+      {
+        "key": "common.support_the_community",
+        "value": "Support the Community"
+      },
+      {
+        "key": "common.heading_your_top_prompt_this_week",
+        "value": "Your top prompt this week:"
+      },
+      {
+        "key": "common.remix",
+        "value": "Remix"
+      },
+      {
+        "key": "tutorials.ragas_evaluation.quiz_q2_o2",
+        "value": "0.5"
+      },
+      {
+        "key": "tutorials.index.tutorial_claude_agents_duration",
+        "value": "35 minutes"
+      },
+      {
+        "key": "common.heading_my_content",
+        "value": "My Content"
+      },
+      {
+        "key": "components.howToUse.step2",
+        "value": "Open your AI assistant"
+      },
+      {
+        "key": "tutorials.code_generation.performance_tab",
+        "value": "Performance"
+      },
+      {
+        "key": "tutorials.embeddings_vector_search.duration",
+        "value": "35 min"
+      },
+      {
+        "key": "nav.concepts_category",
+        "value": "Concepts"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_6_limitations_title",
+        "value": "Limitations"
+      },
+      {
+        "key": "components.settingsForm.username",
+        "value": "Username"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_6_limitation_1",
+        "value": "Cannot modify infrastructure or deployment configuration"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q4_o1",
+        "value": "Be specific with requirements and provide context"
+      },
+      {
+        "key": "tutorials.claude_code_basics.subtitle",
+        "value": "Master the AI-powered development assistant for faster, smarter coding"
+      },
+      {
+        "key": "prompts.this_is_the_original_version",
+        "value": "This is the original version"
+      },
+      {
+        "key": "tutorials.prompt_templates.duration",
+        "value": "15 min"
+      },
+      {
+        "key": "tutorials.beginner_path.lesson2_duration",
+        "value": "20 min"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_3_debugging_desc",
+        "value": "Share error messages and code context. Claude Code will identify root causes and suggest fixes"
+      },
+      {
+        "key": "search.form_verified_prompts_only",
+        "value": "Verified Prompts Only"
+      },
+      {
+        "key": "aiTester.premiumBadge",
+        "value": "Premium"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_3_refactoring_title",
+        "value": "Refactoring Code"
+      },
+      {
+        "key": "nav.tech_stack",
+        "value": "⚙️ Tech Stack"
+      },
+      {
+        "key": "footer.playground",
+        "value": "Playground"
+      },
+      {
+        "key": "prompts.share",
+        "value": "Share..."
+      },
+      {
+        "key": "components.emptyState.noData",
+        "value": "No data available"
+      },
+      {
+        "key": "tutorials.prompt_optimization.duration",
+        "value": "25 minutes"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_retake",
+        "value": "Retake Quiz"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_4_example_1_desc",
+        "value": "Generate a complete responsive dashboard with sidebar, header, and main content area"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q2",
+        "value": "What is CLAUDE.md used for?"
+      },
+      {
+        "key": "tutorials.badge_label",
+        "value": "Badge \"{badge}\""
+      },
+      {
+        "key": "prompts.remixes_count",
+        "value": "{count} remixes"
+      },
+      {
+        "key": "docs.collections_title",
+        "value": "Collections"
+      },
+      {
+        "key": "docs.page_title",
+        "value": "Documentation | Prompt Party"
+      },
+      {
+        "key": "common.public",
+        "value": "Public"
+      },
+      {
+        "key": "docs.title",
+        "value": "Documentation"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_3_debugging_title",
+        "value": "Debugging Issues"
+      },
+      {
+        "key": "common.heading_small_badges_sizequotsmquot",
+        "value": "Small Badges (size=&quot;sm&quot;)"
+      },
+      {
+        "key": "brand.name",
+        "value": "Prompt Academy"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_3_refactoring_desc",
+        "value": "Ask Claude Code to improve existing code by refactoring patterns, extracting utilities, or optimizing performance"
+      },
+      {
+        "key": "techStack.workflow_step_4",
+        "value": "Excellence"
+      },
+      {
+        "key": "search.action_search_for_something_and_save_it_here_for_quick_ac",
+        "value": "Search for something and save it here for quick access"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_1_feature_2_desc",
+        "value": "Refactors existing code while maintaining TypeScript safety and design patterns"
+      },
+      {
+        "key": "tutorials.llm_finetuning.reward_badge",
+        "value": "Fine-tuning Master"
+      },
+      {
+        "key": "components.emptyState.emptyInbox",
+        "value": "Your inbox is empty"
+      },
+      {
+        "key": "tutorials.index.tutorial_advanced_prompting_duration",
+        "value": "30 minutes"
+      },
+      {
+        "key": "tutorials.index.tutorial_prompt_optimization_duration",
+        "value": "25 minutes"
+      },
+      {
+        "key": "prompts.form_paste_your_json_export_here",
+        "value": "Paste your JSON export here..."
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_4_example_3_desc",
+        "value": "Create a complete API with authentication, rate limiting, and error handling"
+      },
+      {
+        "key": "components.advancedFilters.discussed",
+        "value": "Most Discussed"
+      },
+      {
+        "key": "wizard.llama_strength_1",
+        "value": "Open source"
+      },
+      {
+        "key": "profile.badges_label",
+        "value": "Badges"
+      },
+      {
+        "key": "components.emptyState.emptyInboxDesc",
+        "value": "When you receive new messages, they will appear here."
+      },
+      {
+        "key": "onboarding.youre_all_set",
+        "value": "You're all set!"
+      },
+      {
+        "key": "pricing.support.price",
+        "value": "5€"
+      },
+      {
+        "key": "components.promptPlayground.signInRequired",
+        "value": "Please sign in to test prompts"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q1_o3",
+        "value": "It has better pricing"
+      },
+      {
+        "key": "tutorials.embeddings_vector_search.reward_badge",
+        "value": "Embeddings Expert"
+      },
+      {
+        "key": "prompts.form_preview",
+        "value": "Preview"
+      },
+      {
+        "key": "components.howToUse.step4",
+        "value": "Review the output"
+      },
+      {
+        "key": "leaderboard.remixes",
+        "value": "{count} remixes"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q6_o1",
+        "value": "Trust the generated code immediately"
+      },
+      {
+        "key": "tutorials.claude_code_basics.learn_3",
+        "value": "Generate, refactor, and debug code with AI"
+      },
+      {
+        "key": "terms.contact_title",
+        "value": "Contact"
+      },
+      {
+        "key": "pricing_full.pro_name",
+        "value": "Pro"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_2_cloud_title",
+        "value": "Cloud Setup"
+      },
+      {
+        "key": "tutorials.advanced_prompting.role_example_8",
+        "value": "• Data scientist"
+      },
+      {
+        "key": "pricing.free.price",
+        "value": "0€"
+      },
+      {
+        "key": "techStack.spec_driven_tab_template",
+        "value": "Template"
+      },
+      {
+        "key": "home.top_prompts",
+        "value": "Top Prompts"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q7_exp",
+        "value": "Better context in CLAUDE.md improves Claude Code's understanding"
+      },
+      {
+        "key": "tutorials.ai_ethics_responsible.reward_badge",
+        "value": "Ethics & AI Master"
+      },
+      {
+        "key": "tutorials.claude_code_basics.do_5",
+        "value": "Integrate into your team's workflow gradually"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_1_feature_4_title",
+        "value": "Documentation Generation"
+      },
+      {
+        "key": "tutorials.index.tutorial_data_fundamentals_duration",
+        "value": "30 minutes"
+      },
+      {
+        "key": "common.prompts",
+        "value": "Prompts"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_2_claude_md_desc",
+        "value": "Your CLAUDE.md is the foundation for context-aware AI development"
+      },
+      {
+        "key": "shortcuts.navigation",
+        "value": "Navigation"
+      },
+      {
+        "key": "onboarding.pro_tip",
+        "value": "Pro tip:"
+      },
+      {
+        "key": "tutorials.dl_fundamentals.transformer_title",
+        "value": "Transformers"
+      },
+      {
+        "key": "tutorials.index.tutorial_embeddings_vector_search_duration",
+        "value": "35 minutes"
+      },
+      {
+        "key": "pricing_full.business_name",
+        "value": "Business"
+      },
+      {
+        "key": "prompts.share_on_twitter",
+        "value": "Share on Twitter"
+      },
+      {
+        "key": "nav.collections",
+        "value": "Collections"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_1_feature_3_desc",
+        "value": "Identifies bugs and suggests fixes with full understanding of your codebase"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_1_title",
+        "value": "Introduction to Claude Code"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q3_o3",
+        "value": "Use it only as a reference"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q4_o2",
+        "value": "Use vague descriptions to encourage creativity"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q6_o4",
+        "value": "Disable security checks"
+      },
+      {
+        "key": "components.advancedFilters.remixed",
+        "value": "Most Remixed"
+      },
+      {
+        "key": "tutorials.claude_code_basics.learn_1",
+        "value": "Understand Claude Code capabilities and use cases"
+      },
+      {
+        "key": "onboarding.step_1_of_4",
+        "value": "Step 1 of 4"
+      },
+      {
+        "key": "profile.twitter_label",
+        "value": "Twitter"
+      },
+      {
+        "key": "tutorials.claude_code_basics.learn_4",
+        "value": "Integrate Claude Code into your development workflow"
+      },
+      {
+        "key": "faq.page_title",
+        "value": "FAQ | Prompt Party"
+      },
+      {
+        "key": "design_system.option_3",
+        "value": "Option 3"
+      },
+      {
+        "key": "leaderboard.contributions",
+        "value": "contributions"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_excellent",
+        "value": "Excellent! You've mastered Claude Code!"
+      },
+      {
+        "key": "prompts.form_share_prompt",
+        "value": "Share prompt"
+      },
+      {
+        "key": "tutorials.nlp_fundamentals.duration",
+        "value": "40 min"
+      },
+      {
+        "key": "tutorials.claude_code_basics.do_1",
+        "value": "Provide clear, specific requirements with context"
+      },
+      {
+        "key": "teams.collections",
+        "value": "Collections"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_3_tip",
+        "value": "Start with simple requests before moving to complex features. The more context you provide, the better Claude Code performs."
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_5_integration_1",
+        "value": "Create team guidelines in CLAUDE.md"
+      },
+      {
+        "key": "simpleWizard.form.prompt_required",
+        "value": "*"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q9_o1",
+        "value": "Only let senior developers use it"
+      },
+      {
+        "key": "notifications.no_notifications_yet",
+        "value": "No notifications yet"
+      },
+      {
+        "key": "tutorials.index.tutorial_embeddings_vector_search_topic1",
+        "value": "Embeddings"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q1",
+        "value": "What is the primary benefit of Claude Code over GitHub Copilot?"
+      },
+      {
+        "key": "tutorials.claude_code_basics.page_description",
+        "value": "Master Claude Code, the AI development assistant. Learn setup, practical usage, best practices, and real-world examples."
+      },
+      {
+        "key": "footer.contact",
+        "value": "Contact"
+      },
+      {
+        "key": "ui.message_bgsuccess_textsuccessforeground",
+        "value": "bg-success text-success-foreground"
+      },
+      {
+        "key": "components.emptyState.noResults",
+        "value": "No results found"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_3_generating_title",
+        "value": "Generating Code"
+      },
+      {
+        "key": "components.emptyState.errorDesc",
+        "value": "An error occurred while loading this content."
+      },
+      {
+        "key": "settings.notificationSettings.email.remixes.label",
+        "value": "Remixes"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q2_exp",
+        "value": "CLAUDE.md contains project overview, tech stack, and coding standards"
+      },
+      {
+        "key": "components.howToUse.copyButton",
+        "value": "Copy Prompt"
+      },
+      {
+        "key": "components.settingsForm.usernameHint",
+        "value": "Your public profile will be at /profile/username"
+      },
+      {
+        "key": "mcp.mcp_strength_4",
+        "value": "Extensible"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q9_o2",
+        "value": "Create team guidelines and share successful prompts"
+      },
+      {
+        "key": "footer.leaderboard",
+        "value": "Leaderboard"
+      },
+      {
+        "key": "tutorials.claudeAgents.badge_duration",
+        "value": "35 minutes"
+      },
+      {
+        "key": "tutorials.claude_code_basics.next_spec_driven",
+        "value": "Learn Spec Driven Development →"
+      },
+      {
+        "key": "common.heading_your_week_on_prompt_party",
+        "value": "Your week on Prompt Party"
+      },
+      {
+        "key": "components.settingsForm.successMessage",
+        "value": "Profile updated successfully!"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_3_title",
+        "value": "Practical Usage"
+      },
+      {
+        "key": "tutorials.claude_code_basics.do_3",
+        "value": "Review generated code before merging"
+      },
+      {
+        "key": "header.title",
+        "value": "Prompt Party"
+      },
+      {
+        "key": "design_system.info",
+        "value": "Info"
+      },
+      {
+        "key": "common.form_write_your_prompt_here_markdown_supported",
+        "value": "Write your prompt here... (Markdown supported)"
+      },
+      {
+        "key": "prompts.form_paste_the_prompt",
+        "value": "Paste the prompt"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_finish",
+        "value": "Finish Quiz"
+      },
+      {
+        "key": "prompts.share_on_linkedin",
+        "value": "Share on LinkedIn"
+      },
+      {
+        "key": "techStack.resource_ragas_title",
+        "value": "Ragas GitHub"
+      },
+      {
+        "key": "search.heading_date_range",
+        "value": "Date Range"
+      },
+      {
+        "key": "notifications.form_likes",
+        "value": "Likes"
+      },
+      {
+        "key": "components.settingsForm.email",
+        "value": "Email"
+      },
+      {
+        "key": "onboarding.bio",
+        "value": "Bio"
+      },
+      {
+        "key": "search.form_search_prompts_tags",
+        "value": "Search prompts, tags..."
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q10_o2",
+        "value": "Every major update to the project"
+      },
+      {
+        "key": "tutorials.transformers_attention.duration",
+        "value": "45 min"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q3",
+        "value": "How should you use Claude Code-generated code?"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_2_github_step_3",
+        "value": "Authenticate Claude Code with your GitHub account"
+      },
+      {
+        "key": "home.hero.stat_prompts",
+        "value": "Prompts"
+      },
+      {
+        "key": "wizard.badge_user",
+        "value": "User"
+      },
+      {
+        "key": "components.emptyState.noDataDesc",
+        "value": "There is currently no data to display."
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q1_o1",
+        "value": "It understands your entire project context and follows your conventions"
+      },
+      {
+        "key": "mcp.comparison_latency_mcp",
+        "value": "Variable"
+      },
+      {
+        "key": "settings.notifications",
+        "value": "Notifications"
+      },
+      {
+        "key": "profile.heading_badges",
+        "value": "Badges"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_5_integration_2",
+        "value": "Use code review as a learning tool"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_2_cli_desc",
+        "value": "Install the Claude Code CLI for local development with full terminal integration"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_6_limitation_3",
+        "value": "May generate code requiring significant refactoring"
+      },
+      {
+        "key": "wizard.gemini_strength_1",
+        "value": "Multimodal"
+      },
+      {
+        "key": "onboarding.step_4_of_4",
+        "value": "Step 4 of 4"
+      },
+      {
+        "key": "languages.en",
+        "value": "English"
+      },
+      {
+        "key": "onboarding.heading_share_collaborate",
+        "value": "Share & Collaborate"
+      },
+      {
+        "key": "commandPalette.accountMenu.notifications",
+        "value": "Notifications"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q5_o2",
+        "value": "Refactoring existing code"
+      },
+      {
+        "key": "tutorials.index.tutorial_claude_code_basics_duration",
+        "value": "45 minutes"
+      },
+      {
+        "key": "techStack.metadata_title",
+        "value": "Tech Stack | Prompt Party"
+      },
+      {
+        "key": "tutorials.code_generation.react_tab",
+        "value": "React"
+      },
+      {
+        "key": "prompts.favorites",
+        "value": "Favorites"
+      },
+      {
+        "key": "tutorials.index.tutorial_dl_fundamentals_topic2",
+        "value": "Architectures"
+      },
+      {
+        "key": "templates.category_business",
+        "value": "Business"
+      },
+      {
+        "key": "tutorials.claudeAgents.alert_input_schema_bold",
+        "value": "input_schema"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q8_o1",
+        "value": "Yes, but review the results carefully"
+      },
+      {
+        "key": "tutorials.dl_fundamentals.duration",
+        "value": "45 min"
+      },
+      {
+        "key": "tutorials.claude_code_basics.try_claude_code",
+        "value": "Try Claude Code Live"
+      },
+      {
+        "key": "tutorials.data_fundamentals.garbage_in_title",
+        "value": "Garbage In, Garbage Out"
+      },
+      {
+        "key": "notifications.form_weekly_digest",
+        "value": "Weekly Digest"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q7_o2",
+        "value": "Improve your CLAUDE.md or provide more context"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q3_o4",
+        "value": "Never use it in production"
+      },
+      {
+        "key": "components.settingsForm.usernamePlaceholder",
+        "value": "username"
+      },
+      {
+        "key": "common.learning_path_journey",
+        "value": "Learning Path Journey"
+      },
+      {
+        "key": "components.howToUse.title",
+        "value": "How to Use This Prompt"
+      },
+      {
+        "key": "tutorials.ml_basics.duration",
+        "value": "40 min"
+      },
+      {
+        "key": "profile.level_expert",
+        "value": "Expert"
+      },
+      {
+        "key": "onboarding.step_3_of_4",
+        "value": "Step 3 of 4"
+      },
+      {
+        "key": "tutorials.claude_code_basics.avoid_3",
+        "value": "Using Claude Code for business logic design alone"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q3_o2",
+        "value": "Review and understand it before merging"
+      },
+      {
+        "key": "collections.title",
+        "value": "Collections"
+      },
+      {
+        "key": "components.collaborativeEditor.userLeft",
+        "value": "{userName} left"
+      },
+      {
+        "key": "languages.nl",
+        "value": "Nederlands"
+      },
+      {
+        "key": "tutorials.index.tutorial_ml_basics_duration",
+        "value": "40 minutes"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q4_o4",
+        "value": "Request multiple unrelated features at once"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q8",
+        "value": "Can Claude Code refactor your entire codebase at once?"
+      },
+      {
+        "key": "wizard.badge_assistant",
+        "value": "Assistant Example"
+      },
+      {
+        "key": "tutorials.intro_prompts.duration",
+        "value": "15 min"
+      },
+      {
+        "key": "profile.avatar_preview",
+        "value": "Avatar preview"
+      },
+      {
+        "key": "ui.message_bordersuccess_focusvisibleringsuccess",
+        "value": "border-success focus-visible:ring-success"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_1_feature_1_desc",
+        "value": "Reads your CLAUDE.md and understands your project structure, tech stack, and coding standards"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q5",
+        "value": "Which is NOT a recommended use case for Claude Code?"
+      },
+      {
+        "key": "components.advancedFilters.liked",
+        "value": "Most Liked"
+      },
+      {
+        "key": "components.advancedFilters.recent",
+        "value": "Most Recent"
+      },
+      {
+        "key": "tutorials.prompt_optimization.reward_badge",
+        "value": "Prompt Optimization Expert"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q4_o3",
+        "value": "Ask for features without explaining the use case"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_1_feature_4_desc",
+        "value": "Creates comprehensive documentation aligned with your project standards"
+      },
+      {
+        "key": "design_system.accent",
+        "value": "Accent"
+      },
+      {
+        "key": "search.heading_tags",
+        "value": "Tags"
+      },
+      {
+        "key": "components.collaborativeEditor.userJoinedDesc",
+        "value": "Started editing this prompt"
+      },
+      {
+        "key": "ui.message_bgwarning10_textwarning_border_borderwarning20",
+        "value": "bg-warning/10 text-warning border border-warning/20"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q2_o4",
+        "value": "API documentation"
+      },
+      {
+        "key": "simpleWizard.form.title_required",
+        "value": "*"
+      },
+      {
+        "key": "common.manage_notification_preferences",
+        "value": "Manage notification preferences"
+      },
+      {
+        "key": "metadata.top_title",
+        "value": "Top Prompts | Prompt Party"
+      },
+      {
+        "key": "common.heading_prompt_quality_score",
+        "value": "Prompt Quality Score"
+      },
+      {
+        "key": "challenges.participants",
+        "value": "participants"
+      },
+      {
+        "key": "tutorials.index.tutorial_multi_agent_systems_topic2",
+        "value": "Communication"
+      },
+      {
+        "key": "common.code",
+        "value": "Code"
+      },
+      {
+        "key": "simpleWizard.categories.business",
+        "value": "Business"
+      },
+      {
+        "key": "tutorials.index.tutorial_computer_vision_fundamentals_topic1",
+        "value": "CNNs"
+      },
+      {
+        "key": "prompts.heading_how_to_use_this_prompt",
+        "value": "How to Use This Prompt"
+      },
+      {
+        "key": "tutorials.index.tutorial_transformers_attention_duration",
+        "value": "45 minutes"
+      },
+      {
+        "key": "profile.prompts_tab",
+        "value": "Prompts"
+      },
+      {
+        "key": "components.collaborativeEditor.userLeftDesc",
+        "value": "Stopped editing this prompt"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_2_github_desc",
+        "value": "Link your GitHub repository for seamless repository access and context"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q9_o3",
+        "value": "Never use it in a team setting"
+      },
+      {
+        "key": "tutorials.ragas_evaluation.section_3_install_title",
+        "value": "Installation"
+      },
+      {
+        "key": "common.widthdevicewidth_initialscale10",
+        "value": "width=device-width, initial-scale=1.0"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q1_o2",
+        "value": "It's faster at generating code"
+      },
+      {
+        "key": "prompts.heading_compatible_ai_models",
+        "value": "Compatible AI Models"
+      },
+      {
+        "key": "tutorials.claude_code_basics.vs_copilot_desc",
+        "value": "Unlike Copilot which works at the file level, Claude Code understands your entire project context including architecture, conventions, and business logic."
+      },
+      {
+        "key": "design_system.tags",
+        "value": "Tags"
+      },
+      {
+        "key": "ui.message_bgwarning_textwarningforeground",
+        "value": "bg-warning text-warning-foreground"
+      },
+      {
+        "key": "components.emptyState.error",
+        "value": "Something went wrong"
+      },
+      {
+        "key": "tutorials.index.tutorial_intro_prompts_duration",
+        "value": "15 minutes"
+      },
+      {
+        "key": "tutorials.ragas_evaluation.quiz_q2_o1",
+        "value": "0.3"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q7",
+        "value": "What should happen when Claude Code doesn't understand your code?"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q3_exp",
+        "value": "Always review generated code for correctness and security"
+      },
+      {
+        "key": "tutorials.code_generation.reward_badge",
+        "value": "Code Generation Expert"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_2_claude_md_title",
+        "value": "Creating CLAUDE.md"
+      },
+      {
+        "key": "components.settingsForm.displayNamePlaceholder",
+        "value": "Your name"
+      },
+      {
+        "key": "templates.category_code",
+        "value": "Code"
+      },
+      {
+        "key": "tutorials.index.tutorial_computer_vision_fundamentals_topic3",
+        "value": "Transfer learning"
+      },
+      {
+        "key": "common.heading_medium_badges_sizequotmdquot",
+        "value": "Medium Badges (size=&quot;md&quot;)"
+      },
+      {
+        "key": "components.settingsForm.emailNotEditable",
+        "value": "Email cannot be changed"
+      },
+      {
+        "key": "privacy.cookies_title",
+        "value": "Cookies"
+      },
+      {
+        "key": "tutorials.spec_driven_development.quiz_q1_o1",
+        "value": "30%"
+      },
+      {
+        "key": "techStack.ragas_title",
+        "value": "Ragas"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q9_o4",
+        "value": "Each developer uses it independently"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_5_title",
+        "value": "Best Practices"
+      },
+      {
+        "key": "common.form_ai_response",
+        "value": "AI Response"
+      },
+      {
+        "key": "tutorials.index.tutorial_computer_vision_fundamentals_duration",
+        "value": "40 minutes"
+      },
+      {
+        "key": "tutorials.advanced_prompting.reward_badge",
+        "value": "Advanced Prompting Master"
+      },
+      {
+        "key": "components.howToUse.copiedFeedback",
+        "value": "Copied to Clipboard!"
+      },
+      {
+        "key": "common.preview",
+        "value": "Preview"
+      },
+      {
+        "key": "common.tags",
+        "value": "Tags"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q4_exp",
+        "value": "Clear, specific requests with context produce better results"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q7_o3",
+        "value": "Ask a different tool"
+      },
+      {
+        "key": "tutorials.ml_basics.reward_badge",
+        "value": "ML Fundamentals Master"
+      },
+      {
+        "key": "search.quick_access_to_your_favorite_search_queries",
+        "value": "Quick access to your favorite search queries"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_results",
+        "value": "Quiz Results"
+      },
+      {
+        "key": "templates.category_marketing",
+        "value": "Marketing"
+      },
+      {
+        "key": "tutorials.advanced_prompting.duration",
+        "value": "20 min"
+      },
+      {
+        "key": "tutorials.index.tutorial_transformers_attention_topic2",
+        "value": "Architecture"
+      },
+      {
+        "key": "prompts.heading_prompt_not_found",
+        "value": "Prompt Not Found"
+      },
+      {
+        "key": "mcp.comparison_sources",
+        "value": "Sources"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q1_o4",
+        "value": "It works without internet"
+      },
+      {
+        "key": "forms.info",
+        "value": "Information"
+      },
+      {
+        "key": "components.savedSearches.noSearches",
+        "value": "No saved searches yet"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_2_cloud_desc",
+        "value": "Access Claude Code directly from your browser with cloud-based development"
+      },
+      {
+        "key": "prompts.manage_folders",
+        "value": "Manage folders..."
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q8_o3",
+        "value": "Never use it for refactoring"
+      },
+      {
+        "key": "notifications.heading_notifications",
+        "value": "Notifications"
+      },
+      {
+        "key": "simpleWizard.form.prompt_label",
+        "value": "Prompt"
+      },
+      {
+        "key": "tutorials.code_generation.continue_2_link",
+        "value": "Prompt Party"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q5_o3",
+        "value": "Debugging issues"
+      },
+      {
+        "key": "tutorials.claude_code_basics.duration",
+        "value": "45 minutes"
+      },
+      {
+        "key": "ui.form_clear_input",
+        "value": "Clear input"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q3_o1",
+        "value": "Merge it directly to production"
+      },
+      {
+        "key": "tutorials.spec_driven_development.quiz_q1_o3",
+        "value": "90%"
+      },
+      {
+        "key": "techStack.cta_stat_2_value",
+        "value": "500+"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q9",
+        "value": "What's the best team practice with Claude Code?"
+      },
+      {
+        "key": "prompts.action_changes_are_saved_automatically",
+        "value": "Changes are saved automatically"
+      },
+      {
+        "key": "tutorials.index.tutorial_claude_basics_duration",
+        "value": "20 minutes"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q5_o1",
+        "value": "Generating React components"
+      },
+      {
+        "key": "techStack.spec_driven_tab_workflow",
+        "value": "Workflow"
+      },
+      {
+        "key": "search.heading_ai_models",
+        "value": "AI Models"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_good",
+        "value": "Good! You understand Claude Code well."
+      },
+      {
+        "key": "components.savedSearches.noSearchesDesc",
+        "value": "Search for something and save it here for quick access"
+      },
+      {
+        "key": "tutorials.computer_vision_fundamentals.reward_badge",
+        "value": "Computer Vision Master"
+      },
+      {
+        "key": "tutorials.claude_code_basics.avoid_this",
+        "value": "✗ Avoid This"
+      },
+      {
+        "key": "pricing_full.free_f1",
+        "value": "20 prompts"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q2_o1",
+        "value": "Documentation for users"
+      },
+      {
+        "key": "tutorials.code_generation.duration",
+        "value": "45 minutes"
+      },
+      {
+        "key": "prompts.form_copy_code",
+        "value": "Copy code"
+      },
+      {
+        "key": "onboarding.heading_join_the_community",
+        "value": "Join the Community"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_next",
+        "value": "Next Question"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q2_o3",
+        "value": "Providing context to Claude Code about your project"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_1_feature_1_title",
+        "value": "Context-Aware Generation"
+      },
+      {
+        "key": "prompts.review_the_output",
+        "value": "Review the output"
+      }
+    ],
+    "nl": [
+      {
+        "key": "tutorials.index.tutorial_claude_basics_topic3",
+        "value": "Best practices"
+      },
+      {
+        "key": "ui.message_bginfo_textinfoforeground",
+        "value": "bg-info text-info-foreground"
+      },
+      {
+        "key": "ml.hero_title",
+        "value": "Machine Learning vs Deep Learning"
+      },
+      {
+        "key": "techStack.cta_stat_1_value",
+        "value": "10k+"
+      },
+      {
+        "key": "ui.message_borderwarning_focusvisibleringwarning",
+        "value": "border-warning focus-visible:ring-warning"
+      },
+      {
+        "key": "common.filter",
+        "value": "Filter"
+      },
+      {
+        "key": "components.submitPromptButton.urlPlaceholder",
+        "value": "https://prompt-party.com/prompts/..."
+      },
+      {
+        "key": "tutorials.code_generation.code_refactoring",
+        "value": "Code Refactoring"
+      },
+      {
+        "key": "profile.collections_tab",
+        "value": "Collections"
+      },
+      {
+        "key": "notifications.form_comments",
+        "value": "Comments"
+      },
+      {
+        "key": "tutorials.index.page_title",
+        "value": "Tutorials | Prompt Party"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_4_example_3_title",
+        "value": "Designing a RESTful API"
+      },
+      {
+        "key": "techStack.cta_stat_3_value",
+        "value": "1M+"
+      },
+      {
+        "key": "tutorials.claudeAgents.tab_setup",
+        "value": "Setup"
+      },
+      {
+        "key": "components.emptyState.notFound",
+        "value": "Page not found"
+      },
+      {
+        "key": "tutorials.spec_driven_development.title",
+        "value": "Spec Driven Development"
+      },
+      {
+        "key": "tutorials.index.start_tutorial",
+        "value": "Start Tutorial"
+      },
+      {
+        "key": "nav.tutorials",
+        "value": "Tutorials"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_2_cli_title",
+        "value": "CLI Installation"
+      },
+      {
+        "key": "tutorials.claude_code_basics.learn_2",
+        "value": "Set up Claude Code on cloud or CLI"
+      },
+      {
+        "key": "profile.message_profile_information",
+        "value": "Profile Information"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_4_example_2_desc",
+        "value": "Migrate state management from Redux with less boilerplate and better types"
+      },
+      {
+        "key": "tutorials.index.tutorial_advanced_prompting_topic2",
+        "value": "Few-shot prompting"
+      },
+      {
+        "key": "components.savedSearches.nameRequired",
+        "value": "Name required"
+      },
+      {
+        "key": "tutorials.claude_code_basics.avoid_4",
+        "value": "Blindly trusting generated code without review"
+      },
+      {
+        "key": "tutorials.beginner_path.lesson3_duration",
+        "value": "15 min"
+      },
+      {
+        "key": "tutorials.index.tutorial_dl_fundamentals_title",
+        "value": "Deep Learning"
+      },
+      {
+        "key": "search.action_no_saved_searches_yet",
+        "value": "No saved searches yet"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_2_github_step_1",
+        "value": "Create a CLAUDE.md file in your repository root"
+      },
+      {
+        "key": "tutorials.index.tutorial_claude_basics_level",
+        "value": "Beginner"
+      },
+      {
+        "key": "notifications.heading_inapp_notifications",
+        "value": "In-App Notifications"
+      },
+      {
+        "key": "tutorials.claude_code_basics.you_prompt",
+        "value": "Your Prompt"
+      },
+      {
+        "key": "languages.fr",
+        "value": "Français"
+      },
+      {
+        "key": "tutorials.index.stat_free",
+        "value": "100%"
+      },
+      {
+        "key": "components.settingsForm.profileInfo",
+        "value": "Profile Information"
+      },
+      {
+        "key": "profile.heading_account",
+        "value": "Account"
+      },
+      {
+        "key": "components.settingsForm.displayName",
+        "value": "Display Name"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_5_integration_3",
+        "value": "Share successful prompts with your team"
+      },
+      {
+        "key": "components.savedSearches.nameRequiredDesc",
+        "value": "Please enter a name for this search"
+      },
+      {
+        "key": "tutorials.advanced_prompting.meta_prompting_title",
+        "value": "4. Meta-Prompting"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q10_exp",
+        "value": "Keep CLAUDE.md updated to maintain Claude Code's accuracy"
+      },
+      {
+        "key": "tutorials.computer_vision_fundamentals.cnn_title",
+        "value": "Convolutional Neural Networks (CNNs)"
+      },
+      {
+        "key": "tutorials.data_fundamentals.duration",
+        "value": "30 min"
+      },
+      {
+        "key": "tutorials.claude_code_basics.avoid_1",
+        "value": "Vague requests without context"
+      },
+      {
+        "key": "components.savedSearches.description",
+        "value": "Quick access to your favorite search queries"
+      },
+      {
+        "key": "profile.heading_choose_your_avatar",
+        "value": "Choose Your Avatar"
+      },
+      {
+        "key": "tutorials.ml_basics.data_splitting",
+        "value": "Train/Test Split"
+      },
+      {
+        "key": "notifications.form_new_followers",
+        "value": "New Followers"
+      },
+      {
+        "key": "tutorials.claude_code_basics.read_docs",
+        "value": "Read Official Docs"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q9_exp",
+        "value": "Team guidelines and shared knowledge maximize Claude Code benefits"
+      },
+      {
+        "key": "templates.variables",
+        "value": "variables"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_4_title",
+        "value": "Real-World Examples"
+      },
+      {
+        "key": "tutorials.computer_vision_fundamentals.duration",
+        "value": "40 min"
+      },
+      {
+        "key": "ml.dl_title",
+        "value": "Deep Learning"
+      },
+      {
+        "key": "tutorials.index.tutorial_dl_fundamentals_topic3",
+        "value": "Training"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q10",
+        "value": "How often should you update your CLAUDE.md?"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q6_exp",
+        "value": "Security review is essential for all generated code"
+      },
+      {
+        "key": "templates.premium",
+        "value": "Premium"
+      },
+      {
+        "key": "ui.form_loading_prompt_card",
+        "value": "Loading prompt card"
+      },
+      {
+        "key": "ml.page_title",
+        "value": "Machine Learning vs Deep Learning | Prompt Party"
+      },
+      {
+        "key": "search.form_name_this_search",
+        "value": "Name this search..."
+      },
+      {
+        "key": "tutorials.intro_prompts.element_format",
+        "value": "💡 Format"
+      },
+      {
+        "key": "tutorials.code_generation.unit_tests",
+        "value": "Unit Tests"
+      },
+      {
+        "key": "tutorials.claude_code_basics.avoid_5",
+        "value": "Skipping security considerations"
+      },
+      {
+        "key": "nav.ml_vs_dl",
+        "value": "🧬 ML vs DL"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q7_o4",
+        "value": "Use vague instructions"
+      },
+      {
+        "key": "tutorials.claude_code_basics.do_4",
+        "value": "Use Claude Code for architecture decisions"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_2_github_step_2",
+        "value": "Add project overview, tech stack, and coding standards"
+      },
+      {
+        "key": "search.pick_a_date_range",
+        "value": "Pick a date range"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_4_example_2_title",
+        "value": "Refactoring Redux to Zustand"
+      },
+      {
+        "key": "components.advancedFilters.relevant",
+        "value": "Most Relevant"
+      },
+      {
+        "key": "prompts.wizard_title",
+        "value": "Prompt Wizard"
+      },
+      {
+        "key": "tutorials.beginner_path.lesson1_duration",
+        "value": "15 min"
+      },
+      {
+        "key": "notifications.all",
+        "value": "All"
+      },
+      {
+        "key": "components.howToUse.step1",
+        "value": "Copy the prompt"
+      },
+      {
+        "key": "tutorials.data_fundamentals.reward_badge",
+        "value": "Data Fundamentals Master"
+      },
+      {
+        "key": "components.emptyState.notFoundDesc",
+        "value": "The page you are looking for does not exist."
+      },
+      {
+        "key": "components.promptPlayground.modelLabel",
+        "value": "AI Model"
+      },
+      {
+        "key": "nav.concepts",
+        "value": "🧠 MCP vs RAG"
+      },
+      {
+        "key": "components.settingsForm.savingButton",
+        "value": "Saving..."
+      },
+      {
+        "key": "tutorials.index.tutorial_data_fundamentals_level",
+        "value": "Beginner"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q10_o4",
+        "value": "Whenever significant project changes occur"
+      },
+      {
+        "key": "tutorials.nlp_fundamentals.tfidf_title",
+        "value": "TF-IDF (Term Frequency-Inverse Document Frequency)"
+      },
+      {
+        "key": "components.howToUse.compatibleModels",
+        "value": "Compatible AI Models"
+      },
+      {
+        "key": "tutorials.ml_basics.unsupervised_learning",
+        "value": "Unsupervised Learning"
+      },
+      {
+        "key": "techStack.claude_code_tab_best_practices",
+        "value": "Best Practices"
+      },
+      {
+        "key": "tutorials.transformers_attention.reward_badge",
+        "value": "Transformer Master"
+      },
+      {
+        "key": "components.savedSearches.title",
+        "value": "Saved Searches"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_review",
+        "value": "Review the material and try again."
+      },
+      {
+        "key": "tutorials.prompt_templates.reward_badge",
+        "value": "Template Master"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q6_o2",
+        "value": "Always review code for security vulnerabilities"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q6_o3",
+        "value": "Only use Claude Code for non-sensitive code"
+      },
+      {
+        "key": "tutorials.claude_code_basics.do_this",
+        "value": "✓ Do This"
+      },
+      {
+        "key": "common.pro",
+        "value": "Pro"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_6_limitation_2",
+        "value": "Needs clear business logic explanation for complex algorithms"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_title",
+        "value": "Test Your Knowledge"
+      },
+      {
+        "key": "leaderboard.top_percent_value",
+        "value": "Top {percent}%"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q5_o4",
+        "value": "Making architectural decisions alone"
+      },
+      {
+        "key": "tutorials.claude_code_basics.vs_copilot_title",
+        "value": "vs GitHub Copilot:"
+      },
+      {
+        "key": "components.howToUse.step3",
+        "value": "Paste the prompt"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_5_integration_title",
+        "value": "Team Integration"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_6_limitation_4",
+        "value": "Context window limits (manage with CLAUDE.md)"
+      },
+      {
+        "key": "tutorials.dl_fundamentals.reward_badge",
+        "value": "Deep Learning Master"
+      },
+      {
+        "key": "tutorials.advanced_prompting.role_example_1",
+        "value": "• Senior software architect"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q8_o2",
+        "value": "Only refactor one file at a time"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_2_title",
+        "value": "Installation & Setup"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q6",
+        "value": "How should you handle security with Claude Code?"
+      },
+      {
+        "key": "tutorials.claude_code_basics.next_ragas",
+        "value": "Learn Ragas Evaluation →"
+      },
+      {
+        "key": "apiKeys.docs_auth_header",
+        "value": "x-api-key"
+      },
+      {
+        "key": "ui.message_bordererror_focusvisibleringerror",
+        "value": "border-error focus-visible:ring-error"
+      },
+      {
+        "key": "tutorials.index.tutorial_transformers_attention_title",
+        "value": "Transformers & Attention"
+      },
+      {
+        "key": "tutorials.spec_driven_development.quiz_q1_o2",
+        "value": "60%"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q8_exp",
+        "value": "Gradual refactoring with review is safer than large-scale automated changes"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_4_example_result",
+        "value": "Result: Production-ready component with TypeScript types and Tailwind styling"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q2_o2",
+        "value": "Licensing information"
+      },
+      {
+        "key": "tutorials.advanced_prompting.cot_title",
+        "value": "1. Chain-of-Thought (CoT) Prompting"
+      },
+      {
+        "key": "components.savedSearches.searchSaved",
+        "value": "Search saved"
+      },
+      {
+        "key": "prompt_actions.remix",
+        "value": "Remix"
+      },
+      {
+        "key": "tutorials.nlp_fundamentals.reward_badge",
+        "value": "NLP Fundamentals Master"
+      },
+      {
+        "key": "resources.category_tools",
+        "value": "Tools & Frameworks"
+      },
+      {
+        "key": "components.collaborativeEditor.userJoined",
+        "value": "{userName} joined"
+      },
+      {
+        "key": "tutorials.claude_code_basics.pro_tip",
+        "value": "Pro Tip"
+      },
+      {
+        "key": "notifications.form_challenges",
+        "value": "Challenges"
+      },
+      {
+        "key": "tutorials.multi_agent_systems.reward_badge",
+        "value": "Multi-Agent Expert"
+      },
+      {
+        "key": "pricing_full.business_f5",
+        "value": "SSO/SAML"
+      },
+      {
+        "key": "ui.message_bginfo10_textinfo_border_borderinfo20",
+        "value": "bg-info/10 text-info border border-info/20"
+      },
+      {
+        "key": "settings.notificationSettings.push.remixes.label",
+        "value": "Remixes"
+      },
+      {
+        "key": "search.recent_searches",
+        "value": "Recent Searches"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q10_o3",
+        "value": "Never, set it once"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q4",
+        "value": "What's the best way to structure a Claude Code request?"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_4_example_1_title",
+        "value": "Building a Dashboard Layout"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q8_o4",
+        "value": "Only for specific modules"
+      },
+      {
+        "key": "profile.form_your_name",
+        "value": "Your name"
+      },
+      {
+        "key": "tutorials.index.tutorial_advanced_prompting_topic3",
+        "value": "Prompt engineering"
+      },
+      {
+        "key": "tutorials.claude_code_basics.avoid_2",
+        "value": "Ignoring TypeScript type errors"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_1_feature_2_title",
+        "value": "Smart Refactoring"
+      },
+      {
+        "key": "tutorials.claude_code_basics.do_2",
+        "value": "Reference your CLAUDE.md for consistency"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q10_o1",
+        "value": "Only when you change frameworks"
+      },
+      {
+        "key": "components.emptyState.noResultsDesc",
+        "value": "Try adjusting your search or filter criteria."
+      },
+      {
+        "key": "collections.twitter",
+        "value": "Twitter"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_1_feature_3_title",
+        "value": "Intelligent Debugging"
+      },
+      {
+        "key": "prompts.tags_label",
+        "value": "Tags"
+      },
+      {
+        "key": "tutorials.claude_code_basics.browse_community",
+        "value": "Browse Community Prompts"
+      },
+      {
+        "key": "ui.message_bgsuccess10_textsuccess_border_bordersuccess20",
+        "value": "bg-success/10 text-success border border-success/20"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q7_o1",
+        "value": "Give up and manually write the code"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_5_integration_4",
+        "value": "Measure productivity improvements"
+      },
+      {
+        "key": "components.settingsForm.saveButton",
+        "value": "Save Changes"
+      },
+      {
+        "key": "common.remix",
+        "value": "Remix"
+      },
+      {
+        "key": "tutorials.ragas_evaluation.quiz_q2_o2",
+        "value": "0.5"
+      },
+      {
+        "key": "components.howToUse.step2",
+        "value": "Open your AI assistant"
+      },
+      {
+        "key": "tutorials.code_generation.performance_tab",
+        "value": "Performance"
+      },
+      {
+        "key": "tutorials.ragas_evaluation.pro_tip",
+        "value": "Pro Tip:"
+      },
+      {
+        "key": "tutorials.embeddings_vector_search.duration",
+        "value": "35 min"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_6_limitations_title",
+        "value": "Limitations"
+      },
+      {
+        "key": "components.settingsForm.username",
+        "value": "Username"
+      },
+      {
+        "key": "tutorials.claudeAgents.resources_title",
+        "value": "Resources"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_6_limitation_1",
+        "value": "Cannot modify infrastructure or deployment configuration"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q4_o1",
+        "value": "Be specific with requirements and provide context"
+      },
+      {
+        "key": "tutorials.claude_code_basics.subtitle",
+        "value": "Master the AI-powered development assistant for faster, smarter coding"
+      },
+      {
+        "key": "tutorials.prompt_templates.duration",
+        "value": "15 min"
+      },
+      {
+        "key": "tutorials.beginner_path.lesson2_duration",
+        "value": "20 min"
+      },
+      {
+        "key": "tutorials.start_tutorial",
+        "value": "Start Tutorial"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_3_debugging_desc",
+        "value": "Share error messages and code context. Claude Code will identify root causes and suggest fixes"
+      },
+      {
+        "key": "search.form_verified_prompts_only",
+        "value": "Verified Prompts Only"
+      },
+      {
+        "key": "aiTester.premiumBadge",
+        "value": "Premium"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_3_refactoring_title",
+        "value": "Refactoring Code"
+      },
+      {
+        "key": "nav.tech_stack",
+        "value": "⚙️ Tech Stack"
+      },
+      {
+        "key": "components.emptyState.noData",
+        "value": "No data available"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_retake",
+        "value": "Retake Quiz"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_4_example_1_desc",
+        "value": "Generate a complete responsive dashboard with sidebar, header, and main content area"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q2",
+        "value": "What is CLAUDE.md used for?"
+      },
+      {
+        "key": "tutorials.badge_label",
+        "value": "Badge \"{badge}\""
+      },
+      {
+        "key": "tutorials.level_expert",
+        "value": "Expert"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_3_debugging_title",
+        "value": "Debugging Issues"
+      },
+      {
+        "key": "common.heading_ai_prompt_tester",
+        "value": "AI Prompt Tester"
+      },
+      {
+        "key": "brand.name",
+        "value": "Prompt Academy"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_3_refactoring_desc",
+        "value": "Ask Claude Code to improve existing code by refactoring patterns, extracting utilities, or optimizing performance"
+      },
+      {
+        "key": "search.action_search_for_something_and_save_it_here_for_quick_ac",
+        "value": "Search for something and save it here for quick access"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_1_feature_2_desc",
+        "value": "Refactors existing code while maintaining TypeScript safety and design patterns"
+      },
+      {
+        "key": "tutorials.llm_finetuning.reward_badge",
+        "value": "Fine-tuning Master"
+      },
+      {
+        "key": "tutorials.index.resource_community_tutorials",
+        "value": "Community Tutorials"
+      },
+      {
+        "key": "components.emptyState.emptyInbox",
+        "value": "Your inbox is empty"
+      },
+      {
+        "key": "tutorials.index.tutorial_code_generation_topic2",
+        "value": "Best practices"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_4_example_3_desc",
+        "value": "Create a complete API with authentication, rate limiting, and error handling"
+      },
+      {
+        "key": "tutorials.level_intermediate",
+        "value": "Intermediate"
+      },
+      {
+        "key": "tutorials.computer_vision_fundamentals.transfer_learning",
+        "value": "Transfer Learning in Vision"
+      },
+      {
+        "key": "components.advancedFilters.discussed",
+        "value": "Most Discussed"
+      },
+      {
+        "key": "wizard.llama_strength_1",
+        "value": "Open source"
+      },
+      {
+        "key": "profile.badges_label",
+        "value": "Badges"
+      },
+      {
+        "key": "components.emptyState.emptyInboxDesc",
+        "value": "When you receive new messages, they will appear here."
+      },
+      {
+        "key": "components.promptPlayground.signInRequired",
+        "value": "Please sign in to test prompts"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q1_o3",
+        "value": "It has better pricing"
+      },
+      {
+        "key": "tutorials.embeddings_vector_search.reward_badge",
+        "value": "Embeddings Expert"
+      },
+      {
+        "key": "tutorials.claudeAgents.best_practices_title",
+        "value": "Best Practices"
+      },
+      {
+        "key": "components.howToUse.step4",
+        "value": "Review the output"
+      },
+      {
+        "key": "tutorials.index.stat_tutorials_label",
+        "value": "Tutorials"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q6_o1",
+        "value": "Trust the generated code immediately"
+      },
+      {
+        "key": "tutorials.claude_code_basics.learn_3",
+        "value": "Generate, refactor, and debug code with AI"
+      },
+      {
+        "key": "terms.contact_title",
+        "value": "Contact"
+      },
+      {
+        "key": "pricing_full.pro_name",
+        "value": "Pro"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_2_cloud_title",
+        "value": "Cloud Setup"
+      },
+      {
+        "key": "tutorials.advanced_prompting.role_example_8",
+        "value": "• Data scientist"
+      },
+      {
+        "key": "techStack.tech_supabase_desc",
+        "value": "PostgreSQL + Auth + Realtime platform"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q7_exp",
+        "value": "Better context in CLAUDE.md improves Claude Code's understanding"
+      },
+      {
+        "key": "tutorials.ai_ethics_responsible.reward_badge",
+        "value": "Ethics & AI Master"
+      },
+      {
+        "key": "tutorials.claude_code_basics.do_5",
+        "value": "Integrate into your team's workflow gradually"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_1_feature_4_title",
+        "value": "Documentation Generation"
+      },
+      {
+        "key": "tutorials.advanced_prompting.few_shot_title",
+        "value": "2. Few-Shot Learning"
+      },
+      {
+        "key": "common.prompts",
+        "value": "Prompts"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_2_claude_md_desc",
+        "value": "Your CLAUDE.md is the foundation for context-aware AI development"
+      },
+      {
+        "key": "onboarding.pro_tip",
+        "value": "Pro tip:"
+      },
+      {
+        "key": "tutorials.dl_fundamentals.transformer_title",
+        "value": "Transformers"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_1_feature_3_desc",
+        "value": "Identifies bugs and suggests fixes with full understanding of your codebase"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_1_title",
+        "value": "Introduction to Claude Code"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q3_o3",
+        "value": "Use it only as a reference"
+      },
+      {
+        "key": "tutorials.claudeAgents.tab_agent_loop",
+        "value": "Agent Loop"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q4_o2",
+        "value": "Use vague descriptions to encourage creativity"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q6_o4",
+        "value": "Disable security checks"
+      },
+      {
+        "key": "components.advancedFilters.remixed",
+        "value": "Most Remixed"
+      },
+      {
+        "key": "tutorials.claude_code_basics.learn_1",
+        "value": "Understand Claude Code capabilities and use cases"
+      },
+      {
+        "key": "profile.twitter_label",
+        "value": "Twitter"
+      },
+      {
+        "key": "tutorials.claude_code_basics.learn_4",
+        "value": "Integrate Claude Code into your development workflow"
+      },
+      {
+        "key": "challenges.hero_badge",
+        "value": "Challenges"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_excellent",
+        "value": "Excellent! You've mastered Claude Code!"
+      },
+      {
+        "key": "tutorials.ml_basics.supervised_learning",
+        "value": "Supervised Learning"
+      },
+      {
+        "key": "tutorials.nlp_fundamentals.duration",
+        "value": "40 min"
+      },
+      {
+        "key": "tutorials.claude_code_basics.do_1",
+        "value": "Provide clear, specific requirements with context"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_3_tip",
+        "value": "Start with simple requests before moving to complex features. The more context you provide, the better Claude Code performs."
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_5_integration_1",
+        "value": "Create team guidelines in CLAUDE.md"
+      },
+      {
+        "key": "simpleWizard.form.prompt_required",
+        "value": "*"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q9_o1",
+        "value": "Only let senior developers use it"
+      },
+      {
+        "key": "techStack.spec_driven_tab_best_practices",
+        "value": "Best Practices"
+      },
+      {
+        "key": "notifications.no_notifications_yet",
+        "value": "No notifications yet"
+      },
+      {
+        "key": "tutorials.index.tutorial_embeddings_vector_search_topic1",
+        "value": "Embeddings"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q1",
+        "value": "What is the primary benefit of Claude Code over GitHub Copilot?"
+      },
+      {
+        "key": "tutorials.claude_code_basics.page_description",
+        "value": "Master Claude Code, the AI development assistant. Learn setup, practical usage, best practices, and real-world examples."
+      },
+      {
+        "key": "footer.contact",
+        "value": "Contact"
+      },
+      {
+        "key": "ui.message_bgsuccess_textsuccessforeground",
+        "value": "bg-success text-success-foreground"
+      },
+      {
+        "key": "tutorials.transformers_attention.decoder_title",
+        "value": "Decoder"
+      },
+      {
+        "key": "components.emptyState.noResults",
+        "value": "No results found"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_3_generating_title",
+        "value": "Generating Code"
+      },
+      {
+        "key": "components.emptyState.errorDesc",
+        "value": "An error occurred while loading this content."
+      },
+      {
+        "key": "settings.notificationSettings.email.remixes.label",
+        "value": "Remixes"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q2_exp",
+        "value": "CLAUDE.md contains project overview, tech stack, and coding standards"
+      },
+      {
+        "key": "components.howToUse.copyButton",
+        "value": "Copy Prompt"
+      },
+      {
+        "key": "components.settingsForm.usernameHint",
+        "value": "Your public profile will be at /profile/username"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q9_o2",
+        "value": "Create team guidelines and share successful prompts"
+      },
+      {
+        "key": "tutorials.claude_code_basics.next_spec_driven",
+        "value": "Learn Spec Driven Development →"
+      },
+      {
+        "key": "common.trending",
+        "value": "Trending"
+      },
+      {
+        "key": "components.settingsForm.successMessage",
+        "value": "Profile updated successfully!"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_3_title",
+        "value": "Practical Usage"
+      },
+      {
+        "key": "tutorials.claude_code_basics.do_3",
+        "value": "Review generated code before merging"
+      },
+      {
+        "key": "design_system.info",
+        "value": "Info"
+      },
+      {
+        "key": "tutorials.intro_prompts.element_context",
+        "value": "🔑 Context"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_finish",
+        "value": "Finish Quiz"
+      },
+      {
+        "key": "techStack.resource_ragas_title",
+        "value": "Ragas GitHub"
+      },
+      {
+        "key": "search.heading_date_range",
+        "value": "Date Range"
+      },
+      {
+        "key": "notifications.form_likes",
+        "value": "Likes"
+      },
+      {
+        "key": "components.settingsForm.email",
+        "value": "Email"
+      },
+      {
+        "key": "onboarding.bio",
+        "value": "Bio"
+      },
+      {
+        "key": "search.form_search_prompts_tags",
+        "value": "Search prompts, tags..."
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q10_o2",
+        "value": "Every major update to the project"
+      },
+      {
+        "key": "tutorials.transformers_attention.duration",
+        "value": "45 min"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q3",
+        "value": "How should you use Claude Code-generated code?"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_2_github_step_3",
+        "value": "Authenticate Claude Code with your GitHub account"
+      },
+      {
+        "key": "home.hero.stat_prompts",
+        "value": "Prompts"
+      },
+      {
+        "key": "components.emptyState.noDataDesc",
+        "value": "There is currently no data to display."
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q1_o1",
+        "value": "It understands your entire project context and follows your conventions"
+      },
+      {
+        "key": "profile.heading_badges",
+        "value": "Badges"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_5_integration_2",
+        "value": "Use code review as a learning tool"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_2_cli_desc",
+        "value": "Install the Claude Code CLI for local development with full terminal integration"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_6_limitation_3",
+        "value": "May generate code requiring significant refactoring"
+      },
+      {
+        "key": "languages.en",
+        "value": "English"
+      },
+      {
+        "key": "tutorials.ragas_evaluation.reward_badge",
+        "value": "Ragas Expert"
+      },
+      {
+        "key": "tutorials.index.tutorial_prompt_templates_level",
+        "value": "Beginner"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q5_o2",
+        "value": "Refactoring existing code"
+      },
+      {
+        "key": "techStack.metadata_title",
+        "value": "Tech Stack | Prompt Party"
+      },
+      {
+        "key": "tutorials.code_generation.react_tab",
+        "value": "React"
+      },
+      {
+        "key": "tutorials.claudeAgents.alert_input_schema_bold",
+        "value": "input_schema"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q8_o1",
+        "value": "Yes, but review the results carefully"
+      },
+      {
+        "key": "apiKeys.docs_auth_description_2",
+        "value": "header"
+      },
+      {
+        "key": "tutorials.dl_fundamentals.duration",
+        "value": "45 min"
+      },
+      {
+        "key": "tutorials.claude_code_basics.try_claude_code",
+        "value": "Try Claude Code Live"
+      },
+      {
+        "key": "tutorials.data_fundamentals.garbage_in_title",
+        "value": "Garbage In, Garbage Out"
+      },
+      {
+        "key": "notifications.form_weekly_digest",
+        "value": "Weekly Digest"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q7_o2",
+        "value": "Improve your CLAUDE.md or provide more context"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q3_o4",
+        "value": "Never use it in production"
+      },
+      {
+        "key": "tutorials.code_generation.design_patterns",
+        "value": "Design Patterns"
+      },
+      {
+        "key": "components.settingsForm.usernamePlaceholder",
+        "value": "username"
+      },
+      {
+        "key": "components.howToUse.title",
+        "value": "How to Use This Prompt"
+      },
+      {
+        "key": "tutorials.ml_basics.duration",
+        "value": "40 min"
+      },
+      {
+        "key": "profile.level_expert",
+        "value": "Expert"
+      },
+      {
+        "key": "tutorials.claude_code_basics.avoid_3",
+        "value": "Using Claude Code for business logic design alone"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q3_o2",
+        "value": "Review and understand it before merging"
+      },
+      {
+        "key": "components.collaborativeEditor.userLeft",
+        "value": "{userName} left"
+      },
+      {
+        "key": "techStack.comparison_onboarding",
+        "value": "Team Onboarding"
+      },
+      {
+        "key": "languages.nl",
+        "value": "Nederlands"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q4_o4",
+        "value": "Request multiple unrelated features at once"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q8",
+        "value": "Can Claude Code refactor your entire codebase at once?"
+      },
+      {
+        "key": "tutorials.intro_prompts.duration",
+        "value": "15 min"
+      },
+      {
+        "key": "techStack.spec_driven_title",
+        "value": "Spec Driven Development"
+      },
+      {
+        "key": "profile.avatar_preview",
+        "value": "Avatar preview"
+      },
+      {
+        "key": "ui.message_bordersuccess_focusvisibleringsuccess",
+        "value": "border-success focus-visible:ring-success"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_1_feature_1_desc",
+        "value": "Reads your CLAUDE.md and understands your project structure, tech stack, and coding standards"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q5",
+        "value": "Which is NOT a recommended use case for Claude Code?"
+      },
+      {
+        "key": "tutorials.code_generation.e2e_tests",
+        "value": "E2E Tests"
+      },
+      {
+        "key": "components.advancedFilters.liked",
+        "value": "Most Liked"
+      },
+      {
+        "key": "components.advancedFilters.recent",
+        "value": "Most Recent"
+      },
+      {
+        "key": "tutorials.prompt_optimization.reward_badge",
+        "value": "Prompt Optimization Expert"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q4_o3",
+        "value": "Ask for features without explaining the use case"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_1_feature_4_desc",
+        "value": "Creates comprehensive documentation aligned with your project standards"
+      },
+      {
+        "key": "design_system.accent",
+        "value": "Accent"
+      },
+      {
+        "key": "search.heading_tags",
+        "value": "Tags"
+      },
+      {
+        "key": "components.collaborativeEditor.userJoinedDesc",
+        "value": "Started editing this prompt"
+      },
+      {
+        "key": "ui.message_bgwarning10_textwarning_border_borderwarning20",
+        "value": "bg-warning/10 text-warning border border-warning/20"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q2_o4",
+        "value": "API documentation"
+      },
+      {
+        "key": "techStack.tech_tailwind_desc",
+        "value": "Utility-first CSS framework"
+      },
+      {
+        "key": "simpleWizard.form.title_required",
+        "value": "*"
+      },
+      {
+        "key": "metadata.top_title",
+        "value": "Top Prompts | Prompt Party"
+      },
+      {
+        "key": "tutorials.level_beginner",
+        "value": "Beginner"
+      },
+      {
+        "key": "common.code",
+        "value": "Code"
+      },
+      {
+        "key": "profile.prompts_tab",
+        "value": "Prompts"
+      },
+      {
+        "key": "tutorials.index.tutorial_claude_code_basics_topic3",
+        "value": "Debugging"
+      },
+      {
+        "key": "components.collaborativeEditor.userLeftDesc",
+        "value": "Stopped editing this prompt"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_2_github_desc",
+        "value": "Link your GitHub repository for seamless repository access and context"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q9_o3",
+        "value": "Never use it in a team setting"
+      },
+      {
+        "key": "common.widthdevicewidth_initialscale10",
+        "value": "width=device-width, initial-scale=1.0"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q1_o2",
+        "value": "It's faster at generating code"
+      },
+      {
+        "key": "tutorials.transformers_attention.t5_title",
+        "value": "T5 (Encoder-Decoder)"
+      },
+      {
+        "key": "tutorials.claude_code_basics.vs_copilot_desc",
+        "value": "Unlike Copilot which works at the file level, Claude Code understands your entire project context including architecture, conventions, and business logic."
+      },
+      {
+        "key": "tutorials.spec_driven_development.pro_tip",
+        "value": "Pro Tip"
+      },
+      {
+        "key": "design_system.tags",
+        "value": "Tags"
+      },
+      {
+        "key": "ui.message_bgwarning_textwarningforeground",
+        "value": "bg-warning text-warning-foreground"
+      },
+      {
+        "key": "components.emptyState.error",
+        "value": "Something went wrong"
+      },
+      {
+        "key": "tutorials.index.tutorial_intro_prompts_level",
+        "value": "Beginner"
+      },
+      {
+        "key": "tutorials.ragas_evaluation.quiz_q2_o1",
+        "value": "0.3"
+      },
+      {
+        "key": "ml.cta_button",
+        "value": "Start Tutorials"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q7",
+        "value": "What should happen when Claude Code doesn't understand your code?"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q3_exp",
+        "value": "Always review generated code for correctness and security"
+      },
+      {
+        "key": "tutorials.code_generation.reward_badge",
+        "value": "Code Generation Expert"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_2_claude_md_title",
+        "value": "Creating CLAUDE.md"
+      },
+      {
+        "key": "components.settingsForm.displayNamePlaceholder",
+        "value": "Your name"
+      },
+      {
+        "key": "templates.category_code",
+        "value": "Code"
+      },
+      {
+        "key": "components.settingsForm.emailNotEditable",
+        "value": "Email cannot be changed"
+      },
+      {
+        "key": "privacy.cookies_title",
+        "value": "Cookies"
+      },
+      {
+        "key": "tutorials.spec_driven_development.quiz_q1_o1",
+        "value": "30%"
+      },
+      {
+        "key": "techStack.ragas_title",
+        "value": "Ragas"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q9_o4",
+        "value": "Each developer uses it independently"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_5_title",
+        "value": "Best Practices"
+      },
+      {
+        "key": "tutorials.advanced_prompting.reward_badge",
+        "value": "Advanced Prompting Master"
+      },
+      {
+        "key": "components.howToUse.copiedFeedback",
+        "value": "Copied to Clipboard!"
+      },
+      {
+        "key": "common.tags",
+        "value": "Tags"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q4_exp",
+        "value": "Clear, specific requests with context produce better results"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q7_o3",
+        "value": "Ask a different tool"
+      },
+      {
+        "key": "tutorials.ml_basics.reward_badge",
+        "value": "ML Fundamentals Master"
+      },
+      {
+        "key": "search.quick_access_to_your_favorite_search_queries",
+        "value": "Quick access to your favorite search queries"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_results",
+        "value": "Quiz Results"
+      },
+      {
+        "key": "templates.category_marketing",
+        "value": "Marketing"
+      },
+      {
+        "key": "tutorials.advanced_prompting.duration",
+        "value": "20 min"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q1_o4",
+        "value": "It works without internet"
+      },
+      {
+        "key": "techStack.resource_spec_tutorial_title",
+        "value": "Spec Driven Development"
+      },
+      {
+        "key": "auth.join_alt",
+        "value": "Join Prompt Academy"
+      },
+      {
+        "key": "components.savedSearches.noSearches",
+        "value": "No saved searches yet"
+      },
+      {
+        "key": "ml.ml_title",
+        "value": "Machine Learning"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_2_cloud_desc",
+        "value": "Access Claude Code directly from your browser with cloud-based development"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q8_o3",
+        "value": "Never use it for refactoring"
+      },
+      {
+        "key": "notifications.heading_notifications",
+        "value": "Notifications"
+      },
+      {
+        "key": "simpleWizard.form.prompt_label",
+        "value": "Prompt"
+      },
+      {
+        "key": "tutorials.code_generation.continue_2_link",
+        "value": "Prompt Party"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q5_o3",
+        "value": "Debugging issues"
+      },
+      {
+        "key": "tutorials.claude_code_basics.duration",
+        "value": "45 minutes"
+      },
+      {
+        "key": "tutorials.transformers_attention.encoder_title",
+        "value": "Encoder"
+      },
+      {
+        "key": "ui.form_clear_input",
+        "value": "Clear input"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q3_o1",
+        "value": "Merge it directly to production"
+      },
+      {
+        "key": "tutorials.spec_driven_development.quiz_q1_o3",
+        "value": "90%"
+      },
+      {
+        "key": "techStack.cta_stat_2_value",
+        "value": "500+"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q9",
+        "value": "What's the best team practice with Claude Code?"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q5_o1",
+        "value": "Generating React components"
+      },
+      {
+        "key": "techStack.spec_driven_tab_workflow",
+        "value": "Workflow"
+      },
+      {
+        "key": "search.heading_ai_models",
+        "value": "AI Models"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_good",
+        "value": "Good! You understand Claude Code well."
+      },
+      {
+        "key": "components.savedSearches.noSearchesDesc",
+        "value": "Search for something and save it here for quick access"
+      },
+      {
+        "key": "tutorials.computer_vision_fundamentals.reward_badge",
+        "value": "Computer Vision Master"
+      },
+      {
+        "key": "tutorials.claude_code_basics.avoid_this",
+        "value": "✗ Avoid This"
+      },
+      {
+        "key": "pricing_full.free_f1",
+        "value": "20 prompts"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q2_o1",
+        "value": "Documentation for users"
+      },
+      {
+        "key": "tutorials.index.tutorial_claude_code_basics_topic2",
+        "value": "Refactoring"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_next",
+        "value": "Next Question"
+      },
+      {
+        "key": "tutorials.claude_code_basics.quiz_q2_o3",
+        "value": "Providing context to Claude Code about your project"
+      },
+      {
+        "key": "tutorials.ragas_evaluation.github_repo",
+        "value": "Ragas GitHub Repository"
+      },
+      {
+        "key": "tutorials.claude_code_basics.section_1_feature_1_title",
+        "value": "Context-Aware Generation"
+      }
+    ]
+  },
+  "orphaned_keys": [
+    "aiTester.buttonLabel",
+    "aiTester.creditsUsed",
+    "aiTester.creditsUsedPlural",
+    "aiTester.inputLabel",
+    "aiTester.inputPlaceholder",
+    "aiTester.modelLabel",
+    "aiTester.premiumBadge",
+    "aiTester.proTipText",
+    "aiTester.proTipTitle",
+    "aiTester.responseLabel",
+    "aiTester.signInPrompt",
+    "aiTester.signInRequired",
+    "aiTester.testButton",
+    "aiTester.testing",
+    "aiTester.title",
+    "aiTester.upgradeLink",
+    "api.action_api_key_created",
+    "api.action_create_new_api_key",
+    "api.authentication",
+    "api.base_url",
+    "api.endpoints",
+    "api.form_key_name",
+    "api.form_my_app_integration",
+    "api.heading_api_documentation",
+    "apiKeys.create_button",
+    "apiKeys.create_description",
+    "apiKeys.create_title",
+    "apiKeys.created_date",
+    "apiKeys.created_description",
+    "apiKeys.created_title",
+    "apiKeys.delete_confirm",
+    "apiKeys.docs_auth",
+    "apiKeys.docs_auth_description",
+    "apiKeys.docs_auth_description_2",
+    "apiKeys.docs_auth_header",
+    "apiKeys.docs_base_url",
+    "apiKeys.docs_description",
+    "apiKeys.docs_endpoints",
+    "apiKeys.docs_title",
+    "apiKeys.empty_state",
+    "apiKeys.endpoint_create_prompt",
+    "apiKeys.endpoint_delete_prompt",
+    "apiKeys.endpoint_get_prompt",
+    "apiKeys.endpoint_list_prompts",
+    "apiKeys.endpoint_update_prompt",
+    "apiKeys.key_name_label",
+    "apiKeys.key_name_placeholder",
+    "apiKeys.last_used",
+    "apiKeys.last_used_never",
+    "apiKeys.requests_of",
+    "apiKeys.saved_key_button",
+    "apiKeys.your_keys_description",
+    "apiKeys.your_keys_title",
+    "auth.hide_password",
+    "auth.join_academy_heading",
+    "auth.join_alt",
+    "auth.secure_auth_heading",
+    "auth.show_password",
+    "brand.logo_alt",
+    "brand.name",
+    "challenges.active_challenges",
+    "challenges.check_back",
+    "challenges.cta_subtitle",
+    "challenges.difficulty_easy",
+    "challenges.difficulty_hard",
+    "challenges.difficulty_medium",
+    "challenges.how_it_works",
+    "challenges.how_works_step1_desc",
+    "challenges.how_works_step1_title",
+    "challenges.how_works_step2_desc",
+    "challenges.how_works_step2_title",
+    "challenges.how_works_step3_desc",
+    "challenges.how_works_step3_title",
+    "challenges.how_works_step4_desc",
+    "challenges.how_works_step4_title",
+    "challenges.no_challenges",
+    "challenges.past_winners",
+    "challenges.past_winners_text",
+    "challenges.reward_credits",
+    "challenges.start_button",
+    "challenges.step1_number",
+    "challenges.step2_number",
+    "challenges.step3_number",
+    "collections.delete_collection",
+    "collections.delete_confirm",
+    "collections.description_placeholder",
+    "collections.edit_collection",
+    "collections.my_collections",
+    "collections.name_placeholder",
+    "collections.private_description",
+    "collections.prompts_count",
+    "collections.public_description",
+    "collections.remove_from_collection",
+    "collections.twitter",
+    "collections.visibility_label",
+    "collectionsNew.cancel_button",
+    "collectionsNew.collection_name_label",
+    "collectionsNew.collection_name_placeholder",
+    "collectionsNew.create_button",
+    "collectionsNew.description_label",
+    "collectionsNew.description_placeholder",
+    "collectionsNew.make_public",
+    "collectionsNew.page_title",
+    "commandPalette.nav.aria_keyboard_shortcuts",
+    "comments.delete_comment",
+    "comments.delete_confirm",
+    "comments.edit_comment",
+    "comments.hide_replies",
+    "comments.reply",
+    "comments.show_replies",
+    "common.action_add_any_variables_or_context_for_your_prompt",
+    "common.action_delete_comment",
+    "common.ai_concepts",
+    "common.ai_prompt_wizard",
+    "common.analyzing_your_prompt",
+    "common.aria_clear_input",
+    "common.aria_close",
+    "common.aria_copied",
+    "common.aria_keyboard_shortcuts",
+    "common.aria_loading",
+    "common.aria_remove",
+    "common.aria_skip_to_content",
+    "common.aria_toggle_theme",
+    "common.back",
+    "common.bookmark",
+    "common.bookmarks",
+    "common.challenge_trophy",
+    "common.code",
+    "common.comment",
+    "common.delete",
+    "common.draft",
+    "common.edit",
+    "common.filter",
+    "common.follow",
+    "common.following",
+    "common.fork",
+    "common.form_ai_model",
+    "common.form_ai_response",
+    "common.form_keyboard_shortcuts",
+    "common.form_test_input_optional",
+    "common.form_write_your_prompt_here_markdown_supported",
+    "common.heading_1_choisis_un_challenge",
+    "common.heading_2_progresse_ton_rythme",
+    "common.heading_3_gagne_des_rcompenses",
+    "common.heading__apprendre",
+    "common.heading__communaut",
+    "common.heading__lgal",
+    "common.heading__lgendes_de_la_plateforme",
+    "common.heading__prompt_party",
+    "common.heading__top_10_contributeurs_ce_mois",
+    "common.heading_ai_prompt_tester",
+    "common.heading_aioptimized_prompt",
+    "common.heading_all_variants_medium_size",
+    "common.heading_badge_icon_alignment_test",
+    "common.heading_dark_mode_test",
+    "common.heading_feature_tags",
+    "common.heading_large_badges_sizequotlgquot",
+    "common.heading_medium_badges_sizequotmdquot",
+    "common.heading_my_content",
+    "common.heading_prompt_quality_score",
+    "common.heading_realworld_use_cases",
+    "common.heading_section_title",
+    "common.heading_shape_variants",
+    "common.heading_small_badges_sizequotsmquot",
+    "common.heading_status_indicators",
+    "common.heading_trending_tags",
+    "common.heading_tutorial_header",
+    "common.heading_your_top_prompt_this_week",
+    "common.heading_your_week_on_prompt_party",
+    "common.leaderboard_podium",
+    "common.learning_path_journey",
+    "common.like",
+    "common.loading",
+    "common.manage_notification_preferences",
+    "common.optimized_version",
+    "common.pro",
+    "common.prompts",
+    "common.public",
+    "common.published",
+    "common.remix",
+    "common.remove",
+    "common.save",
+    "common.search",
+    "common.share",
+    "common.success",
+    "common.support_the_community",
+    "common.unbookmark",
+    "common.unfollow",
+    "common.unlike",
+    "common.upgrade",
+    "common.users",
+    "common.view",
+    "common.widthdevicewidth_initialscale10",
+    "components.advancedFilters.discussed",
+    "components.advancedFilters.liked",
+    "components.advancedFilters.recent",
+    "components.advancedFilters.relevant",
+    "components.advancedFilters.remixed",
+    "components.collaborativeEditor.userJoined",
+    "components.collaborativeEditor.userJoinedDesc",
+    "components.collaborativeEditor.userLeft",
+    "components.collaborativeEditor.userLeftDesc",
+    "components.emptyState.emptyInbox",
+    "components.emptyState.emptyInboxDesc",
+    "components.emptyState.error",
+    "components.emptyState.errorDesc",
+    "components.emptyState.noData",
+    "components.emptyState.noDataDesc",
+    "components.emptyState.noResults",
+    "components.emptyState.noResultsDesc",
+    "components.emptyState.notFound",
+    "components.emptyState.notFoundDesc",
+    "components.howToUse.compatibleModels",
+    "components.howToUse.copiedFeedback",
+    "components.howToUse.copyButton",
+    "components.howToUse.step1",
+    "components.howToUse.step2",
+    "components.howToUse.step3",
+    "components.howToUse.step4",
+    "components.howToUse.title",
+    "components.promptPlayground.modelLabel",
+    "components.promptPlayground.signInRequired",
+    "components.savedSearches.description",
+    "components.savedSearches.nameRequired",
+    "components.savedSearches.nameRequiredDesc",
+    "components.savedSearches.noSearches",
+    "components.savedSearches.noSearchesDesc",
+    "components.savedSearches.searchSaved",
+    "components.savedSearches.title",
+    "components.settingsForm.displayName",
+    "components.settingsForm.displayNamePlaceholder",
+    "components.settingsForm.email",
+    "components.settingsForm.emailNotEditable",
+    "components.settingsForm.profileInfo",
+    "components.settingsForm.saveButton",
+    "components.settingsForm.savingButton",
+    "components.settingsForm.successMessage",
+    "components.settingsForm.username",
+    "components.settingsForm.usernameHint",
+    "components.settingsForm.usernamePlaceholder",
+    "components.submitPromptButton.urlPlaceholder",
+    "design_system.accent",
+    "design_system.action",
+    "design_system.alerts",
+    "design_system.background",
+    "design_system.basic_card",
+    "design_system.basic_card_description",
+    "design_system.border_radius",
+    "design_system.brand_colors",
+    "design_system.buttons",
+    "design_system.by_username",
+    "design_system.card",
+    "design_system.card_description",
+    "design_system.cards",
+    "design_system.checkbox",
+    "design_system.colors",
+    "design_system.destructive",
+    "design_system.enter_description",
+    "design_system.enter_text",
+    "design_system.error_message",
+    "design_system.error_title",
+    "design_system.featured",
+    "design_system.footer_text",
+    "design_system.forms",
+    "design_system.ghost",
+    "design_system.info",
+    "design_system.info_message",
+    "design_system.info_title",
+    "design_system.large",
+    "design_system.medium",
+    "design_system.muted",
+    "design_system.neutral_colors",
+    "design_system.new",
+    "design_system.option_1",
+    "design_system.option_2",
+    "design_system.option_3",
+    "design_system.outline",
+    "design_system.page_description",
+    "design_system.page_title",
+    "design_system.pills",
+    "design_system.popular",
+    "design_system.primary",
+    "design_system.prompt_title",
+    "design_system.quick_brown_fox",
+    "design_system.quick_brown_fox_full",
+    "design_system.rectangular",
+    "design_system.secondary",
+    "design_system.select",
+    "design_system.semantic_colors",
+    "design_system.shadows",
+    "design_system.sizes",
+    "design_system.small",
+    "design_system.spacing",
+    "design_system.subtitle",
+    "design_system.success",
+    "design_system.success_message",
+    "design_system.success_title",
+    "design_system.tags",
+    "design_system.text_input",
+    "design_system.textarea",
+    "design_system.title",
+    "design_system.typography",
+    "design_system.variants",
+    "design_system.warning",
+    "design_system.warning_message",
+    "design_system.warning_title",
+    "editor.category",
+    "editor.confirm_discard",
+    "editor.current_version",
+    "editor.discard_changes",
+    "editor.draft_title",
+    "editor.edit_mode",
+    "editor.max_tokens",
+    "editor.max_tokens_label",
+    "editor.model",
+    "editor.prompt_content",
+    "editor.prompt_content_placeholder",
+    "editor.prompt_description",
+    "editor.prompt_description_placeholder",
+    "editor.prompt_title",
+    "editor.public",
+    "editor.publish_prompt",
+    "editor.published_success",
+    "editor.publishing",
+    "editor.restore_version",
+    "editor.save_prompt",
+    "editor.saved_success",
+    "editor.saving",
+    "editor.select_category",
+    "editor.select_model",
+    "editor.temperature",
+    "editor.temperature_label",
+    "editor.version_history",
+    "editor.view_versions",
+    "editor.visibility",
+    "emptyStates.noBookmarks.secondaryAction",
+    "emptyStates.noCollections.secondaryAction",
+    "errors.forbidden",
+    "errors.generic",
+    "errors.network_error",
+    "errors.not_found",
+    "errors.server_error",
+    "errors.unauthorized",
+    "errors.validation_error",
+    "faq.a1",
+    "faq.a2",
+    "faq.a3",
+    "faq.a4",
+    "faq.a5",
+    "faq.a6",
+    "faq.a7",
+    "faq.a8",
+    "faq.q1",
+    "faq.q2",
+    "faq.q3",
+    "faq.q4",
+    "faq.q5",
+    "faq.q6",
+    "faq.q7",
+    "faq.q8",
+    "footer.about_section_title",
+    "footer.community",
+    "footer.concepts",
+    "footer.contact",
+    "footer.copyright",
+    "footer.docs",
+    "footer.legal",
+    "footer.pricing",
+    "footer.resources",
+    "footer.tutorials",
+    "forms.cancel",
+    "forms.clear",
+    "forms.close",
+    "forms.confirm",
+    "forms.error",
+    "forms.info",
+    "forms.invalid_email",
+    "forms.loading",
+    "forms.next",
+    "forms.password_too_short",
+    "forms.passwords_dont_match",
+    "forms.previous",
+    "forms.required_field",
+    "forms.save",
+    "forms.skip",
+    "forms.submit",
+    "forms.success",
+    "forms.username_taken",
+    "forms.warning",
+    "header.search_placeholder",
+    "header.subtitle",
+    "header.title",
+    "home.empty_feed",
+    "languages.en",
+    "languages.fr",
+    "languages.nl",
+    "leaderboard.achievements",
+    "leaderboard.by",
+    "leaderboard.contributions",
+    "leaderboard.contributors_subtitle",
+    "leaderboard.contributors_title",
+    "leaderboard.followers",
+    "leaderboard.hall_of_fame_subtitle",
+    "leaderboard.hall_of_fame_title",
+    "leaderboard.learners_subtitle",
+    "leaderboard.lessons",
+    "leaderboard.most_liked",
+    "leaderboard.most_liked_subtitle",
+    "leaderboard.most_remixed",
+    "leaderboard.most_remixed_subtitle",
+    "leaderboard.no_remixed",
+    "leaderboard.no_trending",
+    "leaderboard.prompts_count",
+    "leaderboard.remixes",
+    "leaderboard.top_creators",
+    "leaderboard.top_creators_subtitle",
+    "leaderboard.top_percent_value",
+    "leaderboard.trending_week",
+    "leaderboard.trending_week_subtitle",
+    "marketing_suite.comparison_cta",
+    "marketing_suite.comparison_feature",
+    "marketing_suite.comparison_recommended",
+    "marketing_suite.comparison_subtitle",
+    "marketing_suite.comparison_title",
+    "marketing_suite.faq_1_a",
+    "marketing_suite.faq_1_q",
+    "marketing_suite.faq_2_a",
+    "marketing_suite.faq_2_q",
+    "marketing_suite.faq_3_a",
+    "marketing_suite.faq_3_q",
+    "marketing_suite.faq_4_a",
+    "marketing_suite.faq_4_q",
+    "marketing_suite.faq_5_a",
+    "marketing_suite.faq_5_q",
+    "marketing_suite.faq_6_a",
+    "marketing_suite.faq_6_q",
+    "marketing_suite.faq_title",
+    "marketing_suite.feature_analytics_desc",
+    "marketing_suite.feature_analytics_title",
+    "marketing_suite.feature_brand_desc",
+    "marketing_suite.feature_brand_title",
+    "marketing_suite.feature_library_desc",
+    "marketing_suite.feature_library_title",
+    "marketing_suite.feature_support_desc",
+    "marketing_suite.feature_support_title",
+    "marketing_suite.feature_team_desc",
+    "marketing_suite.feature_team_title",
+    "marketing_suite.feature_testing_desc",
+    "marketing_suite.feature_testing_title",
+    "marketing_suite.features_badge",
+    "marketing_suite.features_subtitle",
+    "marketing_suite.features_title",
+    "marketing_suite.final_cta_features",
+    "marketing_suite.final_cta_plans",
+    "marketing_suite.final_cta_subtitle",
+    "marketing_suite.final_cta_title",
+    "marketing_suite.final_cta_trial",
+    "marketing_suite.hero_badge",
+    "marketing_suite.hero_cta_compare",
+    "marketing_suite.hero_cta_trial",
+    "marketing_suite.hero_no_card",
+    "marketing_suite.hero_subtitle",
+    "marketing_suite.hero_title",
+    "marketing_suite.stats_faster",
+    "marketing_suite.stats_marketers",
+    "marketing_suite.stats_prompts",
+    "marketing_suite.stats_time_saved",
+    "marketing_suite.testimonials_rating",
+    "marketing_suite.testimonials_title",
+    "marketing_suite.usecase_cta",
+    "marketing_suite.usecase_more",
+    "marketing_suite.usecase_subtitle",
+    "marketing_suite.usecase_title",
+    "messages.close",
+    "messages.confirm_action",
+    "messages.copied_to_clipboard",
+    "messages.empty_state",
+    "messages.error",
+    "messages.forbidden",
+    "messages.go_back",
+    "messages.loading",
+    "messages.network_error",
+    "messages.no_results",
+    "messages.not_found",
+    "messages.server_error",
+    "messages.success",
+    "messages.try_again",
+    "messages.unauthorized",
+    "metadata.home_description",
+    "metadata.home_title",
+    "metadata.login_description",
+    "metadata.pricing_description",
+    "metadata.pricing_title",
+    "metadata.signup_description",
+    "metadata.teams_description",
+    "metadata.teams_title",
+    "metadata.templates_description",
+    "nav.aria_keyboard_shortcuts",
+    "nav.bookmarks",
+    "nav.concepts",
+    "nav.concepts_category",
+    "nav.following",
+    "nav.guides",
+    "nav.learning_category",
+    "nav.ml_vs_dl",
+    "nav.notifications",
+    "nav.resources",
+    "nav.tech_stack",
+    "nav.tutorials",
+    "nav.wizard",
+    "notifications.all",
+    "notifications.commented_prompt",
+    "notifications.followed_you",
+    "notifications.form_challenges",
+    "notifications.form_comments",
+    "notifications.form_likes",
+    "notifications.form_new_followers",
+    "notifications.form_weekly_digest",
+    "notifications.heading_inapp_notifications",
+    "notifications.heading_notifications",
+    "notifications.liked_prompt",
+    "notifications.no_notifications_yet",
+    "notifications.remixed_prompt",
+    "notifications.time_ago.days_ago",
+    "notifications.time_ago.hours_ago",
+    "notifications.time_ago.just_now",
+    "notifications.time_ago.minutes_ago",
+    "notifications.time_ago.months_ago",
+    "notifications.time_ago.weeks_ago",
+    "notifications.time_ago.years_ago",
+    "onboarding.action_save_to_collections",
+    "onboarding.bio",
+    "onboarding.continue",
+    "onboarding.creator_1_bio",
+    "onboarding.creator_1_name",
+    "onboarding.creator_2_bio",
+    "onboarding.creator_2_name",
+    "onboarding.creator_3_bio",
+    "onboarding.creator_3_name",
+    "onboarding.creator_4_bio",
+    "onboarding.creator_4_name",
+    "onboarding.finish",
+    "onboarding.heading_discover_learn",
+    "onboarding.heading_join_the_community",
+    "onboarding.heading_like_comment",
+    "onboarding.heading_share_collaborate",
+    "onboarding.interests",
+    "onboarding.pro_tip",
+    "onboarding.skip",
+    "onboarding.step1_description",
+    "onboarding.step1_title",
+    "onboarding.step2_description",
+    "onboarding.step2_title",
+    "onboarding.step3_description",
+    "onboarding.step3_title",
+    "onboarding.step_1_of_4",
+    "onboarding.step_2_of_4",
+    "onboarding.step_3_of_4",
+    "onboarding.step_4_of_4",
+    "onboarding.suggested_users",
+    "onboarding.username",
+    "onboarding.welcome",
+    "onboarding.welcome_to_prompt_party",
+    "onboarding.youre_all_set",
+    "pages.bookmarks_empty",
+    "pages.collections_empty",
+    "pages.teams_empty",
+    "pages.teams_heading",
+    "pages.templates_empty",
+    "pages.templates_heading",
+    "pricing_full.business_desc",
+    "pricing_full.business_f1",
+    "pricing_full.business_f2",
+    "pricing_full.business_f3",
+    "pricing_full.business_f4",
+    "pricing_full.business_f5",
+    "pricing_full.business_f6",
+    "pricing_full.business_f7",
+    "pricing_full.business_f8",
+    "pricing_full.business_name",
+    "pricing_full.business_period",
+    "pricing_full.business_price",
+    "pricing_full.contact_sales",
+    "pricing_full.cta_subtitle",
+    "pricing_full.cta_title",
+    "pricing_full.faq_1_a",
+    "pricing_full.faq_1_q",
+    "pricing_full.faq_2_a",
+    "pricing_full.faq_2_q",
+    "pricing_full.faq_3_a",
+    "pricing_full.faq_3_q",
+    "pricing_full.faq_4_a",
+    "pricing_full.faq_4_q",
+    "pricing_full.faq_5_a",
+    "pricing_full.faq_5_q",
+    "pricing_full.faq_title",
+    "pricing_full.free_desc",
+    "pricing_full.free_f1",
+    "pricing_full.free_f2",
+    "pricing_full.free_f3",
+    "pricing_full.free_f4",
+    "pricing_full.free_f5",
+    "pricing_full.free_f6",
+    "pricing_full.free_name",
+    "pricing_full.free_period",
+    "pricing_full.free_price",
+    "pricing_full.get_started",
+    "pricing_full.most_popular",
+    "pricing_full.pro_desc",
+    "pricing_full.pro_f1",
+    "pricing_full.pro_f2",
+    "pricing_full.pro_f3",
+    "pricing_full.pro_f4",
+    "pricing_full.pro_f5",
+    "pricing_full.pro_f6",
+    "pricing_full.pro_f7",
+    "pricing_full.pro_f8",
+    "pricing_full.pro_f9",
+    "pricing_full.pro_name",
+    "pricing_full.pro_period",
+    "pricing_full.pro_price",
+    "pricing_full.start_free",
+    "pricing_full.start_pro",
+    "pricing_full.start_team",
+    "pricing_full.subtitle",
+    "pricing_full.team_desc",
+    "pricing_full.team_f1",
+    "pricing_full.team_f2",
+    "pricing_full.team_f3",
+    "pricing_full.team_f4",
+    "pricing_full.team_f5",
+    "pricing_full.team_f6",
+    "pricing_full.team_f7",
+    "pricing_full.team_f8",
+    "pricing_full.team_name",
+    "pricing_full.team_period",
+    "pricing_full.team_price",
+    "pricing_full.title",
+    "profile.account_settings",
+    "profile.account_settings_description",
+    "profile.avatar_preview",
+    "profile.badges_unlocked",
+    "profile.bio_placeholder",
+    "profile.cancel_editing",
+    "profile.change_password",
+    "profile.collections_tab",
+    "profile.confirm_delete_account",
+    "profile.confirm_password",
+    "profile.current_password",
+    "profile.delete_account",
+    "profile.delete_account_warning",
+    "profile.edit_profile",
+    "profile.edit_profile_title",
+    "profile.email_verification",
+    "profile.followers_count",
+    "profile.followers_tab",
+    "profile.following_count",
+    "profile.following_tab",
+    "profile.form_bio",
+    "profile.form_display_name",
+    "profile.form_email",
+    "profile.form_github",
+    "profile.form_location",
+    "profile.form_twitter",
+    "profile.form_website",
+    "profile.form_your_name",
+    "profile.github_label",
+    "profile.heading_account",
+    "profile.heading_badges",
+    "profile.heading_choose_your_avatar",
+    "profile.joined",
+    "profile.liked_tab",
+    "profile.location_label",
+    "profile.make_profile_private",
+    "profile.message_profile_information",
+    "profile.new_password",
+    "profile.no_prompts_yet",
+    "profile.password_changed_success",
+    "profile.privacy_settings",
+    "profile.private_profile_description",
+    "profile.profile_saved_success",
+    "profile.profile_updated",
+    "profile.progression_to_next",
+    "profile.prompts_count",
+    "profile.prompts_created",
+    "profile.prompts_created_plural",
+    "profile.save_changes",
+    "profile.save_profile",
+    "profile.send_verification_email",
+    "profile.twitter_label",
+    "profile.updating_profile",
+    "profile.verify_email_required",
+    "profile.website_label",
+    "prompt_actions.add_to_collection",
+    "prompt_actions.add_to_new_collection",
+    "prompt_actions.added_to_collection",
+    "prompt_actions.already_in_collection",
+    "prompt_actions.bookmark",
+    "prompt_actions.bookmarked",
+    "prompt_actions.collection_created",
+    "prompt_actions.confirm_delete",
+    "prompt_actions.copy_link",
+    "prompt_actions.creating_collection",
+    "prompt_actions.delete",
+    "prompt_actions.delete_prompt",
+    "prompt_actions.deleted_success",
+    "prompt_actions.deleting",
+    "prompt_actions.duplicate",
+    "prompt_actions.duplicate_prompt",
+    "prompt_actions.edit",
+    "prompt_actions.editing",
+    "prompt_actions.export",
+    "prompt_actions.export_as_json",
+    "prompt_actions.export_as_markdown",
+    "prompt_actions.export_as_text",
+    "prompt_actions.export_prompt",
+    "prompt_actions.fork_prompt",
+    "prompt_actions.link_copied",
+    "prompt_actions.remix",
+    "prompt_actions.removed_bookmark",
+    "prompt_actions.report",
+    "prompt_actions.report_prompt",
+    "prompt_actions.restore_version",
+    "prompt_actions.select_collection",
+    "prompt_actions.share",
+    "prompt_actions.share_prompt",
+    "prompt_actions.unbookmark",
+    "prompt_actions.view_versions",
+    "prompt_types.business",
+    "prompt_types.chat",
+    "prompt_types.completion",
+    "prompt_types.creative",
+    "prompt_types.educational",
+    "prompt_types.entertainment",
+    "prompt_types.instruction",
+    "prompt_types.other",
+    "prompt_types.technical",
+    "prompts.action_changes_are_saved_automatically",
+    "prompts.action_copy_the_prompt",
+    "prompts.action_you_are_the_only_one_editing",
+    "prompts.category_label",
+    "prompts.comments_count",
+    "prompts.copy_link",
+    "prompts.created_at",
+    "prompts.delete_confirm",
+    "prompts.delete_prompt",
+    "prompts.edit_title",
+    "prompts.embed",
+    "prompts.export",
+    "prompts.favorites",
+    "prompts.form_close",
+    "prompts.form_copy_code",
+    "prompts.form_paste_the_prompt",
+    "prompts.form_paste_your_json_export_here",
+    "prompts.form_preview",
+    "prompts.form_share_prompt",
+    "prompts.form_write_your_prompt_here",
+    "prompts.heading_compatible_ai_models",
+    "prompts.heading_how_to_use_this_prompt",
+    "prompts.heading_prompt_not_found",
+    "prompts.heading_prompt_title",
+    "prompts.import",
+    "prompts.link_copied",
+    "prompts.manage_folders",
+    "prompts.message_copied",
+    "prompts.no_version_history_available",
+    "prompts.open_your_ai_assistant",
+    "prompts.original",
+    "prompts.publish",
+    "prompts.remixes_count",
+    "prompts.report",
+    "prompts.review_the_output",
+    "prompts.save_draft",
+    "prompts.share",
+    "prompts.share_on_linkedin",
+    "prompts.share_on_twitter",
+    "prompts.this_is_the_original_version",
+    "prompts.update",
+    "prompts.updated_at",
+    "prompts.version_history",
+    "prompts.view_original",
+    "prompts.visibility_label",
+    "search.action_no_saved_searches_yet",
+    "search.action_search_for_something_and_save_it_here_for_quick_ac",
+    "search.explore_prompts",
+    "search.form_name_this_search",
+    "search.form_search_prompts_tags",
+    "search.form_verified_prompts_only",
+    "search.heading_ai_models",
+    "search.heading_date_range",
+    "search.heading_tags",
+    "search.page_of",
+    "search.pick_a_date_range",
+    "search.quick_access_to_your_favorite_search_queries",
+    "search.recent_searches",
+    "settings.api",
+    "settings.api_key",
+    "settings.appearance",
+    "settings.email_notifications",
+    "settings.generate_key",
+    "settings.heading_notification_settings",
+    "settings.language",
+    "settings.notificationSettings.email.challenges.label",
+    "settings.notificationSettings.email.comments.label",
+    "settings.notificationSettings.email.follows.label",
+    "settings.notificationSettings.email.likes.label",
+    "settings.notificationSettings.email.remixes.label",
+    "settings.notificationSettings.email.weeklyDigest.label",
+    "settings.notificationSettings.push.challenges.label",
+    "settings.notificationSettings.push.comments.label",
+    "settings.notificationSettings.push.likes.label",
+    "settings.notificationSettings.push.remixes.label",
+    "settings.notifications",
+    "settings.notify_comments",
+    "settings.notify_follows",
+    "settings.notify_likes",
+    "settings.notify_remixes",
+    "settings.public_profile",
+    "settings.push_notifications",
+    "settings.revoke_key",
+    "settings.save_settings",
+    "settings.settings_updated",
+    "settings.show_email",
+    "settings.show_stats",
+    "settings.theme",
+    "settings.theme_dark",
+    "settings.theme_light",
+    "settings.theme_system",
+    "simpleWizard.buttons.back",
+    "simpleWizard.buttons.publish",
+    "simpleWizard.buttons.publishing",
+    "simpleWizard.categories.business",
+    "simpleWizard.categories.coding",
+    "simpleWizard.categories.creative",
+    "simpleWizard.categories.education",
+    "simpleWizard.categories.other",
+    "simpleWizard.categories.writing",
+    "simpleWizard.form.characters_count",
+    "simpleWizard.form.prompt_label",
+    "simpleWizard.form.prompt_placeholder",
+    "simpleWizard.form.prompt_required",
+    "simpleWizard.form.tags_helper",
+    "simpleWizard.form.tags_selected",
+    "simpleWizard.form.title_required",
+    "teams.access_denied",
+    "teams.activity",
+    "teams.already_member",
+    "teams.back_to_teams",
+    "teams.cancel",
+    "teams.collections",
+    "teams.collections_coming_soon",
+    "teams.create_first_team",
+    "teams.create_team",
+    "teams.email_address",
+    "teams.email_invalid",
+    "teams.email_required",
+    "teams.feature_1",
+    "teams.feature_2",
+    "teams.feature_3",
+    "teams.invite_description",
+    "teams.invite_error",
+    "teams.invite_member",
+    "teams.invite_team_member",
+    "teams.joined",
+    "teams.max_members",
+    "teams.members",
+    "teams.no_activity",
+    "teams.no_description",
+    "teams.no_teams",
+    "teams.no_teams_description",
+    "teams.not_member",
+    "teams.page_description",
+    "teams.page_title",
+    "teams.recent_activity",
+    "teams.remove",
+    "teams.remove_member",
+    "teams.remove_member_confirm",
+    "teams.role",
+    "teams.role_admin",
+    "teams.role_admin_desc",
+    "teams.role_editor",
+    "teams.role_editor_desc",
+    "teams.role_owner",
+    "teams.role_viewer",
+    "teams.role_viewer_desc",
+    "teams.send_invite",
+    "teams.sending",
+    "teams.settings",
+    "teams.subtitle",
+    "teams.team_members",
+    "teams.title",
+    "teams.upgrade_description",
+    "teams.upgrade_required",
+    "teams.upgrade_to_team",
+    "teams.view",
+    "teams.you",
+    "techStack.claude_code_badge",
+    "techStack.claude_code_description",
+    "techStack.claude_code_intro",
+    "techStack.claude_code_point_1",
+    "techStack.claude_code_point_2",
+    "techStack.claude_code_point_3",
+    "techStack.claude_code_point_4",
+    "techStack.claude_code_tab_best_practices",
+    "techStack.claude_code_tab_best_practices_content",
+    "techStack.claude_code_tab_examples",
+    "techStack.claude_code_tab_examples_content",
+    "techStack.claude_code_tab_overview",
+    "techStack.claude_code_tab_overview_content",
+    "techStack.claude_code_tab_setup",
+    "techStack.claude_code_tab_setup_content",
+    "techStack.claude_code_tab_usage",
+    "techStack.claude_code_tab_usage_content",
+    "techStack.claude_code_title",
+    "techStack.ragas_badge",
+    "techStack.ragas_description",
+    "techStack.ragas_intro",
+    "techStack.ragas_point_1",
+    "techStack.ragas_point_2",
+    "techStack.ragas_point_3",
+    "techStack.ragas_point_4",
+    "techStack.ragas_tab_examples",
+    "techStack.ragas_tab_examples_content",
+    "techStack.ragas_tab_metrics",
+    "techStack.ragas_tab_metrics_content",
+    "techStack.ragas_tab_overview",
+    "techStack.ragas_tab_overview_content",
+    "techStack.ragas_tab_setup",
+    "techStack.ragas_tab_setup_content",
+    "techStack.ragas_tab_usage",
+    "techStack.ragas_tab_usage_content",
+    "techStack.ragas_title",
+    "techStack.spec_driven_badge",
+    "techStack.spec_driven_description",
+    "techStack.spec_driven_intro",
+    "techStack.spec_driven_point_1",
+    "techStack.spec_driven_point_2",
+    "techStack.spec_driven_point_3",
+    "techStack.spec_driven_point_4",
+    "techStack.spec_driven_tab_best_practices",
+    "techStack.spec_driven_tab_best_practices_content",
+    "techStack.spec_driven_tab_github",
+    "techStack.spec_driven_tab_github_content",
+    "techStack.spec_driven_tab_overview",
+    "techStack.spec_driven_tab_overview_content",
+    "techStack.spec_driven_tab_template",
+    "techStack.spec_driven_tab_template_content",
+    "techStack.spec_driven_tab_workflow",
+    "techStack.spec_driven_tab_workflow_content",
+    "techStack.spec_driven_title",
+    "templates.category_all",
+    "templates.category_business",
+    "templates.category_code",
+    "templates.category_creative",
+    "templates.category_education",
+    "templates.category_marketing",
+    "templates.category_other",
+    "templates.category_writing",
+    "tutorials.badge_label",
+    "tutorials.badge_unlocked",
+    "tutorials.beginner_path.course_curriculum",
+    "tutorials.beginner_path.your_progress",
+    "tutorials.certificate_completion",
+    "tutorials.claudeAgents.badge_duration",
+    "tutorials.claudeAgents.what_you_learn",
+    "tutorials.claude_basics.analysis_1",
+    "tutorials.claude_basics.analysis_2",
+    "tutorials.claude_basics.analysis_3",
+    "tutorials.claude_basics.analysis_4",
+    "tutorials.claude_basics.analysis_research",
+    "tutorials.claude_basics.claude_intro",
+    "tutorials.claude_basics.conversation",
+    "tutorials.claude_basics.conversation_1",
+    "tutorials.claude_basics.conversation_2",
+    "tutorials.claude_basics.conversation_3",
+    "tutorials.claude_basics.conversation_4",
+    "tutorials.claude_basics.programming",
+    "tutorials.claude_basics.programming_1",
+    "tutorials.claude_basics.programming_2",
+    "tutorials.claude_basics.programming_3",
+    "tutorials.claude_basics.programming_4",
+    "tutorials.claude_basics.what_is_claude",
+    "tutorials.claude_basics.what_you_learn",
+    "tutorials.claude_basics.writing_1",
+    "tutorials.claude_basics.writing_2",
+    "tutorials.claude_basics.writing_3",
+    "tutorials.claude_basics.writing_4",
+    "tutorials.claude_basics.writing_content",
+    "tutorials.claude_code_basics.badge_level",
+    "tutorials.claude_code_basics.quiz_excellent",
+    "tutorials.claude_code_basics.quiz_good",
+    "tutorials.claude_code_basics.quiz_q10",
+    "tutorials.claude_code_basics.quiz_q10_exp",
+    "tutorials.claude_code_basics.quiz_q10_o1",
+    "tutorials.claude_code_basics.quiz_q10_o2",
+    "tutorials.claude_code_basics.quiz_q10_o3",
+    "tutorials.claude_code_basics.quiz_q10_o4",
+    "tutorials.claude_code_basics.quiz_q4",
+    "tutorials.claude_code_basics.quiz_q4_exp",
+    "tutorials.claude_code_basics.quiz_q4_o1",
+    "tutorials.claude_code_basics.quiz_q4_o2",
+    "tutorials.claude_code_basics.quiz_q4_o3",
+    "tutorials.claude_code_basics.quiz_q4_o4",
+    "tutorials.claude_code_basics.quiz_q5",
+    "tutorials.claude_code_basics.quiz_q5_exp",
+    "tutorials.claude_code_basics.quiz_q5_o1",
+    "tutorials.claude_code_basics.quiz_q5_o2",
+    "tutorials.claude_code_basics.quiz_q5_o3",
+    "tutorials.claude_code_basics.quiz_q5_o4",
+    "tutorials.claude_code_basics.quiz_q6",
+    "tutorials.claude_code_basics.quiz_q6_exp",
+    "tutorials.claude_code_basics.quiz_q6_o1",
+    "tutorials.claude_code_basics.quiz_q6_o2",
+    "tutorials.claude_code_basics.quiz_q6_o3",
+    "tutorials.claude_code_basics.quiz_q6_o4",
+    "tutorials.claude_code_basics.quiz_q7",
+    "tutorials.claude_code_basics.quiz_q7_exp",
+    "tutorials.claude_code_basics.quiz_q7_o1",
+    "tutorials.claude_code_basics.quiz_q7_o2",
+    "tutorials.claude_code_basics.quiz_q7_o3",
+    "tutorials.claude_code_basics.quiz_q7_o4",
+    "tutorials.claude_code_basics.quiz_q8",
+    "tutorials.claude_code_basics.quiz_q8_exp",
+    "tutorials.claude_code_basics.quiz_q8_o1",
+    "tutorials.claude_code_basics.quiz_q8_o2",
+    "tutorials.claude_code_basics.quiz_q8_o3",
+    "tutorials.claude_code_basics.quiz_q8_o4",
+    "tutorials.claude_code_basics.quiz_q9",
+    "tutorials.claude_code_basics.quiz_q9_exp",
+    "tutorials.claude_code_basics.quiz_q9_o1",
+    "tutorials.claude_code_basics.quiz_q9_o2",
+    "tutorials.claude_code_basics.quiz_q9_o3",
+    "tutorials.claude_code_basics.quiz_q9_o4",
+    "tutorials.claude_code_basics.quiz_results",
+    "tutorials.claude_code_basics.quiz_retake",
+    "tutorials.claude_code_basics.quiz_review",
+    "tutorials.claude_code_basics.section_6_limitation_1",
+    "tutorials.claude_code_basics.section_6_limitation_2",
+    "tutorials.claude_code_basics.section_6_limitation_3",
+    "tutorials.claude_code_basics.section_6_limitation_4",
+    "tutorials.claude_code_basics.section_6_limitations_title",
+    "tutorials.code_generation.badge_level",
+    "tutorials.code_generation.learn_generation",
+    "tutorials.code_generation.learn_review",
+    "tutorials.code_generation.what_you_learn",
+    "tutorials.complete_previous",
+    "tutorials.course_curriculum",
+    "tutorials.expert_certificate",
+    "tutorials.expert_path.course_curriculum",
+    "tutorials.expert_path.your_progress",
+    "tutorials.go_to_lesson",
+    "tutorials.intro_prompts.clear_prompt",
+    "tutorials.intro_prompts.keep_learning_challenges",
+    "tutorials.intro_prompts.keep_learning_prompts",
+    "tutorials.intro_prompts.keep_learning_wizard",
+    "tutorials.intro_prompts.what_is_prompt_intro",
+    "tutorials.intro_prompts.what_you_learn",
+    "tutorials.keep_learning",
+    "tutorials.lessons",
+    "tutorials.locked",
+    "tutorials.multi_agent_systems.learn_workflows",
+    "tutorials.next_steps",
+    "tutorials.practice_exercise",
+    "tutorials.pro_certificate",
+    "tutorials.pro_path.course_curriculum",
+    "tutorials.pro_path.skill_metrics_title",
+    "tutorials.pro_path.skill_reusable_title",
+    "tutorials.pro_path.skill_scale_title",
+    "tutorials.pro_path.skill_testing_title",
+    "tutorials.pro_path.your_progress",
+    "tutorials.professional_certificate",
+    "tutorials.prompt_optimization.output_format_bad",
+    "tutorials.prompt_optimization.output_format_good",
+    "tutorials.prompt_templates.template_intro",
+    "tutorials.prompt_templates.what_you_learn",
+    "tutorials.prompt_templates.with_1",
+    "tutorials.prompt_templates.with_2",
+    "tutorials.prompt_templates.with_3",
+    "tutorials.prompt_templates.with_4",
+    "tutorials.prompt_templates.with_desc",
+    "tutorials.prompt_templates.with_templates",
+    "tutorials.prompt_templates.without_1",
+    "tutorials.prompt_templates.without_2",
+    "tutorials.prompt_templates.without_3",
+    "tutorials.prompt_templates.without_4",
+    "tutorials.prompt_templates.without_desc",
+    "tutorials.prompt_templates.without_templates",
+    "tutorials.quiz_answers_given",
+    "tutorials.quiz_correct_answers",
+    "tutorials.quiz_partial_answers",
+    "tutorials.quiz_question_of",
+    "tutorials.ragas_evaluation.badge_level",
+    "tutorials.spec_driven_development.badge_level",
+    "tutorials.spec_driven_development.section_1_principle_1_desc",
+    "tutorials.spec_driven_development.section_1_principle_1_title",
+    "tutorials.spec_driven_development.section_1_principle_2_desc",
+    "tutorials.spec_driven_development.section_1_principle_2_title",
+    "tutorials.spec_driven_development.section_1_principle_3_desc",
+    "tutorials.spec_driven_development.section_1_principle_3_title",
+    "tutorials.spec_driven_development.section_1_principle_4_desc",
+    "tutorials.spec_driven_development.section_1_principle_4_title",
+    "tutorials.spec_driven_development.section_2_step_5",
+    "tutorials.spec_driven_development.section_2_step_5_desc",
+    "tutorials.start_lesson",
+    "tutorials.try_yourself",
+    "tutorials.what_you_learn",
+    "tutorials.what_you_master",
+    "tutorials.your_progress",
+    "ui.close",
+    "ui.form_clear_input",
+    "ui.form_close",
+    "ui.form_loading",
+    "ui.form_loading_prompt_card",
+    "ui.loading",
+    "ui.message_bginfo10_textinfo_border_borderinfo20",
+    "ui.message_bginfo_textinfoforeground",
+    "ui.message_bgsuccess10_textsuccess_border_bordersuccess20",
+    "ui.message_bgsuccess_textsuccessforeground",
+    "ui.message_bgwarning10_textwarning_border_borderwarning20",
+    "ui.message_bgwarning_textwarningforeground",
+    "ui.message_bordererror_focusvisibleringerror",
+    "ui.message_bordersuccess_focusvisibleringsuccess",
+    "ui.message_borderwarning_focusvisibleringwarning",
+    "ui.message_success",
+    "validation.api_key_name_required",
+    "validation.collection_name_required",
+    "validation.email_invalid",
+    "validation.field_required",
+    "validation.file_type_invalid",
+    "validation.image_too_large",
+    "validation.password_min_length",
+    "validation.prompt_content_required",
+    "validation.prompt_title_required",
+    "validation.url_invalid",
+    "validation.username_exists",
+    "wizard.assistant_desc",
+    "wizard.assistant_example",
+    "wizard.assistant_when",
+    "wizard.chatgpt_desc",
+    "wizard.chatgpt_strength_1",
+    "wizard.chatgpt_strength_2",
+    "wizard.chatgpt_strength_3",
+    "wizard.chatgpt_strength_4",
+    "wizard.chatgpt_style",
+    "wizard.claude_desc",
+    "wizard.claude_strength_1",
+    "wizard.claude_strength_2",
+    "wizard.claude_strength_3",
+    "wizard.claude_strength_4",
+    "wizard.claude_style",
+    "wizard.gemini_desc",
+    "wizard.gemini_strength_1",
+    "wizard.gemini_strength_2",
+    "wizard.gemini_strength_3",
+    "wizard.gemini_strength_4",
+    "wizard.gemini_style",
+    "wizard.generate",
+    "wizard.llama_desc",
+    "wizard.llama_strength_1",
+    "wizard.llama_strength_2",
+    "wizard.llama_strength_3",
+    "wizard.llama_strength_4",
+    "wizard.llama_style",
+    "wizard.prompt_type_assistant",
+    "wizard.prompt_type_system",
+    "wizard.prompt_type_user",
+    "wizard.regenerate",
+    "wizard.system_desc",
+    "wizard.system_example",
+    "wizard.system_when",
+    "wizard.use_prompt",
+    "wizard.user_desc",
+    "wizard.user_example",
+    "wizard.user_when"
+  ],
+  "namespaces_used": [
+    "about",
+    "access",
+    "auth",
+    "challenges",
+    "collections",
+    "commandPalette",
+    "comments",
+    "common",
+    "common.errorPage",
+    "common.notFoundPage",
+    "docs",
+    "editor",
+    "emptyStates",
+    "emptyStates.noBookmarks",
+    "emptyStates.noCollections",
+    "faq",
+    "footer",
+    "home",
+    "home.finalCta",
+    "home.howItWorks",
+    "home.stats",
+    "home.testimonials",
+    "languages",
+    "leaderboard",
+    "mcp",
+    "mcp_integration",
+    "metadata",
+    "ml",
+    "nav",
+    "notifications",
+    "pages",
+    "pricing",
+    "pricing.metadata",
+    "privacy",
+    "profile",
+    "prompts",
+    "resources",
+    "search",
+    "settings",
+    "settings.notificationSettings",
+    "shortcuts",
+    "simpleWizard",
+    "simpleWizard.buttons",
+    "simpleWizard.categories",
+    "simpleWizard.form",
+    "techStack",
+    "templates",
+    "terms",
+    "tutorials",
+    "tutorials.advanced_prompting",
+    "tutorials.ai_ethics_responsible",
+    "tutorials.beginner_path",
+    "tutorials.claudeAgents",
+    "tutorials.claude_basics",
+    "tutorials.claude_code_basics",
+    "tutorials.claude_code_basics.quiz",
+    "tutorials.code_generation",
+    "tutorials.computer_vision_fundamentals",
+    "tutorials.data_fundamentals",
+    "tutorials.dl_fundamentals",
+    "tutorials.embeddings_vector_search",
+    "tutorials.expert_path",
+    "tutorials.index",
+    "tutorials.interactiveTutorial",
+    "tutorials.intro_prompts",
+    "tutorials.llm_finetuning",
+    "tutorials.ml_basics",
+    "tutorials.multi_agent_systems",
+    "tutorials.nlp_fundamentals",
+    "tutorials.pro_path",
+    "tutorials.prompt_optimization",
+    "tutorials.prompt_templates",
+    "tutorials.rag_systems",
+    "tutorials.ragas_evaluation",
+    "tutorials.spec_driven_development",
+    "tutorials.transformers_attention",
+    "wizard"
+  ],
+  "total_files_scanned": 239
+}
