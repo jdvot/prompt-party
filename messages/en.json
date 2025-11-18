@@ -81,12 +81,31 @@
     "your_keys_title": "Your API Keys ({count})"
   },
   "auth": {
+    "display_name": "Display Name",
+    "email": "Email",
+    "email_placeholder": "you@example.com",
+    "google": "Google",
+    "have_account": "Already have an account?",
     "hide_password": "Hide password",
     "join_academy_heading": "Join Prompt Academy",
     "join_alt": "Join Prompt Academy",
+    "login_link": "Log in",
+    "login_subtitle": "Sign in to your Prompt Academy account",
+    "login_title": "Welcome Back",
+    "magic_link_sent": "Check your email for the confirmation link",
+    "no_account": "Don't have an account?",
+    "or_continue_with": "Or continue with",
+    "password": "Password",
+    "password_min_length": "Password must be at least 6 characters",
+    "password_placeholder": "Enter your password",
     "secure_auth_heading": "Secure Authentication",
     "secure_authentication": "Secure Authentication",
-    "show_password": "Show password"
+    "show_password": "Show password",
+    "signup_link": "Sign up",
+    "signup_page_description": "Create your free Prompt Academy account and start learning AI prompt engineering",
+    "signup_page_title": "Sign Up | Prompt Academy",
+    "signup_subtitle": "Create your free account to start learning",
+    "signup_title": "Join Prompt Academy"
   },
   "brand": {
     "logo_alt": "Prompt Academy Logo",

@@ -81,12 +81,31 @@
     "your_keys_title": "Vos Clés API ({count})"
   },
   "auth": {
+    "display_name": "Nom d'affichage",
+    "email": "Email",
+    "email_placeholder": "vous@exemple.com",
+    "google": "Google",
+    "have_account": "Vous avez déjà un compte ?",
     "hide_password": "Masquer le mot de passe",
     "join_academy_heading": "Rejoindre Prompt Academy",
+    "join_alt": "Rejoignez Prompt Academy",
+    "login_link": "Se connecter",
+    "login_subtitle": "Connectez-vous à votre compte Prompt Academy",
+    "login_title": "Bon retour",
+    "magic_link_sent": "Vérifiez votre email pour le lien de confirmation",
+    "no_account": "Pas encore de compte ?",
+    "or_continue_with": "Ou continuez avec",
+    "password": "Mot de passe",
+    "password_min_length": "Le mot de passe doit contenir au moins 6 caractères",
+    "password_placeholder": "Entrez votre mot de passe",
     "secure_auth_heading": "Authentification sécurisée",
     "secure_authentication": "Authentification Sécurisée",
     "show_password": "Afficher le mot de passe",
-    "join_alt": "Rejoignez Prompt Academy"
+    "signup_link": "S'inscrire",
+    "signup_page_description": "Créez votre compte Prompt Academy gratuit et commencez à apprendre l'ingénierie des prompts IA",
+    "signup_page_title": "Inscription | Prompt Academy",
+    "signup_subtitle": "Créez votre compte gratuit pour commencer à apprendre",
+    "signup_title": "Rejoignez Prompt Academy"
   },
   "brand": {
     "logo_alt": "Logo Prompt Academy",

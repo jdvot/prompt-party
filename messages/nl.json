@@ -81,12 +81,31 @@
     "your_keys_title": "Jouw API-sleutels ({count})"
   },
   "auth": {
+    "display_name": "Weergavenaam",
+    "email": "E-mail",
+    "email_placeholder": "jij@voorbeeld.nl",
+    "google": "Google",
+    "have_account": "Heb je al een account?",
     "hide_password": "Verberg wachtwoord",
     "join_academy_heading": "Word lid van Prompt Academy",
+    "join_alt": "Join Prompt Academy",
+    "login_link": "Inloggen",
+    "login_subtitle": "Log in op je Prompt Academy account",
+    "login_title": "Welkom terug",
+    "magic_link_sent": "Controleer je e-mail voor de bevestigingslink",
+    "no_account": "Nog geen account?",
+    "or_continue_with": "Of ga verder met",
+    "password": "Wachtwoord",
+    "password_min_length": "Wachtwoord moet minimaal 6 tekens bevatten",
+    "password_placeholder": "Voer je wachtwoord in",
     "secure_auth_heading": "Beveiligde authenticatie",
     "secure_authentication": "Beveiligde Authenticatie",
     "show_password": "Toon wachtwoord",
-    "join_alt": "Join Prompt Academy"
+    "signup_link": "Registreren",
+    "signup_page_description": "Maak je gratis Prompt Academy account aan en begin met het leren van AI prompt engineering",
+    "signup_page_title": "Registreren | Prompt Academy",
+    "signup_subtitle": "Maak je gratis account aan om te beginnen met leren",
+    "signup_title": "Word lid van Prompt Academy"
   },
   "brand": {
     "logo_alt": "Prompt Academy-logo",
