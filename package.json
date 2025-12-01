@@ -15,7 +15,10 @@
     "test:e2e:headed": "playwright test --headed",
     "test:e2e:debug": "playwright test --debug",
     "test:e2e:ui": "playwright test --ui",
-    "test:e2e:report": "playwright show-report"
+    "test:e2e:report": "playwright show-report",
+    "i18n:check": "node scripts/check-translations.js",
+    "i18n:check:strict": "node scripts/check-translations.js --strict",
+    "i18n:check:fix": "node scripts/check-translations.js --fix"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",

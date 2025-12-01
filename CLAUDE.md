@@ -311,3 +311,59 @@ Core tables (all with RLS enabled):
 - 1 GB storage
 - 50k Auth users/month
 - Unlimited Realtime
+
+## Project Management & Documentation
+
+### Linear (Issue Tracking)
+- **Workspace**: Prompt Party
+- **Team**: Pormpt party
+- **URL**: https://linear.app/prompt-party
+
+**Claude Code DOIT utiliser Linear pour:**
+- Créer des tickets pour bugs et issues techniques
+- Tracker les features et améliorations
+- Documenter les tâches de traduction (i18n)
+- Suivre la documentation technique
+- Mettre à jour le statut des issues en cours
+
+**Commandes MCP Linear disponibles:**
+- `mcp__linear-server__list_issues` - Lister les issues
+- `mcp__linear-server__create_issue` - Créer une nouvelle issue
+- `mcp__linear-server__update_issue` - Mettre à jour une issue
+- `mcp__linear-server__list_projects` - Lister les projets
+- `mcp__linear-server__get_issue` - Récupérer les détails d'une issue
+
+### Notion (Documentation)
+- **Workspace**: Prompt Party Documentation
+- **URL**: https://www.notion.so/prompt-party
+
+**Claude Code DOIT utiliser Notion pour:**
+- Consulter la documentation technique du projet
+- Mettre à jour la documentation lors de changements
+- Créer de nouvelles pages de documentation
+- Rechercher des informations sur l'architecture
+
+**Commandes MCP Notion disponibles:**
+- `mcp__notion__notion-search` - Rechercher dans la documentation
+- `mcp__notion__notion-fetch` - Récupérer le contenu d'une page
+- `mcp__notion__notion-create-pages` - Créer des pages
+- `mcp__notion__notion-update-page` - Mettre à jour une page
+
+**Structure de la documentation Notion:**
+- **Architecture** - Stack technique, structure des dossiers, flux de données
+- **Guide API** - Endpoints, authentification, exemples
+- **Base de données** - Schéma, RLS, migrations
+- **Composants UI** - Shadcn UI, composants custom, patterns
+- **Guide i18n** - Configuration next-intl, workflow traduction
+- **Liens utiles** - Repository, dashboards, outils externes
+
+## External Resources
+
+- [Next.js 15 Documentation](https://nextjs.org/docs)
+- [Supabase Documentation](https://supabase.com/docs)
+- [Tailwind CSS](https://tailwindcss.com/docs)
+- [Shadcn UI](https://ui.shadcn.com)
+- [next-intl Documentation](https://next-intl-docs.vercel.app)
+- [Vercel Documentation](https://vercel.com/docs)
+- [Linear API](https://developers.linear.app)
+- [Notion API](https://developers.notion.com)

@@ -112,10 +112,26 @@ export default async function ChallengesPage() {
     monthly_badge: t('monthly_badge'),
     community_badge: t('community_badge'),
     points_label: t('points_label'),
+    badge_label: t('badge_label'),
     progress_label: t('progress_label'),
     reward_label: t('reward_label'),
     if_goal_reached: t('if_goal_reached'),
-    how_works_title: t('how_works_title')
+    how_works_title: t('how_works_title'),
+    ends_in: t('ends_in'),
+    days_left: t('days_left'),
+    signup_to_participate: t('signup_to_participate'),
+    start_lesson: t('start_lesson'),
+    view_path: t('view_path'),
+    prompts_remaining: t('prompts_remaining'),
+    days_remaining: t('days_remaining'),
+    contribute_challenge: t('contribute_challenge'),
+    share_prompt: t('share_prompt'),
+    step_1_title: t('step_1_title'),
+    step_1_description: t('step_1_description'),
+    step_2_title: t('step_2_title'),
+    step_2_description: t('step_2_description'),
+    step_3_title: t('step_3_title'),
+    step_3_description: t('step_3_description')
   }
 
   return (

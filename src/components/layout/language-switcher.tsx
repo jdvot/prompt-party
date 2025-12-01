@@ -11,6 +11,7 @@ import {
 import { useTranslations } from 'next-intl';
 import { useTransition, useState, useEffect } from 'react';
 import { useLocale } from 'next-intl';
+import { useRouter } from 'next/navigation';
 
 const languages = [
   { code: 'en', name: 'English', flag: '🇬🇧' },
@@ -22,6 +23,7 @@ export function LanguageSwitcher() {
   const t = useTranslations('languages');
   const [isPending, startTransition] = useTransition();
   const locale = useLocale();
+  const router = useRouter();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -29,10 +31,12 @@ export function LanguageSwitcher() {
   }, []);
 
   const changeLanguage = (newLocale: string) => {
-    // Set cookie to persist language preference
-    document.cookie = `NEXT_LOCALE=${newLocale}; path=/; max-age=${60 * 60 * 24 * 365}`;
-    // Use router.push to navigate without full reload
-    window.location.href = window.location.pathname + window.location.search;
+    startTransition(() => {
+      // Set cookie to persist language preference
+      document.cookie = `NEXT_LOCALE=${newLocale}; path=/; max-age=${60 * 60 * 24 * 365}`;
+      // Use router.refresh() for smooth transition without full page reload
+      router.refresh();
+    });
   };
 
   const currentLanguage = languages.find(lang => lang.code === locale) || languages[0];

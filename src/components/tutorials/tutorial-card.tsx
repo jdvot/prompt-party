@@ -7,6 +7,7 @@ import * as Icons from 'lucide-react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { cn } from '@/lib/utils'
+import { useState, useEffect } from 'react'
 
 interface TutorialCardProps {
   tutorial: {
@@ -25,6 +26,12 @@ interface TutorialCardProps {
 
 export function TutorialCard({ tutorial, buttonLabel = "Start Tutorial" }: TutorialCardProps) {
   const Icon = Icons[tutorial.iconName as keyof typeof Icons] as React.ComponentType<{ className?: string }>
+  const [isMounted, setIsMounted] = useState(false)
+
+  // Prevent hydration mismatch by only enabling animations after mount
+  useEffect(() => {
+    setIsMounted(true)
+  }, [])
 
   const levelColors = {
     Beginner: 'bg-green-500/10 text-green-500 border-green-500/20',
@@ -36,7 +43,7 @@ export function TutorialCard({ tutorial, buttonLabel = "Start Tutorial" }: Tutor
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={isMounted ? { opacity: 0, y: 20 } : false}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
       whileHover={{ y: -8, scale: 1.02 }}

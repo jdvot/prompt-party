@@ -1,7 +1,7 @@
 'use client'
 
 import { motion, useInView, Variants } from 'framer-motion'
-import { useRef, ReactNode } from 'react'
+import { useRef, ReactNode, useState, useEffect } from 'react'
 
 interface AnimatedContainerProps {
   children: ReactNode
@@ -49,11 +49,17 @@ export function AnimatedContainer({
 }: AnimatedContainerProps) {
   const ref = useRef(null)
   const isInView = useInView(ref, { once, margin: '-100px' })
+  const [isMounted, setIsMounted] = useState(false)
+
+  // Prevent hydration mismatch by only enabling animations after mount
+  useEffect(() => {
+    setIsMounted(true)
+  }, [])
 
   return (
     <motion.div
       ref={ref}
-      initial="hidden"
+      initial={isMounted ? 'hidden' : false}
       animate={isInView ? 'visible' : 'hidden'}
       variants={animations[animation]}
       transition={{

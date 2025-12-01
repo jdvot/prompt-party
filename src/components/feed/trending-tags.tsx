@@ -1,10 +1,12 @@
 import { createClient } from '@/lib/supabase/server'
+import { getTranslations } from 'next-intl/server'
 import Link from 'next/link'
 import { Badge } from '@/components/ui/badge'
 import { TrendingUpIcon } from 'lucide-react'
 
 export async function TrendingTags() {
   const supabase = await createClient()
+  const t = await getTranslations('common')
 
   // Get all prompts with their tags
   const { data: prompts } = await supabase
@@ -36,7 +38,7 @@ export async function TrendingTags() {
     <div className="glass rounded-2xl p-6 shadow-sm">
       <div className="flex items-center gap-2 mb-4">
         <TrendingUpIcon className="w-5 h-5 text-primary" />
-        <h2 className="text-lg font-semibold gradient-text">Trending Tags</h2>
+        <h2 className="text-lg font-semibold gradient-text">{t('trendingTags')}</h2>
       </div>
 
       <div className="space-y-2">
@@ -55,7 +57,7 @@ export async function TrendingTags() {
               </Badge>
             </div>
             <span className="text-sm text-muted-foreground">
-              {count} {count === 1 ? 'prompt' : 'prompts'}
+              {count} {count === 1 ? t('promptSingular') : t('promptPlural')}
             </span>
           </Link>
         ))}
@@ -66,7 +68,7 @@ export async function TrendingTags() {
           href="/explore/tags"
           className="text-sm text-primary hover:underline inline-flex items-center gap-1"
         >
-          View all tags
+          {t('viewAllTags')}
           <svg
             className="w-4 h-4"
             fill="none"

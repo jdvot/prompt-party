@@ -1,0 +1,1962 @@
+{
+  "fr": {
+    "high": [
+      [
+        "tutorials.claude_code_basics.section_3_refactoring_desc",
+        "Ask Claude Code to improve existing code by refactoring patterns, extracting utilities, or optimizing performance"
+      ],
+      [
+        "tutorials.claude_code_basics.section_3_tip",
+        "Start with simple requests before moving to complex features. The more context you provide, the better Claude Code performs."
+      ],
+      [
+        "tutorials.claude_code_basics.page_description",
+        "Master Claude Code, the AI development assistant. Learn setup, practical usage, best practices, and real-world examples."
+      ],
+      [
+        "tutorials.claude_code_basics.vs_copilot_desc",
+        "Unlike Copilot which works at the file level, Claude Code understands your entire project context including architecture, conventions, and business logic."
+      ],
+      [
+        "collections.description_label",
+        "Description"
+      ],
+      [
+        "editor.prompt_description",
+        "Description"
+      ]
+    ],
+    "medium": [
+      [
+        "search.action_no_saved_searches_yet",
+        "No saved searches yet"
+      ],
+      [
+        "tutorials.claude_code_basics.section_2_github_step_1",
+        "Create a CLAUDE.md file in your repository root"
+      ],
+      [
+        "prompts.message_copied",
+        "Copied!"
+      ],
+      [
+        "onboarding.welcome_to_prompt_party",
+        "Welcome to Prompt Party!"
+      ],
+      [
+        "tutorials.claude_code_basics.section_5_integration_3",
+        "Share successful prompts with your team"
+      ],
+      [
+        "notifications.heading_inapp_notifications",
+        "In-App Notifications"
+      ],
+      [
+        "tutorials.claude_code_basics.you_prompt",
+        "Your Prompt"
+      ],
+      [
+        "design_system.option_2",
+        "Option 2"
+      ],
+      [
+        "languages.fr",
+        "Français"
+      ],
+      [
+        "prompts.action_copy_the_prompt",
+        "Copy the prompt"
+      ],
+      [
+        "profile.heading_account",
+        "Account"
+      ],
+      [
+        "tutorials.index.tutorial_spec_driven_development_duration",
+        "50 minutes"
+      ],
+      [
+        "components.settingsForm.displayName",
+        "Display Name"
+      ],
+      [
+        "common.heading_section_title",
+        "Section Title"
+      ],
+      [
+        "challenges.points_label",
+        "points"
+      ],
+      [
+        "profile.points_label",
+        "Points"
+      ],
+      [
+        "profile.heading_choose_your_avatar",
+        "Choose Your Avatar"
+      ],
+      [
+        "notifications.form_new_followers",
+        "New Followers"
+      ],
+      [
+        "tutorials.claude_code_basics.read_docs",
+        "Read Official Docs"
+      ],
+      [
+        "nav.notifications",
+        "Notifications"
+      ],
+      [
+        "onboarding.heading_like_comment",
+        "Like & Comment"
+      ],
+      [
+        "templates.variables",
+        "variables"
+      ],
+      [
+        "tutorials.claude_code_basics.section_4_title",
+        "Real-World Examples"
+      ],
+      [
+        "commandPalette.navigation",
+        "Navigation"
+      ],
+      [
+        "auth.email",
+        "Email"
+      ],
+      [
+        "templates.premium",
+        "Premium"
+      ],
+      [
+        "ui.form_loading_prompt_card",
+        "Loading prompt card"
+      ],
+      [
+        "onboarding.action_save_to_collections",
+        "Save to Collections"
+      ],
+      [
+        "common.optimized_version",
+        "Optimized Version"
+      ],
+      [
+        "ml.limitations",
+        "Limitations"
+      ],
+      [
+        "common.form_keyboard_shortcuts",
+        "Keyboard shortcuts"
+      ],
+      [
+        "prompts.original",
+        "Original"
+      ],
+      [
+        "tutorials.intro_prompts.element_format",
+        "💡 Format"
+      ],
+      [
+        "tutorials.claude_code_basics.avoid_5",
+        "Skipping security considerations"
+      ],
+      [
+        "tutorials.claude_code_basics.quiz_q7_o4",
+        "Use vague instructions"
+      ],
+      [
+        "common.upgrade",
+        "Upgrade"
+      ],
+      [
+        "components.advancedFilters.relevant",
+        "Most Relevant"
+      ],
+      [
+        "prompts.wizard_title",
+        "Prompt Wizard"
+      ],
+      [
+        "notifications.all",
+        "All"
+      ],
+      [
+        "components.howToUse.step1",
+        "Copy the prompt"
+      ],
+      [
+        "tutorials.data_fundamentals.reward_badge",
+        "Data Fundamentals Master"
+      ],
+      [
+        "tutorials.index.tutorial_prompt_templates_duration",
+        "15 minutes"
+      ],
+      [
+        "prompt_types.instruction",
+        "Instruction"
+      ],
+      [
+        "components.howToUse.compatibleModels",
+        "Compatible AI Models"
+      ],
+      [
+        "common.form_test_input_optional",
+        "Test Input (Optional)"
+      ],
+      [
+        "tutorials.index.tutorial_code_generation_duration",
+        "25 minutes"
+      ],
+      [
+        "tutorials.transformers_attention.reward_badge",
+        "Transformer Master"
+      ],
+      [
+        "components.savedSearches.title",
+        "Saved Searches"
+      ],
+      [
+        "tutorials.prompt_templates.reward_badge",
+        "Template Master"
+      ],
+      [
+        "tutorials.claude_code_basics.do_this",
+        "✓ Do This"
+      ],
+      [
+        "common.pro",
+        "Pro"
+      ],
+      [
+        "challenges.votes",
+        "votes"
+      ],
+      [
+        "tutorials.claude_code_basics.quiz_title",
+        "Test Your Knowledge"
+      ],
+      [
+        "design_system.action",
+        "Action"
+      ],
+      [
+        "leaderboard.top_percent_value",
+        "Top {percent}%"
+      ],
+      [
+        "wizard.badge_system",
+        "System"
+      ],
+      [
+        "tutorials.claude_code_basics.vs_copilot_title",
+        "vs GitHub Copilot:"
+      ],
+      [
+        "components.howToUse.step3",
+        "Paste the prompt"
+      ],
+      [
+        "tutorials.claude_code_basics.section_5_integration_title",
+        "Team Integration"
+      ],
+      [
+        "tutorials.dl_fundamentals.reward_badge",
+        "Deep Learning Master"
+      ],
+      [
+        "tutorials.claude_code_basics.section_2_title",
+        "Installation & Setup"
+      ],
+      [
+        "apiKeys.docs_auth_header",
+        "x-api-key"
+      ],
+      [
+        "tutorials.index.tutorial_transformers_attention_title",
+        "Transformers & Attention"
+      ],
+      [
+        "tutorials.claude_code_basics.quiz_q2_o2",
+        "Licensing information"
+      ],
+      [
+        "mcp.comparison_nature",
+        "Nature"
+      ],
+      [
+        "components.savedSearches.searchSaved",
+        "Search saved"
+      ],
+      [
+        "tutorials.points",
+        "points"
+      ],
+      [
+        "tutorials.nlp_fundamentals.nlp_history_3",
+        "Neural"
+      ],
+      [
+        "prompt_actions.remix",
+        "Remix"
+      ],
+      [
+        "tutorials.nlp_fundamentals.reward_badge",
+        "NLP Fundamentals Master"
+      ],
+      [
+        "techStack.comparison_documentation",
+        "Documentation"
+      ],
+      [
+        "mcp.rag_strength_4",
+        "Scalable"
+      ],
+      [
+        "components.collaborativeEditor.userJoined",
+        "{userName} joined"
+      ],
+      [
+        "tutorials.claude_code_basics.pro_tip",
+        "Pro Tip"
+      ],
+      [
+        "notifications.form_challenges",
+        "Challenges"
+      ],
+      [
+        "tutorials.multi_agent_systems.reward_badge",
+        "Multi-Agent Expert"
+      ],
+      [
+        "pricing_full.business_f5",
+        "SSO/SAML"
+      ],
+      [
+        "notifications.title",
+        "Notifications"
+      ],
+      [
+        "footer.concepts",
+        "Concepts"
+      ],
+      [
+        "settings.notificationSettings.push.remixes.label",
+        "Remixes"
+      ],
+      [
+        "search.recent_searches",
+        "Recent Searches"
+      ],
+      [
+        "common.heading_aioptimized_prompt",
+        "AI-Optimized Prompt"
+      ],
+      [
+        "editor.public",
+        "Public"
+      ],
+      [
+        "profile.form_your_name",
+        "Your name"
+      ],
+      [
+        "tutorials.spec_driven_development.duration",
+        "50 minutes"
+      ],
+      [
+        "tutorials.index.tutorial_dl_fundamentals_duration",
+        "45 minutes"
+      ],
+      [
+        "tutorials.claude_code_basics.section_1_feature_2_title",
+        "Smart Refactoring"
+      ],
+      [
+        "design_system.option_1",
+        "Option 1"
+      ],
+      [
+        "collections.twitter",
+        "Twitter"
+      ],
+      [
+        "tutorials.claude_code_basics.section_1_feature_3_title",
+        "Intelligent Debugging"
+      ],
+      [
+        "prompts.tags_label",
+        "Tags"
+      ],
+      [
+        "common.leaderboard_podium",
+        "Leaderboard Podium"
+      ],
+      [
+        "tutorials.claude_code_basics.browse_community",
+        "Browse Community Prompts"
+      ],
+      [
+        "mcp.comparison_action",
+        "Action"
+      ],
+      [
+        "tutorials.claude_code_basics.section_5_integration_4",
+        "Measure productivity improvements"
+      ],
+      [
+        "prompts.import",
+        "Import"
+      ],
+      [
+        "components.settingsForm.saveButton",
+        "Save Changes"
+      ],
+      [
+        "common.support_the_community",
+        "Support the Community"
+      ],
+      [
+        "common.remix",
+        "Remix"
+      ],
+      [
+        "tutorials.index.tutorial_claude_agents_duration",
+        "35 minutes"
+      ],
+      [
+        "common.heading_my_content",
+        "My Content"
+      ],
+      [
+        "tutorials.code_generation.performance_tab",
+        "Performance"
+      ],
+      [
+        "nav.concepts_category",
+        "Concepts"
+      ],
+      [
+        "tutorials.claude_code_basics.section_6_limitations_title",
+        "Limitations"
+      ],
+      [
+        "components.settingsForm.username",
+        "Username"
+      ],
+      [
+        "search.form_verified_prompts_only",
+        "Verified Prompts Only"
+      ],
+      [
+        "aiTester.premiumBadge",
+        "Premium"
+      ],
+      [
+        "tutorials.claude_code_basics.section_3_refactoring_title",
+        "Refactoring Code"
+      ],
+      [
+        "nav.tech_stack",
+        "⚙️ Tech Stack"
+      ],
+      [
+        "footer.playground",
+        "Playground"
+      ],
+      [
+        "components.emptyState.noData",
+        "No data available"
+      ],
+      [
+        "tutorials.prompt_optimization.duration",
+        "25 minutes"
+      ],
+      [
+        "tutorials.claude_code_basics.quiz_retake",
+        "Retake Quiz"
+      ],
+      [
+        "tutorials.badge_label",
+        "Badge \"{badge}\""
+      ],
+      [
+        "prompts.remixes_count",
+        "{count} remixes"
+      ],
+      [
+        "common.public",
+        "Public"
+      ],
+      [
+        "docs.title",
+        "Documentation"
+      ],
+      [
+        "tutorials.claude_code_basics.section_3_debugging_title",
+        "Debugging Issues"
+      ],
+      [
+        "brand.name",
+        "Prompt Academy"
+      ],
+      [
+        "techStack.workflow_step_4",
+        "Excellence"
+      ],
+      [
+        "tutorials.llm_finetuning.reward_badge",
+        "Fine-tuning Master"
+      ],
+      [
+        "tutorials.index.tutorial_advanced_prompting_duration",
+        "30 minutes"
+      ],
+      [
+        "tutorials.index.tutorial_prompt_optimization_duration",
+        "25 minutes"
+      ],
+      [
+        "components.advancedFilters.discussed",
+        "Most Discussed"
+      ],
+      [
+        "wizard.llama_strength_1",
+        "Open source"
+      ],
+      [
+        "profile.badges_label",
+        "Badges"
+      ],
+      [
+        "pricing.support.price",
+        "5€"
+      ],
+      [
+        "tutorials.embeddings_vector_search.reward_badge",
+        "Embeddings Expert"
+      ],
+      [
+        "prompts.form_preview",
+        "Preview"
+      ],
+      [
+        "components.howToUse.step4",
+        "Review the output"
+      ],
+      [
+        "leaderboard.remixes",
+        "{count} remixes"
+      ],
+      [
+        "terms.contact_title",
+        "Contact"
+      ],
+      [
+        "pricing_full.pro_name",
+        "Pro"
+      ],
+      [
+        "tutorials.claude_code_basics.section_2_cloud_title",
+        "Cloud Setup"
+      ],
+      [
+        "tutorials.advanced_prompting.role_example_8",
+        "• Data scientist"
+      ],
+      [
+        "pricing.free.price",
+        "0€"
+      ],
+      [
+        "techStack.spec_driven_tab_template",
+        "Template"
+      ],
+      [
+        "home.top_prompts",
+        "Top Prompts"
+      ],
+      [
+        "tutorials.claude_code_basics.section_1_feature_4_title",
+        "Documentation Generation"
+      ],
+      [
+        "tutorials.index.tutorial_data_fundamentals_duration",
+        "30 minutes"
+      ],
+      [
+        "common.prompts",
+        "Prompts"
+      ],
+      [
+        "shortcuts.navigation",
+        "Navigation"
+      ],
+      [
+        "onboarding.pro_tip",
+        "Pro tip:"
+      ],
+      [
+        "tutorials.dl_fundamentals.transformer_title",
+        "Transformers"
+      ],
+      [
+        "tutorials.index.tutorial_embeddings_vector_search_duration",
+        "35 minutes"
+      ],
+      [
+        "pricing_full.business_name",
+        "Business"
+      ],
+      [
+        "prompts.share_on_twitter",
+        "Share on Twitter"
+      ],
+      [
+        "tutorials.claude_code_basics.quiz_q6_o4",
+        "Disable security checks"
+      ],
+      [
+        "components.advancedFilters.remixed",
+        "Most Remixed"
+      ],
+      [
+        "profile.twitter_label",
+        "Twitter"
+      ],
+      [
+        "design_system.option_3",
+        "Option 3"
+      ],
+      [
+        "leaderboard.contributions",
+        "contributions"
+      ],
+      [
+        "prompts.form_share_prompt",
+        "Share prompt"
+      ],
+      [
+        "simpleWizard.form.prompt_required",
+        "*"
+      ],
+      [
+        "notifications.no_notifications_yet",
+        "No notifications yet"
+      ],
+      [
+        "tutorials.index.tutorial_embeddings_vector_search_topic1",
+        "Embeddings"
+      ],
+      [
+        "footer.contact",
+        "Contact"
+      ],
+      [
+        "components.emptyState.noResults",
+        "No results found"
+      ],
+      [
+        "tutorials.claude_code_basics.section_3_generating_title",
+        "Generating Code"
+      ],
+      [
+        "settings.notificationSettings.email.remixes.label",
+        "Remixes"
+      ],
+      [
+        "components.howToUse.copyButton",
+        "Copy Prompt"
+      ],
+      [
+        "mcp.mcp_strength_4",
+        "Extensible"
+      ],
+      [
+        "footer.leaderboard",
+        "Leaderboard"
+      ],
+      [
+        "tutorials.claudeAgents.badge_duration",
+        "35 minutes"
+      ],
+      [
+        "tutorials.claude_code_basics.section_3_title",
+        "Practical Usage"
+      ],
+      [
+        "header.title",
+        "Prompt Party"
+      ],
+      [
+        "design_system.info",
+        "Info"
+      ],
+      [
+        "prompts.form_paste_the_prompt",
+        "Paste the prompt"
+      ],
+      [
+        "tutorials.claude_code_basics.quiz_finish",
+        "Finish Quiz"
+      ],
+      [
+        "prompts.share_on_linkedin",
+        "Share on LinkedIn"
+      ],
+      [
+        "techStack.resource_ragas_title",
+        "Ragas GitHub"
+      ],
+      [
+        "search.heading_date_range",
+        "Date Range"
+      ],
+      [
+        "notifications.form_likes",
+        "Likes"
+      ],
+      [
+        "components.settingsForm.email",
+        "Email"
+      ],
+      [
+        "onboarding.bio",
+        "Bio"
+      ],
+      [
+        "home.hero.stat_prompts",
+        "Prompts"
+      ],
+      [
+        "wizard.badge_user",
+        "User"
+      ],
+      [
+        "mcp.comparison_latency_mcp",
+        "Variable"
+      ],
+      [
+        "settings.notifications",
+        "Notifications"
+      ],
+      [
+        "profile.heading_badges",
+        "Badges"
+      ],
+      [
+        "wizard.gemini_strength_1",
+        "Multimodal"
+      ],
+      [
+        "languages.en",
+        "English"
+      ],
+      [
+        "onboarding.heading_share_collaborate",
+        "Share & Collaborate"
+      ],
+      [
+        "commandPalette.accountMenu.notifications",
+        "Notifications"
+      ],
+      [
+        "tutorials.claude_code_basics.quiz_q5_o2",
+        "Refactoring existing code"
+      ],
+      [
+        "tutorials.index.tutorial_claude_code_basics_duration",
+        "45 minutes"
+      ],
+      [
+        "tutorials.code_generation.react_tab",
+        "React"
+      ],
+      [
+        "prompts.favorites",
+        "Favorites"
+      ],
+      [
+        "tutorials.index.tutorial_dl_fundamentals_topic2",
+        "Architectures"
+      ],
+      [
+        "templates.category_business",
+        "Business"
+      ],
+      [
+        "tutorials.claudeAgents.alert_input_schema_bold",
+        "input_schema"
+      ],
+      [
+        "notifications.form_weekly_digest",
+        "Weekly Digest"
+      ],
+      [
+        "components.settingsForm.usernamePlaceholder",
+        "username"
+      ],
+      [
+        "common.learning_path_journey",
+        "Learning Path Journey"
+      ],
+      [
+        "profile.level_expert",
+        "Expert"
+      ],
+      [
+        "components.collaborativeEditor.userLeft",
+        "{userName} left"
+      ],
+      [
+        "languages.nl",
+        "Nederlands"
+      ],
+      [
+        "wizard.badge_assistant",
+        "Assistant Example"
+      ],
+      [
+        "profile.avatar_preview",
+        "Avatar preview"
+      ],
+      [
+        "components.advancedFilters.liked",
+        "Most Liked"
+      ],
+      [
+        "components.advancedFilters.recent",
+        "Most Recent"
+      ],
+      [
+        "tutorials.prompt_optimization.reward_badge",
+        "Prompt Optimization Expert"
+      ],
+      [
+        "design_system.accent",
+        "Accent"
+      ],
+      [
+        "search.heading_tags",
+        "Tags"
+      ],
+      [
+        "tutorials.claude_code_basics.quiz_q2_o4",
+        "API documentation"
+      ],
+      [
+        "simpleWizard.form.title_required",
+        "*"
+      ],
+      [
+        "common.manage_notification_preferences",
+        "Manage notification preferences"
+      ],
+      [
+        "common.heading_prompt_quality_score",
+        "Prompt Quality Score"
+      ],
+      [
+        "challenges.participants",
+        "participants"
+      ],
+      [
+        "tutorials.index.tutorial_multi_agent_systems_topic2",
+        "Communication"
+      ],
+      [
+        "common.code",
+        "Code"
+      ],
+      [
+        "simpleWizard.categories.business",
+        "Business"
+      ],
+      [
+        "tutorials.index.tutorial_computer_vision_fundamentals_topic1",
+        "CNNs"
+      ],
+      [
+        "tutorials.index.tutorial_transformers_attention_duration",
+        "45 minutes"
+      ],
+      [
+        "profile.prompts_tab",
+        "Prompts"
+      ],
+      [
+        "tutorials.ragas_evaluation.section_3_install_title",
+        "Installation"
+      ],
+      [
+        "prompts.heading_compatible_ai_models",
+        "Compatible AI Models"
+      ],
+      [
+        "design_system.tags",
+        "Tags"
+      ],
+      [
+        "components.emptyState.error",
+        "Something went wrong"
+      ],
+      [
+        "tutorials.index.tutorial_intro_prompts_duration",
+        "15 minutes"
+      ],
+      [
+        "tutorials.code_generation.reward_badge",
+        "Code Generation Expert"
+      ],
+      [
+        "components.settingsForm.displayNamePlaceholder",
+        "Your name"
+      ],
+      [
+        "templates.category_code",
+        "Code"
+      ],
+      [
+        "tutorials.index.tutorial_computer_vision_fundamentals_topic3",
+        "Transfer learning"
+      ],
+      [
+        "privacy.cookies_title",
+        "Cookies"
+      ],
+      [
+        "techStack.ragas_title",
+        "Ragas"
+      ],
+      [
+        "tutorials.claude_code_basics.section_5_title",
+        "Best Practices"
+      ],
+      [
+        "common.form_ai_response",
+        "AI Response"
+      ],
+      [
+        "tutorials.advanced_prompting.reward_badge",
+        "Advanced Prompting Master"
+      ],
+      [
+        "common.preview",
+        "Preview"
+      ],
+      [
+        "common.tags",
+        "Tags"
+      ],
+      [
+        "tutorials.ml_basics.reward_badge",
+        "ML Fundamentals Master"
+      ],
+      [
+        "tutorials.claude_code_basics.quiz_results",
+        "Quiz Results"
+      ],
+      [
+        "templates.category_marketing",
+        "Marketing"
+      ],
+      [
+        "tutorials.index.tutorial_transformers_attention_topic2",
+        "Architecture"
+      ],
+      [
+        "prompts.heading_prompt_not_found",
+        "Prompt Not Found"
+      ],
+      [
+        "mcp.comparison_sources",
+        "Sources"
+      ],
+      [
+        "forms.info",
+        "Information"
+      ],
+      [
+        "notifications.heading_notifications",
+        "Notifications"
+      ],
+      [
+        "simpleWizard.form.prompt_label",
+        "Prompt"
+      ],
+      [
+        "tutorials.code_generation.continue_2_link",
+        "Prompt Party"
+      ],
+      [
+        "tutorials.claude_code_basics.quiz_q5_o3",
+        "Debugging issues"
+      ],
+      [
+        "tutorials.claude_code_basics.duration",
+        "45 minutes"
+      ],
+      [
+        "ui.form_clear_input",
+        "Clear input"
+      ],
+      [
+        "tutorials.index.tutorial_claude_basics_duration",
+        "20 minutes"
+      ],
+      [
+        "tutorials.claude_code_basics.quiz_q5_o1",
+        "Generating React components"
+      ],
+      [
+        "techStack.spec_driven_tab_workflow",
+        "Workflow"
+      ],
+      [
+        "search.heading_ai_models",
+        "AI Models"
+      ],
+      [
+        "tutorials.computer_vision_fundamentals.reward_badge",
+        "Computer Vision Master"
+      ],
+      [
+        "tutorials.claude_code_basics.avoid_this",
+        "✗ Avoid This"
+      ],
+      [
+        "pricing_full.free_f1",
+        "20 prompts"
+      ],
+      [
+        "tutorials.claude_code_basics.quiz_q2_o1",
+        "Documentation for users"
+      ],
+      [
+        "tutorials.code_generation.duration",
+        "45 minutes"
+      ],
+      [
+        "prompts.form_copy_code",
+        "Copy code"
+      ],
+      [
+        "onboarding.heading_join_the_community",
+        "Join the Community"
+      ],
+      [
+        "tutorials.claude_code_basics.quiz_next",
+        "Next Question"
+      ],
+      [
+        "prompts.review_the_output",
+        "Review the output"
+      ]
+    ],
+    "low": [
+      [
+        "tutorials.data_fundamentals.duration",
+        "30 min"
+      ],
+      [
+        "tutorials.computer_vision_fundamentals.duration",
+        "40 min"
+      ],
+      [
+        "common.heading_large_badges_sizequotlgquot",
+        "Large Badges (size=&quot;lg&quot;)"
+      ],
+      [
+        "tutorials.embeddings_vector_search.duration",
+        "35 min"
+      ],
+      [
+        "tutorials.beginner_path.lesson2_duration",
+        "20 min"
+      ],
+      [
+        "common.heading_small_badges_sizequotsmquot",
+        "Small Badges (size=&quot;sm&quot;)"
+      ],
+      [
+        "tutorials.nlp_fundamentals.duration",
+        "40 min"
+      ],
+      [
+        "tutorials.transformers_attention.duration",
+        "45 min"
+      ],
+      [
+        "tutorials.dl_fundamentals.duration",
+        "45 min"
+      ],
+      [
+        "tutorials.ml_basics.duration",
+        "40 min"
+      ],
+      [
+        "common.heading_medium_badges_sizequotmdquot",
+        "Medium Badges (size=&quot;md&quot;)"
+      ],
+      [
+        "tutorials.advanced_prompting.duration",
+        "20 min"
+      ]
+    ]
+  },
+  "nl": {
+    "high": [
+      [
+        "tutorials.claude_code_basics.section_3_refactoring_desc",
+        "Ask Claude Code to improve existing code by refactoring patterns, extracting utilities, or optimizing performance"
+      ],
+      [
+        "tutorials.claude_code_basics.section_3_tip",
+        "Start with simple requests before moving to complex features. The more context you provide, the better Claude Code performs."
+      ],
+      [
+        "tutorials.claude_code_basics.page_description",
+        "Master Claude Code, the AI development assistant. Learn setup, practical usage, best practices, and real-world examples."
+      ],
+      [
+        "tutorials.claude_code_basics.vs_copilot_desc",
+        "Unlike Copilot which works at the file level, Claude Code understands your entire project context including architecture, conventions, and business logic."
+      ],
+      [
+        "apiKeys.docs_auth_description_2",
+        "header"
+      ],
+      [
+        "techStack.tech_tailwind_desc",
+        "Utility-first CSS framework"
+      ]
+    ],
+    "medium": [
+      [
+        "search.action_no_saved_searches_yet",
+        "No saved searches yet"
+      ],
+      [
+        "tutorials.claude_code_basics.section_2_github_step_1",
+        "Create a CLAUDE.md file in your repository root"
+      ],
+      [
+        "tutorials.claude_code_basics.section_5_integration_3",
+        "Share successful prompts with your team"
+      ],
+      [
+        "components.savedSearches.nameRequiredDesc",
+        "Please enter a name for this search"
+      ],
+      [
+        "tutorials.spec_driven_development.title",
+        "Spec Driven Development"
+      ],
+      [
+        "tutorials.index.start_tutorial",
+        "Start Tutorial"
+      ],
+      [
+        "tutorials.index.tutorial_advanced_prompting_topic2",
+        "Few-shot prompting"
+      ],
+      [
+        "tutorials.index.tutorial_claude_basics_level",
+        "Beginner"
+      ],
+      [
+        "notifications.heading_inapp_notifications",
+        "In-App Notifications"
+      ],
+      [
+        "tutorials.claude_code_basics.you_prompt",
+        "Your Prompt"
+      ],
+      [
+        "languages.fr",
+        "Français"
+      ],
+      [
+        "profile.heading_account",
+        "Account"
+      ],
+      [
+        "components.settingsForm.displayName",
+        "Display Name"
+      ],
+      [
+        "profile.heading_choose_your_avatar",
+        "Choose Your Avatar"
+      ],
+      [
+        "tutorials.ml_basics.data_splitting",
+        "Train/Test Split"
+      ],
+      [
+        "notifications.form_new_followers",
+        "New Followers"
+      ],
+      [
+        "tutorials.claude_code_basics.read_docs",
+        "Read Official Docs"
+      ],
+      [
+        "templates.variables",
+        "variables"
+      ],
+      [
+        "tutorials.claude_code_basics.section_4_title",
+        "Real-World Examples"
+      ],
+      [
+        "tutorials.index.tutorial_dl_fundamentals_topic3",
+        "Training"
+      ],
+      [
+        "templates.premium",
+        "Premium"
+      ],
+      [
+        "ui.form_loading_prompt_card",
+        "Loading prompt card"
+      ],
+      [
+        "tutorials.intro_prompts.element_format",
+        "💡 Format"
+      ],
+      [
+        "tutorials.code_generation.unit_tests",
+        "Unit Tests"
+      ],
+      [
+        "tutorials.claude_code_basics.avoid_5",
+        "Skipping security considerations"
+      ],
+      [
+        "tutorials.claude_code_basics.quiz_q7_o4",
+        "Use vague instructions"
+      ],
+      [
+        "components.advancedFilters.relevant",
+        "Most Relevant"
+      ],
+      [
+        "prompts.wizard_title",
+        "Prompt Wizard"
+      ],
+      [
+        "notifications.all",
+        "All"
+      ],
+      [
+        "components.howToUse.step1",
+        "Copy the prompt"
+      ],
+      [
+        "tutorials.data_fundamentals.reward_badge",
+        "Data Fundamentals Master"
+      ],
+      [
+        "tutorials.index.tutorial_data_fundamentals_level",
+        "Beginner"
+      ],
+      [
+        "components.howToUse.compatibleModels",
+        "Compatible AI Models"
+      ],
+      [
+        "tutorials.ml_basics.unsupervised_learning",
+        "Unsupervised Learning"
+      ],
+      [
+        "techStack.claude_code_tab_best_practices",
+        "Best Practices"
+      ],
+      [
+        "tutorials.transformers_attention.reward_badge",
+        "Transformer Master"
+      ],
+      [
+        "components.savedSearches.title",
+        "Saved Searches"
+      ],
+      [
+        "tutorials.prompt_templates.reward_badge",
+        "Template Master"
+      ],
+      [
+        "tutorials.claude_code_basics.do_this",
+        "✓ Do This"
+      ],
+      [
+        "common.pro",
+        "Pro"
+      ],
+      [
+        "tutorials.claude_code_basics.quiz_title",
+        "Test Your Knowledge"
+      ],
+      [
+        "leaderboard.top_percent_value",
+        "Top {percent}%"
+      ],
+      [
+        "tutorials.claude_code_basics.vs_copilot_title",
+        "vs GitHub Copilot:"
+      ],
+      [
+        "components.howToUse.step3",
+        "Paste the prompt"
+      ],
+      [
+        "tutorials.claude_code_basics.section_5_integration_title",
+        "Team Integration"
+      ],
+      [
+        "tutorials.dl_fundamentals.reward_badge",
+        "Deep Learning Master"
+      ],
+      [
+        "tutorials.claude_code_basics.section_2_title",
+        "Installation & Setup"
+      ],
+      [
+        "apiKeys.docs_auth_header",
+        "x-api-key"
+      ],
+      [
+        "tutorials.index.tutorial_transformers_attention_title",
+        "Transformers & Attention"
+      ],
+      [
+        "tutorials.claude_code_basics.quiz_q2_o2",
+        "Licensing information"
+      ],
+      [
+        "components.savedSearches.searchSaved",
+        "Search saved"
+      ],
+      [
+        "prompt_actions.remix",
+        "Remix"
+      ],
+      [
+        "tutorials.nlp_fundamentals.reward_badge",
+        "NLP Fundamentals Master"
+      ],
+      [
+        "resources.category_tools",
+        "Tools & Frameworks"
+      ],
+      [
+        "components.collaborativeEditor.userJoined",
+        "{userName} joined"
+      ],
+      [
+        "tutorials.claude_code_basics.pro_tip",
+        "Pro Tip"
+      ],
+      [
+        "notifications.form_challenges",
+        "Challenges"
+      ],
+      [
+        "tutorials.multi_agent_systems.reward_badge",
+        "Multi-Agent Expert"
+      ],
+      [
+        "pricing_full.business_f5",
+        "SSO/SAML"
+      ],
+      [
+        "settings.notificationSettings.push.remixes.label",
+        "Remixes"
+      ],
+      [
+        "search.recent_searches",
+        "Recent Searches"
+      ],
+      [
+        "profile.form_your_name",
+        "Your name"
+      ],
+      [
+        "tutorials.index.tutorial_advanced_prompting_topic3",
+        "Prompt engineering"
+      ],
+      [
+        "tutorials.claude_code_basics.section_1_feature_2_title",
+        "Smart Refactoring"
+      ],
+      [
+        "collections.twitter",
+        "Twitter"
+      ],
+      [
+        "tutorials.claude_code_basics.section_1_feature_3_title",
+        "Intelligent Debugging"
+      ],
+      [
+        "prompts.tags_label",
+        "Tags"
+      ],
+      [
+        "tutorials.claude_code_basics.browse_community",
+        "Browse Community Prompts"
+      ],
+      [
+        "tutorials.claude_code_basics.section_5_integration_4",
+        "Measure productivity improvements"
+      ],
+      [
+        "components.settingsForm.saveButton",
+        "Save Changes"
+      ],
+      [
+        "common.remix",
+        "Remix"
+      ],
+      [
+        "tutorials.code_generation.performance_tab",
+        "Performance"
+      ],
+      [
+        "tutorials.ragas_evaluation.pro_tip",
+        "Pro Tip:"
+      ],
+      [
+        "tutorials.claude_code_basics.section_6_limitations_title",
+        "Limitations"
+      ],
+      [
+        "components.settingsForm.username",
+        "Username"
+      ],
+      [
+        "tutorials.claudeAgents.resources_title",
+        "Resources"
+      ],
+      [
+        "tutorials.start_tutorial",
+        "Start Tutorial"
+      ],
+      [
+        "search.form_verified_prompts_only",
+        "Verified Prompts Only"
+      ],
+      [
+        "aiTester.premiumBadge",
+        "Premium"
+      ],
+      [
+        "tutorials.claude_code_basics.section_3_refactoring_title",
+        "Refactoring Code"
+      ],
+      [
+        "nav.tech_stack",
+        "⚙️ Tech Stack"
+      ],
+      [
+        "components.emptyState.noData",
+        "No data available"
+      ],
+      [
+        "tutorials.claude_code_basics.quiz_retake",
+        "Retake Quiz"
+      ],
+      [
+        "tutorials.badge_label",
+        "Badge \"{badge}\""
+      ],
+      [
+        "tutorials.level_expert",
+        "Expert"
+      ],
+      [
+        "tutorials.claude_code_basics.section_3_debugging_title",
+        "Debugging Issues"
+      ],
+      [
+        "common.heading_ai_prompt_tester",
+        "AI Prompt Tester"
+      ],
+      [
+        "brand.name",
+        "Prompt Academy"
+      ],
+      [
+        "tutorials.llm_finetuning.reward_badge",
+        "Fine-tuning Master"
+      ],
+      [
+        "tutorials.index.resource_community_tutorials",
+        "Community Tutorials"
+      ],
+      [
+        "tutorials.level_intermediate",
+        "Intermediate"
+      ],
+      [
+        "components.advancedFilters.discussed",
+        "Most Discussed"
+      ],
+      [
+        "wizard.llama_strength_1",
+        "Open source"
+      ],
+      [
+        "profile.badges_label",
+        "Badges"
+      ],
+      [
+        "tutorials.embeddings_vector_search.reward_badge",
+        "Embeddings Expert"
+      ],
+      [
+        "tutorials.claudeAgents.best_practices_title",
+        "Best Practices"
+      ],
+      [
+        "components.howToUse.step4",
+        "Review the output"
+      ],
+      [
+        "terms.contact_title",
+        "Contact"
+      ],
+      [
+        "pricing_full.pro_name",
+        "Pro"
+      ],
+      [
+        "tutorials.claude_code_basics.section_2_cloud_title",
+        "Cloud Setup"
+      ],
+      [
+        "tutorials.advanced_prompting.role_example_8",
+        "• Data scientist"
+      ],
+      [
+        "tutorials.claude_code_basics.section_1_feature_4_title",
+        "Documentation Generation"
+      ],
+      [
+        "common.prompts",
+        "Prompts"
+      ],
+      [
+        "onboarding.pro_tip",
+        "Pro tip:"
+      ],
+      [
+        "tutorials.dl_fundamentals.transformer_title",
+        "Transformers"
+      ],
+      [
+        "tutorials.claudeAgents.tab_agent_loop",
+        "Agent Loop"
+      ],
+      [
+        "tutorials.claude_code_basics.quiz_q6_o4",
+        "Disable security checks"
+      ],
+      [
+        "components.advancedFilters.remixed",
+        "Most Remixed"
+      ],
+      [
+        "profile.twitter_label",
+        "Twitter"
+      ],
+      [
+        "challenges.hero_badge",
+        "Challenges"
+      ],
+      [
+        "tutorials.ml_basics.supervised_learning",
+        "Supervised Learning"
+      ],
+      [
+        "simpleWizard.form.prompt_required",
+        "*"
+      ],
+      [
+        "techStack.spec_driven_tab_best_practices",
+        "Best Practices"
+      ],
+      [
+        "notifications.no_notifications_yet",
+        "No notifications yet"
+      ],
+      [
+        "tutorials.index.tutorial_embeddings_vector_search_topic1",
+        "Embeddings"
+      ],
+      [
+        "footer.contact",
+        "Contact"
+      ],
+      [
+        "tutorials.transformers_attention.decoder_title",
+        "Decoder"
+      ],
+      [
+        "components.emptyState.noResults",
+        "No results found"
+      ],
+      [
+        "tutorials.claude_code_basics.section_3_generating_title",
+        "Generating Code"
+      ],
+      [
+        "settings.notificationSettings.email.remixes.label",
+        "Remixes"
+      ],
+      [
+        "components.howToUse.copyButton",
+        "Copy Prompt"
+      ],
+      [
+        "common.trending",
+        "Trending"
+      ],
+      [
+        "tutorials.claude_code_basics.section_3_title",
+        "Practical Usage"
+      ],
+      [
+        "design_system.info",
+        "Info"
+      ],
+      [
+        "tutorials.intro_prompts.element_context",
+        "🔑 Context"
+      ],
+      [
+        "tutorials.claude_code_basics.quiz_finish",
+        "Finish Quiz"
+      ],
+      [
+        "techStack.resource_ragas_title",
+        "Ragas GitHub"
+      ],
+      [
+        "search.heading_date_range",
+        "Date Range"
+      ],
+      [
+        "notifications.form_likes",
+        "Likes"
+      ],
+      [
+        "components.settingsForm.email",
+        "Email"
+      ],
+      [
+        "onboarding.bio",
+        "Bio"
+      ],
+      [
+        "home.hero.stat_prompts",
+        "Prompts"
+      ],
+      [
+        "profile.heading_badges",
+        "Badges"
+      ],
+      [
+        "languages.en",
+        "English"
+      ],
+      [
+        "tutorials.ragas_evaluation.reward_badge",
+        "Ragas Expert"
+      ],
+      [
+        "tutorials.index.tutorial_prompt_templates_level",
+        "Beginner"
+      ],
+      [
+        "tutorials.claude_code_basics.quiz_q5_o2",
+        "Refactoring existing code"
+      ],
+      [
+        "tutorials.code_generation.react_tab",
+        "React"
+      ],
+      [
+        "tutorials.claudeAgents.alert_input_schema_bold",
+        "input_schema"
+      ],
+      [
+        "notifications.form_weekly_digest",
+        "Weekly Digest"
+      ],
+      [
+        "tutorials.code_generation.design_patterns",
+        "Design Patterns"
+      ],
+      [
+        "components.settingsForm.usernamePlaceholder",
+        "username"
+      ],
+      [
+        "profile.level_expert",
+        "Expert"
+      ],
+      [
+        "components.collaborativeEditor.userLeft",
+        "{userName} left"
+      ],
+      [
+        "techStack.comparison_onboarding",
+        "Team Onboarding"
+      ],
+      [
+        "languages.nl",
+        "Nederlands"
+      ],
+      [
+        "techStack.spec_driven_title",
+        "Spec Driven Development"
+      ],
+      [
+        "profile.avatar_preview",
+        "Avatar preview"
+      ],
+      [
+        "tutorials.code_generation.e2e_tests",
+        "E2E Tests"
+      ],
+      [
+        "components.advancedFilters.liked",
+        "Most Liked"
+      ],
+      [
+        "components.advancedFilters.recent",
+        "Most Recent"
+      ],
+      [
+        "tutorials.prompt_optimization.reward_badge",
+        "Prompt Optimization Expert"
+      ],
+      [
+        "design_system.accent",
+        "Accent"
+      ],
+      [
+        "search.heading_tags",
+        "Tags"
+      ],
+      [
+        "tutorials.claude_code_basics.quiz_q2_o4",
+        "API documentation"
+      ],
+      [
+        "simpleWizard.form.title_required",
+        "*"
+      ],
+      [
+        "tutorials.level_beginner",
+        "Beginner"
+      ],
+      [
+        "common.code",
+        "Code"
+      ],
+      [
+        "profile.prompts_tab",
+        "Prompts"
+      ],
+      [
+        "tutorials.index.tutorial_claude_code_basics_topic3",
+        "Debugging"
+      ],
+      [
+        "tutorials.transformers_attention.t5_title",
+        "T5 (Encoder-Decoder)"
+      ],
+      [
+        "tutorials.spec_driven_development.pro_tip",
+        "Pro Tip"
+      ],
+      [
+        "design_system.tags",
+        "Tags"
+      ],
+      [
+        "components.emptyState.error",
+        "Something went wrong"
+      ],
+      [
+        "tutorials.index.tutorial_intro_prompts_level",
+        "Beginner"
+      ],
+      [
+        "ml.cta_button",
+        "Start Tutorials"
+      ],
+      [
+        "tutorials.code_generation.reward_badge",
+        "Code Generation Expert"
+      ],
+      [
+        "components.settingsForm.displayNamePlaceholder",
+        "Your name"
+      ],
+      [
+        "templates.category_code",
+        "Code"
+      ],
+      [
+        "privacy.cookies_title",
+        "Cookies"
+      ],
+      [
+        "techStack.ragas_title",
+        "Ragas"
+      ],
+      [
+        "tutorials.claude_code_basics.section_5_title",
+        "Best Practices"
+      ],
+      [
+        "tutorials.advanced_prompting.reward_badge",
+        "Advanced Prompting Master"
+      ],
+      [
+        "common.tags",
+        "Tags"
+      ],
+      [
+        "tutorials.ml_basics.reward_badge",
+        "ML Fundamentals Master"
+      ],
+      [
+        "tutorials.claude_code_basics.quiz_results",
+        "Quiz Results"
+      ],
+      [
+        "templates.category_marketing",
+        "Marketing"
+      ],
+      [
+        "techStack.resource_spec_tutorial_title",
+        "Spec Driven Development"
+      ],
+      [
+        "auth.join_alt",
+        "Join Prompt Academy"
+      ],
+      [
+        "notifications.heading_notifications",
+        "Notifications"
+      ],
+      [
+        "simpleWizard.form.prompt_label",
+        "Prompt"
+      ],
+      [
+        "tutorials.code_generation.continue_2_link",
+        "Prompt Party"
+      ],
+      [
+        "tutorials.claude_code_basics.quiz_q5_o3",
+        "Debugging issues"
+      ],
+      [
+        "tutorials.claude_code_basics.duration",
+        "45 minutes"
+      ],
+      [
+        "tutorials.transformers_attention.encoder_title",
+        "Encoder"
+      ],
+      [
+        "ui.form_clear_input",
+        "Clear input"
+      ],
+      [
+        "tutorials.claude_code_basics.quiz_q5_o1",
+        "Generating React components"
+      ],
+      [
+        "techStack.spec_driven_tab_workflow",
+        "Workflow"
+      ],
+      [
+        "search.heading_ai_models",
+        "AI Models"
+      ],
+      [
+        "tutorials.computer_vision_fundamentals.reward_badge",
+        "Computer Vision Master"
+      ],
+      [
+        "tutorials.claude_code_basics.avoid_this",
+        "✗ Avoid This"
+      ],
+      [
+        "pricing_full.free_f1",
+        "20 prompts"
+      ],
+      [
+        "tutorials.claude_code_basics.quiz_q2_o1",
+        "Documentation for users"
+      ],
+      [
+        "tutorials.index.tutorial_claude_code_basics_topic2",
+        "Refactoring"
+      ],
+      [
+        "tutorials.claude_code_basics.quiz_next",
+        "Next Question"
+      ],
+      [
+        "tutorials.ragas_evaluation.github_repo",
+        "Ragas GitHub Repository"
+      ]
+    ],
+    "low": [
+      [
+        "tutorials.data_fundamentals.duration",
+        "30 min"
+      ],
+      [
+        "tutorials.computer_vision_fundamentals.duration",
+        "40 min"
+      ],
+      [
+        "tutorials.embeddings_vector_search.duration",
+        "35 min"
+      ],
+      [
+        "tutorials.beginner_path.lesson2_duration",
+        "20 min"
+      ],
+      [
+        "tutorials.nlp_fundamentals.duration",
+        "40 min"
+      ],
+      [
+        "tutorials.transformers_attention.duration",
+        "45 min"
+      ],
+      [
+        "tutorials.dl_fundamentals.duration",
+        "45 min"
+      ],
+      [
+        "tutorials.ml_basics.duration",
+        "40 min"
+      ],
+      [
+        "tutorials.advanced_prompting.duration",
+        "20 min"
+      ]
+    ]
+  }
+}

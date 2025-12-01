@@ -1,7 +1,7 @@
 'use client'
 
 import { motion, useInView, Variants } from 'framer-motion'
-import { useRef, ReactNode, Children } from 'react'
+import { useRef, ReactNode, Children, useState, useEffect } from 'react'
 
 interface StaggerContainerProps {
   children: ReactNode
@@ -42,6 +42,12 @@ export function StaggerContainer({
 }: StaggerContainerProps) {
   const ref = useRef(null)
   const isInView = useInView(ref, { once, margin: '-50px' })
+  const [isMounted, setIsMounted] = useState(false)
+
+  // Prevent hydration mismatch by only enabling animations after mount
+  useEffect(() => {
+    setIsMounted(true)
+  }, [])
 
   const customContainer: Variants = {
     hidden: { opacity: 0 },
@@ -68,7 +74,7 @@ export function StaggerContainer({
   return (
     <motion.div
       ref={ref}
-      initial="hidden"
+      initial={isMounted ? 'hidden' : false}
       animate={isInView ? 'visible' : 'hidden'}
       variants={customContainer}
       className={className}

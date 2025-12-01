@@ -299,6 +299,32 @@ Upgrade only if your traffic explodes 🚀
 
 ---
 
+## 📚 Documentation & Resources
+
+### Project Documentation
+- **Notion**: [Prompt Party Documentation](https://www.notion.so/prompt-party)
+  - Architecture technique
+  - Guide API
+  - Schéma base de données
+  - Composants UI
+  - Guide i18n (internationalisation)
+
+### Issue Tracking
+- **Linear**: [Prompt Party Board](https://linear.app/prompt-party)
+  - Bugs et issues techniques
+  - Features en cours de développement
+  - Roadmap produit
+
+### External Resources
+- [Next.js 15 Documentation](https://nextjs.org/docs)
+- [Supabase Documentation](https://supabase.com/docs)
+- [Tailwind CSS](https://tailwindcss.com/docs)
+- [Shadcn UI](https://ui.shadcn.com)
+- [next-intl](https://next-intl-docs.vercel.app)
+- [Vercel Documentation](https://vercel.com/docs)
+
+---
+
 ## 🤝 Contributing
 
 1. Fork this repository

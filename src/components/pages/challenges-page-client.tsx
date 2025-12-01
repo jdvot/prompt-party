@@ -126,16 +126,16 @@ export function ChallengesPageClient({
                     {/* Time remaining */}
                     <div className="flex items-center gap-2 text-sm text-muted-foreground">
                       <ClockIcon className="w-4 h-4" />
-                      <span>Se termine dans 5 jours</span>
+                      <span>{t.ends_in} 5 {t.days_left}</span>
                     </div>
 
                     {!user ? (
                       <Link href="/auth/signup" className={cn(buttonVariants(), "w-full")}>
-                        S'inscrire pour participer
+                        {t.signup_to_participate}
                       </Link>
                     ) : (
                       <Link href="/tutorials" className={cn(buttonVariants({ variant: "outline" }), "w-full")}>
-                        Commencer une leçon
+                        {t.start_lesson}
                       </Link>
                     )}
                   </div>
@@ -159,7 +159,7 @@ export function ChallengesPageClient({
                     </Badge>
                     <div className="text-right">
                       <div className="text-2xl font-bold text-violet-600">+{monthlyChallenge.reward_points}</div>
-                      <div className="text-xs text-muted-foreground">points + badge</div>
+                      <div className="text-xs text-muted-foreground">{t.points_label} + {t.badge_label}</div>
                     </div>
                   </div>
                   <CardTitle className="text-xl">{monthlyChallenge.title}</CardTitle>
@@ -193,16 +193,16 @@ export function ChallengesPageClient({
                     {/* Time remaining */}
                     <div className="flex items-center gap-2 text-sm text-muted-foreground">
                       <ClockIcon className="w-4 h-4" />
-                      <span>Se termine dans 25 jours</span>
+                      <span>{t.ends_in} 25 {t.days_left}</span>
                     </div>
 
                     {!user ? (
                       <Link href="/auth/signup" className={cn(buttonVariants(), "w-full")}>
-                        S'inscrire pour participer
+                        {t.signup_to_participate}
                       </Link>
                     ) : (
                       <Link href="/tutorials/paths/expert" className={cn(buttonVariants({ variant: "outline" }), "w-full")}>
-                        Voir le parcours
+                        {t.view_path}
                       </Link>
                     )}
                   </div>
@@ -255,10 +255,10 @@ export function ChallengesPageClient({
                       </div>
                     </div>
                     <div className="flex justify-between text-sm text-muted-foreground mt-2">
-                      <span>Plus que {communityChallenge.goal_value - communityChallenge.current_progress} prompts !</span>
+                      <span>{t.prompts_remaining.replace('{count}', String(communityChallenge.goal_value - communityChallenge.current_progress))}</span>
                       <span className="flex items-center gap-1">
                         <ClockIcon className="w-3 h-3" />
-                        20 jours restants
+                        {t.days_remaining.replace('{count}', '20')}
                       </span>
                     </div>
                   </div>
@@ -276,11 +276,11 @@ export function ChallengesPageClient({
 
                   {!user ? (
                     <Link href="/auth/signup" className={cn(buttonVariants({ size: "lg" }), "w-full")}>
-                      Contribuer au challenge
+                      {t.contribute_challenge}
                     </Link>
                   ) : (
                     <Link href="/prompts/new" className={cn(buttonVariants({ size: "lg", variant: "outline" }), "w-full")}>
-                      Partager un prompt
+                      {t.share_prompt}
                     </Link>
                   )}
                 </CardContent>
@@ -304,9 +304,9 @@ export function ChallengesPageClient({
                   <div className="w-12 h-12 mx-auto mb-4 rounded-xl bg-green-500/10 flex items-center justify-center">
                     <CheckCircle2Icon className="w-6 h-6 text-green-600" />
                   </div>
-                  <h3 className="font-semibold mb-2">1. Choisis un challenge</h3>
+                  <h3 className="font-semibold mb-2">{t.step_1_title}</h3>
                   <p className="text-sm text-muted-foreground">
-                    Hebdomadaire, mensuel ou communautaire - trouve celui qui te motive
+                    {t.step_1_description}
                   </p>
                 </CardContent>
               </Card>
@@ -318,9 +318,9 @@ export function ChallengesPageClient({
                   <div className="w-12 h-12 mx-auto mb-4 rounded-xl bg-violet-500/10 flex items-center justify-center">
                     <TargetIcon className="w-6 h-6 text-violet-600" />
                   </div>
-                  <h3 className="font-semibold mb-2">2. Progresse à ton rythme</h3>
+                  <h3 className="font-semibold mb-2">{t.step_2_title}</h3>
                   <p className="text-sm text-muted-foreground">
-                    Chaque action compte - leçons, prompts partagés, aide communautaire
+                    {t.step_2_description}
                   </p>
                 </CardContent>
               </Card>
@@ -332,9 +332,9 @@ export function ChallengesPageClient({
                   <div className="w-12 h-12 mx-auto mb-4 rounded-xl bg-orange-500/10 flex items-center justify-center">
                     <AwardIcon className="w-6 h-6 text-orange-600" />
                   </div>
-                  <h3 className="font-semibold mb-2">3. Gagne des récompenses</h3>
+                  <h3 className="font-semibold mb-2">{t.step_3_title}</h3>
                   <p className="text-sm text-muted-foreground">
-                    Points, badges et déblocages de contenu exclusif
+                    {t.step_3_description}
                   </p>
                 </CardContent>
               </Card>

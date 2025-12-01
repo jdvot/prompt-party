@@ -74,7 +74,7 @@ export function SavedSearches() {
 
     toast({
       title: t('components.savedSearches.searchSaved'),
-      description: `"${searchName}" has been saved to your searches`,
+      description: t('components.savedSearches.searchSavedDesc', { name: searchName }),
     })
   }
 
@@ -82,7 +82,7 @@ export function SavedSearches() {
     const updated = savedSearches.filter((s) => s.id !== id)
     setSavedSearches(updated)
     localStorage.setItem('savedSearches', JSON.stringify(updated))
-    toast({ title: 'Search deleted' })
+    toast({ title: t('components.savedSearches.searchDeleted') })
   }
 
   const runSearch = (search: SavedSearch) => {
@@ -108,14 +108,14 @@ export function SavedSearches() {
         {/* Save Current Search */}
         <div className="flex gap-2">
           <Input
-            placeholder="Name this search..."
+            placeholder={t('components.savedSearches.namePlaceholder')}
             value={searchName}
             onChange={(e) => setSearchName(e.target.value)}
             onKeyDown={(e) => e.key === 'Enter' && saveCurrentSearch()}
           />
           <Button onClick={saveCurrentSearch}>
             <Plus className="w-4 h-4 mr-2" />
-            Save
+            {t('components.savedSearches.saveButton')}
           </Button>
         </div>
 
@@ -123,8 +123,8 @@ export function SavedSearches() {
         {savedSearches.length === 0 ? (
           <div className="text-center py-8 text-muted-foreground">
             <Search className="w-12 h-12 mx-auto mb-3 opacity-50" />
-            <p className="text-sm">No saved searches yet</p>
-            <p className="text-xs">Search for something and save it here for quick access</p>
+            <p className="text-sm">{t('components.savedSearches.noSearches')}</p>
+            <p className="text-xs">{t('components.savedSearches.noSearchesDesc')}</p>
           </div>
         ) : (
           <div className="space-y-2">
@@ -166,7 +166,7 @@ export function SavedSearches() {
                     onClick={() => runSearch(search)}
                   >
                     <Search className="w-3 h-3 mr-1" />
-                    Run
+                    {t('components.savedSearches.runButton')}
                   </Button>
                   <Button
                     size="sm"

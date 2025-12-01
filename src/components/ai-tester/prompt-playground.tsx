@@ -122,11 +122,11 @@ export function PromptPlayground({ promptContent, userId }: PromptPlaygroundProp
 
       {/* Input */}
       <div className="mb-4">
-        <label className="text-sm font-medium mb-2 block">Test Input (Optional)</label>
+        <label className="text-sm font-medium mb-2 block">{t('components.promptPlayground.inputLabel')}</label>
         <textarea
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          placeholder="Add any variables or context for your prompt..."
+          placeholder={t('components.promptPlayground.inputPlaceholder')}
           className="w-full px-3 py-2 bg-background border border-input rounded-md min-h-[100px] resize-y"
         />
       </div>
@@ -141,18 +141,18 @@ export function PromptPlayground({ promptContent, userId }: PromptPlaygroundProp
           {loading ? (
             <>
               <StopCircleIcon className="w-4 h-4 mr-2 animate-spin" />
-              Testing...
+              {t('components.promptPlayground.testing')}
             </>
           ) : (
             <>
               <PlayIcon className="w-4 h-4 mr-2" />
-              Test Prompt
+              {t('components.promptPlayground.testButton')}
             </>
           )}
         </Button>
         {!userId && (
           <p className="text-xs text-muted-foreground mt-2 text-center">
-            Sign in to test prompts
+            {t('components.promptPlayground.signInToTest')}
           </p>
         )}
       </div>
@@ -168,7 +168,7 @@ export function PromptPlayground({ promptContent, userId }: PromptPlaygroundProp
       {output && (
         <div>
           <div className="flex items-center justify-between mb-2">
-            <label className="text-sm font-medium">AI Response</label>
+            <label className="text-sm font-medium">{t('components.promptPlayground.aiResponse')}</label>
             {creditsUsed > 0 && (
               <span className="text-xs text-muted-foreground">
                 -{creditsUsed} credit{creditsUsed !== 1 && 's'}
@@ -184,9 +184,8 @@ export function PromptPlayground({ promptContent, userId }: PromptPlaygroundProp
       {/* Info */}
       <div className="mt-4 p-3 bg-info/10 border border-info/20 rounded-md">
         <p className="text-xs text-info-foreground">
-          <strong>💡 Pro Tip:</strong> Testing helps you optimize prompts before sharing.
-          Free: 10 tests/month. Pro: Unlimited.{' '}
-          <a href="/pricing" className="underline font-medium">Upgrade</a>
+          <strong>{t('components.promptPlayground.proTipTitle')}</strong> {t('components.promptPlayground.proTipText')}{' '}
+          <a href="/pricing" className="underline font-medium">{t('components.promptPlayground.upgradeLink')}</a>
         </p>
       </div>
     </div>

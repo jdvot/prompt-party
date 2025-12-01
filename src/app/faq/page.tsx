@@ -25,7 +25,7 @@ export default function FAQPage() {
   ]
 
   return (
-    <div className="container mx-auto px-4 py-12">
+    <div className="container mx-auto px-4 py-24 md:py-32 lg:py-40">
       <div className="max-w-3xl mx-auto">
         <h1 className="text-4xl font-bold mb-8">{t('title')}</h1>
 

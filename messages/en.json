@@ -90,6 +90,8 @@
     "join_academy_heading": "Join Prompt Academy",
     "join_alt": "Join Prompt Academy",
     "login_link": "Log in",
+    "login_page_description": "Sign in to your Prompt Academy account to access tutorials, prompts, and community features",
+    "login_page_title": "Login | Prompt Academy",
     "login_subtitle": "Sign in to your Prompt Academy account",
     "login_title": "Welcome Back",
     "magic_link_sent": "Check your email for the confirmation link",
@@ -197,7 +199,22 @@
     "view_prompt": "View Prompt",
     "view_submission": "View your submission",
     "votes": "votes",
-    "weekly_badge": "Weekly"
+    "weekly_badge": "Weekly",
+    "badge_label": "badge",
+    "ends_in": "Ends in",
+    "signup_to_participate": "Sign up to participate",
+    "start_lesson": "Start a lesson",
+    "view_path": "View path",
+    "prompts_remaining": "Only {count} prompts left!",
+    "days_remaining": "{count} days remaining",
+    "contribute_challenge": "Contribute to challenge",
+    "share_prompt": "Share a prompt",
+    "step_1_title": "1. Choose a challenge",
+    "step_1_description": "Weekly, monthly, or community - find the one that motivates you",
+    "step_2_title": "2. Progress at your pace",
+    "step_2_description": "Every action counts - lessons, shared prompts, community help",
+    "step_3_title": "3. Earn rewards",
+    "step_3_description": "Points, badges, and exclusive content unlocks"
   },
   "collections": {
     "action_create_new_collection": "Create New Collection",
@@ -408,6 +425,10 @@
     "tags": "Tags",
     "top": "Top",
     "trending": "Trending",
+    "trendingTags": "Trending Tags",
+    "promptSingular": "prompt",
+    "promptPlural": "prompts",
+    "viewAllTags": "View all tags",
     "unbookmark": "Unbookmark",
     "unfollow": "Unfollow",
     "unlike": "Unlike",
@@ -4306,8 +4327,13 @@
       "nameRequired": "Name required",
       "nameRequiredDesc": "Please enter a name for this search",
       "searchSaved": "Search saved",
+      "searchSavedDesc": "\"{name}\" has been saved to your searches",
+      "searchDeleted": "Search deleted",
       "noSearches": "No saved searches yet",
-      "noSearchesDesc": "Search for something and save it here for quick access"
+      "noSearchesDesc": "Search for something and save it here for quick access",
+      "namePlaceholder": "Name this search...",
+      "saveButton": "Save",
+      "runButton": "Run"
     },
     "settingsForm": {
       "profileInfo": "Profile Information",
@@ -4324,7 +4350,16 @@
     },
     "promptPlayground": {
       "signInRequired": "Please sign in to test prompts",
-      "modelLabel": "AI Model"
+      "modelLabel": "AI Model",
+      "inputLabel": "Test Input (Optional)",
+      "inputPlaceholder": "Add any variables or context for your prompt...",
+      "testing": "Testing...",
+      "testButton": "Test Prompt",
+      "signInToTest": "Sign in to test prompts",
+      "aiResponse": "AI Response",
+      "proTipTitle": "Pro Tip:",
+      "proTipText": "Testing helps you optimize prompts before sharing. Free: 10 tests/month. Pro: Unlimited.",
+      "upgradeLink": "Upgrade"
     },
     "advancedFilters": {
       "relevant": "Most Relevant",
