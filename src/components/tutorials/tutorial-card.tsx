@@ -3,6 +3,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button, buttonVariants } from '@/components/ui/button'
+import { IconContainer } from '@/components/ui/icon-container'
 import * as Icons from 'lucide-react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
@@ -54,9 +55,15 @@ export function TutorialCard({ tutorial, buttonLabel = "Start Tutorial" }: Tutor
 
         <CardHeader className="relative">
           <div className="flex items-center justify-between mb-3">
-            <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${gradientColor} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+            <IconContainer
+              size="md"
+              variant="gradient"
+              gradientFrom={gradientColor.split(' ')[0]}
+              gradientTo={gradientColor.split(' ')[1]}
+              className="group-hover:scale-110 transition-transform duration-300"
+            >
               <Icon className="w-7 h-7 text-white" />
-            </div>
+            </IconContainer>
             <Badge
               variant="outline"
               className={levelColors[tutorial.level as keyof typeof levelColors]}

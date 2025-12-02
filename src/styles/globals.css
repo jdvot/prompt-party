@@ -40,6 +40,13 @@
     /* Border Radius */
     --radius: 0.75rem;
 
+    /* Typography - Letter Spacing */
+    --tracking-tighter: -0.05em;
+    --tracking-tight: -0.025em;
+    --tracking-normal: 0;
+    --tracking-wide: 0.025em;
+    --tracking-wider: 0.05em;
+
     /* Brand Colors - Prompt Academy Palette */
     --brand-primary: 238 80% 58%;
     --brand-primary-light: 238 80% 68%;

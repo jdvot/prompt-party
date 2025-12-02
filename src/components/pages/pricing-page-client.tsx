@@ -3,6 +3,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { buttonVariants } from '@/components/ui/button'
+import { IconContainer } from '@/components/ui/icon-container'
 import { CheckIcon, HeartIcon, SparklesIcon } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -69,9 +70,15 @@ export function PricingPageClient({ freePlan, supportPlan, t }: PricingPageClien
             <ScaleOnHover scale={1.02}>
               <Card className="relative border-2 h-full">
                 <CardHeader>
-                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-green-500 to-emerald-600 mb-4">
+                  <IconContainer
+                    size="sm"
+                    variant="gradient"
+                    gradientFrom="from-green-500"
+                    gradientTo="to-emerald-600"
+                    className="mb-4"
+                  >
                     <SparklesIcon className="w-6 h-6 text-white" />
-                  </div>
+                  </IconContainer>
                   <CardTitle className="text-2xl mb-2">{freePlan.name}</CardTitle>
                   <div className="mb-3">
                     <span className="text-5xl font-bold">{freePlan.price}</span>
@@ -116,9 +123,15 @@ export function PricingPageClient({ freePlan, supportPlan, t }: PricingPageClien
                 </div>
 
                 <CardHeader className="pt-8">
-                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-600 to-violet-600 mb-4">
+                  <IconContainer
+                    size="sm"
+                    variant="gradient"
+                    gradientFrom="from-indigo-600"
+                    gradientTo="to-violet-600"
+                    className="mb-4"
+                  >
                     <HeartIcon className="w-6 h-6 text-white" />
-                  </div>
+                  </IconContainer>
                   <CardTitle className="text-2xl mb-2">{supportPlan.name}</CardTitle>
                   <div className="mb-3">
                     <span className="text-5xl font-bold">{supportPlan.price}</span>

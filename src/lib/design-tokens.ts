@@ -90,17 +90,22 @@ export const typography = {
     mono: 'var(--font-geist-mono)',
   },
 
-  // Font Sizes
+  /**
+   * Font Sizes with Line Heights (POR-32)
+   * Heading sizes (xl+) include tight letter-spacing for better readability
+   */
   fontSize: {
-    xs: '0.75rem',      // 12px
-    sm: '0.875rem',     // 14px
-    base: '1rem',       // 16px
-    lg: '1.125rem',     // 18px
-    xl: '1.25rem',      // 20px
-    '2xl': '1.5rem',    // 24px
-    '3xl': '1.875rem',  // 30px
-    '4xl': '2.25rem',   // 36px
-    '5xl': '3rem',      // 48px
+    xs: { size: '0.75rem', lineHeight: '1rem' },           // 12px / 16px
+    sm: { size: '0.875rem', lineHeight: '1.4rem' },        // 14px / 22.4px (1.6 ratio)
+    base: { size: '1rem', lineHeight: '1.5rem' },          // 16px / 24px (1.5 ratio)
+    lg: { size: '1.125rem', lineHeight: '1.75rem' },       // 18px / 28px
+    xl: { size: '1.25rem', lineHeight: '1.75rem', letterSpacing: '-0.025em' },  // 20px
+    '2xl': { size: '1.5rem', lineHeight: '2rem', letterSpacing: '-0.025em' },   // 24px
+    '3xl': { size: '1.875rem', lineHeight: '2.25rem', letterSpacing: '-0.025em' }, // 30px
+    '4xl': { size: '2.25rem', lineHeight: '2.5rem', letterSpacing: '-0.025em' },   // 36px
+    '5xl': { size: '3rem', lineHeight: '1.2', letterSpacing: '-0.025em' },         // 48px
+    '6xl': { size: '3.75rem', lineHeight: '1.1', letterSpacing: '-0.025em' },      // 60px
+    '7xl': { size: '4.5rem', lineHeight: '1', letterSpacing: '-0.025em' },         // 72px
   },
 
   // Font Weights
@@ -121,13 +126,13 @@ export const typography = {
     loose: '2',
   },
 
-  // Letter Spacing
+  // Letter Spacing (CSS Variables in globals.css)
   letterSpacing: {
-    tighter: '-0.05em',
-    tight: '-0.025em',
-    normal: '0',
-    wide: '0.025em',
-    wider: '0.05em',
+    tighter: 'var(--tracking-tighter)',  // -0.05em
+    tight: 'var(--tracking-tight)',      // -0.025em
+    normal: 'var(--tracking-normal)',    // 0
+    wide: 'var(--tracking-wide)',        // 0.025em
+    wider: 'var(--tracking-wider)',      // 0.05em
   },
 } as const
 
@@ -150,6 +155,47 @@ export const spacing = {
   20: '5rem',     // 80px
   24: '6rem',     // 96px
   32: '8rem',     // 128px
+  40: '10rem',    // 160px
+} as const
+
+// ============================================================================
+// SECTION PADDING TOKENS (POR-29)
+// ============================================================================
+
+/**
+ * Standardized section padding for consistent vertical rhythm
+ * Used by the Section component with spacing variants
+ */
+export const sectionPadding = {
+  /** No padding */
+  none: { base: '0', md: '0', lg: '0' },
+  /** Small: py-12 md:py-16 lg:py-20 */
+  sm: { base: '3rem', md: '4rem', lg: '5rem' },
+  /** Medium: py-24 md:py-32 lg:py-40 (Default) */
+  md: { base: '6rem', md: '8rem', lg: '10rem' },
+  /** Large: py-32 md:py-40 lg:py-48 */
+  lg: { base: '8rem', md: '10rem', lg: '12rem' },
+} as const
+
+// ============================================================================
+// ICON CONTAINER TOKENS (POR-30)
+// ============================================================================
+
+/**
+ * Standardized icon container sizes
+ * Used by the IconContainer component
+ */
+export const iconContainer = {
+  sizes: {
+    /** 48px - For compact layouts */
+    sm: '3rem',
+    /** 56px - Standard size (default) */
+    md: '3.5rem',
+    /** 64px - For hero sections */
+    lg: '4rem',
+  },
+  /** Standard border radius for all icon containers */
+  borderRadius: '1rem', // rounded-xl (16px)
 } as const
 
 // ============================================================================
@@ -158,11 +204,40 @@ export const spacing = {
 
 export const borderRadius = {
   none: '0',
-  sm: 'calc(var(--radius) - 4px)',
-  md: 'calc(var(--radius) - 2px)',
-  lg: 'var(--radius)',
-  xl: 'calc(var(--radius) + 4px)',
+  sm: 'calc(var(--radius) - 4px)',   // ~8px
+  md: 'calc(var(--radius) - 2px)',   // ~10px
+  lg: 'var(--radius)',               // 12px (default)
+  xl: 'calc(var(--radius) + 4px)',   // 16px
+  '2xl': 'calc(var(--radius) + 8px)', // 20px
+  '3xl': 'calc(var(--radius) + 12px)', // 24px
   full: '9999px',
+} as const
+
+// ============================================================================
+// CARD VARIANT TOKENS (POR-31)
+// ============================================================================
+
+/**
+ * Card component variant specifications
+ * Used by the Card component with cva
+ */
+export const cardVariants = {
+  /** Standard card with subtle border */
+  default: { padding: '1.5rem', borderRadius: '1rem' },
+  /** Interactive card with hover effects */
+  interactive: { padding: '1.5rem', borderRadius: '1rem' },
+  /** Modern bento-style card */
+  bento: { padding: '1.5rem', borderRadius: '1.5rem' },
+  /** Feature highlight card */
+  feature: { padding: '2rem', borderRadius: '1.25rem' },
+  /** Glassmorphism effect card */
+  glass: { padding: '1.5rem', borderRadius: '1rem' },
+  /** Prominent border card */
+  outlined: { padding: '1.5rem', borderRadius: '1rem' },
+  /** Strong shadow card */
+  elevated: { padding: '1.5rem', borderRadius: '1rem' },
+  /** Compact card for tight layouts */
+  compact: { padding: '1rem', borderRadius: '0.75rem' },
 } as const
 
 // ============================================================================

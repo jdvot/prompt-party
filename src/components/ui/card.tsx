@@ -52,6 +52,12 @@ const cardVariants = cva(
 
         // Elevated - Strong shadow
         elevated: 'border-transparent shadow-elevation-4 hover:shadow-elevation-5',
+
+        // Compact - Smaller cards for tight layouts
+        compact: [
+          'border-border',
+          'hover:shadow-md hover:border-brand-primary/20',
+        ].join(' '),
       },
 
       padding: {
@@ -149,5 +155,9 @@ const CardFooter = React.forwardRef<
   />
 ))
 CardFooter.displayName = 'CardFooter'
+
+export type CardVariant = VariantProps<typeof cardVariants>['variant']
+export type CardPadding = VariantProps<typeof cardVariants>['padding']
+export type CardRadius = VariantProps<typeof cardVariants>['radius']
 
 export { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent, cardVariants }

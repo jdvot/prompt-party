@@ -163,19 +163,28 @@ const config: Config = {
         '3xl': 'calc(var(--radius) + 12px)',
       },
 
-      // Typography
+      // Typography - Standardized Scale (POR-32)
       fontSize: {
-        'xs': ['0.75rem', { lineHeight: '1rem' }],
-        'sm': ['0.875rem', { lineHeight: '1.25rem' }],
-        'base': ['1rem', { lineHeight: '1.5rem' }],
-        'lg': ['1.125rem', { lineHeight: '1.75rem' }],
-        'xl': ['1.25rem', { lineHeight: '1.75rem' }],
-        '2xl': ['1.5rem', { lineHeight: '2rem' }],
-        '3xl': ['1.875rem', { lineHeight: '2.25rem' }],
-        '4xl': ['2.25rem', { lineHeight: '2.5rem' }],
-        '5xl': ['3rem', { lineHeight: '1.2' }],
-        '6xl': ['3.75rem', { lineHeight: '1.1' }],
-        '7xl': ['4.5rem', { lineHeight: '1' }],
+        'xs': ['0.75rem', { lineHeight: '1rem' }],              // 12px / 16px
+        'sm': ['0.875rem', { lineHeight: '1.4rem' }],           // 14px / 22.4px (1.6 ratio)
+        'base': ['1rem', { lineHeight: '1.5rem' }],             // 16px / 24px (1.5 ratio)
+        'lg': ['1.125rem', { lineHeight: '1.75rem' }],          // 18px / 28px
+        'xl': ['1.25rem', { lineHeight: '1.75rem', letterSpacing: '-0.025em' }],  // 20px with tight spacing
+        '2xl': ['1.5rem', { lineHeight: '2rem', letterSpacing: '-0.025em' }],      // 24px
+        '3xl': ['1.875rem', { lineHeight: '2.25rem', letterSpacing: '-0.025em' }], // 30px
+        '4xl': ['2.25rem', { lineHeight: '2.5rem', letterSpacing: '-0.025em' }],   // 36px
+        '5xl': ['3rem', { lineHeight: '1.2', letterSpacing: '-0.025em' }],         // 48px
+        '6xl': ['3.75rem', { lineHeight: '1.1', letterSpacing: '-0.025em' }],      // 60px
+        '7xl': ['4.5rem', { lineHeight: '1', letterSpacing: '-0.025em' }],         // 72px
+      },
+
+      // Letter Spacing
+      letterSpacing: {
+        tighter: 'var(--tracking-tighter)',
+        tight: 'var(--tracking-tight)',
+        normal: 'var(--tracking-normal)',
+        wide: 'var(--tracking-wide)',
+        wider: 'var(--tracking-wider)',
       },
 
       // Animation Durations
