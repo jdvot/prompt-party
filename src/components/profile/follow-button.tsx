@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useCallback } from 'react'
+import { useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
 import { Button } from '@/components/ui/button'
 import { UserPlusIcon, UserMinusIcon } from 'lucide-react'
@@ -18,6 +19,7 @@ export function FollowButton({
 }: FollowButtonProps) {
   const [isFollowing, setIsFollowing] = useState(initialIsFollowing)
   const [loading, setLoading] = useState(false)
+  const router = useRouter()
   const supabase = createClient()
 
   const checkFollowStatus = useCallback(async () => {
@@ -47,7 +49,7 @@ export function FollowButton({
     } = await supabase.auth.getUser()
 
     if (!user) {
-      window.location.href = '/auth/login'
+      router.push('/auth/login')
       return
     }
 

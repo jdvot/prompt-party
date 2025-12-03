@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useCallback } from 'react'
+import { useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
 import { Button } from '@/components/ui/button'
 import { BookmarkIcon } from 'lucide-react'
@@ -23,6 +24,7 @@ export function BookmarkButton({ promptId, variant = 'ghost', size = 'sm' }: Boo
   const [folders, setFolders] = useState<any[]>([])
   const [currentFolder, setCurrentFolder] = useState<string | null>(null)
   const [loading, setLoading] = useState(false)
+  const router = useRouter()
   const supabase = createClient()
 
   const checkBookmarkStatus = useCallback(async () => {
@@ -69,7 +71,7 @@ export function BookmarkButton({ promptId, variant = 'ghost', size = 'sm' }: Boo
     } = await supabase.auth.getUser()
 
     if (!user) {
-      window.location.href = '/auth/login'
+      router.push('/auth/login')
       return
     }
 
@@ -154,7 +156,7 @@ export function BookmarkButton({ promptId, variant = 'ghost', size = 'sm' }: Boo
           </DropdownMenuItem>
         ))}
         <DropdownMenuSeparator />
-        <DropdownMenuItem onClick={() => (window.location.href = '/bookmarks')}>
+        <DropdownMenuItem onClick={() => router.push('/bookmarks')}>
           <span className="text-primary">Manage folders...</span>
         </DropdownMenuItem>
         {isBookmarked && (

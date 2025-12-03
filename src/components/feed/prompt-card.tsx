@@ -2,6 +2,7 @@
 
 import { memo, useState, useRef, useCallback } from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import { formatDistanceToNow } from 'date-fns'
 import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -50,6 +51,7 @@ export const PromptCard = memo(function PromptCard({
   onShare,
 }: PromptCardProps) {
   const t = useTranslations('common')
+  const router = useRouter()
   const preview = compact
     ? (body.length > 100 ? body.substring(0, 100) + '...' : body)
     : (body.length > 200 ? body.substring(0, 200) + '...' : body)
@@ -136,7 +138,7 @@ export const PromptCard = memo(function PromptCard({
                 onClick={(e) => {
                   e.preventDefault()
                   e.stopPropagation()
-                  window.location.href = `/profile/${author.name || 'anonymous'}`
+                  router.push(`/profile/${author.name || 'anonymous'}`)
                 }}
                 className="flex-shrink-0 touch-target-sm"
               >
@@ -250,7 +252,7 @@ export const PromptCard = memo(function PromptCard({
                     onClick={(e) => {
                       e.preventDefault()
                       e.stopPropagation()
-                      window.location.href = `/profile/${author.name || 'anonymous'}`
+                      router.push(`/profile/${author.name || 'anonymous'}`)
                     }}
                     className={cn(
                       "flex items-center gap-2 hover:text-primary transition-colors",

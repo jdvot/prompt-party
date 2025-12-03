@@ -25,11 +25,11 @@ export default async function CollectionsPage() {
           size="lg"
           action={{
             label: emptyT('action'),
-            onClick: () => window.location.href = '/collections/new',
+            href: '/collections/new',
           }}
           secondaryAction={{
             label: emptyT('secondaryAction'),
-            onClick: () => window.location.href = '/prompts',
+            href: '/prompts',
           }}
         />
       </div>

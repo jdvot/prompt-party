@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
@@ -28,6 +29,7 @@ interface PromptType {
 
 export function PromptWizard() {
   const t = useTranslations('wizard')
+  const router = useRouter()
   const [step, setStep] = useState(1)
   const [selectedLLM, setSelectedLLM] = useState<string | null>(null)
   const [promptData, setPromptData] = useState({
@@ -609,9 +611,7 @@ export function PromptWizard() {
           </Button>
         ) : (
           <Button
-            onClick={() => {
-              window.location.href = '/prompts/new'
-            }}
+            onClick={() => router.push('/prompts/new')}
             className="gap-2"
           >
             <Sparkles className="w-4 h-4" />

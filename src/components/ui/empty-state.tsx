@@ -1,5 +1,6 @@
 import * as React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { useTranslations } from 'next-intl'
 import { cn } from '@/lib/utils'
 import { Button } from './button'
@@ -32,12 +33,12 @@ export interface EmptyStateProps extends React.HTMLAttributes<HTMLDivElement> {
   descriptionKey?: string // Translation key for description
   action?: {
     label: string
-    onClick: () => void
+    href: string
     variant?: 'primary' | 'secondary' | 'outline'
   }
   secondaryAction?: {
     label: string
-    onClick: () => void
+    href: string
   }
   size?: 'sm' | 'md' | 'lg'
 }
@@ -188,20 +189,20 @@ const EmptyState = React.forwardRef<HTMLDivElement, EmptyStateProps>(
           <div className="flex items-center gap-3">
             {action && (
               <Button
-                onClick={action.onClick}
+                asChild
                 variant={action.variant || 'primary'}
                 size={size === 'sm' ? 'sm' : 'md'}
               >
-                {action.label}
+                <Link href={action.href}>{action.label}</Link>
               </Button>
             )}
             {secondaryAction && (
               <Button
-                onClick={secondaryAction.onClick}
+                asChild
                 variant="ghost"
                 size={size === 'sm' ? 'sm' : 'md'}
               >
-                {secondaryAction.label}
+                <Link href={secondaryAction.href}>{secondaryAction.label}</Link>
               </Button>
             )}
           </div>

@@ -26,11 +26,11 @@ export default async function BookmarksPage() {
         size="lg"
         action={{
           label: emptyT('action'),
-          onClick: () => window.location.href = '/tutorials',
+          href: '/tutorials',
         }}
         secondaryAction={{
           label: emptyT('secondaryAction'),
-          onClick: () => window.location.href = '/prompts',
+          href: '/prompts',
         }}
       />
     </div>
