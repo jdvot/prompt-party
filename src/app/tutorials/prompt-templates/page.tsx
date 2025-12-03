@@ -492,8 +492,8 @@ Audience: [AUDIENCE, default: general readers]`}
             <div className="text-sm text-muted-foreground">
               <p className="font-semibold mb-2">{tCommon('keep_learning')}</p>
               <ul className="space-y-1">
-                <li>• <Link href="/prompts" className="text-primary hover:underline">{t('browse_templates')}</Link></li>
-                <li>• <Link href="/teams" className="text-primary hover:underline">{t('share_with_team')}</Link></li>
+                <li>• <Link href="/trending" className="text-primary hover:underline">{t('browse_templates')}</Link></li>
+                <li>• <Link href="/about" className="text-primary hover:underline">{t('share_with_team')}</Link></li>
                 <li>• <Link href="/challenges" className="text-primary hover:underline">{t('join_challenge')}</Link></li>
               </ul>
             </div>

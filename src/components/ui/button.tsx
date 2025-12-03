@@ -4,24 +4,23 @@ import { cn } from '@/lib/utils'
 import { cva, type VariantProps } from 'class-variance-authority'
 
 const buttonVariants = cva(
-  'inline-flex items-center justify-center gap-2 font-semibold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none whitespace-nowrap leading-none',
+  'inline-flex items-center justify-center gap-2 font-semibold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none whitespace-nowrap leading-none',
   {
     variants: {
       variant: {
-        // Primary - Vibrant gradient with glow
+        // Primary - Premium gradient with lift effect (POR-58)
         primary: [
-          'bg-gradient-to-r from-brand-primary to-brand-accent',
-          'text-white shadow-lg shadow-brand-primary/30',
-          'hover:shadow-xl hover:shadow-brand-primary/40 hover:scale-[1.02]',
-          'active:scale-[0.98]',
+          'btn-primary-premium',
+          'text-white',
         ].join(' '),
 
         // Secondary - Electric blue
         secondary: [
           'bg-gradient-to-r from-brand-secondary to-brand-secondary-light',
           'text-white shadow-lg shadow-brand-secondary/30',
-          'hover:shadow-xl hover:shadow-brand-secondary/40 hover:scale-[1.02]',
-          'active:scale-[0.98]',
+          'hover:shadow-xl hover:shadow-brand-secondary/40 hover:-translate-y-0.5',
+          'active:translate-y-0',
+          'transition-all duration-200 ease-out-expo',
         ].join(' '),
 
         // Outline - Modern border with hover fill
@@ -29,41 +28,49 @@ const buttonVariants = cva(
           'border-2 border-border bg-transparent',
           'hover:bg-muted hover:border-brand-primary/30',
           'active:bg-muted/80',
+          'transition-all duration-200',
         ].join(' '),
 
-        // Ghost - Subtle hover
+        // Ghost - Subtle hover (POR-58)
         ghost: [
-          'hover:bg-muted/80',
-          'active:bg-muted',
+          'bg-transparent',
+          'border-[1.5px] border-border',
+          'hover:bg-muted hover:border-brand-primary/50',
+          'active:bg-muted/80',
+          'transition-all duration-200',
         ].join(' '),
 
         // Destructive - Error state
         destructive: [
           'bg-destructive text-destructive-foreground',
           'shadow-lg shadow-destructive/30',
-          'hover:bg-destructive/90 hover:shadow-xl hover:shadow-destructive/40',
-          'active:scale-[0.98]',
+          'hover:bg-destructive/90 hover:shadow-xl hover:shadow-destructive/40 hover:-translate-y-0.5',
+          'active:translate-y-0',
+          'transition-all duration-200',
         ].join(' '),
 
         // Success - Confirmation actions
         success: [
           'bg-success text-white',
           'shadow-lg shadow-success/30',
-          'hover:bg-success/90 hover:shadow-xl hover:shadow-success/40',
-          'active:scale-[0.98]',
+          'hover:bg-success/90 hover:shadow-xl hover:shadow-success/40 hover:-translate-y-0.5',
+          'active:translate-y-0',
+          'transition-all duration-200',
         ].join(' '),
 
         // Link - Text-only
-        link: 'text-brand-primary underline-offset-4 hover:underline',
+        link: 'text-brand-primary underline-offset-4 hover:underline transition-colors duration-200',
 
-        // Gradient - Premium vibrant gradient
+        // Gradient - Premium animated gradient (POR-58)
         gradient: [
-          'bg-gradient-to-r from-indigo-600 via-violet-600 to-cyan-500',
-          'text-white shadow-lg shadow-indigo-500/30',
-          'hover:shadow-xl hover:shadow-indigo-500/40 hover:scale-[1.02]',
-          'active:scale-[0.98]',
-          'bg-[length:200%_100%] hover:bg-right-bottom',
-          'transition-all duration-500',
+          'btn-gradient-premium',
+          'text-white',
+        ].join(' '),
+
+        // Glow - Pulsing glow effect (POR-58)
+        glow: [
+          'btn-primary-premium btn-glow',
+          'text-white',
         ].join(' '),
 
         // Soft - Subtle colored background
@@ -71,14 +78,38 @@ const buttonVariants = cva(
           'bg-brand-primary/10 text-brand-primary',
           'hover:bg-brand-primary/20',
           'active:bg-brand-primary/30',
+          'transition-all duration-200',
+        ].join(' '),
+
+        // Pill - Full rounded variant (POR-58)
+        pill: [
+          'btn-primary-premium btn-pill',
+          'text-white',
+        ].join(' '),
+
+        // Ghost Premium - Subtle border with accent hover (POR-58)
+        ghostPremium: [
+          'btn-ghost-premium',
+        ].join(' '),
+
+        // Icon Only - Square button for icons (POR-58)
+        iconOnly: [
+          'btn-icon-only bg-transparent',
+          'border-[1.5px] border-border',
+          'hover:bg-muted hover:border-brand-primary/50',
+          'active:bg-muted/80',
+          'transition-all duration-200',
         ].join(' '),
       },
       size: {
-        sm: 'h-9 px-3 text-sm rounded-lg',
-        md: 'h-11 px-5 text-base rounded-xl',
-        lg: 'h-13 px-7 text-lg rounded-xl',
-        xl: 'h-14 px-8 text-xl rounded-2xl',
+        sm: 'h-9 px-4 text-sm rounded-lg',
+        md: 'h-11 px-6 text-base rounded-xl',
+        lg: 'h-13 px-8 text-lg rounded-xl',
+        xl: 'h-14 px-10 text-xl rounded-2xl btn-xl',
         icon: 'h-10 w-10 rounded-lg',
+        iconSm: 'h-9 w-9 rounded-lg',
+        iconMd: 'h-11 w-11 rounded-xl',
+        iconLg: 'h-13 w-13 rounded-xl',
       },
     },
     defaultVariants: {

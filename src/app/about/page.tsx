@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { getTranslations } from 'next-intl/server'
+import { AboutPageClient } from '@/components/pages/about-page-client'
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('metadata')
@@ -13,31 +14,48 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function AboutPage() {
   const t = await getTranslations('about')
 
+  const values = [
+    {
+      key: 'open_source',
+      title: t('value_open_source_title'),
+      description: t('value_open_source_description'),
+      iconName: 'Code2',
+      color: 'from-blue-500 to-cyan-500'
+    },
+    {
+      key: 'community',
+      title: t('value_community_title'),
+      description: t('value_community_description'),
+      iconName: 'Users',
+      color: 'from-violet-500 to-purple-500'
+    },
+    {
+      key: 'free',
+      title: t('value_free_title'),
+      description: t('value_free_description'),
+      iconName: 'Heart',
+      color: 'from-rose-500 to-pink-500'
+    }
+  ]
+
+  const translations = {
+    hero_badge: t('hero_badge'),
+    hero_title: t('hero_title'),
+    hero_subtitle: t('hero_subtitle'),
+    mission_title: t('mission_title'),
+    mission_text: t('mission_text'),
+    values_title: t('values_title'),
+    values_subtitle: t('values_subtitle'),
+    cta_title: t('cta_title'),
+    cta_subtitle: t('cta_subtitle'),
+    cta_button_primary: t('cta_button_primary'),
+    cta_button_secondary: t('cta_button_secondary')
+  }
+
   return (
-    <div className="container mx-auto px-4 py-24 md:py-32 lg:py-40">
-      <div className="max-w-3xl mx-auto">
-        <h1 className="text-4xl font-bold mb-6">{t('title')}</h1>
-
-        <div className="space-y-6 text-lg">
-          <p>
-            {t('intro')}
-          </p>
-
-          <h2 className="text-2xl font-semibold mt-8 mb-4">{t('mission_title')}</h2>
-          <p>
-            {t('mission_text')}
-          </p>
-
-          <h2 className="text-2xl font-semibold mt-8 mb-4">{t('features_title')}</h2>
-          <ul className="list-disc list-inside space-y-2">
-            <li>{t('feature_1')}</li>
-            <li>{t('feature_2')}</li>
-            <li>{t('feature_3')}</li>
-            <li>{t('feature_4')}</li>
-            <li>{t('feature_5')}</li>
-          </ul>
-        </div>
-      </div>
-    </div>
+    <AboutPageClient
+      values={values}
+      t={translations}
+    />
   )
 }

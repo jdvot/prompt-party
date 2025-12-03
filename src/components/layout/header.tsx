@@ -65,12 +65,29 @@ const secondaryNavGroups = [
   },
 ]
 
+// Scroll threshold for triggering glassmorphism effect
+const SCROLL_THRESHOLD = 10
+
 export function Header() {
   const { user, loading } = useUser()
   const { showHelp } = useShortcuts()
   const t = useTranslations('nav')
   const pathname = usePathname()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  // Scroll detection for glassmorphism effect
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > SCROLL_THRESHOLD)
+    }
+
+    // Check initial scroll position
+    handleScroll()
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   // Scroll lock when mobile menu is open
   useEffect(() => {
@@ -92,9 +109,19 @@ export function Header() {
   )
 
   return (
-    <header className="border-b border-border/40 bg-background/95 backdrop-blur-sm supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
+    <header
+      className={cn(
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-out",
+        isScrolled
+          ? "header-glass border-b py-2"
+          : "header-transparent bg-transparent py-4 border-transparent"
+      )}
+    >
         <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16 gap-4">
+          <div className={cn(
+            "flex items-center justify-between gap-4 transition-all duration-300",
+            isScrolled ? "h-14" : "h-16"
+          )}>
             {/* Logo - Left */}
             <Link
               href="/"
@@ -121,16 +148,12 @@ export function Header() {
                     key={link.href}
                     href={link.href}
                     className={cn(
-                      "px-3 py-2 text-sm font-medium rounded-md relative",
+                      "nav-link px-3 py-2 text-sm font-medium rounded-md",
                       `transition-all ${TRANSITION_DURATION} ${TRANSITION_TIMING}`,
                       "motion-reduce:transition-none",
-                      "after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2",
-                      "after:h-0.5 after:bg-primary",
-                      `after:transition-all after:${TRANSITION_DURATION} after:${TRANSITION_TIMING}`,
-                      "motion-reduce:after:transition-none",
                       isActive
-                        ? "text-foreground after:w-3/4 bg-muted/50"
-                        : "text-muted-foreground hover:text-foreground hover:bg-muted/50 after:w-0"
+                        ? "text-foreground nav-link-active"
+                        : "text-muted-foreground hover:text-foreground"
                     )}
                     aria-current={isActive ? 'page' : undefined}
                   >
@@ -151,8 +174,10 @@ export function Header() {
                       "motion-reduce:transition-none"
                     )}
                   >
-                    {t('more_label') || 'More'}
-                    <MoreHorizontal className="w-4 h-4 opacity-70" />
+                    <span className="inline-flex items-center gap-1">
+                      {t('more_label') || 'More'}
+                      <MoreHorizontal className="w-4 h-4 opacity-70" />
+                    </span>
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="start" className="w-56">
@@ -176,8 +201,10 @@ export function Header() {
                               )}
                               aria-current={isActive ? 'page' : undefined}
                             >
-                              <Icon className="w-4 h-4" aria-hidden="true" />
-                              {t(link.label)}
+                              <span className="inline-flex items-center gap-2">
+                                <Icon className="w-4 h-4" aria-hidden="true" />
+                                {t(link.label)}
+                              </span>
                             </Link>
                           </DropdownMenuItem>
                         )

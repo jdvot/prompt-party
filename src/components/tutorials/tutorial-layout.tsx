@@ -100,34 +100,47 @@ export function TutorialLayout({
         Back to tutorials
       </Link>
 
+      {/* Mobile Progress Tracker - Shown at top on mobile */}
+      <div className="lg:hidden mb-8">
+        <TutorialProgress
+          tutorialId={tutorialId}
+          title={title}
+          duration={duration}
+          level={level}
+          rewardPoints={finalRewardPoints}
+          rewardBadge={rewardBadge || ''}
+          completed={false}
+        />
+      </div>
+
       {/* Two-column layout */}
       <div className="grid lg:grid-cols-[1fr_300px] gap-8 w-full">
         <div className="w-full">
           {/* Header */}
           <div className="mb-8">
-            <div className="flex items-center gap-3 mb-4">
+            <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-4">
               <Badge className={badgeColor}>{badge}</Badge>
               <Badge variant="outline">{duration}</Badge>
             </div>
-            <h1 className="text-4xl font-bold mb-4">{title}</h1>
-            <p className="text-xl text-muted-foreground">{subtitle}</p>
+            <h1 className="text-3xl sm:text-4xl font-bold mb-4">{title}</h1>
+            <p className="text-lg sm:text-xl text-muted-foreground">{subtitle}</p>
           </div>
 
           {/* What You'll Learn */}
           {objectives.length > 0 && (
             <Card className="mb-8 border-primary/20 bg-primary/5">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Icons.Lightbulb className="w-5 h-5 text-primary" />
+              <CardHeader className="p-4 sm:p-6">
+                <CardTitle className="flex items-center gap-2 text-lg sm:text-xl">
+                  <Icons.Lightbulb className="w-5 h-5 text-primary flex-shrink-0" />
                   {whatYouLearnTitle}
                 </CardTitle>
               </CardHeader>
-              <CardContent>
-                <ul className="space-y-2">
+              <CardContent className="p-4 sm:p-6 pt-0 sm:pt-0">
+                <ul className="space-y-2 sm:space-y-3">
                   {objectives.map((objective, index) => (
                     <li key={index} className="flex items-start gap-2">
-                      <Icons.CheckCircle className="w-5 h-5 text-primary mt-0.5" />
-                      <span>{objective}</span>
+                      <Icons.CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                      <span className="text-sm sm:text-base">{objective}</span>
                     </li>
                   ))}
                 </ul>
@@ -136,10 +149,10 @@ export function TutorialLayout({
           )}
 
           {/* Main Content */}
-          <div className="space-y-8 w-full">{children}</div>
+          <div className="space-y-6 sm:space-y-8 w-full">{children}</div>
         </div>
 
-        {/* Sidebar - Progress Tracker */}
+        {/* Sidebar - Progress Tracker (Desktop only) */}
         <aside className="hidden lg:block">
           <TutorialProgress
             tutorialId={tutorialId}

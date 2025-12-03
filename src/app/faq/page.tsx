@@ -1,6 +1,6 @@
-import { useTranslations } from 'next-intl'
-import { getTranslations } from 'next-intl/server'
 import type { Metadata } from 'next'
+import { getTranslations } from 'next-intl/server'
+import { FAQPageClient } from '@/components/pages/faq-page-client'
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('faq')
@@ -10,41 +10,33 @@ export async function generateMetadata(): Promise<Metadata> {
   }
 }
 
-export default function FAQPage() {
-  const t = useTranslations('faq')
+export default async function FAQPage() {
+  const t = await getTranslations('faq')
 
   const faqs = [
-    { q: 'q1', a: 'a1' },
-    { q: 'q2', a: 'a2' },
-    { q: 'q3', a: 'a3' },
-    { q: 'q4', a: 'a4' },
-    { q: 'q5', a: 'a5' },
-    { q: 'q6', a: 'a6' },
-    { q: 'q7', a: 'a7' },
-    { q: 'q8', a: 'a8' },
+    { question: t('q1'), answer: t('a1') },
+    { question: t('q2'), answer: t('a2') },
+    { question: t('q3'), answer: t('a3') },
+    { question: t('q4'), answer: t('a4') },
+    { question: t('q5'), answer: t('a5') },
+    { question: t('q6'), answer: t('a6') },
+    { question: t('q7'), answer: t('a7') },
+    { question: t('q8'), answer: t('a8') },
   ]
 
+  const translations = {
+    hero_badge: t('hero_badge'),
+    hero_title: t('title'),
+    hero_subtitle: t('hero_subtitle'),
+    contact_title: t('still_questions'),
+    contact_text: t('contact_text'),
+    contact_button: t('contact_button')
+  }
+
   return (
-    <div className="container mx-auto px-4 py-24 md:py-32 lg:py-40">
-      <div className="max-w-3xl mx-auto">
-        <h1 className="text-4xl font-bold mb-8">{t('title')}</h1>
-
-        <div className="space-y-6">
-          {faqs.map((faq, index) => (
-            <div key={index} className="border-b pb-6">
-              <h2 className="text-xl font-semibold mb-2">{t(faq.q as any)}</h2>
-              <p className="text-muted-foreground">{t(faq.a as any)}</p>
-            </div>
-          ))}
-        </div>
-
-        <div className="mt-12 p-6 bg-muted/50 rounded-lg">
-          <h2 className="text-xl font-semibold mb-2">{t('still_questions')}</h2>
-          <p className="text-muted-foreground">
-            {t('contact_text')}
-          </p>
-        </div>
-      </div>
-    </div>
+    <FAQPageClient
+      faqs={faqs}
+      t={translations}
+    />
   )
 }

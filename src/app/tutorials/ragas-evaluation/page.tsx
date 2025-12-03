@@ -718,7 +718,7 @@ const ragas = new Ragas({
               <ul className="space-y-1">
                 <li>• <a href="https://docs.ragas.io" target="_blank" rel="noopener" className="text-primary hover:underline">{t('read_ragas_docs')}</a></li>
                 <li>• <a href="https://github.com/explodinggradients/ragas" target="_blank" rel="noopener" className="text-primary hover:underline">{t('github_repo')}</a></li>
-                <li>• <Link href="/prompts" className="text-primary hover:underline">{t('browse_community')}</Link></li>
+                <li>• <Link href="/trending" className="text-primary hover:underline">{t('browse_community')}</Link></li>
               </ul>
             </div>
           </CardContent>

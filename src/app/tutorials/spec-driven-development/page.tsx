@@ -419,7 +419,7 @@ Allow users to mark prompts as favorites and organize them in custom collections
               <ul className="space-y-1">
                 <li>• <a href="https://github.com" target="_blank" rel="noopener" className="text-primary hover:underline">{t('github_guide')}</a></li>
                 <li>• <a href="https://docs.github.com/en/issues" target="_blank" rel="noopener" className="text-primary hover:underline">{t('github_issues_docs')}</a></li>
-                <li>• <Link href="/prompts" className="text-primary hover:underline">{t('browse_prompts')}</Link></li>
+                <li>• <Link href="/trending" className="text-primary hover:underline">{t('browse_prompts')}</Link></li>
               </ul>
             </div>
           </CardContent>

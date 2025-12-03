@@ -369,7 +369,7 @@ export default async function IntroPromptsTutorial() {
               <p className="font-semibold mb-2">{tCommon('keep_learning')}</p>
               <ul className="space-y-1">
                 <li>• {t.rich('keep_learning_prompts', {
-                  link: (chunks) => <Link href="/prompts" className="text-primary hover:underline">{chunks}</Link>
+                  link: (chunks) => <Link href="/trending" className="text-primary hover:underline">{chunks}</Link>
                 })}</li>
                 <li>• {t.rich('keep_learning_wizard', {
                   link: (chunks) => <Link href="/prompts/wizard" className="text-primary hover:underline">{chunks}</Link>

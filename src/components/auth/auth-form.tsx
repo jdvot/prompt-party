@@ -151,6 +151,7 @@ export function AuthForm({ mode }: AuthFormProps) {
                 <Input
                   id="name"
                   type="text"
+                  autoComplete="name"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   required
@@ -165,6 +166,7 @@ export function AuthForm({ mode }: AuthFormProps) {
               <Input
                 id="email"
                 type="email"
+                autoComplete="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
@@ -179,6 +181,7 @@ export function AuthForm({ mode }: AuthFormProps) {
                 <Input
                   id="password"
                   type={showPassword ? "text" : "password"}
+                  autoComplete={mode === 'signup' ? 'new-password' : 'current-password'}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required

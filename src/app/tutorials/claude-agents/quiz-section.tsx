@@ -1,74 +1,77 @@
 'use client'
 
 import { Quiz } from '@/components/tutorials/quiz'
+import { useTranslations } from 'next-intl'
 
 export function ClaudeAgentsQuiz() {
+  const t = useTranslations('tutorials.claudeAgents.quiz')
+
   const questions = [
     {
-      question: "Qu'est-ce qu'un agent IA ?",
+      question: t('q1_question'),
       options: [
-        "Un simple chatbot",
-        "Un système IA autonome capable d'exécuter des tâches et prendre des décisions",
-        "Un humain qui utilise l'IA",
-        "Un plugin pour navigateur"
+        t('q1_option_1'),
+        t('q1_option_2'),
+        t('q1_option_3'),
+        t('q1_option_4')
       ],
       correctAnswer: 1,
-      explanation: "Un agent IA est un système autonome qui peut analyser une situation, planifier des actions, utiliser des outils, et exécuter des tâches de manière semi-autonome pour atteindre un objectif."
+      explanation: t('q1_explanation')
     },
     {
-      question: "Quelle est la différence entre un prompt simple et un agent ?",
+      question: t('q2_question'),
       options: [
-        "Il n'y a pas de différence",
-        "L'agent peut utiliser des outils, maintenir un état, et exécuter plusieurs étapes",
-        "L'agent est toujours meilleur",
-        "Le prompt est plus rapide"
+        t('q2_option_1'),
+        t('q2_option_2'),
+        t('q2_option_3'),
+        t('q2_option_4')
       ],
       correctAnswer: 1,
-      explanation: "Un prompt simple donne une réponse directe. Un agent peut utiliser des outils (API, bases de données), maintenir un contexte/état, planifier et exécuter plusieurs étapes pour accomplir une tâche complexe."
+      explanation: t('q2_explanation')
     },
     {
-      question: "Quels sont les composants essentiels d'un agent Claude ?",
+      question: t('q3_question'),
       options: [
-        "Uniquement le prompt",
-        "Prompt système + Outils (tools) + Boucle de raisonnement",
-        "Juste une API",
-        "Un prompt très long"
+        t('q3_option_1'),
+        t('q3_option_2'),
+        t('q3_option_3'),
+        t('q3_option_4')
       ],
       correctAnswer: 1,
-      explanation: "Un agent Claude nécessite : 1) Un prompt système définissant son rôle et objectifs, 2) Des outils qu'il peut utiliser (function calling), 3) Une boucle permettant le raisonnement et l'exécution itérative."
+      explanation: t('q3_explanation')
     },
     {
-      question: "Qu'est-ce que le 'function calling' dans Claude ?",
+      question: t('q4_question'),
       options: [
-        "Appeler des fonctions JavaScript",
-        "Permettre à Claude de décider quand et comment utiliser des outils externes",
-        "Une erreur de code",
-        "Une fonction spéciale de Python"
+        t('q4_option_1'),
+        t('q4_option_2'),
+        t('q4_option_3'),
+        t('q4_option_4')
       ],
       correctAnswer: 1,
-      explanation: "Le function calling permet à Claude de décider de façon autonome quand utiliser des outils externes (appels API, requêtes DB, calculs), avec quels paramètres, et comment interpréter les résultats."
+      explanation: t('q4_explanation')
     },
     {
-      question: "Quel cas d'usage est idéal pour un agent Claude ?",
+      question: t('q5_question'),
       options: [
-        "Répondre à une question simple",
-        "Rechercher des infos, analyser des données, et générer un rapport complet",
-        "Afficher l'heure",
-        "Traduire un mot"
+        t('q5_option_1'),
+        t('q5_option_2'),
+        t('q5_option_3'),
+        t('q5_option_4')
       ],
       correctAnswer: 1,
-      explanation: "Les agents excellent dans les tâches multi-étapes comme : rechercher des informations via APIs, analyser et croiser des données, prendre des décisions basées sur les résultats, et générer un livrable final."
+      explanation: t('q5_explanation')
     }
   ]
 
   return (
     <Quiz
       tutorialId="claude-agents"
-      title="Quiz de validation"
-      description="Teste ta compréhension des agents Claude"
+      title={t('title')}
+      description={t('description')}
       questions={questions}
       rewardPoints={150}
-      rewardBadge="Expert Certifié 🚀"
+      rewardBadge={t('reward_badge')}
     />
   )
 }

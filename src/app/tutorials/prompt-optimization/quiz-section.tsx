@@ -1,74 +1,77 @@
 'use client'
 
 import { Quiz } from '@/components/tutorials/quiz'
+import { useTranslations } from 'next-intl'
 
 export function PromptOptimizationQuiz() {
+  const t = useTranslations('tutorials.prompt_optimization.quiz')
+
   const questions = [
     {
-      question: "Qu'est-ce que l'optimisation de prompts ?",
+      question: t('q1_question'),
       options: [
-        "Rendre les prompts plus courts",
-        "Itérer et améliorer les prompts pour obtenir de meilleurs résultats",
-        "Utiliser uniquement des mots compliqués",
-        "Copier les prompts des autres"
+        t('q1_option_1'),
+        t('q1_option_2'),
+        t('q1_option_3'),
+        t('q1_option_4')
       ],
       correctAnswer: 1,
-      explanation: "L'optimisation consiste à tester, analyser et améliorer itérativement vos prompts pour obtenir des résultats de meilleure qualité, plus précis ou plus adaptés à votre besoin."
+      explanation: t('q1_explanation')
     },
     {
-      question: "Quelle est la première étape pour optimiser un prompt ?",
+      question: t('q2_question'),
       options: [
-        "Le rendre plus long",
-        "Mesurer les résultats actuels et définir ce qui doit être amélioré",
-        "Changer tous les mots",
-        "Demander à quelqu'un d'autre"
+        t('q2_option_1'),
+        t('q2_option_2'),
+        t('q2_option_3'),
+        t('q2_option_4')
       ],
       correctAnswer: 1,
-      explanation: "Avant d'optimiser, il faut d'abord mesurer les résultats actuels et identifier précisément ce qui ne fonctionne pas ou pourrait être amélioré."
+      explanation: t('q2_explanation')
     },
     {
-      question: "Comment mesurer l'efficacité d'un prompt ?",
+      question: t('q3_question'),
       options: [
-        "Au feeling seulement",
-        "Définir des métriques claires (pertinence, précision, format, cohérence)",
-        "Compter le nombre de mots",
-        "Ne jamais mesurer"
+        t('q3_option_1'),
+        t('q3_option_2'),
+        t('q3_option_3'),
+        t('q3_option_4')
       ],
       correctAnswer: 1,
-      explanation: "Il faut définir des critères mesurables : pertinence de la réponse, précision des informations, respect du format demandé, cohérence, etc."
+      explanation: t('q3_explanation')
     },
     {
-      question: "Quelle technique d'optimisation est la plus efficace ?",
+      question: t('q4_question'),
       options: [
-        "Changer au hasard",
-        "A/B testing : tester plusieurs variations et comparer les résultats",
-        "Ne rien changer",
-        "Toujours utiliser le prompt le plus long possible"
+        t('q4_option_1'),
+        t('q4_option_2'),
+        t('q4_option_3'),
+        t('q4_option_4')
       ],
       correctAnswer: 1,
-      explanation: "L'A/B testing permet de comparer objectivement plusieurs variations d'un prompt et d'identifier ce qui fonctionne le mieux. C'est une approche scientifique et efficace."
+      explanation: t('q4_explanation')
     },
     {
-      question: "Quand faut-il arrêter d'optimiser un prompt ?",
+      question: t('q5_question'),
       options: [
-        "Jamais, optimiser à l'infini",
-        "Après la première modification",
-        "Quand les résultats atteignent les objectifs fixés et que les gains marginaux ne justifient plus l'effort",
-        "Quand on en a marre"
+        t('q5_option_1'),
+        t('q5_option_2'),
+        t('q5_option_3'),
+        t('q5_option_4')
       ],
       correctAnswer: 2,
-      explanation: "L'optimisation doit s'arrêter quand les résultats sont satisfaisants et que les améliorations supplémentaires seraient minimes par rapport à l'effort investi. C'est une question de ROI (retour sur investissement)."
+      explanation: t('q5_explanation')
     }
   ]
 
   return (
     <Quiz
       tutorialId="prompt-optimization"
-      title="Quiz de validation"
-      description="Valide tes connaissances en optimisation de prompts"
+      title={t('title')}
+      description={t('description')}
       questions={questions}
       rewardPoints={100}
-      rewardBadge="Intermédiaire Certifié 🧠"
+      rewardBadge={t('reward_badge')}
     />
   )
 }

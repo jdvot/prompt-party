@@ -130,11 +130,11 @@ export function HomePageClient({ translations: t, stats }: HomePageClientProps) 
   return (
     <>
       {/* Hero Section - Enhanced with Parallax */}
-      <Section variant="gradient" spacing="xl">
+      <Section background="gradient" spacing="xl">
         <Container size="lg">
-          <div className="grid lg:grid-cols-2 gap-16 items-center py-16">
+          <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center py-8 sm:py-12 lg:py-16">
             {/* Left: Content */}
-            <div className="text-center lg:text-left space-y-8">
+            <div className="text-center lg:text-left space-y-6 sm:space-y-8">
               <AnimatedContainer animation="slide-up" delay={0.1}>
                 <Badge
                   variant="soft"
@@ -146,8 +146,8 @@ export function HomePageClient({ translations: t, stats }: HomePageClientProps) 
               </AnimatedContainer>
 
               <AnimatedContainer animation="slide-up" delay={0.2}>
-                <div className="space-y-6">
-                  <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight">
+                <div className="space-y-4 sm:space-y-6">
+                  <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight">
                     {t.hero.title_line1}{' '}
                     <motion.span
                       className="bg-gradient-to-r from-indigo-600 via-violet-600 to-cyan-500 bg-clip-text text-transparent"
@@ -167,38 +167,40 @@ export function HomePageClient({ translations: t, stats }: HomePageClientProps) 
                     </motion.span>
                   </h1>
 
-                  <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
+                  <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground leading-relaxed">
                     {t.hero.subtitle}
                   </p>
                 </div>
               </AnimatedContainer>
 
               <AnimatedContainer animation="slide-up" delay={0.3}>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
                   <motion.div
                     whileHover={{ scale: 1.05, y: -2 }}
                     whileTap={{ scale: 0.95 }}
+                    className="w-full sm:w-auto"
                   >
                     <Link
                       href="/tutorials/paths/beginner"
                       className={cn(
                         buttonVariants({ size: "lg" }),
-                        "text-lg px-8 h-14 shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30"
+                        "w-full sm:w-auto text-base sm:text-lg px-6 sm:px-8 h-12 sm:h-14 shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30"
                       )}
                     >
                       {t.hero.cta_primary}
-                      <ArrowRightIcon className="w-5 h-5 ml-2" />
+                      <ArrowRightIcon className="w-4 sm:w-5 h-4 sm:h-5 ml-2" />
                     </Link>
                   </motion.div>
                   <motion.div
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
+                    className="w-full sm:w-auto"
                   >
                     <Link
                       href="/tutorials"
                       className={cn(
                         buttonVariants({ variant: "outline", size: "lg" }),
-                        "text-lg px-8 h-14"
+                        "w-full sm:w-auto text-base sm:text-lg px-6 sm:px-8 h-12 sm:h-14"
                       )}
                     >
                       {t.hero.cta_secondary}
@@ -209,29 +211,29 @@ export function HomePageClient({ translations: t, stats }: HomePageClientProps) 
 
               {/* Simple Stats with Stagger Animation */}
               <AnimatedContainer animation="slide-up" delay={0.4}>
-                <div className="grid grid-cols-3 gap-6 pt-8 border-t border-border/50">
+                <div className="grid grid-cols-3 gap-3 sm:gap-6 pt-6 sm:pt-8 border-t border-border/50">
                   <StaggerContainer staggerDelay={0.15}>
                     <motion.div whileHover={{ scale: 1.05, y: -2 }}>
-                      <div className="text-3xl font-bold bg-gradient-to-r from-indigo-600 to-violet-600 bg-clip-text text-transparent">
+                      <div className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-indigo-600 to-violet-600 bg-clip-text text-transparent">
                         {stats.totalUsers || 0}+
                       </div>
-                      <div className="text-sm text-muted-foreground mt-1">
+                      <div className="text-xs sm:text-sm text-muted-foreground mt-1">
                         {t.hero.stat_learners}
                       </div>
                     </motion.div>
                     <motion.div whileHover={{ scale: 1.05, y: -2 }}>
-                      <div className="text-3xl font-bold bg-gradient-to-r from-violet-600 to-cyan-500 bg-clip-text text-transparent">
+                      <div className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-violet-600 to-cyan-500 bg-clip-text text-transparent">
                         {stats.totalPrompts || 0}+
                       </div>
-                      <div className="text-sm text-muted-foreground mt-1">
+                      <div className="text-xs sm:text-sm text-muted-foreground mt-1">
                         {t.hero.stat_prompts}
                       </div>
                     </motion.div>
                     <motion.div whileHover={{ scale: 1.05, y: -2 }}>
-                      <div className="text-3xl font-bold bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">
+                      <div className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">
                         {t.hero.stat_free_value}
                       </div>
-                      <div className="text-sm text-muted-foreground mt-1">
+                      <div className="text-xs sm:text-sm text-muted-foreground mt-1">
                         {t.hero.stat_free_label}
                       </div>
                     </motion.div>
@@ -266,17 +268,17 @@ export function HomePageClient({ translations: t, stats }: HomePageClientProps) 
       <Section spacing="xl">
         <Container size="lg">
           <AnimatedContainer animation="slide-up">
-            <div className="text-center mb-16 space-y-4">
-              <h2 className="text-4xl md:text-5xl font-bold">
+            <div className="text-center mb-8 sm:mb-12 lg:mb-16 space-y-3 sm:space-y-4">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold">
                 {t.features.section_title}
               </h2>
-              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
                 {t.features.section_subtitle}
               </p>
             </div>
           </AnimatedContainer>
 
-          <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-4 gap-8" staggerDelay={0.1}>
+          <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8" staggerDelay={0.1}>
             {features.map((feature) => {
               const Icon = feature.icon
               return (
@@ -286,7 +288,7 @@ export function HomePageClient({ translations: t, stats }: HomePageClientProps) 
                   className="group block"
                 >
                   <motion.div
-                    className="h-full p-8 rounded-2xl border-2 border-border/50 bg-card relative overflow-hidden"
+                    className="h-full p-4 sm:p-6 lg:p-8 rounded-2xl border-2 border-border/50 bg-card relative overflow-hidden"
                     whileHover={{
                       borderColor: 'hsl(var(--primary) / 0.5)',
                       y: -4,
@@ -303,16 +305,16 @@ export function HomePageClient({ translations: t, stats }: HomePageClientProps) 
 
                     <div className="relative">
                       <motion.div
-                        className={`w-14 h-14 rounded-xl bg-gradient-to-br ${feature.color} flex items-center justify-center mb-6 shadow-lg`}
+                        className={`w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-br ${feature.color} flex items-center justify-center mb-4 sm:mb-6 shadow-lg`}
                         whileHover={{ scale: 1.1, rotate: 5 }}
                         transition={{ duration: 0.3 }}
                       >
-                        <Icon className="w-7 h-7 text-white" />
+                        <Icon className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
                       </motion.div>
-                      <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">
+                      <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 group-hover:text-primary transition-colors">
                         {feature.title}
                       </h3>
-                      <p className="text-muted-foreground leading-relaxed">
+                      <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                         {feature.description}
                       </p>
                     </div>
@@ -328,17 +330,17 @@ export function HomePageClient({ translations: t, stats }: HomePageClientProps) 
       <Section spacing="xl" className="bg-muted/30">
         <Container size="lg">
           <AnimatedContainer animation="slide-up">
-            <div className="text-center mb-16 space-y-4">
-              <h2 className="text-4xl md:text-5xl font-bold">
+            <div className="text-center mb-8 sm:mb-12 lg:mb-16 space-y-3 sm:space-y-4">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold">
                 {t.steps.section_title}
               </h2>
-              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
                 {t.steps.section_subtitle}
               </p>
             </div>
           </AnimatedContainer>
 
-          <StaggerContainer className="grid md:grid-cols-3 gap-12 max-w-5xl mx-auto" staggerDelay={0.15}>
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 lg:gap-12 max-w-5xl mx-auto" staggerDelay={0.15}>
             {steps.map((step, index) => {
               const Icon = step.icon
               return (
@@ -371,21 +373,21 @@ export function HomePageClient({ translations: t, stats }: HomePageClientProps) 
                   </motion.div>
 
                   <motion.div
-                    className="pt-10 p-8 rounded-2xl bg-card border-2 border-border/50 h-full relative overflow-hidden"
+                    className="pt-8 sm:pt-10 p-4 sm:p-6 lg:p-8 rounded-2xl bg-card border-2 border-border/50 h-full relative overflow-hidden"
                     whileHover={{
                       borderColor: 'hsl(var(--primary) / 0.5)',
                       boxShadow: '0 20px 25px -5px rgb(0 0 0 / 0.1)'
                     }}
                   >
                     <motion.div
-                      className="w-16 h-16 rounded-2xl bg-gradient-to-br from-indigo-50 to-violet-50 dark:from-indigo-950 dark:to-violet-950 flex items-center justify-center mx-auto mb-6"
+                      className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-indigo-50 to-violet-50 dark:from-indigo-950 dark:to-violet-950 flex items-center justify-center mx-auto mb-4 sm:mb-6"
                       whileHover={{ rotate: [0, -10, 10, -10, 0] }}
                       transition={{ duration: 0.5 }}
                     >
-                      <Icon className="w-8 h-8 text-primary" />
+                      <Icon className="w-7 h-7 sm:w-8 sm:h-8 text-primary" />
                     </motion.div>
-                    <h3 className="text-2xl font-bold mb-4">{step.title}</h3>
-                    <p className="text-muted-foreground leading-relaxed">
+                    <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">{step.title}</h3>
+                    <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                       {step.description}
                     </p>
                   </motion.div>
@@ -401,7 +403,7 @@ export function HomePageClient({ translations: t, stats }: HomePageClientProps) 
         <Container size="md">
           <AnimatedContainer animation="zoom" delay={0.2}>
             <motion.div
-              className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-indigo-600 via-violet-600 to-cyan-500 p-12 md:p-16 text-center text-white shadow-2xl"
+              className="relative overflow-hidden rounded-2xl sm:rounded-3xl bg-gradient-to-br from-indigo-600 via-violet-600 to-cyan-500 p-6 sm:p-10 md:p-12 lg:p-16 text-center text-white shadow-2xl"
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.3 }}
             >
@@ -418,51 +420,51 @@ export function HomePageClient({ translations: t, stats }: HomePageClientProps) 
                 }}
               />
 
-              <div className="relative z-10 space-y-8">
+              <div className="relative z-10 space-y-6 sm:space-y-8">
                 <FloatingElement duration={3} intensity={8}>
-                  <RocketIcon className="w-20 h-20 mx-auto opacity-90" />
+                  <RocketIcon className="w-16 h-16 sm:w-20 sm:h-20 mx-auto opacity-90" />
                 </FloatingElement>
 
                 <motion.div
-                  className="space-y-4"
+                  className="space-y-3 sm:space-y-4"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3 }}
                   viewport={{ once: true }}
                 >
-                  <h2 className="text-4xl md:text-5xl font-bold">
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
                     {t.cta.title}
                   </h2>
-                  <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto">
+                  <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 max-w-2xl mx-auto px-2">
                     {t.cta.subtitle}
                   </p>
                 </motion.div>
 
                 <motion.div
-                  className="flex flex-col sm:flex-row gap-4 justify-center pt-4"
+                  className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center pt-2 sm:pt-4"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 }}
                   viewport={{ once: true }}
                 >
-                  <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                  <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full sm:w-auto">
                     <Link
                       href="/tutorials/paths/beginner"
                       className={cn(
                         buttonVariants({ size: "lg" }),
-                        "bg-white text-indigo-600 hover:bg-white/90 text-lg px-10 h-14 shadow-xl"
+                        "w-full sm:w-auto bg-white text-indigo-600 hover:bg-white/90 text-base sm:text-lg px-6 sm:px-10 h-12 sm:h-14 shadow-xl"
                       )}
                     >
                       {t.cta.button_primary}
-                      <ArrowRightIcon className="w-5 h-5 ml-2" />
+                      <ArrowRightIcon className="w-4 sm:w-5 h-4 sm:h-5 ml-2" />
                     </Link>
                   </motion.div>
-                  <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                  <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full sm:w-auto">
                     <Link
                       href="/pricing"
                       className={cn(
                         buttonVariants({ variant: "outline", size: "lg" }),
-                        "border-white text-white hover:bg-white/10 text-lg px-10 h-14"
+                        "w-full sm:w-auto border-white text-white hover:bg-white/10 text-base sm:text-lg px-6 sm:px-10 h-12 sm:h-14"
                       )}
                     >
                       {t.cta.button_secondary}
@@ -471,7 +473,7 @@ export function HomePageClient({ translations: t, stats }: HomePageClientProps) 
                 </motion.div>
 
                 <motion.p
-                  className="text-sm text-white/70 pt-4"
+                  className="text-xs sm:text-sm text-white/70 pt-2 sm:pt-4"
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   transition={{ delay: 0.6 }}

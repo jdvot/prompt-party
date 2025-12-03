@@ -1,74 +1,77 @@
 'use client'
 
 import { Quiz } from '@/components/tutorials/quiz'
+import { useTranslations } from 'next-intl'
 
 export function CodeGenerationQuiz() {
+  const t = useTranslations('tutorials.code_generation.quiz')
+
   const questions = [
     {
-      question: "Quelle est la clé pour obtenir du code de qualité avec l'IA ?",
+      question: t('q1_question'),
       options: [
-        "Demander simplement 'écris du code'",
-        "Fournir contexte, contraintes, stack technique, et exemples",
-        "Copier-coller sans lire",
-        "Utiliser uniquement des mots techniques"
+        t('q1_option_1'),
+        t('q1_option_2'),
+        t('q1_option_3'),
+        t('q1_option_4')
       ],
       correctAnswer: 1,
-      explanation: "Pour du bon code, il faut spécifier : le contexte du projet, la stack technique (langages, frameworks), les contraintes (performance, sécurité), et idéalement des exemples du style de code attendu."
+      explanation: t('q1_explanation')
     },
     {
-      question: "Comment demander du code sécurisé et robuste ?",
+      question: t('q2_question'),
       options: [
-        "Ne rien spécifier, l'IA sait",
-        "Demander explicitement gestion d'erreurs, validation, et bonnes pratiques",
-        "Demander du code court uniquement",
-        "Utiliser des variables courtes"
+        t('q2_option_1'),
+        t('q2_option_2'),
+        t('q2_option_3'),
+        t('q2_option_4')
       ],
       correctAnswer: 1,
-      explanation: "Il faut explicitement demander : la gestion d'erreurs (try/catch), la validation des inputs, le respect des bonnes pratiques de sécurité, et les tests si nécessaire. L'IA ne le fait pas automatiquement."
+      explanation: t('q2_explanation')
     },
     {
-      question: "Quelle approche donne les meilleurs résultats ?",
+      question: t('q3_question'),
       options: [
-        "Demander tout le projet d'un coup",
-        "Approche incrémentale : fonction par fonction, avec feedback",
-        "Copier du code existant",
-        "Ne jamais tester le code généré"
+        t('q3_option_1'),
+        t('q3_option_2'),
+        t('q3_option_3'),
+        t('q3_option_4')
       ],
       correctAnswer: 1,
-      explanation: "L'approche incrémentale (générer une fonction, la tester, donner du feedback, puis continuer) donne de bien meilleurs résultats que demander un projet complet d'un coup."
+      explanation: t('q3_explanation')
     },
     {
-      question: "Que faire si le code généré ne fonctionne pas ?",
+      question: t('q4_question'),
       options: [
-        "Abandonner",
-        "Fournir l'erreur exacte et le contexte pour que l'IA corrige",
-        "Recommencer de zéro sans explication",
-        "Changer d'IA"
+        t('q4_option_1'),
+        t('q4_option_2'),
+        t('q4_option_3'),
+        t('q4_option_4')
       ],
       correctAnswer: 1,
-      explanation: "Copiez l'erreur exacte, expliquez ce qui ne fonctionne pas, donnez le contexte, et demandez une correction. L'IA apprend de ses erreurs quand vous lui donnez du feedback précis."
+      explanation: t('q4_explanation')
     },
     {
-      question: "Comment obtenir du code maintenable et documenté ?",
+      question: t('q5_question'),
       options: [
-        "L'IA documente toujours automatiquement",
-        "Demander explicitement comments, documentation, et naming clair",
-        "Ne jamais documenter",
-        "Utiliser des noms de variables d'une lettre"
+        t('q5_option_1'),
+        t('q5_option_2'),
+        t('q5_option_3'),
+        t('q5_option_4')
       ],
       correctAnswer: 1,
-      explanation: "Il faut explicitement demander : des commentaires explicatifs, de la documentation (docstrings, JSDoc), et un naming clair et descriptif. Spécifiez le niveau de documentation souhaité."
+      explanation: t('q5_explanation')
     }
   ]
 
   return (
     <Quiz
       tutorialId="code-generation"
-      title="Quiz de validation"
-      description="Teste ta maîtrise de la génération de code avec l'IA"
+      title={t('title')}
+      description={t('description')}
       questions={questions}
       rewardPoints={150}
-      rewardBadge="Expert Certifié 🚀"
+      rewardBadge={t('reward_badge')}
     />
   )
 }

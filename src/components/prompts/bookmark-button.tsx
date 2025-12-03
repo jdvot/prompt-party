@@ -115,12 +115,14 @@ export function BookmarkButton({ promptId, variant = 'ghost', size = 'sm' }: Boo
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant={variant as any} size={size === 'default' ? 'md' : size} disabled={loading}>
-          <BookmarkIcon
-            className={`h-4 w-4 ${isBookmarked ? 'fill-current' : ''}`}
-          />
-          {size !== 'sm' && (
-            <span className="ml-2">{isBookmarked ? 'Bookmarked' : 'Bookmark'}</span>
-          )}
+          <span className="inline-flex items-center">
+            <BookmarkIcon
+              className={`h-4 w-4 ${isBookmarked ? 'fill-current' : ''}`}
+            />
+            {size !== 'sm' && (
+              <span className="ml-2">{isBookmarked ? 'Bookmarked' : 'Bookmark'}</span>
+            )}
+          </span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">

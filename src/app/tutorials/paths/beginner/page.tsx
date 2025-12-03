@@ -60,7 +60,7 @@ export default async function BeginnerPath() {
       title: t('lesson5_title'),
       description: t('lesson5_description'),
       duration: t('lesson5_duration'),
-      link: '/prompts',
+      link: '/trending',
       icon: 'Users',
     },
   ]

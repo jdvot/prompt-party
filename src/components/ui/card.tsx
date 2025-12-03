@@ -3,12 +3,12 @@ import { cn } from '@/lib/utils'
 import { cva, type VariantProps } from 'class-variance-authority'
 
 const cardVariants = cva(
-  'bg-card text-card-foreground border transition-all duration-300',
+  'bg-card text-card-foreground border transition-all',
   {
     variants: {
       variant: {
         // Default - Standard card
-        default: 'border-border',
+        default: 'border-border duration-300',
 
         // Interactive - Hover lift effect
         interactive: [
@@ -16,6 +16,24 @@ const cardVariants = cva(
           'hover:shadow-lg hover:-translate-y-1',
           'hover:border-brand-primary/30',
           'active:translate-y-0',
+          'duration-300',
+        ].join(' '),
+
+        // Premium - Enhanced hover with lift and glow (POR-59)
+        premium: [
+          'card-premium',
+          'border-border',
+        ].join(' '),
+
+        // Glass - Enhanced glassmorphism effect (POR-59)
+        glass: [
+          'card-glass',
+        ].join(' '),
+
+        // Gradient Border - Shows gradient border on hover (POR-59)
+        gradientBorder: [
+          'card-gradient-border',
+          'border-border',
         ].join(' '),
 
         // Bento - Modern trendy card with gradient border on hover
@@ -24,7 +42,7 @@ const cardVariants = cva(
           'border-border',
           'hover:shadow-2xl hover:shadow-brand-primary/10 hover:-translate-y-2',
           'relative overflow-hidden',
-          'transition-all duration-500',
+          'duration-500',
         ].join(' '),
 
         // Feature - Cards for feature sections
@@ -33,14 +51,7 @@ const cardVariants = cva(
           'dark:from-surface-raised dark:to-surface-base',
           'border-border',
           'hover:shadow-xl hover:-translate-y-1',
-        ].join(' '),
-
-        // Glass - Glassmorphism effect
-        glass: [
-          'bg-white/90 dark:bg-gray-950/90',
-          'backdrop-filter backdrop-blur-xl backdrop-saturate-150',
-          'border-gray-200/50 dark:border-gray-700/50',
-          'shadow-lg',
+          'duration-300',
         ].join(' '),
 
         // Outlined - Prominent border
@@ -48,15 +59,41 @@ const cardVariants = cva(
           'border-2 border-brand-primary/20',
           'hover:border-brand-primary/40',
           'hover:shadow-md',
+          'duration-300',
         ].join(' '),
 
         // Elevated - Strong shadow
-        elevated: 'border-transparent shadow-elevation-4 hover:shadow-elevation-5',
+        elevated: 'border-transparent shadow-elevation-4 hover:shadow-elevation-5 duration-300',
 
         // Compact - Smaller cards for tight layouts
         compact: [
           'border-border',
           'hover:shadow-md hover:border-brand-primary/20',
+          'duration-300',
+        ].join(' '),
+
+        // Prompt - Specific for prompt cards (POR-59)
+        prompt: [
+          'card-prompt',
+          'border-border overflow-hidden',
+        ].join(' '),
+
+        // Premium Full - Complete premium styling with CSS class (POR-59)
+        premiumFull: 'card-premium-full',
+
+        // Glass Full - Complete glassmorphism with CSS class (POR-59)
+        glassFull: 'card-glass-full',
+
+        // Gradient Border Mask - CSS mask-based gradient border (POR-59)
+        gradientBorderMask: 'card-gradient-border-mask',
+
+        // Interactive Click - With click feedback (POR-59)
+        interactiveClick: 'card-interactive-click border-border',
+
+        // Spotlight - Mouse-following spotlight effect (POR-59)
+        spotlight: [
+          'card-spotlight',
+          'border-border',
         ].join(' '),
       },
 

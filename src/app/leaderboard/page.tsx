@@ -136,12 +136,39 @@ export default async function LeaderboardPage() {
 
   // Get translations as an object to pass to client component
   const translations = {
+    // Hero
+    badge: t('badge'),
+    hero_title: t('hero_title'),
+    hero_subtitle: t('hero_subtitle'),
+    // Tabs
+    tab_learners: t('tab_learners'),
+    tab_contributors: t('tab_contributors'),
+    tab_hall_of_fame: t('tab_hall_of_fame'),
+    // Learners
     learners_title: t('learners_title'),
+    learners_subtitle: t('learners_subtitle'),
+    ranking_based_lessons: t('ranking_based_lessons'),
+    lessons: t('lessons'),
+    days: t('days'),
+    points: t('points'),
     your_position: t('your_position'),
     top_percent_prefix: t('top_percent_prefix'),
     top_percent_value: t('top_percent_value', { percent: '15' }),
     top_percent_suffix: t('top_percent_suffix'),
-    your_impact: t('your_impact')
+    encouragement_learner: t('encouragement_learner'),
+    // Contributors
+    top_contributors_month: t('top_contributors_month'),
+    ranking_based_prompts: t('ranking_based_prompts'),
+    prompts: t('prompts'),
+    helps: t('helps'),
+    your_impact: t('your_impact'),
+    people_helped_this_month: t('people_helped_this_month', { count: '5' }),
+    encouragement_contributor: t('encouragement_contributor'),
+    // Hall of Fame
+    legends_of_platform: t('legends_of_platform'),
+    legends_subtitle: t('legends_subtitle'),
+    badges_unlocked: t('badges_unlocked'),
+    total_points: t('total_points')
   }
 
   return (

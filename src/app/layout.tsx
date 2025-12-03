@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Open_Sans } from "next/font/google";
 import "../styles/globals.css";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
@@ -17,6 +17,14 @@ const inter = Inter({
   display: 'swap',
   preload: true,
   variable: '--font-inter',
+});
+
+const openSans = Open_Sans({
+  subsets: ["latin"],
+  weight: ['300', '400', '500', '600', '700', '800'],
+  display: 'swap',
+  preload: true,
+  variable: '--font-open-sans',
 });
 
 export const metadata: Metadata = {
@@ -129,7 +137,7 @@ export default async function RootLayout({
           }}
         />
       </head>
-      <body className={inter.className}>
+      <body className={`${inter.variable} ${openSans.variable} font-sans`}>
         <IntlProvider messages={messages} locale={locale}>
           <ThemeProvider defaultTheme="system" storageKey="prompt-party-theme">
             <ShortcutsProvider>

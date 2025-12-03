@@ -20,6 +20,7 @@ interface QuizQuestion {
 
 export function RagasEvaluationQuiz() {
   const t = useTranslations('tutorials.ragas_evaluation')
+  const tCommon = useTranslations('tutorials')
   const [currentQuestion, setCurrentQuestion] = useState(0)
   const [score, setScore] = useState(0)
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null)
@@ -102,7 +103,7 @@ export function RagasEvaluationQuiz() {
           <div className="text-center space-y-2">
             <div className="text-4xl font-bold text-primary">{percentage}%</div>
             <p className="text-lg text-muted-foreground">
-              {score} out of {questions.length} correct
+              {tCommon('quiz_partial_answers', { score, totalQuestions: questions.length })}
             </p>
           </div>
           <Button onClick={() => {
@@ -112,7 +113,7 @@ export function RagasEvaluationQuiz() {
             setShowResult(false)
             setCompleted(false)
           }} className="w-full">
-            Retake Quiz
+            {tCommon('quiz_retry')}
           </Button>
         </CardContent>
       </Card>
@@ -127,7 +128,7 @@ export function RagasEvaluationQuiz() {
           {t('quiz_title')}
         </CardTitle>
         <CardDescription>
-          Question {currentQuestion + 1} of {questions.length}
+          {tCommon('quiz_question_of', { current: currentQuestion + 1, total: questions.length })}
         </CardDescription>
       </CardHeader>
       <CardContent className="space-y-6">
@@ -171,13 +172,13 @@ export function RagasEvaluationQuiz() {
           <Alert className={isAnsweredCorrectly ? 'border-green-200 bg-green-50 dark:bg-green-950' : 'border-red-200 bg-red-50 dark:bg-red-950'}>
             <AlertCircle className={`w-4 h-4 ${isAnsweredCorrectly ? 'text-green-600' : 'text-red-600'}`} />
             <AlertDescription>
-              <strong>{isAnsweredCorrectly ? 'Correct!' : 'Incorrect'}</strong> {question.explanation}
+              <strong>{isAnsweredCorrectly ? tCommon('quiz_perfect_score') : tCommon('quiz_not_perfect')}</strong> {question.explanation}
             </AlertDescription>
           </Alert>
         )}
 
         <Button onClick={handleNext} className="w-full">
-          {currentQuestion === questions.length - 1 ? 'See Results' : 'Next Question'}
+          {currentQuestion === questions.length - 1 ? tCommon('quiz_finish') : tCommon('quiz_next')}
         </Button>
       </CardContent>
     </Card>

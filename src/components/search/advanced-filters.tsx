@@ -169,13 +169,15 @@ export function AdvancedFilters({ onFiltersChange }: AdvancedFiltersProps) {
         <Popover open={isOpen} onOpenChange={setIsOpen}>
           <PopoverTrigger asChild>
             <Button variant="outline" className="gap-2">
-              <FilterIcon className="w-4 h-4" />
-              Filters
-              {activeFilterCount > 0 && (
-                <Badge variant="secondary" className="ml-1 px-1.5 py-0.5 text-xs">
-                  {activeFilterCount}
-                </Badge>
-              )}
+              <span className="inline-flex items-center gap-2">
+                <FilterIcon className="w-4 h-4" />
+                Filters
+                {activeFilterCount > 0 && (
+                  <Badge variant="secondary" className="ml-1 px-1.5 py-0.5 text-xs">
+                    {activeFilterCount}
+                  </Badge>
+                )}
+              </span>
             </Button>
           </PopoverTrigger>
           <PopoverContent className="w-96 p-4" align="start">
@@ -226,19 +228,21 @@ export function AdvancedFilters({ onFiltersChange }: AdvancedFiltersProps) {
                         !dateRange && 'text-muted-foreground'
                       )}
                     >
-                      <CalendarIcon className="mr-2 h-4 w-4" />
-                      {dateRange?.from ? (
-                        dateRange.to ? (
-                          <>
-                            {format(dateRange.from, 'LLL dd, y')} -{' '}
-                            {format(dateRange.to, 'LLL dd, y')}
-                          </>
+                      <span className="inline-flex items-center">
+                        <CalendarIcon className="mr-2 h-4 w-4" />
+                        {dateRange?.from ? (
+                          dateRange.to ? (
+                            <>
+                              {format(dateRange.from, 'LLL dd, y')} -{' '}
+                              {format(dateRange.to, 'LLL dd, y')}
+                            </>
+                          ) : (
+                            format(dateRange.from, 'LLL dd, y')
+                          )
                         ) : (
-                          format(dateRange.from, 'LLL dd, y')
-                        )
-                      ) : (
-                        <span>Pick a date range</span>
-                      )}
+                          <span>Pick a date range</span>
+                        )}
+                      </span>
                     </Button>
                   </PopoverTrigger>
                   <PopoverContent className="w-auto p-0" align="start">

@@ -1,74 +1,77 @@
 'use client'
 
 import { Quiz } from '@/components/tutorials/quiz'
+import { useTranslations } from 'next-intl'
 
 export function MultiAgentSystemsQuiz() {
+  const t = useTranslations('tutorials.multi_agent_systems.quiz')
+
   const questions = [
     {
-      question: "Qu'est-ce qu'un système multi-agents ?",
+      question: t('q1_question'),
       options: [
-        "Utiliser plusieurs IA en même temps sans coordination",
-        "Plusieurs agents IA spécialisés qui collaborent pour accomplir une tâche complexe",
-        "Un seul agent très puissant",
-        "Plusieurs humains qui travaillent ensemble"
+        t('q1_option_1'),
+        t('q1_option_2'),
+        t('q1_option_3'),
+        t('q1_option_4')
       ],
       correctAnswer: 1,
-      explanation: "Un système multi-agents est composé de plusieurs agents IA spécialisés, chacun avec son rôle, qui communiquent et collaborent pour accomplir ensemble des tâches complexes qu'un seul agent ne pourrait pas gérer efficacement."
+      explanation: t('q1_explanation')
     },
     {
-      question: "Quel est l'avantage principal d'un système multi-agents ?",
+      question: t('q2_question'),
       options: [
-        "C'est plus rapide",
-        "Spécialisation : chaque agent excelle dans son domaine",
-        "C'est moins cher",
-        "Ça fait plus professionnel"
+        t('q2_option_1'),
+        t('q2_option_2'),
+        t('q2_option_3'),
+        t('q2_option_4')
       ],
       correctAnswer: 1,
-      explanation: "Le principal avantage est la spécialisation : chaque agent est optimisé pour une tâche spécifique (recherche, analyse, synthèse, vérification), ce qui donne de meilleurs résultats qu'un agent généraliste."
+      explanation: t('q2_explanation')
     },
     {
-      question: "Comment les agents communiquent-ils entre eux ?",
+      question: t('q3_question'),
       options: [
-        "Ils ne communiquent pas",
-        "Via un orchestrateur ou par passage de messages structurés",
-        "Par télépathie",
-        "Uniquement par email"
+        t('q3_option_1'),
+        t('q3_option_2'),
+        t('q3_option_3'),
+        t('q3_option_4')
       ],
       correctAnswer: 1,
-      explanation: "Les agents communiquent soit via un orchestrateur central qui coordonne leurs actions, soit par passage de messages structurés (souvent en JSON) contenant les résultats de leurs tâches respectives."
+      explanation: t('q3_explanation')
     },
     {
-      question: "Quel pattern d'orchestration est le plus courant ?",
+      question: t('q4_question'),
       options: [
-        "Pattern aléatoire",
-        "Sequential (chaîne), Parallel (parallèle), ou Hierarchical (hiérarchique)",
-        "Pattern circulaire infini",
-        "Aucun pattern"
+        t('q4_option_1'),
+        t('q4_option_2'),
+        t('q4_option_3'),
+        t('q4_option_4')
       ],
       correctAnswer: 1,
-      explanation: "Les patterns les plus courants sont : Sequential (agents s'exécutent l'un après l'autre), Parallel (agents travaillent simultanément), Hierarchical (agents superviseurs + agents workers), ou Feedback Loop (boucle d'amélioration)."
+      explanation: t('q4_explanation')
     },
     {
-      question: "Quand utiliser un système multi-agents plutôt qu'un seul agent ?",
+      question: t('q5_question'),
       options: [
-        "Toujours",
-        "Jamais",
-        "Quand la tâche est complexe, multi-domaine, et nécessite spécialisation",
-        "Uniquement pour impressionner"
+        t('q5_option_1'),
+        t('q5_option_2'),
+        t('q5_option_3'),
+        t('q5_option_4')
       ],
       correctAnswer: 2,
-      explanation: "Utilisez multi-agents quand : la tâche requiert expertise multi-domaine, le workflow a des étapes distinctes, la qualité justifie la complexité. Pour des tâches simples, un agent unique suffit."
+      explanation: t('q5_explanation')
     }
   ]
 
   return (
     <Quiz
       tutorialId="multi-agent-systems"
-      title="Quiz de validation"
-      description="Valide ta maîtrise des systèmes multi-agents"
+      title={t('title')}
+      description={t('description')}
       questions={questions}
       rewardPoints={150}
-      rewardBadge="Expert Certifié 🚀"
+      rewardBadge={t('reward_badge')}
     />
   )
 }

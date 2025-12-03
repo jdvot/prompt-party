@@ -80,7 +80,7 @@ export function TutorialProgress({
                 <Trophy className="w-4 h-4" />
                 <span>+{rewardPoints} {t('points_earned')}</span>
               </div>
-              {rewardBadge && (
+              {rewardBadge && !rewardBadge.includes('.') && (
                 <div className="flex items-center gap-2 text-sm text-violet-700 dark:text-violet-400 mt-1">
                   <Sparkles className="w-4 h-4" />
                   <span>{t('badge_unlocked', { badge: rewardBadge })}</span>
@@ -105,7 +105,7 @@ export function TutorialProgress({
                 <Trophy className="w-4 h-4 text-yellow-600" />
                 <span>+{rewardPoints} {t('points')}</span>
               </div>
-              {rewardBadge && (
+              {rewardBadge && !rewardBadge.includes('.') && (
                 <div className="flex items-center gap-2">
                   <Sparkles className="w-4 h-4 text-violet-600" />
                   <span>{t('badge_label', { badge: rewardBadge })}</span>

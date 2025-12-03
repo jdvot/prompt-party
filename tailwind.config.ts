@@ -9,6 +9,13 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    fontFamily: {
+      // Open Sans as primary font for premium typography (POR-55)
+      sans: ['var(--font-open-sans)', 'var(--font-inter)', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+      'open-sans': ['var(--font-open-sans)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+      inter: ['var(--font-inter)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+      mono: ['ui-monospace', 'SFMono-Regular', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', 'monospace'],
+    },
   	container: {
   		center: true,
   		padding: {
@@ -34,7 +41,26 @@ const config: Config = {
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
 
-        // Brand Colors - Modern Premium Palette
+        // Warm Premium Palette (POR-54)
+        cream: {
+          DEFAULT: 'hsl(var(--color-cream))',
+          dark: 'hsl(var(--color-cream-dark))',
+        },
+        'warm-white': 'hsl(var(--color-warm-white))',
+
+        // Text Colors - Warm Undertones
+        'text-primary': 'hsl(var(--color-text-primary))',
+        'text-secondary': 'hsl(var(--color-text-secondary))',
+        'text-muted': 'hsl(var(--color-text-muted))',
+
+        // Coral/Orange Accent
+        coral: {
+          DEFAULT: 'hsl(var(--color-accent))',
+          light: 'hsl(var(--color-accent-light))',
+          dark: 'hsl(var(--color-accent-dark))',
+        },
+
+        // Brand Colors - Warm Premium Palette
         brand: {
           primary: 'hsl(var(--brand-primary))',
           'primary-light': 'hsl(var(--brand-primary-light))',
@@ -46,7 +72,7 @@ const config: Config = {
           'accent-light': 'hsl(var(--brand-accent-light))',
         },
 
-        // Gray Scale
+        // Warm Gray Scale
         gray: {
           50: 'hsl(var(--gray-50))',
           100: 'hsl(var(--gray-100))',
@@ -61,7 +87,7 @@ const config: Config = {
           950: 'hsl(var(--gray-950))',
         },
 
-        // Surface Colors
+        // Surface Colors - Warm Theme
         surface: {
           base: 'hsl(var(--surface-base))',
           raised: 'hsl(var(--surface-raised))',
@@ -187,18 +213,22 @@ const config: Config = {
         wider: 'var(--tracking-wider)',
       },
 
-      // Animation Durations
+      // Animation Durations - POR-60
       transitionDuration: {
+        instant: '100ms',
         fast: '150ms',
+        normal: '250ms',
         base: '200ms',
-        slow: '300ms',
-        slower: '500ms',
+        slow: '400ms',
+        slower: '600ms',
       },
 
-      // Animation Easing
+      // Animation Easing - POR-60
       transitionTimingFunction: {
-        'ease-smooth': 'cubic-bezier(0.4, 0, 0.2, 1)',
-        'ease-spring': 'cubic-bezier(0.34, 1.56, 0.64, 1)',
+        'ease-smooth': 'cubic-bezier(0.4, 0, 0.2, 1)',   // For most transitions
+        'ease-snappy': 'cubic-bezier(0.76, 0, 0.24, 1)', // For quick interactions
+        'ease-spring': 'cubic-bezier(0.34, 1.56, 0.64, 1)', // For bouncy effects
+        'ease-slow': 'cubic-bezier(0.16, 1, 0.3, 1)',    // For long animations
       },
 
       // Keyframes

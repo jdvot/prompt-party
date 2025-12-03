@@ -85,16 +85,6 @@ export async function withAuthCheck(
   const protectionEnabled = isAccessProtectionEnabled()
   const shouldSkip = shouldSkipAccessProtection(pathname)
 
-  console.log('🔐 Auth check:', {
-    pathname,
-    protectionEnabled,
-    shouldSkip,
-    envVars: {
-      ACCESS_PROTECTION_ENABLED: process.env.ACCESS_PROTECTION_ENABLED,
-      hasPasswordHash: !!process.env.ACCESS_PASSWORD_HASH
-    }
-  })
-
   // Check site-wide access protection first (if enabled)
   if (protectionEnabled && !shouldSkip) {
     // Get access token from cookies
@@ -102,7 +92,6 @@ export async function withAuthCheck(
 
     // Verify the access token
     if (!accessToken || !(await verifyAccessToken(accessToken))) {
-      console.log('🚫 No valid access token, redirecting to access page')
 
       // Redirect to access page with return URL
       const url = request.nextUrl.clone()

@@ -177,8 +177,10 @@ ${prompt.body}
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="outline" size="sm" disabled={isExporting} className="gap-2">
-          <Download className="w-4 h-4" />
-          Export
+          <span className="inline-flex items-center gap-2">
+            <Download className="w-4 h-4" />
+            Export
+          </span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-48">

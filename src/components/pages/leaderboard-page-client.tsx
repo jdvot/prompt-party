@@ -44,13 +44,13 @@ export function LeaderboardPageClient({
                   startIcon={<TrophyIcon className="w-3.5 h-3.5" />}
                   className="mb-4"
                 >
-                  Leaderboard
+                  {t.badge}
                 </Badge>
                 <h1 className="text-4xl md:text-5xl font-bold mb-4">
-                  Classement Communauté
+                  {t.hero_title}
                 </h1>
                 <p className="text-xl text-muted-foreground max-w-2xl lg:max-w-none">
-                  Célébrons ensemble ceux qui apprennent, partagent et aident les autres
+                  {t.hero_subtitle}
                 </p>
               </div>
             </AnimatedContainer>
@@ -84,15 +84,15 @@ export function LeaderboardPageClient({
             <TabsList className="grid w-full grid-cols-3 mb-8">
               <TabsTrigger value="learners" className="gap-2">
                 <BookOpenIcon className="w-4 h-4" />
-                Top Apprenants
+                {t.tab_learners}
               </TabsTrigger>
               <TabsTrigger value="contributors" className="gap-2">
                 <UsersIcon className="w-4 h-4" />
-                Top Contributeurs
+                {t.tab_contributors}
               </TabsTrigger>
               <TabsTrigger value="hall-of-fame" className="gap-2">
                 <AwardIcon className="w-4 h-4" />
-                Hall of Fame
+                {t.tab_hall_of_fame}
               </TabsTrigger>
             </TabsList>
 
@@ -101,7 +101,7 @@ export function LeaderboardPageClient({
               <AnimatedContainer animation="fade" delay={0.1} className="text-center mb-6">
                 <h3 className="text-2xl font-bold mb-2">{t.learners_title}</h3>
                 <p className="text-muted-foreground">
-                  Classement basé sur les leçons complétées et l'activité
+                  {t.ranking_based_lessons}
                 </p>
               </AnimatedContainer>
 
@@ -135,10 +135,10 @@ export function LeaderboardPageClient({
                             </Badge>
                           </div>
                           <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                            <span>{learner.lessons_completed} leçons</span>
+                            <span>{learner.lessons_completed} {t.lessons}</span>
                             <span className="flex items-center gap-1">
                               <FlameIcon className="w-3 h-3 text-orange-500" />
-                              {learner.streak} jours
+                              {learner.streak} {t.days}
                             </span>
                           </div>
                         </div>
@@ -146,7 +146,7 @@ export function LeaderboardPageClient({
                         {/* Points */}
                         <div className="text-right">
                           <div className="text-2xl font-bold text-primary">{learner.points}</div>
-                          <div className="text-xs text-muted-foreground">points</div>
+                          <div className="text-xs text-muted-foreground">{t.points}</div>
                         </div>
                       </div>
                     </CardContent>
@@ -163,7 +163,7 @@ export function LeaderboardPageClient({
                           {t.top_percent_prefix} <strong className="text-foreground">{t.top_percent_value}</strong> {t.top_percent_suffix}
                         </p>
                         <p className="text-xs text-muted-foreground mt-2">
-                          Continue comme ça, tu progresses super bien 🚀
+                          {t.encouragement_learner} 🚀
                         </p>
                       </div>
                     </CardContent>
@@ -175,9 +175,9 @@ export function LeaderboardPageClient({
             {/* Top Contributors */}
             <TabsContent value="contributors">
               <AnimatedContainer animation="fade" delay={0.1} className="text-center mb-6">
-                <h3 className="text-2xl font-bold mb-2">🤝 Top 10 Contributeurs (Ce Mois)</h3>
+                <h3 className="text-2xl font-bold mb-2">{t.top_contributors_month}</h3>
                 <p className="text-muted-foreground">
-                  Classement basé sur les prompts partagés et l'aide apportée
+                  {t.ranking_based_prompts}
                 </p>
               </AnimatedContainer>
 
@@ -206,15 +206,15 @@ export function LeaderboardPageClient({
                         <div className="flex-1 min-w-0">
                           <h4 className="font-semibold mb-1 truncate">{contributor.name}</h4>
                           <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                            <span>💡 {contributor.prompts_shared} prompts</span>
-                            <span>🤝 {contributor.people_helped} aides</span>
+                            <span>💡 {contributor.prompts_shared} {t.prompts}</span>
+                            <span>🤝 {contributor.people_helped} {t.helps}</span>
                           </div>
                         </div>
 
                         {/* Points */}
                         <div className="text-right">
                           <div className="text-2xl font-bold text-orange-600">{contributor.points}</div>
-                          <div className="text-xs text-muted-foreground">points</div>
+                          <div className="text-xs text-muted-foreground">{t.points}</div>
                         </div>
                       </div>
                     </CardContent>
@@ -228,10 +228,10 @@ export function LeaderboardPageClient({
                         <UsersIcon className="w-8 h-8 mx-auto mb-2 text-orange-600" />
                         <h4 className="font-semibold mb-1">{t.your_impact}</h4>
                         <p className="text-sm text-muted-foreground">
-                          <span className="font-bold text-orange-600">5 personnes</span> aidées ce mois
+                          <span className="font-bold text-orange-600">{t.people_helped_this_month}</span>
                         </p>
                         <p className="text-xs text-muted-foreground mt-2">
-                          Continue, tu fais la différence dans la communauté ! ⭐
+                          {t.encouragement_contributor} ⭐
                         </p>
                       </div>
                     </CardContent>
@@ -243,9 +243,9 @@ export function LeaderboardPageClient({
             {/* Hall of Fame */}
             <TabsContent value="hall-of-fame">
               <AnimatedContainer animation="fade" delay={0.1} className="text-center mb-6">
-                <h3 className="text-2xl font-bold mb-2">⭐ Légendes de la Plateforme</h3>
+                <h3 className="text-2xl font-bold mb-2">{t.legends_of_platform}</h3>
                 <p className="text-muted-foreground">
-                  Les membres les plus actifs et influents de tous les temps
+                  {t.legends_subtitle}
                 </p>
               </AnimatedContainer>
 
@@ -279,7 +279,7 @@ export function LeaderboardPageClient({
                             </Badge>
                           </div>
                           <div className="text-sm text-muted-foreground mb-1">
-                            🏆 {legend.badges} badges débloqués
+                            🏆 {legend.badges} {t.badges_unlocked}
                           </div>
                           <div className="text-xs text-muted-foreground italic">
                             {legend.achievements}
@@ -291,7 +291,7 @@ export function LeaderboardPageClient({
                           <div className="text-3xl font-bold bg-gradient-to-r from-yellow-600 to-orange-600 bg-clip-text text-transparent">
                             {legend.points}
                           </div>
-                          <div className="text-xs text-muted-foreground">points totaux</div>
+                          <div className="text-xs text-muted-foreground">{t.total_points}</div>
                         </div>
                       </div>
                     </CardContent>

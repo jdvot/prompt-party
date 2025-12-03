@@ -320,7 +320,7 @@ export default async function ClaudeBasicsTutorial() {
               <ul className="space-y-1">
                 <li>• <a href="https://docs.anthropic.com/claude/docs" target="_blank" rel="noopener" className="text-primary hover:underline">{t('read_docs')}</a></li>
                 <li>• <Link href="/prompts/wizard" className="text-primary hover:underline">{t('try_wizard')}</Link></li>
-                <li>• <Link href="/prompts" className="text-primary hover:underline">{t('browse_community')}</Link></li>
+                <li>• <Link href="/trending" className="text-primary hover:underline">{t('browse_community')}</Link></li>
               </ul>
             </div>
           </CardContent>

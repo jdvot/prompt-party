@@ -246,7 +246,7 @@ export default function MCPPage() {
           </div>
 
               <div className="mt-6 pt-6 border-t">
-                <Link href="/prompts" className={cn(buttonVariants({ size: "lg" }))}>
+                <Link href="/trending" className={cn(buttonVariants({ size: "lg" }))}>
                   {t('browse_prompts')}
                 </Link>
               </div>

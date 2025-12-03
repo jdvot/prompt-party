@@ -50,10 +50,12 @@ export function LanguageSwitcher() {
           disabled={isPending}
           className="gap-2 min-w-[120px] justify-start"
         >
-          <Globe className="h-4 w-4" />
-          <span className="flex items-center gap-1.5">
-            <span className="text-base leading-none">{currentLanguage.flag}</span>
-            <span className="hidden sm:inline leading-none">{currentLanguage.name}</span>
+          <span className="inline-flex items-center gap-2">
+            <Globe className="h-4 w-4" />
+            <span className="flex items-center gap-1.5">
+              <span className="text-base leading-none">{currentLanguage.flag}</span>
+              <span className="hidden sm:inline leading-none">{currentLanguage.name}</span>
+            </span>
           </span>
         </Button>
       </DropdownMenuTrigger>

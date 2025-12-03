@@ -521,7 +521,7 @@ Follow Shadcn UI patterns"
               <ul className="space-y-1">
                 <li>• <a href="https://claude.ai/code" target="_blank" rel="noopener" className="text-primary hover:underline">{t('try_claude_code')}</a></li>
                 <li>• <a href="https://docs.anthropic.com/claude/docs" target="_blank" rel="noopener" className="text-primary hover:underline">{t('read_docs')}</a></li>
-                <li>• <Link href="/prompts" className="text-primary hover:underline">{t('browse_community')}</Link></li>
+                <li>• <Link href="/trending" className="text-primary hover:underline">{t('browse_community')}</Link></li>
               </ul>
             </div>
           </CardContent>

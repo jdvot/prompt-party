@@ -3,88 +3,233 @@
 import Link from 'next/link'
 import { Logo, LogoText } from '@/components/brand/logo'
 import { useTranslations } from 'next-intl'
+import { Button } from '@/components/ui/button'
+import { ArrowRight, Github, Twitter, Linkedin, Mail, Sparkles } from 'lucide-react'
 
 export function Footer() {
   const t = useTranslations('footer')
   const tNav = useTranslations('nav')
+
+  const currentYear = new Date().getFullYear()
+
+  const productLinks = [
+    { href: '/trending', label: t('prompts_library') },
+    { href: '/prompts/wizard', label: t('playground') },
+    { href: '/challenges', label: t('challenges') },
+    { href: '/leaderboard', label: t('leaderboard') },
+    { href: '/pricing', label: t('support_project') },
+  ]
+
+  const resourceLinks = [
+    { href: '/tutorials/paths/beginner', label: t('beginner_path') },
+    { href: '/tutorials', label: t('all_tutorials') },
+    { href: '/mcp-vs-rag', label: t('mcp_vs_rag') },
+    { href: '/tech-stack', label: tNav('tech_stack') },
+  ]
+
+  const companyLinks = [
+    { href: '/about', label: t('about') },
+    { href: '/faq', label: t('faq') },
+    { href: '/privacy', label: t('privacy') },
+    { href: '/terms', label: t('terms') },
+  ]
+
+  const socialLinks = [
+    {
+      href: 'https://github.com/prompt-party',
+      label: 'GitHub',
+      icon: Github,
+    },
+    {
+      href: 'https://twitter.com/promptparty',
+      label: 'Twitter',
+      icon: Twitter,
+    },
+    {
+      href: 'https://linkedin.com/company/promptparty',
+      label: 'LinkedIn',
+      icon: Linkedin,
+    },
+    {
+      href: 'mailto:contact@promptparty.io',
+      label: 'Email',
+      icon: Mail,
+    },
+  ]
+
   return (
-    <footer className="border-t bg-muted/30 mt-auto backdrop-blur-sm">
-      <div className="w-full px-4 sm:px-6 lg:px-8 py-10 md:py-12">
-        <div className="grid grid-cols-1 gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-4 md:gap-10">
-          <div className="md:col-span-1">
-            <Link href="/" className="flex items-center gap-3 font-bold text-lg mb-4 group">
-              <Logo className="w-8 h-8 transition-transform duration-300 group-hover:scale-110" />
-              <LogoText />
-            </Link>
-            <p className="text-sm text-muted-foreground leading-relaxed text-balance">
-              {t('about_section_subtitle')}
+    <footer className="mt-auto bg-gray-950">
+      {/* CTA Section with Premium Gradient */}
+      <div className="relative overflow-hidden">
+        {/* Decorative background elements */}
+        <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 via-orange-500/10 to-orange-500/5" />
+        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-5" />
+        <div className="absolute -top-24 -right-24 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl" />
+        <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
+
+        <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+          <div className="bg-gradient-to-br from-gray-900/80 via-gray-900/60 to-gray-900/40 backdrop-blur-xl rounded-3xl border border-gray-800/50 p-8 md:p-12 lg:p-16 text-center shadow-2xl">
+            {/* Sparkle decoration */}
+            <div className="inline-flex items-center justify-center mb-6">
+              <div className="flex items-center gap-2 bg-orange-500/10 border border-orange-500/20 rounded-full px-4 py-2">
+                <Sparkles className="w-4 h-4 text-orange-400" />
+                <span className="text-sm font-medium text-orange-300">
+                  {t('cta_title', { defaultValue: 'Ready to master AI prompting?' })}
+                </span>
+              </div>
+            </div>
+
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4 tracking-tight">
+              {t('cta_title', { defaultValue: 'Ready to master AI prompting?' })}
+            </h2>
+            <p className="text-gray-400 text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
+              {t('cta_subtitle', { defaultValue: 'Join our community and start creating amazing prompts today.' })}
             </p>
-          </div>
-
-          <div>
-            <h3 className="font-semibold mb-4 text-foreground gradient-text">{t('guides_section_title')}</h3>
-            <div className="space-y-3">
-              <Link href="/tutorials/paths/beginner" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
-                {t('beginner_path')}
-              </Link>
-              <Link href="/tutorials" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
-                {t('all_tutorials')}
-              </Link>
-              <Link href="/mcp-vs-rag" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
-                {t('mcp_vs_rag')}
-              </Link>
-              <Link href="/tech-stack" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
-                {tNav('tech_stack')}
-              </Link>
-              <Link href="/prompts/wizard" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
-                {t('playground')}
-              </Link>
-            </div>
-          </div>
-
-          <div>
-            <h3 className="font-semibold mb-4 text-foreground gradient-text">{t('community_section_title')}</h3>
-            <div className="space-y-3">
-              <Link href="/trending" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
-                {t('prompts_library')}
-              </Link>
-              <Link href="/challenges" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
-                {t('challenges')}
-              </Link>
-              <Link href="/leaderboard" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
-                {t('leaderboard')}
-              </Link>
-              <Link href="/about" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
-                {t('about')}
-              </Link>
-              <Link href="/faq" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
-                {t('faq')}
-              </Link>
-            </div>
-          </div>
-
-          <div>
-            <h3 className="font-semibold mb-4 text-foreground gradient-text">{t('legal_section_title')}</h3>
-            <div className="space-y-3">
-              <Link href="/pricing" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
-                {t('support_project')}
-              </Link>
-              <Link href="/privacy" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
-                {t('privacy')}
-              </Link>
-              <Link href="/terms" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
-                {t('terms')}
-              </Link>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Button
+                asChild
+                size="lg"
+                className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 transition-all duration-300 group px-8"
+              >
+                <Link href="/auth/signup">
+                  <span className="inline-flex items-center">
+                    {t('cta_button', { defaultValue: 'Get Started Free' })}
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                  </span>
+                </Link>
+              </Button>
+              <Button
+                asChild
+                variant="outline"
+                size="lg"
+                className="border-gray-700 hover:border-gray-600 text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all duration-300 px-8"
+              >
+                <Link href="/tutorials">
+                  {t('all_tutorials')}
+                </Link>
+              </Button>
             </div>
           </div>
         </div>
+      </div>
 
-        <div className="border-t mt-10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-muted-foreground">
-            {t('copyright', { year: new Date().getFullYear() })}
-          </p>
-          <div className="flex items-center gap-4 text-sm text-muted-foreground">
-            <span className="flex items-center gap-1" dangerouslySetInnerHTML={{ __html: t('made_with_love') }} />
+      {/* Main Footer - Dark Background */}
+      <div className="border-t border-gray-800/50 bg-gray-950">
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+          <div className="grid grid-cols-2 gap-10 sm:gap-12 md:grid-cols-3 lg:grid-cols-5 lg:gap-8">
+            {/* Brand Column - Takes 2 cols on large screens */}
+            <div className="col-span-2 md:col-span-3 lg:col-span-2">
+              <Link
+                href="/"
+                className="inline-flex items-center gap-3 font-bold text-lg mb-6 group"
+              >
+                <Logo className="w-10 h-10 transition-transform duration-300 group-hover:scale-110" />
+                <LogoText className="text-white" />
+              </Link>
+              <p className="text-gray-400 leading-relaxed text-balance mb-6 max-w-sm">
+                {t('about_section_subtitle')}
+              </p>
+              {/* Social Icons */}
+              <div className="flex items-center gap-3">
+                {socialLinks.map((social) => (
+                  <a
+                    key={social.label}
+                    href={social.href}
+                    target={social.href.startsWith('mailto:') ? undefined : '_blank'}
+                    rel={social.href.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
+                    className="group/icon w-10 h-10 rounded-xl bg-gray-900 hover:bg-gray-800 border border-gray-800 hover:border-gray-700 flex items-center justify-center transition-all duration-200 hover:scale-105"
+                    aria-label={social.label}
+                  >
+                    <social.icon className="w-5 h-5 text-gray-500 group-hover/icon:text-white transition-colors duration-200" />
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            {/* Product Links */}
+            <div>
+              <h3 className="font-semibold mb-5 text-white text-sm uppercase tracking-wider">
+                {t('product_section_title', { defaultValue: 'Product' })}
+              </h3>
+              <ul className="space-y-3">
+                {productLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className="text-gray-400 hover:text-white transition-colors duration-200 text-sm inline-flex items-center group"
+                    >
+                      <span className="relative">
+                        {link.label}
+                        <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-orange-500 transition-all duration-200 group-hover:w-full" />
+                      </span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Resources Links */}
+            <div>
+              <h3 className="font-semibold mb-5 text-white text-sm uppercase tracking-wider">
+                {t('guides_section_title')}
+              </h3>
+              <ul className="space-y-3">
+                {resourceLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className="text-gray-400 hover:text-white transition-colors duration-200 text-sm inline-flex items-center group"
+                    >
+                      <span className="relative">
+                        {link.label}
+                        <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-orange-500 transition-all duration-200 group-hover:w-full" />
+                      </span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Company Links */}
+            <div>
+              <h3 className="font-semibold mb-5 text-white text-sm uppercase tracking-wider">
+                {t('company_section_title', { defaultValue: 'Company' })}
+              </h3>
+              <ul className="space-y-3">
+                {companyLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className="text-gray-400 hover:text-white transition-colors duration-200 text-sm inline-flex items-center group"
+                    >
+                      <span className="relative">
+                        {link.label}
+                        <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-orange-500 transition-all duration-200 group-hover:w-full" />
+                      </span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom Bar */}
+      <div className="border-t border-gray-800/50 bg-gray-950">
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p className="text-sm text-gray-500 order-2 sm:order-1">
+              {t('copyright', { year: currentYear })}
+            </p>
+
+            {/* Secondary social links for bottom bar on mobile */}
+            <div className="flex items-center gap-6 order-1 sm:order-2">
+              <span
+                className="text-sm text-gray-500 flex items-center gap-1"
+                dangerouslySetInnerHTML={{ __html: t('made_with_love') }}
+              />
+            </div>
           </div>
         </div>
       </div>

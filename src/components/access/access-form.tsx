@@ -81,6 +81,7 @@ export function AccessForm({ redirect, translations }: AccessFormProps) {
               id="password"
               name="password"
               type="password"
+              autoComplete="off"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder={translations.passwordPlaceholder}
