@@ -130,58 +130,61 @@ export default async function CollectionPage({ params }: PageProps) {
   }
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <div className="max-w-6xl mx-auto">
-        <div className="mb-8">
-          <div className="flex items-start justify-between mb-4">
-            <div>
-              <h1 className="text-3xl font-bold mb-2">{collectionWithProfile.name}</h1>
-              <p className="text-muted-foreground">
-                by {collectionWithProfile.profiles?.name || commonT('anonymous')}
-                {!collectionWithProfile.is_public && (
-                  <span className="ml-2 text-amber-600">• {commonT('private')}</span>
-                )}
-              </p>
-            </div>
-            {isOwner && (
-              <div className="flex gap-2">
-                <AddToCollectionButton collectionId={id} />
+    <div className="min-h-screen bg-background safe-area-inset-top">
+      <div className="container mx-auto px-3 sm:px-4 py-4 sm:py-6 lg:py-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="mb-4 sm:mb-6 lg:mb-8">
+            {/* Header - Stack on mobile */}
+            <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 sm:gap-4 mb-3 sm:mb-4">
+              <div className="min-w-0">
+                <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-1 sm:mb-2 truncate">{collectionWithProfile.name}</h1>
+                <p className="text-sm sm:text-base text-muted-foreground flex flex-wrap items-center gap-1">
+                  <span>by {collectionWithProfile.profiles?.name || commonT('anonymous')}</span>
+                  {!collectionWithProfile.is_public && (
+                    <span className="text-amber-600">• {commonT('private')}</span>
+                  )}
+                </p>
               </div>
+              {isOwner && (
+                <div className="flex gap-2 flex-shrink-0">
+                  <AddToCollectionButton collectionId={id} />
+                </div>
+              )}
+            </div>
+            {collectionWithProfile.description && (
+              <p className="text-sm sm:text-base text-muted-foreground mt-2 sm:mt-4">{collectionWithProfile.description}</p>
             )}
           </div>
-          {collectionWithProfile.description && (
-            <p className="text-muted-foreground mt-4">{collectionWithProfile.description}</p>
+
+          {!items || items.length === 0 ? (
+            <div className="text-center py-8 sm:py-12 lg:py-16 border rounded-lg bg-muted/20">
+              <p className="text-sm sm:text-base text-muted-foreground px-4">
+                {isOwner ? t('no_prompts_owner') : t('no_prompts_visitor')}
+              </p>
+            </div>
+          ) : (
+            <div className="space-y-4 sm:space-y-6">
+              {items.map((item: any) => {
+                if (!item.prompts) return null
+                return (
+                  <div key={item.id} className="relative">
+                    <PromptCard {...item.prompts} />
+                    {isOwner && (
+                      <form action={() => removeItem(item.id)} className="absolute top-2 right-2 sm:top-4 sm:right-4">
+                        <button
+                          type="submit"
+                          className="px-2.5 sm:px-3 py-1 sm:py-1.5 text-xs sm:text-sm border rounded-md hover:bg-accent active:scale-[0.97] transition-all touch-manipulation min-h-[36px] sm:min-h-[32px]"
+                        >
+                          {commonT('remove')}
+                        </button>
+                      </form>
+                    )}
+                  </div>
+                )
+              })}
+            </div>
           )}
         </div>
-
-        {!items || items.length === 0 ? (
-          <div className="text-center py-16 border rounded-lg bg-muted/20">
-            <p className="text-muted-foreground">
-              {isOwner ? t('no_prompts_owner') : t('no_prompts_visitor')}
-            </p>
-          </div>
-        ) : (
-          <div className="space-y-6">
-            {items.map((item: any) => {
-              if (!item.prompts) return null
-              return (
-                <div key={item.id} className="relative">
-                  <PromptCard {...item.prompts} />
-                  {isOwner && (
-                    <form action={() => removeItem(item.id)} className="absolute top-4 right-4">
-                      <button
-                        type="submit"
-                        className="px-3 py-1 text-sm border rounded-md hover:bg-accent transition-colors"
-                      >
-                        {commonT('remove')}
-                      </button>
-                    </form>
-                  )}
-                </div>
-              )
-            })}
-          </div>
-        )}
       </div>
     </div>
   )

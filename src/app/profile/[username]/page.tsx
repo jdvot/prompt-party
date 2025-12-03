@@ -89,82 +89,92 @@ export default async function PublicProfilePage({ params }: PageProps) {
   const totalViews = prompts?.reduce((sum, p) => sum + (p.views_count || 0), 0) || 0
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <div className="max-w-6xl mx-auto">
-        {/* Profile Header */}
-        <div className="mb-8">
-          <div className="flex flex-col md:flex-row items-center md:items-start gap-6 mb-8">
-            <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-4xl ring-4 ring-primary/10">
-              {profile.avatar_url ? (
-                <Image
-                  src={profile.avatar_url}
-                  alt={profile.name || 'User avatar'}
-                  width={96}
-                  height={96}
-                  className="w-full h-full rounded-full object-cover"
-                />
-              ) : (
-                (profile.name || 'A').charAt(0).toUpperCase()
-              )}
-            </div>
-            <div className="flex-1 text-center md:text-left">
-              <h1 className="text-3xl font-bold mb-1">{profile.name || tCommon('anonymous')}</h1>
-              {profile.username && (
-                <p className="text-muted-foreground mb-2">@{profile.username}</p>
-              )}
-              <p className="text-sm text-muted-foreground">
-                {t('joined', { date: accountCreated.toLocaleDateString('en-US', { month: 'long', year: 'numeric' }) })}
-              </p>
-            </div>
-          </div>
-
-          {/* Stats Cards */}
-          <div className="mb-8">
-            <Suspense fallback={<div className="h-32 bg-muted animate-pulse rounded-lg" />}>
-              <ProfileStats userId={profile.user_id} />
-            </Suspense>
-          </div>
-
-          {/* Badges */}
-          <ProfileBadges
-            totalPrompts={prompts?.length || 0}
-            totalLikes={totalLikes}
-            totalViews={totalViews}
-            accountAge={accountAge}
-          />
-        </div>
-
-        {/* Tabs */}
-        <div className="border-b mb-8">
-          <div className="flex gap-8">
-            <button className="px-4 py-3 font-medium border-b-2 border-primary">
-              {t('prompts_tab')}
-            </button>
-          </div>
-        </div>
-
-        {/* Prompts */}
-        <div className="space-y-6">
-          {!prompts || prompts.length === 0 ? (
-            <div className="text-center py-16 max-w-2xl mx-auto">
-              <div className="relative w-64 h-64 mx-auto mb-8 animate-in fade-in zoom-in duration-500">
-                <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/10 via-violet-500/10 to-cyan-500/10 rounded-full blur-2xl" />
-                <Image
-                  src="/branding/illustrations/empty-states/empty-prompts.svg"
-                  alt="No prompts yet"
-                  width={256}
-                  height={256}
-                  className="relative z-10 drop-shadow-lg"
-                />
+    <div className="min-h-screen bg-background safe-area-inset-top">
+      <div className="container mx-auto px-3 sm:px-4 py-4 sm:py-6 lg:py-8">
+        <div className="max-w-6xl mx-auto">
+          {/* Profile Header */}
+          <div className="mb-4 sm:mb-6 lg:mb-8">
+            <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-6 mb-4 sm:mb-6 lg:mb-8">
+              {/* Avatar */}
+              <div className="w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-2xl sm:text-3xl lg:text-4xl ring-4 ring-primary/10 flex-shrink-0">
+                {profile.avatar_url ? (
+                  <Image
+                    src={profile.avatar_url}
+                    alt={profile.name || 'User avatar'}
+                    width={112}
+                    height={112}
+                    className="w-full h-full rounded-full object-cover"
+                  />
+                ) : (
+                  (profile.name || 'A').charAt(0).toUpperCase()
+                )}
               </div>
-              <h3 className="text-2xl font-bold mb-3">{t('no_public_prompts')}</h3>
-              <p className="text-lg text-muted-foreground">
-                {t('no_public_prompts_description')}
-              </p>
+              {/* Info */}
+              <div className="flex-1 text-center sm:text-left min-w-0">
+                <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-0.5 sm:mb-1 truncate">
+                  {profile.name || tCommon('anonymous')}
+                </h1>
+                {profile.username && (
+                  <p className="text-sm sm:text-base text-muted-foreground mb-1 sm:mb-2 truncate">
+                    @{profile.username}
+                  </p>
+                )}
+                <p className="text-xs sm:text-sm text-muted-foreground">
+                  {t('joined', { date: accountCreated.toLocaleDateString('en-US', { month: 'long', year: 'numeric' }) })}
+                </p>
+              </div>
             </div>
-          ) : (
-            prompts.map((prompt: any) => <PromptCard key={prompt.id} {...prompt} />)
-          )}
+
+            {/* Stats Cards */}
+            <div className="mb-4 sm:mb-6 lg:mb-8">
+              <Suspense fallback={<div className="h-24 sm:h-32 bg-muted animate-pulse rounded-lg" />}>
+                <ProfileStats userId={profile.user_id} />
+              </Suspense>
+            </div>
+
+            {/* Badges - Horizontal scroll on mobile */}
+            <div className="overflow-x-auto -mx-3 px-3 sm:mx-0 sm:px-0 hide-scrollbar">
+              <ProfileBadges
+                totalPrompts={prompts?.length || 0}
+                totalLikes={totalLikes}
+                totalViews={totalViews}
+                accountAge={accountAge}
+              />
+            </div>
+          </div>
+
+          {/* Tabs - Touch friendly */}
+          <div className="border-b mb-4 sm:mb-6 lg:mb-8 -mx-3 px-3 sm:mx-0 sm:px-0">
+            <div className="flex gap-4 sm:gap-8 overflow-x-auto hide-scrollbar">
+              <button className="px-3 sm:px-4 py-2.5 sm:py-3 font-medium border-b-2 border-primary text-sm sm:text-base whitespace-nowrap touch-manipulation min-h-[44px]">
+                {t('prompts_tab')}
+              </button>
+            </div>
+          </div>
+
+          {/* Prompts */}
+          <div className="space-y-4 sm:space-y-6">
+            {!prompts || prompts.length === 0 ? (
+              <div className="text-center py-8 sm:py-12 lg:py-16 max-w-2xl mx-auto px-4">
+                <div className="relative w-40 h-40 sm:w-56 sm:h-56 lg:w-64 lg:h-64 mx-auto mb-4 sm:mb-6 lg:mb-8 animate-in fade-in zoom-in duration-500">
+                  <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/10 via-violet-500/10 to-cyan-500/10 rounded-full blur-2xl" />
+                  <Image
+                    src="/branding/illustrations/empty-states/empty-prompts.svg"
+                    alt="No prompts yet"
+                    fill
+                    sizes="(max-width: 640px) 160px, (max-width: 1024px) 224px, 256px"
+                    className="relative z-10 drop-shadow-lg object-contain"
+                  />
+                </div>
+                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold mb-2 sm:mb-3">{t('no_public_prompts')}</h3>
+                <p className="text-sm sm:text-base lg:text-lg text-muted-foreground">
+                  {t('no_public_prompts_description')}
+                </p>
+              </div>
+            ) : (
+              prompts.map((prompt: any) => <PromptCard key={prompt.id} {...prompt} />)
+            )}
+          </div>
         </div>
       </div>
     </div>

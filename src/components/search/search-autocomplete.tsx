@@ -14,7 +14,11 @@ type SearchResult = {
   icon: typeof FileTextIcon
 }
 
-export function SearchAutocomplete() {
+interface SearchAutocompleteProps {
+  autoFocus?: boolean
+}
+
+export function SearchAutocomplete({ autoFocus = false }: SearchAutocompleteProps) {
   const [query, setQuery] = useState('')
   const [results, setResults] = useState<SearchResult[]>([])
   const [isOpen, setIsOpen] = useState(false)
@@ -187,6 +191,7 @@ export function SearchAutocomplete() {
           onKeyDown={handleKeyDown}
           className="w-full pl-10 pr-10 py-2 rounded-md border border-input bg-background text-sm focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
           autoComplete="off"
+          autoFocus={autoFocus}
         />
         {query && (
           <button

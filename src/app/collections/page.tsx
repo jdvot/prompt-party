@@ -14,23 +14,25 @@ export default async function CollectionsPage() {
   const emptyT = await getTranslations('emptyStates.noCollections')
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">{t('collections_heading')}</h1>
+    <div className="min-h-screen bg-background safe-area-inset-top">
+      <div className="container mx-auto px-3 sm:px-4 py-4 sm:py-6 lg:py-8">
+        <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-4 sm:mb-6">{t('collections_heading')}</h1>
 
-      <EmptyState
-        illustrationSrc="/branding/illustrations/empty-states/empty-collections.svg"
-        title={emptyT('title')}
-        description={emptyT('description')}
-        size="lg"
-        action={{
-          label: emptyT('action'),
-          onClick: () => window.location.href = '/collections/new',
-        }}
-        secondaryAction={{
-          label: emptyT('secondaryAction'),
-          onClick: () => window.location.href = '/prompts',
-        }}
-      />
+        <EmptyState
+          illustrationSrc="/branding/illustrations/empty-states/empty-collections.svg"
+          title={emptyT('title')}
+          description={emptyT('description')}
+          size="lg"
+          action={{
+            label: emptyT('action'),
+            onClick: () => window.location.href = '/collections/new',
+          }}
+          secondaryAction={{
+            label: emptyT('secondaryAction'),
+            onClick: () => window.location.href = '/prompts',
+          }}
+        />
+      </div>
     </div>
   )
 }
