@@ -248,11 +248,9 @@ export function HeroSection({ translations: t, stats, className }: HeroSectionPr
                   className="px-8 h-14 text-lg shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 transition-shadow"
                   asChild
                 >
-                  <Link href="/tutorials/paths/beginner">
-                    <span className="inline-flex items-center">
-                      {t.cta_primary}
-                      <ArrowRight className="w-5 h-5 ml-2" />
-                    </span>
+                  <Link href="/tutorials/paths/beginner" className="inline-flex items-center">
+                    {t.cta_primary}
+                    <ArrowRight className="w-5 h-5 ml-2" />
                   </Link>
                 </Button>
               </motion.div>

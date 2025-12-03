@@ -91,11 +91,9 @@ export function Footer() {
                 size="lg"
                 className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 transition-all duration-300 group px-8"
               >
-                <Link href="/auth/signup">
-                  <span className="inline-flex items-center">
-                    {t('cta_button', { defaultValue: 'Get Started Free' })}
-                    <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                  </span>
+                <Link href="/auth/signup" className="inline-flex items-center">
+                  {t('cta_button', { defaultValue: 'Get Started Free' })}
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </Link>
               </Button>
               <Button

@@ -242,15 +242,13 @@ export function Header() {
                             <Link
                               href={link.href}
                               className={cn(
-                                "cursor-pointer gap-2",
+                                "cursor-pointer gap-2 inline-flex items-center",
                                 isActive && "bg-muted"
                               )}
                               aria-current={isActive ? 'page' : undefined}
                             >
-                              <span className="inline-flex items-center gap-2">
-                                <Icon className="w-4 h-4" aria-hidden="true" />
-                                {t(link.label)}
-                              </span>
+                              <Icon className="w-4 h-4" aria-hidden="true" />
+                              {t(link.label)}
                             </Link>
                           </DropdownMenuItem>
                         )
