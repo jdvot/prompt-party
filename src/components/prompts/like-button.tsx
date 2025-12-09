@@ -48,8 +48,8 @@ export function LikeButton({ promptId, initialLikes, initialIsLiked = false, use
         },
         async (payload) => {
           // Refresh likes count
-          const { data: prompt } = await supabase
-            .from('prompts')
+          const { data: prompt } = await (supabase
+            .from('prompts') as any)
             .select('likes_count')
             .eq('id', promptId)
             .single()

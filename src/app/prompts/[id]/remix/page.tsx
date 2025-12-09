@@ -46,10 +46,10 @@ export default async function RemixPromptPage({ params }: PageProps) {
     .eq('user_id', originalPrompt.author)
     .single()
 
-  originalPrompt.profiles = authorProfile
+  const originalPromptWithProfile = { ...originalPrompt, profiles: authorProfile } as any
 
   // Check if original prompt is public or user is author
-  if (!originalPrompt.is_public && originalPrompt.author !== user.id) {
+  if (!originalPromptWithProfile.is_public && originalPromptWithProfile.author !== user.id) {
     notFound()
   }
 
@@ -111,8 +111,8 @@ export default async function RemixPromptPage({ params }: PageProps) {
         <div className="mb-6">
           <h1 className="text-3xl font-bold mb-2">{t('remix_title')}</h1>
           <p className="text-muted-foreground">
-            {t('remix_description')} &ldquo;{originalPrompt.title}&rdquo; {t('original_by')}{' '}
-            {originalPrompt.profiles?.name || tCommon('anonymous')}
+            {t('remix_description')} &ldquo;{originalPromptWithProfile.title}&rdquo; {t('original_by')}{' '}
+            {originalPromptWithProfile.profiles?.name || tCommon('anonymous')}
           </p>
         </div>
 
@@ -125,7 +125,7 @@ export default async function RemixPromptPage({ params }: PageProps) {
               type="text"
               id="title"
               name="title"
-              defaultValue={`${originalPrompt.title} (${tCommon('remix')})`}
+              defaultValue={`${originalPromptWithProfile.title} (${tCommon('remix')})`}
               required
               className="w-full px-4 py-2 border bg-background rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
             />
@@ -139,7 +139,7 @@ export default async function RemixPromptPage({ params }: PageProps) {
               type="text"
               id="tags"
               name="tags"
-              defaultValue={originalPrompt.tags.join(', ')}
+              defaultValue={originalPromptWithProfile.tags.join(', ')}
               placeholder={t('tags_placeholder')}
               className="w-full px-4 py-2 border bg-background rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
             />
@@ -149,7 +149,7 @@ export default async function RemixPromptPage({ params }: PageProps) {
             <label htmlFor="body" className="block text-sm font-medium mb-2">
               {t('body_label')} <span className="text-destructive">*</span>
             </label>
-            <RemixEditor defaultValue={originalPrompt.body} />
+            <RemixEditor defaultValue={originalPromptWithProfile.body} />
           </div>
 
           <div className="flex items-center gap-2">

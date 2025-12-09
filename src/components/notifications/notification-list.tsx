@@ -88,14 +88,14 @@ export function NotificationList({ onClose }: NotificationListProps) {
   }, [supabase, fetchNotifications])
 
   const markAsRead = async (notificationId: string) => {
-    await supabase.rpc('mark_notification_read', {
+    await (supabase.rpc as any)('mark_notification_read', {
       notification_id: notificationId,
     })
     fetchNotifications()
   }
 
   const markAllAsRead = async () => {
-    await supabase.rpc('mark_all_notifications_read')
+    await (supabase.rpc as any)('mark_all_notifications_read')
     fetchNotifications()
   }
 

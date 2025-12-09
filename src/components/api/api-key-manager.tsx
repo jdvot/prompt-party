@@ -51,8 +51,8 @@ export function ApiKeyManager({ initialKeys }: ApiKeyManagerProps) {
       } = await supabase.auth.getUser()
       if (!user) return
 
-      const { data, error } = await supabase
-        .from('api_keys')
+      const { data, error } = await (supabase
+        .from('api_keys') as any)
         .insert({
           user_id: user.id,
           name: newKeyName,

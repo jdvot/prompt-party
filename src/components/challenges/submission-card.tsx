@@ -75,7 +75,7 @@ export function SubmissionCard({ submission, rank, userId, isEnded }: Submission
           .eq('user_id', userId)
 
         if (!error) {
-          await supabase.rpc('decrement_submission_votes', {
+          await (supabase.rpc as any)('decrement_submission_votes', {
             submission_uuid: submission.id,
           })
           setVoteCount((prev) => prev - 1)
@@ -83,15 +83,15 @@ export function SubmissionCard({ submission, rank, userId, isEnded }: Submission
         }
       } else {
         // Add vote
-        const { error } = await supabase
-          .from('challenge_votes')
+        const { error } = await (supabase
+          .from('challenge_votes') as any)
           .insert({
             submission_id: submission.id,
             user_id: userId,
           })
 
         if (!error) {
-          await supabase.rpc('increment_submission_votes', {
+          await (supabase.rpc as any)('increment_submission_votes', {
             submission_uuid: submission.id,
           })
           setVoteCount((prev) => prev + 1)

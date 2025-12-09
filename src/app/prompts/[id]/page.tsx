@@ -150,7 +150,7 @@ export default async function PromptDetailPage({ params }: PageProps) {
   const commentsWithProfiles = await Promise.all(profilePromises)
 
   // Check if this prompt is a remix
-  const { data: forkInfo } = await supabase
+  const { data: forkInfo } = (await supabase
     .from('forks')
     .select(`
       *,
@@ -163,7 +163,7 @@ export default async function PromptDetailPage({ params }: PageProps) {
       )
     `)
     .eq('forked_prompt_id', id)
-    .single()
+    .single()) as any
 
   // Get remix count
   const { count: remixCount } = await supabase
@@ -204,7 +204,7 @@ export default async function PromptDetailPage({ params }: PageProps) {
               </Link>
               <span className="hidden sm:inline">•</span>
               <span className="text-[10px] sm:text-sm">
-                {formatDistanceToNow(new Date(prompt.created_at), { addSuffix: true })}
+                {formatDistanceToNow(new Date(prompt.created_at || Date.now()), { addSuffix: true })}
               </span>
               <span className="hidden sm:inline">•</span>
               <ViewCounter promptId={prompt.id} initialViews={prompt.views_count || 0} />
@@ -218,7 +218,7 @@ export default async function PromptDetailPage({ params }: PageProps) {
           </div>
 
           {/* Tags */}
-          {prompt.tags.length > 0 && (
+          {prompt.tags && prompt.tags.length > 0 && (
             <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-4 sm:mb-6">
               {prompt.tags.map((tag: string) => (
                 <Link
@@ -254,7 +254,7 @@ export default async function PromptDetailPage({ params }: PageProps) {
             <div className="flex flex-wrap items-center gap-2 sm:gap-3">
               <LikeButton
                 promptId={prompt.id}
-                initialLikes={prompt.likes_count}
+                initialLikes={prompt.likes_count || 0}
                 initialIsLiked={isLiked}
                 userId={user?.id}
               />
@@ -304,7 +304,7 @@ export default async function PromptDetailPage({ params }: PageProps) {
               <div className="mt-3 flex flex-wrap items-center gap-2 pl-6">
                 <DuplicateButton promptId={prompt.id} userId={user?.id} />
                 <EmbedButton promptId={prompt.id} />
-                <ExportPrompt prompt={prompt} />
+                <ExportPrompt prompt={prompt as any} />
                 <VersionHistory promptId={prompt.id} />
                 <RemixTree promptId={prompt.id} promptTitle={prompt.title} />
                 <PromptOptimizer promptContent={prompt.body} />
@@ -325,7 +325,7 @@ export default async function PromptDetailPage({ params }: PageProps) {
               <div className="mt-3 grid grid-cols-2 gap-2">
                 <DuplicateButton promptId={prompt.id} userId={user?.id} />
                 <EmbedButton promptId={prompt.id} />
-                <ExportPrompt prompt={prompt} />
+                <ExportPrompt prompt={prompt as any} />
                 <VersionHistory promptId={prompt.id} />
                 <RemixTree promptId={prompt.id} promptTitle={prompt.title} />
                 <PromptOptimizer promptContent={prompt.body} />
@@ -356,7 +356,7 @@ export default async function PromptDetailPage({ params }: PageProps) {
               <div className="mt-4">
                 <CommentList
                   promptId={prompt.id}
-                  initialComments={commentsWithProfiles || []}
+                  initialComments={commentsWithProfiles as any || []}
                   userId={user?.id}
                 />
               </div>
@@ -369,7 +369,7 @@ export default async function PromptDetailPage({ params }: PageProps) {
               </h2>
               <CommentList
                 promptId={prompt.id}
-                initialComments={commentsWithProfiles || []}
+                initialComments={commentsWithProfiles as any || []}
                 userId={user?.id}
               />
             </div>
@@ -382,7 +382,7 @@ export default async function PromptDetailPage({ params }: PageProps) {
         <div className="flex items-center justify-around gap-1 px-2 py-2">
           <LikeButton
             promptId={prompt.id}
-            initialLikes={prompt.likes_count}
+            initialLikes={prompt.likes_count || 0}
             initialIsLiked={isLiked}
             userId={user?.id}
           />

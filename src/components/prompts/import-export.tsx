@@ -30,8 +30,8 @@ export function ImportExport({ userId }: ImportExportProps) {
     setIsExporting(true)
 
     try {
-      const { data: prompts } = await supabase
-        .from('prompts')
+      const { data: prompts } = await (supabase
+        .from('prompts') as any)
         .select('*')
         .eq('author', userId)
         .order('created_at', { ascending: false })
@@ -41,7 +41,7 @@ export function ImportExport({ userId }: ImportExportProps) {
           version: '1.0',
           exported_at: new Date().toISOString(),
           total_prompts: prompts.length,
-          prompts: prompts.map((p) => ({
+          prompts: prompts.map((p: any) => ({
             title: p.title,
             body: p.body,
             category: p.category,
@@ -86,8 +86,8 @@ export function ImportExport({ userId }: ImportExportProps) {
     setIsExporting(true)
 
     try {
-      const { data: prompts } = await supabase
-        .from('prompts')
+      const { data: prompts } = await (supabase
+        .from('prompts') as any)
         .select('*')
         .eq('author', userId)
         .order('created_at', { ascending: false })
@@ -95,7 +95,7 @@ export function ImportExport({ userId }: ImportExportProps) {
       if (prompts && prompts.length > 0) {
         let markdown = `# My Prompts\n\nExported from Prompt Party on ${new Date().toLocaleDateString()}\n\n---\n\n`
 
-        prompts.forEach((prompt, index) => {
+        prompts.forEach((prompt: any, index: number) => {
           markdown += `## ${index + 1}. ${prompt.title}\n\n`
           if (prompt.category) {
             markdown += `**Category:** ${prompt.category}\n\n`
@@ -156,7 +156,7 @@ export function ImportExport({ userId }: ImportExportProps) {
 
       for (const prompt of data.prompts) {
         try {
-          const { error } = await supabase.from('prompts').insert({
+          const { error } = await (supabase.from('prompts') as any).insert({
             title: prompt.title,
             body: prompt.body,
             category: prompt.category || null,

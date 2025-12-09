@@ -55,15 +55,15 @@ export function SearchAutocomplete({ autoFocus = false }: SearchAutocompleteProp
       const searchResults: SearchResult[] = []
 
       // Search prompts
-      const { data: prompts } = await supabase
-        .from('prompts')
+      const { data: prompts } = await (supabase
+        .from('prompts') as any)
         .select('id, title, body')
         .or(`title.ilike.%${query}%,body.ilike.%${query}%`)
         .eq('is_public', true)
         .limit(5)
 
       if (prompts) {
-        prompts.forEach((prompt) => {
+        prompts.forEach((prompt: any) => {
           searchResults.push({
             type: 'prompt',
             id: prompt.id,
@@ -75,8 +75,8 @@ export function SearchAutocomplete({ autoFocus = false }: SearchAutocompleteProp
       }
 
       // Search tags (extract unique tags from all prompts)
-      const { data: taggedPrompts } = await supabase
-        .from('prompts')
+      const { data: taggedPrompts } = await (supabase
+        .from('prompts') as any)
         .select('tags')
         .not('tags', 'is', null)
         .eq('is_public', true)

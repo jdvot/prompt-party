@@ -79,7 +79,7 @@ export default async function PublicProfilePage({ params }: PageProps) {
     .order('created_at', { ascending: false })
 
   // Get account age in days
-  const accountCreated = new Date(profile.created_at)
+  const accountCreated = new Date(profile.created_at || Date.now())
   const accountAge = Math.floor(
     (Date.now() - accountCreated.getTime()) / (1000 * 60 * 60 * 24)
   )

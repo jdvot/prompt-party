@@ -77,7 +77,7 @@ export default async function CollectionPage({ params }: PageProps) {
   // Fetch collection items
   const { data: items } = await supabase
     .from('collection_items')
-    .select('id, prompt_id, added_at')
+    .select('prompt_id, added_at')
     .eq('collection_id', id)
     .order('added_at', { ascending: false })
 

@@ -74,7 +74,7 @@ export function TemplateDetail({ template, isOpen, onClose }: TemplateDetailProp
     setIsCreating(true)
 
     // Increment template usage
-    await supabase.rpc('increment_template_usage', { template_uuid: template.id })
+    await (supabase.rpc as any)('increment_template_usage', { template_uuid: template.id })
 
     // Redirect to prompt creation with pre-filled body
     const params = new URLSearchParams({

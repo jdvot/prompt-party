@@ -63,7 +63,7 @@ export function FollowButton({
         setIsFollowing(false)
       } else {
         // Follow
-        await supabase.from('follows').insert({
+        await (supabase.from('follows') as any).insert({
           follower_id: user.id,
           following_id: targetUserId,
         })
