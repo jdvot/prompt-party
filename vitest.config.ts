@@ -12,11 +12,7 @@ export default defineConfig({
     testTimeout: 10000,
     hookTimeout: 10000,
     pool: 'forks',
-    poolOptions: {
-      forks: {
-        singleFork: true,
-      },
-    },
+    maxWorkers: 1,
     include: ['src/**/*.test.ts', 'src/**/*.test.tsx'],
     exclude: ['e2e/**', 'node_modules/**'],
   },

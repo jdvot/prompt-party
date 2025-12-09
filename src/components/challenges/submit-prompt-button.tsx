@@ -46,11 +46,11 @@ export function SubmitPromptButton({ challengeId }: SubmitPromptButtonProps) {
       const promptId = match[1]
 
       // Check if prompt exists and belongs to user
-      const { data: prompt, error: promptError } = await supabase
+      const { data: prompt, error: promptError } = (await supabase
         .from('prompts')
         .select('id, author')
         .eq('id', promptId)
-        .single()
+        .single()) as any
 
       if (promptError || !prompt) {
         setError(t('prompt_not_found'))
@@ -69,8 +69,8 @@ export function SubmitPromptButton({ challengeId }: SubmitPromptButtonProps) {
       }
 
       // Submit to challenge
-      const { error: submitError } = await supabase
-        .from('challenge_submissions')
+      const { error: submitError } = await (supabase
+        .from('challenge_submissions') as any)
         .insert({
           challenge_id: challengeId,
           prompt_id: promptId,

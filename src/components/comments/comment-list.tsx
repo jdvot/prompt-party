@@ -42,11 +42,11 @@ export function CommentList({ promptId, initialComments, userId }: CommentListPr
         },
         async (payload) => {
           // Fetch the new comment
-          const { data: newComment } = await supabase
+          const { data: newComment } = (await supabase
             .from('comments')
             .select('*')
             .eq('id', payload.new.id)
-            .single()
+            .single()) as any
 
           if (newComment) {
             // Fetch profile separately

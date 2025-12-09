@@ -66,8 +66,8 @@ export function NotificationSettings({ initialPreferences }: NotificationSetting
     if (!user) return
 
     const { user_id, ...prefsWithoutUserId } = preferences
-    const { error } = await supabase
-      .from('notification_preferences')
+    const { error } = await (supabase
+      .from('notification_preferences') as any)
       .upsert({
         user_id: user.id,
         ...prefsWithoutUserId,

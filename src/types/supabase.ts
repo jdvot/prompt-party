@@ -205,6 +205,7 @@ export type Database = {
       }
       profiles: {
         Row: {
+          ai_test_credits: number | null
           avatar_url: string | null
           created_at: string | null
           id: string
@@ -218,6 +219,7 @@ export type Database = {
           username: string | null
         }
         Insert: {
+          ai_test_credits?: number | null
           avatar_url?: string | null
           created_at?: string | null
           id?: string
@@ -231,6 +233,7 @@ export type Database = {
           username?: string | null
         }
         Update: {
+          ai_test_credits?: number | null
           avatar_url?: string | null
           created_at?: string | null
           id?: string
@@ -257,6 +260,7 @@ export type Database = {
           tags: string[] | null
           title: string
           updated_at: string | null
+          views_count: number | null
         }
         Insert: {
           author: string
@@ -269,6 +273,7 @@ export type Database = {
           tags?: string[] | null
           title: string
           updated_at?: string | null
+          views_count?: number | null
         }
         Update: {
           author?: string
@@ -281,7 +286,152 @@ export type Database = {
           tags?: string[] | null
           title?: string
           updated_at?: string | null
+          views_count?: number | null
         }
+        Relationships: []
+      }
+      prompt_versions: {
+        Row: {
+          id: string
+          prompt_id: string
+          version_number: number
+          title: string
+          body: string
+          category: string | null
+          tags: string[] | null
+          changed_by: string
+          changed_by_name: string
+          change_summary: string | null
+          created_at: string | null
+        }
+        Insert: {
+          id?: string
+          prompt_id: string
+          version_number: number
+          title: string
+          body: string
+          category?: string | null
+          tags?: string[] | null
+          changed_by: string
+          changed_by_name: string
+          change_summary?: string | null
+          created_at?: string | null
+        }
+        Update: {
+          id?: string
+          prompt_id?: string
+          version_number?: number
+          title?: string
+          body?: string
+          category?: string | null
+          tags?: string[] | null
+          changed_by?: string
+          changed_by_name?: string
+          change_summary?: string | null
+          created_at?: string | null
+        }
+        Relationships: []
+      }
+      api_keys: {
+        Row: {
+          id: string
+          user_id: string
+          name: string
+          key_hash: string
+          key_prefix: string
+          last_used_at: string | null
+          requests_count: number | null
+          monthly_limit: number | null
+          is_active: boolean | null
+          created_at: string | null
+          expires_at: string | null
+        }
+        Insert: {
+          id?: string
+          user_id: string
+          name: string
+          key_hash: string
+          key_prefix: string
+          last_used_at?: string | null
+          requests_count?: number | null
+          monthly_limit?: number | null
+          is_active?: boolean | null
+          created_at?: string | null
+          expires_at?: string | null
+        }
+        Update: {
+          id?: string
+          user_id?: string
+          name?: string
+          key_hash?: string
+          key_prefix?: string
+          last_used_at?: string | null
+          requests_count?: number | null
+          monthly_limit?: number | null
+          is_active?: boolean | null
+          created_at?: string | null
+          expires_at?: string | null
+        }
+        Relationships: []
+      }
+      challenges: {
+        Row: { id: string; title: string; description: string; type: string; [key: string]: any }
+        Insert: { id?: string; [key: string]: any }
+        Update: { id?: string; [key: string]: any }
+        Relationships: []
+      }
+      challenge_submissions: {
+        Row: { id: string; challenge_id: string; prompt_id: string; user_id: string; votes: number; [key: string]: any }
+        Insert: { id?: string; [key: string]: any }
+        Update: { id?: string; [key: string]: any }
+        Relationships: []
+      }
+      challenge_votes: {
+        Row: { submission_id: string; user_id: string; [key: string]: any }
+        Insert: { submission_id: string; user_id: string; [key: string]: any }
+        Update: { [key: string]: any }
+        Relationships: []
+      }
+      user_progress: {
+        Row: { id: string; user_id: string; level: number; xp: number; prompts_count: number; likes_received: number; [key: string]: any }
+        Insert: { id?: string; user_id: string; [key: string]: any }
+        Update: { id?: string; [key: string]: any }
+        Relationships: []
+      }
+      badges: {
+        Row: { id: string; name: string; description: string; icon: string; [key: string]: any }
+        Insert: { id?: string; [key: string]: any }
+        Update: { id?: string; [key: string]: any }
+        Relationships: []
+      }
+      user_badges: {
+        Row: { user_id: string; badge_id: string; earned_at: string; [key: string]: any }
+        Insert: { user_id: string; badge_id: string; [key: string]: any }
+        Update: { [key: string]: any }
+        Relationships: []
+      }
+      user_challenge_progress: {
+        Row: { user_id: string; challenge_id: string; progress: number; completed: boolean; [key: string]: any }
+        Insert: { user_id: string; challenge_id: string; [key: string]: any }
+        Update: { [key: string]: any }
+        Relationships: []
+      }
+      notification_preferences: {
+        Row: { user_id: string; [key: string]: any }
+        Insert: { user_id: string; [key: string]: any }
+        Update: { user_id?: string; [key: string]: any }
+        Relationships: []
+      }
+      prompt_templates: {
+        Row: { id: string; title: string; description: string; content: string; category: string; [key: string]: any }
+        Insert: { id?: string; [key: string]: any }
+        Update: { id?: string; [key: string]: any }
+        Relationships: []
+      }
+      notifications: {
+        Row: { id: string; user_id: string; actor_id: string; actor_name: string; type: string; content: Json; is_read: boolean; created_at: string; [key: string]: any }
+        Insert: { id?: string; user_id: string; [key: string]: any }
+        Update: { id?: string; [key: string]: any }
         Relationships: []
       }
     }
@@ -307,6 +457,54 @@ export type Database = {
     Functions: {
       complete_onboarding: {
         Args: { user_id_param: string }
+        Returns: undefined
+      }
+      restore_prompt_version: {
+        Args: { p_prompt_id: string; p_version_id: string }
+        Returns: boolean
+      }
+      increment_prompt_views: {
+        Args: { prompt_id: string }
+        Returns: undefined
+      }
+      check_api_rate_limit: {
+        Args: { key_hash_input: string }
+        Returns: boolean
+      }
+      increment_api_usage: {
+        Args: { key_hash_input: string }
+        Returns: undefined
+      }
+      log_api_request: {
+        Args: {
+          key_id: string
+          endpoint_path: string
+          http_method: string
+          status: number
+          response_time: number
+          ip?: string
+          agent?: string
+        }
+        Returns: string
+      }
+      mark_notification_read: {
+        Args: { notification_id: string }
+        Returns: undefined
+      }
+      mark_all_notifications_read: {
+        Args: Record<string, never>
+        Returns: undefined
+      }
+      increment_template_usage: {
+        Args: { template_uuid: string }
+        Returns: undefined
+      }
+      increment_submission_votes: {
+        Args: { submission_uuid: string }
+        Returns: undefined
+      }
+      decrement_submission_votes: {
+        Args: { submission_uuid: string }
         Returns: undefined
       }
     }

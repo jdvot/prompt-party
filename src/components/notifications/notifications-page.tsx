@@ -75,8 +75,8 @@ export function NotificationsPage({ initialNotifications, userId }: Notification
       : notifications
 
   const markAsRead = async (id: string) => {
-    await supabase
-      .from('notifications')
+    await (supabase
+      .from('notifications') as any)
       .update({ is_read: true })
       .eq('id', id)
 
@@ -86,8 +86,8 @@ export function NotificationsPage({ initialNotifications, userId }: Notification
   }
 
   const markAllAsRead = async () => {
-    await supabase
-      .from('notifications')
+    await (supabase
+      .from('notifications') as any)
       .update({ is_read: true })
       .eq('user_id', userId)
       .eq('is_read', false)

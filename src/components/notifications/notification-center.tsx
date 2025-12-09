@@ -103,8 +103,8 @@ export function NotificationCenter() {
   }, [loadNotifications, supabase, toast])
 
   const markAsRead = async (id: string) => {
-    await supabase
-      .from('notifications')
+    await (supabase
+      .from('notifications') as any)
       .update({ is_read: true })
       .eq('id', id)
 
@@ -117,8 +117,8 @@ export function NotificationCenter() {
     const { data: { user } } = await supabase.auth.getUser()
     if (!user) return
 
-    await supabase
-      .from('notifications')
+    await (supabase
+      .from('notifications') as any)
       .update({ is_read: true })
       .eq('user_id', user.id)
       .eq('is_read', false)

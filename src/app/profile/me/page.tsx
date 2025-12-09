@@ -86,8 +86,13 @@ export default async function ProfilePage() {
     } else {
       // Fallback to default values
       userProgress = {
+        id: '',
+        user_id: user.id,
         points: 0,
-        level: 'beginner' as const,
+        level: 1,
+        xp: 0,
+        prompts_count: 0,
+        likes_received: 0,
         streak_days: 0,
         lessons_completed: 0,
         prompts_shared: 0,
@@ -164,7 +169,7 @@ export default async function ProfilePage() {
     legend: { name: t('level_legend'), color: 'from-yellow-500 to-amber-600', pointsMin: 5000, pointsMax: 10000 }
   }
 
-  const currentLevel = levels[userProgress.level as keyof typeof levels]
+  const currentLevel = levels[userProgress.level as unknown as keyof typeof levels]
   const pointsInLevel = userProgress.points - currentLevel.pointsMin
   const levelRange = currentLevel.pointsMax - currentLevel.pointsMin
   const progressPercent = Math.min((pointsInLevel / levelRange) * 100, 100)
@@ -212,7 +217,7 @@ export default async function ProfilePage() {
           {/* Progress to next level */}
           <div className="mt-6">
             <div className="flex justify-between text-sm mb-2">
-              <span className="font-semibold">{t('progression_to_next', { level: levels[userProgress.level === 'legend' ? 'legend' : userProgress.level === 'master' ? 'legend' : userProgress.level === 'expert' ? 'master' : userProgress.level === 'intermediate' ? 'expert' : 'intermediate'].name })}</span>
+              <span className="font-semibold">{t('progression_to_next', { level: currentLevel.name })}</span>
               <span className="text-muted-foreground">{pointsInLevel} / {levelRange} {t('points_label').toLowerCase()}</span>
             </div>
             <Progress value={progressPercent} className="h-3" />
@@ -377,13 +382,13 @@ export default async function ProfilePage() {
                     id={prompt.id}
                     title={prompt.title}
                     body={prompt.body}
-                    tags={prompt.tags}
+                    tags={prompt.tags || []}
                     author={{
-                      name: prompt.profiles?.name || null,
-                      avatar_url: prompt.profiles?.avatar_url || null,
+                      name: profile?.name || null,
+                      avatar_url: profile?.avatar_url || null,
                     }}
-                    likes_count={prompt.likes_count}
-                    created_at={prompt.created_at}
+                    likes_count={prompt.likes_count || 0}
+                    created_at={prompt.created_at || new Date().toISOString()}
                   />
                   {!prompt.is_public && (
                     <div className="absolute top-4 right-4">

@@ -31,8 +31,8 @@ export function BookmarkButton({ promptId, variant = 'ghost', size = 'sm' }: Boo
     } = await supabase.auth.getUser()
     if (!user) return
 
-    const { data } = await supabase
-      .from('bookmarks')
+    const { data } = await (supabase
+      .from('bookmarks') as any)
       .select('folder')
       .eq('user_id', user.id)
       .eq('prompt_id', promptId)
@@ -86,8 +86,8 @@ export function BookmarkButton({ promptId, variant = 'ghost', size = 'sm' }: Boo
         setCurrentFolder(null)
       } else if (isBookmarked) {
         // Update folder
-        await supabase
-          .from('bookmarks')
+        await (supabase
+          .from('bookmarks') as any)
           .update({ folder: folderName })
           .eq('user_id', user.id)
           .eq('prompt_id', promptId)
@@ -95,7 +95,7 @@ export function BookmarkButton({ promptId, variant = 'ghost', size = 'sm' }: Boo
         setCurrentFolder(folderName)
       } else {
         // Add bookmark
-        await supabase.from('bookmarks').insert({
+        await (supabase.from('bookmarks') as any).insert({
           user_id: user.id,
           prompt_id: promptId,
           folder: folderName,

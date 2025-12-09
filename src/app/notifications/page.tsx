@@ -22,5 +22,5 @@ export default async function NotificationsPageRoute() {
     .eq('user_id', user.id)
     .order('created_at', { ascending: false })
 
-  return <NotificationsPage initialNotifications={notifications || []} userId={user.id} />
+  return <NotificationsPage initialNotifications={notifications as any || []} userId={user.id} />
 }

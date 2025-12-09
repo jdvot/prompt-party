@@ -53,7 +53,7 @@ export default async function NotificationSettingsPage() {
         </p>
       </div>
 
-      <NotificationSettings initialPreferences={preferences} />
+      <NotificationSettings initialPreferences={preferences as any} />
     </div>
   )
 }

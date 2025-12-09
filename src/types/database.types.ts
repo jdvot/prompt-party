@@ -6,7 +6,10 @@ export type Json =
   | { [key: string]: Json | undefined }
   | Json[]
 
-export interface Database {
+export type Database = {
+  __InternalSupabase: {
+    PostgrestVersion: "13.0.5"
+  }
   public: {
     Tables: {
       profiles: {
@@ -15,6 +18,7 @@ export interface Database {
           user_id: string
           name: string | null
           avatar_url: string | null
+          ai_test_credits: number | null
           plan: string
           created_at: string
         }
@@ -23,6 +27,7 @@ export interface Database {
           user_id: string
           name?: string | null
           avatar_url?: string | null
+          ai_test_credits?: number | null
           plan?: string
           created_at?: string
         }
@@ -31,6 +36,7 @@ export interface Database {
           user_id?: string
           name?: string | null
           avatar_url?: string | null
+          ai_test_credits?: number | null
           plan?: string
           created_at?: string
         }

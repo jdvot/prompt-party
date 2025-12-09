@@ -29,8 +29,8 @@ export function SettingsForm({ user, profile }: SettingsFormProps) {
     setMessage(null)
 
     try {
-      const { error } = await supabase
-        .from('profiles')
+      const { error } = await (supabase
+        .from('profiles') as any)
         .update({
           name,
           username: username || null

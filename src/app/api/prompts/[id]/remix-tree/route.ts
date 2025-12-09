@@ -52,7 +52,7 @@ async function buildRemixTree(
     author: Array.isArray(prompt.author) ? prompt.author[0] : prompt.author,
     likes_count: prompt.likes_count || 0,
     views_count: prompt.views_count || 0,
-    created_at: prompt.created_at,
+    created_at: prompt.created_at || new Date().toISOString(),
     children: [],
   }
 

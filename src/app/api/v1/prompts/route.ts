@@ -104,7 +104,7 @@ export async function GET(request: NextRequest) {
       pages: Math.ceil((count || 0) / limit),
     },
     meta: {
-      requests_remaining: auth.apiKeyData.monthly_limit - auth.apiKeyData.requests_count - 1,
+      requests_remaining: (auth.apiKeyData.monthly_limit || 10000) - (auth.apiKeyData.requests_count || 0) - 1,
     },
   })
 }
@@ -168,7 +168,7 @@ export async function POST(request: NextRequest) {
     {
       data,
       meta: {
-        requests_remaining: auth.apiKeyData.monthly_limit - auth.apiKeyData.requests_count - 1,
+        requests_remaining: (auth.apiKeyData.monthly_limit || 10000) - (auth.apiKeyData.requests_count || 0) - 1,
       },
     },
     { status: 201 }

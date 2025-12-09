@@ -64,8 +64,8 @@ export function SaveToCollectionButton({ promptId, userId }: SaveToCollectionBut
   const addToCollection = async (collectionId: string) => {
     setSaving(true)
     try {
-      const { error } = await supabase
-        .from('collection_items')
+      const { error } = await (supabase
+        .from('collection_items') as any)
         .insert({
           collection_id: collectionId,
           prompt_id: promptId,
